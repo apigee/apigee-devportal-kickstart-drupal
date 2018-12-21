@@ -1,0 +1,55 @@
+{
+  "name": "drupal/apigee_devportal_kickstart",
+  "description": "A fast demo and starting point for Apigee Developer Portals.",
+  "type": "drupal-profile",
+  "license": "GPL-2.0-or-later",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "repositories": {
+    "drupal": {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    }
+  },
+  "require": {
+    "php": "^7.1",
+    "cweagans/composer-patches": "~1",
+    "drupal-composer/drupal-scaffold": "^2",
+    "drupal/core": "^8.6.0",
+    "drupal/admin_toolbar": "^1.0",
+    "drupal/apigee_edge": "1.x-dev"
+  },
+  "require-dev": {
+    "drush/drush": "~9",
+    "drupal/coder": "~8",
+    "drupal/core": "^8.6.0"
+  },
+  "config": {
+    "preferred-install": {
+      "drupal/core": "dist"
+    }
+  },
+  "extra": {
+    "patchLevel": {
+      "drupal/core": "-p2"
+    },
+    "installer-paths": {
+      "web/core": [
+        "type:drupal-core"
+      ],
+      "web/libraries/{$name}": [
+        "type:drupal-library"
+      ],
+      "web/modules/contrib/{$name}": [
+        "type:drupal-module"
+      ],
+      "web/profiles/contrib/{$name}": [
+        "type:drupal-profile"
+      ],
+      "web/themes/contrib/{$name}": [
+        "type:drupal-theme"
+      ]
+    },
+    "enable-patching": true
+  }
+}

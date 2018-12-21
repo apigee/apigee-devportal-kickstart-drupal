@@ -1,0 +1,53 @@
+<?php
+
+/**
+ * @file
+ * Copyright 2018 Google Inc.
+ *
+ * This program is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License version 2 as published by the
+ * Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public
+ * License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc., 51
+ * Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ */
+
+/**
+ * @file
+ * Install, update and uninstall functions for Apigee Edge.
+ */
+
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the site for this profile.
+ *
+ * @see system_install()
+ */
+function apigee_devportal_kickstart_install() {
+  // First, do everything in standard profile.
+  include_once DRUPAL_ROOT . '/core/profiles/standard/standard.install';
+  standard_install();
+
+  // Copy user login page background image to public folder.
+  $bartik_colors_dir = 'public://color/bartik';
+  file_prepare_directory($bartik_colors_dir, FILE_CREATE_DIRECTORY | FILE_MODIFY_PERMISSIONS);
+  $css_file = file_get_contents(drupal_get_path("profile", "apigee_devportal_kickstart") . "/resources/color/bartik/colors.css");
+  file_save_data($css_file, $bartik_colors_dir . '/colors.css');
+
+  // Copy user login page background image to public folder.
+  $image = file_get_contents(drupal_get_path("profile", "apigee_devportal_kickstart") . "/resources/apigee-logo.png");
+  file_save_data($image, 'public://apigee-logo.png');
+
+  // Copy user login page background image to public folder.
+  $image = file_get_contents(drupal_get_path("profile", "apigee_devportal_kickstart") . "/resources/favicon.ico");
+  file_save_data($image, 'public://favicon.ico');
+
+}
