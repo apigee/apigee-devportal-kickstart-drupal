@@ -21,13 +21,18 @@
   },
   "require-dev": {
     "drush/drush": "~9",
-    "drupal/coder": "~8",
-    "drupal/core": "^8.6.0"
+    "drupal/coder": "~8"
   },
   "config": {
     "preferred-install": {
       "drupal/core": "dist"
     }
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "@composer drupal-scaffold"
+    ],
+    "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
   },
   "extra": {
     "patchLevel": {
