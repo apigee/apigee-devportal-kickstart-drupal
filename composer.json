@@ -1,5 +1,5 @@
 {
-  "name": "drupal/apigee_devportal_kickstart",
+  "name": "apigee/apigee_devportal_kickstart",
   "description": "A fast demo and starting point for Apigee Developer Portals.",
   "type": "drupal-profile",
   "license": "GPL-2.0-or-later",
