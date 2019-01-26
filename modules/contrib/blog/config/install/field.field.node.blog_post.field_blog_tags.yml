@@ -1,0 +1,26 @@
+uuid: 78261772-ed51-4e96-8703-3e6d6bd562cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_blog_tags
+    - node.type.blog_post
+id: node.blog_post.field_blog_tags
+field_name: field_blog_tags
+entity_type: node
+bundle: blog_post
+label: 'Blog tags'
+description: 'Tags to help categorize blog post.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tags: tags
+    sort:
+      field: _none
+    auto_create: true
+field_type: entity_reference

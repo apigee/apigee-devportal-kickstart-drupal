@@ -1,0 +1,327 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the apigee_material_ui theme.
+ */
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Template\Attribute;
+
+/**
+ * Implements hook_preprocess_HOOK() for html.html.twig.
+ */
+function apigee_material_ui_preprocess_html(array &$variables) {
+  /* Add class to html tag */
+  //$variables['html_attributes']->addClass('no-js');
+
+  // Don't display the site name twice on the front page (and potentially others)
+  /*if (isset($variables['head_title_array']['title']) && isset($variables['head_title_array']['name']) && ($variables['head_title_array']['title'] == $variables['head_title_array']['name'])) {
+    $variables['head_title'] = $variables['head_title_array']['name'];
+  }*/
+  $material_ui_colors = theme_get_setting('material_ui_colors','apigee_material_ui');
+  $text_color = '';
+  if(!empty($material_ui_colors) && in_array($material_ui_colors,array('transparent', 'white'))){
+    $text_color = 'black-text';
+  }
+  $variables['material_ui_colors'] = $text_color;
+}
+
+/**
+ * Implements template_preprocess_input() for input.html.twig.
+ */
+function apigee_material_ui_preprocess_input(&$variables){
+  if (!empty($variables['element']['#type']) && ($variables['element']['#type'] == 'submit')) {
+    $material_ui_colors = theme_get_setting('material_ui_colors','apigee_material_ui');
+    $text_color = '';
+    if(!empty($material_ui_colors) && in_array($material_ui_colors,array('transparent', 'white'))){
+      $text_color = 'red lighten-2';
+    }
+    $variables['material_ui_colors'] = $text_color;
+  }
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function apigee_material_ui_page_attachments_alter(array &$page) {
+  // Tell IE to use latest rendering engine (not to use compatibility mode).
+  /*$ie_edge = [
+    '#type' => 'html_tag',
+    '#tag' => 'meta',
+    '#attributes' => [
+    'http-equiv' => 'X-UA-Compatible',
+    'content' => 'IE=edge',
+    ],
+  ];
+  $page['#attached']['html_head'][] = [$ie_edge, 'ie_edge'];*/
+}
+
+/**
+ * Implements hook_preprocess_page() for page.html.twig.
+ */
+function apigee_material_ui_preprocess_page(array &$variables) {
+  $variables['material_ui_navbar_fixed'] = theme_get_setting('material_ui_navbar_fixed','apigee_material_ui');
+  if($variables['material_ui_navbar_fixed'] == '1') {
+    $variables['material_ui_navbar_fixed'] = 'apigee-navbar-fixed';
+  }
+  else {
+    $variables['material_ui_navbar_fixed'] = '';
+  }
+  $variables['material_ui_container'] = theme_get_setting('material_ui_container','apigee_material_ui');
+  if($variables['material_ui_container'] == '1') {
+    $variables['material_ui_container'] = 'container';
+  }
+  else {
+    $variables['material_ui_container'] = '';
+  }
+  $variables['material_ui_colors'] = theme_get_setting('material_ui_colors','apigee_material_ui');
+
+}
+
+/**
+ * Implements hook_theme_suggestions_page_alter().
+ */
+function apigee_material_ui_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+
+}
+
+/**
+ * Implements hook_theme_suggestions_node_alter().
+ */
+function apigee_material_ui_theme_suggestions_node_alter(array &$suggestions, array $variables) {
+  /*$node = $variables['elements']['#node'];
+
+  if ($variables['elements']['#view_mode'] == "full") {
+
+  }*/
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for Block document templates.
+ */
+function apigee_material_ui_preprocess_block(array &$variables) {
+
+}
+
+/**
+ * Implements hook_theme_suggestions_field_alter().
+ */
+function apigee_material_ui_theme_suggestions_field_alter(array &$suggestions, array $variables) {
+  /*$element = $variables['element'];
+  $suggestions[] = 'field__' . $element['#view_mode'];
+  $suggestions[] = 'field__' . $element['#view_mode'] . '__' . $element['#field_name'];*/
+}
+
+/**
+ * Implements hook_theme_suggestions_field_alter().
+ */
+function apigee_material_ui_theme_suggestions_fieldset_alter(array &$suggestions, array $variables) {
+  /*$element = $variables['element'];
+  if (isset($element['#attributes']['class']) && in_array('form-composite', $element['#attributes']['class'])) {
+    $suggestions[] = 'fieldset__form_composite';
+  }*/
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function apigee_material_ui_preprocess_node(array &$variables) {
+  // Default to turning off byline/submitted.
+  //$variables['display_submitted'] = FALSE;
+}
+
+/**
+ * Implements hook_theme_suggestions_views_view_alter().
+ */
+function apigee_material_ui_theme_suggestions_views_view_alter(array &$suggestions, array $variables) {
+
+}
+
+/**
+ * Implements hook_preprocess_form().
+ */
+function apigee_material_ui_preprocess_form(array &$variables) {
+  //$variables['attributes']['novalidate'] = 'novalidate';
+}
+
+/**
+ * Implements hook_preprocess_select().
+ */
+function apigee_material_ui_preprocess_select(array &$variables) {
+  //$variables['attributes']['class'][] = 'select-chosen';
+}
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function apigee_material_ui_preprocess_field(array &$variables, $hook) {
+  /*switch ($variables['element']['#field_name']) {
+  }*/
+}
+
+/**
+ * Implements hook_preprocess_details().
+ */
+function apigee_material_ui_preprocess_details(array &$variables) {
+  /*$variables['attributes']['class'][] = 'details';
+  $variables['summary_attributes']['class'] = 'summary';*/
+}
+
+/**
+ * Implements hook_theme_suggestions_details_alter().
+ */
+function apigee_material_ui_theme_suggestions_details_alter(array &$suggestions, array $variables) {
+
+}
+
+/**
+ * Implements hook_preprocess_menu_local_task().
+ */
+function apigee_material_ui_preprocess_menu_local_task(array &$variables) {
+  //$variables['element']['#link']['url']->setOption('attributes', ['class'=>'rounded']);
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for menu-local-action templates.
+ */
+function apigee_material_ui_preprocess_menu_local_action(array &$variables) {
+  $variables['link']['#options']['attributes']['class'][] = 'btn';
+  $variables['link']['#options']['attributes']['class'][] = 'waves-light';
+  $variables['link']['#options']['attributes']['class'][] = 'waves-effect';
+}
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function apigee_material_ui_theme_registry_alter(&$theme_registry) {
+  $theme_registry['menu']['variables']['sub_class'] = '';
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for form templates.
+ */
+function apigee_material_ui_theme_suggestions_form_alter(array &$suggestions, array $variables) {
+  if ($variables['element']['#form_id'] == 'search_block_form') {
+    $suggestions[] = 'form__search_block_form';
+  }
+}
+
+/**
+ * Implements hook_form_alter() to add classes to the search form.
+ */
+function apigee_material_ui_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  /*if (in_array($form_id, ['search_block_form', 'search_form'])) {
+    /*$key = ($form_id == 'search_block_form') ? 'actions' : 'basic';
+    if (!isset($form[$key]['submit']['#attributes'])) {
+      $form[$key]['submit']['#attributes'] = new Attribute();
+    }*/
+    /*$form['keys']['#attributes']['id'] = 'search';
+
+    /*$form[$key]['submit']['#attributes']->addClass('material-icons');
+    $form[$key]['submit']['#attributes']->addClass('material-icons');*/
+
+  //}*/
+  $material_ui_colors = theme_get_setting('material_ui_colors','apigee_material_ui');
+  switch ($form_id) {
+    case 'user_login_form':
+      $form['#prefix'] = '<div class="card-form darken-1">';
+      $form['#suffix'] = '</div>';
+      $form['#attributes']['class'][] = 'card-content black-text';
+      $form['links'] = Null;
+      $form['user_icon']['#markup'] = '<div class="user-icon text-align-center"><i class="material-icons text-disabled">lock</i></div>';
+      $form['user_icon']['#weight'] = -15;
+      $form['name']['#title'] = Null;
+      $form['name']['#attributes']['placeholder'] = t('Login');
+      $form['name']['#description'] = Null;
+      $form['pass']['#title'] = Null;
+      $form['pass']['#attributes']['placeholder'] = t('Password');
+      $form['pass']['#description'] = Null;
+      $form['actions']['#attributes']['class'][] = 'card-item card-actions divider-top';
+      $form['actions']['submit']['#attributes']['class'][] = 'btn-accent';
+      $form['actions']['request_pass']['#markup'] = '<a class="btn pull-right" href="/user/password">' . t('Reset your password') . '</a>';
+      break;
+    case 'user_pass':
+      $form['#prefix'] = '<div class="darken-1">';
+      $form['#suffix'] = '</div>';
+      $form['#attributes']['class'][] = 'card-content black-text';
+      $form['user_icon']['#markup'] = '<div class="user-icon text-align-center"><i class="material-icons text-disabled">vpn_key</i></div>';
+      $form['user_icon']['#weight'] = -15;
+      $form['mail']['#weight'] = -10;
+      $form['name']['#title'] = Null;
+      $form['name']['#attributes']['placeholder'] = t('Login or E-mail');
+      $form['actions']['#attributes']['class'][] = 'card-item card-actions divider-top';
+      $form['actions']['submit']['#attributes']['class'][] = 'btn-accent';
+      break;
+    case 'user_register_form':
+      $form['#prefix'] = '<div class="darken-1">';
+      $form['#suffix'] = '</div>';
+      $form['#attributes']['class'][] = 'black-text';
+      $form['user_icon']['#markup'] = '<div class="user-icon text-align-center"><i class="material-icons text-disabled">account_circle</i></div>';
+      $form['user_icon']['#weight'] = -15;
+      $form['account']['name']['#title'] = Null;
+      $form['account']['name']['#attributes']['placeholder'] = t('Login');
+      $form['account']['mail']['#title'] = Null;
+      $form['account']['mail']['#attributes']['placeholder'] = t('E-mail');
+      $form['actions']['#attributes']['class'][] = 'card-item card-actions divider-top';
+      $form['actions']['submit']['#attributes']['class'][] = 'btn-accent';
+      break;
+    case 'search_block_form':
+      $form['keys']['#attributes']['placeholder'] = t('Search');
+      $form['keys']['#wrapper_attributes']['class'][] = 'icon-left';
+      $form['keys']['#wrapper_attributes']['data-icon'] = 'search';
+      $form['actions']['submit']['#attributes']['class'][] = 'hidden';
+      break;
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for form element templates.
+ */
+function apigee_material_ui_theme_suggestions_form_element_alter(array &$suggestions, array $variables) {
+  if (!empty($variables['element']['#type']) && ($variables['element']['#type'] == 'checkbox' || $variables['element']['#type'] == 'radio')) {
+    $suggestions[] = 'form_element__wrapped';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for form-element--wrapped templates.
+ */
+function apigee_material_ui_preprocess_form_element__wrapped(&$variables) {
+  /*print '<pre>';
+  print_r($variables['label']);
+  print '</pre>';*/
+  $variables['label']['#theme'] = 'form_element_label__open';
+  $variables['label_open'] = $variables['label'];
+  unset($variables['label']);
+  $variables['title'] = !empty($variables['element']['#title']) ? $variables['element']['#title'] : '';
+}
+
+/**
+ * Implements hook_menu_alter().
+ */
+function apigee_material_ui_link_alter(&$variables) {
+
+  /**
+   * The URL of the link.
+   *
+   * @var Url
+   */
+  /*$url = $variables['url'];
+  /*if ($url->isRouted() && $url->getRouteName() == 'user.page') {
+    $route_name = $url->getRouteName();
+    if ($route_name != 'user.page') {
+      return;
+    }
+    elseif ($variables['text'] == t('My account')) {*/
+      //$account = User::load(\Drupal::currentUser()->id());
+      //$variables['text'] = t('Welcome @name', ['@name' =>'Full Name']); 
+    //}
+  //}
+}
+
+/**
+ * Implements HOOK_preprocess_links().
+ */
+function apigee_material_ui_preprocess_links(array &$variables) {
+
+}

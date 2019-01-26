@@ -1,0 +1,22 @@
+uuid: b23d7e47-7b4d-4f39-a607-087df1089e7a
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+  theme:
+    - apigee_material_ui
+_core:
+  default_config_hash: IItlF4SKHgxduIysVQdvirDJ_v3HGuAviOkidAOJYRE
+id: apigee_material_ui_login
+theme: apigee_material_ui
+region: content
+weight: 1
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: 'User login'
+  provider: user
+  label_display: visible
+visibility: {  }

@@ -1,0 +1,25 @@
+uuid: fa20cd3c-d6c8-423d-8d6d-9015f46086a5
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:6c0059b1-da82-4aa9-b36c-a33d83476061'
+  module:
+    - block_content
+  theme:
+    - apigee_material_ui
+id: companybio
+theme: apigee_material_ui
+region: footer_first
+weight: 0
+provider: null
+plugin: 'block_content:6c0059b1-da82-4aa9-b36c-a33d83476061'
+settings:
+  id: 'block_content:6c0059b1-da82-4aa9-b36c-a33d83476061'
+  label: 'Company Bio'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

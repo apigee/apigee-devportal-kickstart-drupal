@@ -1,0 +1,20 @@
+uuid: 81ae12a9-ccce-46ce-9c1b-173d8fa2a061
+langcode: en
+status: true
+dependencies:
+  theme:
+    - apigee_material_ui
+_core:
+  default_config_hash: HHryZVJbeKi9WnuBGC8FOhBZmBnk2G1H6KxFuy-rC9A
+id: apigee_material_ui_local_actions
+theme: apigee_material_ui
+region: content
+weight: -1
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

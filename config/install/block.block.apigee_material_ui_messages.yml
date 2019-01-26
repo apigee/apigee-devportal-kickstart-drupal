@@ -1,0 +1,22 @@
+uuid: ed1965c0-35d4-4490-b9e6-2bf492b663dc
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - apigee_material_ui
+_core:
+  default_config_hash: XJqWwLt1LDCnazcEN6QkJmCLjk4R0__-8s0OO9xeNjg
+id: apigee_material_ui_messages
+theme: apigee_material_ui
+region: highlighted
+weight: -6
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

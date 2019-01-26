@@ -1,0 +1,28 @@
+uuid: 39e53ca4-0f35-43fc-a06a-18ba8f965279
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.faqs.body
+    - node.type.faqs
+  module:
+    - text
+    - user
+id: node.faqs.default
+targetEntityType: node
+bundle: faqs
+mode: default
+content:
+  body:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

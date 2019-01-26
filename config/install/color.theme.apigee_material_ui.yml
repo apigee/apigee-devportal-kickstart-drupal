@@ -1,0 +1,16 @@
+palette:
+  top: '#8e8b05'
+  bottom: '#1d84c3'
+  bg: '#ffffff'
+  sidebar: '#f6f6f2'
+  sidebarborders: '#f9f9f9'
+  footer: '#292929'
+  titleslogan: '#fffeff'
+  text: '#3b3b3b'
+  link: '#99801d'
+logo: 'public://logo.svg'
+stylesheets:
+  - 'public://color/apigee_material_ui-6f77e2da/colors.css'
+files:
+  - 'public://logo.svg'
+  - 'public://color/apigee_material_ui-6f77e2da/colors.css'

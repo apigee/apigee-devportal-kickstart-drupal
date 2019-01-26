@@ -1,0 +1,22 @@
+uuid: d8513ebe-1c33-4f1f-875d-57a841eef456
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - apigee_material_ui
+_core:
+  default_config_hash: YRY68JWkaUiGeZlWMv1nzeIgDm0ZZwXYgpqUpLFzwAY
+id: apigee_material_ui_content
+theme: apigee_material_ui
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,31 @@
+uuid: d4f4c91a-90bf-4d1d-81ea-7ebb39a822c5
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:f02e661e-7ece-40b3-b51f-23700f749dfa'
+  module:
+    - block_content
+    - system
+  theme:
+    - apigee_material_ui
+id: banner
+theme: apigee_material_ui
+region: banner
+weight: 0
+provider: null
+plugin: 'block_content:f02e661e-7ece-40b3-b51f-23700f749dfa'
+settings:
+  id: 'block_content:f02e661e-7ece-40b3-b51f-23700f749dfa'
+  label: Banner
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

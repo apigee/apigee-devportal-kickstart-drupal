@@ -1,0 +1,15 @@
+{
+  "name": "drupal/swagger_ui_formatter",
+  "description": "Provides a Swagger UI field formatter for file fields.",
+  "type": "drupal-module",
+  "license": "GPL-2.0",
+  "minimum-stability": "dev",
+  "homepage": "https://www.drupal.org/project/swagger_ui_formatter",
+  "authors": [
+    {
+      "name": "Balazs Wittmann (balazswmann)",
+      "homepage": "https://www.drupal.org/u/balazswmann",
+      "role": "Maintainer"
+    }
+  ]
+}

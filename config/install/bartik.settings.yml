@@ -5,7 +5,7 @@ features:
   favicon: true
 logo:
   use_default: false
-  path: 'public://apigee-logo.png'
+  path: 'public://logo.svg'
 favicon:
   use_default: false
   path: 'public://favicon.ico'

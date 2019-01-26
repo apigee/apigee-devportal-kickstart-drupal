@@ -1,0 +1,22 @@
+uuid: f3c9245c-7f38-4a26-980a-fd0cfec9522e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.documentation.field_document_file
+    - node.type.documentation
+  module:
+    - user
+id: node.documentation.teaser
+targetEntityType: node
+bundle: documentation
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_document_file: true

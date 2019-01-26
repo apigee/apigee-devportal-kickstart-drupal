@@ -1,0 +1,100 @@
+<?php
+
+/**
+ * @file
+ * Enables multi-user blogs.
+ */
+
+use \Drupal\Core\Url;
+use \Drupal\Core\Session;
+use \Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function blog_user_view(&$build, $account, $display, $view_mode) {
+  if ($account->hasPermission('create blog_post content')) {
+    // Build internal link based on router.
+    $url = Url::fromRoute('view.blog.blog_user_all', array('arg_0' => $account->id()));
+    $internal_link = \Drupal::l(t('View recent blog entries'), $url);
+    
+    //TODO review whether this is still an acceptable way to add to the build array.
+    $build['summary']['blog'] =  array(
+      '#type' => 'user_profile_item',
+      '#title' => t('Blog'),
+      '#markup' => $internal_link,
+      '#attributes' => array('class' => array('blog')),
+    );
+  }
+}
+
+/**
+ * Implements hook_help().
+ */
+function blog_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#blog':
+      $output = '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t("The Blog module allows registered users to maintain an online journal, or <em>blog</em>. Blogs are made up of individual <em>blog entries</em>. By default, the blog entries are displayed by creation time in descending order, with comments enabled, and are promoted to the site's front page. For more information, see the online handbook entry for <a href='@blog'>Blog module</a>.", array('@blog' => 'http://drupal.org/handbook/modules/blog/')) . '</p>';
+      $output .= '<h3>' . t('Uses') . '</h3>';
+      $output .= '<dl>';
+      $output .= '<dt>' . t('Single-user blogs') . '</dt>';
+      $output .= '<dd>' . t("Each user's blog entries are automatically displayed with a link to the user's main blog page. You can create as many single-user blogs as you have site users with permission to create blog content.") . '</dd>';
+      $output .= '<dt>' . t('Multi-user blogs') . '</dt>';
+      $output .= '<dd>' . t("Blog entries from each single-user blog are also aggregated into one central multi-user blog, which displays the blog content of all users in a single listing.") . '</dd>';
+      $output .= '<dt>' . t('Navigation') . '</dt>';
+      $output .= '<dd>' . t("There is an optional <em>Blogs</em> menu item added to the Navigation menu, which displays all blogs available on your site, and a <em>My blog</em> item displaying the current user's blog entries.") . '</dd>';
+      $output .= '<dt>' . t('Blocks') . '</dt>';
+      $output .= '<dd>' . t('The Blog module also creates a default <em>Recent blog posts</em> block that may be enabled at the <a href="@blocks">blocks administration page</a>.', array('@blocks' => url('admin/structure/block'))) . '</dd>';
+      $output .= '</dl>';
+      return $output;
+  }
+}
+
+/**
+ * Implements hook_node_links_alter().
+ */
+function blog_node_links_alter(array &$node_links, NodeInterface $entity, array &$context) {
+  if ($entity->getEntityTypeId() == 'node' && $entity->bundle() == 'blog_post' && $context['view_mode'] != 'rss') {
+
+    $links['blog_usernames_blog'] = array(
+      'title' => t("@username's Blog", array('@username' => $entity->getOwner()->getDisplayName())),
+      'url' => Url::fromRoute('view.blog.blog_user_all', [
+        'arg_0' => $entity->getOwnerId(),
+      ]),
+      'attributes' => array('title' => t("Read @username's latest blog entries.", array('@username' => $entity->getOwner()->getDisplayName()))),
+    );
+    $node_links['usernames_blog'] = array(
+      '#theme' => 'links__node__blog',
+      '#links' => $links,
+      '#attributes' => array('class' => array('links', 'inline')),
+    );
+  }
+}
+
+/**
+ * Access callback for user blog pages.
+ */
+function blog_page_user_access($account) {
+  // The visitor must be able to access the site's content.
+  // For a blog to 'exist' the user must either be able to
+  // create new blog entries, or it must have existing posts.
+  return $account->id() && $account->hasPermission('access content') && ($account->hasPermission('create blog content', $account) || _blog_post_exists($account));
+}
+
+/**
+ * Helper function to determine if a user has blog posts already.
+ */
+function _blog_post_exists($account) {
+  return (bool)db_select('node_field_data', 'n')
+    ->fields('n', array('nid'))
+    ->condition('type', 'blog')
+    ->condition('uid', $account->id())
+    ->condition('status', 1)
+    ->range(0, 1)
+    ->addTag('node_access')
+    ->execute()
+    ->fetchField();
+}
+
+

@@ -1,0 +1,87 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/sites\/default\/files\/Documents\/swagger_0.json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 10
+        }
+    ],
+    "uuid": [
+        {
+            "value": "e288be1e-2d40-4f2a-9f90-c76802c2cd4f"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "2f85fbf3-32ec-4e38-8e82-4c60465eec5f"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "swagger.json"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/Documents\/swagger_0.json",
+            "url": "\/sites\/default\/files\/Documents\/swagger_0.json"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "application\/octet-stream"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 13688
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-01-17T09:25:24+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2019-01-17T09:25:28+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ]
+}

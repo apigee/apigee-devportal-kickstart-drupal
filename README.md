@@ -19,7 +19,7 @@ The following command will download Drupal core and the Apigee Developer Portal 
 MY_PROJECT directory:
 
 ```
-composer create-project --stability dev --no-interaction apigee/apigee-devportal-kickstart-project MY_PROJECT
+composer create-project --stability dev --no-interaction apigee/devportal-kickstart-project MY_PROJECT
 ```
 
 The actual webroot will be MY_PROJECT/web. You will need to point your web server to serve up that directory and

@@ -36,18 +36,74 @@ function apigee_devportal_kickstart_install() {
   include_once DRUPAL_ROOT . '/core/profiles/standard/standard.install';
   standard_install();
 
-  // Copy user login page background image to public folder.
-  $bartik_colors_dir = 'public://color/bartik';
-  file_prepare_directory($bartik_colors_dir, FILE_CREATE_DIRECTORY | FILE_MODIFY_PERMISSIONS);
-  $css_file = file_get_contents(drupal_get_path("profile", "apigee_devportal_kickstart") . "/resources/color/bartik/colors.css");
-  file_save_data($css_file, $bartik_colors_dir . '/colors.css');
+  // Copy logo image to public folder.
+  $image = file_get_contents(drupal_get_path("profile", "apigee_devportal_kickstart") . "/resources/logo.svg");
+  file_save_data($image, 'public://logo.svg', FILE_EXISTS_REPLACE);
 
-  // Copy user login page background image to public folder.
-  $image = file_get_contents(drupal_get_path("profile", "apigee_devportal_kickstart") . "/resources/apigee-logo.png");
-  file_save_data($image, 'public://apigee-logo.png');
-
-  // Copy user login page background image to public folder.
+  // Copy favicon to public folder.
   $image = file_get_contents(drupal_get_path("profile", "apigee_devportal_kickstart") . "/resources/favicon.ico");
-  file_save_data($image, 'public://favicon.ico');
+  file_save_data($image, 'public://favicon.ico', FILE_EXISTS_REPLACE);
 
+  // Copy banner image to public folder.
+  $image = file_get_contents(drupal_get_path("profile", "apigee_devportal_kickstart") . "/resources/home-bg.png");
+  $path = 'public://inline-images/';
+  if (file_prepare_directory($path, FILE_CREATE_DIRECTORY)) {
+    file_save_data($image, $path.'home-bg.png', FILE_EXISTS_REPLACE);
+  }
+  // Copy blog default image to public folder.
+  $image = file_get_contents(drupal_get_path("profile", "apigee_devportal_kickstart") . "/resources/sample.jpg");
+  $path = 'public://default_images/';
+  if (file_prepare_directory($path, FILE_CREATE_DIRECTORY)) {
+    file_save_data($image, $path.'sample.jpg', FILE_EXISTS_REPLACE);
+  }
+  // Copy file for document content type to public folder.
+  $path = 'public://Documents/';
+  if (file_prepare_directory($path, FILE_CREATE_DIRECTORY)) {
+    $original = drupal_get_path('profile', 'apigee_devportal_kickstart') . '/resources/Documents';
+    $files = file_scan_directory($original, '/^.*\.(json)$/');
+    if(!empty($files)){
+      foreach ($files as $file) {
+        if(!empty($file->uri)){
+          file_unmanaged_copy($file->uri, $path,FILE_EXISTS_REPLACE );
+        }
+      }
+    }
+  }
+  // Enable the apigee edge module. This can't be specified as a dependency
+  //\Drupal::service('module_installer')->install(['apigee_edge'], TRUE);
+}
+// function apigee_devportal_kickstart_requirements($phase) {
+//   $requirements = [];
+//
+//   if ($phase == 'install') {
+//     if (!class_exists('Apigee\Edge\HttpClient\Utility\Builder')) {
+//       $requirements['apigee'] = [
+//         'description' => t('This distribution requires you to install apigee_edge module using composer. Run "composer require drupal/apigee_edge" at root, and run "composer update phpdocumentor/reflection-docblock --with-dependencies" for updating dependencies for phpdocumentor'),
+//         'severity' => REQUIREMENT_ERROR,
+//       ];
+//     }
+//     if ($library_path = _swagger_ui_formatter_get_library_path()) {
+//      $return['swagger_ui_library'] = [
+//         'title' => t('Swagger UI'),
+//         'severity' => REQUIREMENT_OK,
+//         'value' => t('Swagger UI library version %version installed at %path.', [
+//           '%path' => DRUPAL_ROOT . $library_path,
+//           '%version' => _swagger_ui_formatter_get_library_version(),
+//         ]),
+//       ];
+//     }
+//   }
+//   return $requirements;
+// }
+/**
+ * Implements hook_install_tasks().
+ */
+function apigee_devportal_kickstart_install_tasks(&$install_state) {
+  $tasks = array();
+  $tasks['apigee_demo_installer_form'] = array(
+    'display_name' => t('Install demo content'),
+    'type' => 'form',
+    'function' => 'Drupal\apigee_devportal_kickstart\Installer\Form\ApigeeDemoInstallerForm',
+  );
+  return $tasks;
 }

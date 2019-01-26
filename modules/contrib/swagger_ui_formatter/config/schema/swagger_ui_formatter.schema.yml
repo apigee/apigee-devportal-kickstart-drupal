@@ -1,0 +1,24 @@
+field.formatter.settings.swagger_ui:
+  type: mapping
+  label: 'Swagger UI field formatter settings'
+  mapping:
+    validator:
+      type: string
+      label: 'Validator'
+    validator_url:
+      type: string
+      label: 'Validator URL'
+    doc_expansion:
+      type: string
+      label: 'Doc Expansion'
+    show_top_bar:
+      type: boolean
+      label: 'Show Top Bar'
+    sort_tags_by_name:
+      type: boolean
+      label: 'Sort tags by name'
+    supported_submit_methods:
+      type: sequence
+      sequence:
+        type: string
+      label: 'Try it out support for HTTP Methods'

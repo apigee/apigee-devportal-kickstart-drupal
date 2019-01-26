@@ -1,0 +1,18 @@
+uuid: f201e271-dd0f-4af6-b88a-206ff4c796e2
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: FAQs
+type: faqs
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

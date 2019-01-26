@@ -30,9 +30,11 @@ install:
 - editor
 - help
 - image
+- link
 - menu_ui
 - options
 - path
+- text
 - page_cache
 - dynamic_page_cache
 - big_pipe
@@ -40,21 +42,36 @@ install:
 - dblog
 - search
 - shortcut
+- system
 - toolbar
+- field
 - field_ui
 - file
+- filter
 - rdf
 - views
 - views_ui
 - tour
+- update
+- user
 - automated_cron
-- admin_toolbar
-- admin_toolbar_links_access_filter
-- admin_toolbar_tools
+- hal
+- serialization
+- default_content
+- forum
+- blog
+- entity
+- key
+- swagger_ui_formatter
+- ctools
+- pathauto
+- token
 - apigee_edge
+- admin_toolbar
 
 # List any themes that should be installed as part of the profile installation.
 # Note that this will not set any theme as the default theme.
 themes:
 - bartik
 - seven
+- apigee_material_ui

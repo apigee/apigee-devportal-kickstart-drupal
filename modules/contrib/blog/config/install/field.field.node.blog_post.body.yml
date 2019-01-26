@@ -1,0 +1,22 @@
+uuid: 8d53e0d2-e6dd-4c4c-ae06-6c35924ea4d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.blog_post
+  module:
+    - text
+id: node.blog_post.body
+field_name: body
+entity_type: node
+bundle: blog_post
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

@@ -1,0 +1,24 @@
+uuid: 34376dd5-a5be-4d3a-9e6e-fbbad475e3f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - apigee_material_ui
+id: useraccountmenu
+theme: apigee_material_ui
+region: footer_menu
+weight: -10
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }
