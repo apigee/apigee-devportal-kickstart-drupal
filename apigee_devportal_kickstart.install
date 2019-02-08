@@ -35,18 +35,22 @@ function apigee_devportal_kickstart_install() {
   include_once DRUPAL_ROOT . '/core/profiles/standard/standard.install';
   standard_install();
 
-  // Copy user login page background image to public folder.
+
+  // Get profile path.
+  $profile_path = drupal_get_path('profile', 'apigee_devportal_kickstart');
+  
+  // Copy CSS file to public folder.
   $bartik_colors_dir = 'public://color/bartik';
   file_prepare_directory($bartik_colors_dir, FILE_CREATE_DIRECTORY | FILE_MODIFY_PERMISSIONS);
-  $css_file = file_get_contents(drupal_get_path('profile', 'apigee_devportal_kickstart') . '/resources/color/bartik/colors.css');
+  $css_file = file_get_contents($profile_path . '/resources/color/bartik/colors.css');
   file_save_data($css_file, $bartik_colors_dir . '/colors.css');
 
   // Copy user login page background image to public folder.
-  $image = file_get_contents(drupal_get_path('profile', 'apigee_devportal_kickstart') . '/resources/apigee-logo.png');
+  $image = file_get_contents($profile_path . '/resources/apigee-logo.png');
   file_save_data($image, 'public://apigee-logo.png');
 
-  // Copy user login page background image to public folder.
-  $image = file_get_contents(drupal_get_path('profile', 'apigee_devportal_kickstart') . '/resources/favicon.ico');
+  // Copy favicon to public folder.
+  $image = file_get_contents($profile_path . '/resources/favicon.ico');
   file_save_data($image, 'public://favicon.ico');
 
 }
