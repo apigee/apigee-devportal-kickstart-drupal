@@ -1,6 +1,0 @@
-services:
-  blog.lister:
-    class: Drupal\blog\BlogLister
-    arguments: ['@current_user', '@config.factory']
-    tags:
-      - { name: blog_lister }
