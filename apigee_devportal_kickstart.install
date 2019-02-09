@@ -69,32 +69,8 @@ function apigee_devportal_kickstart_install() {
       }
     }
   }
-  // Enable the apigee edge module. This can't be specified as a dependency
-  //\Drupal::service('module_installer')->install(['apigee_edge'], TRUE);
 }
-// function apigee_devportal_kickstart_requirements($phase) {
-//   $requirements = [];
-//
-//   if ($phase == 'install') {
-//     if (!class_exists('Apigee\Edge\HttpClient\Utility\Builder')) {
-//       $requirements['apigee'] = [
-//         'description' => t('This distribution requires you to install apigee_edge module using composer. Run "composer require drupal/apigee_edge" at root, and run "composer update phpdocumentor/reflection-docblock --with-dependencies" for updating dependencies for phpdocumentor'),
-//         'severity' => REQUIREMENT_ERROR,
-//       ];
-//     }
-//     if ($library_path = _swagger_ui_formatter_get_library_path()) {
-//      $return['swagger_ui_library'] = [
-//         'title' => t('Swagger UI'),
-//         'severity' => REQUIREMENT_OK,
-//         'value' => t('Swagger UI library version %version installed at %path.', [
-//           '%path' => DRUPAL_ROOT . $library_path,
-//           '%version' => _swagger_ui_formatter_get_library_version(),
-//         ]),
-//       ];
-//     }
-//   }
-//   return $requirements;
-// }
+
 /**
  * Implements hook_install_tasks().
  */

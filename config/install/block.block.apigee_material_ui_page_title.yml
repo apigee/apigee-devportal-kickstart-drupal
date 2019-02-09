@@ -1,11 +1,8 @@
-uuid: 72324219-69a9-4f13-9045-d14dab471b72
 langcode: en
 status: true
 dependencies:
   theme:
     - apigee_material_ui
-_core:
-  default_config_hash: ZSpc3IoSaLd0PkB02nxjVPBMztIdsTdHek9SiGaqZ_c
 id: apigee_material_ui_page_title
 theme: apigee_material_ui
 region: content

@@ -5,7 +5,7 @@ nav.toolbar-bar nav {
   height: inherit;
 }
 .parallax-container {
-    min-height: 380px;
+    min-height: 700px;
     line-height: 0;
     height: auto;
     color: rgba(255,255,255,.9);
@@ -198,7 +198,7 @@ a.breadcrumb::before {
 a + a.breadcrumb::before {
 	display: unset;
 }
-#block-admin-display-form .form-item, 
+#block-admin-display-form .form-item,
 #block-admin-display-form .input-field.col.s12 {
 	margin: 0;
 }
