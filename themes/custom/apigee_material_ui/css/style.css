@@ -198,20 +198,10 @@ a.breadcrumb::before {
 a + a.breadcrumb::before {
 	display: unset;
 }
-#block-admin-display-form .form-item,
+#block-admin-display-form .form-item, 
 #block-admin-display-form .input-field.col.s12 {
 	margin: 0;
 }
-/* .card-form {
-  max-width: 360px;
-  margin: 0 auto;
-}
-.card-form .user-icon {
-  margin: 48px 0;
-}
-.card-form .user-icon i {
-  font-size: 96px;
-} */
 .confirm-form-wrapper {
   padding: 1em; }
   .confirm-form-wrapper .form-actions {
@@ -284,6 +274,35 @@ a + a.breadcrumb::before {
 .blog-view .card .card-content {
 	min-height: 190px;
 }
+.comments h2 {
+	font-size: 24px;
+}
+.blog-wrapper .date-time,
+.forums-wrapper .date-time,
+.documentation-detail-wrapper .date-time {
+	padding-bottom: 20px;
+	border-bottom: 1px solid #ccc;
+}
+.forums-wrapper .date-time,
+.documentation-detail-wrapper .date-time {
+    margin-bottom: 20px;
+}
+.path-forum li {
+	list-style-type: none;
+}
+.vertical-middle{
+   vertical-align: middle;
+}
+.forums-wrapper .taxonomy_forums > div > div:first-child {
+	font-weight: bold;
+	color: rgba(0,0,0,0.87);
+}
+.forums-wrapper .taxonomy_forums > div > div:first-child::after {
+	content: ' :';
+}
+.forums-wrapper .taxonomy_forums > div > div:not(:first-child) {
+	margin-left: 25px;
+}
 /* Media Queries */
 @media only screen and (max-width: 601px) {
   .main-navigation .nav-wrapper.container {
@@ -291,9 +310,6 @@ a + a.breadcrumb::before {
   }
   nav .sidenav-trigger {
 	margin: 0 18px 0 6px;
-  }
-  nav .brand-logo {
-	display: unset;
   }
   .equel-height {
 	display: block !important;
@@ -304,5 +320,34 @@ a + a.breadcrumb::before {
   .api-view .card .card-content,
   .blog-view .card .card-content {
 	min-height: 1px;
+  }
+  .apigee-navbar-fixed nav{
+	height: 64px;
+  }
+}
+@media only screen and (min-width:0px) and (max-width:767px){
+  #top-header-wrapper .top-header.container { 
+    width: 90% !important; 
+  }
+  .top-header-right{ 
+    width: 100% !important; 
+  }
+}
+@media only screen and (max-width: 1200px) {
+  nav .brand-logo {  
+    display: unset;  
+  }
+}
+@media only screen and (min-width:768px) and (max-width:991px){
+  .top-header-right{ 
+    width: 65% !important; 
+  }
+}
+@media only screen and (min-width:992px) and (max-width:1140px){
+  .main-navigation .nav-wrapper{ 
+    width: 80% !important; 
+  }
+  .top-header-right{ 
+    width: 60% !important; 
   }
 }

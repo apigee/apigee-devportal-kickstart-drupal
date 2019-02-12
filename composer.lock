@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "43e8fcc61fa256b418f6b191b80e9e8b",
+    "content-hash": "5ff8c9a2b01f9d8ed7ebe0a6e67bd32c",
     "packages": [
         {
             "name": "apigee/apigee-client-php",
@@ -1793,66 +1793,6 @@
             }
         },
         {
-            "name": "drupal/swagger_ui_formatter",
-            "version": "2.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupal.org/project/swagger_ui_formatter",
-                "reference": "8.x-2.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/swagger_ui_formatter-8.x-2.1.zip",
-                "reference": "8.x-2.1",
-                "shasum": "89dea979271bb108ad90ff4e4c42384ac1f0c2e7"
-            },
-            "require": {
-                "drupal/core": "*"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-2.x": "2.x-dev"
-                },
-                "drupal": {
-                    "version": "8.x-2.1",
-                    "datestamp": "1546531084",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Balazs Wittmann (balazswmann)",
-                    "homepage": "https://www.drupal.org/u/balazswmann",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "dsudheesh",
-                    "homepage": "https://www.drupal.org/user/956506"
-                },
-                {
-                    "name": "lizlynch",
-                    "homepage": "https://www.drupal.org/user/3569234"
-                },
-                {
-                    "name": "mxr576",
-                    "homepage": "https://www.drupal.org/user/315522"
-                }
-            ],
-            "description": "Provides a Swagger UI field formatter for file fields.",
-            "homepage": "https://www.drupal.org/project/swagger_ui_formatter",
-            "support": {
-                "source": "http://cgit.drupalcode.org/swagger_ui_formatter"
-            }
-        },
-        {
             "name": "drupal/token",
             "version": "1.5.0",
             "source": {
@@ -3244,63 +3184,6 @@
                 "stack"
             ],
             "time": "2017-11-18T14:57:29+00:00"
-        },
-        {
-            "name": "swagger-api/swagger-ui",
-            "version": "v3.20.7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/swagger-api/swagger-ui.git",
-                "reference": "67c1e00d96b915737da66efdbb0ea559b2d465f9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/swagger-api/swagger-ui/zipball/67c1e00d96b915737da66efdbb0ea559b2d465f9",
-                "reference": "67c1e00d96b915737da66efdbb0ea559b2d465f9",
-                "shasum": ""
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Anna Bodnia",
-                    "email": "anna.bodnia@gmail.com"
-                },
-                {
-                    "name": "Buu Nguyen",
-                    "email": "buunguyen@gmail.com"
-                },
-                {
-                    "name": "Josh Ponelat",
-                    "email": "jponelat@gmail.com"
-                },
-                {
-                    "name": "Kyle Shockey",
-                    "email": "kyleshockey1@gmail.com"
-                },
-                {
-                    "name": "Robert Barnwell",
-                    "email": "robert@robertismy.name"
-                },
-                {
-                    "name": "Sahar Jafari",
-                    "email": "shr.jafari@gmail.com"
-                }
-            ],
-            "description": " Swagger UI is a collection of HTML, Javascript, and CSS assets that dynamically generate beautiful documentation from a Swagger-compliant API.",
-            "homepage": "http://swagger.io",
-            "keywords": [
-                "api",
-                "documentation",
-                "openapi",
-                "specification",
-                "swagger",
-                "ui"
-            ],
-            "time": "2019-02-08T23:27:33+00:00"
         },
         {
             "name": "symfony-cmf/routing",

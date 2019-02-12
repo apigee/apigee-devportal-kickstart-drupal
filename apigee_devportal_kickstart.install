@@ -70,7 +70,6 @@ function apigee_devportal_kickstart_install() {
     }
   }
 }
-
 /**
  * Implements hook_install_tasks().
  */

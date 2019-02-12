@@ -1,6 +1,8 @@
 langcode: en
 status: true
 dependencies:
+  module:
+    - system
   theme:
     - apigee_material_ui
 id: apigee_material_ui_page_title
@@ -14,4 +16,9 @@ settings:
   label: 'Page title'
   provider: core
   label_display: '0'
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: "/documentation/*\r\n/blog/*"
+    negate: true
+    context_mapping: {  }

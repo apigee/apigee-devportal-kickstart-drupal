@@ -40,6 +40,8 @@
     {% for item in items %}
       {% if item.title == 'Log out' %}
         {% set icon = 'input' %}
+      {% elseif item.title == 'My Apps' %}
+        {% set icon = 'apps' %}
       {% else %}
         {% set icon = 'account_circle' %}
       {% endif %}

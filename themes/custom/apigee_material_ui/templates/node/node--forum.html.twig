@@ -1,20 +1,13 @@
 {#
 /**
  * @file
- * Default theme implementation to display a node.
+ * Theme override to display a node.
  *
  * Available variables:
  * - node: The node entity with limited access to object properties and methods.
- *   Only method names starting with "get", "has", or "is" and a few common
- *   methods such as "id", "label", and "bundle" are available. For example:
- *   - node.getCreatedTime() will return the node creation timestamp.
- *   - node.hasField('field_example') returns TRUE if the node bundle includes
- *     field_example. (This does not indicate the presence of a value in this
- *     field.)
- *   - node.isPublished() will return whether the node is published or not.
- *   Calling other methods, such as node.delete(), will result in an exception.
- *   See \Drupal\node\Entity\Node for a full list of public properties and
- *   methods for the node object.
+     Only "getter" methods (method names starting with "get", "has", or "is")
+     and a few common methods such as "id" and "label" are available. Calling
+     other methods (such as node.delete) will result in an exception.
  * - label: The title of the node.
  * - content: All node items. Use {{ content }} to print them all,
  *   or print a subset such as {{ content.field_example }}. Use
@@ -63,51 +56,35 @@
  * - is_admin: Flag for admin user status. Will be true when the current user
  *   is an administrator.
  *
+ * @ingroup templates
+ *
  * @see template_preprocess_node()
  *
  * @todo Remove the id attribute (or make it a class), because if that gets
  *   rendered twice on a page this is invalid CSS for example: two lists
  *   in different view modes.
- *
- * @ingroup themeable
  */
 #}
-{% block content %}
-<div class="documentation-detail-wrapper">
-  <div class="title">
-    <h4>{{ label }}</h4>
-  </div>
-  <div class="date-time">
+<div class="forums-wrapper">
+     <div class="title">
+         <h4>{{ label }}</h4>
+     </div>
+     <div class="date-time">
       <i class="tiny material-icons vertical-middle">access_time</i> {{ node.createdtime | date('j M, Y') }} <i class="tiny material-icons vertical-middle">account_circle</i> <i>{{ author_name }}</i>
   </div>
-  {% if content.field_tags|render %}
-     <div class="field_tags label">
-       <span class="text-grey text-darken-3">
-         <b>{{ content.field_tags['#title'] }} </b>
-       </span>
-
-       {% for key, item in content.field_tags if key|first != '#' %}
-         {% set text = item['#url']|render %}
-         <div class="chip"><a href='/apis/{{ text|replace({"/taxonomy/term/" : ""}) }}'> {{ item['#title'] }}</a></div>
-       {% endfor %}
-     </div>
-  {% endif %}
-
-  {% if content.body|render %}
-     <div class="body">
-     {{ content.body }}
-     </div>
-  {% endif %}
-
-  {% if content.field_document_file|render %}
-     <div class="field_document_file">
-     {{ content.field_document_file }}
-     </div>
-  {% endif %}
-  {% if content.field_blog_comments|render %}
-    <div class="comments">
-      {{ content.field_blog_comments }}
-    </div>
-  {% endif %}
+    {% if content.taxonomy_forums|render %}
+        <div class="taxonomy_forums">
+              {{ content.taxonomy_forums }}
+         </div>
+    {% endif %}
+    {% if content.body|render %}
+        <div class="body">
+            {{ content.body }}
+        </div>
+    {% endif %}
+    {% if content.comment_forum|render %}
+        <div class="comments">
+            {{ content.comment_forum }}
+        </div>
+    {% endif %}
 </div>
-{% endblock %}

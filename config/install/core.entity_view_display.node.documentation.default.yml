@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.documentation.field_tags
     - node.type.documentation
   module:
-    - swagger_ui_formatter
     - text
     - user
 id: node.documentation.default
@@ -40,7 +39,7 @@ content:
       show_top_bar: false
       sort_tags_by_name: false
     third_party_settings: {  }
-    type: swagger_ui
+    type: file_default
     region: content
   field_tags:
     weight: 0

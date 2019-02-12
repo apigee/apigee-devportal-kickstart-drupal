@@ -62,7 +62,6 @@ install:
 - blog
 - entity
 - key
-- swagger_ui_formatter
 - ctools
 - pathauto
 - token
