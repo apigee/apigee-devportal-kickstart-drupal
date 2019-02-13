@@ -1,11 +1,15 @@
 # apigee_material_ui.libraries.yml (multiple libraries can be added to a libraries.yml file, these would appear below )
 materialize:
+  remote: https://github.com/Dogfalo/materialize
   version: 1.0.0
+  license:
+    name: MIT
+    url: https://github.com/Dogfalo/materialize/blob/v1-dev/LICENSE
   css:
-    base: #The CSS category. base is loaded before theme category
-      materialize/css/materialize.min.css: { weight: 0 } #weight sets the order within the category above
+    base: # The CSS category. base is loaded before theme category.
+      https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css: { type: external, minified: true, weight: 0 } # Weight sets the order within the category above #weight sets the order within the category above.
   js:
-    materialize/js/materialize.min.js: {}
+    https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js: { type: external, minified: true }
 
 global-styling:
   version: 1.x
