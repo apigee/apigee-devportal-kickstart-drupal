@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Theme settings file.
+ */
+
 use Drupal\Core\Form\FormStateInterface;
 
 /**
@@ -78,6 +83,4 @@ function apigee_material_ui_form_system_theme_settings_alter(&$form, FormStateIn
     ],
   ];
 
-
 }
-

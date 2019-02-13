@@ -23,7 +23,6 @@
  * Install, update and uninstall functions for Apigee Edge.
  */
 
-
 /**
  * Implements hook_install().
  *
@@ -48,13 +47,13 @@ function apigee_devportal_kickstart_install() {
   $image = file_get_contents(drupal_get_path("profile", "apigee_devportal_kickstart") . "/resources/home-bg.png");
   $path = 'public://inline-images/';
   if (file_prepare_directory($path, FILE_CREATE_DIRECTORY)) {
-    file_save_data($image, $path.'home-bg.png', FILE_EXISTS_REPLACE);
+    file_save_data($image, $path . 'home-bg.png', FILE_EXISTS_REPLACE);
   }
   // Copy blog default image to public folder.
   $image = file_get_contents(drupal_get_path("profile", "apigee_devportal_kickstart") . "/resources/sample.jpg");
   $path = 'public://default_images/';
   if (file_prepare_directory($path, FILE_CREATE_DIRECTORY)) {
-    file_save_data($image, $path .'sample.jpg', FILE_EXISTS_REPLACE);
+    file_save_data($image, $path . 'sample.jpg', FILE_EXISTS_REPLACE);
   }
   // Copy file for document content type to public folder.
   $path = 'public://Documents/';
@@ -70,6 +69,7 @@ function apigee_devportal_kickstart_install() {
     }
   }
 }
+
 /**
  * Implements hook_install_tasks().
  */

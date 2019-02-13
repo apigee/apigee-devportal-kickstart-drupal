@@ -4,8 +4,8 @@
  * @file
  * Functions to support theming in the apigee_material_ui theme.
  */
+
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Template\Attribute;
 
 /**
  * Implements hook_preprocess_HOOK() for html.html.twig.

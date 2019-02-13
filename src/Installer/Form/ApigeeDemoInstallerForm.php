@@ -2,7 +2,6 @@
 
 namespace Drupal\apigee_devportal_kickstart\Installer\Form;
 
-use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Extension\ModuleInstallerInterface;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -127,6 +126,7 @@ class ApigeeDemoInstallerForm extends FormBase {
   }
 
   /**
+   * Update the entity aliases.
    *
    * @return \Drupal\Core\StringTranslation\TranslatableMarkup
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
@@ -185,6 +185,5 @@ class ApigeeDemoInstallerForm extends FormBase {
     }
 
   }
-
 
 }
