@@ -1,0 +1,87 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/sites\/default\/files\/default_images\/sample.jpg"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 16
+        }
+    ],
+    "uuid": [
+        {
+            "value": "51c0e4d2-3752-4519-8917-8d05e08f8379"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "2f85fbf3-32ec-4e38-8e82-4c60465eec5f"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "sample.jpg"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/default_images\/sample.jpg",
+            "url": "\/sites\/default\/files\/default_images\/sample.jpg"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "image\/jpeg"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 7548
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-02-09T09:41:42+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2019-02-09T09:41:48+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ]
+}

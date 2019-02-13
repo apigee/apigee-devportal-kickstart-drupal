@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.blog
+  module:
+    - views
+  theme:
+    - apigee_material_ui
+id: views_block__blog_blog_block
+theme: apigee_material_ui
+region: latest_block_first
+weight: 0
+provider: null
+plugin: 'views_block:blog-blog_block'
+settings:
+  id: 'views_block:blog-blog_block'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility: {  }

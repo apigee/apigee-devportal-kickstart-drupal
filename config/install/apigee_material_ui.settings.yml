@@ -1,0 +1,13 @@
+features:
+  node_user_picture: 1
+  comment_user_picture: 1
+  comment_user_verification: 1
+  favicon: 1
+logo:
+  use_default: 1
+  path: ''
+favicon:
+  use_default: 1
+material_ui_navbar_fixed: 1
+material_ui_container: 1
+material_ui_colors: 'blue accent-2'

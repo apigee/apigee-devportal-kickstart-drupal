@@ -1,0 +1,167 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/blog\/test-blog-title?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/blog_post"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/blog_post\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/blog_post\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 6
+        }
+    ],
+    "uuid": [
+        {
+            "value": "6c0f3822-0c2d-497e-8ad4-86f7f4ae57f5"
+        }
+    ],
+    "vid": [
+        {
+            "value": 20
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "blog_post"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2018-12-29T11:31:04+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/blog_post\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "2f85fbf3-32ec-4e38-8e82-4c60465eec5f"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/blog_post\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "2f85fbf3-32ec-4e38-8e82-4c60465eec5f"
+                    }
+                ],
+                "lang": "en"
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "Test blog title",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2018-12-29T11:30:36+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2019-01-18T07:24:30+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/blog\/test-blog-title",
+            "pid": 8,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "<p>This is blog testing post 2. I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.<\/p>\r\n",
+            "format": "basic_html",
+            "processed": "<p>This is blog testing post 2. I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.<\/p>",
+            "summary": "",
+            "lang": "en"
+        }
+    ],
+    "field_blog_comments": [
+        {
+            "status": 2,
+            "cid": 0,
+            "last_comment_timestamp": 1546083069,
+            "last_comment_name": null,
+            "last_comment_uid": 1,
+            "comment_count": 0
+        }
+    ]
+}

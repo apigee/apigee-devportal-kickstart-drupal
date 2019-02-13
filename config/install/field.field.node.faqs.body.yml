@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.faqs
+  module:
+    - text
+id: node.faqs.body
+field_name: body
+entity_type: node
+bundle: faqs
+label: Answer
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

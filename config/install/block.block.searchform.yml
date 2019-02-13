@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - apigee_material_ui
+id: searchform
+theme: apigee_material_ui
+region: search
+weight: 0
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form'
+  provider: search
+  label_display: '0'
+visibility: {  }
