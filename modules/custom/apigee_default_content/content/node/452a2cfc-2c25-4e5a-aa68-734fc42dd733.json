@@ -19,7 +19,7 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/documentation\/field_document_file": [
             {
-                "href": "http:\/\/default\/sites\/default\/files\/Documents\/swagger_2.json"
+                "href": "http:\/\/default\/sites\/default\/files\/Documents\/foodcarts_2.yaml"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/documentation\/field_tags": [
@@ -101,7 +101,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/Documents\/swagger_2.json"
+                        "href": "http:\/\/default\/sites\/default\/files\/Documents\/foodcarts_2.yaml"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/file\/file"

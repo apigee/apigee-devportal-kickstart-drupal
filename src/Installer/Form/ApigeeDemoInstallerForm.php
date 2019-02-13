@@ -66,14 +66,14 @@ class ApigeeDemoInstallerForm extends FormBase {
     ];
     $form['password'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Password '),
+      '#title' => $this->t('Password'),
       '#size' => 60,
       '#maxlength' => 128,
     ];
     $form['enable'] = [
       '#type' => 'checkbox',
       '#title' => 'Enable demo content',
-      '#description' => t("Creates some demo content to help you test out Apigee quickly."),
+      '#description' => t("Creates some demo content to help you test out Apigee portal features quickly."),
       '#default_value' => TRUE,
     ];
 
@@ -94,9 +94,9 @@ class ApigeeDemoInstallerForm extends FormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $enable = $form_state->getValue('enable');
 
-    // We have to use ->getUserInput() to supercede ->getValue() because that
+    // We have to use ->getUserInput() to supercede->getValue() because that
     // isn't correctly set when passing the form value to drush si like:
-    // "drush si apigee_kickstart apigee_demo_installer_form.enable=0"
+    // "drush si apigee_kickstart apigee_demo_installer_form.enable=0".
     $input = $form_state->getUserInput();
     if (isset($input['enable'])) {
       $enable = !empty($input['enable']);
@@ -106,33 +106,38 @@ class ApigeeDemoInstallerForm extends FormBase {
       $this->moduleInstaller->install(['apigee_default_content']);
       $config = \Drupal::configFactory()->getEditable('system.site');
       $config->set('page.front', '/node/2')->save();
-	  $this->apigeeUpdateEntityAlias();
+      $this->apigeeUpdateEntityAlias();
     }
     $organization_name = !empty($form_state->getValue('organization_name')) ? $form_state->getValue('organization_name') : '';
     $user_name = !empty($form_state->getValue('user_name')) ? $form_state->getValue('user_name') : '';
     $password = !empty($form_state->getValue('password')) ? $form_state->getValue('password') : '';
-    if(!empty($organization_name) || !empty($user_name) || !empty($password)){
-	  $folder = 'public://apigee/';
+    if (!empty($organization_name) || !empty($user_name) || !empty($password)) {
+      $folder = 'public://apigee/';
       if (!file_exists($folder)) {
-        mkdir($folder, 0775, true);
+        mkdir($folder, 0775, TRUE);
       }
       $uri = 'public://apigee/config.txt';
       $absolute_path = \Drupal::service('file_system')->realpath($uri);
       $handle = fopen($absolute_path, 'w');
-      fwrite($handle,$organization_name."\n");
-      fwrite($handle,$user_name."\n");
-      fwrite($handle,$password."\n");
+      fwrite($handle, $organization_name . "\n");
+      fwrite($handle, $user_name . "\n");
+      fwrite($handle, $password . "\n");
       fclose($handle);
-	}
+    }
   }
+
   /**
-   * {@inheritdoc}
+   *
+   * @return \Drupal\Core\StringTranslation\TranslatableMarkup
+   * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+   * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */
   protected function apigeeUpdateEntityAlias() {
     $entities = [];
     $entities['node'] = \Drupal::entityQuery('node')->execute();
     $entities['user'] = \Drupal::entityQuery('user')->execute();
-    $entities['taxonomy_term'] = \Drupal::entityQuery('taxonomy_term')->execute();
+    $entities['taxonomy_term'] = \Drupal::entityQuery('taxonomy_term')
+      ->execute();
     $result = [];
 
     foreach ($entities as $type => $entity_list) {
@@ -145,8 +150,7 @@ class ApigeeDemoInstallerForm extends FormBase {
     }
 
     // Use the sandbox to store the information needed to track progression.
-    if (!isset($sandbox['current']))
-    {
+    if (!isset($sandbox['current'])) {
       // The count of entities visited so far.
       $sandbox['current'] = 0;
       // Total entities that must be visited.
@@ -162,11 +166,13 @@ class ApigeeDemoInstallerForm extends FormBase {
     $result = array_slice($result, $sandbox['current'], $limit);
 
     foreach ($result as $row) {
-      $entity_storage = \Drupal::entityTypeManager()->getStorage($row['entity_type']);
+      $entity_storage = \Drupal::entityTypeManager()
+        ->getStorage($row['entity_type']);
       $entity = $entity_storage->load($row['id']);
 
       // Update Entity URL alias.
-      \Drupal::service('pathauto.generator')->updateEntityAlias($entity, 'update');
+      \Drupal::service('pathauto.generator')
+        ->updateEntityAlias($entity, 'update');
 
       // Update our progress information.
       $sandbox['current']++;
@@ -177,6 +183,7 @@ class ApigeeDemoInstallerForm extends FormBase {
     if ($sandbox['#finished'] >= 1) {
       return t('The batch URL Alias update is finished.');
     }
+
   }
 
 

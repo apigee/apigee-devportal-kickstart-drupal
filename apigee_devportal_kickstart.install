@@ -60,7 +60,7 @@ function apigee_devportal_kickstart_install() {
   $path = 'public://Documents/';
   if (file_prepare_directory($path, FILE_CREATE_DIRECTORY)) {
     $original = drupal_get_path('profile', 'apigee_devportal_kickstart') . '/resources/Documents';
-    $files = file_scan_directory($original, '/^.*\.(json)$/');
+    $files = file_scan_directory($original, '/^.*\.(yaml)$/');
     if (!empty($files)) {
       foreach ($files as $file) {
         if (!empty($file->uri)) {

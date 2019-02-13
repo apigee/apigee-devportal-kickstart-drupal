@@ -12,8 +12,6 @@ dependencies:
     - node
     - text
     - user
-_core:
-  default_config_hash: avMXtl1xSMM5kyKxWMIJsWXaWyPkw3Gv6Igp0_bwAyg
 id: apigee_blog
 label: 'Apigee Blog'
 module: views

@@ -19,7 +19,7 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/documentation\/field_document_file": [
             {
-                "href": "http:\/\/default\/sites\/default\/files\/Documents\/swagger_1.json"
+                "href": "http:\/\/default\/sites\/default\/files\/Documents\/foodcarts_1.yaml"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/documentation\/field_tags": [
@@ -101,7 +101,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/Documents\/swagger_1.json"
+                        "href": "http:\/\/default\/sites\/default\/files\/Documents\/foodcarts_1.yaml"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -193,9 +193,9 @@
     ],
     "body": [
         {
-            "value": "<p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<\/p>\r\n",
+            "value": "<p>Lorem ipsum dolor sit amet, At vero eos et accusam et justo duo dolores et ea rebum.<\/p>\r\n",
             "format": "basic_html",
-            "processed": "<p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<\/p>",
+            "processed": "<p>Lorem ipsum dolor sit amet, At vero eos et accusam et justo duo dolores et ea rebum.<\/p>",
             "summary": "",
             "lang": "en"
         }

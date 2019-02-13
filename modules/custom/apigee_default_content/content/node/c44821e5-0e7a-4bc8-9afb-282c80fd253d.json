@@ -19,7 +19,7 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/documentation\/field_document_file": [
             {
-                "href": "http:\/\/default\/sites\/default\/files\/Documents\/swagger_0.json"
+                "href": "http:\/\/default\/sites\/default\/files\/Documents\/foodcarts_0.yaml"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/documentation\/field_tags": [
@@ -105,7 +105,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/Documents\/swagger_0.json"
+                        "href": "http:\/\/default\/sites\/default\/files\/Documents\/foodcarts_0.yaml"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -161,7 +161,7 @@
     ],
     "title": [
         {
-            "value": "swagger",
+            "value": "Foodcarts API",
             "lang": "en"
         }
     ],
@@ -213,9 +213,9 @@
     ],
     "body": [
         {
-            "value": "<p>A simple \"hello world\" API.<\/p>\r\n",
+            "value": "<p>Manage food carts through our API.<\/p>\r\n",
             "format": "basic_html",
-            "processed": "<p>A simple \"hello world\" API.<\/p>",
+            "processed": "<p>Manage food carts through our API.<\/p>",
             "summary": "",
             "lang": "en"
         }

@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/sites\/default\/files\/Documents\/swagger_1.json"
+            "href": "http:\/\/default\/sites\/default\/files\/Documents\/foodcarts_1.yaml"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -48,13 +48,13 @@
     },
     "filename": [
         {
-            "value": "swagger.json"
+            "value": "foodcarts.yaml"
         }
     ],
     "uri": [
         {
-            "value": "public:\/\/Documents\/swagger_1.json",
-            "url": "\/sites\/default\/files\/Documents\/swagger_1.json"
+            "value": "public:\/\/Documents\/foodcarts_1.yaml",
+            "url": "\/sites\/default\/files\/Documents\/foodcarts_1.yaml"
         }
     ],
     "filemime": [

@@ -1,0 +1,412 @@
+swagger: '2.0'
+info:
+  version: '0.1'
+  description: Manage food carts.
+  title: Food Carts API
+host: playground.apistudio.io
+# artomatic-test.apigee.net
+basePath: /try/cf061d24-411a-4625-bca0-f9070eba029b/v1/streetcarts
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /foodcarts:
+    get:
+      description: Lists all of the food carts.
+      operationId: getFoodcarts
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/foodcarts'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/UnauthorizedResponse'
+    post:
+      description: Adds a new food cart.
+      operationId: createFoodcart
+      parameters:
+        - name: body
+          in: body
+          required: true
+          description: Details for the food cart.
+          schema:
+            $ref: '#/definitions/createFoodcart'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/foodcart'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/UnauthorizedResponse'
+  '/foodcarts/{cart_id}':
+    get:
+      description: Lists the food cart details.
+      operationId: getFoodcartById
+      parameters:
+        - name: cart_id
+          in: path
+          description: ID of the food cart.
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/foodcart'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/UnauthorizedResponse'
+    put:
+      description: Updates the food cart.
+      operationId: updateFoodcartById
+      parameters:
+        - name: cart_id
+          in: path
+          required: true
+          description: ID of the food cart.
+          type: string
+        - name: body
+          in: body
+          required: true
+          description: Details to update for the food cart.
+          schema:
+            $ref: '#/definitions/updateFoodcart'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/foodcart'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/UnauthorizedResponse'
+    delete:
+      description: Deletes the food cart.
+      operationId: deleteFoodcartById
+      parameters:
+        - name: cart_id
+          in: path
+          description: ID of the food cart.
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/foodcart'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/UnauthorizedResponse'
+  '/foodcarts/{cart_id}/menus':
+    get:
+      description: Lists the menus associated with a food cart.
+      operationId: getFoodcartMenus
+      parameters:
+        - name: cart_id
+          in: path
+          description: ID of the food cart.
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/menu'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/UnauthorizedResponse'
+    post:
+      description: Adds a menu to a food cart.
+      operationId: addFoodcartMenu
+      parameters:
+        - name: cart_id
+          in: path
+          description: ID of the food cart.
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          description: Name of the menu.
+          schema:
+            $ref: '#/definitions/menuName'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/menu'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/UnauthorizedResponse'
+  '/{cart_id}/items':
+    get:
+      description: Lists the menu items associated with a food cart.
+      operationId: getFoodcartItems
+      parameters:
+        - name: cart_id
+          in: path
+          description: ID of the food cart.
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/items'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/UnauthorizedResponse'
+    post:
+      description: Adds a menu item to a food cart.
+      operationId: addFoodcartItem
+      parameters:
+        - name: cart_id
+          in: path
+          description: ID of the food cart.
+          required: true
+          type: string
+        - name: body
+          in: body
+          required: true
+          description: Details for the menu item.
+          schema:
+            $ref: '#/definitions/createItem'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/item'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/UnauthorizedResponse'
+definitions:
+  menu:
+    type: object
+    properties:
+      uuid:
+        type: string
+        description: ID of the menu.
+      cartID:
+        type: string
+        description: ID of the associated food cart.
+      menuName:
+        type: string
+        description: Name of the menu.
+  menuName:
+    type: object
+    required:
+      - menuName
+    properties:
+      menuName:
+        type: string
+        description: Name of the menu.
+  items:
+    type: array
+    items:
+      $ref: '#/definitions/item'
+  item:
+    type: object
+    properties:
+      uuid:
+        type: string
+        description: ID of the menu item.
+      cartID:
+        type: string
+        description: ID of the food cart.
+      description:
+        type: string
+        description: Description of the menu item.
+      itemName:
+        type: string
+        description: Name of the menu item.
+      price:
+        type: string
+        description: Price of the menu item.
+  createItem:
+    type: object
+    properties:
+      description:
+        type: string
+        description: Description of the menu item.
+      itemName:
+        type: string
+        description: Name of the menu item.
+      price:
+        type: string
+        description: Price of the menu item.
+  foodcarts:
+    type: array
+    items:
+      $ref: '#/definitions/foodcartSummary'
+  foodcartSummary:
+    type: object
+    properties:
+      uuid:
+        type: string
+        description: ID of the food cart.
+      cartname:
+        type: string
+        description: Name of the food cart.
+      city:
+        type: string
+        description: City where the food cart is located.
+  foodcart:
+    type: object
+    properties:
+      uuid:
+        type: string
+        description: ID of the food cart.
+      cartName:
+        type: string
+        description: Name of the food cart.
+      description:
+        type: string
+        description: Description of the food cart.
+      hours:
+        type: string
+        description: Hours of operation.
+      location:
+        type: object
+        properties:
+          address:
+            type: string
+            description: Mailing address for the food cart.
+          city:
+            type: string
+            description: City where the food cart is located.
+          region:
+            type: string
+            description: State or region where the food cart is located.
+          country:
+            type: string
+            description: Country where the food cart is located.
+          postalCode:
+            type: string
+            description: Postal code for the food cart.
+          latitude:
+            type: string
+            description: Latitude of the food cart. Required for locating the cart in mapping apps.
+          longitude:
+            type: string
+            description: Longitude of the food cart. Required for locating the cart in mapping apps.
+          shortAddress:
+            type: string
+            description: 'Short description of the food cart location, including landmarks.'
+      ownerID:
+        type: string
+        description: ID of the owner of the food cart.
+      phone:
+        type: string
+        description: Phone number for the food cart.
+      url:
+        type: string
+        description: URL of the food cart.
+  createFoodcart:
+    type: object
+    required:
+      - cartName
+    properties:
+      cartName:
+        type: string
+        description: Name of the food cart.
+      description:
+        type: string
+        description: Description of the food cart.
+      hours:
+        type: string
+        description: 'Hours of operation. For example: Monday through Saturday: 9-6, Closed Sunday.'
+      location:
+        type: object
+        properties:
+          address:
+            type: string
+            description: Mailing address for the food cart.
+          city:
+            type: string
+            description: City where the food cart is located.
+          region:
+            type: string
+            description: State or region where the food cart is located.
+          country:
+            type: string
+            description: Country where the food cart is located.
+          postalCode:
+            type: string
+            description: Postal code for the food cart.
+          latitude:
+            type: string
+            description: Latitude of the food cart. Required for locating the cart in mapping apps.
+          longitude:
+            type: string
+            description: Longitude of the food cart. Required for locating the cart in mapping apps.
+          shortAddress:
+            type: string
+            description: 'Short description of the food cart location, including landmarks.'
+      phone:
+        type: string
+        description: Phone number for the food cart.
+      url:
+        type: string
+        description: URL of the food cart.
+  updateFoodcart:
+    type: object
+    properties:
+      cartName:
+        type: string
+        description: Name of the food cart.
+      description:
+        type: string
+        description: Description of the food cart.
+      hours:
+        type: string
+        description: 'Hours of operation. For example: Monday through Saturday: 9-6, Closed Sunday.'
+      location:
+        type: object
+        properties:
+          address:
+            type: string
+            description: Mailing address for the food cart.
+          city:
+            type: string
+            description: City where the food cart is located.
+          region:
+            type: string
+            description: State or region where the food cart is located.
+          country:
+            type: string
+            description: Country where the food cart is located.
+          postalCode:
+            type: string
+            description: Postal code for the food cart.
+          latitude:
+            type: string
+            description: Latitude of the food cart. Required for locating the cart in mapping apps.
+          longitude:
+            type: string
+            description: Longitude of the food cart. Required for locating the cart in mapping apps.
+          shortAddress:
+            type: string
+            description: 'Short description of the food cart location, including landmarks.'
+      phone:
+        type: string
+        description: Phone number for the food cart.
+      url:
+        type: string
+        description: URL of the food cart.
+  UnauthorizedResponse:
+    properties:
+      message:
+        type: string

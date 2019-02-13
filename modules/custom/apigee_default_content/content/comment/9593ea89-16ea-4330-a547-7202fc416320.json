@@ -125,9 +125,9 @@
     ],
     "comment_body": [
         {
-            "value": "<p>This is for testing comment.<\/p>\r\n",
+            "value": "<p>This is for testing comments.<\/p>\r\n",
             "format": "basic_html",
-            "processed": "<p>This is for testing comment.<\/p>",
+            "processed": "<p>This is for testing comments.<\/p>",
             "lang": "en"
         }
     ]
