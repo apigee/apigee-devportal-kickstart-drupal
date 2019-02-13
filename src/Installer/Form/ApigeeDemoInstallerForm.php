@@ -129,6 +129,8 @@ class ApigeeDemoInstallerForm extends FormBase {
    * Update the entity aliases.
    *
    * @return \Drupal\Core\StringTranslation\TranslatableMarkup
+   *   not used
+   *
    * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
    * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
    */

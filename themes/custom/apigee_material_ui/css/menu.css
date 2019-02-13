@@ -2,25 +2,25 @@
 
 .main-navigation nav,
 .page-footer nav {
-	background: transparent;
-	box-shadow: unset;
+  background: transparent;
+  box-shadow: unset;
 }
-.footer-top nav ul li{
-    float:none;
-    line-height:normal;
+.footer-top nav ul li {
+  float: none;
+  line-height: normal;
 }
 .footer-top a {
-	color: #fff;
-	padding: 0;
+  color: #fff;
+  padding: 0;
 }
 .page-footer a {
-	color: #fff;
+  color: #fff;
 }
 .page-footer a:hover {
-	background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
 }
 .footer-menu nav,
-.top-header nav{
-	height: auto;
-	line-height: normal;
+.top-header nav {
+  height: auto;
+  line-height: normal;
 }

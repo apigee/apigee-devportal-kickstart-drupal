@@ -18,6 +18,8 @@
  * Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
+use Drupal\apigee_devportal_kickstart\Installer\Form\ApigeeDemoInstallerForm;
+
 /**
  * @file
  * Install, update and uninstall functions for Apigee Edge.
@@ -74,11 +76,16 @@ function apigee_devportal_kickstart_install() {
  * Implements hook_install_tasks().
  */
 function apigee_devportal_kickstart_install_tasks(&$install_state) {
-  $tasks = array();
-  $tasks['apigee_demo_installer_form'] = array(
+  $tasks = [];
+  $tasks['apigee_demo_installer_form'] = [
     'display_name' => t('Install demo content'),
     'type' => 'form',
-    'function' => 'Drupal\apigee_devportal_kickstart\Installer\Form\ApigeeDemoInstallerForm',
-  );
+    'function' => ApigeeDemoInstallerForm::class,
+  ];
+  $tasks['apigee_demo_installer_form'] = [
+    'display_name' => t('Install demo content'),
+    'type' => 'form',
+    'function' => ApigeeDemoInstallerForm::class,
+  ];
   return $tasks;
 }

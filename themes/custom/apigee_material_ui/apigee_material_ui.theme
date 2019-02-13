@@ -15,7 +15,7 @@ function apigee_material_ui_preprocess_html(array &$variables) {
 
   $material_ui_colors = theme_get_setting('material_ui_colors', 'apigee_material_ui');
   $text_color = '';
-  if (!empty($material_ui_colors) && in_array($material_ui_colors, array('transparent', 'white'))) {
+  if (!empty($material_ui_colors) && in_array($material_ui_colors, ['transparent', 'white'])) {
     $text_color = 'black-text';
   }
   $variables['material_ui_colors'] = $text_color;
@@ -28,7 +28,7 @@ function apigee_material_ui_preprocess_input(&$variables) {
   if (!empty($variables['element']['#type']) && ($variables['element']['#type'] == 'submit')) {
     $material_ui_colors = theme_get_setting('material_ui_colors', 'apigee_material_ui');
     $text_color = '';
-    if (!empty($material_ui_colors) && in_array($material_ui_colors, array('transparent', 'white'))) {
+    if (!empty($material_ui_colors) && in_array($material_ui_colors, ['transparent', 'white'])) {
       $text_color = 'red lighten-2';
     }
     $variables['material_ui_colors'] = $text_color;

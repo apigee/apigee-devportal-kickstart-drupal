@@ -16,7 +16,7 @@ regions:
   header: Header
   search: Search Area
   primary_menu: Primary menu
-  breadcrumbs: Breadcrumbs 
+  breadcrumbs: Breadcrumbs
   help: Help
   banner: Banner
   highlighted: highlighted section
@@ -29,6 +29,5 @@ regions:
   footer_first: Footer First
   footer_second: Footer Second
   footer_third: Footer Third
-  footer_copyright: Footer Copyright 
+  footer_copyright: Footer Copyright
   footer_menu: Footer Menu
-
