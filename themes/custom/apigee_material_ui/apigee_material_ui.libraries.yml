@@ -13,7 +13,6 @@ global-styling:
     theme:
       css/style.css: {}
       css/menu.css: {}
-      css/color.css: {}
 
 global-scripts:
   version: 1.x
