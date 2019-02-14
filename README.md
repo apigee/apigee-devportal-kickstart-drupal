@@ -8,12 +8,27 @@ to be added to Drupal core and installed using [Composer](https://getcomposer.or
 below use the [Apigee Devportal Kickstart composer project](https://github.com/apigee/devportal-kickstart-project-composer)
 to install Drupal core and this installation profile to create a site.
 
-# Prerequisites
+## Module status
+
+The core functionality of this module is in active development. The features and functionality will be changing as we
+continue work.
+
+We encourage you to download and evaluate the module, and to use our 
+[GitHub issue queue](https://github.com/apigee/apigee-devportal-kickstart-drupal/issues) to give feedback, ask questions, 
+or log issues.
+
+## Planned features
+* **Demonstration theme & content:** Demonstration content and look and feel of a branded developer portal
+* **API Documentation:** Example of API documentation published on site using OpenAPI specifications
+* **Apigee Edge configuration:** The ability to configure the site to an Apigee organization during installation
+* **Blog and Forums:** Demonstration of a blog and forum on the developer portal to communicate with developers
+
+## Prerequisites
 
 * [Git](https://git-scm.com)
 * [Composer](https://getcomposer.org)
 
-# Installation
+## Installation
 
 The following command will download Drupal core and the Apigee Developer Portal Kickstart profile into the
 MY_PROJECT directory:
@@ -35,15 +50,15 @@ composer quick-start
 
 This will start Drupal using PHP's built in web server and a SQLite database.
 
-# Issues, Questions and Feedback
+## Issues, Questions and Feedback
 We encourage anyone with feedback, questions or issues to put in an issue into
 our [Github issue queue](https://github.com/apigee/apigee-devportal-kickstart-drupal/issues).
 
-# Contribute
+## Contribute
 We'd love to accept your patches and contributions to this project. Make sure to read [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 Development is happening in our [GitHub repository](https://github.com/apigee/apigee-devportal-kickstart-drupal). The drupal.org issue
 queue is disabled, we use the [Github issue queue](https://github.com/apigee/apigee-devportal-kickstart-drupal/issues) instead.
 
-# Disclaimer
+## Disclaimer
 
 This is not an officially supported Google product.
