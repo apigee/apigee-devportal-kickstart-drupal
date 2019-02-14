@@ -18,7 +18,7 @@ We encourage you to download and evaluate the module, and to use our
 or log issues.
 
 ## Planned features
-* **Demonstration theme & content:** Demonstration content and look and feel of a branded developer portal
+* **Demonstration theme & content:** Demonstration content with the look and feel of a branded developer portal
 * **API Documentation:** Example of API documentation published on site using OpenAPI specifications
 * **Apigee Edge configuration:** The ability to configure the site to an Apigee organization during installation
 * **Blog and Forums:** Demonstration of a blog and forum on the developer portal to communicate with developers
