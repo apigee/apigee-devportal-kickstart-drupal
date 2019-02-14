@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - apigee_material_ui
+id: apigee_material_ui_page_title
+theme: apigee_material_ui
+region: content
+weight: -4
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/documentation/*\r\n/blog/*"
+    negate: true
+    context_mapping: {  }
