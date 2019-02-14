@@ -10,16 +10,16 @@ to install Drupal core and this installation profile to create a site.
 
 ## Module status
 
-The core functionality of this module is in active development. The features and functionality will be changing as we
-continue work.
+The core functionality of this module is in active development. The features and functionality will evolve as the 
+project grows.
 
 We encourage you to download and evaluate the module, and to use our 
 [GitHub issue queue](https://github.com/apigee/apigee-devportal-kickstart-drupal/issues) to give feedback, ask questions, 
 or log issues.
 
-## Planned features
-* **Demonstration theme & content:** Demonstration content with the look and feel of a branded developer portal
-* **API Documentation:** Example of API documentation published on site using OpenAPI specifications
+## Backlog items
+* **Kickstart theme & content:** Starting content with the look and feel of a branded developer portal
+* **API Documentation:** API documentation rendered from OpenAPI specifications
 * **Apigee Edge configuration:** The ability to configure the site to an Apigee organization during installation
 * **Blog and Forums:** Demonstration of a blog and forum on the developer portal to communicate with developers
 
@@ -50,7 +50,7 @@ composer quick-start
 
 This will start Drupal using PHP's built in web server and a SQLite database.
 
-## Issues, Questions and Feedback
+## Issues, questions and feedback
 We encourage anyone with feedback, questions or issues to put in an issue into
 our [Github issue queue](https://github.com/apigee/apigee-devportal-kickstart-drupal/issues).
 
