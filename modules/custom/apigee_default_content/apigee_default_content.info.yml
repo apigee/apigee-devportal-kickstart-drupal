@@ -1,0 +1,8 @@
+name: 'Apigee Default Content'
+type: module
+description: 'Apigee Default Content.'
+package: Web services
+core: 8.x
+dependencies:
+  - default_content:default_content
+  - drupal:forum

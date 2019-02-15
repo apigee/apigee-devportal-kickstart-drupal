@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.new_forum_topics
+  module:
+    - views
+  theme:
+    - apigee_material_ui
+id: views_block__new_forum_topics_block_1
+theme: apigee_material_ui
+region: latest_block_second
+weight: 0
+provider: null
+plugin: 'views_block:new_forum_topics-block_1'
+settings:
+  id: 'views_block:new_forum_topics-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility: {  }

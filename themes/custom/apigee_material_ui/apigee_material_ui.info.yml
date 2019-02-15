@@ -1,0 +1,33 @@
+name: Apigee Material UI
+type: theme
+description: 'Apigee Developer portal theme using Material UI built on materialize css'
+package: Apigee
+core: 8.x
+libraries:
+  - apigee_material_ui/global-styling
+  - apigee_material_ui/materialize
+  - apigee_material_ui/global-scripts
+
+base theme: stable
+
+regions:
+  top_header_left: Top Header Left Area
+  top_header_right: Top Header Right Area
+  header: Header
+  search: Search Area
+  primary_menu: Primary menu
+  breadcrumbs: Breadcrumbs
+  help: Help
+  banner: Banner
+  highlighted: highlighted section
+  latest_block_first: Latest Block First
+  latest_block_second: Latest Block Second
+  latest_block_third: Latest Block Third
+  content: Content
+  sidebar_first: First Sidebar
+  sidebar_second: Second Sidebar
+  footer_first: Footer First
+  footer_second: Footer Second
+  footer_third: Footer Third
+  footer_copyright: Footer Copyright
+  footer_menu: Footer Menu
