@@ -15,9 +15,10 @@
     "php": "^7.1",
     "cweagans/composer-patches": "~1",
     "drupal-composer/drupal-scaffold": "^2",
-    "drupal/core": "^8.6.0",
     "drupal/admin_toolbar": "^1.0",
+    "drupal/adminimal_admin_toolbar": "^1.9",
     "drupal/apigee_edge": "1.x-dev",
+    "drupal/core": "^8.6.0",
     "drupal/radix": "4.x-dev"
   },
   "require-dev": {
@@ -25,6 +26,7 @@
     "drupal/coder": "~8"
   },
   "config": {
+    "sort-packages": true,
     "preferred-install": {
       "drupal/core": "dist"
     }
