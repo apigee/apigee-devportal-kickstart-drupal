@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains apigee_kickstart_faq.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function apigee_kickstart_faq_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the apigee_kickstart_faq module.
+    case 'help.page.apigee_kickstart_faq':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Provides an FAQ content type and Views listing.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
