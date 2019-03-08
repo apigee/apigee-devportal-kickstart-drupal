@@ -54,6 +54,7 @@ install:
 - adminimal_admin_toolbar
 - apigee_edge
 - apigee_kickstart_faq
+- blog
 
 # List any themes that should be installed as part of the profile installation.
 # Note that this will not set any theme as the default theme.
