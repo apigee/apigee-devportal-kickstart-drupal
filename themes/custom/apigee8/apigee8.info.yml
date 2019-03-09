@@ -1,6 +1,5 @@
 name: 'Apigee 8'
 description: 'A custom Drupal 8 theme for the Apigee Developer Portal Distribution, based on <a href="https://drupal.org/project/radix">Radix</a>.'
-screenshot: screenshot.png
 core: 8.x
 version: VERSION
 engine: twig
