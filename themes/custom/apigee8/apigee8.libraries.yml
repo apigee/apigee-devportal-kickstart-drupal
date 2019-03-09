@@ -1,0 +1,10 @@
+style:
+  version: VERSION
+  css:
+    theme:
+      assets/css/apigee8.style.css: {}
+  js:
+    assets/js/apigee8.script.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
