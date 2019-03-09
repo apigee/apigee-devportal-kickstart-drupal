@@ -1,5 +1,5 @@
 name: apigee8
-description: A theme based on Radix.
+description: 'A theme based on Radix.'
 screenshot: screenshot.png
 core: 8.x
 version: VERSION
@@ -7,14 +7,13 @@ engine: twig
 type: theme
 base theme: radix
 
-
 regions:
-  navbar_branding: Navbar branding
-  navbar_left:  Navbar left
-  navbar_right: Navbar right
+  navbar_branding: 'Navbar branding'
+  navbar_left:  'Navbar left'
+  navbar_right: 'Navbar right'
   header: Header
   content: Content
-  page_bottom: Page bottom
+  page_bottom: 'Page bottom'
   footer: Footer
 
 libraries:
