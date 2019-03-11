@@ -1,0 +1,125 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/apidoc\/1?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/apidoc\/apidoc"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/apidoc\/apidoc\/spec": [
+            {
+                "href": "http:\/\/default\/sites\/default\/files\/Documents\/foodcarts.yaml"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/apidoc\/apidoc\/field_categories": [
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/6?_format=hal_json"
+            },
+            {
+                "href": "http:\/\/default\/taxonomy\/term\/5?_format=hal_json"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 1
+        }
+    ],
+    "uuid": [
+        {
+            "value": "c58b48bf-3ba7-44ef-91d4-31ccf5d88506"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "name": [
+        {
+            "value": "Foodcarts API"
+        }
+    ],
+    "description": [
+        {
+            "value": "<p>Manage food carts through our API.<\/p>\r\n",
+            "format": "basic_html",
+            "processed": "<p>Manage food carts through our API.<\/p>"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/apidoc\/apidoc\/spec": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/Documents\/foodcarts.yaml"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "acf67f9e-a24a-4242-b6e5-7ed5f4046c25"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/apidoc\/apidoc\/field_categories": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/6?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/category"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "d3f794c8-a390-458b-ba83-8d75b717e1fa"
+                    }
+                ]
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/taxonomy\/term\/5?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/category"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "7fc8687f-669f-4caf-b7f3-6e64d99d4562"
+                    }
+                ]
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-03-09T01:41:10+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2019-03-09T01:57:24+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ]
+}
