@@ -234,22 +234,22 @@ a + a.breadcrumb::before {
 .fix-banner .parallax-container .parallax img {
   transform: translate3d(-50%, 179.263px, 0px) !important;
 }
-#views-exposed-form-apis-page-1 .form-item.form-item-sort-by {
+#views-exposed-form-apigee-edge-api-docs-page-1 .form-item.form-item-sort-by {
   display: none;
 }
-#views-exposed-form-apis-page-1 .form-item,
-#views-exposed-form-apis-page-1 .form-actions {
+#views-exposed-form-apigee-edge-api-docs-page-1 .form-item,
+#views-exposed-form-apigee-edge-api-docs-page-1 .form-actions {
   width: 19%;
   float: left;
   margin-right: 1%;
 }
-#views-exposed-form-apis-page-1 .form-actions {
+#views-exposed-form-apigee-edge-api-docs-page-1 .form-actions {
   margin-top: 45px;
 }
-#views-exposed-form-apis-page-1 .input-field.col.s12 {
+#views-exposed-form-apigee-edge-api-docs-page-1 .input-field.col.s12 {
   margin-top: 0px;
 }
-.api-view .views-label-field-tags {
+.api-view .views-label-field-categories {
   float: left;
   margin-right: 10px;
 }
@@ -319,8 +319,8 @@ a + a.breadcrumb::before {
   .equel-height {
     display: block !important;
   }
-  #views-exposed-form-apis-page-1 .form-item,
-  #views-exposed-form-apis-page-1 .form-actions {
+  #views-exposed-form-apigee-edge-api-docs-page-1 .form-item,
+  #views-exposed-form-apigee-edge-api-docs-page-1 .form-actions {
     width: 100% !important;
   }
   .api-view .card .card-content,
