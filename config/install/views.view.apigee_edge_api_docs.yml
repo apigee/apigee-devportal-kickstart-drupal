@@ -1,9 +1,9 @@
+uuid: 8dc117a2-12fa-4324-8d41-057ed586aa91
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.apidoc.field_categories
-    - system.menu.main
     - taxonomy.vocabulary.category
   module:
     - apigee_edge_apidocs
@@ -163,7 +163,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"chip\">\r\n   <a href=\"/apidoc/{{ field_categories__target_id }}\"> {{ field_categories }}</a>\r\n</div>"
+            text: "<div class=\"chip\">\r\n   <a href=\"/apis/{{ field_categories__target_id }}\"> {{ field_categories }}</a>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -472,7 +472,7 @@ display:
           entity_type: apidoc
           entity_field: name
           plugin_id: standard
-      title: 'API Documentation'
+      title: APIs
       header: {  }
       footer: {  }
       empty:
@@ -552,9 +552,9 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: apidoc
+      path: apis
       menu:
-        type: normal
+        type: none
         title: APIs
         description: 'API documentation'
         expanded: false
