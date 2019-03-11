@@ -9,9 +9,14 @@ regions:
   navbar_branding: 'Navbar branding'
   navbar_left:  'Navbar left'
   navbar_right: 'Navbar right'
+  breadcrumbs: Breadcrumbs
   header: Header
+  content_above: 'Content Above'
+  tasks: Tasks
   content: Content
+  content_below: 'Content Below'
   footer: Footer
+  copyright: Copyright
 
 libraries:
   - radix/style
