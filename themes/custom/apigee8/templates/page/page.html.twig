@@ -11,11 +11,13 @@
     color: 'light',
     utility_classes: ['bg-light'],
   } %}
+
     {% block branding %}
       {% if page.navbar_branding %}
         {{ page.navbar_branding }}
       {% endif %}
     {% endblock %}
+
     {% block left %}
       {% if page.navbar_left %}
         <div class="mr-auto">
@@ -23,12 +25,22 @@
         </div>
       {% endif %}
     {% endblock %}
+
     {% block right %}
       {% if page.navbar_right %}
         {{ page.navbar_right }}
       {% endif %}
     {% endblock %}
   {% endembed %}
+
+  {% if page.breadcrumbs %}
+    <div class="page__breadcrumbs">
+      <div class="container">
+        {{ page.breadcrumbs }}
+      </div>
+    </div>
+  {% endif %}
+
   <main class="pt-5 pb-5">
     {% if page.header %}
       <header class="page__header mb-3">
@@ -37,6 +49,15 @@
         </div>
       </header>
     {% endif %}
+
+    {% if page.content_above %}
+    <div class="page__content_above">
+      <div class="container">
+        {{ page.content_above }}
+      </div>
+    </div>
+  {% endif %}
+
     {% if page.content %}
       <div class="page__content">
         <div class="container">
@@ -45,13 +66,31 @@
       </div>
     {% endif %}
   </main>
-  {% if page.footer %}
-    <footer class="page__footer">
+
+  {% if page.content_below %}
+    <div class="page__content_below">
       <div class="container">
-        <div class="d-flex justify-content-md-between align-items-md-center">
-          {{ page.footer }}
-        </div>
+        {{ page.content_below }}
       </div>
+    </div>
+  {% endif %}
+
+  {% if page.footer or page.copyright %}
+    <footer class="page__footer">
+      {% if page.footer %}
+        <div class="container">
+          <div class="d-flex justify-content-md-between align-items-md-center">
+            {{ page.footer }}
+          </div>
+        </div>
+      {% endif %}
+      {% if page.copyright %}
+        <div class="container">
+          <div class="d-flex justify-content-md-between">
+            {{ page.copyright }}
+          </div>
+        </div>
+      {% endif %}
     </footer>
   {% endif %}
 </div>
