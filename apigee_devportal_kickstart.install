@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Copyright 2018 Google Inc.
+ * Copyright 2019 Google Inc.
  *
  * This program is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License version 2 as published by the
@@ -31,10 +31,6 @@
  * @see system_install()
  */
 function apigee_devportal_kickstart_install() {
-  // First, do everything in standard profile.
-  include_once DRUPAL_ROOT . '/core/profiles/standard/standard.install';
-  standard_install();
-
 
   // Get profile path.
   $profile_path = drupal_get_path('profile', 'apigee_devportal_kickstart');
