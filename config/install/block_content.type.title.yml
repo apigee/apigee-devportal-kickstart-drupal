@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: title
+label: 'Title block'
+revision: 0
+description: 'A <em>Title block</em> contains a summary and icon, and optional page title override.'

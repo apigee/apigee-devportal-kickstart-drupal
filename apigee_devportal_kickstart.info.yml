@@ -55,8 +55,8 @@ install:
 - apigee_edge
 - apigee_edge_apidocs
 - components
+- fontawesome
 - forum
-- apigee_kickstart_faq
 
 # List any themes that should be installed as part of the profile installation.
 # Note that this will not set any theme as the default theme.

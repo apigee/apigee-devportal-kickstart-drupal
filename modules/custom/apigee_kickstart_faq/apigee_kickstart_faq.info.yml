@@ -1,8 +1,0 @@
-name: Apigee Kickstart FAQ
-description: 'Provides an FAQ content type and Views listing.'
-core: 8.x
-type: module
-package: Apigee
-dependencies:
-  - drupal:node
-  - drupal:user
