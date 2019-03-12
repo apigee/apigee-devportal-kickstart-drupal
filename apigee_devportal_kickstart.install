@@ -82,5 +82,11 @@ function apigee_devportal_kickstart_theme_setup(array &$install_state) {
   // Ensure that the install profile's theme is used.
   // @see _drupal_maintenance_theme()
   \Drupal::service('theme.manager')->resetActiveTheme();
+
+  // Enable the admin theme for editing content.
+  \Drupal::configFactory()
+    ->getEditable('node.settings')
+    ->set('use_admin_theme', TRUE)
+    ->save(TRUE);
 }
 
