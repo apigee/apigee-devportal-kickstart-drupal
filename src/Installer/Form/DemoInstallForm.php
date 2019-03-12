@@ -89,7 +89,7 @@ class DemoInstallForm extends FormBase {
 
     // We have to use getUserInput() to supercede getValue() because that isn'y
     //  correctly set when passing the form value to Drush si like:
-    // "drush si apigee_kickstart apigee_demo_installer_form.enable=0".
+    // "drush si apigee_kickstart apigee_devportal_kickstart_demo_install_form.install_demo_content=0".
     $input = $form_state->getUserInput();
     if (isset($input['install_demo_content'])) {
       $demo_content = !empty($input['install_demo_content']);
