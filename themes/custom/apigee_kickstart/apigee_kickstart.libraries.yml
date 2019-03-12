@@ -1,0 +1,10 @@
+style:
+  version: VERSION
+  css:
+    theme:
+      assets/css/apigee-kickstart.style.css: {}
+  js:
+    assets/js/apigee-kickstart.script.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
