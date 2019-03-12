@@ -81,7 +81,7 @@ class ApigeeDemoInstallerForm extends FormBase {
       '#maxlength' => 128,
     ];
     $form['password'] = [
-      '#type' => 'textfield',
+      '#type' => 'password',
       '#title' => $this->t('Password'),
       '#size' => 60,
       '#maxlength' => 128,
