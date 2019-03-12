@@ -2,9 +2,9 @@ style:
   version: VERSION
   css:
     theme:
-      assets/css/apigee8.style.css: {}
+      assets/css/apigee-kickstart.style.css: {}
   js:
-    assets/js/apigee8.script.js: {}
+    assets/js/apigee-kickstart.script.js: {}
   dependencies:
     - core/jquery
     - core/drupal

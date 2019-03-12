@@ -35,11 +35,11 @@ mix.browserSync({
  | SASS
  |--------------------------------------------------------------------------
  */
-mix.sass('src/sass/apigee8.style.scss', 'css');
+mix.sass('src/sass/apigee-kickstart.style.scss', 'css');
 
 /*
  |--------------------------------------------------------------------------
  | JS
  |--------------------------------------------------------------------------
  */
-mix.js('src/js/apigee8.script.js', 'js');
+mix.js('src/js/apigee-kickstart.script.js', 'js');

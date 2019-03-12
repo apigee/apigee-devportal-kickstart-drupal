@@ -16964,10 +16964,10 @@ module.exports = g;
 
 /***/ }),
 
-/***/ "./src/js/apigee8.script.js":
-/*!**********************************!*\
-  !*** ./src/js/apigee8.script.js ***!
-  \**********************************/
+/***/ "./src/js/apigee-kickstart.script.js":
+/*!*******************************************!*\
+  !*** ./src/js/apigee-kickstart.script.js ***!
+  \*******************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -16991,10 +16991,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/sass/apigee8.style.scss":
-/*!*************************************!*\
-  !*** ./src/sass/apigee8.style.scss ***!
-  \*************************************/
+/***/ "./src/sass/apigee-kickstart.style.scss":
+/*!**********************************************!*\
+  !*** ./src/sass/apigee-kickstart.style.scss ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -17003,14 +17003,14 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 0:
-/*!**********************************************************************!*\
-  !*** multi ./src/js/apigee8.script.js ./src/sass/apigee8.style.scss ***!
-  \**********************************************************************/
+/*!****************************************************************************************!*\
+  !*** multi ./src/js/apigee-kickstart.script.js ./src/sass/apigee-kickstart.style.scss ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/jacine/Sites/kickstart/web/profiles/contrib/apigee_devportal_kickstart/themes/custom/apigee8/src/js/apigee8.script.js */"./src/js/apigee8.script.js");
-module.exports = __webpack_require__(/*! /Users/jacine/Sites/kickstart/web/profiles/contrib/apigee_devportal_kickstart/themes/custom/apigee8/src/sass/apigee8.style.scss */"./src/sass/apigee8.style.scss");
+__webpack_require__(/*! /Users/jacine/Sites/kickstart/web/profiles/contrib/apigee_devportal_kickstart/themes/custom/apigee_kickstart/src/js/apigee-kickstart.script.js */"./src/js/apigee-kickstart.script.js");
+module.exports = __webpack_require__(/*! /Users/jacine/Sites/kickstart/web/profiles/contrib/apigee_devportal_kickstart/themes/custom/apigee_kickstart/src/sass/apigee-kickstart.style.scss */"./src/sass/apigee-kickstart.style.scss");
 
 
 /***/ })
