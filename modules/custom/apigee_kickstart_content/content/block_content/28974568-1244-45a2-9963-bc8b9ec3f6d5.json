@@ -1,0 +1,142 @@
+{
+    "_links": {
+        "self": {
+            "href": "https:\/\/default\/block\/1?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/title"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/title\/revision_user": [
+            {
+                "href": "https:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 1
+        }
+    ],
+    "uuid": [
+        {
+            "value": "28974568-1244-45a2-9963-bc8b9ec3f6d5"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 2
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "title"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2019-03-09T05:52:45+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/title\/revision_user": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "https:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "a113c70a-b863-40a1-bd81-5ca93bbb1a77"
+                    }
+                ]
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "info": [
+        {
+            "value": "Page Title: FAQs",
+            "lang": "en"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2019-03-10T05:23:43+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "reusable": [
+        {
+            "value": true
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_icon": [
+        {
+            "icon_name": "question-circle",
+            "style": "fas",
+            "settings": {
+                "size": "fa-3x",
+                "pull": "fa-pull-right",
+                "masking": {
+                    "mask": "",
+                    "style": "fas"
+                },
+                "power_transforms": {
+                    "scale": {
+                        "type": "",
+                        "value": ""
+                    },
+                    "position_y": {
+                        "type": "",
+                        "value": ""
+                    },
+                    "position_x": {
+                        "type": "",
+                        "value": ""
+                    }
+                }
+            }
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>Get the answers to frequently asked questions.<\/p>\r\n",
+            "format": "basic_html",
+            "processed": "<p>Get the answers to frequently asked questions.<\/p>"
+        }
+    ],
+    "field_title": [
+        {
+            "value": "FAQs"
+        }
+    ]
+}

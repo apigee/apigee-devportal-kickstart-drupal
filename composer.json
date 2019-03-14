@@ -22,7 +22,9 @@
     "drupal/admin_toolbar": "^1.0",
     "drupal/adminimal_admin_toolbar": "^1.9",
     "drupal/apigee_edge": "dev-8.x-1.x-apidocs",
+    "drupal/default_content": "^1.0@alpha",
     "drupal/core": "^8.6.0",
+    "drupal/fontawesome": "^2.12",
     "drupal/radix": "4.x-dev"
   },
   "require-dev": {

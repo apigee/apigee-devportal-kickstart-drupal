@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: banner
+label: 'Banner block'
+revision: 1
+description: 'A <em>banner</em> block contains a title, summary, link, and a background image. The background image is scaled to fill the browser''s width.'
