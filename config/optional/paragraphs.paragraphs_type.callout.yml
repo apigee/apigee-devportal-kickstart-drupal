@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: callout
+label: Callout
+icon_uuid: null
+description: 'Use <em>Callout</em> to feature an icon, followed by a title, description, and link.'
+behavior_plugins: {  }

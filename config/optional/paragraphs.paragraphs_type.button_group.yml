@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: button_group
+label: 'Button group'
+icon_uuid: null
+description: 'Use <em>Button group</em> to add a one or more button-style links.'
+behavior_plugins: {  }
