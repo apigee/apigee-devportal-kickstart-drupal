@@ -26,7 +26,7 @@
     "drupal/default_content": "^1.0@alpha",
     "drupal/fontawesome": "^2.12",
     "drupal/paragraphs": "^1.6",
-    "drupal/radix": "4.x-dev",
+    "drupal/radix": "4.x-dev"
   },
   "require-dev": {
     "drush/drush": "~9",
