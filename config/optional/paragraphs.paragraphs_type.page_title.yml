@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: page_title
+label: 'Page title w/summary & icon'
+icon_uuid: null
+description: 'Use <em>Page title</em> to create custom page title with a summary and icon.'
+behavior_plugins: {  }

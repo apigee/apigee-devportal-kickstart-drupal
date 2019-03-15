@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: callout_group
+label: 'Callout group'
+icon_uuid: null
+description: 'Use <em>Callout group</em> to add a row consisting of one or more <em>Callout</em> items.'
+behavior_plugins: {  }

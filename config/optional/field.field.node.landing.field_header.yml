@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_header
+    - node.type.landing
+    - paragraphs.paragraphs_type.hero
+    - paragraphs.paragraphs_type.page_title
+  module:
+    - entity_reference_revisions
+id: node.landing.field_header
+field_name: field_header
+entity_type: node
+bundle: landing
+label: Header
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      hero: hero
+      page_title: page_title
+    target_bundles_drag_drop:
+      hero:
+        enabled: true
+      page_title:
+        enabled: true
+field_type: entity_reference_revisions

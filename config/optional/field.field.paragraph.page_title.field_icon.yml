@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_icon
+    - paragraphs.paragraphs_type.page_title
+  module:
+    - fontawesome
+id: paragraph.page_title.field_icon
+field_name: field_icon
+entity_type: paragraph
+bundle: page_title
+label: Icon
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: fontawesome_icon
