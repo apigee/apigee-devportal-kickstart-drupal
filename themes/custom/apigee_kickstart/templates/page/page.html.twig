@@ -50,6 +50,14 @@
       </header>
     {% endif %}
 
+    {% if page.tasks %}
+      <div class="page__tasks">
+        <div class="container">
+          {{ page.tasks }}
+        </div>
+      </div>
+    {% endif %}
+
     {% if page.content_above %}
       <div class="page__content_above">
         <div class="container">
