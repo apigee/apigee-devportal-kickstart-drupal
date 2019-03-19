@@ -1,6 +1,10 @@
-# Credits
+# Apigee Kickstart Content
 
-## Images
+This module contains demo content that may be added during the profile installation.
+
+## Credits
+
+### Images
 
 - @SpaceX: https://unsplash.com/photos/t3HVjP4xNsg
 - @SpaceX: https://unsplash.com/photos/VBNb52J8Trk
