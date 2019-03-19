@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 5_4_500x400
+label: '5:4 Ratio - Max 500 x 400'
+effects:
+  434ef567-bc30-4516-8dfd-11c036c4b1f7:
+    uuid: 434ef567-bc30-4516-8dfd-11c036c4b1f7
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 500
+      height: 400
+      anchor: center-center
