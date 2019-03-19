@@ -70,7 +70,14 @@ display:
             offset_label: Offset
           quantity: 4
       style:
-        type: default
+        type: html_list
+        options:
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+          type: ul
+          wrapper_class: item-list
+          class: ''
       row:
         type: 'entity:node'
         options:
@@ -203,7 +210,7 @@ display:
         description: ''
         expanded: false
         parent: ''
-        weight: 2
+        weight: -49
         context: '0'
         menu_name: main
     cache_metadata:
