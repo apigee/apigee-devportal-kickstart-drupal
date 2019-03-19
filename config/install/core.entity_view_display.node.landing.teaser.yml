@@ -3,6 +3,8 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.landing.field_content
+    - field.field.node.landing.field_header
     - node.type.landing
   module:
     - user
@@ -16,4 +18,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-hidden: {  }
+hidden:
+  field_content: true
+  field_header: true

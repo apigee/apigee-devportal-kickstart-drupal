@@ -15,25 +15,21 @@ mode: default
 content:
   field_content:
     type: entity_reference_revisions_entity_view
-    weight: 101
-    label: above
+    weight: 1
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
     region: content
   field_header:
-    weight: 102
-    label: above
+    weight: 0
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
     type: entity_reference_revisions_entity_view
     region: content
-  links:
-    weight: 100
-    settings: {  }
-    third_party_settings: {  }
-    region: content
-hidden: {  }
+hidden:
+  links: true
