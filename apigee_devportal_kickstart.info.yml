@@ -50,6 +50,7 @@ install:
 - automated_cron
 - media
 - media_library
+- responsive_image
 - admin_toolbar
 - admin_toolbar_links_access_filter
 - admin_toolbar_tools
