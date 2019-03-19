@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: footer-third
-label: 'Footer Third'
-description: 'Site information links'
-locked: false

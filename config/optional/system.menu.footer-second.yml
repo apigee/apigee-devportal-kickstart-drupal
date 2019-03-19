@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: footer-second
-label: 'Footer Second'
-description: 'Site information links'
-locked: false
