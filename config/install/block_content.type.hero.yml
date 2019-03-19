@@ -1,0 +1,8 @@
+uuid: f2acc416-9626-4119-b588-46ffa09d8539
+langcode: en
+status: true
+dependencies: {  }
+id: hero
+label: 'Hero block'
+revision: 1
+description: 'A <em>Hero</em>, which utilizes a Paragraph by the same name, contains a background image, title, summary, and link(s). The background image is scaled to fill the browser''s width.  '
