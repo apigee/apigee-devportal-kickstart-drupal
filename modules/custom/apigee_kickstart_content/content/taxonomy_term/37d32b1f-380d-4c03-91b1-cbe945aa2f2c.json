@@ -1,0 +1,85 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/forums\/general-discussion?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/forums"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/forums\/parent": [
+            null
+        ]
+    },
+    "tid": [
+        {
+            "value": 1
+        }
+    ],
+    "uuid": [
+        {
+            "value": "37d32b1f-380d-4c03-91b1-cbe945aa2f2c"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "forums"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "name": [
+        {
+            "value": "General discussion",
+            "lang": "en"
+        }
+    ],
+    "description": [
+        {
+            "value": "<p>Donec et dolor sed mi ornare imperdiet sit amet et justo. Duis blandit male suada leo a pellent esque.<\/p>\r\n",
+            "format": "basic_html",
+            "processed": "<p>Donec et dolor sed mi ornare imperdiet sit amet et justo. Duis blandit male suada leo a pellent esque.<\/p>",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 0
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/forums\/parent": [
+            null
+        ]
+    },
+    "changed": [
+        {
+            "value": "2019-03-16T04:32:06+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/forums\/general-discussion",
+            "pid": 17,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ]
+}
