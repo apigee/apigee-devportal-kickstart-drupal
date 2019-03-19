@@ -13,7 +13,7 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/media\/image\/thumbnail": [
             {
-                "href": "http:\/\/default\/sites\/default\/files\/images\/spacex-1130896-unsplash.jpg",
+                "href": "http:\/\/default\/sites\/default\/files\/spacex-1130896-unsplash.jpg",
                 "lang": "en"
             }
         ],
@@ -25,7 +25,7 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/media\/image\/field_media_image": [
             {
-                "href": "http:\/\/default\/sites\/default\/files\/images\/spacex-1130896-unsplash.jpg",
+                "href": "http:\/\/default\/sites\/default\/files\/spacex-1130896-unsplash.jpg",
                 "lang": "en"
             }
         ]
@@ -84,7 +84,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/images\/spacex-1130896-unsplash.jpg"
+                        "href": "http:\/\/default\/sites\/default\/files\/spacex-1130896-unsplash.jpg"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -120,7 +120,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/images\/spacex-1130896-unsplash.jpg"
+                        "href": "http:\/\/default\/sites\/default\/files\/spacex-1130896-unsplash.jpg"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/file\/file"

@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/sites\/default\/files\/images\/nasa-43567-unsplash.jpg"
+            "href": "http:\/\/default\/sites\/default\/files\/nasa-43567-unsplash.jpg"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -53,8 +53,8 @@
     ],
     "uri": [
         {
-            "value": "public:\/\/2019-03\/nasa-43567-unsplash.jpg",
-            "url": "\/sites\/default\/files\/images\/nasa-43567-unsplash.jpg"
+            "value": "public:\/\/nasa-43567-unsplash.jpg",
+            "url": "\/sites\/default\/files\/nasa-43567-unsplash.jpg"
         }
     ],
     "filemime": [

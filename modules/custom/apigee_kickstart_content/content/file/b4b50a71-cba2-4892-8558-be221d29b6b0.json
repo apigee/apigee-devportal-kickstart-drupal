@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/sites\/default\/files\/images\/terence-burke-1417892-unsplash.jpg"
+            "href": "http:\/\/default\/sites\/default\/files\/terence-burke-1417892-unsplash.jpg"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -53,8 +53,8 @@
     ],
     "uri": [
         {
-            "value": "public:\/\/2019-03\/terence-burke-1417892-unsplash.jpg",
-            "url": "\/sites\/default\/files\/images\/terence-burke-1417892-unsplash.jpg"
+            "value": "public:\/\/terence-burke-1417892-unsplash.jpg",
+            "url": "\/sites\/default\/files\/terence-burke-1417892-unsplash.jpg"
         }
     ],
     "filemime": [

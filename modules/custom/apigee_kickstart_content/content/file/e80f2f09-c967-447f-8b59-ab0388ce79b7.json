@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/sites\/default\/files\/images\/spacex-81773-unsplash.jpg"
+            "href": "http:\/\/default\/sites\/default\/files\/spacex-81773-unsplash.jpg"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -53,8 +53,8 @@
     ],
     "uri": [
         {
-            "value": "public:\/\/2019-03\/spacex-81773-unsplash.jpg",
-            "url": "\/sites\/default\/files\/images\/spacex-81773-unsplash.jpg"
+            "value": "public:\/\/spacex-81773-unsplash.jpg",
+            "url": "\/sites\/default\/files\/spacex-81773-unsplash.jpg"
         }
     ],
     "filemime": [

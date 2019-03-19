@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/sites\/default\/files\/images\/donald-giannatti-671274-unsplash.jpg"
+            "href": "http:\/\/default\/sites\/default\/files\/donald-giannatti-671274-unsplash.jpg"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -53,8 +53,8 @@
     ],
     "uri": [
         {
-            "value": "public:\/\/2019-03\/donald-giannatti-671274-unsplash.jpg",
-            "url": "\/sites\/default\/files\/images\/donald-giannatti-671274-unsplash.jpg"
+            "value": "public:\/\/donald-giannatti-671274-unsplash.jpg",
+            "url": "\/sites\/default\/files\/donald-giannatti-671274-unsplash.jpg"
         }
     ],
     "filemime": [
