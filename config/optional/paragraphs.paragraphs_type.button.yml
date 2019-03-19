@@ -1,8 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: button
-label: Button
-icon_uuid: null
-description: 'Use <em>Button</em> to create a single link styled as a button.'
-behavior_plugins: {  }

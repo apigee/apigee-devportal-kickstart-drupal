@@ -1,8 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: text_image
-label: 'Text & Image'
-icon_uuid: null
-description: 'Use <em>Text & Image</em> to feature text in one column, followed by text in the next.'
-behavior_plugins: {  }

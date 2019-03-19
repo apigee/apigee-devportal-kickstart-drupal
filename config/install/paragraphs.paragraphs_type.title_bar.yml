@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: title_bar
+label: 'Title bar'
+icon_uuid: null
+description: '<em>Title bar</em> contains a title, summary, and icon. It is designed to be used as an alternative to the standard "Page title" block and can be used via the "Header" field where available, or via the custom <em>Title bar block</em> type.'
+behavior_plugins: {  }

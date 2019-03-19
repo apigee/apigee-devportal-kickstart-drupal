@@ -1,8 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: columns_text_image
-label: '2 Columns: Text & Image '
-icon_uuid: null
-description: 'Use <em>2 Columns: Text & Image</em> to add a row consisting of two columns, one with text and the other with an image.'
-behavior_plugins: {  }

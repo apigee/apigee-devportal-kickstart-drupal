@@ -1,8 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: hero
-label: Hero
-icon_uuid: null
-description: 'Use <em>Hero</em> to add a full-length, large resolution background image, with text overlaid, placed at the top of a page.'
-behavior_plugins: {  }

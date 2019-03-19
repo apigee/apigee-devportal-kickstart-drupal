@@ -1,8 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: blockquote
-label: Blockquote
-icon_uuid: null
-description: 'Use <em>Blockquote</em> to add a quotation with optional source.'
-behavior_plugins: {  }

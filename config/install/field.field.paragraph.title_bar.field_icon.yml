@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_icon
+    - paragraphs.paragraphs_type.title_bar
+  module:
+    - fontawesome
+id: paragraph.title_bar.field_icon
+field_name: field_icon
+entity_type: paragraph
+bundle: title_bar
+label: 'Title bar icon'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: fontawesome_icon
