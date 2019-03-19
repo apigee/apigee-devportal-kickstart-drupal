@@ -2,21 +2,21 @@ langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:title:28974568-1244-45a2-9963-bc8b9ec3f6d5'
+    - 'block_content:title_bar:ed93a36e-95ee-4bfe-b8db-1d5ae5ae99cb'
   module:
     - block_content
     - system
   theme:
     - apigee_kickstart
-id: apigee_kickstart_title_faq
+id: apigee_kickstart_title_bar_faqs
 theme: apigee_kickstart
 region: header
-weight: -6
+weight: -7
 provider: null
-plugin: 'block_content:28974568-1244-45a2-9963-bc8b9ec3f6d5'
+plugin: 'block_content:ed93a36e-95ee-4bfe-b8db-1d5ae5ae99cb'
 settings:
-  id: 'block_content:28974568-1244-45a2-9963-bc8b9ec3f6d5'
-  label: 'Page Title: FAQs'
+  id: 'block_content:ed93a36e-95ee-4bfe-b8db-1d5ae5ae99cb'
+  label: 'Title bar: FAQs'
   provider: block_content
   label_display: '0'
   status: true

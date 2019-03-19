@@ -2,21 +2,21 @@ langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:title:e533ca03-197e-465e-88f1-61561ee2fcf7'
+    - 'block_content:title_bar:922c5ce8-6d11-4aa6-8d82-542c77b33bec'
   module:
     - block_content
     - system
   theme:
     - apigee_kickstart
-id: apigee_kickstart_title_apis
+id: apigee_kickstart_title_bar_forum
 theme: apigee_kickstart
 region: header
-weight: -7
+weight: -6
 provider: null
-plugin: 'block_content:e533ca03-197e-465e-88f1-61561ee2fcf7'
+plugin: 'block_content:922c5ce8-6d11-4aa6-8d82-542c77b33bec'
 settings:
-  id: 'block_content:e533ca03-197e-465e-88f1-61561ee2fcf7'
-  label: 'Page Title: APIs'
+  id: 'block_content:922c5ce8-6d11-4aa6-8d82-542c77b33bec'
+  label: 'Title bar: Forum'
   provider: block_content
   label_display: '0'
   status: true
@@ -25,6 +25,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/apis\r\n/apis/*"
+    pages: "/forum\r\n/forum/*"
     negate: false
     context_mapping: {  }

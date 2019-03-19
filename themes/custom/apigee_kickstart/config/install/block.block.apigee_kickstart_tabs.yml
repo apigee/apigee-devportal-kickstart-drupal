@@ -6,7 +6,7 @@ dependencies:
 id: apigee_kickstart_tabs
 theme: apigee_kickstart
 region: tasks
-weight: 0
+weight: -8
 provider: null
 plugin: local_tasks_block
 settings:
