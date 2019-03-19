@@ -30,7 +30,7 @@
     ],
     "vid": [
         {
-            "value": 15
+            "value": 37
         }
     ],
     "langcode": [
@@ -46,7 +46,7 @@
     ],
     "revision_timestamp": [
         {
-            "value": "2019-03-16T04:14:58+00:00",
+            "value": "2019-03-19T21:02:10+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -63,7 +63,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "084d9bad-609d-4853-8174-e4fd34c06d1c"
+                        "value": "13a077ca-48a0-4f73-9093-5a174ff6c970"
                     }
                 ]
             }
@@ -80,7 +80,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "084d9bad-609d-4853-8174-e4fd34c06d1c"
+                        "value": "13a077ca-48a0-4f73-9093-5a174ff6c970"
                     }
                 ],
                 "lang": "en"
@@ -108,7 +108,7 @@
     ],
     "changed": [
         {
-            "value": "2019-03-16T04:14:58+00:00",
+            "value": "2019-03-19T21:02:10+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -130,16 +130,10 @@
             "lang": "en"
         }
     ],
-    "revision_translation_affected": [
-        {
-            "value": true,
-            "lang": "en"
-        }
-    ],
     "path": [
         {
             "alias": "\/terms-and-conditions",
-            "pid": 3,
+            "pid": 43,
             "langcode": "en",
             "lang": "en"
         }

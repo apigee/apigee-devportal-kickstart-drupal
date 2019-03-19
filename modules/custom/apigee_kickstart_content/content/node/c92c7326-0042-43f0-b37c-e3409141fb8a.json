@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/forum\/getting-started-real-time-apis?_format=hal_json"
+            "href": "http:\/\/default\/forum\/post\/getting-started-real-time-apis?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/node\/forum"
@@ -19,7 +19,7 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/forum\/taxonomy_forums": [
             {
-                "href": "http:\/\/default\/forums\/general-discussion?_format=hal_json",
+                "href": "http:\/\/default\/forum\/general-discussion?_format=hal_json",
                 "lang": "en"
             }
         ]
@@ -69,7 +69,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "084d9bad-609d-4853-8174-e4fd34c06d1c"
+                        "value": "13a077ca-48a0-4f73-9093-5a174ff6c970"
                     }
                 ]
             }
@@ -86,7 +86,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "084d9bad-609d-4853-8174-e4fd34c06d1c"
+                        "value": "13a077ca-48a0-4f73-9093-5a174ff6c970"
                     }
                 ],
                 "lang": "en"
@@ -96,7 +96,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/forums\/general-discussion?_format=hal_json"
+                        "href": "http:\/\/default\/forum\/general-discussion?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/forums"
@@ -104,7 +104,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "37d32b1f-380d-4c03-91b1-cbe945aa2f2c"
+                        "value": "cfbb5c08-bd54-44f1-b3d6-35e7ef401524"
                     }
                 ],
                 "lang": "en"
@@ -132,7 +132,7 @@
     ],
     "changed": [
         {
-            "value": "2019-03-16T18:40:57+00:00",
+            "value": "2019-03-19T21:03:44+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -163,8 +163,8 @@
     ],
     "path": [
         {
-            "alias": "\/forum\/getting-started-real-time-apis",
-            "pid": 9,
+            "alias": "\/forum\/post\/getting-started-real-time-apis",
+            "pid": 49,
             "langcode": "en",
             "lang": "en"
         }
