@@ -1,0 +1,171 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/callout"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/callout\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/callout\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 13
+        }
+    ],
+    "uuid": [
+        {
+            "value": "73f553f5-22c9-4528-b85e-e4c1509a0f3d"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 90
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "callout"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/callout\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "084d9bad-609d-4853-8174-e4fd34c06d1c"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/callout\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "084d9bad-609d-4853-8174-e4fd34c06d1c"
+                    }
+                ]
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-03-15T18:56:38+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "14"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_callouts"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_icon": [
+        {
+            "icon_name": "rocket",
+            "style": "fas",
+            "settings": {
+                "masking": {
+                    "mask": "",
+                    "style": "fas"
+                },
+                "power_transforms": {
+                    "scale": {
+                        "type": "",
+                        "value": ""
+                    },
+                    "position_y": {
+                        "type": "",
+                        "value": ""
+                    },
+                    "position_x": {
+                        "type": "",
+                        "value": ""
+                    }
+                }
+            },
+            "lang": "en"
+        }
+    ],
+    "field_link": [
+        {
+            "uri": "internal:#",
+            "title": "Get Started",
+            "options": []
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>Work with Acme and our partner network to bring your application to market.<\/p>\r\n",
+            "format": "basic_html",
+            "processed": "<p>Work with Acme and our partner network to bring your application to market.<\/p>",
+            "lang": "en"
+        }
+    ],
+    "field_title": [
+        {
+            "value": "Launch",
+            "lang": "en"
+        }
+    ]
+}
