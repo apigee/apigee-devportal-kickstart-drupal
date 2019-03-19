@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "https:\/\/default\/block\/5?_format=hal_json"
+            "href": "http:\/\/default\/block\/5?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/block_content\/basic"
@@ -47,13 +47,13 @@
     ],
     "info": [
         {
-            "value": "Footer: Copyright",
+            "value": "Copyright",
             "lang": "en"
         }
     ],
     "changed": [
         {
-            "value": "2019-03-10T05:24:43+00:00",
+            "value": "2019-03-15T21:08:58+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
