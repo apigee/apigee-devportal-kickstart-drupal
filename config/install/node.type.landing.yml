@@ -7,7 +7,6 @@ third_party_settings:
   menu_ui:
     available_menus:
       - footer
-      - legal
       - main
     parent: 'main:'
 name: 'Landing page'
