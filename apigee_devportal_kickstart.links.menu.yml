@@ -1,5 +1,4 @@
-apigee_devportal_kickstart.front_page:
-  title: 'Home'
-  route_name: '<front>'
+apigee_devportal_kickstart.forum:
+  title: 'Forum'
+  route_name: 'forum.index'
   menu_name: main
-  weight: -10
