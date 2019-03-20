@@ -2,3 +2,4 @@ apigee_devportal_kickstart.forum:
   title: 'Forum'
   route_name: 'forum.index'
   menu_name: main
+  weight: 3
