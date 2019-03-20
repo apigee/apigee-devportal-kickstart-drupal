@@ -33,16 +33,31 @@
 function apigee_devportal_kickstart_install() {
 
   // Get profile path.
-  $profile_path = drupal_get_path('profile', 'apigee_devportal_kickstart');
+  $src_path = drupal_get_path('profile', 'apigee_devportal_kickstart');
 
-  // Copy user login page background image to public folder.
-  $image = file_get_contents($profile_path . '/resources/apigee-logo.png');
-  file_save_data($image, 'public://apigee-logo.png');
+  // Get public files directory.
+  $dest_path = \Drupal::service('file_system')->realpath(file_default_scheme() . '://');
 
-  // Copy favicon to public folder.
-  $image = file_get_contents($profile_path . '/resources/favicon.ico');
-  file_save_data($image, 'public://favicon.ico');
+  // Images to copy.
+  $images = [
+    'aditya-vyas-1392552-unsplash.jpg',
+    'donald-giannatti-671274-unsplash.jpg',
+    'nasa-43567-unsplash.jpg',
+    'nasa-43569-unsplash.jpg',
+    'nasa-89116-unsplash.jpg',
+    'spacex-1130896-unsplash.jpg',
+    'spacex-81773-unsplash.jpg',
+    'terence-burke-1417892-unsplash.jpg',
+  ];
 
+  // Copy images in public files directory. Note: Managed files are not desired.
+  foreach ($images as $key => $image) {
+    if (file_exists($src_path . '/resources/images/'. $image)) {
+      // If the file exists in public://, it should be skipped, as these are
+      // tied to media entities which hard-code the path/file.
+      file_unmanaged_copy($src_path . '/resources/images/'. $image, $dest_path . '/' . $image);
+    }
+  }
 }
 
 /**
