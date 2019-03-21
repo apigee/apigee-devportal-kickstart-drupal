@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: blockquote
+label: Blockquote
+icon_uuid: null
+description: 'A <em>Blockquote</em> contains a quotation with an optional source, e.g. a testimonial.'
+behavior_plugins: {  }

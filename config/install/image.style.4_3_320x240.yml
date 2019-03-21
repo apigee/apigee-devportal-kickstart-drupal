@@ -1,0 +1,6 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 4_3_320x240
+label: '4:3 Ratio - Max 320 x 240'
+effects: {  }

@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: legal
-label: Legal
-description: 'Legal related links, like privacy policy and terms, typically displayed in the footer.'
-locked: false

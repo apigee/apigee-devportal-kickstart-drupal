@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 7_4_991x566
+label: '7:4 Ratio - Max 991 x 566'
+effects:
+  06a66c90-f9e9-4dbf-8ff7-18f0d17d172a:
+    uuid: 06a66c90-f9e9-4dbf-8ff7-18f0d17d172a
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 991
+      height: 566
+      anchor: center-center

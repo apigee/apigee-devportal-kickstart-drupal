@@ -1,0 +1,47 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_callouts
+    - paragraphs.paragraphs_type.callout
+    - paragraphs.paragraphs_type.callout_group
+  module:
+    - entity_reference_revisions
+id: paragraph.callout_group.field_callouts
+field_name: field_callouts
+entity_type: paragraph
+bundle: callout_group
+label: 'Callout items'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      callout: callout
+    target_bundles_drag_drop:
+      blockquote:
+        enabled: false
+      button:
+        enabled: false
+      button_group:
+        enabled: false
+      callout:
+        enabled: true
+      callout_group:
+        enabled: false
+      card:
+        enabled: false
+      card_group:
+        enabled: false
+      hero:
+        enabled: false
+      text_image:
+        enabled: false
+      title_bar:
+        enabled: false
+field_type: entity_reference_revisions

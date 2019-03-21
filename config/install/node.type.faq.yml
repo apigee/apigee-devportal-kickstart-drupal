@@ -10,7 +10,7 @@ third_party_settings:
     parent: 'main:'
 name: FAQ
 type: faq
-description: 'Use <em>FAQ</em> to create questions and answers for the Frequently Asked Questions section.'
+description: 'Use <em>FAQs</em> to create questions and answers for the Frequently Asked Questions section.'
 help: ''
 new_revision: true
 preview_mode: 1

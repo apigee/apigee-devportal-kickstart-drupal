@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: text_image
+label: 'Text & Image'
+icon_uuid: null
+description: '<em>Text & Image</em> contains an image, title, text, and button field. The contents are displayed in two columns: The textual elements are displayed in the first column, and image is displayed in the second.'
+behavior_plugins: {  }

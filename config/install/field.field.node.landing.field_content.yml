@@ -1,0 +1,61 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content
+    - node.type.landing
+    - paragraphs.paragraphs_type.blockquote
+    - paragraphs.paragraphs_type.callout_group
+    - paragraphs.paragraphs_type.card_group
+    - paragraphs.paragraphs_type.cta
+    - paragraphs.paragraphs_type.text
+    - paragraphs.paragraphs_type.text_image
+  module:
+    - entity_reference_revisions
+id: node.landing.field_content
+field_name: field_content
+entity_type: node
+bundle: landing
+label: Content
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      blockquote: blockquote
+      callout_group: callout_group
+      card_group: card_group
+      cta: cta
+      text_image: text_image
+      text: text
+    target_bundles_drag_drop:
+      blockquote:
+        enabled: true
+      button:
+        enabled: false
+      button_group:
+        enabled: false
+      callout:
+        enabled: false
+      callout_group:
+        enabled: true
+      card:
+        enabled: false
+      card_group:
+        enabled: true
+      hero:
+        enabled: false
+      cta:
+        enabled: true
+      text_image:
+        enabled: true
+      text:
+        enabled: true
+      title_bar:
+        enabled: false
+field_type: entity_reference_revisions

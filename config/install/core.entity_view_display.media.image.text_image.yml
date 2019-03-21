@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.text_image
+    - field.field.media.image.field_media_image
+    - media.type.image
+    - responsive_image.styles.text_image
+  module:
+    - responsive_image
+id: media.image.text_image
+targetEntityType: media
+bundle: image
+mode: text_image
+content:
+  field_media_image:
+    label: hidden
+    settings:
+      responsive_image_style: text_image
+      image_link: ''
+    third_party_settings: {  }
+    type: responsive_image
+    weight: 1
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

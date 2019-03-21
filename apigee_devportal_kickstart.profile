@@ -18,10 +18,9 @@
  * Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
- /**
+/**
  * @file
- * Enables modules and site configuration for a apigee_devportal_kickstart site
- * installation.
+ * Enables modules and site configuration for apigee_devportal_kickstart.
  */
 
 use Drupal\contact\Entity\ContactForm;

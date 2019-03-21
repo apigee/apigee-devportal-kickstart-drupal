@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 7_4_730x417
+label: '7:4 Ratio - Max 730 x 417'
+effects:
+  c5964c54-f35f-4a4a-b3e3-3e1937f01217:
+    uuid: c5964c54-f35f-4a4a-b3e3-3e1937f01217
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 730
+      height: 417
+      anchor: center-center

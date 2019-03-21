@@ -19,6 +19,7 @@
 
 namespace Drupal\apigee_devportal_kickstart\Installer\Form;
 
+use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Extension\ModuleInstallerInterface;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -37,10 +38,23 @@ class DemoInstallForm extends FormBase {
   protected $moduleInstaller;
 
   /**
-   * {@inheritdoc}
+   * The config factory.
+   *
+   * @var \Drupal\Core\Config\ConfigFactoryInterface
    */
-  public function __construct(ModuleInstallerInterface $module_installer) {
+  protected $configFactory;
+
+  /**
+   * DemoInstallForm constructor.
+   *
+   * @param \Drupal\Core\Extension\ModuleInstallerInterface $module_installer
+   *   The module installer.
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
+   *   The config factory.
+   */
+  public function __construct(ModuleInstallerInterface $module_installer, ConfigFactoryInterface $config_factory) {
     $this->moduleInstaller = $module_installer;
+    $this->configFactory = $config_factory;
   }
 
   /**
@@ -48,7 +62,8 @@ class DemoInstallForm extends FormBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('module_installer')
+      $container->get('module_installer'),
+      $container->get('config.factory')
     );
   }
 
@@ -63,15 +78,17 @@ class DemoInstallForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $form['#title'] = t('Install Demo content?');
+    $form['#title'] = $this->t('Install Demo content?');
+
     $form['install_demo_content'] = [
       '#type' => 'checkbox',
       '#title' => 'Enable demo content',
-      '#description' => t('Check this box to install some demo content to help you test out Apigee portal features quickly.'),
+      '#description' => $this->t('Check this box to install some demo content to help you test out Apigee portal features quickly.'),
       '#default_value' => TRUE,
     ];
 
     $form['actions']['#type'] = 'actions';
+
     $form['actions']['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t('Save and continue'),
@@ -87,8 +104,8 @@ class DemoInstallForm extends FormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $demo_content = $form_state->getValue('install_demo_content');
 
-    // We have to use getUserInput() to supercede getValue() because that isn'y
-    //  correctly set when passing the form value to Drush si like:
+    // We have to use getUserInput() to supersede getValue() because that isn't
+    // correctly set when passing the form value to Drush si like:
     // "drush si apigee_kickstart apigee_devportal_kickstart_demo_install_form.install_demo_content=0".
     $input = $form_state->getUserInput();
     if (isset($input['install_demo_content'])) {
@@ -97,8 +114,12 @@ class DemoInstallForm extends FormBase {
 
     if ($demo_content) {
       $this->moduleInstaller->install(['apigee_kickstart_content']);
-      $config = \Drupal::configFactory()->getEditable('system.site');
-      $config->set('page.front', '/node/1')->save();
+
+      // Set the front page to node 1.
+      $this->configFactory->getEditable('system.site')
+        ->set('page.front', '/node/1')
+        ->save();
     }
   }
+
 }

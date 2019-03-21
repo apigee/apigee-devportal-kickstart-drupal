@@ -50,13 +50,21 @@
       </header>
     {% endif %}
 
-    {% if page.content_above %}
-    <div class="page__content_above">
-      <div class="container">
-        {{ page.content_above }}
+    {% if page.tasks %}
+      <div class="page__tasks">
+        <div class="container">
+          {{ page.tasks }}
+        </div>
       </div>
-    </div>
-  {% endif %}
+    {% endif %}
+
+    {% if page.content_above %}
+      <div class="page__content_above">
+        <div class="container">
+          {{ page.content_above }}
+        </div>
+      </div>
+    {% endif %}
 
     {% if page.content %}
       <div class="page__content">
