@@ -1,7 +1,8 @@
 <?php
+
 /**
  * @file
- * Theme functions
+ * Theme functions.
  */
 
 // Include all files from the includes directory.
