@@ -20,17 +20,17 @@
     },
     "id": [
         {
-            "value": 27
+            "value": 39
         }
     ],
     "uuid": [
         {
-            "value": "b9b5625c-6f10-4fb4-96fd-0a2fc49b0705"
+            "value": "548b6335-4256-4a63-a41f-d2eca4207262"
         }
     ],
     "revision_id": [
         {
-            "value": 102
+            "value": 115
         }
     ],
     "langcode": [
@@ -57,7 +57,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "13a077ca-48a0-4f73-9093-5a174ff6c970"
+                        "value": "caf419f8-da95-4c62-9ca2-cd519fc7c4f6"
                     }
                 ],
                 "lang": "en"
@@ -75,7 +75,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "13a077ca-48a0-4f73-9093-5a174ff6c970"
+                        "value": "caf419f8-da95-4c62-9ca2-cd519fc7c4f6"
                     }
                 ]
             }
@@ -89,14 +89,14 @@
     ],
     "created": [
         {
-            "value": "2019-03-17T05:08:04+00:00",
+            "value": "2019-03-21T20:03:14+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "parent_id": [
         {
-            "value": "17"
+            "value": "2"
         }
     ],
     "parent_type": [
@@ -155,9 +155,9 @@
     ],
     "field_text": [
         {
-            "value": "<p>Welcome to Acme\u2019s developer portal.<\/p>\r\n",
+            "value": "<p>Welcome to Acme's developer portal.<\/p>\r\n",
             "format": "basic_html",
-            "processed": "<p>Welcome to Acme\u2019s developer portal.<\/p>",
+            "processed": "<p>Welcome to Acme's developer portal.<\/p>",
             "lang": "en"
         }
     ],
