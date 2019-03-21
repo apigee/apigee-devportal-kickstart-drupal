@@ -19,6 +19,7 @@
 
 namespace Drupal\apigee_devportal_kickstart\Installer\Form;
 
+use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Extension\ModuleInstallerInterface;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -37,10 +38,23 @@ class DemoInstallForm extends FormBase {
   protected $moduleInstaller;
 
   /**
-   * {@inheritdoc}
+   * The config factory.
+   *
+   * @var \Drupal\Core\Config\ConfigFactoryInterface
    */
-  public function __construct(ModuleInstallerInterface $module_installer) {
+  protected $configFactory;
+
+  /**
+   * DemoInstallForm constructor.
+   *
+   * @param \Drupal\Core\Extension\ModuleInstallerInterface $module_installer
+   *   The module installer.
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
+   *   The config factory.
+   */
+  public function __construct(ModuleInstallerInterface $module_installer, ConfigFactoryInterface $config_factory) {
     $this->moduleInstaller = $module_installer;
+    $this->configFactory = $config_factory;
   }
 
   /**
@@ -48,7 +62,8 @@ class DemoInstallForm extends FormBase {
    */
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('module_installer')
+      $container->get('module_installer'),
+      $container->get('config.factory')
     );
   }
 
