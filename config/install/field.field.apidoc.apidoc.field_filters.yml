@@ -2,16 +2,16 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.apidoc.field_categories
-    - taxonomy.vocabulary.category
+    - field.storage.apidoc.field_filters
+    - taxonomy.vocabulary.filters
   module:
     - apigee_edge_apidocs
-id: apidoc.apidoc.field_categories
-field_name: field_categories
+id: apidoc.apidoc.field_filters
+field_name: field_filters
 entity_type: apidoc
 bundle: apidoc
-label: Categories
-description: 'The API Docs categories.'
+label: Filters
+description: ''
 required: false
 translatable: false
 default_value: {  }
@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      category: category
+      filters: filters
     sort:
       field: name
       direction: asc

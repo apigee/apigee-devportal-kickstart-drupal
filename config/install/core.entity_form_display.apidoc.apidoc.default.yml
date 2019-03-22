@@ -3,9 +3,13 @@ status: true
 dependencies:
   config:
     - field.field.apidoc.apidoc.field_categories
+    - field.field.apidoc.apidoc.field_filters
+    - field.field.apidoc.apidoc.field_groups
+    - field.field.apidoc.apidoc.field_image
   module:
     - apigee_edge_apidocs
     - file
+    - media_library
     - text
 id: apidoc.apidoc.default
 targetEntityType: apidoc
@@ -13,9 +17,8 @@ bundle: apidoc
 mode: default
 content:
   api_product:
-    label: above
     type: entity_reference_autocomplete
-    weight: 0
+    weight: 2
     region: content
     settings:
       match_operator: CONTAINS
@@ -24,14 +27,14 @@ content:
     third_party_settings: {  }
   description:
     type: text_textarea
-    weight: 0
+    weight: 1
     region: content
     settings:
       placeholder: ''
       rows: 5
     third_party_settings: {  }
   field_categories:
-    weight: 3
+    weight: 4
     settings:
       match_operator: CONTAINS
       size: 60
@@ -39,9 +42,33 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
+  field_filters:
+    weight: 6
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_groups:
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_image:
+    type: media_library_widget
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   name:
     type: string_textfield
-    weight: -4
+    weight: 0
     region: content
     settings:
       size: 60
@@ -50,7 +77,7 @@ content:
   spec:
     label: hidden
     type: file_generic
-    weight: 0
+    weight: 3
     region: content
     settings:
       progress_indicator: throbber
