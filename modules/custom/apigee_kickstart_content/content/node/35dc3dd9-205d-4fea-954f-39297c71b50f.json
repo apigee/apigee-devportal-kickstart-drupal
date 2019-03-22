@@ -16,6 +16,17 @@
                 "href": "http:\/\/default\/user\/1?_format=hal_json",
                 "lang": "en"
             }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/landing\/field_content": [
+            {
+                "href": ""
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/landing\/field_header": [
+            {
+                "href": "",
+                "lang": "en"
+            }
         ]
     },
     "nid": [
@@ -30,7 +41,7 @@
     ],
     "vid": [
         {
-            "value": 20
+            "value": 39
         }
     ],
     "langcode": [
@@ -46,7 +57,7 @@
     ],
     "revision_timestamp": [
         {
-            "value": "2019-03-16T17:30:14+00:00",
+            "value": "2019-03-21T20:27:46+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -63,7 +74,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "13a077ca-48a0-4f73-9093-5a174ff6c970"
+                        "value": "caf419f8-da95-4c62-9ca2-cd519fc7c4f6"
                     }
                 ]
             }
@@ -80,10 +91,47 @@
                 },
                 "uuid": [
                     {
-                        "value": "13a077ca-48a0-4f73-9093-5a174ff6c970"
+                        "value": "caf419f8-da95-4c62-9ca2-cd519fc7c4f6"
                     }
                 ],
                 "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/landing\/field_content": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/text"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "154c0f43-1199-4abe-966c-ad8369154389"
+                    }
+                ],
+                "target_revision_id": "116"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/landing\/field_header": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/title_bar"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "548b6335-4256-4a63-a41f-d2eca4207262"
+                    }
+                ],
+                "lang": "en",
+                "target_revision_id": "115"
             }
         ]
     },
@@ -108,7 +156,7 @@
     ],
     "changed": [
         {
-            "value": "2019-03-16T17:30:14+00:00",
+            "value": "2019-03-21T21:18:24+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -140,7 +188,7 @@
     "path": [
         {
             "alias": "\/get-started",
-            "pid": 42,
+            "pid": 12,
             "langcode": "en",
             "lang": "en"
         }
