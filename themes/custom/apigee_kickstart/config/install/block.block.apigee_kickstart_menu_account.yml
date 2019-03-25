@@ -10,14 +10,14 @@ dependencies:
 id: apigee_kickstart_menu_account
 theme: apigee_kickstart
 region: navbar_right
-weight: 0
+weight: -10
 provider: null
 plugin: 'system_menu_block:account'
 settings:
   id: 'system_menu_block:account'
   label: 'User account menu'
   provider: system
-  label_display: '0'
+  label_display: visible
   level: 1
   depth: 0
 visibility: {  }

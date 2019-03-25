@@ -20,6 +20,7 @@ regions:
 
 libraries:
   - radix/style
+  - apigee_kickstart/font.roboto
   - apigee_kickstart/style
 
 libraries-override:

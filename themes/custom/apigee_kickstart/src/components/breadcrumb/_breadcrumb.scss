@@ -1,0 +1,11 @@
+
+.breadcrumb-item {
+  a {
+    font-size: 0.875rem;
+    letter-spacing: 1px;
+  }
+
+  + .breadcrumb-item::before {
+    padding-left: 0.375rem;
+  }
+}

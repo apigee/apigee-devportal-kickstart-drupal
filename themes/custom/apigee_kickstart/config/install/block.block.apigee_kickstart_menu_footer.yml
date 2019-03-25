@@ -15,7 +15,7 @@ provider: null
 plugin: 'system_menu_block:footer'
 settings:
   id: 'system_menu_block:footer'
-  label: Footer
+  label: 'Footer menu'
   provider: system
   label_display: visible
   level: 1

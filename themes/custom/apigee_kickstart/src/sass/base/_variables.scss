@@ -13,10 +13,10 @@ $gray-200: #e9ecef !default;
 $gray-300: #dee2e6 !default;
 $gray-400: #ced4da !default;
 $gray-500: #adb5bd !default;
-$gray-600: #6c757d !default;
+$gray-600: #787878 !default;
 $gray-700: #495057 !default;
-$gray-800: #343a40 !default;
-$gray-900: #212529 !default;
+$gray-800: #3c3c3c !default;
+$gray-900: #505050 !default;
 $black:    #000 !default;
 
 $grays: () !default;
@@ -32,7 +32,7 @@ $grays: map-merge((
   "900": $gray-900
 ), $grays);
 
-$blue:    #007bff !default;
+$blue:    #2196f3 !default;
 $indigo:  #6610f2 !default;
 $purple:  #6f42c1 !default;
 $pink:    #e83e8c !default;
@@ -67,7 +67,7 @@ $info:          $cyan !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         $gray-100 !default;
-$dark:          $gray-800 !default;
+$dark:          $gray-900 !default;
 
 $theme-colors: () !default;
 $theme-colors: map-merge((
@@ -113,15 +113,18 @@ $enable-print-styles:       true !default;
 // You can add more entries to the $spacers map, should you need more variation.
 
 // stylelint-disable
-$spacer: 1rem !default;
+$spacer: 1.5rem !default; // 24px (16 base * 1.5)
 $spacers: () !default;
 $spacers: map-merge((
   0: 0,
-  1: ($spacer * .25),
-  2: ($spacer * .5),
-  3: $spacer,
-  4: ($spacer * 1.5),
-  5: ($spacer * 3)
+  1: ($spacer * .33),     // 8px
+  2: ($spacer * .5),      // 12px
+  3: ($spacer * .665),    // 16px
+  4: $spacer,             // 24px
+  5: ($spacer * 1.27),    // 32px
+  6: ($spacer * 2),       // 48px
+  7: ($spacer * 2.665),   // 64px
+  8: ($spacer * 3)        // 72px
 ), $spacers);
 
 // This variable affects the `.h-*` and `.w-*` classes.
@@ -140,7 +143,7 @@ $sizes: map-merge((
 // Settings for the `<body>` element.
 
 $body-bg:                   $white !default;
-$body-color:                $gray-900 !default;
+$body-color:                $gray-800 !default;
 
 // Links
 //
@@ -200,15 +203,15 @@ $grid-gutter-width:           30px !default;
 //
 // Define common padding and border radius sizes and more.
 
-$line-height-lg:              1.5 !default;
+$line-height-lg:              2.1 !default;
 $line-height-sm:              1.5 !default;
 
 $border-width:                1px !default;
 $border-color:                $gray-300 !default;
 
-$border-radius:               .25rem !default;
-$border-radius-lg:            .3rem !default;
-$border-radius-sm:            .2rem !default;
+$border-radius:               2px !default;
+$border-radius-lg:            2px !default;
+$border-radius-sm:            2px !default;
 
 $box-shadow-sm:               0 .125rem .25rem rgba($black, .075) !default;
 $box-shadow:                  0 .5rem 1rem rgba($black, .15) !default;
@@ -229,7 +232,7 @@ $transition-collapse:         height .35s ease !default;
 // Font, line-height, and color for body text, headings, and more.
 
 // stylelint-disable value-keyword-case
-$font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$font-family-sans-serif:      Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-base:            $font-family-sans-serif !default;
 // stylelint-enable value-keyword-case
@@ -243,7 +246,7 @@ $font-weight-normal:          400 !default;
 $font-weight-bold:            700 !default;
 
 $font-weight-base:            $font-weight-normal !default;
-$line-height-base:            1.5 !default;
+$line-height-base:            1.75 !default;
 
 $h1-font-size:                $font-size-base * 2.5 !default;
 $h2-font-size:                $font-size-base * 2 !default;
@@ -254,8 +257,8 @@ $h6-font-size:                $font-size-base !default;
 
 $headings-margin-bottom:      ($spacer / 2) !default;
 $headings-font-family:        inherit !default;
-$headings-font-weight:        500 !default;
-$headings-line-height:        1.2 !default;
+$headings-font-weight:        400 !default;
+$headings-line-height:        1.175 !default;
 $headings-color:              inherit !default;
 
 $display1-size:               6rem !default;
@@ -625,26 +628,26 @@ $navbar-brand-font-size:            $font-size-lg !default;
 // Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link
 $nav-link-height:                   ($font-size-base * $line-height-base + $nav-link-padding-y * 2) !default;
 $navbar-brand-height:               $navbar-brand-font-size * $line-height-base !default;
-$navbar-brand-padding-y:            ($nav-link-height - $navbar-brand-height) / 2 !default;
+$navbar-brand-padding-y:            0 !default;
 
 $navbar-toggler-padding-y:          .25rem !default;
-$navbar-toggler-padding-x:          .75rem !default;
+$navbar-toggler-padding-x:          .5rem !default;
 $navbar-toggler-font-size:          $font-size-lg !default;
 $navbar-toggler-border-radius:      $btn-border-radius !default;
 
-$navbar-dark-color:                 rgba($white, .5) !default;
-$navbar-dark-hover-color:           rgba($white, .75) !default;
+$navbar-dark-color:                 rgba($white, .85) !default;
+$navbar-dark-hover-color:           $white !default;
 $navbar-dark-active-color:          $white !default;
-$navbar-dark-disabled-color:        rgba($white, .25) !default;
-$navbar-dark-toggler-icon-bg:       str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-dark-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23") !default;
-$navbar-dark-toggler-border-color:  rgba($white, .1) !default;
+$navbar-dark-disabled-color:        rgba($white, .5) !default;
+$navbar-dark-toggler-icon-bg:       str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$link-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23") !default;
+$navbar-dark-toggler-border-color:  transparent !default;
 
-$navbar-light-color:                rgba($black, .5) !default;
-$navbar-light-hover-color:          rgba($black, .7) !default;
-$navbar-light-active-color:         rgba($black, .9) !default;
-$navbar-light-disabled-color:       rgba($black, .3) !default;
-$navbar-light-toggler-icon-bg:      str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23") !default;
-$navbar-light-toggler-border-color: rgba($black, .1) !default;
+$navbar-light-color:                rgba($black, .85) !default;
+$navbar-light-hover-color:          $black !default;
+$navbar-light-active-color:         $black !default;
+$navbar-light-disabled-color:       rgba($black, .5) !default;
+$navbar-light-toggler-icon-bg:      str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$link-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23") !default;
+$navbar-light-toggler-border-color: transparent !default;
 
 // Pagination
 
@@ -864,18 +867,18 @@ $figure-caption-color:              $gray-600 !default;
 
 // Breadcrumbs
 
-$breadcrumb-padding-y:              .75rem !default;
-$breadcrumb-padding-x:              1rem !default;
-$breadcrumb-item-padding:           .5rem !default;
+$breadcrumb-padding-y:              .375rem !default;
+$breadcrumb-padding-x:              0 !default;
+$breadcrumb-item-padding:           .375rem !default;
 
-$breadcrumb-margin-bottom:          1rem !default;
+$breadcrumb-margin-bottom:          0 !default;
 
-$breadcrumb-bg:                     $gray-200 !default;
-$breadcrumb-divider-color:          $gray-600 !default;
-$breadcrumb-active-color:           $gray-600 !default;
-$breadcrumb-divider:                quote("/") !default;
+$breadcrumb-bg:                     $blue !default;
+$breadcrumb-divider-color:          rgba($black, .4) !default;
+$breadcrumb-active-color:           $white !default;
+$breadcrumb-divider:                quote(">") !default;
 
-$breadcrumb-border-radius:          $border-radius !default;
+$breadcrumb-border-radius:          0 !default;
 
 
 // Carousel
