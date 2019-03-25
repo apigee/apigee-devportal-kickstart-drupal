@@ -44,13 +44,18 @@
 
 // Layout
 // -----------------------------------------------------------------------------
+@import "layout/page.breadcrumbs";
 @import "layout/page.header";
 @import "layout/page.content";
 @import "layout/page.footer";
 
 // Component
 // -----------------------------------------------------------------------------
+@import "../components/breadcrumb/breadcrumb";
 @import "../components/node/node";
+@import "../components/navbar/navbar";
+@import "../components/navbar/navbar-brand";
+@import "../components/social/social-links";
 
 // Other
 // -----------------------------------------------------------------------------

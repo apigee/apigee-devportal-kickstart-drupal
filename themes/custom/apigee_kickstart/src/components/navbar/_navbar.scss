@@ -1,0 +1,38 @@
+// Page: Navbar
+// -----------------------------------------------------------------------------
+
+.navbar {
+  font-size: 0.875rem;
+
+  .search-block-form {
+    @include media-breakpoint-down(md) {
+      padding-top: $spacer;
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-left: map-get($spacers, 1);
+    }
+
+    @include media-breakpoint-up(xl) {
+      margin-left: $spacer;
+    }
+  }
+
+  .form-search {
+    border: 0;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    padding: 0.175rem 0.375rem;
+  }
+}
+
+.navbar-collapse {
+  @include media-breakpoint-down(md) {
+    padding-bottom: $spacer;
+    padding-top: $spacer;
+  }
+}
+
+.navbar-toggler {
+  background: $white;
+}

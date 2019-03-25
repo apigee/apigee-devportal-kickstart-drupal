@@ -1,17 +1,11 @@
-// Page: Footer
+// Page: Breadcrumbs
 // -----------------------------------------------------------------------------
-.page__footer {
+
+.page__breadcrumbs {
+  background-color: $blue;
   font-size: 0.875rem;
 
   a {
     color: $white;
   }
-}
-
-.footer .nav {
-  margin-left: -0.5rem;
-}
-
-.copyright {
-  background: rgba($dark, .9);
 }
