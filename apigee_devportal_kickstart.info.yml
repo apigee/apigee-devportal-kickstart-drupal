@@ -58,6 +58,7 @@ install:
 - adminimal_admin_toolbar
 - apigee_edge
 - apigee_edge_apidocs
+- apigee_kickstart_enhancement
 - better_exposed_filters
 - components
 - fontawesome

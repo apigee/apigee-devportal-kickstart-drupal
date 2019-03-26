@@ -1,0 +1,144 @@
+<?php
+
+/**
+ * @file
+ * Copyright 2018 Google Inc.
+ *
+ * This program is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License version 2 as published by the
+ * Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public
+ * License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc., 51
+ * Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ */
+
+use Drupal\apigee_kickstart_enhancement\Entity\AppViewBuilder;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Menu\LocalActionDefault;
+use Drupal\Core\Render\Element;
+
+/**
+ * Implements hook_theme().
+ */
+function apigee_kickstart_enhancement_theme($existing, $type, $theme, $path) {
+  // TODO: Check if Team apps should be handled differently.
+  return [
+    'developer_app' => [
+      'render element' => 'elements',
+    ],
+    'app' => [
+      'render element' => 'elements',
+    ],
+  ];
+}
+
+/**
+ * @file
+ * Main module file for Apigee Kickstart Enhancement.
+ */
+
+/**
+ * Implements hook_menu_local_actions_alter().
+ */
+function apigee_kickstart_enhancement_menu_local_actions_alter(&$local_actions) {
+  /** @var \Drupal\Core\Entity\EntityTypeInterface $app_entity_type */
+  foreach (\Drupal::service('apigee_kickstart.enhancer')->getAppEntityTypes() as $entity_type_id => $app_entity_type) {
+    // Update the local action title for app entity types.
+    $local_action_name = $app_entity_type->getProvider() . ".$entity_type_id.add_form_for_" . str_replace('_app', '', $entity_type_id);
+    if (isset($local_actions[$local_action_name])) {
+      $local_actions[$local_action_name]['title'] = t('Register new @entity_type', [
+        '@entity_type' => $app_entity_type->getLowercaseLabel(),
+      ]);
+
+      // Setting the title with entity type label is handled above.
+      // So we can fallback to the default class here.
+      $local_actions[$local_action_name]['class'] = LocalActionDefault::class;
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function apigee_kickstart_enhancement_entity_type_alter(array &$entity_types) {
+  /** @var \Drupal\Core\Entity\EntityTypeInterface[] $entity_types */
+  foreach ($entity_types as $entity_type_id => $entity_type) {
+    if (\Drupal::service('apigee_kickstart.enhancer')->isAppEntityType($entity_type)) {
+      $entity_types[$entity_type_id]->setViewBuilderClass(AppViewBuilder::class);
+    }
+  }
+}
+
+/**
+ * Preprocess variables for the developer_app template.
+ */
+function template_preprocess_developer_app(&$variables) {
+  // Add fields as content to template.
+  $variables += ['content' => []];
+  foreach (Element::children($variables['elements']) as $key) {
+    $variables['content'][$key] = $variables['elements'][$key];
+  }
+
+  // Add the view_mode to the template.
+  $variables['view_mode'] = $variables['elements']['#view_mode'];
+}
+
+/**
+ * Preprocess variables for the developer_app template.
+ */
+function template_preprocess_app(&$variables) {
+  // Add fields as content to template.
+  $variables += ['content' => []];
+  foreach (Element::children($variables['elements']) as $key) {
+    $variables['content'][$key] = $variables['elements'][$key];
+  }
+
+  // Add the view_mode to the template.
+  $variables['view_mode'] = $variables['elements']['#view_mode'];
+
+  // Add the entity to the template.
+  if ($entity = _apigee_kickstart_enhancement_get_app_entity_from_element($variables['elements'])) {
+    $variables['entity'] = $variables['elements']["#{$entity->getEntityTypeId()}"];
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function apigee_kickstart_enhancement_theme_suggestions_app_alter(array &$suggestions, array $variables) {
+  $view_mode = $variables['elements']['#view_mode'];
+  $hook = $variables['theme_hook_original'];
+
+  // Add a suggestion based on the entity type.
+  if (($entity = _apigee_kickstart_enhancement_get_app_entity_from_element($variables['elements'])) && ($entity_type_id = $entity->getEntityTypeId())) {
+    $suggestions[] = $hook . '__' . $entity_type_id;
+
+    // Add a suggestion based on the view mode.
+    $suggestions[] = $hook . '__' . $entity_type_id . '__' . $view_mode;
+  }
+}
+
+/**
+ * Helper to get the app entity from an element array.
+ *
+ * @param array $element
+ *   An element array.
+ *
+ * @return \Drupal\Core\Entity\EntityInterface|null
+ *   The app entity or null.
+ */
+function _apigee_kickstart_enhancement_get_app_entity_from_element(array $element): ?EntityInterface {
+  foreach (\Drupal::service('apigee_kickstart.enhancer')->getAppEntityTypes() as $entity_type_id => $app_entity_type) {
+    if (isset($element["#$entity_type_id"])) {
+      return $element["#$entity_type_id"];
+    }
+  }
+
+  return NULL;
+}
