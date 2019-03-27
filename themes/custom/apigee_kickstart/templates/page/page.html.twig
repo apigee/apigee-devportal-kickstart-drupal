@@ -60,7 +60,7 @@
 
     {% if page.content_above %}
       <div class="page__content_above">
-        <div class="container">
+        <div class="container-fluid">
           {{ page.content_above }}
         </div>
       </div>
@@ -68,16 +68,14 @@
 
     {% if page.content %}
       <div class="page__content">
-        <div class="container">
-          {{ page.content }}
-        </div>
+        {{ page.content }}
       </div>
     {% endif %}
   </main>
 
   {% if page.content_below %}
     <div class="page__content_below">
-      <div class="container">
+      <div class="container-fluid">
         {{ page.content_below }}
       </div>
     </div>
