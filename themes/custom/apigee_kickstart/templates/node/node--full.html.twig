@@ -1,0 +1,16 @@
+{#
+/**
+ * @file
+ * Template for a Node.
+ */
+#}
+{% extends '@apigee-kickstart/node/node.twig' %}
+{% block content %}
+
+  {% if content.field_header|render %}
+    {{ content.field_header }}
+    {{ tasks }}
+  {% endif %}
+
+  {{ content|without('field_header') }}
+{% endblock %}
