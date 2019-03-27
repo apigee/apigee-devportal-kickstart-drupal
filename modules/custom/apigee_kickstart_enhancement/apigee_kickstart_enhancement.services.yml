@@ -1,10 +1,14 @@
 services:
-  apigee_kickstart.enhancer:
-    class: Drupal\apigee_kickstart_enhancement\ApigeeKickStartEnhancer
-    arguments: ['@entity_type.manager']
-
   apigee_kickstart_enhancement.route_subscriber:
     class: Drupal\apigee_kickstart_enhancement\Routing\RouteSubscriber
     tags:
       - { name: event_subscriber }
     arguments: ['@apigee_kickstart.enhancer']
+
+  apigee_kickstart.enhancer:
+    class: Drupal\apigee_kickstart_enhancement\ApigeeKickStartEnhancer
+    arguments: ['@entity_type.manager']
+
+  apigee_kickstart_enhancement.local_task_manager:
+    class: Drupal\apigee_kickstart_enhancement\ApigeeLocalTaskManager
+    arguments: ['@http_kernel.controller.argument_resolver', '@request_stack', '@current_route_match', '@router.route_provider', '@module_handler', '@cache.discovery', '@language_manager', '@access_manager', '@current_user']

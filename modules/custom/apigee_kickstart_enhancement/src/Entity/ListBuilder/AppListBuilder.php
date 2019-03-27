@@ -23,9 +23,9 @@ namespace Drupal\apigee_kickstart_enhancement\Entity\ListBuilder;
 use Drupal\apigee_edge\Entity\ListBuilder\DeveloperAppListBuilderForDeveloper;
 
 /**
- * Renders the Apps list as a list of entity view instead of a table.
+ * Renders the Apps list as a list of entity views instead of a table.
  */
-class DeveloperAppListBuilder extends DeveloperAppListBuilderForDeveloper {
+class AppListBuilder extends DeveloperAppListBuilderForDeveloper {
 
   /**
    * {@inheritdoc}
@@ -35,6 +35,8 @@ class DeveloperAppListBuilder extends DeveloperAppListBuilderForDeveloper {
     $view_builder = $this->entityTypeManager->getViewBuilder($this->entityTypeId);
 
     // Render a list of apps.
+    // We can do ViewBuilder::viewMultiple here because \Drupal\apigee_edge\Entity\AppViewBuilder::buildMultiple
+    // assumes that a render array is always returned.
     foreach ($this->load() as $entity) {
       $build[] = $view_builder->view($entity);
     }

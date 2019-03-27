@@ -21,7 +21,7 @@
 namespace Drupal\apigee_kickstart_enhancement\Routing;
 
 use Drupal\apigee_kickstart_enhancement\ApigeeKickStartEnhancerInterface;
-use Drupal\apigee_kickstart_enhancement\Entity\ListBuilder\DeveloperAppListBuilder;
+use Drupal\apigee_kickstart_enhancement\Entity\ListBuilder\AppListBuilder;
 use Drupal\Core\Routing\RouteSubscriberBase;
 use Symfony\Component\Routing\RouteCollection;
 
@@ -55,7 +55,7 @@ class RouteSubscriber extends RouteSubscriberBase {
     /** @var \Drupal\Core\Entity\EntityTypeInterface $app_entity_type */
     foreach (\Drupal::service('apigee_kickstart.enhancer')->getAppEntityTypes() as $entity_type_id => $app_entity_type) {
       if ($route = $collection->get("entity.$entity_type_id.collection_by_" . str_replace('_app', '', $entity_type_id))) {
-        $route->setDefault('_controller', DeveloperAppListBuilder::class . '::render');
+        $route->setDefault('_controller', AppListBuilder::class . '::render');
       }
     }
   }

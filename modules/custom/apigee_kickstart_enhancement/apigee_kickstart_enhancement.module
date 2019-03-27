@@ -27,11 +27,7 @@ use Drupal\Core\Render\Element;
  * Implements hook_theme().
  */
 function apigee_kickstart_enhancement_theme($existing, $type, $theme, $path) {
-  // TODO: Check if Team apps should be handled differently.
   return [
-    'developer_app' => [
-      'render element' => 'elements',
-    ],
     'app' => [
       'render element' => 'elements',
     ],
