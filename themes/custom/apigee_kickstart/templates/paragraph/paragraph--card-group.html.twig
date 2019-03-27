@@ -1,0 +1,26 @@
+{#
+/**
+ * @file
+ * Template for a 'Card group' Paragraph.
+ */
+#}
+{% set classes = [
+  'paragraph',
+  not paragraph.isPublished() ? 'paragraph--unpublished',
+  paragraph.bundle|clean_class ~ '--' ~ view_mode|clean_class,
+  'bg-light'
+] %}
+
+{% block paragraph %}
+  <div{{attributes.addClass(classes)}}>
+    {% block content %}
+      <div class="container">
+        {{ content.field_title }}
+        <div class="card-deck">
+          {{ content|without('field_title', 'field_buttons') }}
+        </div>
+        {{ content.field_buttons}}
+      </div>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

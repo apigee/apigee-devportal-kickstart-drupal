@@ -1,0 +1,17 @@
+{#
+/**
+ * @file
+ * Template for a Card Paragraph.
+ */
+#}
+{% extends 'paragraph.html.twig' %}
+{% block paragraph %}
+
+  {% include '@apigee-kickstart/card/card.twig' with {
+    classes: classes,
+    image: content.field_image,
+    body: content|without('field_link', 'field_image'),
+    footer: content.field_link
+  } %}
+
+{% endblock %}
