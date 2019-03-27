@@ -74,7 +74,13 @@
 
     {% if page.content %}
       <div class="page__content">
+        {% if not node.field_content.value %}
+          <div class="container">
+        {% endif %}
         {{ page.content }}
+        {% if not node.field_content.value %}
+          </div>
+        {% endif %}
       </div>
     {% endif %}
   </main>
