@@ -54,8 +54,9 @@
     </header>
   {% endif %}
 
-    {% if page.tasks %}
   <main class="pb-5">
+    {# If field_header has a value, the tabs will print in the node template.#}
+    {% if page.tasks|render and not node.field_header.value %}
       <div class="page__tasks">
         <div class="container">
           {{ page.tasks }}
