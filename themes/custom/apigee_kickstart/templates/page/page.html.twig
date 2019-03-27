@@ -41,16 +41,21 @@
     </div>
   {% endif %}
 
-  <main class="pt-5 pb-5">
-    {% if page.header %}
-      <header class="page__header mb-3">
-        <div class="container">
+  {% if page.header|render %}
+    <header class="page__header">
+      <div class="container-fluid">
+        {# If field_header has a value, it should replace the title block.#}
+        {% if node.field_header.value %}
+          {{ page.header|without('apigee_kickstart_title') }}
+        {% else %}
           {{ page.header }}
-        </div>
-      </header>
-    {% endif %}
+        {% endif %}
+      </div>
+    </header>
+  {% endif %}
 
     {% if page.tasks %}
+  <main class="pb-5">
       <div class="page__tasks">
         <div class="container">
           {{ page.tasks }}
