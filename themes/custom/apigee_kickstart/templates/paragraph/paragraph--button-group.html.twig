@@ -1,0 +1,13 @@
+{#
+/**
+ * @file
+ * Template for a Button group Paragraph.
+ */
+#}
+{% set classes = [
+  'buttons',
+  'buttons--' ~ paragraph.getParentEntity.bundle|clean_class
+] %}
+<div{{ attributes.addClass(classes) }}>
+  {{ content }}
+</div>
