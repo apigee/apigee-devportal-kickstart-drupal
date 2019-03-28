@@ -1,15 +1,16 @@
+uuid: 52d431da-be33-4e3f-afe9-f2209be380b2
 langcode: en
 status: true
 dependencies:
   config:
     - field.field.apidoc.apidoc.field_categories
-    - field.field.apidoc.apidoc.field_filters
-    - field.field.apidoc.apidoc.field_groups
     - field.field.apidoc.apidoc.field_image
   module:
     - apigee_edge_apidocs
     - swagger_ui_formatter
     - text
+_core:
+  default_config_hash: byw1CM1bfYPa7c1bH3Yjlonwe-nTIP6GcfJmTrYctxM
 id: apidoc.apidoc.default
 targetEntityType: apidoc
 bundle: apidoc
@@ -24,22 +25,6 @@ content:
     third_party_settings: {  }
   field_categories:
     weight: 3
-    label: inline
-    settings:
-      link: false
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_filters:
-    weight: 5
-    label: inline
-    settings:
-      link: false
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_groups:
-    weight: 4
     label: inline
     settings:
       link: false

@@ -1,15 +1,16 @@
+uuid: 36db4ea7-284a-49ab-863b-8bf46f1f102e
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.apidoc.card
     - field.field.apidoc.apidoc.field_categories
-    - field.field.apidoc.apidoc.field_filters
-    - field.field.apidoc.apidoc.field_groups
     - field.field.apidoc.apidoc.field_image
   module:
     - apigee_edge_apidocs
     - text
+_core:
+  default_config_hash: _Gf-jP0ncU-TjBeqHKhUlsOu3aSlfW2wuctzRTo3XwI
 id: apidoc.apidoc.card
 targetEntityType: apidoc
 bundle: apidoc
@@ -42,6 +43,4 @@ content:
 hidden:
   api_product: true
   field_categories: true
-  field_filters: true
-  field_groups: true
   spec: true

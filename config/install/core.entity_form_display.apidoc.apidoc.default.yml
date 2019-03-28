@@ -1,16 +1,17 @@
+uuid: 33d4bc3f-cb45-46d4-949b-28dc1b1cc027
 langcode: en
 status: true
 dependencies:
   config:
     - field.field.apidoc.apidoc.field_categories
-    - field.field.apidoc.apidoc.field_filters
-    - field.field.apidoc.apidoc.field_groups
     - field.field.apidoc.apidoc.field_image
   module:
     - apigee_edge_apidocs
     - file
     - media_library
     - text
+_core:
+  default_config_hash: LyD-fg8dTV81F-wq5Xj_iF71QQYS3ZuRLEvI8TDDuMk
 id: apidoc.apidoc.default
 targetEntityType: apidoc
 bundle: apidoc
@@ -35,24 +36,6 @@ content:
     third_party_settings: {  }
   field_categories:
     weight: 4
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
-  field_filters:
-    weight: 6
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
-  field_groups:
-    weight: 5
     settings:
       match_operator: CONTAINS
       size: 60
