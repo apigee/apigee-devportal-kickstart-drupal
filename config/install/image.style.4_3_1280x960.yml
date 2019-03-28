@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 4_3_1280x960
+label: '4:3 Ratio - Max 1280 x 960'
+effects:
+  658742d3-a05f-4685-9fb0-92e703ccd8f1:
+    uuid: 658742d3-a05f-4685-9fb0-92e703ccd8f1
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1280
+      height: 960
+      anchor: center-center

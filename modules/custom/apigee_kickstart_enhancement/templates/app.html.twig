@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display an Apigee Edge App.
+ *
+ * Available variables:
+ * - entity: The Apigee Edge App entity.
+ * - content: All app items. Use {{ content }} to print them all,
+ * - attributes: HTML attributes for the containing element.
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+  'app',
+  'app--type-' ~ entity.getEntityTypeId|clean_class,
+  view_mode ? 'app--view-mode-' ~ view_mode|clean_class,
+]
+%}
+<article{{ attributes.addClass(classes) }}>
+  {{ content }}
+</article>

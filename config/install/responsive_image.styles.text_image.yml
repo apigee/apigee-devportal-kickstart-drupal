@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.4_3_1280x960
+    - image.style.4_3_320x240
+    - image.style.4_3_640x480
+    - image.style.4_3_991x566
+id: text_image
+label: 'Text & Image'
+image_style_mappings:
+  -
+    breakpoint_id: responsive_image.viewport_sizing
+    multiplier: 1x
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: '(min-width:992px) 50vw, 100vw'
+      sizes_image_styles:
+        - 4_3_1280x960
+        - 4_3_320x240
+        - 4_3_640x480
+        - 4_3_991x566
+breakpoint_group: responsive_image
+fallback_image_style: 4_3_320x240

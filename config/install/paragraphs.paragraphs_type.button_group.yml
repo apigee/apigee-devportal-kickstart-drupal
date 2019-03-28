@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: button_group
+label: 'Button group'
+icon_uuid: null
+description: 'A <em>Button group</em> contains one or more <em>Button link</em> items.'
+behavior_plugins: {  }

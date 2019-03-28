@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.title_bar
+  module:
+    - text
+id: paragraph.title_bar.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: title_bar
+label: 'Title bar text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

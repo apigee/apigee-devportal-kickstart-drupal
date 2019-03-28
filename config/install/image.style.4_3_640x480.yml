@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 4_3_640x480
+label: '4:3 Ratio - Max 640 x 480'
+effects:
+  ae590901-8807-45de-922d-db11094a09c4:
+    uuid: ae590901-8807-45de-922d-db11094a09c4
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 640
+      height: 480
+      anchor: center-center

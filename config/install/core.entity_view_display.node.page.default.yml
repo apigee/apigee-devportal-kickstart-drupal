@@ -3,8 +3,10 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_header
     - node.type.page
   module:
+    - entity_reference_revisions
     - text
     - user
 id: node.page.default
@@ -19,7 +21,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  links:
-    weight: 101
+  field_header:
+    type: entity_reference_revisions_entity_view
+    weight: 0
     region: content
-hidden: {  }
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+hidden:
+  links: true

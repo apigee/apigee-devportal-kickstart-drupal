@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Template for a Card component.
+ */
+#}
+{% set classes = [
+  'card'
+]|merge(classes|default([])) %}
+
+<div class="{{ classes|join(' ')|trim }}">
+  {% if image %}
+    <div class="card-img-top">
+      {{ image }}
+    </div>
+  {% endif %}
+
+  {% if body %}
+    <div class="card-body">
+      {% block body %}
+        {{ body }}
+      {% endblock %}
+    </div>
+  {% endif %}
+
+  {% if footer %}
+    <div class="card-footer">
+      {{ footer }}
+    </div>
+  {% endif %}
+
+</div>

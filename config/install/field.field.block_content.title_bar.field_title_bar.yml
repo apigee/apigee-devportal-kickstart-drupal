@@ -1,0 +1,51 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.title_bar
+    - field.storage.block_content.field_title_bar
+    - paragraphs.paragraphs_type.title_bar
+  module:
+    - entity_reference_revisions
+id: block_content.title_bar.field_title_bar
+field_name: field_title_bar
+entity_type: block_content
+bundle: title_bar
+label: 'Title bar'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      title_bar: title_bar
+    target_bundles_drag_drop:
+      blockquote:
+        enabled: false
+      button:
+        enabled: false
+      button_group:
+        enabled: false
+      callout:
+        enabled: false
+      callout_group:
+        enabled: false
+      card:
+        enabled: false
+      card_group:
+        enabled: false
+      cta:
+        enabled: false
+      hero:
+        enabled: false
+      text:
+        enabled: false
+      text_image:
+        enabled: false
+      title_bar:
+        enabled: true
+field_type: entity_reference_revisions

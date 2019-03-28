@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: content
+label: Content
+type: 'canonical_entities:node'
+pattern: '[node:content-type:machine-name]/[node:title]'
+selection_criteria:
+  161f7501-3436-4229-8956-d7f46a334444:
+    id: node_type
+    bundles:
+      article: article
+      faq: faq
+      forum: forum
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 161f7501-3436-4229-8956-d7f46a334444
+selection_logic: and
+weight: -5
+relationships: {  }
