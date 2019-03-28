@@ -10565,6 +10565,60 @@ ul.social-links li a {
   bottom: 0;
 }
 
+.text-image__image img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.text-image__image * {
+  display: flex;
+  align-items: stretch;
+}
+
+.nav-tabs {
+  border-left: 1px solid #c8c8c8;
+  border-bottom: 1px solid #c8c8c8;
+  font-size: 0.875rem;
+}
+
+.nav-tabs .nav-item {
+  margin: 0;
+}
+
+.nav-tabs .nav-link {
+  color: #a3a3a3;
+  border: 1px solid #c8c8c8;
+  border-left: 0;
+  border-bottom: 0;
+  border-radius: 0;
+  background-color: #f0f0f0;
+  padding: 0 1.85rem;
+  height: 40px;
+  line-height: 36px;
+  position: relative;
+}
+
+.nav-tabs .nav-link:hover {
+  color: #555555;
+  border-color: #c8c8c8;
+}
+
+.nav-tabs .nav-link.active {
+  color: #555555;
+  border-bottom-color: #2196f3;
+}
+
+.nav-tabs .nav-link.active:after {
+  content: "";
+  height: 4px;
+  background-color: #2196f3;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
 .nav-tabs--secondary {
   border-bottom: 1px solid #c8c8c8;
   font-size: 0.875rem;
