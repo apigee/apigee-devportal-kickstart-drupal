@@ -9,7 +9,13 @@
 
   {% if content.field_header|render %}
     {{ content.field_header }}
-    {{ tasks }}
+    {% if tasks|render %}
+      <div class="page__tasks">
+        <div class="container">
+          {{ tasks }}
+        </div>
+      </div>
+    {% endif %}
   {% endif %}
 
   {{ content|without('field_header') }}

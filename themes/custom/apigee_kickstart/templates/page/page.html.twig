@@ -54,7 +54,7 @@
     </header>
   {% endif %}
 
-  <main class="pb-5">
+  <main>
     {# If field_header has a value, the tabs will print in the node template.#}
     {% if page.tasks|render and not node.field_header.value %}
       <div class="page__tasks">
@@ -66,7 +66,7 @@
 
     {% if page.content_above %}
       <div class="page__content_above">
-        <div class="container-fluid">
+        <div class="container-fluid px-0">
           {{ page.content_above }}
         </div>
       </div>
@@ -75,7 +75,7 @@
     {% if page.content %}
       <div class="page__content">
         {% if not node.field_content.value %}
-          <div class="container">
+          <div class="container pb-5">
         {% endif %}
         {{ page.content }}
         {% if not node.field_content.value %}
@@ -87,7 +87,7 @@
 
   {% if page.content_below %}
     <div class="page__content_below">
-      <div class="container-fluid">
+      <div class="container-fluid px-0">
         {{ page.content_below }}
       </div>
     </div>
