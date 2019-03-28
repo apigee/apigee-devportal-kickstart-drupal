@@ -12,7 +12,8 @@
 .collapsible-card__content {
   display: none;
 
-  > .field {
+  .field,
+  .tab-pane .field {
     width: 100%;
     padding: 1.2rem 0;
     font-size: 0.875rem;

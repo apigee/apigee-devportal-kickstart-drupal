@@ -58,10 +58,12 @@
 @import "../components/navbar/navbar";
 @import "../components/navbar/navbar-brand";
 @import "../components/social/social-links";
+@import "../components/navs/tabs-secondary";
 @import "../components/card/collapsible-card";
 
 // Other
 // -----------------------------------------------------------------------------
 @import "block/block";
+@import "apigee/app";
 @import "content/node.page";
 @import "content/node.article";

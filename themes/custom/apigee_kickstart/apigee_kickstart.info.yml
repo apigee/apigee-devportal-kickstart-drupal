@@ -25,7 +25,6 @@ libraries:
 
 libraries-override:
   radix/bootstrap: false
-  apigee_edge/apigee_edge.components: false
   apigee_edge/apigee_edge.app_view: false
 
 ckeditor_stylesheets:

@@ -1,0 +1,50 @@
+// App
+// -----------------------------------------------------------------------------
+.app {
+
+  .nav-tabs--secondary {
+    margin-top: -1.5rem;
+  }
+
+  .field {
+
+    + .wrapper--primary {
+      padding-top: 1.2rem;
+      border-top: 1px solid $border-color;
+    }
+
+    &__label {
+      margin: 0;
+    }
+  }
+
+  .api-product-list-row,
+  .item-property {
+    width: 100%;
+    padding: 1.2rem 0;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    + .api-product-list-row,
+    + .item-property {
+      border-top: 1px solid $border-color;
+    }
+
+    label,
+    .api-product-name {
+      display: inline-block;
+      min-width: 160px;
+      letter-spacing: 0.25px;
+      font-weight: 500;
+    }
+  }
+}
