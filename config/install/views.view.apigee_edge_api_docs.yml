@@ -1,3 +1,4 @@
+uuid: 65e13b77-bbff-44f6-bf4c-e50c8be72735
 langcode: en
 status: true
 dependencies:
@@ -6,8 +7,6 @@ dependencies:
     - field.storage.apidoc.field_categories
     - system.menu.main
     - taxonomy.vocabulary.category
-    - taxonomy.vocabulary.filters
-    - taxonomy.vocabulary.groups
   module:
     - apigee_edge_apidocs
     - better_exposed_filters
@@ -436,96 +435,6 @@ display:
           limit: true
           vid: category
           hierarchy: true
-          error_message: true
-          plugin_id: taxonomy_index_tid
-        field_filters_target_id:
-          id: field_filters_target_id
-          table: apidoc__field_filters
-          field: field_filters_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: or
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_filters_target_id_op
-            label: Filters
-            description: ''
-            use_operator: false
-            operator: field_filters_target_id_op
-            identifier: field_filters_target_id
-            required: false
-            remember: false
-            multiple: true
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          type: select
-          limit: true
-          vid: filters
-          hierarchy: false
-          error_message: true
-          plugin_id: taxonomy_index_tid
-        field_groups_target_id:
-          id: field_groups_target_id
-          table: apidoc__field_groups
-          field: field_groups_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: or
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_groups_target_id_op
-            label: Groups
-            description: ''
-            use_operator: false
-            operator: field_groups_target_id_op
-            identifier: field_groups_target_id
-            required: false
-            remember: false
-            multiple: true
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          type: select
-          limit: true
-          vid: groups
-          hierarchy: false
           error_message: true
           plugin_id: taxonomy_index_tid
       sorts: {  }
