@@ -52,4 +52,3 @@ function apigee_kickstart_preprocess_app(array &$variables) {
     }
   }
 }
-
