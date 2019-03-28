@@ -1,0 +1,22 @@
+{#
+/**
+ * @file
+ * Template for a 'Text + Image' Paragraph.
+ */
+#}
+{% embed 'paragraph.html.twig' with { classes: ['my-7'] } %}
+  {% block content %}
+    <div class="container-fluid px-0">
+      <div class="row d-md-flex align-items-md-stretch no-gutters">
+        <div class="text-image__text col-md-6 order-2 order-md-1 bg-light pt-4 py-6 px-3 px-md-8">
+          {{ content|without('field_image') }}
+        </div>
+        {% if content.field_image|render %}
+          <div class="text-image__image col-md-6 order-1 order-md-2px-0 d-md-flex align-items-md-stretch">
+            {{ content.field_image }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endblock %}
+{% endembed %}
