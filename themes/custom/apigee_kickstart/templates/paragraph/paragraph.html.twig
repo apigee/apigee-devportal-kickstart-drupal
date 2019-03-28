@@ -44,7 +44,7 @@
     not paragraph.isPublished() ? 'paragraph--unpublished',
     paragraph.bundle|clean_class,
     paragraph.bundle|clean_class ~ '--' ~ view_mode|clean_class,
-  ]
+  ]|merge(classes|default([]))
 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>

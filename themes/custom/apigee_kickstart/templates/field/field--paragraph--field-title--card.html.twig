@@ -1,0 +1,11 @@
+{#
+/**
+ * @file
+ * Template for field_title on a Card Paragraph.
+ */
+#}
+{% set tag = element['#object'].field_title.getValue ? 'h3' : 'h2' %}
+
+{%- for item in items -%}
+  <{{ tag }} class="card-title">{{- item.content -}}</{{ tag }}>
+{%- endfor -%}
