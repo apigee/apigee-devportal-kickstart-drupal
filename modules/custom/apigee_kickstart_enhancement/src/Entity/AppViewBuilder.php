@@ -35,7 +35,7 @@ class AppViewBuilder extends ApigeeEdgeAppViewBuilder {
     $build = parent::getBuildDefaults($entity, $view_mode);
 
     // Allow apps to be themed.
-    // All apps can share a template.
+    // All app types can share a template.
     $build['#theme'] = 'app';
 
     return $build;

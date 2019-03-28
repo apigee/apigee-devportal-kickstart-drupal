@@ -21,7 +21,7 @@
 
 /**
  * @file
- * Preprocessors and theme functions of Apigee Kickstart Enhancement module.
+ * Preprocessors and theme functions for the Apigee Kickstart Enhancement module.
  */
 
 use Drupal\Core\Entity\EntityInterface;
@@ -47,7 +47,7 @@ function template_preprocess_app(&$variables) {
 }
 
 /**
- * Preprocesses variables for the secret element template.
+ * Preprocess variables for the secret element template.
  */
 function template_preprocess_secret(&$variables) {
   $variables['value'] = [

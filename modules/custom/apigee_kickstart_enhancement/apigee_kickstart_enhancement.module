@@ -18,6 +18,11 @@
  * Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
+/**
+ * @file
+ * Main module file for Apigee Kickstart Enhancement.
+ */
+
 use Drupal\apigee_kickstart_enhancement\Entity\AppViewBuilder;
 use Drupal\Core\Menu\LocalActionDefault;
 
@@ -41,11 +46,6 @@ function apigee_kickstart_enhancement_theme($existing, $type, $theme, $path) {
     ],
   ];
 }
-
-/**
- * @file
- * Main module file for Apigee Kickstart Enhancement.
- */
 
 /**
  * Implements hook_menu_local_actions_alter().
