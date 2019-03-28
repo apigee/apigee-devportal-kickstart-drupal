@@ -1,7 +1,8 @@
 name: Apigee Kickstart Content
-description: "Provides demo content for Apigee Developer Portal Kickstart"
+description: "Provides demo content for Apigee Developer Portal Kickstart."
 type: module
 core: 8.x
+package: Apigee Kickstart
 dependencies:
   - default_content:default_content
   - drupal:node

@@ -1,0 +1,15 @@
+// Style for the Field component.
+// -----------------------------------------------------------------------------
+.field__label {
+  letter-spacing: 0.25px;
+  font-weight: 500;
+}
+
+// Inline field
+// -----------------------------------------------------------------------------
+.field--inline {
+
+  .field__label {
+    margin-right: 1rem;
+  }
+}

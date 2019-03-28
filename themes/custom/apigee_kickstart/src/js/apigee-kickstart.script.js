@@ -1,14 +1,6 @@
 import 'popper.js';
 import 'bootstrap';
 
-(function () {
-
-  'use strict';
-
-  Drupal.behaviors.helloWorld = {
-    attach: function (context) {
-      console.log('Hello World');
-    }
-  };
-
-})(jQuery, Drupal);
+// Components.
+// TODO: Break this into libaries.
+import '../components/card/collapsible-card';
