@@ -16964,6 +16964,38 @@ module.exports = g;
 
 /***/ }),
 
+/***/ "./src/components/card/collapsible-card.js":
+/*!*************************************************!*\
+  !*** ./src/components/card/collapsible-card.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function ($, Drupal) {
+  'use strict';
+
+  Drupal.behaviors.collapsibleCard = {
+    attach: function attach(context) {
+      var $collapsibleCards = $('.collapsible-card', context);
+
+      if ($collapsibleCards.length) {
+        $collapsibleCards.each(function () {
+          var $collapsibleCard = $(this);
+          var $toggle = $collapsibleCard.find('.collapsible-card__toggle');
+          var $content = $collapsibleCard.find('.collapsible-card__content');
+          $toggle.on('click', function (event) {
+            event.preventDefault();
+            $collapsibleCard.toggleClass('collapsible-card--active');
+            $content.slideToggle(200);
+          });
+        });
+      }
+    }
+  };
+})(jQuery, Drupal);
+
+/***/ }),
+
 /***/ "./src/js/apigee-kickstart.script.js":
 /*!*******************************************!*\
   !*** ./src/js/apigee-kickstart.script.js ***!
@@ -16976,18 +17008,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var popper_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! popper.js */ "./node_modules/popper.js/dist/esm/popper.js");
 /* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.js");
 /* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(bootstrap__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_card_collapsible_card__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/card/collapsible-card */ "./src/components/card/collapsible-card.js");
+/* harmony import */ var _components_card_collapsible_card__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_card_collapsible_card__WEBPACK_IMPORTED_MODULE_2__);
+
+ // Components.
+// TODO: Break this into libaries.
 
 
-
-(function () {
-  'use strict';
-
-  Drupal.behaviors.helloWorld = {
-    attach: function attach(context) {
-      console.log('Hello World');
-    }
-  };
-})(jQuery, Drupal);
 
 /***/ }),
 
@@ -17009,8 +17036,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/jacine/Sites/kick/web/profiles/contrib/apigee_devportal_kickstart/themes/custom/apigee_kickstart/src/js/apigee-kickstart.script.js */"./src/js/apigee-kickstart.script.js");
-module.exports = __webpack_require__(/*! /Users/jacine/Sites/kick/web/profiles/contrib/apigee_devportal_kickstart/themes/custom/apigee_kickstart/src/sass/apigee-kickstart.style.scss */"./src/sass/apigee-kickstart.style.scss");
+__webpack_require__(/*! /Users/arshad/Sites/chapterthree/ks/web/profiles/contrib/apigee_devportal_kickstart/themes/custom/apigee_kickstart/src/js/apigee-kickstart.script.js */"./src/js/apigee-kickstart.script.js");
+module.exports = __webpack_require__(/*! /Users/arshad/Sites/chapterthree/ks/web/profiles/contrib/apigee_devportal_kickstart/themes/custom/apigee_kickstart/src/sass/apigee-kickstart.style.scss */"./src/sass/apigee-kickstart.style.scss");
 
 
 /***/ })
