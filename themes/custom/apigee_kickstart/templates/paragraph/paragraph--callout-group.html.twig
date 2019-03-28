@@ -1,0 +1,15 @@
+{#
+/**
+ * @file
+ * Template for a 'Callout group' Paragraph.
+ */
+#}
+{% embed 'paragraph.html.twig' with { classes: ['text-center', 'pt-7', 'pb-5'] } %}
+  {% block content %}
+    <div class="container">
+      {{ content.field_title }}
+      {{ content|without('field_title', 'field_buttons') }}
+      {{ content.field_buttons}}
+    </div>
+  {% endblock %}
+{% endembed %}
