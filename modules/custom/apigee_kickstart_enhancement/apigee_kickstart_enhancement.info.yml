@@ -1,5 +1,5 @@
 name: Apigee Kickstart Enhancement
-description: "Provides enhancement for Apigee Edge pages."
+description: "Provides enhancement for Apigee Edge module."
 type: module
 core: 8.x
 package: Apigee Kickstart

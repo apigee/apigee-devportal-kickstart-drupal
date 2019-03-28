@@ -1,0 +1,10 @@
+secret:
+  version: 1.0
+  css:
+    theme:
+      css/apigee_kickstart_enhancement.secret.css: {}
+  js:
+    js/apigee_kickstart_enhancement.secret.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

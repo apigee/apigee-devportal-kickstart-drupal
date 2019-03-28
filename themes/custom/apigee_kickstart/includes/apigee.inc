@@ -17,6 +17,15 @@ function apigee_kickstart_preprocess_app(array &$variables) {
     $credential_variables['elements']['#credential'] = reset($credentials);
 
     template_preprocess_app_credential($credential_variables);
+
+    // Render the consumerKey and the consumerSecret as secret fields.
+    foreach (['consumerKey', 'consumerSecret'] as $field_name) {
+      $credential_variables['primary_wrapper'][$field_name]['value'] = [
+        '#type' => 'secret',
+        '#value' => $credential_variables['primary_wrapper'][$field_name]['value']['#value'],
+      ];
+    }
+
     $variables['content']['credentials'] = $credential_variables;
   }
 
@@ -43,3 +52,4 @@ function apigee_kickstart_preprocess_app(array &$variables) {
     }
   }
 }
+

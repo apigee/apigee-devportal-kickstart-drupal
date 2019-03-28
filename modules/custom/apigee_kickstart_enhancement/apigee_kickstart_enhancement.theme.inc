@@ -47,6 +47,15 @@ function template_preprocess_app(&$variables) {
 }
 
 /**
+ * Preprocesses variables for the secret element template.
+ */
+function template_preprocess_secret(&$variables) {
+  $variables['value'] = [
+    '#markup' => $variables['elements']['#value'],
+  ];
+}
+
+/**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
 function apigee_kickstart_enhancement_theme_suggestions_app_alter(array &$suggestions, array $variables) {
@@ -58,6 +67,7 @@ function apigee_kickstart_enhancement_theme_suggestions_app_alter(array &$sugges
     $suggestions[] = $hook . '__' . $entity_type_id;
 
     // Add a suggestion based on the view mode.
+    $suggestions[] = $hook . '__' . $view_mode;
     $suggestions[] = $hook . '__' . $entity_type_id . '__' . $view_mode;
   }
 }

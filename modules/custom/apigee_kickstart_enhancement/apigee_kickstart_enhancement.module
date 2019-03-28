@@ -35,6 +35,10 @@ function apigee_kickstart_enhancement_theme($existing, $type, $theme, $path) {
       'render element' => 'elements',
       'file' => 'apigee_kickstart_enhancement.theme.inc',
     ],
+    'secret' => [
+      'render element' => 'elements',
+      'file' => 'apigee_kickstart_enhancement.theme.inc',
+    ],
   ];
 }
 

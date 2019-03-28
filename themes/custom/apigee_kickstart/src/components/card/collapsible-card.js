@@ -14,7 +14,7 @@
           $toggle.on('click', function (event) {
             event.preventDefault();
             $collapsibleCard.toggleClass('collapsible-card--active');
-            $content.slideToggle(250);
+            $content.slideToggle(200);
           });
         });
       }

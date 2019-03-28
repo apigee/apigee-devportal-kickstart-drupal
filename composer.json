@@ -46,6 +46,11 @@
     "patchLevel": {
       "drupal/core": "-p2"
     },
+    "patches": {
+      "drupal/core": {
+        "`EntityViewBuilder::getBuildDefaults()` doesn't check for `RevisionableInterface`.": "https://www.drupal.org/files/issues/2019-01-10/2951487_15_no-tests.patch"
+      }
+    },
     "installer-paths": {
       "web/core": [
         "type:drupal-core"

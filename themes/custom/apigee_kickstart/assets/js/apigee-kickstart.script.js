@@ -16986,7 +16986,7 @@ module.exports = g;
           $toggle.on('click', function (event) {
             event.preventDefault();
             $collapsibleCard.toggleClass('collapsible-card--active');
-            $content.slideToggle(250);
+            $content.slideToggle(200);
           });
         });
       }
@@ -17012,6 +17012,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_card_collapsible_card__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_card_collapsible_card__WEBPACK_IMPORTED_MODULE_2__);
 
  // Components.
+// TODO: Break this into libaries.
 
 
 
