@@ -6,8 +6,6 @@ dependencies:
   module:
     - apigee_edge
     - apigee_edge_teams
-_core:
-  default_config_hash: cd_tDe09Gj5q1cJ18Ex7E1rDdCl_OJIxwwWEPKKZB3g
 id: team_app.team_app.collapsible_card
 targetEntityType: team_app
 bundle: team_app

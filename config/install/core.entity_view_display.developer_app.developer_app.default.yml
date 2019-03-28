@@ -3,8 +3,6 @@ status: true
 dependencies:
   module:
     - apigee_edge
-_core:
-  default_config_hash: J9lMpXPqUYG-K_X77E1UUdZ69_elnGkR4iRN8H7N4bA
 id: developer_app.developer_app.default
 targetEntityType: developer_app
 bundle: developer_app
