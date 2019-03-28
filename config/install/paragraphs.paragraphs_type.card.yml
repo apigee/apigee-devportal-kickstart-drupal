@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: card
+label: Card
+icon_uuid: null
+description: 'A <em>Card</em> contains image, title, summary and link.'
+behavior_plugins: {  }

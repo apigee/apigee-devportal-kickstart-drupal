@@ -1,0 +1,10 @@
+services:
+  apigee_kickstart_enhancement.route_subscriber:
+    class: Drupal\apigee_kickstart_enhancement\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }
+    arguments: ['@apigee_kickstart.enhancer']
+
+  apigee_kickstart.enhancer:
+    class: Drupal\apigee_kickstart_enhancement\ApigeeKickStartEnhancer
+    arguments: ['@entity_type.manager']

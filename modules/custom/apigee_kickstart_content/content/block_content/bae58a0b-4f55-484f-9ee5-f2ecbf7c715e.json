@@ -1,0 +1,105 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/block\/8?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/title_bar"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/title_bar\/field_title_bar": [
+            {
+                "href": "",
+                "lang": "en"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 8
+        }
+    ],
+    "uuid": [
+        {
+            "value": "bae58a0b-4f55-484f-9ee5-f2ecbf7c715e"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 9
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "title_bar"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2019-03-15T19:31:14+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "info": [
+        {
+            "value": "Title bar: Blog",
+            "lang": "en"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2019-03-15T20:02:03+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "reusable": [
+        {
+            "value": true
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/title_bar\/field_title_bar": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/title_bar"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "65d6bf7f-d664-446e-9dc7-0909a5161c63"
+                    }
+                ],
+                "lang": "en",
+                "target_revision_id": "64"
+            }
+        ]
+    }
+}

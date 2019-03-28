@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 4_3_991x566
+label: '4:3 Ratio - Max 991 x 566'
+effects:
+  ad8ec3e0-599a-4ec7-b2b5-0e8a7533fdbb:
+    uuid: ad8ec3e0-599a-4ec7-b2b5-0e8a7533fdbb
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 991
+      height: 566
+      anchor: center-center

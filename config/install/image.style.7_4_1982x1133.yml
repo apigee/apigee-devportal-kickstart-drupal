@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 7_4_1982x1133
+label: '7:4 Ratio - Max 1982 x 1133'
+effects:
+  163a900f-cae7-429d-993a-f120a17c0582:
+    uuid: 163a900f-cae7-429d-993a-f120a17c0582
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1982
+      height: 1133
+      anchor: center-center

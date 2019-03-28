@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 7_4_640x366
+label: '7:4 Ratio - Max 640 x 366'
+effects:
+  48526482-ce86-4e31-84af-480806b7024c:
+    uuid: 48526482-ce86-4e31-84af-480806b7024c
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 640
+      height: 366
+      anchor: center-center

@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 5_4_250x200
+label: '5:4 Ratio - Max 250 x 200'
+effects:
+  ac97347c-1a00-4817-b296-c2c78fa24134:
+    uuid: ac97347c-1a00-4817-b296-c2c78fa24134
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 250
+      height: 200
+      anchor: center-center

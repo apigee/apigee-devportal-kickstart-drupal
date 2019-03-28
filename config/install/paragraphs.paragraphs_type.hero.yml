@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: hero
+label: Hero
+icon_uuid: null
+description: '<em>Hero</em> contains a background image, title, summary, and link(s). The background image is scaled to fill the browser''s width. <em>Hero</em> is designed to be used as an alternative to the standard "Page title" block and can be used via the "Header" field, where available, or via the custom <em>Hero block</em> type.'
+behavior_plugins: {  }

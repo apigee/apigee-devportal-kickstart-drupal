@@ -1,0 +1,105 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/block\/12?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/block_content\/title_bar"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/title_bar\/field_title_bar": [
+            {
+                "href": "",
+                "lang": "en"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 12
+        }
+    ],
+    "uuid": [
+        {
+            "value": "c9d29264-1428-4f25-ba78-736d7748459e"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 14
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "title_bar"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2019-03-16T18:33:27+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "info": [
+        {
+            "value": "Title bar: Contact Us",
+            "lang": "en"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2019-03-16T18:33:27+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "reusable": [
+        {
+            "value": true
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/title_bar\/field_title_bar": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/title_bar"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "df395751-d7f6-4dbe-88cb-7759e346cb0c"
+                    }
+                ],
+                "lang": "en",
+                "target_revision_id": "83"
+            }
+        ]
+    }
+}

@@ -1,0 +1,47 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_buttons
+    - paragraphs.paragraphs_type.button
+    - paragraphs.paragraphs_type.button_group
+  module:
+    - entity_reference_revisions
+id: paragraph.button_group.field_buttons
+field_name: field_buttons
+entity_type: paragraph
+bundle: button_group
+label: Buttons
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      button: button
+    target_bundles_drag_drop:
+      button_group:
+        enabled: false
+      blockquote:
+        enabled: false
+      button:
+        enabled: true
+      callout:
+        enabled: false
+      callout_group:
+        enabled: false
+      card:
+        enabled: false
+      card_group:
+        enabled: false
+      hero:
+        enabled: false
+      text_image:
+        enabled: false
+      title_bar:
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,8 @@
+uuid: a291c606-19fa-4122-9ce7-71a16e5c86e0
+langcode: en
+status: true
+dependencies: {  }
+id: cta
+label: 'Call to Action block'
+revision: 1
+description: 'A <em>Call to Action</em>, which utilizes a Paragraph by the same name, consists of a title, description and one or more button-style links.'

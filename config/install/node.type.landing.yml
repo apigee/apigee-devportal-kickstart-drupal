@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - footer
+      - main
+    parent: 'main:'
+name: 'Landing page'
+type: landing
+description: 'Use <em>landing pages</em> to create freeform, marketing-style page, like the homepage.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

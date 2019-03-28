@@ -11,7 +11,8 @@ distribution:
  name: Apigee Developer Portal Kickstart
 
 # Required modules
-# Note that any dependencies of the modules listed here will be installed automatically.
+# Note that any dependencies of the modules listed here will be installed
+# automatically.
 install:
 - node
 - history
@@ -30,11 +31,9 @@ install:
 - editor
 - help
 - image
-- link
 - menu_ui
 - options
 - path
-- text
 - page_cache
 - dynamic_page_cache
 - big_pipe
@@ -42,36 +41,35 @@ install:
 - dblog
 - search
 - shortcut
-- system
 - toolbar
-- field
 - field_ui
 - file
-- filter
 - rdf
 - views
 - views_ui
 - tour
-- update
-- user
 - automated_cron
-- hal
-- serialization
-- default_content
-- forum
-- blog
-- entity
-- key
-- ctools
-- pathauto
-- token
-- apigee_edge
+- media
+- media_library
+- responsive_image
 - admin_toolbar
 - admin_toolbar_links_access_filter
 - admin_toolbar_tools
+- adminimal_admin_toolbar
+- apigee_edge
+- apigee_edge_apidocs
+- apigee_kickstart_enhancement
+- better_exposed_filters
+- components
+- fontawesome
+- forum
+- paragraphs
+- pathauto
+- swagger_ui_formatter
 
 # List any themes that should be installed as part of the profile installation.
 # Note that this will not set any theme as the default theme.
 themes:
+- apigee_kickstart
+- bartik
 - seven
-- apigee_material_ui

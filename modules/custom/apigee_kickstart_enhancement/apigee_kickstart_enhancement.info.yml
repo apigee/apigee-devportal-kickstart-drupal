@@ -1,0 +1,7 @@
+name: Apigee Kickstart Enhancement
+description: "Provides enhancement for Apigee Edge module."
+type: module
+core: 8.x
+package: Apigee Kickstart
+dependencies:
+  - apigee_edge:apigee_edge

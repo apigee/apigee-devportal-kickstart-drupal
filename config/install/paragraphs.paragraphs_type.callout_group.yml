@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: callout_group
+label: 'Callout group'
+icon_uuid: null
+description: 'A <em>Callout group</em> contains one or more <em>Callout</em> items.'
+behavior_plugins: {  }

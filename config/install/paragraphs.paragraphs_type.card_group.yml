@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: card_group
+label: 'Card group'
+icon_uuid: null
+description: '<em>Card group</em> contains a title, button(s), and one or more <em>Card</em> items, which display as columns.'
+behavior_plugins: {  }

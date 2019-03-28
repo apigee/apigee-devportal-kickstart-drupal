@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 7_4_700x400
+label: '7:4 Ratio - Max 700 x 400'
+effects:
+  73ed9e8e-9274-4c85-96cb-d84cab1de591:
+    uuid: 73ed9e8e-9274-4c85-96cb-d84cab1de591
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 700
+      height: 400
+      anchor: center-center

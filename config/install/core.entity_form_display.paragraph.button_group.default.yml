@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.button_group.field_buttons
+    - paragraphs.paragraphs_type.button_group
+  module:
+    - paragraphs
+id: paragraph.button_group.default
+targetEntityType: paragraph
+bundle: button_group
+mode: default
+content:
+  field_buttons:
+    weight: 0
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: button
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
+        add_above: '0'
+    third_party_settings: {  }
+    type: paragraphs
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

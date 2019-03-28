@@ -1,0 +1,23 @@
+ul.social-links {
+  align-items: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+
+  @include media-breakpoint-down(sm) {
+    align-items: flex-start;
+    margin-top: map-get($spacers, 2);
+  }
+
+  li {
+    list-style: none;
+    margin-bottom: map-get($spacers, 1);
+    margin-right: map-get($spacers, 2);
+
+    a {
+      display: block;
+    }
+  }
+}
