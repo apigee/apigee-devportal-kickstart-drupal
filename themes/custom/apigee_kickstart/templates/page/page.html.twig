@@ -41,16 +41,22 @@
     </div>
   {% endif %}
 
-  <main class="pt-5 pb-5">
-    {% if page.header %}
-      <header class="page__header mb-3">
-        <div class="container">
+  {% if page.header|render %}
+    <header class="page__header">
+      <div class="container-fluid">
+        {# If field_header has a value, it should replace the title block.#}
+        {% if node.field_header.value %}
+          {{ page.header|without('apigee_kickstart_title') }}
+        {% else %}
           {{ page.header }}
-        </div>
-      </header>
-    {% endif %}
+        {% endif %}
+      </div>
+    </header>
+  {% endif %}
 
-    {% if page.tasks %}
+  <main class="pb-5">
+    {# If field_header has a value, the tabs will print in the node template.#}
+    {% if page.tasks|render and not node.field_header.value %}
       <div class="page__tasks">
         <div class="container">
           {{ page.tasks }}
@@ -60,7 +66,7 @@
 
     {% if page.content_above %}
       <div class="page__content_above">
-        <div class="container">
+        <div class="container-fluid">
           {{ page.content_above }}
         </div>
       </div>
@@ -68,16 +74,20 @@
 
     {% if page.content %}
       <div class="page__content">
-        <div class="container">
-          {{ page.content }}
-        </div>
+        {% if not node.field_content.value %}
+          <div class="container">
+        {% endif %}
+        {{ page.content }}
+        {% if not node.field_content.value %}
+          </div>
+        {% endif %}
       </div>
     {% endif %}
   </main>
 
   {% if page.content_below %}
     <div class="page__content_below">
-      <div class="container">
+      <div class="container-fluid">
         {{ page.content_below }}
       </div>
     </div>

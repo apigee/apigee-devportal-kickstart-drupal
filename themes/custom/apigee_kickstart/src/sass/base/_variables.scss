@@ -124,7 +124,8 @@ $spacers: map-merge((
   5: ($spacer * 1.27),    // 32px
   6: ($spacer * 2),       // 48px
   7: ($spacer * 2.665),   // 64px
-  8: ($spacer * 3)        // 72px
+  8: ($spacer * 3),       // 72px
+  9: ($spacer * 4)        // 96px
 ), $spacers);
 
 // This variable affects the `.h-*` and `.w-*` classes.
@@ -261,10 +262,10 @@ $headings-font-weight:        400 !default;
 $headings-line-height:        1.175 !default;
 $headings-color:              inherit !default;
 
-$display1-size:               6rem !default;
-$display2-size:               5.5rem !default;
-$display3-size:               4.5rem !default;
-$display4-size:               3.5rem !default;
+$display1-size:               4.5rem !default;
+$display2-size:               3.5rem !default;
+$display3-size:               2.5rem !default;
+$display4-size:               1.5rem !default;
 
 $display1-weight:             300 !default;
 $display2-weight:             300 !default;
