@@ -10663,7 +10663,6 @@ ul.social-links li a {
 .wrapper--primary,
 .wrapper--secondary {
   width: auto;
-  display: block;
 }
 
 .app .tab-pane .field + .wrapper--primary {
