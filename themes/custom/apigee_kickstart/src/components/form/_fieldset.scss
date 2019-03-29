@@ -1,0 +1,35 @@
+// Style for fieldset
+// -----------------------------------------------------------------------------
+fieldset {
+
+  legend {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h4 {
+      font-size: 1.25rem;
+      letter-spacing: 0.15px;
+      line-height: 1;
+      font-weight: 500;
+    }
+
+    button {
+      font-size: 1.2rem;
+      color: $primary;
+      border: 0;
+      padding: 0;
+      transition: $transition-base;
+    }
+  }
+
+  &.closed {
+
+    legend {
+
+      button {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

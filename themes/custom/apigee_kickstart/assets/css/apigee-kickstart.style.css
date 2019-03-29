@@ -9800,6 +9800,65 @@ a.text-lighter:hover, a.text-lighter:focus {
   margin-right: 1rem;
 }
 
+.form-checkboxes .form-item + .form-item {
+  margin-top: 0.5rem;
+}
+
+.form-check {
+  display: flex;
+  align-items: flex-start;
+  padding: 0;
+  position: relative;
+}
+.form-check svg {
+  font-size: 1.3rem;
+  position: absolute;
+}
+.form-check .fa-check-square {
+  color: #2196f3;
+}
+.form-check .form-check-input {
+  display: none;
+}
+.form-check .form-check-input + svg {
+  display: none;
+}
+.form-check .form-check-input:checked + svg {
+  display: block;
+}
+.form-check .form-check-input:checked + svg + svg {
+  display: none;
+}
+.form-check label {
+  padding-left: 1.6rem;
+  z-index: 10;
+  position: relative;
+  cursor: pointer;
+}
+
+fieldset legend {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+fieldset legend h4 {
+  font-size: 1.25rem;
+  letter-spacing: 0.15px;
+  line-height: 1;
+  font-weight: 500;
+}
+fieldset legend button {
+  font-size: 1.2rem;
+  color: #2196f3;
+  border: 0;
+  padding: 0;
+  transition: all 0.2s ease-in-out;
+}
+fieldset.closed legend button {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
 .navbar {
   font-size: 0.875rem;
 }
@@ -9900,6 +9959,37 @@ ul.social-links li a {
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+.pagination {
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.pagination .pager__item:first-child {
+  border-radius: 4px 0 0 4px;
+}
+.pagination .pager__item:last-child {
+  border-radius: 0 4px 4px 0;
+}
+.pagination .pager__item + .pager__item {
+  border-left: 1px solid #f0f0f0;
+}
+.pagination .page-link {
+  border: 0;
+  height: 38px;
+  min-width: 38px;
+  padding-top: 0;
+  padding-bottom: 0;
+  text-align: center;
+  line-height: 38px;
+  margin: 0;
+}
+.pagination .page-link:hover {
+  background-color: #f9f9f9;
+}
+.pagination .is-active .page-link:hover {
+  background-color: #2196f3;
 }
 
 .text-image__image img {
@@ -10070,41 +10160,6 @@ ul.social-links li a {
   height: 100%;
 }
 
-.form-checkboxes .form-item + .form-item {
-  margin-top: 0.5rem;
-}
-
-.form-check {
-  display: flex;
-  align-items: center;
-  padding: 0;
-}
-.form-check svg {
-  font-size: 1.3rem;
-}
-.form-check .fa-check-square {
-  color: #2196f3;
-}
-.form-check .form-check-input {
-  display: none;
-}
-.form-check .form-check-input + svg {
-  display: none;
-}
-.form-check .form-check-input:checked + svg {
-  display: block;
-}
-.form-check .form-check-input:checked + svg + svg {
-  display: none;
-}
-.form-check label {
-  margin-left: 0.4rem;
-}
-
-.form-check-input:checked + .form-check-label::before {
-  content: "\F14A";
-}
-
 .views-exposed-form {
   border-radius: 4px;
   background-color: #fff;
@@ -10114,12 +10169,6 @@ ul.social-links li a {
 .views-exposed-form fieldset,
 .views-exposed-form details {
   margin: 0 !important;
-}
-.views-exposed-form legend h4 {
-  font-size: 1.25rem;
-  letter-spacing: 0.15px;
-  line-height: 1;
-  font-weight: 500;
 }
 .views-exposed-form fieldset .fieldset-wrapper {
   padding-top: 0 !important;

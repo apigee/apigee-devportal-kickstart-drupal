@@ -23,15 +23,20 @@
   {% endif %}
 
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-4 col-lg-3">
       {{ exposed }}
     </div>
 
-    <div class="col-md-9">
+    <div class="col-md-8 col-lg-9">
       {{ attachment_before }}
 
       {{ rows }}
-      {{ empty }}
+
+      {% if empty %}
+        <div class="p-4 text-center text-muted">
+          {{ empty }}
+        </div>
+      {% endif %}
       {{ pager }}
 
       {{ attachment_after }}

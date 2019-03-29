@@ -58,11 +58,14 @@
 @import "../components/badge/badge";
 @import "../components/callout/callout";
 @import "../components/field/field";
+@import "../components/form/checkboxes";
+@import "../components/form/fieldset";
 @import "../components/node/node";
 @import "../components/navbar/navbar";
 @import "../components/navbar/navbar-brand";
 @import "../components/social/social-links";
 @import "../components/navs/nav-tabs";
+@import "../components/navs/pager";
 @import "../components/text-image/text-image";
 @import "../components/navs/nav-tabs";
 @import "../components/navs/nav-tabs-secondary";
@@ -74,7 +77,6 @@
 @import "apigee/app";
 @import "apigee/apidoc";
 @import "block/block";
-@import "form/form";
 @import "form/view.exposed-form";
 @import "content/node.page";
 @import "content/node.article";
