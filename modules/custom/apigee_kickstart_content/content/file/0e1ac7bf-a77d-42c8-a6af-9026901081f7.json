@@ -1,0 +1,87 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/sites\/default\/files\/apidoc_specs\/petstore.yaml"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 15
+        }
+    ],
+    "uuid": [
+        {
+            "value": "0e1ac7bf-a77d-42c8-a6af-9026901081f7"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "6e020f83-5f54-459f-9906-52cf7350528d"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "petstore.yaml"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/apidoc_specs\/petstore.yaml",
+            "url": "\/sites\/default\/files\/apidoc_specs\/petstore.yaml"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "application\/octet-stream"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 2536
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-03-29T08:00:01+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2019-03-29T08:00:32+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ]
+}

@@ -1,4 +1,3 @@
-uuid: 52d431da-be33-4e3f-afe9-f2209be380b2
 langcode: en
 status: true
 dependencies:
@@ -9,8 +8,6 @@ dependencies:
     - apigee_edge_apidocs
     - swagger_ui_formatter
     - text
-_core:
-  default_config_hash: byw1CM1bfYPa7c1bH3Yjlonwe-nTIP6GcfJmTrYctxM
 id: apidoc.apidoc.default
 targetEntityType: apidoc
 bundle: apidoc

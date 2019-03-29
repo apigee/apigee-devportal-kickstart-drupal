@@ -1,0 +1,38 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.5_4_250x200
+    - image.style.5_4_500x400
+  theme:
+    - apigee_kickstart
+id: card_small
+label: 'Card (small)'
+image_style_mappings:
+  -
+    breakpoint_id: default.xl
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: 5_4_250x200
+  -
+    breakpoint_id: default.lg
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: 5_4_250x200
+  -
+    breakpoint_id: default.md
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: 5_4_250x200
+  -
+    breakpoint_id: default.sm
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: 5_4_500x400
+  -
+    breakpoint_id: default.xs
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: 5_4_500x400
+breakpoint_group: apigee_kickstart
+fallback_image_style: 5_4_250x200
