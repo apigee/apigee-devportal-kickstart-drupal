@@ -8,7 +8,7 @@ dependencies:
     - field.field.apidoc.apidoc.field_image
   module:
     - apigee_edge_apidocs
-    - swagger_ui_formatter
+    - file
     - text
 id: apidoc.apidoc.default
 targetEntityType: apidoc
@@ -64,24 +64,12 @@ content:
       link_to_entity: false
     third_party_settings: {  }
   spec:
-    label: hidden
-    type: swagger_ui
-    weight: 3
+    label: inline
+    type: file_default
+    weight: 6
     region: content
     settings:
-      validator: default
-      validator_url: ''
-      doc_expansion: list
-      show_top_bar: false
-      sort_tags_by_name: false
-      supported_submit_methods:
-        get: '0'
-        put: '0'
-        post: '0'
-        delete: '0'
-        options: '0'
-        head: '0'
-        patch: '0'
+      use_description_as_link_text: true
     third_party_settings: {  }
 hidden:
   api_product: true
