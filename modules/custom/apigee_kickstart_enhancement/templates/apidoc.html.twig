@@ -1,0 +1,22 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display an Apigee Edge Api Doc.
+ *
+ * Available variables:
+ * - entity: The Apigee Edge Api DOc entity.
+ * - content: All items. Use {{ content }} to print them all,
+ * - attributes: HTML attributes for the containing element.
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+  'apidoc',
+  view_mode ? 'apidoc--view-mode-' ~ view_mode|clean_class,
+]
+%}
+<article{{ attributes.addClass(classes) }}>
+  {{ content }}
+</article>

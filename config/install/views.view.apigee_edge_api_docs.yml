@@ -6,7 +6,7 @@ dependencies:
     - core.entity_view_mode.apidoc.card
     - field.storage.apidoc.field_categories
     - system.menu.main
-    - taxonomy.vocabulary.category
+    - taxonomy.vocabulary.api_category
   module:
     - apigee_edge_apidocs
     - better_exposed_filters
@@ -433,7 +433,7 @@ display:
           reduce_duplicates: false
           type: select
           limit: true
-          vid: category
+          vid: api_category
           hierarchy: true
           error_message: true
           plugin_id: taxonomy_index_tid

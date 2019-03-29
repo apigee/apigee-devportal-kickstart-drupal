@@ -9,7 +9,7 @@
 // stylelint-disable
 $white:    #fff !default;
 $gray-100: #f0f0f0 !default;
-$gray-200: #e9ecef !default;
+$gray-200: #f9f9f9 !default;
 $gray-300: #dee2e6 !default;
 $gray-400: #c8c8c8 !default;
 $gray-500: #a3a3a3 !default;
@@ -67,9 +67,12 @@ $info:          $cyan !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         $gray-100 !default;
+$lighter:       $gray-200 !default;
 $dark:          $gray-900 !default;
 
-$theme-colors: () !default;
+$theme-colors: (
+  "lighter":    $lighter,
+) !default;
 $theme-colors: map-merge((
   "primary":    $primary,
   "secondary":  $secondary,

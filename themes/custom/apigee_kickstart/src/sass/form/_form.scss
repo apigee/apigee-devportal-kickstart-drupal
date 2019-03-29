@@ -1,0 +1,63 @@
+// Form
+// -----------------------------------------------------------------------------
+.form-checkboxes {
+
+  .form-item {
+
+    + .form-item {
+      margin-top: .5rem;
+    }
+  }
+}
+
+
+.form-check {
+  display: flex;
+  align-items: center;
+  padding: 0;
+
+  svg {
+    font-size: 1.3rem;
+  }
+
+  .fa-check-square {
+    color: $primary;
+  }
+
+  .form-check-input {
+    display: none;
+
+    + svg {
+      display: none;
+    }
+
+    &:checked {
+
+      + svg {
+        display: block;
+
+        + svg {
+          display: none;
+        }
+      }
+    }
+  }
+
+  label {
+    margin-left: .4rem;
+  }
+}
+
+.form-check-input:checked {
+
+  + .form-check-label {
+
+    &::before {
+      content: '\f14a';
+    }
+  }
+}
+
+input[type="checkbox"] {
+
+}

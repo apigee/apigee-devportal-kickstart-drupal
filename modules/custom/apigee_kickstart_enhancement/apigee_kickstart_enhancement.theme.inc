@@ -47,6 +47,27 @@ function template_preprocess_app(&$variables) {
 }
 
 /**
+ * Preprocess variables for the apidoc template.
+ */
+function template_preprocess_apidoc(&$variables) {
+  // Add fields as content to template.
+  $variables += ['content' => []];
+  foreach (Element::children($variables['elements']) as $key) {
+    $variables['content'][$key] = $variables['elements'][$key];
+  }
+
+  // Add the view_mode to the template.
+  $variables['view_mode'] = $variables['elements']['#view_mode'];
+
+  // Add the entity to the template.
+  /** @var \Drupal\Core\Entity\EntityInterface $entity */
+  $variables['entity'] = $entity = $variables['elements']["#apidoc"];
+
+  // Add a link to the entity.
+  $variables['content']['field_link'] = $entity->toLink(t('View Documentation'))->toRenderable();
+}
+
+/**
  * Preprocess variables for the secret element template.
  */
 function template_preprocess_secret(&$variables) {
@@ -70,6 +91,24 @@ function apigee_kickstart_enhancement_theme_suggestions_app_alter(array &$sugges
     $suggestions[] = $hook . '__' . $view_mode;
     $suggestions[] = $hook . '__' . $entity_type_id . '__' . $view_mode;
   }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function apigee_kickstart_enhancement_theme_suggestions_apidoc_alter(array &$suggestions, array $variables) {
+  $view_mode = $variables['elements']['#view_mode'];
+  $hook = $variables['theme_hook_original'];
+  /** @var EntityInterface $entity */
+  $entity = $variables['elements']["#apidoc"];
+  $entity_type_id = $entity->getEntityTypeId();
+
+  // Add a suggestion based on the entity type.
+  $suggestions[] = $hook . '__' . $entity_type_id;
+
+  // Add a suggestion based on the view mode.
+  $suggestions[] = $hook . '__' . $view_mode;
+  $suggestions[] = $hook . '__' . $entity_type_id . '__' . $view_mode;
 }
 
 /**

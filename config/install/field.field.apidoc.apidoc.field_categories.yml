@@ -3,7 +3,7 @@ status: true
 dependencies:
   config:
     - field.storage.apidoc.field_categories
-    - taxonomy.vocabulary.category
+    - taxonomy.vocabulary.api_category
   module:
     - apigee_edge_apidocs
 id: apidoc.apidoc.field_categories

@@ -4,7 +4,11 @@
  * Template for the main page.
  */
 #}
-<div class="page">
+{% set attributes = create_attribute() %}
+{% set classes = [
+  'page'
+]|merge(utility_classes|default([])) %}
+<div{{ attributes.addClass(classes) }}>
   {% embed '@radix/navbar/navbar.twig' with {
     placement: 'sticky-top',
     container: 'fixed',
@@ -43,14 +47,12 @@
 
   {% if page.header|render %}
     <header class="page__header">
-      <div class="container-fluid">
-        {# If field_header has a value, it should replace the title block.#}
-        {% if node.field_header.value %}
-          {{ page.header|without('apigee_kickstart_title') }}
-        {% else %}
-          {{ page.header }}
-        {% endif %}
-      </div>
+      {# If field_header has a value, it should replace the title block.#}
+      {% if node.field_header.value %}
+        {{ page.header|without('apigee_kickstart_title') }}
+      {% else %}
+        {{ page.header }}
+      {% endif %}
     </header>
   {% endif %}
 
@@ -75,7 +77,7 @@
     {% if page.content %}
       <div class="page__content">
         {% if not node.field_content.value %}
-          <div class="container pb-5">
+          <div class="container py-5">
         {% endif %}
         {{ page.content }}
         {% if not node.field_content.value %}

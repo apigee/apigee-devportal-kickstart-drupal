@@ -17,7 +17,10 @@ const mix = require('laravel-mix');
  */
 mix
   .setPublicPath('assets')
-  .disableNotifications();
+  .disableNotifications()
+  .options({
+    processCssUrls: false
+  });
 
 /*
  |--------------------------------------------------------------------------
