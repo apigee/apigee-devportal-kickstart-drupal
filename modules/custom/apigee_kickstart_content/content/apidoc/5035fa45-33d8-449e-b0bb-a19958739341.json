@@ -1,0 +1,129 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/apidoc\/2?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/apidoc\/apidoc"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/apidoc\/apidoc\/spec": [
+            {
+                "href": "http:\/\/default\/sites\/default\/files\/apidoc_specs\/petstore.yaml"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/apidoc\/apidoc\/field_categories": [
+            {
+                "href": "http:\/\/default\/apis\/identity?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/apidoc\/apidoc\/field_image": [
+            {
+                "href": "http:\/\/default\/media\/10?_format=hal_json"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 2
+        }
+    ],
+    "uuid": [
+        {
+            "value": "5035fa45-33d8-449e-b0bb-a19958739341"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "name": [
+        {
+            "value": "Identity"
+        }
+    ],
+    "description": [
+        {
+            "value": "<p>Identify your customers and personalize service offerings.<\/p>\r\n",
+            "format": "basic_html",
+            "processed": "<p>Identify your customers and personalize service offerings.<\/p>"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/apidoc\/apidoc\/spec": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/apidoc_specs\/petstore.yaml"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "0e1ac7bf-a77d-42c8-a6af-9026901081f7"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/apidoc\/apidoc\/field_categories": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/apis\/identity?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/api_category"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "14aca1e1-227d-4a96-b340-9910f4ff087c"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/apidoc\/apidoc\/field_image": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/5?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "7517d587-e652-4a9c-86c3-09ee39db5232"
+                    }
+                ]
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-03-29T07:58:55+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2019-03-29T07:59:19+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ]
+}

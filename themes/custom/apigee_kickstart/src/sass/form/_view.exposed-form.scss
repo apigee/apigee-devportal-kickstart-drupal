@@ -1,0 +1,47 @@
+// Styles for the Views exposed form.
+// -----------------------------------------------------------------------------
+.views-exposed-form {
+  border-radius: 4px;
+  background-color: $white;
+  overflow: hidden;
+  font-size: .875rem;
+
+  fieldset,
+  details {
+    margin: 0 !important;
+  }
+
+  fieldset {
+
+    .fieldset-wrapper {
+      padding-top: 0 !important;
+    }
+  }
+
+  .form-actions {
+    font-size: .875rem;
+    letter-spacing: 1px;
+
+    input {
+      width: 100%;
+      padding: 0.75rem 1.6rem;
+      font-size: .875rem;
+      letter-spacing: 1px;
+      background-color: transparent;
+      color: $primary;
+      border: 0;
+      border-top: 1px solid $card-border-color;
+      text-align: left;
+
+      &:hover {
+        color: $dark;
+        text-decoration: none;
+      }
+
+      &.btn-reset {
+        padding-left: 3.2rem;
+        background: url("../images/icons/close.svg") no-repeat 25px center;
+      }
+    }
+  }
+}

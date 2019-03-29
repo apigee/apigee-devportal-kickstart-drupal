@@ -5,9 +5,7 @@ dependencies:
     - core.entity_view_mode.apidoc.card
     - field.storage.apidoc.field_categories
     - system.menu.main
-    - taxonomy.vocabulary.category
-    - taxonomy.vocabulary.filters
-    - taxonomy.vocabulary.groups
+    - taxonomy.vocabulary.api_category
   module:
     - apigee_edge_apidocs
     - better_exposed_filters
@@ -49,7 +47,7 @@ display:
         options:
           submit_button: Search
           reset_button: true
-          reset_button_label: Reset
+          reset_button_label: 'Clear all filters'
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc
@@ -60,49 +58,51 @@ display:
             general:
               allow_secondary: false
               secondary_label: 'Advanced options'
-              autosubmit: false
+              autosubmit: true
               autosubmit_exclude_textfield: false
-              autosubmit_hide: false
+              autosubmit_hide: true
             field_categories_target_id:
               bef_format: bef
               more_options:
                 bef_select_all_none: false
                 bef_select_all_none_nested: false
-                bef_collapsible: true
-                is_secondary: false
-                rewrite:
-                  filter_rewrite_values: ''
-            field_filters_target_id:
-              bef_format: bef
-              more_options:
-                bef_select_all_none: false
-                bef_collapsible: true
-                is_secondary: false
-                rewrite:
-                  filter_rewrite_values: ''
-            field_groups_target_id:
-              bef_format: bef
-              more_options:
-                bef_select_all_none: false
-                bef_collapsible: true
+                bef_collapsible: false
                 is_secondary: false
                 rewrite:
                   filter_rewrite_values: ''
           text_input_required_format: basic_html
       pager:
-        type: none
+        type: full
         options:
-          items_per_page: null
+          items_per_page: 12
           offset: 0
+          id: 0
+          total_pages: null
+          tags:
+            previous: '‹ Previous'
+            next: 'Next ›'
+            first: '« First'
+            last: 'Last »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 9
       style:
-        type: html_list
+        type: grid
         options:
-          grouping: {  }
-          row_class: ''
-          default_row_class: true
-          type: ul
-          wrapper_class: item-list
-          class: ''
+          uses_fields: false
+          columns: 12
+          automatic_width: true
+          alignment: horizontal
+          col_class_default: false
+          col_class_custom: 'col-12 col-sm-6 col-lg-4 mb-4'
+          row_class_default: false
+          row_class_custom: row
       row:
         type: 'entity:apidoc'
         options:
@@ -434,101 +434,25 @@ display:
           reduce_duplicates: false
           type: select
           limit: true
-          vid: category
+          vid: api_category
           hierarchy: true
           error_message: true
           plugin_id: taxonomy_index_tid
-        field_filters_target_id:
-          id: field_filters_target_id
-          table: apidoc__field_filters
-          field: field_filters_target_id
+      sorts:
+        name:
+          id: name
+          table: apidoc_field_data
+          field: name
           relationship: none
           group_type: group
           admin_label: ''
-          operator: or
-          value: {  }
-          group: 1
-          exposed: true
+          order: ASC
+          exposed: false
           expose:
-            operator_id: field_filters_target_id_op
-            label: Filters
-            description: ''
-            use_operator: false
-            operator: field_filters_target_id_op
-            identifier: field_filters_target_id
-            required: false
-            remember: false
-            multiple: true
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
             label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          type: select
-          limit: true
-          vid: filters
-          hierarchy: false
-          error_message: true
-          plugin_id: taxonomy_index_tid
-        field_groups_target_id:
-          id: field_groups_target_id
-          table: apidoc__field_groups
-          field: field_groups_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: or
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_groups_target_id_op
-            label: Groups
-            description: ''
-            use_operator: false
-            operator: field_groups_target_id_op
-            identifier: field_groups_target_id
-            required: false
-            remember: false
-            multiple: true
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          type: select
-          limit: true
-          vid: groups
-          hierarchy: false
-          error_message: true
-          plugin_id: taxonomy_index_tid
-      sorts: {  }
+          entity_type: apidoc
+          entity_field: name
+          plugin_id: standard
       title: APIs
       header: {  }
       footer: {  }
@@ -596,14 +520,15 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
+        - url.query_args
         - user
         - user.permissions
       tags:
         - 'config:field.storage.apidoc.field_categories'
         - extensions
-  page_1:
+  page:
     display_plugin: page
-    id: page_1
+    id: page
     display_title: Page
     position: 1
     display_options:
@@ -624,6 +549,7 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
+        - url.query_args
         - user
         - user.permissions
       tags:

@@ -3,8 +3,6 @@ status: true
 dependencies:
   config:
     - field.field.apidoc.apidoc.field_categories
-    - field.field.apidoc.apidoc.field_filters
-    - field.field.apidoc.apidoc.field_groups
     - field.field.apidoc.apidoc.field_image
   module:
     - apigee_edge_apidocs
@@ -24,22 +22,6 @@ content:
     third_party_settings: {  }
   field_categories:
     weight: 3
-    label: inline
-    settings:
-      link: false
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_filters:
-    weight: 5
-    label: inline
-    settings:
-      link: false
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_groups:
-    weight: 4
     label: inline
     settings:
       link: false

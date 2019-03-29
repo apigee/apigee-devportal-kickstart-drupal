@@ -1,0 +1,47 @@
+// Style for pager
+// -----------------------------------------------------------------------------
+.pagination {
+  font-size: .875rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+
+  .pager__item {
+
+    &:first-child {
+      border-radius: 4px 0 0 4px;
+    }
+
+    &:last-child {
+      border-radius: 0 4px 4px 0;
+    }
+
+    + .pager__item {
+      border-left: 1px solid $light;
+    }
+  }
+
+  .page-link {
+    border: 0;
+    height: 38px;
+    min-width: 38px;
+    padding-top: 0;
+    padding-bottom: 0;
+    text-align: center;
+    line-height: 38px;
+    margin: 0;
+
+    &:hover {
+      background-color: $lighter;
+    }
+  }
+
+  .is-active {
+
+    .page-link {
+
+      &:hover {
+        background-color: $primary;
+      }
+    }
+  }
+}

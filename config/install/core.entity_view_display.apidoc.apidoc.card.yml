@@ -4,8 +4,6 @@ dependencies:
   config:
     - core.entity_view_mode.apidoc.card
     - field.field.apidoc.apidoc.field_categories
-    - field.field.apidoc.apidoc.field_filters
-    - field.field.apidoc.apidoc.field_groups
     - field.field.apidoc.apidoc.field_image
   module:
     - apigee_edge_apidocs
@@ -27,7 +25,7 @@ content:
     weight: 0
     label: hidden
     settings:
-      view_mode: card
+      view_mode: card_small
       link: false
     third_party_settings: {  }
     region: content
@@ -42,6 +40,4 @@ content:
 hidden:
   api_product: true
   field_categories: true
-  field_filters: true
-  field_groups: true
   spec: true

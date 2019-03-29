@@ -1,0 +1,54 @@
+// Style for checkboxes
+// -----------------------------------------------------------------------------
+.form-checkboxes {
+
+  .form-item {
+
+    + .form-item {
+      margin-top: .5rem;
+    }
+  }
+}
+
+
+.form-check {
+  display: flex;
+  align-items: flex-start;
+  padding: 0;
+  position: relative;
+
+  svg {
+    font-size: 1.3rem;
+    position: absolute;
+  }
+
+  .fa-check-square {
+    color: $primary;
+  }
+
+  .form-check-input {
+    display: none;
+
+    + svg {
+      display: none;
+    }
+
+    &:checked {
+
+      + svg {
+        display: block;
+
+        + svg {
+          display: none;
+        }
+      }
+    }
+  }
+
+  label {
+    padding-left: 1.6rem;
+    z-index: 10;
+    position: relative;
+    cursor: pointer;
+  }
+}

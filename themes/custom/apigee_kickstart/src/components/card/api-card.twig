@@ -1,0 +1,43 @@
+{#
+/**
+ * @file
+ * Template for a Card component.
+ */
+#}
+{% set classes = [
+  'card',
+  'api-card'
+]|merge(classes|default([])) %}
+
+<div class="{{ classes|join(' ')|trim }}">
+  {% if url %}
+    <a href="{{ url }}">
+  {% endif %}
+
+  {% if image %}
+    <div class="card-img-top">
+      {{ image }}
+    </div>
+  {% endif %}
+
+  {% if title or body %}
+    <div class="card-body">
+      {% if title %}
+        <h4>{{ title }}</h4>
+      {% endif %}
+      {% block body %}
+        {{ body }}
+      {% endblock %}
+    </div>
+  {% endif %}
+
+  {% if footer %}
+    <div class="card-footer">
+      {{ footer }}
+    </div>
+  {% endif %}
+
+  {% if url %}
+    </a>
+  {% endif %}
+</div>

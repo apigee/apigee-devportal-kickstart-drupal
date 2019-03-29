@@ -16996,6 +16996,39 @@ module.exports = g;
 
 /***/ }),
 
+/***/ "./src/components/form/fieldset.js":
+/*!*****************************************!*\
+  !*** ./src/components/form/fieldset.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function ($, Drupal) {
+  'use strict';
+
+  Drupal.behaviors.fieldsetComponent = {
+    attach: function attach(context) {
+      var $fieldsets = $('fieldset', context);
+
+      if ($fieldsets.length) {
+        $fieldsets.each(function () {
+          var $fieldset = $(this);
+          var $toggle = $fieldset.find('legend button');
+          var $content = $fieldset.find('.fieldset-wrapper');
+          $toggle.on('click', function (event) {
+            event.preventDefault();
+            $fieldset.toggleClass('closed');
+            $content.slideToggle(200);
+            return false;
+          });
+        });
+      }
+    }
+  };
+})(jQuery, Drupal);
+
+/***/ }),
+
 /***/ "./src/js/apigee-kickstart.script.js":
 /*!*******************************************!*\
   !*** ./src/js/apigee-kickstart.script.js ***!
@@ -17008,11 +17041,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var popper_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! popper.js */ "./node_modules/popper.js/dist/esm/popper.js");
 /* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.js");
 /* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(bootstrap__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_card_collapsible_card__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/card/collapsible-card */ "./src/components/card/collapsible-card.js");
-/* harmony import */ var _components_card_collapsible_card__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_card_collapsible_card__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_form_fieldset__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/form/fieldset */ "./src/components/form/fieldset.js");
+/* harmony import */ var _components_form_fieldset__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_form_fieldset__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_card_collapsible_card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/card/collapsible-card */ "./src/components/card/collapsible-card.js");
+/* harmony import */ var _components_card_collapsible_card__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components_card_collapsible_card__WEBPACK_IMPORTED_MODULE_3__);
 
  // Components.
-// TODO: Break this into libaries.
+// TODO: Break this into libraries.
+
 
 
 
@@ -17036,8 +17072,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/jacine/Sites/kick/web/profiles/contrib/apigee_devportal_kickstart/themes/custom/apigee_kickstart/src/js/apigee-kickstart.script.js */"./src/js/apigee-kickstart.script.js");
-module.exports = __webpack_require__(/*! /Users/jacine/Sites/kick/web/profiles/contrib/apigee_devportal_kickstart/themes/custom/apigee_kickstart/src/sass/apigee-kickstart.style.scss */"./src/sass/apigee-kickstart.style.scss");
+__webpack_require__(/*! /Users/arshad/Sites/chapterthree/ks/web/profiles/contrib/apigee_devportal_kickstart/themes/custom/apigee_kickstart/src/js/apigee-kickstart.script.js */"./src/js/apigee-kickstart.script.js");
+module.exports = __webpack_require__(/*! /Users/arshad/Sites/chapterthree/ks/web/profiles/contrib/apigee_devportal_kickstart/themes/custom/apigee_kickstart/src/sass/apigee-kickstart.style.scss */"./src/sass/apigee-kickstart.style.scss");
 
 
 /***/ })

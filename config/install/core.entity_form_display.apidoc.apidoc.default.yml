@@ -3,8 +3,6 @@ status: true
 dependencies:
   config:
     - field.field.apidoc.apidoc.field_categories
-    - field.field.apidoc.apidoc.field_filters
-    - field.field.apidoc.apidoc.field_groups
     - field.field.apidoc.apidoc.field_image
   module:
     - apigee_edge_apidocs
@@ -35,24 +33,6 @@ content:
     third_party_settings: {  }
   field_categories:
     weight: 4
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
-  field_filters:
-    weight: 6
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
-  field_groups:
-    weight: 5
     settings:
       match_operator: CONTAINS
       size: 60
