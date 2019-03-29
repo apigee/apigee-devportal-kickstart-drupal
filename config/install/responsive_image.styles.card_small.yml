@@ -4,35 +4,17 @@ dependencies:
   config:
     - image.style.5_4_250x200
     - image.style.5_4_500x400
-  theme:
-    - apigee_kickstart
 id: card_small
 label: 'Card (small)'
 image_style_mappings:
   -
-    breakpoint_id: default.xl
+    breakpoint_id: responsive_image.viewport_sizing
     multiplier: 1x
-    image_mapping_type: image_style
-    image_mapping: 5_4_250x200
-  -
-    breakpoint_id: default.lg
-    multiplier: 1x
-    image_mapping_type: image_style
-    image_mapping: 5_4_250x200
-  -
-    breakpoint_id: default.md
-    multiplier: 1x
-    image_mapping_type: image_style
-    image_mapping: 5_4_250x200
-  -
-    breakpoint_id: default.sm
-    multiplier: 1x
-    image_mapping_type: image_style
-    image_mapping: 5_4_500x400
-  -
-    breakpoint_id: default.xs
-    multiplier: 1x
-    image_mapping_type: image_style
-    image_mapping: 5_4_500x400
-breakpoint_group: apigee_kickstart
+    image_mapping_type: sizes
+    image_mapping:
+      sizes: '(min-width: 992px) 350px, 100vw'
+      sizes_image_styles:
+        - 5_4_250x200
+        - 5_4_500x400
+breakpoint_group: responsive_image
 fallback_image_style: 5_4_250x200
