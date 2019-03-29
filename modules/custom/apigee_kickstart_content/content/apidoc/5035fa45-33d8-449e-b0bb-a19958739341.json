@@ -89,7 +89,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/media\/10?_format=hal_json"
+                        "href": "http:\/\/default\/media\/5?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
@@ -97,7 +97,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "a3745b63-6171-4044-a37b-514c3fd094c6"
+                        "value": "7517d587-e652-4a9c-86c3-09ee39db5232"
                     }
                 ]
             }
