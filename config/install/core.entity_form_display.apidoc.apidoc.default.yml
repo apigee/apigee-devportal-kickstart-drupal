@@ -1,4 +1,3 @@
-uuid: 33d4bc3f-cb45-46d4-949b-28dc1b1cc027
 langcode: en
 status: true
 dependencies:
@@ -10,8 +9,6 @@ dependencies:
     - file
     - media_library
     - text
-_core:
-  default_config_hash: LyD-fg8dTV81F-wq5Xj_iF71QQYS3ZuRLEvI8TDDuMk
 id: apidoc.apidoc.default
 targetEntityType: apidoc
 bundle: apidoc
