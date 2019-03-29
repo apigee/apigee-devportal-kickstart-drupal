@@ -99,7 +99,7 @@ function apigee_kickstart_enhancement_theme_suggestions_app_alter(array &$sugges
 function apigee_kickstart_enhancement_theme_suggestions_apidoc_alter(array &$suggestions, array $variables) {
   $view_mode = $variables['elements']['#view_mode'];
   $hook = $variables['theme_hook_original'];
-  /** @var EntityInterface $entity */
+  /** @var \Drupal\Core\Entity\EntityInterface $entity */
   $entity = $variables['elements']["#apidoc"];
   $entity_type_id = $entity->getEntityTypeId();
 
