@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Template for a 'Title bar' Paragraph.
+ */
+#}
+{% embed 'paragraph.html.twig' with { classes: ['bg-light', 'py-4'] } %}
+  {% block content %}
+    <div class="container">
+      <div class="d-flex align-items-center">
+        <div class="title-bar__title flex-grow-1 flex-md-grow-0 flex-grow-md-0 pr-4">
+          {{ content.field_title }}
+        </div>
+        {% if content.field_text|render %}
+          <div class="title-bar__conten border-left d-none d-lg-block flex-grow-1 pl-4">
+            {{ content|without('field_title', 'field_icon') }}
+          </div>
+        {% endif %}
+        <div class="title-bar__icon flex-shrink-1 pl-4">
+          {{ content.field_icon }}
+        </div>
+      </div>
+    </div>
+  {% endblock %}
+{% endembed %}

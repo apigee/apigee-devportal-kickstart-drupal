@@ -1,0 +1,17 @@
+{#
+/**
+ * @file
+ * Template for a 'Text' Paragraph.
+ */
+#}
+{% embed 'paragraph.html.twig' with { classes: ['py-6'] } %}
+  {% block content %}
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-md-8">
+          {{ content }}
+        </div>
+      </div>
+    </div>
+  {% endblock %}
+{% endembed %}
