@@ -2,14 +2,17 @@
 // -----------------------------------------------------------------------------
 
 .card {
+  border-radius: 4px;
+  transition: $transition-base;
+
+  &.bg-light {
+    border: 0;
+  }
+
   > a {
     color: currentColor;
     text-decoration: none;
   }
-
-  border: 0;
-  border-radius: 4px;
-  transition: $transition-base;
 
   &-img-top {
     padding: 2px;
