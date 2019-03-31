@@ -1983,7 +1983,7 @@ select.form-control-sm:not([size]):not([multiple]), .input-group-sm > select.for
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   line-height: 2.1;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.form-control:not([size]):not([multiple]),
@@ -2841,7 +2841,7 @@ fieldset:disabled a.btn {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   line-height: 2.1;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 .btn-sm, .btn-group-sm > .btn {
@@ -4359,12 +4359,12 @@ input[type=button].btn-block {
   line-height: 2.1;
 }
 .pagination-lg .page-item:first-child .page-link {
-  border-top-left-radius: 2px;
-  border-bottom-left-radius: 2px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
 }
 .pagination-lg .page-item:last-child .page-link {
-  border-top-right-radius: 2px;
-  border-bottom-right-radius: 2px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 
 .pagination-sm .page-link {
@@ -4501,7 +4501,7 @@ input[type=button].btn-block {
   padding: 2rem 1rem;
   margin-bottom: 2rem;
   background-color: #f9f9f9;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 @media (min-width: 576px) {
   .jumbotron {
@@ -4986,7 +4986,7 @@ button.close {
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 2px;
+  border-radius: 4px;
   outline: 0;
 }
 
@@ -5012,8 +5012,8 @@ button.close {
   justify-content: space-between;
   padding: 1rem;
   border-bottom: 1px solid #f9f9f9;
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 .modal-header .close {
   padding: 1rem;
@@ -5198,14 +5198,14 @@ button.close {
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 2px;
+  border-radius: 4px;
 }
 .popover .arrow {
   position: absolute;
   display: block;
   width: 1rem;
   height: 0.5rem;
-  margin: 0 2px;
+  margin: 0 4px;
 }
 .popover .arrow::before, .popover .arrow::after {
   position: absolute;
@@ -5242,7 +5242,7 @@ button.close {
   left: calc((0.5rem + 1px) * -1);
   width: 0.5rem;
   height: 1rem;
-  margin: 2px 0;
+  margin: 4px 0;
 }
 .bs-popover-right .arrow::before, .bs-popover-auto[x-placement^=right] .arrow::before,
 .bs-popover-right .arrow::after,
@@ -5295,7 +5295,7 @@ button.close {
   right: calc((0.5rem + 1px) * -1);
   width: 0.5rem;
   height: 1rem;
-  margin: 2px 0;
+  margin: 4px 0;
 }
 .bs-popover-left .arrow::before, .bs-popover-auto[x-placement^=left] .arrow::before,
 .bs-popover-left .arrow::after,
@@ -5318,8 +5318,8 @@ button.close {
   color: inherit;
   background-color: #f7f7f7;
   border-bottom: 1px solid #ebebeb;
-  border-top-left-radius: calc(2px - 1px);
-  border-top-right-radius: calc(2px - 1px);
+  border-top-left-radius: calc(4px - 1px);
+  border-top-right-radius: calc(4px - 1px);
 }
 .popover-header:empty {
   display: none;
@@ -9734,13 +9734,15 @@ a.text-lighter:hover, a.text-lighter:focus {
   letter-spacing: 0.11px;
 }
 .card-footer {
-  border-radius: 0 0 4px 4px;
   background-color: transparent;
   color: #2196f3;
   font-size: 0.875rem;
   font-weight: 500;
   letter-spacing: 1px;
   transition: all 0.2s ease-in-out;
+}
+.card-footer, .card-footer:last-child {
+  border-radius: 0 0 4px 4px;
 }
 .card:focus, .card:hover {
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
