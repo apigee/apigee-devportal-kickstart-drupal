@@ -29,10 +29,14 @@
         <hr class="mb-4 border-light border-top" />
 
         {{ content|without('field_tags', 'field_image', 'comment') }}
+
+        {% if content.comment[0].comment_form %}
+          <a href="#comment-form" class="btn btn-primary">{{ "Add new comment"|t }}</a>
+        {% endif %}
       </div>
     </div>
   </div>
-  {% if content.comment %}
+  {% if content.comment[0] %}
     <div class="bg-lighter">
       <div class="container py-5">
         <div class="row justify-content-center">

@@ -10249,6 +10249,15 @@ ul.social-links li a {
   }
 }
 
+.comment {
+  font-size: 0.875rem;
+}
+.comment .user {
+  width: 48px;
+  height: 48px;
+  background-color: white;
+}
+
 @media (max-width: 767.98px) {
   .view-blog--page-landing {
     margin-top: -1.905rem;
