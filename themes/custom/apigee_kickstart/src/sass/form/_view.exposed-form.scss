@@ -6,6 +6,11 @@
   overflow: hidden;
   font-size: .875rem;
 
+  .card:focus,
+  .card:hover {
+    box-shadow: none;
+  }
+
   fieldset,
   details {
     margin: 0 !important;

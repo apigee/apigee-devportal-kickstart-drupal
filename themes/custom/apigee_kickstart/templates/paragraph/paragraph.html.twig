@@ -38,14 +38,23 @@
  * @ingroup themeable
  */
 #}
-{%
-  set classes = [
-    'paragraph',
-    not paragraph.isPublished() ? 'paragraph--unpublished',
-    paragraph.bundle|clean_class,
-    paragraph.bundle|clean_class ~ '--' ~ view_mode|clean_class,
-  ]|merge(classes|default([]))
-%}
+
+{# Wrapper classes. #}
+{% set classes = [
+  'paragraph',
+  not paragraph.isPublished() ? 'paragraph--unpublished',
+  paragraph.bundle|clean_class,
+  paragraph.bundle|clean_class ~ '--' ~ view_mode|clean_class,
+]|merge(classes|default([])) %}
+
+{# Allow extending template to take priority (so the class may be used on an
+element other than the wrapper), followed by the field, or default to null,
+which does not apply a class at all. #}
+{% set background_style = background_style ?? paragraph.field_background_style.0.value|default(null) %}
+{% if background_style %}
+  {% set classes = classes|merge(['bg-' ~ background_style|clean_class]) %}
+{% endif %}
+
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
