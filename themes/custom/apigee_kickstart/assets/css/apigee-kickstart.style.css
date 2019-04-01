@@ -10162,6 +10162,11 @@ ul.social-links li a {
 .title-bar__title {
   margin: 0;
 }
+@media (max-width: 767.98px) {
+  .title-bar__title {
+    font-size: 1.5rem;
+  }
+}
 
 .title-bar__icon {
   align-items: center;
@@ -10191,7 +10196,7 @@ ul.social-links li a {
 }
 
 .title-bar__content {
-  border-color: #555 !important;
+  border-color: #a3a3a3 !important;
   font-size: 0.875rem;
   letter-spacing: 0.25px;
   line-height: 1.25;
@@ -10207,8 +10212,21 @@ ul.social-links li a {
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
+@media (max-width: 767.98px) {
+  .text h2, .text h3, .text h4, .text h5, .text h5 {
+    margin-top: 1.5rem;
+  }
+}
 .text h2 {
   font-size: 2.215rem;
+}
+@media (max-width: 767.98px) {
+  .text h2 {
+    font-size: 1.5rem;
+  }
+}
+.text .text__field-text h2:first-child {
+  margin-top: 0;
 }
 .text h3 {
   font-size: 1.25rem;
