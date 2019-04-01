@@ -1,0 +1,53 @@
+{#
+/**
+ * @file
+ * Template for a comment.
+ */
+#}
+{% set classes = [
+  'js-comment',
+  'mb-4',
+  'comment',
+  status != 'published' ? status,
+  comment.owner.anonymous ? 'by-anonymous',
+  author_id and author_id == commented_entity.getOwnerId() ? 'by-' ~ commented_entity.getEntityTypeId() ~ '-author',
+] %}
+<article{{ attributes.addClass(classes) }}>
+  <div class="row">
+    <div class="col-md-1 pr-0">
+      <div class="border border-light">
+        {{ user_picture }}
+      </div>
+    </div>
+
+    <div class="col-md-11">
+      <div{{ content_attributes.addClass('card', 'border-light') }}>
+        <div class="card-header d-flex justify-content-between bg-white border-light px-3">
+          <span>{{ submitted }}</span>
+          {{ permalink }}
+        </div>
+
+        <div class="card-body px-3">
+          {% if title %}
+            {{ title_prefix }}
+            <h3{{ title_attributes.addClass('visually-hidden') }}>{{ title }}</h3>
+            {{ title_suffix }}
+          {% endif %}
+          {{ content }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    {#
+      Indicate the semantic relationship between parent and child comments for
+      accessibility. The list is difficult to navigate in a screen reader
+      without this information.
+    #}
+    {% if parent %}
+      <p class="visually-hidden">{{ parent }}</p>
+    {% endif %}
+  </footer>
+
+</article>

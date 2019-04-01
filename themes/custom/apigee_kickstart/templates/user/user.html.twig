@@ -1,0 +1,14 @@
+{#
+/**
+ * @file
+ * Template for a User.
+ */
+#}
+{% set classes = [
+  'user',
+] %}
+<article{{ attributes.addClass('user') }}>
+  {% if content %}
+    {{- content|without('summary') -}}
+  {% endif %}
+</article>

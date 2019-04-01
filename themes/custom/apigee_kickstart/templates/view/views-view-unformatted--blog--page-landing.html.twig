@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Template for the Blog landing page view.
+ */
+#}
+
+{% if title %}
+  <h3>{{ title }}</h3>
+{% endif %}
+{% for row in rows %}
+  {%
+    set row_classes = [
+    default_row_class ? 'views-row',
+  ]
+  %}
+  <div{{ row.attributes.addClass(row_classes) }}>
+    {{- row.content -}}
+  </div>
+  <hr class="my-4 border-light border-top d-none d-sm-block" />
+{% endfor %}

@@ -74,17 +74,19 @@
       </div>
     {% endif %}
 
-    {% if page.content %}
-      <div class="page__content">
-        {% if not node.field_content.value %}
-          <div class="container py-5">
-        {% endif %}
-        {{ page.content }}
-        {% if not node.field_content.value %}
-          </div>
-        {% endif %}
-      </div>
-    {% endif %}
+    {% block content %}
+      {% if page.content %}
+        <div class="page__content">
+          {% if not node.field_content.value %}
+            <div class="container py-5">
+          {% endif %}
+            {{ page.content }}
+          {% if not node.field_content.value %}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endblock %}
   </main>
 
   {% if page.content_below %}
