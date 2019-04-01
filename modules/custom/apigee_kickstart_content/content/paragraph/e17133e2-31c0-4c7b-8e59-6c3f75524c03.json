@@ -5,18 +5,7 @@
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/blockquote"
-        },
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/blockquote\/uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/blockquote\/revision_uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json"
-            }
-        ]
+        }
     },
     "id": [
         {
@@ -30,7 +19,7 @@
     ],
     "revision_id": [
         {
-            "value": 92
+            "value": 175
         }
     ],
     "langcode": [
@@ -44,43 +33,6 @@
             "target_id": "blockquote"
         }
     ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/blockquote\/uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "13a077ca-48a0-4f73-9093-5a174ff6c970"
-                    }
-                ],
-                "lang": "en"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/blockquote\/revision_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "13a077ca-48a0-4f73-9093-5a174ff6c970"
-                    }
-                ]
-            }
-        ]
-    },
     "status": [
         {
             "value": true,
@@ -115,12 +67,6 @@
         }
     ],
     "default_langcode": [
-        {
-            "value": true,
-            "lang": "en"
-        }
-    ],
-    "revision_translation_affected": [
         {
             "value": true,
             "lang": "en"

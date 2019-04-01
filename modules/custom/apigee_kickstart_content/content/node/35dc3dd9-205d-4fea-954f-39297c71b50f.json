@@ -41,7 +41,7 @@
     ],
     "vid": [
         {
-            "value": 39
+            "value": 43
         }
     ],
     "langcode": [
@@ -57,7 +57,7 @@
     ],
     "revision_timestamp": [
         {
-            "value": "2019-03-21T20:27:46+00:00",
+            "value": "2019-04-01T03:12:55+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -74,7 +74,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "caf419f8-da95-4c62-9ca2-cd519fc7c4f6"
+                        "value": "2df42e03-17b5-49cf-980e-dbbd3c0bac32"
                     }
                 ]
             }
@@ -91,7 +91,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "caf419f8-da95-4c62-9ca2-cd519fc7c4f6"
+                        "value": "2df42e03-17b5-49cf-980e-dbbd3c0bac32"
                     }
                 ],
                 "lang": "en"
@@ -112,7 +112,7 @@
                         "value": "154c0f43-1199-4abe-966c-ad8369154389"
                     }
                 ],
-                "target_revision_id": "116"
+                "target_revision_id": "153"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/landing\/field_header": [
@@ -156,7 +156,7 @@
     ],
     "changed": [
         {
-            "value": "2019-03-21T21:18:24+00:00",
+            "value": "2019-04-01T03:12:55+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -179,16 +179,10 @@
             "lang": "en"
         }
     ],
-    "revision_translation_affected": [
-        {
-            "value": true,
-            "lang": "en"
-        }
-    ],
     "path": [
         {
             "alias": "\/get-started",
-            "pid": 12,
+            "pid": 14,
             "langcode": "en",
             "lang": "en"
         }
