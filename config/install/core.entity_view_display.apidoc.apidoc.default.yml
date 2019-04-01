@@ -6,52 +6,22 @@ dependencies:
     - field.field.apidoc.apidoc.field_image
   module:
     - apigee_edge_apidocs
-    - file
-    - text
 id: apidoc.apidoc.default
 targetEntityType: apidoc
 bundle: apidoc
 mode: default
 content:
-  description:
-    label: hidden
-    type: text_default
-    weight: 2
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_categories:
-    weight: 3
-    label: inline
-    settings:
-      link: false
-    third_party_settings: {  }
+  api_product:
     type: entity_reference_label
-    region: content
-  field_image:
-    type: entity_reference_entity_view
     weight: 0
+    region: content
     label: hidden
     settings:
-      view_mode: full
-      link: false
-    third_party_settings: {  }
-    region: content
-  name:
-    label: hidden
-    type: string
-    weight: 1
-    region: content
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-  spec:
-    label: inline
-    type: file_default
-    weight: 6
-    region: content
-    settings:
-      use_description_as_link_text: true
+      link: true
     third_party_settings: {  }
 hidden:
-  api_product: true
+  description: true
+  field_categories: true
+  field_image: true
+  name: true
+  spec: true
