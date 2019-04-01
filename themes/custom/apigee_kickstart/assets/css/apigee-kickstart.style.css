@@ -9674,6 +9674,10 @@ a.text-lighter:hover, a.text-lighter:focus {
   border-radius: 4px;
 }
 
+blockquote {
+  color: #555;
+}
+
 .page__breadcrumbs {
   background-color: #2196f3;
   font-size: 0.875rem;
@@ -9840,6 +9844,7 @@ pre {
   justify-content: center;
 }
 .callout__field-icon svg.svg-inline--fa {
+  color: #555;
   height: 56px;
   width: 56px;
 }
