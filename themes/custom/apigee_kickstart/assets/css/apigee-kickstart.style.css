@@ -9764,6 +9764,7 @@ a.text-lighter:hover, a.text-lighter:focus {
 
 .api-card {
   border: 0;
+  height: 100%;
 }
 .api-card > a {
   display: flex;
