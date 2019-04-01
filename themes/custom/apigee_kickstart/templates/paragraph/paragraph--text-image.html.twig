@@ -4,11 +4,12 @@
  * Template for a 'Text + Image' Paragraph.
  */
 #}
+
 {% embed 'paragraph.html.twig' %}
   {% block content %}
     <div class="container-fluid px-0">
       <div class="row d-md-flex align-items-md-stretch no-gutters">
-        <div class="text-image__text col-md-6 order-2 order-md-1 bg-light pt-4 py-6 px-3 px-md-8">
+        <div class="text-image__text col-md-6 order-2 order-md-1 pt-4 py-6 px-3 px-md-8">
           {{ content|without('field_image') }}
         </div>
         {% if content.field_image|render %}

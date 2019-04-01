@@ -6,17 +6,6 @@
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/card_group"
         },
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/card_group\/uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/card_group\/revision_uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json"
-            }
-        ],
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/card_group\/field_buttons": [
             {
                 "href": "",
@@ -47,7 +36,7 @@
     ],
     "revision_id": [
         {
-            "value": 87
+            "value": 170
         }
     ],
     "langcode": [
@@ -61,112 +50,6 @@
             "target_id": "card_group"
         }
     ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/card_group\/uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "13a077ca-48a0-4f73-9093-5a174ff6c970"
-                    }
-                ],
-                "lang": "en"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/card_group\/revision_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "13a077ca-48a0-4f73-9093-5a174ff6c970"
-                    }
-                ]
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/card_group\/field_buttons": [
-            {
-                "_links": {
-                    "self": {
-                        "href": ""
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/button_group"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "c1e17d1a-4f2e-4376-8057-01c67cabf555"
-                    }
-                ],
-                "lang": "en",
-                "target_revision_id": "68"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/card_group\/field_cards": [
-            {
-                "_links": {
-                    "self": {
-                        "href": ""
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/card"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "553bc28b-b818-4e1f-971d-647bb659c880"
-                    }
-                ],
-                "target_revision_id": "84"
-            },
-            {
-                "_links": {
-                    "self": {
-                        "href": ""
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/card"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "338d65b4-8589-47bf-869e-63699ecdefea"
-                    }
-                ],
-                "target_revision_id": "85"
-            },
-            {
-                "_links": {
-                    "self": {
-                        "href": ""
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/card"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "133a8cb0-6813-4a2c-9f8a-a4c7a9109268"
-                    }
-                ],
-                "target_revision_id": "86"
-            }
-        ]
-    },
     "status": [
         {
             "value": true,
@@ -212,6 +95,83 @@
             "lang": "en"
         }
     ],
+    "field_background_style": [
+        {
+            "value": "light",
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/card_group\/field_buttons": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/button_group"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "c1e17d1a-4f2e-4376-8057-01c67cabf555"
+                    }
+                ],
+                "lang": "en",
+                "target_revision_id": "166"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/card_group\/field_cards": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/card"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "553bc28b-b818-4e1f-971d-647bb659c880"
+                    }
+                ],
+                "target_revision_id": "167"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/card"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "338d65b4-8589-47bf-869e-63699ecdefea"
+                    }
+                ],
+                "target_revision_id": "168"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/card"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "133a8cb0-6813-4a2c-9f8a-a4c7a9109268"
+                    }
+                ],
+                "target_revision_id": "169"
+            }
+        ]
+    },
     "field_title": [
         {
             "value": "Featured APIs",

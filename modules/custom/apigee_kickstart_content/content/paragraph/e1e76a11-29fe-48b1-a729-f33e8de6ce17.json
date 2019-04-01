@@ -15,17 +15,17 @@
     },
     "id": [
         {
-            "value": 29
+            "value": 41
         }
     ],
     "uuid": [
         {
-            "value": "44faa73c-d977-4f45-b9cb-b2105d862205"
+            "value": "e1e76a11-29fe-48b1-a729-f33e8de6ce17"
         }
     ],
     "revision_id": [
         {
-            "value": 177
+            "value": 180
         }
     ],
     "langcode": [
@@ -47,14 +47,14 @@
     ],
     "created": [
         {
-            "value": "2019-03-17T05:22:49+00:00",
+            "value": "2019-04-01T15:14:51+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "parent_id": [
         {
-            "value": "30"
+            "value": "42"
         }
     ],
     "parent_type": [
@@ -78,6 +78,12 @@
             "lang": "en"
         }
     ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
     "_embedded": {
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/button_group\/field_buttons": [
             {
@@ -91,11 +97,11 @@
                 },
                 "uuid": [
                     {
-                        "value": "ecbc1c18-156a-4fe4-90e5-f4db4cce8bc4"
+                        "value": "1c7999b0-8818-47d9-9c40-7879106e8ac3"
                     }
                 ],
                 "lang": "en",
-                "target_revision_id": "103"
+                "target_revision_id": "179"
             }
         ]
     }

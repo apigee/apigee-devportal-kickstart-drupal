@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.card_group.field_background_style
     - field.field.paragraph.card_group.field_buttons
     - field.field.paragraph.card_group.field_cards
     - field.field.paragraph.card_group.field_title
@@ -39,4 +40,5 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-hidden: {  }
+hidden:
+  field_background_style: true

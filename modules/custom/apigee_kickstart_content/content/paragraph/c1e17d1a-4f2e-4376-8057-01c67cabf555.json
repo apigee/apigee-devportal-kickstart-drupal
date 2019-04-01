@@ -6,17 +6,6 @@
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/button_group"
         },
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/button_group\/uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/button_group\/revision_uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json"
-            }
-        ],
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/button_group\/field_buttons": [
             {
                 "href": "",
@@ -36,7 +25,7 @@
     ],
     "revision_id": [
         {
-            "value": 68
+            "value": 166
         }
     ],
     "langcode": [
@@ -50,62 +39,6 @@
             "target_id": "button_group"
         }
     ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/button_group\/uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "13a077ca-48a0-4f73-9093-5a174ff6c970"
-                    }
-                ],
-                "lang": "en"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/button_group\/revision_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "13a077ca-48a0-4f73-9093-5a174ff6c970"
-                    }
-                ]
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/button_group\/field_buttons": [
-            {
-                "_links": {
-                    "self": {
-                        "href": ""
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/button"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "a04cfedd-8aa9-44af-8f1f-cb21e0363799"
-                    }
-                ],
-                "lang": "en",
-                "target_revision_id": "67"
-            }
-        ]
-    },
     "status": [
         {
             "value": true,
@@ -150,5 +83,26 @@
             "value": true,
             "lang": "en"
         }
-    ]
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/button_group\/field_buttons": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/button"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "a04cfedd-8aa9-44af-8f1f-cb21e0363799"
+                    }
+                ],
+                "lang": "en",
+                "target_revision_id": "67"
+            }
+        ]
+    }
 }

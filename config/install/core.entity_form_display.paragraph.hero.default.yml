@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.hero.field_background_style
     - field.field.paragraph.hero.field_buttons
     - field.field.paragraph.hero.field_media
     - field.field.paragraph.hero.field_text
@@ -16,9 +17,15 @@ targetEntityType: paragraph
 bundle: hero
 mode: default
 content:
+  field_background_style:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_buttons:
     type: paragraphs
-    weight: 3
+    weight: 4
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -37,12 +44,12 @@ content:
     region: content
   field_media:
     type: media_library_widget
-    weight: 0
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     region: content
   field_text:
-    weight: 2
+    weight: 3
     settings:
       rows: 2
       placeholder: ''
@@ -50,7 +57,7 @@ content:
     type: text_textarea
     region: content
   field_title:
-    weight: 1
+    weight: 2
     settings:
       size: 60
       placeholder: ''
