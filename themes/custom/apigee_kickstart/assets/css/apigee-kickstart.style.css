@@ -9724,7 +9724,7 @@ a.text-lighter:hover, a.text-lighter:focus {
   border: 0;
 }
 .card > a {
-  color: currentColor;
+  color: #555;
   text-decoration: none;
 }
 .card-img-top {
