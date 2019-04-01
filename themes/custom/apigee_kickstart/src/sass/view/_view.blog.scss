@@ -1,0 +1,8 @@
+// View: Blog landing page
+// -----------------------------------------------------------------------------
+.view-blog--page-landing {
+
+  @include media-breakpoint-down(sm) {
+    margin-top: -1.905rem;
+  }
+}

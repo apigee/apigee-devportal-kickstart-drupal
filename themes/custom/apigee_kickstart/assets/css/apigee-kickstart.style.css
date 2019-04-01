@@ -9674,6 +9674,11 @@ a.text-lighter:hover, a.text-lighter:focus {
   border-radius: 4px;
 }
 
+small {
+  letter-spacing: 0.4px;
+  font-size: 0.75rem;
+}
+
 .page__breadcrumbs {
   background-color: #2196f3;
   font-size: 0.875rem;
@@ -10110,11 +10115,10 @@ ul.social-links li a {
   flex-direction: column;
   align-items: start;
 }
-
 @media (min-width: 576px) {
   .app .tab-pane .field,
-  .app .tab-pane .api-product-list-row,
-  .app .tab-pane .item-property {
+.app .tab-pane .api-product-list-row,
+.app .tab-pane .item-property {
     flex-direction: row;
     align-items: center;
   }
@@ -10207,4 +10211,36 @@ ul.social-links li a {
 .views-exposed-form .form-actions input.btn-reset {
   padding-left: 3.2rem;
   background: url("../images/icons/close.svg") no-repeat 25px center;
+}
+
+.article__tags {
+  margin-bottom: 1rem;
+}
+.article__tags .badge {
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  font-size: 0.625rem;
+  padding: 0;
+  background: none;
+}
+.article__tags .badge + .badge {
+  margin-left: 1rem;
+}
+.article__tags .badge:hover {
+  background: none;
+  color: #2196f3;
+}
+
+@media (max-width: 767.98px) {
+  .article--teaser .article__field-image {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .view-blog--page-landing {
+    margin-top: -1.905rem;
+  }
 }

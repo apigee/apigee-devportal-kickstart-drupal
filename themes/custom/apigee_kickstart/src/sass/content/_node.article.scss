@@ -1,10 +1,46 @@
-// Article: Teaser
+// Article
 // -----------------------------------------------------------------------------
-.article--teaser {
+.article {
 
+  &__tags {
+    margin-bottom: 1rem;
+
+    .badge {
+      text-transform: uppercase;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      font-size: .625rem;
+      padding: 0;
+      background: none;
+
+      + .badge {
+        margin-left: 1rem;
+      }
+
+      &:hover {
+        background: none;
+        color: $primary;
+      }
+    }
+  }
 }
 
-// Article: Full
+// Teaser.
+.article--teaser {
+
+  .article {
+
+    &__field-image {
+
+      @include media-breakpoint-down(sm) {
+        margin-left: - $grid-gutter-width / 2;
+        margin-right: - $grid-gutter-width / 2;
+      }
+    }
+  }
+}
+
+// Full display mode.
 // -----------------------------------------------------------------------------
 .article--full {
 
