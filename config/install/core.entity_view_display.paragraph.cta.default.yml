@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.cta.field_background_style
     - field.field.paragraph.cta.field_buttons
     - field.field.paragraph.cta.field_text
     - field.field.paragraph.cta.field_title
@@ -38,4 +39,5 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-hidden: {  }
+hidden:
+  field_background_style: true
