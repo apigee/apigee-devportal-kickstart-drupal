@@ -8,9 +8,13 @@
   'paragraph',
   not paragraph.isPublished() ? 'paragraph--unpublished',
   paragraph.bundle|clean_class ~ '--' ~ view_mode|clean_class,
-  'bg-light',
   'py-7'
 ] %}
+
+{% set background_style = paragraph.field_background_style.0.value|default(null) %}
+{% if background_style %}
+  {% set classes = classes|merge(['bg-' ~ background_style|clean_class]) %}
+{% endif %}
 
 {% block paragraph %}
   <div{{attributes.addClass(classes)}}>
