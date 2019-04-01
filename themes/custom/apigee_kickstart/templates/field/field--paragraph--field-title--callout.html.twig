@@ -5,6 +5,7 @@
  */
 #}
 {% set tag = element['#object'].field_title.getValue ? 'h3' : 'h2' %}
+
 {%- for item in items -%}
   <{{tag}} class="callout__title">{{- item.content -}}</{{tag}}>
 {%- endfor -%}

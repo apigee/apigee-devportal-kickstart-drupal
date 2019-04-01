@@ -6,11 +6,16 @@
 #}
 {% for item in items %}
 
-  {# Assign classes, including selected button style. #}
-  {% set classes = [
-    'btn',
-    'btn-' ~ element['#object'].field_button_style.value|default('primary')|clean_class,
-  ] %}
+  {% set classes = ['btn'] %}
+  {% set button_style = element['#object'].field_button_style.value|default('primary') %}
+
+  {% if button_style == 'primary' %}
+    {% set classes = classes|merge(['btn-primary']) %}
+  {% elseif button_style == 'secondary' %}
+    {% set classes = classes|merge(['btn-outline-primary']) %}
+  {% endif %}
+
+  {{ breakpoint() }}
 
   {# Create attributes object, retaining UI/programatically added attributes.#}
   {% if item.content['#options'].attributes %}
