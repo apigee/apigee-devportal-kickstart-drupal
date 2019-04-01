@@ -25,7 +25,7 @@
     ],
     "revision_id": [
         {
-            "value": 105
+            "value": 178
         }
     ],
     "langcode": [
@@ -84,6 +84,11 @@
             "lang": "en"
         }
     ],
+    "field_background_style": [
+        {
+            "value": "light"
+        }
+    ],
     "_embedded": {
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/cta\/field_buttons": [
             {
@@ -101,7 +106,7 @@
                     }
                 ],
                 "lang": "en",
-                "target_revision_id": "104"
+                "target_revision_id": "177"
             }
         ]
     },

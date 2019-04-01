@@ -4,9 +4,9 @@
             "href": ""
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/button_group"
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/cta"
         },
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/button_group\/field_buttons": [
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/cta\/field_buttons": [
             {
                 "href": "",
                 "lang": "en"
@@ -15,17 +15,17 @@
     },
     "id": [
         {
-            "value": 29
+            "value": 42
         }
     ],
     "uuid": [
         {
-            "value": "44faa73c-d977-4f45-b9cb-b2105d862205"
+            "value": "ac433a9f-377b-49b7-95ee-3616cda19902"
         }
     ],
     "revision_id": [
         {
-            "value": 177
+            "value": 181
         }
     ],
     "langcode": [
@@ -36,7 +36,7 @@
     ],
     "type": [
         {
-            "target_id": "button_group"
+            "target_id": "cta"
         }
     ],
     "status": [
@@ -47,24 +47,24 @@
     ],
     "created": [
         {
-            "value": "2019-03-17T05:22:49+00:00",
+            "value": "2019-04-01T15:14:21+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "parent_id": [
         {
-            "value": "30"
+            "value": "1"
         }
     ],
     "parent_type": [
         {
-            "value": "paragraph"
+            "value": "node"
         }
     ],
     "parent_field_name": [
         {
-            "value": "field_buttons"
+            "value": "field_content"
         }
     ],
     "behavior_settings": [
@@ -78,25 +78,45 @@
             "lang": "en"
         }
     ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
     "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/button_group\/field_buttons": [
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/cta\/field_buttons": [
             {
                 "_links": {
                     "self": {
                         "href": ""
                     },
                     "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/button"
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/button_group"
                     }
                 },
                 "uuid": [
                     {
-                        "value": "ecbc1c18-156a-4fe4-90e5-f4db4cce8bc4"
+                        "value": "e1e76a11-29fe-48b1-a729-f33e8de6ce17"
                     }
                 ],
                 "lang": "en",
-                "target_revision_id": "103"
+                "target_revision_id": "180"
             }
         ]
-    }
+    },
+    "field_text": [
+        {
+            "value": "<p>Get started building right away.<\/p>\r\n",
+            "format": "basic_html",
+            "processed": "<p>Get started building right away.<\/p>",
+            "lang": "en"
+        }
+    ],
+    "field_title": [
+        {
+            "value": "Create a free developer account",
+            "lang": "en"
+        }
+    ]
 }

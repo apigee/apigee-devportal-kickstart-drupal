@@ -4,22 +4,22 @@
             "href": ""
         },
         "type": {
-            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/blockquote"
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/button"
         }
     },
     "id": [
         {
-            "value": 10
+            "value": 40
         }
     ],
     "uuid": [
         {
-            "value": "e17133e2-31c0-4c7b-8e59-6c3f75524c03"
+            "value": "1c7999b0-8818-47d9-9c40-7879106e8ac3"
         }
     ],
     "revision_id": [
         {
-            "value": 175
+            "value": 179
         }
     ],
     "langcode": [
@@ -30,7 +30,7 @@
     ],
     "type": [
         {
-            "target_id": "blockquote"
+            "target_id": "button"
         }
     ],
     "status": [
@@ -41,24 +41,24 @@
     ],
     "created": [
         {
-            "value": "2019-03-15T18:53:47+00:00",
+            "value": "2019-04-01T15:14:51+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "parent_id": [
         {
-            "value": "1"
+            "value": "41"
         }
     ],
     "parent_type": [
         {
-            "value": "node"
+            "value": "paragraph"
         }
     ],
     "parent_field_name": [
         {
-            "value": "field_content"
+            "value": "field_buttons"
         }
     ],
     "behavior_settings": [
@@ -78,16 +78,16 @@
             "lang": "en"
         }
     ],
-    "field_blockquote_source": [
+    "field_button_style": [
         {
-            "value": "James Kepler, Chief Technology Officer, Acme"
+            "value": "primary"
         }
     ],
-    "field_text": [
+    "field_link": [
         {
-            "value": "<p>Let\u2019s innovate together! Launch products, shape data, and connect customers using our broad suite of APIs. Join our community and get started today on your path to the next level of business success.<\/p>\r\n",
-            "format": "basic_html",
-            "processed": "<p>Let\u2019s innovate together! Launch products, shape data, and connect customers using our broad suite of APIs. Join our community and get started today on your path to the next level of business success.<\/p>",
+            "uri": "internal:\/user\/register",
+            "title": "Sign up",
+            "options": [],
             "lang": "en"
         }
     ]

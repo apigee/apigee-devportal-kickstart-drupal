@@ -84,6 +84,11 @@
             "lang": "en"
         }
     ],
+    "field_background_style": [
+        {
+            "value": "light"
+        }
+    ],
     "_embedded": {
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/cta\/field_buttons": [
             {
