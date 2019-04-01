@@ -26,6 +26,7 @@
 }
 
 // Teaser.
+// -----------------------------------------------------------------------------
 .article--teaser {
 
   .article {
@@ -44,4 +45,12 @@
 // -----------------------------------------------------------------------------
 .article--full {
 
+  h1 {
+    margin-bottom: 1.6rem;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 3rem;
+      line-height: 57px;
+    }
+  }
 }

@@ -10239,6 +10239,16 @@ ul.social-links li a {
   }
 }
 
+.article--full h1 {
+  margin-bottom: 1.6rem;
+}
+@media (min-width: 992px) {
+  .article--full h1 {
+    font-size: 3rem;
+    line-height: 57px;
+  }
+}
+
 @media (max-width: 767.98px) {
   .view-blog--page-landing {
     margin-top: -1.905rem;
