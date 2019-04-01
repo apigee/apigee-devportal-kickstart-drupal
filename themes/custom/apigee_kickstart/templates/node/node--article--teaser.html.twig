@@ -27,7 +27,7 @@
         {{ content|without('field_image', 'field_tags') }}
 
         {% if display_submitted %}
-          <small class="article__meta mt-3 d-block">{% trans %}by {{ author_name }} | {{ date|format_date() }}{% endtrans %}</small>
+          <small class="article__meta mt-3 d-block">{% trans %}by {{ author_name }} <span class="mx-1">|</span>  {{ date }}{% endtrans %}</small>
         {% endif %}
       </div>
     </div>
