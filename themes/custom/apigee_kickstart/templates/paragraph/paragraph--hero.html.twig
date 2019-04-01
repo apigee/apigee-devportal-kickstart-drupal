@@ -6,15 +6,15 @@
 #}
 {% extends 'paragraph.html.twig' %}
 {% block content %}
-  <div class="container-fluid">
-    <div class="border-bottom row text-center text-md-left align-items-center">
-      <div class="col-md-5 py-9 py-md-0 px-4 px-md-5 px-xl-9">
+  <div class="container-fluid px-0">
+    <div class="hero__wrapper">
+      <div class="hero__content py-9 py-md-0">
         {{ content.field_title }}
         {{ content.field_text }}
         {{ content.field_buttons }}
         {{ content|without('field_buttons', 'field_media', 'field_text', 'field_title') }}
       </div>
-      <div class="col-md-7 pr-0 d-none d-md-block">
+      <div class="hero__media d-none d-md-block">
         {{- content.field_media -}}
       </div>
     </div>
