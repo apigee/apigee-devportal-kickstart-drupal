@@ -6,17 +6,6 @@
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/hero"
         },
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero\/uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero\/revision_uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json"
-            }
-        ],
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero\/field_buttons": [
             {
                 "href": ""
@@ -40,7 +29,7 @@
     ],
     "revision_id": [
         {
-            "value": 98
+            "value": 165
         }
     ],
     "langcode": [
@@ -54,78 +43,6 @@
             "target_id": "hero"
         }
     ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero\/uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "13a077ca-48a0-4f73-9093-5a174ff6c970"
-                    }
-                ],
-                "lang": "en"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero\/revision_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "13a077ca-48a0-4f73-9093-5a174ff6c970"
-                    }
-                ]
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero\/field_buttons": [
-            {
-                "_links": {
-                    "self": {
-                        "href": ""
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/button_group"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "b1e0a232-04b4-44fe-b211-3de506cfea1a"
-                    }
-                ],
-                "target_revision_id": "97"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero\/field_media": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/media\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "e65db5c0-184c-4b38-93b1-1462ac5a39c0"
-                    }
-                ]
-            }
-        ]
-    },
     "status": [
         {
             "value": true,
@@ -171,6 +88,43 @@
             "lang": "en"
         }
     ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero\/field_buttons": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/button_group"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "b1e0a232-04b4-44fe-b211-3de506cfea1a"
+                    }
+                ],
+                "target_revision_id": "164"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero\/field_media": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "e65db5c0-184c-4b38-93b1-1462ac5a39c0"
+                    }
+                ]
+            }
+        ]
+    },
     "field_text": [
         {
             "value": "<p>Use our diverse APIs to create innovative apps for transforming your business.<\/p>\r\n",

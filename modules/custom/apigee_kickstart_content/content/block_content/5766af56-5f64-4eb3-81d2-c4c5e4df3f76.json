@@ -6,6 +6,11 @@
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/block_content\/cta"
         },
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/cta\/revision_user": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
         "http:\/\/drupal.org\/rest\/relation\/block_content\/cta\/field_cta": [
             {
                 "href": ""
@@ -24,7 +29,7 @@
     ],
     "revision_id": [
         {
-            "value": 15
+            "value": 18
         }
     ],
     "langcode": [
@@ -40,10 +45,47 @@
     ],
     "revision_created": [
         {
-            "value": "2019-03-17T05:26:53+00:00",
+            "value": "2019-04-01T15:03:48+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/cta\/revision_user": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "66646a56-db21-40ed-9e68-71f91d802dcf"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/cta\/field_cta": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/cta"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "a84a1787-a271-4991-b8b0-d6a0065f0ede"
+                    }
+                ],
+                "target_revision_id": "178"
+            }
+        ]
+    },
     "status": [
         {
             "value": true,
@@ -58,7 +100,7 @@
     ],
     "changed": [
         {
-            "value": "2019-03-17T05:26:53+00:00",
+            "value": "2019-04-01T15:22:10+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -79,25 +121,5 @@
             "value": true,
             "lang": "en"
         }
-    ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/cta\/field_cta": [
-            {
-                "_links": {
-                    "self": {
-                        "href": ""
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/cta"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "a84a1787-a271-4991-b8b0-d6a0065f0ede"
-                    }
-                ],
-                "target_revision_id": "105"
-            }
-        ]
-    }
+    ]
 }

@@ -1,0 +1,50 @@
+.title-bar {
+  p:only-child {
+    margin: 0;
+  }
+}
+
+.title-bar__title {
+  margin: 0;
+
+  @include media-breakpoint-down(sm) {
+    font-size: 1.5rem;
+  }
+}
+
+// @todo... Workaround .field from apigee_edge 😢
+.title-bar__icon {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background: theme-color('light');
+  border-radius: $border-radius-lg;
+  margin-left: auto;
+  height: 36px;
+  width: 36px;
+
+  @include media-breakpoint-up(sm) {
+    height: 64px;
+    width: 64px;
+  }
+
+  svg.svg-inline--fa {
+    height: 18px;
+    width: 18px;
+
+    @include media-breakpoint-up(sm) {
+      height: 36px;
+      width: 36px;
+    }
+  }
+}
+
+.title-bar__content {
+  border-color: $gray-500 !important;
+  font-size: 0.875rem;
+  letter-spacing: 0.25px;
+  line-height: 1.25;
+  padding-bottom: 0.75rem;
+  padding-top: 0.75rem;
+  padding-right: 30vw;
+}

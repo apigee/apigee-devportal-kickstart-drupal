@@ -1,0 +1,10 @@
+.btn {
+  font-family: 'Roboto-Medium', $font-family-sans-serif;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+[class*='btn-outline-'] {
+  border-width: 2px;
+}

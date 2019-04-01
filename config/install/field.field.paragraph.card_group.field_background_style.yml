@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_background_style
+    - paragraphs.paragraphs_type.card_group
+  module:
+    - options
+id: paragraph.card_group.field_background_style
+field_name: field_background_style
+entity_type: paragraph
+bundle: card_group
+label: 'Card group background style'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.text_image.field_background_style
     - field.field.paragraph.text_image.field_buttons
     - field.field.paragraph.text_image.field_image
     - field.field.paragraph.text_image.field_text
@@ -48,4 +49,5 @@ content:
     third_party_settings: {  }
     type: string
     region: content
-hidden: {  }
+hidden:
+  field_background_style: true

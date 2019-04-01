@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.card_group.field_background_style
     - field.field.paragraph.card_group.field_buttons
     - field.field.paragraph.card_group.field_cards
     - field.field.paragraph.card_group.field_title
@@ -13,8 +14,14 @@ targetEntityType: paragraph
 bundle: card_group
 mode: default
 content:
+  field_background_style:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
   field_buttons:
-    weight: 1
+    weight: 2
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -34,7 +41,7 @@ content:
     region: content
   field_cards:
     type: paragraphs
-    weight: 2
+    weight: 3
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -52,7 +59,7 @@ content:
     third_party_settings: {  }
     region: content
   field_title:
-    weight: 0
+    weight: 1
     settings:
       size: 60
       placeholder: ''

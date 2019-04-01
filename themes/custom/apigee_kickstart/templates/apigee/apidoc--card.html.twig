@@ -18,7 +18,8 @@
 ]
 %}
 <article{{ attributes.addClass(classes) }}>
-  {% include '@apigee-kickstart/card/api-card.twig' with {
+  {% include '@apigee-kickstart/card/card.twig' with {
+    classes: ['api-card'],
     url: content.field_link['#url'],
     title: entity.label,
     image: content.field_image,

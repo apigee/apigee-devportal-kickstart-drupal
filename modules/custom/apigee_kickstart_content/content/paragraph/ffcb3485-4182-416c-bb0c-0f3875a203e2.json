@@ -6,17 +6,6 @@
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/callout_group"
         },
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/callout_group\/uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json",
-                "lang": "en"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/callout_group\/revision_uid": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json"
-            }
-        ],
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/callout_group\/field_callouts": [
             {
                 "href": ""
@@ -41,7 +30,7 @@
     ],
     "revision_id": [
         {
-            "value": 91
+            "value": 174
         }
     ],
     "langcode": [
@@ -55,93 +44,6 @@
             "target_id": "callout_group"
         }
     ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/callout_group\/uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "13a077ca-48a0-4f73-9093-5a174ff6c970"
-                    }
-                ],
-                "lang": "en"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/callout_group\/revision_uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "13a077ca-48a0-4f73-9093-5a174ff6c970"
-                    }
-                ]
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/paragraph\/callout_group\/field_callouts": [
-            {
-                "_links": {
-                    "self": {
-                        "href": ""
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/callout"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "bfc557df-811a-4c61-88ee-f9eba6f86c07"
-                    }
-                ],
-                "target_revision_id": "88"
-            },
-            {
-                "_links": {
-                    "self": {
-                        "href": ""
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/callout"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "747b5e4d-7809-44f5-8de5-eb3b2a854ce2"
-                    }
-                ],
-                "target_revision_id": "89"
-            },
-            {
-                "_links": {
-                    "self": {
-                        "href": ""
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/callout"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "73f553f5-22c9-4528-b85e-e4c1509a0f3d"
-                    }
-                ],
-                "target_revision_id": "90"
-            }
-        ]
-    },
     "status": [
         {
             "value": true,
@@ -186,5 +88,57 @@
             "value": true,
             "lang": "en"
         }
-    ]
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/callout_group\/field_callouts": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/callout"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "bfc557df-811a-4c61-88ee-f9eba6f86c07"
+                    }
+                ],
+                "target_revision_id": "171"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/callout"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "747b5e4d-7809-44f5-8de5-eb3b2a854ce2"
+                    }
+                ],
+                "target_revision_id": "172"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/callout"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "73f553f5-22c9-4528-b85e-e4c1509a0f3d"
+                    }
+                ],
+                "target_revision_id": "173"
+            }
+        ]
+    }
 }
