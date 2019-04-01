@@ -70,14 +70,11 @@ display:
             offset_label: Offset
           quantity: 4
       style:
-        type: html_list
+        type: default
         options:
           row_class: ''
           default_row_class: true
           uses_fields: false
-          type: ul
-          wrapper_class: item-list
-          class: ''
       row:
         type: 'entity:node'
         options:
@@ -222,3 +219,4 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
+

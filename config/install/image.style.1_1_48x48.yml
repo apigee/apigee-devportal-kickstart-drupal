@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 1_1_48x48
+label: '1:1 Ratio - 48 x 48'
+effects:
+  0f7bad16-11e3-4ccb-92ac-574bd1890934:
+    uuid: 0f7bad16-11e3-4ccb-92ac-574bd1890934
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 48
+      height: 48
+      anchor: center-center
+

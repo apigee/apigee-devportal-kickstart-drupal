@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * Template for the comment field.
+ */
+#}
+<section{{ attributes }}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+
+  {{ comments }}
+
+  {% if comment_form %}
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-11">
+        <div class="card border-light">
+          <div class="card-header border-light bg-white">
+            {{ 'Add new comment'|t }}
+          </div>
+          <div class="card-body">
+            {{ comment_form }}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+</section>
