@@ -6,6 +6,10 @@
 
 .title-bar__title {
   margin: 0;
+
+  @include media-breakpoint-down(sm) {
+    font-size: 1.5rem;
+  }
 }
 
 // @todo... Workaround .field from apigee_edge 😢
@@ -36,7 +40,7 @@
 }
 
 .title-bar__content {
-  border-color: $body-color !important;
+  border-color: $gray-500 !important;
   font-size: 0.875rem;
   letter-spacing: 0.25px;
   line-height: 1.25;
