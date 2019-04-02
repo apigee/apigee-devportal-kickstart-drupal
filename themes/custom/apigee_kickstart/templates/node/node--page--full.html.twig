@@ -1,10 +1,9 @@
 {#
 /**
  * @file
- * Template for a node in full display mode.
+ * Template for a 'Basic page' node in full display mode.
  */
 #}
-
 {% extends '@apigee-kickstart/node/node.twig' %}
 {% block content %}
 
@@ -19,5 +18,10 @@
     {% endif %}
   {% endif %}
 
-  {{ content|without('field_header') }}
+  <div class="row pb-7">
+    <div class="col-lg-8">
+      {{ content|without('field_header') }}
+    </div>
+  </div>
+
 {% endblock %}
