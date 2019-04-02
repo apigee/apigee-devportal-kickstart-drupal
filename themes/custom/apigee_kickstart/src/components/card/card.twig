@@ -4,8 +4,11 @@
  * Template for a Card component.
  */
 #}
+
+{% set hover_shadow = hover_shadow|default(false) %}
 {% set classes = [
-  'card'
+  'card',
+  hover_shadow ? 'has-hover-shadow' : ''
 ]|merge(classes|default([])) %}
 
 <div class="{{ classes|join(' ')|trim }}">
