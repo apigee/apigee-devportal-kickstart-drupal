@@ -9712,6 +9712,10 @@ small {
   background: rgba(85, 85, 85, 0.9);
 }
 
+.alert {
+  font-size: 0.875rem;
+}
+
 .breadcrumb-item a {
   font-size: 0.875rem;
   letter-spacing: 1px;
