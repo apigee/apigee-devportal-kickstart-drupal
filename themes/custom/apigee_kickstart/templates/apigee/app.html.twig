@@ -19,11 +19,13 @@
 ]
 %}
 
+{% set tab_suffix = entity.name|clean_class %}
+
 <div{{ attributes.addClass(classes) }}>
   <ul class="nav nav-tabs--secondary mb-4">
     {% if content.callbackUrl or content.credentials.primary_wrapper %}
       <li class="nav-item">
-        <a class="nav-link active" id="keys-tab" data-toggle="tab" href="#keys">
+        <a class="nav-link active" id="keys-tab-{{ tab_suffix }}" data-toggle="tab" href="#keys-{{ tab_suffix }}">
           {{ "Keys"|t }}
         </a>
       </li>
@@ -31,14 +33,14 @@
 
     {% if content.credentials.secondary_wrapper %}
       <li class="nav-item">
-        <a class="nav-link" id="products-tab" data-toggle="tab" href="#products">
+        <a class="nav-link" id="products-tab-{{ tab_suffix }}" data-toggle="tab" href="#products-{{ tab_suffix }}">
           {{ "Products"|t }}
         </a>
       </li>
     {% endif %}
 
     <li class="nav-item">
-      <a class="nav-link" id="details-tab" data-toggle="tab" href="#details">
+      <a class="nav-link" id="details-tab-{{ tab_suffix }}" data-toggle="tab" href="#details-{{ tab_suffix }}">
         {{ "Details"|t }}
       </a>
     </li>
@@ -46,7 +48,7 @@
 
   <div class="tab-content">
     {% if content.callbackUrl or content.credentials.primary_wrapper %}
-      <div class="tab-pane show active" id="keys">
+      <div class="tab-pane show active" id="keys-{{ tab_suffix }}">
         {{ content.status }}
         {{ content.callbackUrl }}
         {{ content.credentials.primary_wrapper }}
@@ -54,12 +56,12 @@
     {% endif %}
 
     {% if content.credentials.secondary_wrapper %}
-      <div class="tab-pane" id="products">
+      <div class="tab-pane" id="products-{{ tab_suffix }}">
         {{ content.credentials.secondary_wrapper|without('title') }}
       </div>
     {% endif %}
 
-    <div class="tab-pane" id="details">
+    <div class="tab-pane" id="details-{{ tab_suffix }}">
       {{ content|without('status', 'callbackUrl', 'credentials') }}
     </div>
   </div>
