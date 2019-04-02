@@ -19,6 +19,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/apis\r\n/blog\r\n/contact\r\n/faqs\r\n/forum\r\n/article/*"
+    pages: "/apis\r\n/blog\r\n/contact\r\n/faq\r\n/forum\r\n/article/*"
     negate: true
     context_mapping: {  }
