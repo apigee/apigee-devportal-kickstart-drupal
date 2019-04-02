@@ -2,4 +2,10 @@
 // -----------------------------------------------------------------------------
 .page__header {
 
+  .page__title {
+
+    @include media-breakpoint-down(sm) {
+      font-size: 1.5rem;
+    }
+  }
 }

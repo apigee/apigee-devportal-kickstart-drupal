@@ -9691,6 +9691,12 @@ small {
   color: #fff;
 }
 
+@media (max-width: 767.98px) {
+  .page__header .page__title {
+    font-size: 1.5rem;
+  }
+}
+
 .page__footer {
   font-size: 0.875rem;
 }
