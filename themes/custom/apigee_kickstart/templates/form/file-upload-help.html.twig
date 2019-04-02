@@ -1,0 +1,17 @@
+{#
+/**
+ * @file
+ * Theme override to display help text for file fields.
+ *
+ * Available variables:
+ * - descriptions: Lines of help text for uploading a file.
+ *
+ * @see template_preprocess_file_upload_help()
+ */
+#}
+{% for description in descriptions %}
+  <span>{{ description }}</span>
+  {% if not loop.last %}
+    <br />
+  {% endif %}
+{% endfor %}

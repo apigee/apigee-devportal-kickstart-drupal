@@ -1918,10 +1918,10 @@ select.form-control:focus::-ms-value {
 }
 
 .col-form-label-lg {
-  padding-top: calc(0.5rem + 1px);
-  padding-bottom: calc(0.5rem + 1px);
+  padding-top: calc(1rem + 1px);
+  padding-bottom: calc(1rem + 1px);
   font-size: 1.25rem;
-  line-height: 1.75;
+  line-height: 1;
 }
 
 .col-form-label-sm {
@@ -1980,9 +1980,9 @@ select.form-control-sm:not([size]):not([multiple]), .input-group-sm > select.for
 .input-group-lg > .input-group-append > .input-group-text,
 .input-group-lg > .input-group-prepend > .btn,
 .input-group-lg > .input-group-append > .btn {
-  padding: 0.5rem 1rem;
+  padding: 1rem 0.875rem;
   font-size: 1.25rem;
-  line-height: 1.75;
+  line-height: 1;
   border-radius: 4px;
 }
 
@@ -1991,7 +1991,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 .input-group-lg > .input-group-append > select.input-group-text:not([size]):not([multiple]),
 .input-group-lg > .input-group-prepend > select.btn:not([size]):not([multiple]),
 .input-group-lg > .input-group-append > select.btn:not([size]):not([multiple]) {
-  height: calc(3.1875rem + 2px);
+  height: calc(3.25rem + 2px);
 }
 
 .form-group {
@@ -2837,10 +2837,10 @@ fieldset:disabled a.btn {
   pointer-events: none;
 }
 
-.btn-lg, .btn-group-lg > .btn {
-  padding: 0.5rem 1rem;
+.btn-lg, .path-user form .form-actions .btn, .btn-group-lg > .btn {
+  padding: 1rem 0.875rem;
   font-size: 1.25rem;
-  line-height: 1.75;
+  line-height: 1;
   border-radius: 4px;
 }
 
@@ -3154,9 +3154,9 @@ input[type=button].btn-block {
   padding-left: 0.375rem;
 }
 
-.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split {
-  padding-right: 0.75rem;
-  padding-left: 0.75rem;
+.btn-lg + .dropdown-toggle-split, .path-user form .form-actions .btn + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split {
+  padding-right: 0.65625rem;
+  padding-left: 0.65625rem;
 }
 
 .btn-group-vertical {
@@ -3469,7 +3469,7 @@ input[type=button].btn-block {
 }
 
 .custom-select-lg {
-  height: calc(3.1875rem + 2px);
+  height: calc(3.25rem + 2px);
   padding-top: 0.375rem;
   padding-bottom: 0.375rem;
   font-size: 125%;
@@ -9740,6 +9740,12 @@ small {
   color: #fff;
 }
 
+@media (max-width: 767.98px) {
+  .page__header .page__title {
+    font-size: 1.5rem;
+  }
+}
+
 .page__footer {
   font-size: 0.875rem;
 }
@@ -9753,6 +9759,10 @@ small {
 
 .copyright {
   background: rgba(85, 85, 85, 0.9);
+}
+
+.alert {
+  font-size: 0.875rem;
 }
 
 .blockquote {
@@ -9789,6 +9799,15 @@ small {
 
 [class*=btn-outline-] {
   border-width: 2px;
+}
+
+.btn-lg, .path-user form .form-actions .btn, .btn-group-lg > .btn {
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  min-width: 150px;
+  border-radius: 2px;
 }
 
 .card {
@@ -10292,6 +10311,8 @@ ul.social-links li a {
 .nav-tabs--secondary {
   border-bottom: 1px solid #c8c8c8;
   font-size: 0.875rem;
+  flex-wrap: nowrap;
+  overflow: scroll;
 }
 .nav-tabs--secondary .nav-link {
   color: #a3a3a3;
@@ -10502,6 +10523,74 @@ ul.social-links li a {
   height: 100%;
 }
 
+.form-control,
+.form-select,
+.custom-file label {
+  background-color: #f9f9f9;
+  border-color: #c8c8c8;
+  border-radius: 4px;
+  padding: 0.25rem 1rem;
+  height: 38px;
+}
+
+.form-text {
+  letter-spacing: 0.4px;
+  color: #787878;
+}
+
+fieldset summary,
+details summary {
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+}
+fieldset.card:hover,
+details.card:hover {
+  box-shadow: none;
+}
+fieldset .form-control,
+fieldset .form-select,
+details .form-control,
+details .form-select {
+  background-color: #f0f0f0;
+  border: 0;
+}
+
+.custom-file {
+  height: 38px;
+}
+.custom-file-input {
+  height: 38px;
+}
+.custom-file-label {
+  flex-direction: row-reverse;
+}
+.custom-file-label:after {
+  height: 36px;
+  line-height: 20px;
+  background-color: #f0f0f0;
+}
+
+.path-user form {
+  max-width: 540px;
+}
+.path-user form .form-item-name {
+  margin-bottom: 0.25rem;
+}
+.path-user form .form-item-name + p {
+  font-size: 0.75rem;
+  letter-spacing: 0.4px;
+  color: #787878;
+}
+.path-user form .field--type-image {
+  margin-top: 1rem;
+}
+.path-user form .form-type-managed-file .form-text br {
+  display: none;
+}
+.path-user form .form-type-managed-file .form-text span {
+  margin-right: 0.05rem;
+}
 .views-exposed-form {
   border-radius: 4px;
   background-color: #fff;
@@ -10592,4 +10681,8 @@ ul.social-links li a {
   .view-blog--page-landing {
     margin-top: -1.905rem;
   }
+}
+
+.path-user .page__content > .container {
+  padding-top: 0.5rem !important;
 }

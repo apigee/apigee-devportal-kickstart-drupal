@@ -4,7 +4,13 @@
  * Template for the page title block.
  */
 #}
-{% embed '@radix/block/block.twig' with { html_tag: 'div' } %}
+{% embed '@radix/block/block.twig' with {
+  html_tag: 'div',
+  utility_classes: [
+    'bg-lighter',
+    'py-4',
+  ]
+} %}
   {% block content %}
     <div class="container">
       {{ content }}

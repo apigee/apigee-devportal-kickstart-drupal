@@ -51,6 +51,7 @@
 
 // Component
 // -----------------------------------------------------------------------------
+@import "../components/alert/alert";
 @import "../components/blockquote/blockquote";
 @import "../components/breadcrumb/breadcrumb";
 @import "../components/buttons/buttons";
@@ -83,8 +84,11 @@
 @import "apigee/app";
 @import "apigee/apidoc";
 @import "block/block";
+@import "form/form";
+@import "form/form.user";
 @import "form/view.exposed-form";
 @import "content/node.page";
 @import "content/node.article";
 @import "comment/comment";
 @import "view/view.blog";
+@import "page/page.user";
