@@ -1,0 +1,9 @@
+{#
+/**
+ * @file
+ * Template for title on a 'FAQ' Node.
+ */
+#}
+{%- for item in items -%}
+  <h2{{ attributes.addClass('details__title') }}>{{- item.content -}}</h2>
+{%- endfor -%}

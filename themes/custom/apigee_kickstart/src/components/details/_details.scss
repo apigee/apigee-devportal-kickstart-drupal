@@ -1,0 +1,62 @@
+// Details / Summary
+//------------------------------------------------------------------------------
+
+.details {
+  border-top: solid 1px $gray-300;
+}
+
+.details__summary {
+  cursor: pointer;
+  position: relative;
+
+  @include media-breakpoint-up(md) {
+    letter-spacing: 0.15px;
+    font-size: 1.25rem;
+  }
+
+  &::after {
+    background: transparent $details-icon-down no-repeat 50% 50%;
+    background-size: 100% auto;
+    color: $blue;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 18px;
+    height: 12px;
+  }
+
+  .details[open] > &::after {
+    background-image: $details-icon-up;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+}
+
+.details__summary,
+.details__title {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.11px;
+  margin: 0;
+
+  @include media-breakpoint-up(md) {
+    font-size: 1.25rem;
+    letter-spacing: 0.15px;
+  }
+}
+
+.details__content {
+  font-size: 0.875rem;
+  letter-spacing: 0.25px;
+
+  *:last-child {
+    margin-bottom: 0;
+  }
+}
