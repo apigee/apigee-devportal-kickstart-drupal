@@ -1,0 +1,20 @@
+// Overrides for the Blockquote component
+// -----------------------------------------------------------------------------
+
+.blockquote {
+  font-size: $font-size-base;
+  margin-bottom: 0;
+
+  @include media-breakpoint-up(md) {
+    font-size: $blockquote-font-size;
+  }
+
+  &-footer {
+    color: currentColor;
+    font-size: $font-size-base;
+
+    &::before {
+      display: none;
+    }
+  }
+}
