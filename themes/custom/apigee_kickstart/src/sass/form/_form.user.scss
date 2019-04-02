@@ -1,0 +1,40 @@
+// Forms on user pages.
+// -----------------------------------------------------------------------------
+.path-user form {
+  max-width: 540px;
+
+  .form-item-name {
+    margin-bottom: .25rem;
+
+    + p {
+      font-size: .75rem;
+      letter-spacing: 0.4px;
+      color: $gray-600;
+    }
+  }
+
+  .field--type-image {
+    margin-top: 1rem;
+  }
+
+  .form-type-managed-file {
+
+    .form-text {
+
+      br {
+        display: none;
+      }
+
+      span {
+        margin-right: .05rem;
+      }
+    }
+  }
+
+  .form-actions {
+
+    .btn {
+      @extend .btn-lg;
+    }
+  }
+}

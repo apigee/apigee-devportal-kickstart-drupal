@@ -8,6 +8,9 @@
 {% set classes = [
   'page'
 ]|merge(utility_classes|default([])) %}
+
+{% set main_attributes = create_attribute() %}
+
 <div{{ attributes.addClass(classes) }}>
   {% embed '@radix/navbar/navbar.twig' with {
     placement: 'sticky-top',
@@ -56,7 +59,7 @@
     </header>
   {% endif %}
 
-  <main>
+  <main{{ main_attributes.addClass(main_classes|default([])) }}>
     {# If field_header has a value, the tabs will print in the node template.#}
     {% if page.tasks|render and not node.field_header.value %}
       <div class="page__tasks">
