@@ -13,7 +13,8 @@
     title: content.field_title,
     body: content|without('field_image', 'field_link', 'field_title'),
     footer: content.field_link.0['#title'],
-    url: content.field_link.0['#url']
+    url: content.field_link.0['#url'],
+    hover_shadow: true
   } %}
 
 {% endblock %}

@@ -24,6 +24,7 @@
     title: entity.label,
     image: content.field_image,
     body: content|without('name', 'field_image', 'field_link'),
-    footer: content.field_link['#title']
+    footer: content.field_link['#title'],
+    hover_shadow: true
   } %}
 </article>
