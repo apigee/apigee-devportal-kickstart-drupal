@@ -38,11 +38,10 @@ function apigee_devportal_kickstart_install() {
   $src_path = drupal_get_path('profile', 'apigee_devportal_kickstart') . '/resources/files';
 
   // Get public files directory.
-  $dest_path = \Drupal::service('file_system')->realpath(file_default_scheme() . '://');
+  $dest_path = file_default_scheme() . '://';
 
   // Files to copy.
   // Not all files are copied. So we list them here individually.
-  // TODO: Figure out if we can improve this.
   $filesets = [
     '' => [
       'aditya-vyas-1392552-unsplash.jpg',
@@ -54,8 +53,8 @@ function apigee_devportal_kickstart_install() {
       'spacex-81773-unsplash.jpg',
       'terence-burke-1417892-unsplash.jpg',
     ],
-    'apidoc_specs' => [
-      'petstore.yml',
+    'apidoc_specs/' => [
+      'petstore.yaml',
     ],
   ];
 
@@ -65,7 +64,11 @@ function apigee_devportal_kickstart_install() {
       if (file_exists($src_path . '/' . $file)) {
         // If the file exists in public://, it should be skipped, as these are
         // tied to media entities which hard-code the path/file.
-        file_unmanaged_copy($src_path . '/' . $file, $dest_path . '/' . $destination);
+        $directory = $dest_path . $destination;
+        if (!empty($destination)) {
+          file_prepare_directory($directory, FILE_CREATE_DIRECTORY);
+        }
+        file_unmanaged_copy($src_path . '/' . $file, $directory. $file);
       }
     }
   }
