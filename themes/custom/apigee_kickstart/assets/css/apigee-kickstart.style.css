@@ -9849,12 +9849,12 @@ small {
 .card-footer, .card-footer:last-child {
   border-radius: 0 0 4px 4px;
 }
-.card:focus, .card:hover {
-  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
-}
 .card:focus .card-footer, .card:hover .card-footer {
   background-color: #2196f3;
   color: #fff;
+}
+.card.has-hover-shadow:focus, .card.has-hover-shadow:hover {
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
 }
 
 .api-card {
@@ -10596,10 +10596,6 @@ details .form-select {
   background-color: #fff;
   overflow: hidden;
   font-size: 0.875rem;
-}
-.views-exposed-form .card:focus,
-.views-exposed-form .card:hover {
-  box-shadow: none;
 }
 .views-exposed-form fieldset,
 .views-exposed-form details {

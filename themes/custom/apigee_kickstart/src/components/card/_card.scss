@@ -52,11 +52,14 @@
 
   &:focus,
   &:hover {
-    box-shadow: 0 2px 8px 0 rgba($black, 0.3);
-
     .card-footer {
       background-color: $primary;
       color: $white;
     }
+  }
+
+  &.has-hover-shadow:focus,
+  &.has-hover-shadow:hover {
+    box-shadow: 0 2px 8px 0 rgba($black, 0.3);
   }
 }
