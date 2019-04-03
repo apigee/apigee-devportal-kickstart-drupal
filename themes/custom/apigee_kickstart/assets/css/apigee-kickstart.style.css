@@ -11094,3 +11094,52 @@ ul.social-links li a {
 .user--full .user__user-picture img {
   border-radius: 4px;
 }
+
+@media (max-width: 767.98px) {
+  .path-forum .block--apigee-kickstart-content {
+    display: grid;
+  }
+}
+
+.forum__name {
+  font-size: 1.5rem;
+}
+@media (max-width: 767.98px) {
+  .forum__name {
+    order: -1;
+  }
+}
+.forum-list__forum .forum__name {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .forum__add {
+    float: right;
+    clear: right;
+  }
+}
+
+.forum__title {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.forum__submitted {
+  font-size: 0.875rem;
+  font-weight: 300;
+  letter-spacing: 0.25px;
+}
+.forum__submitted * {
+  display: block;
+}
+.forum__submitted small {
+  font-size: 0.875rem;
+}
+.forum__title .forum__submitted {
+  font-weight: 300;
+}
+.forum__submitted a {
+  color: #555;
+}
