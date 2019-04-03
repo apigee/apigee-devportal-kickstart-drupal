@@ -1,0 +1,24 @@
+// var mixin
+//------------------------------------------------------------------------------
+// Accepts a CSS property, variable, and optional Sass map, and returns the
+// declaration in CSS Variable format, along with a falkback for older browsers.
+//
+// @param {String} $property - CSS property, e.g. color, background-color.
+// @param {String} $name - Name of the variable/key in the Sass map.
+// @param {Map} $map - Map containing the variable. Defaults to $theme-elements.
+//
+// @example
+//   @include var(color, 'ks-body-bg')
+//   @include var(color, 'blue', $colors);
+//
+//------------------------------------------------------------------------------
+
+@mixin var($property, $name, $map: $theme-elements) {
+  @if map-has-key($map, $name) {
+    #{$property}: map-get($map, $name);
+    #{$property}: var(--#{$name});
+  }
+  @else {
+    @error "Varianble nae: `#{$name}` does not exist in `#{$map}`.";
+  }
+}
