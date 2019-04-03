@@ -10821,6 +10821,48 @@ ul.social-links li a {
   height: 100%;
 }
 
+.swagger-ui {
+  margin-top: 2rem;
+}
+.swagger-ui > div > .wrapper,
+.swagger-ui > div > .scheme-container {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: none;
+  padding: 1rem;
+}
+.swagger-ui > div > .wrapper + .wrapper,
+.swagger-ui > div > .scheme-container + .wrapper {
+  margin-top: 2rem;
+}
+.swagger-ui > div > .wrapper > .block,
+.swagger-ui > div > .scheme-container > .block {
+  padding: 0;
+}
+.swagger-ui > div > .wrapper > .block .info,
+.swagger-ui > div > .scheme-container > .block .info {
+  margin: 0;
+}
+.swagger-ui .information-container {
+  background-color: #f9f9f9;
+}
+.swagger-ui .scheme-container {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.swagger-ui section.models {
+  margin: 0;
+}
+.swagger-ui section.models + .models {
+  margin-top: 1rem;
+}
+.swagger-ui table .col {
+  width: auto;
+}
+.swagger-ui pre {
+  background: inherit;
+}
+
 .form-control,
 .form-select,
 .custom-file label {
@@ -10988,46 +11030,4 @@ details .form-select {
 }
 .view-faq .item-list li:last-child {
   border-bottom: solid 1px #ddd;
-}
-
-.swagger-ui {
-  margin-top: 2rem;
-}
-.swagger-ui > div > .wrapper,
-.swagger-ui > div > .scheme-container {
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  box-shadow: none;
-  padding: 1rem;
-}
-.swagger-ui > div > .wrapper + .wrapper,
-.swagger-ui > div > .scheme-container + .wrapper {
-  margin-top: 2rem;
-}
-.swagger-ui > div > .wrapper > .block,
-.swagger-ui > div > .scheme-container > .block {
-  padding: 0;
-}
-.swagger-ui > div > .wrapper > .block .info,
-.swagger-ui > div > .scheme-container > .block .info {
-  margin: 0;
-}
-.swagger-ui .information-container {
-  background-color: #f9f9f9;
-}
-.swagger-ui .scheme-container {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-.swagger-ui section.models {
-  margin: 0;
-}
-.swagger-ui section.models + .models {
-  margin-top: 1rem;
-}
-.swagger-ui table .col {
-  width: auto;
-}
-.swagger-ui pre {
-  background: inherit;
 }
