@@ -10388,6 +10388,14 @@ fieldset.closed legend button {
           transform: rotate(180deg);
 }
 
+.filter-wrapper {
+  font-size: 0.875rem;
+}
+
+.form-type-textarea.form-group {
+  margin-bottom: 0;
+}
+
 @media (min-width: 768px) {
   .hero {
     height: 400px;
