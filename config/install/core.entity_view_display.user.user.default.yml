@@ -3,7 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.user.user.user_picture
-    - image.style.thumbnail
+    - image.style.1_1_80x80
   module:
     - image
     - user
@@ -12,16 +12,43 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
+  display_name:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  email:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   member_for:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  roles:
     weight: 5
     region: content
+    settings: {  }
+    third_party_settings: {  }
+  timezone:
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   user_picture:
     type: image
     weight: 0
     region: content
     settings:
-      image_style: thumbnail
+      image_style: 1_1_80x80
       image_link: content
     third_party_settings: {  }
     label: hidden
+  username:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden: {  }
