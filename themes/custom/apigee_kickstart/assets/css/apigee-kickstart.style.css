@@ -10034,8 +10034,16 @@ small {
 .btn {
   font-family: "Roboto-Medium", Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 0.875rem;
-  text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+input.btn {
+  text-transform: uppercase;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+input.btn + .btn {
+  margin-left: 0.813rem;
 }
 
 [class*=btn-outline-] {
