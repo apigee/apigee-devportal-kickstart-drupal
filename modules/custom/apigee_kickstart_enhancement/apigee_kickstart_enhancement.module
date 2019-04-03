@@ -25,9 +25,11 @@
 
 use Drupal\apigee_kickstart_enhancement\Entity\ApiDocViewBuilder;
 use Drupal\apigee_kickstart_enhancement\Entity\AppViewBuilder;
+use Drupal\Component\Utility\Html;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Menu\LocalActionDefault;
+use Drupal\user\UserInterface;
 
 /*
  * Load all theme functions.
@@ -49,6 +51,10 @@ function apigee_kickstart_enhancement_theme($existing, $type, $theme, $path) {
     ],
     'secret' => [
       'render element' => 'elements',
+      'file' => 'apigee_kickstart_enhancement.theme.inc',
+    ],
+    'pseudo_field' => [
+      'variables' => ['field' => NULL],
       'file' => 'apigee_kickstart_enhancement.theme.inc',
     ],
   ];
@@ -75,6 +81,21 @@ function apigee_kickstart_enhancement_menu_local_actions_alter(&$local_actions) 
 }
 
 /**
+ * Implements hook_local_tasks_alter().
+ */
+function apigee_kickstart_enhancement_local_tasks_alter(&$local_tasks) {
+  // Rename the user local tasks and show these first.
+  if (isset($local_tasks['entity.user.canonical'])) {
+    $local_tasks['entity.user.canonical']['title'] = t('Profile home');
+    $local_tasks['entity.user.canonical']['weight'] = -10;
+  }
+  if (isset($local_tasks['entity.user.edit_form'])) {
+    $local_tasks['entity.user.edit_form']['title'] = t('Edit profile');
+    $local_tasks['entity.user.edit_form']['weight'] = -9;
+  }
+}
+
+/**
  * Implements hook_entity_type_alter().
  */
 function apigee_kickstart_enhancement_entity_type_alter(array &$entity_types) {
@@ -97,14 +118,16 @@ function apigee_kickstart_enhancement_entity_type_alter(array &$entity_types) {
  * Implements hook_entity_extra_field_info().
  */
 function apigee_kickstart_enhancement_entity_extra_field_info() {
-  // Make the user display name configurable.
-  // In Apigee Edge, this is the entity label.
-  $fields['user']['user']['display']['display_name'] = [
-    'label' => t('Name'),
-    'description' => t('The name from Apigee Edge.'),
-    'weight' => -10,
-    'visible' => TRUE,
-  ];
+  $fields = [];
+
+  // Make the user fields configurable.
+  foreach (_apigee_kickstart_user_extra_fields() as $field_name => $field_info) {
+    $fields['user']['user']['display'][$field_name] = [
+      'label' => $field_info['label'],
+      'weight' => 10,
+      'visible' => FALSE,
+    ];
+  }
 
   return $fields;
 }
@@ -113,9 +136,59 @@ function apigee_kickstart_enhancement_entity_extra_field_info() {
  * Implements hook_ENTITY_TYPE_view().
  */
 function apigee_kickstart_enhancement_user_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
-  if ($display->getComponent('display_name')) {
-    $build['display_name'] = [
-      '#markup' => $entity->label(),
-    ];
+  foreach (_apigee_kickstart_user_extra_fields() as $field_name => $field) {
+    if ($display->getComponent($field_name)) {
+      $value = is_callable($field['value_callback']) ? $field['value_callback']($entity) : NULL;
+
+      if ($value) {
+        // Render as pseudo-fields.
+        $build[$field_name] = [
+          '#theme' => 'pseudo_field',
+          '#field' => [
+            'name' => $field_name,
+            'label' => $field['label'],
+            'value' => $value,
+          ],
+        ];
+      }
+    }
   }
+}
+
+/**
+ * Returns an array of extra fields for the user profile.
+ */
+function _apigee_kickstart_user_extra_fields() {
+  return [
+    'display_name' => [
+      'label' => t('Name'),
+      'value_callback' => function (UserInterface $user) {
+        return $user->label();
+      },
+    ],
+    'username' => [
+      'label' => t('Username'),
+      'value_callback' => function (UserInterface $user) {
+        return $user->getDisplayName();
+      },
+    ],
+    'email' => [
+      'label' => t('Email'),
+      'value_callback' => function (UserInterface $user) {
+        return $user->getEmail();
+      },
+    ],
+    'roles' => [
+      'label' => t('Roles'),
+      'value_callback' => function (UserInterface $user) {
+        return implode(', ', $user->getRoles(TRUE));
+      },
+    ],
+    'timezone' => [
+      'label' => t('Timezone'),
+      'value_callback' => function (UserInterface $user) {
+        return $user->getTimeZone();
+      },
+    ],
+  ];
 }

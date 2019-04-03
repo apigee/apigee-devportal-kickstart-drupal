@@ -11031,3 +11031,25 @@ details .form-select {
 .view-faq .item-list li:last-child {
   border-bottom: solid 1px #ddd;
 }
+
+@media (min-width: 768px) {
+  .user--full .field {
+    display: flex;
+    align-items: center;
+  }
+}
+.user--full .field + .field {
+  margin-top: 1.2rem;
+}
+@media (min-width: 768px) {
+  .user--full .field + .field {
+    margin-top: 0.8rem;
+  }
+}
+.user--full .field__label {
+  line-height: 1;
+  margin-right: 0.2rem;
+}
+.user--full .user__user-picture img {
+  border-radius: 4px;
+}
