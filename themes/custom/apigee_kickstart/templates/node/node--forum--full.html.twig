@@ -1,0 +1,45 @@
+{#
+/**
+ * @file
+ * Template for an forum node in full display mode.
+ */
+#}
+
+{% extends '@apigee-kickstart/node/node.twig' %}
+{% block content %}
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <h1>{{ label }}</h1>
+
+        {% if display_submitted %}
+          <hr class="mt-4 mb-4 border-top" />
+          <p class="forum__meta my-0">
+            {% trans %} Posted by {{ author_name }} on {{ date }} in {% endtrans %}
+            {{ content.taxonomy_forums }}
+          </p>
+        {% endif %}
+
+        <hr class="mt-4 mb-4 border-top" />
+        <div class="forum__content mb-4">
+          {{ content|without('taxonomy_forums', 'comment_forum') }}
+        </div>
+
+        {% if content.comment_forum[0].comment_form %}
+          <a class="btn btn-primary" href="#comment-form">{{ "Add new comment"|t }}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% if content.comment_forum[0] %}
+    <div class="bg-lighter">
+      <div class="container py-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            {{ content.comment_forum }}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}
