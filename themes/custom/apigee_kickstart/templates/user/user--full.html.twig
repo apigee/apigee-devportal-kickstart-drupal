@@ -1,0 +1,26 @@
+{#
+/**
+ * @file
+ * Template for a User in Full display mode.
+ */
+#}
+{% extends 'user.html.twig' %}
+{% block content %}
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="bg-light p-4 rounded-sm">
+        {{ content.user_picture }}
+        {{ content.display_name }}
+        {{ content.username }}
+        {{ content.email }}
+      </div>
+
+      {% set additional_fields = content|without('user_picture', 'display_name', 'username', 'email') %}
+      {% if additional_fields %}
+        <div class="bg-light p-4 rounded-sm mt-4">
+          {{ additional_fields }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

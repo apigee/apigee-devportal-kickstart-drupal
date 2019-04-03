@@ -53,6 +53,9 @@ function apigee_devportal_kickstart_install() {
       'spacex-81773-unsplash.jpg',
       'terence-burke-1417892-unsplash.jpg',
     ],
+    'default_images/' => [
+      'profile-default.jpg',
+    ],
     'apidoc_specs/' => [
       'petstore.yaml',
     ],

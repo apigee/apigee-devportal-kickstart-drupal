@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Template for a pseudo-field.
+ *
+ * This is used to render a value with a label as a field.
+ */
+#}
+{% if field.value %}
+  <div class="field field-{{ field.name|clean_class }}">
+    {% if field.label %}
+      <div class="field__label">
+        {{ field.label }}:
+      </div>
+    {% endif %}
+
+    <div>
+      {{ field.value }}
+    </div>
+  </div>
+{% endif %}
