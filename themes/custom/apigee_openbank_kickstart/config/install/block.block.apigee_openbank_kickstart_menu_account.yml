@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - apigee_openbank_kickstart
+id: apigee_openbank_kickstart_menu_account
+theme: apigee_openbank_kickstart
+region: navbar_right
+weight: -10
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }

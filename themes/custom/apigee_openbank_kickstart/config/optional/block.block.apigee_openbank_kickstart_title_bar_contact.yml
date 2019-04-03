@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:title_bar:c9d29264-1428-4f25-ba78-736d7748459e'
+  module:
+    - block_content
+    - system
+  theme:
+    - apigee_openbank_kickstart
+id: apigee_openbank_kickstart_title_bar_contact
+theme: apigee_openbank_kickstart
+region: header
+weight: -8
+provider: null
+plugin: 'block_content:c9d29264-1428-4f25-ba78-736d7748459e'
+settings:
+  id: 'block_content:c9d29264-1428-4f25-ba78-736d7748459e'
+  label: 'Title bar: Contact Us'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /contact
+    negate: false
+    context_mapping: {  }

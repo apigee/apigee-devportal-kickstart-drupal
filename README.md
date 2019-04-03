@@ -30,7 +30,7 @@ or log issues.
 
 ## Installation
 
-The following command will download Drupal core and the Apigee Developer Portal Kickstart profile into the
+The following command will download Drupal core and the Apigee Open Bank Developer Portal Kickstart  profile into the
 MY_PROJECT directory:
 
 ```

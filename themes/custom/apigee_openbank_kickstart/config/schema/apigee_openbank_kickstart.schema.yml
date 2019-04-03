@@ -1,0 +1,5 @@
+# Schema for the configuration files of the apigee_openbank_kickstart theme.
+
+apigee_openbank_kickstart.settings:
+  type: theme_settings
+  label: 'Apigee Open Bank Kickstart settings'

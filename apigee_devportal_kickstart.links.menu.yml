@@ -1,4 +1,4 @@
-apigee_devportal_kickstart.forum:
+apigee_openbank_devportal_kickstart.forum:
   title: 'Forum'
   route_name: 'forum.index'
   menu_name: main

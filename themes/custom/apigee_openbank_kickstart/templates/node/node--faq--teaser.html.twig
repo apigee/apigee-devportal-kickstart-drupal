@@ -1,0 +1,13 @@
+{#
+/**
+ * @file
+ * Template for an FAQ node in Teaser display mode.
+ */
+#}
+{% extends '@apigee-openbank-kickstart/node/node.twig' %}
+{% block content %}
+  {% include '@apigee-openbank-kickstart/details/details.twig' with {
+    summary: label,
+    content: content
+  } %}
+{% endblock %}

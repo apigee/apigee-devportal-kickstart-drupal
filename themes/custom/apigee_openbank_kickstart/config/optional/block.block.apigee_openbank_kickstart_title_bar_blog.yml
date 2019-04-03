@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:title_bar:bae58a0b-4f55-484f-9ee5-f2ecbf7c715e'
+  module:
+    - block_content
+    - system
+  theme:
+    - apigee_openbank_kickstart
+id: apigee_openbank_kickstart_title_bar_blog
+theme: apigee_openbank_kickstart
+region: header
+weight: -9
+provider: null
+plugin: 'block_content:bae58a0b-4f55-484f-9ee5-f2ecbf7c715e'
+settings:
+  id: 'block_content:bae58a0b-4f55-484f-9ee5-f2ecbf7c715e'
+  label: 'Title bar: Blog'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/blog\r\n/blog/*\r\n/article/*"
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Template for a 'Basic page' node in full display mode.
+ */
+#}
+{% extends '@apigee-openbank-kickstart/node/node.twig' %}
+{% block content %}
+
+  {% if content.field_header|render %}
+    {{ content.field_header }}
+    {% if tasks|render %}
+      <div class="page__tasks">
+        <div class="container">
+          {{ tasks }}
+        </div>
+      </div>
+    {% endif %}
+  {% endif %}
+
+  <div class="row pb-7">
+    <div class="col-lg-8">
+      {{ content|without('field_header') }}
+    </div>
+  </div>
+
+{% endblock %}

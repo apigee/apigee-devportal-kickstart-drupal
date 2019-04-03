@@ -17,7 +17,7 @@
  * Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-namespace Drupal\apigee_devportal_kickstart\Installer\Form;
+namespace Drupal\apigee_openbank_devportal_kickstart\Installer\Form;
 
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Extension\ModuleInstallerInterface;
@@ -26,7 +26,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Installer task for Apigee Developer Portal Kickstart Demo Content.
+ * Installer task for Apigee Open Bank Developer Portal Kickstart  Demo Content.
  */
 class DemoInstallForm extends FormBase {
 
@@ -71,7 +71,7 @@ class DemoInstallForm extends FormBase {
    * {@inheritdoc}
    */
   public function getFormId() {
-    return 'apigee_devportal_kickstart_demo_install_form';
+    return 'apigee_openbank_devportal_kickstart_demo_install_form';
   }
 
   /**
@@ -106,14 +106,14 @@ class DemoInstallForm extends FormBase {
 
     // We have to use getUserInput() to supersede getValue() because that isn't
     // correctly set when passing the form value to Drush si like:
-    // "drush si apigee_kickstart apigee_devportal_kickstart_demo_install_form.install_demo_content=0".
+    // "drush si apigee_openbank_kickstart apigee_openbank_devportal_kickstart_demo_install_form.install_demo_content=0".
     $input = $form_state->getUserInput();
     if (isset($input['install_demo_content'])) {
       $demo_content = !empty($input['install_demo_content']);
     }
 
     if ($demo_content) {
-      $this->moduleInstaller->install(['apigee_kickstart_content']);
+      $this->moduleInstaller->install(['apigee_openbank_kickstart_content']);
 
       // Set the front page to node 1.
       $this->configFactory->getEditable('system.site')

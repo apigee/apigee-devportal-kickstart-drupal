@@ -1,0 +1,10 @@
+services:
+  apigee_openbank_kickstart_enhancement.route_subscriber:
+    class: Drupal\apigee_openbank_kickstart_enhancement\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }
+    arguments: ['@apigee_openbank_kickstart.enhancer']
+
+  apigee_openbank_kickstart.enhancer:
+    class: Drupal\apigee_openbank_kickstart_enhancement\ApigeeKickStartEnhancer
+    arguments: ['@entity_type.manager']

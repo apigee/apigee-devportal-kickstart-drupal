@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:cta:003ef719-eca7-4ad1-83a3-dc9b403a49b3'
+  module:
+    - block_content
+    - node
+  theme:
+    - apigee_openbank_kickstart
+id: apigee_openbank_kickstart_cta_article
+theme: apigee_openbank_kickstart
+region: content_below
+weight: 0
+provider: null
+plugin: 'block_content:003ef719-eca7-4ad1-83a3-dc9b403a49b3'
+settings:
+  id: 'block_content:003ef719-eca7-4ad1-83a3-dc9b403a49b3'
+  label: 'CTA: Article'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      article: article
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

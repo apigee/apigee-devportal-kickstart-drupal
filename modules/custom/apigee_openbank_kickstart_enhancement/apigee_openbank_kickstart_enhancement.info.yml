@@ -1,0 +1,7 @@
+name: Apigee Open Bank Kickstart Enhancement
+description: "Provides enhancement for Apigee Edge module."
+type: module
+core: 8.x
+package: Apigee Open Bank Kickstart
+dependencies:
+  - apigee_edge:apigee_edge

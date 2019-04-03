@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:title_bar:a94fbb45-8667-451a-b173-cb50cc6faabb'
+  module:
+    - block_content
+    - system
+  theme:
+    - apigee_openbank_kickstart
+id: apigee_openbank_kickstart_title_bar_apis
+theme: apigee_openbank_kickstart
+region: header
+weight: -10
+provider: null
+plugin: 'block_content:a94fbb45-8667-451a-b173-cb50cc6faabb'
+settings:
+  id: 'block_content:a94fbb45-8667-451a-b173-cb50cc6faabb'
+  label: 'Title bar: APIs'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /apis
+    negate: false
+    context_mapping: {  }

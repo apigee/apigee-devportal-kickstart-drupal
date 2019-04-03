@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:title_bar:922c5ce8-6d11-4aa6-8d82-542c77b33bec'
+  module:
+    - block_content
+    - system
+  theme:
+    - apigee_openbank_kickstart
+id: apigee_openbank_kickstart_title_bar_forum
+theme: apigee_openbank_kickstart
+region: header
+weight: -6
+provider: null
+plugin: 'block_content:922c5ce8-6d11-4aa6-8d82-542c77b33bec'
+settings:
+  id: 'block_content:922c5ce8-6d11-4aa6-8d82-542c77b33bec'
+  label: 'Title bar: Forum'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/forum\r\n/forum/*"
+    negate: false
+    context_mapping: {  }

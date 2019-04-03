@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - apigee_openbank_kickstart
+id: apigee_openbank_kickstart_title
+theme: apigee_openbank_kickstart
+region: header
+weight: -5
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/apis\r\n/blog\r\n/contact\r\n/faq\r\n/forum\r\n/article/*"
+    negate: true
+    context_mapping: {  }

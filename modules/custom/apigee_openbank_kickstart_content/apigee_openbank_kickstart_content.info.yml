@@ -1,0 +1,9 @@
+name: Apigee Open Bank Kickstart Content
+description: "Provides demo content for Apigee Open Bank Developer Portal Kickstart ."
+type: module
+core: 8.x
+package: Apigee Open Bank Kickstart
+dependencies:
+  - default_content:default_content
+  - drupal:node
+  - drupal:block_content
