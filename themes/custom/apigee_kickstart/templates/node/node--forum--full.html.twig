@@ -14,15 +14,24 @@
 
         {% if display_submitted %}
           <hr class="mt-4 mb-4 border-top" />
-          <p class="forum__meta my-0">
-            {% trans %} Posted by {{ author_name }} on {{ date }} in {% endtrans %}
-            {{ content.taxonomy_forums }}
-          </p>
+          <div class="forum__byline d-md-flex align-items-center my-0">
+
+            {% if author_picture %}
+              <div class="forum__byline-photo mr-2 float-left">
+                {{ author_picture }}
+              </div>
+            {% endif %}
+
+            <div class="forum__byline-text">
+              {% trans %} Posted by {{ author_name }} on {{ date }} in {% endtrans %}
+              {{ content.taxonomy_forums }}
+            </div>
+          </div>
         {% endif %}
 
         <hr class="mt-4 mb-4 border-top" />
         <div class="forum__content mb-4">
-          {{ content|without('taxonomy_forums', 'comment_forum') }}
+          {{ content|without('taxonomy_forums', 'comment_forum', 'links') }}
         </div>
 
         {% if content.comment_forum[0].comment_form %}
