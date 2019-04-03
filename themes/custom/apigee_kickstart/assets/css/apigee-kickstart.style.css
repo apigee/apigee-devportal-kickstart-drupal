@@ -10755,11 +10755,13 @@ ul.social-links li a {
   margin-left: auto;
   height: 36px;
   width: 36px;
+  min-width: 36px;
 }
 @media (min-width: 576px) {
   .title-bar__icon {
     height: 64px;
     width: 64px;
+    min-width: 64px;
   }
 }
 .title-bar__icon svg.svg-inline--fa {
