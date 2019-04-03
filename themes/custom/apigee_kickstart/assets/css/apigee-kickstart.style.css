@@ -10214,6 +10214,10 @@ pre {
   line-height: 16px;
   text-transform: capitalize;
 }
+.forum-list__forum .badge {
+  font-size: 0.563rem;
+  line-height: 1.25;
+}
 
 .callout {
   font-size: 0.875rem;
