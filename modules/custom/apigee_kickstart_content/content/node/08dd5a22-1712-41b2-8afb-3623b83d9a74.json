@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/forum\/post\/security-tokens-documentation?_format=hal_json"
+            "href": "http:\/\/default\/forum\/security-tokens-documentation?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/node\/forum"
@@ -19,7 +19,7 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/forum\/taxonomy_forums": [
             {
-                "href": "http:\/\/default\/forum\/general-discussion?_format=hal_json",
+                "href": "http:\/\/default\/forum\/comments-suggestions?_format=hal_json",
                 "lang": "en"
             }
         ]
@@ -96,7 +96,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/forum\/general-discussion?_format=hal_json"
+                        "href": "http:\/\/default\/forum\/comments-suggestions?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/forums"
@@ -163,8 +163,8 @@
     ],
     "path": [
         {
-            "alias": "\/forum\/post\/security-tokens-documentation",
-            "pid": 50,
+            "alias": "\/forum\/security-tokens-documentation",
+            "pid": 11,
             "langcode": "en",
             "lang": "en"
         }
