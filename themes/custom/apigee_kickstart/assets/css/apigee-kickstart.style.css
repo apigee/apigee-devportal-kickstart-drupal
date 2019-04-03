@@ -10262,6 +10262,61 @@ pre {
   margin-right: 1rem;
 }
 
+.form-control,
+.form-select,
+.custom-file label {
+  background-color: #f9f9f9;
+  border-color: #ddd;
+  border-radius: 4px;
+  padding: 0.25rem 1rem;
+  height: 38px;
+}
+
+.form-text {
+  letter-spacing: 0.4px;
+  color: #787878;
+}
+
+fieldset summary,
+details summary {
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+}
+fieldset.card:hover,
+details.card:hover {
+  box-shadow: none;
+}
+fieldset .form-control,
+fieldset .form-select,
+details .form-control,
+details .form-select {
+  background-color: #f0f0f0;
+  border: 0;
+}
+
+.custom-file {
+  height: 38px;
+}
+.custom-file-input {
+  height: 38px;
+}
+.custom-file-label {
+  flex-direction: row-reverse;
+}
+.custom-file-label:after {
+  height: 36px;
+  line-height: 20px;
+  background-color: #f0f0f0;
+}
+
+.form-actions {
+  margin-top: 1.5rem;
+}
+form > .form-actions:last-child {
+  margin-bottom: 1.5rem;
+}
+
 .form-checkboxes .form-item + .form-item {
   margin-top: 0.5rem;
 }
@@ -10873,54 +10928,6 @@ ul.social-links li a {
 }
 .swagger-ui pre {
   background: inherit;
-}
-
-.form-control,
-.form-select,
-.custom-file label {
-  background-color: #f9f9f9;
-  border-color: #ddd;
-  border-radius: 4px;
-  padding: 0.25rem 1rem;
-  height: 38px;
-}
-
-.form-text {
-  letter-spacing: 0.4px;
-  color: #787878;
-}
-
-fieldset summary,
-details summary {
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: 0.1px;
-}
-fieldset.card:hover,
-details.card:hover {
-  box-shadow: none;
-}
-fieldset .form-control,
-fieldset .form-select,
-details .form-control,
-details .form-select {
-  background-color: #f0f0f0;
-  border: 0;
-}
-
-.custom-file {
-  height: 38px;
-}
-.custom-file-input {
-  height: 38px;
-}
-.custom-file-label {
-  flex-direction: row-reverse;
-}
-.custom-file-label:after {
-  height: 36px;
-  line-height: 20px;
-  background-color: #f0f0f0;
 }
 
 .path-user form {
