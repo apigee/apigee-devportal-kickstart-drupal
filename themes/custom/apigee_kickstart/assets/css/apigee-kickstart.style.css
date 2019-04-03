@@ -85,12 +85,12 @@ h3 {
 .table-dark td,
 .table-dark thead th,
 .table-dark tbody + tbody {
-    border-color: #ddd;
+    border-color: #f0f0f0;
   }
 
   .table .thead-dark th {
     color: inherit;
-    border-color: #ddd;
+    border-color: #f0f0f0;
   }
 }
 *,
@@ -1571,14 +1571,14 @@ pre code {
 .table td {
   padding: 0.75rem;
   vertical-align: top;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #f0f0f0;
 }
 .table thead th {
   vertical-align: bottom;
-  border-bottom: 2px solid #ddd;
+  border-bottom: 2px solid #f0f0f0;
 }
 .table tbody + tbody {
-  border-top: 2px solid #ddd;
+  border-top: 2px solid #f0f0f0;
 }
 .table .table {
   background-color: #fff;
@@ -1590,11 +1590,11 @@ pre code {
 }
 
 .table-bordered {
-  border: 1px solid #ddd;
+  border: 1px solid #f0f0f0;
 }
 .table-bordered th,
 .table-bordered td {
-  border: 1px solid #ddd;
+  border: 1px solid #f0f0f0;
 }
 .table-bordered thead th,
 .table-bordered thead td {
@@ -1764,7 +1764,7 @@ pre code {
 .table .thead-light th {
   color: #495057;
   background-color: #f0f0f0;
-  border-color: #ddd;
+  border-color: #f0f0f0;
 }
 
 .table-dark {
@@ -10003,6 +10003,7 @@ small {
 
 .alert {
   font-size: 0.875rem;
+  font-weight: 500;
 }
 
 .blockquote {
@@ -10033,8 +10034,16 @@ small {
 .btn {
   font-family: "Roboto-Medium", Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 0.875rem;
-  text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+input.btn {
+  text-transform: uppercase;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+input.btn + .btn {
+  margin-left: 0.813rem;
 }
 
 [class*=btn-outline-] {
@@ -10149,7 +10158,7 @@ pre {
   padding: 0.9975rem;
 }
 
-.details {
+details.details {
   border-top: solid 1px #ddd;
 }
 
@@ -10213,6 +10222,10 @@ pre {
   line-height: 16px;
   text-transform: capitalize;
 }
+.forum-list__forum .badge {
+  font-size: 0.563rem;
+  line-height: 1.25;
+}
 
 .callout {
   font-size: 0.875rem;
@@ -10259,6 +10272,61 @@ pre {
 
 .field--inline .field__label {
   margin-right: 1rem;
+}
+
+.form-control,
+.form-select,
+.custom-file label {
+  background-color: #f9f9f9;
+  border-color: #ddd;
+  border-radius: 4px;
+  padding: 0.25rem 1rem;
+  height: 38px;
+}
+
+.form-text {
+  letter-spacing: 0.4px;
+  color: #787878;
+}
+
+fieldset summary,
+details summary {
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+}
+fieldset.card:hover,
+details.card:hover {
+  box-shadow: none;
+}
+fieldset .form-control,
+fieldset .form-select,
+details .form-control,
+details .form-select {
+  background-color: #f0f0f0;
+  border: 0;
+}
+
+.custom-file {
+  height: 38px;
+}
+.custom-file-input {
+  height: 38px;
+}
+.custom-file-label {
+  flex-direction: row-reverse;
+}
+.custom-file-label:after {
+  height: 36px;
+  line-height: 20px;
+  background-color: #f0f0f0;
+}
+
+.form-actions {
+  margin-top: 1.5rem;
+}
+form > .form-actions:last-child {
+  margin-bottom: 1.5rem;
 }
 
 .form-checkboxes .form-item + .form-item {
@@ -10318,6 +10386,14 @@ fieldset legend button {
 fieldset.closed legend button {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
+}
+
+.filter-wrapper {
+  font-size: 0.875rem;
+}
+
+.form-type-textarea.form-group {
+  margin-bottom: 0;
 }
 
 @media (min-width: 768px) {
@@ -10654,6 +10730,17 @@ ul.social-links li a {
   color: #555;
 }
 
+.table {
+  font-size: 0.875rem;
+}
+.table th {
+  border-top: 0;
+}
+.table thead th {
+  border-bottom-width: 1px;
+  border-bottom-color: #c8c8c8;
+}
+
 .title-bar p:only-child {
   margin: 0;
 }
@@ -10676,11 +10763,13 @@ ul.social-links li a {
   margin-left: auto;
   height: 36px;
   width: 36px;
+  min-width: 36px;
 }
 @media (min-width: 576px) {
   .title-bar__icon {
     height: 64px;
     width: 64px;
+    min-width: 64px;
   }
 }
 .title-bar__icon svg.svg-inline--fa {
@@ -10863,54 +10952,6 @@ ul.social-links li a {
   background: inherit;
 }
 
-.form-control,
-.form-select,
-.custom-file label {
-  background-color: #f9f9f9;
-  border-color: #ddd;
-  border-radius: 4px;
-  padding: 0.25rem 1rem;
-  height: 38px;
-}
-
-.form-text {
-  letter-spacing: 0.4px;
-  color: #787878;
-}
-
-fieldset summary,
-details summary {
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: 0.1px;
-}
-fieldset.card:hover,
-details.card:hover {
-  box-shadow: none;
-}
-fieldset .form-control,
-fieldset .form-select,
-details .form-control,
-details .form-select {
-  background-color: #f0f0f0;
-  border: 0;
-}
-
-.custom-file {
-  height: 38px;
-}
-.custom-file-input {
-  height: 38px;
-}
-.custom-file-label {
-  flex-direction: row-reverse;
-}
-.custom-file-label:after {
-  height: 36px;
-  line-height: 20px;
-  background-color: #f0f0f0;
-}
-
 .path-user form {
   max-width: 540px;
 }
@@ -11052,4 +11093,53 @@ details .form-select {
 }
 .user--full .user__user-picture img {
   border-radius: 4px;
+}
+
+@media (max-width: 767.98px) {
+  .path-forum .block--apigee-kickstart-content {
+    display: grid;
+  }
+}
+
+.forum__name {
+  font-size: 1.5rem;
+}
+@media (max-width: 767.98px) {
+  .forum__name {
+    order: -1;
+  }
+}
+.forum-list__forum .forum__name {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .forum__add {
+    float: right;
+    clear: right;
+  }
+}
+
+.forum__title {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.forum__submitted {
+  font-size: 0.875rem;
+  font-weight: 300;
+  letter-spacing: 0.25px;
+}
+.forum__submitted * {
+  display: block;
+}
+.forum__submitted small {
+  font-size: 0.875rem;
+}
+.forum__title .forum__submitted {
+  font-weight: 300;
+}
+.forum__submitted a {
+  color: #555;
 }

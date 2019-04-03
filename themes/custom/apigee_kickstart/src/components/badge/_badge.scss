@@ -6,4 +6,9 @@
   letter-spacing: 0.6px;
   line-height: 16px;
   text-transform: capitalize;
+
+  .forum-list__forum & {
+    font-size: 0.563rem;
+    line-height: 1.25;
+  }
 }

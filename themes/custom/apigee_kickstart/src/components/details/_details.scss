@@ -1,7 +1,10 @@
 // Details / Summary
 //------------------------------------------------------------------------------
 
-.details {
+// Note: A `details` class is added to <html> to indicate the status of browser
+// support for the <details> element. We need to use the element in the selector
+// to prevent styles from being applied to <html>.
+details.details {
   border-top: solid 1px $gray-300;
 }
 

@@ -1,0 +1,12 @@
+{#
+/**
+ * @file
+ * Template for a forum post submission string.
+ */
+#}
+
+{% if time %}
+  <span class="forum__submitted">{% trans %}{{ author }} <small class="text-muted d-block">{{ time }} ago</small>{% endtrans %}</span>
+{% else %}
+  {{ 'n/a'|t }}
+{% endif %}

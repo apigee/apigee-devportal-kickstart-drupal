@@ -63,8 +63,12 @@
 @import "../components/badge/badge";
 @import "../components/callout/callout";
 @import "../components/field/field";
+@import "../components/form/form";
+@import "../components/form/actions";
 @import "../components/form/checkboxes";
 @import "../components/form/fieldset";
+@import "../components/form/filter";
+@import "../components/form/textarea";
 @import "../components/hero/hero";
 @import "../components/node/node";
 @import "../components/navbar/navbar";
@@ -76,6 +80,7 @@
 @import "../components/navs/nav-tabs";
 @import "../components/navs/nav-tabs-secondary";
 @import "../components/secret/secret";
+@import "../components/table/table";
 @import "../components/title-bar/title-bar";
 @import "../components/text/text";
 
@@ -86,7 +91,6 @@
 @import "apigee/apidoc";
 @import "apigee/swagger";
 @import "block/block";
-@import "form/form";
 @import "form/form.user";
 @import "form/view.exposed-form";
 @import "content/node.page";
@@ -96,3 +100,4 @@
 @import "page/page.user";
 @import "page/page.faq";
 @import "user/user";
+@import "page/page.forum";

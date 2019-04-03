@@ -22,10 +22,12 @@
   margin-left: auto;
   height: 36px;
   width: 36px;
+  min-width: 36px;
 
   @include media-breakpoint-up(sm) {
     height: 64px;
     width: 64px;
+    min-width: 64px;
   }
 
   svg.svg-inline--fa {

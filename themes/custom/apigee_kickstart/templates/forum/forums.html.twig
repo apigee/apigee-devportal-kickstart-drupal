@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * Template for forum containers and forum topics.
+ */
+#}
+{% if term.label %}
+  <h2 class="forum__name mb-4">{{ term.label }}</h2>
+{% endif %}
+
+{% if forums_defined %}
+  <div class="forum__topics">
+    {{ forums }}
+    {{ topics }}
+    {{ topics_pager }}
+  </div>
+{% endif %}
+
