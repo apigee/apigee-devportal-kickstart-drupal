@@ -10396,6 +10396,10 @@ fieldset.closed legend button {
   margin-bottom: 0;
 }
 
+.form-control.form-textarea {
+  min-height: 130px;
+}
+
 @media (min-width: 768px) {
   .hero {
     height: 400px;
