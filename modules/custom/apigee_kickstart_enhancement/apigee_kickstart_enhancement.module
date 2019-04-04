@@ -115,6 +115,18 @@ function apigee_kickstart_enhancement_entity_type_alter(array &$entity_types) {
 }
 
 /**
+ * Implements hook_preprocess().
+ */
+function apigee_kickstart_enhancement_preprocess_menu(&$variables) {
+  // Hide the registration link for authenticated users.
+  foreach ($variables['items'] as $key => &$item) {
+    if ($item['url']->getRouteName() === 'user.register' && \Drupal::currentUser()->isAuthenticated()) {
+      unset($variables['items'][$key]);
+    }
+  }
+}
+
+/**
  * Implements hook_entity_extra_field_info().
  */
 function apigee_kickstart_enhancement_entity_extra_field_info() {
