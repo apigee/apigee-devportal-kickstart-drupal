@@ -21,6 +21,7 @@
   .form-actions {
     font-size: .875rem;
     letter-spacing: 1px;
+    margin: 0 !important;
 
     input {
       width: 100%;
@@ -41,6 +42,8 @@
       &.btn-reset {
         padding-left: 3.2rem;
         background: url("../images/icons/close.svg") no-repeat 25px center;
+        margin: 0;
+        border-radius: 0;
       }
     }
   }

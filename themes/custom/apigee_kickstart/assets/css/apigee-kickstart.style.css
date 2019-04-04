@@ -10996,6 +10996,7 @@ ul.social-links li a {
 .views-exposed-form .form-actions {
   font-size: 0.875rem;
   letter-spacing: 1px;
+  margin: 0 !important;
 }
 .views-exposed-form .form-actions input {
   width: 100%;
@@ -11015,6 +11016,8 @@ ul.social-links li a {
 .views-exposed-form .form-actions input.btn-reset {
   padding-left: 3.2rem;
   background: url("../images/icons/close.svg") no-repeat 25px center;
+  margin: 0;
+  border-radius: 0;
 }
 
 .article__tags {
