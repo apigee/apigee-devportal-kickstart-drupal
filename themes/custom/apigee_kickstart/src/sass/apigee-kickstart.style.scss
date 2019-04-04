@@ -44,6 +44,7 @@
 
 // Layout
 // -----------------------------------------------------------------------------
+@import "layout/page";
 @import "layout/page.breadcrumbs";
 @import "layout/page.header";
 @import "layout/page.content";
@@ -100,5 +101,5 @@
 @import "view/view.blog";
 @import "page/page.user";
 @import "page/page.faq";
-@import "user/user";
 @import "page/page.forum";
+@import "user/user";
