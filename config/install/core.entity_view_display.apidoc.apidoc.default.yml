@@ -20,7 +20,7 @@ content:
     settings:
       validator: default
       validator_url: ''
-      doc_expansion: full
+      doc_expansion: list
       show_top_bar: 0
       sort_tags_by_name: 0
       supported_submit_methods:
