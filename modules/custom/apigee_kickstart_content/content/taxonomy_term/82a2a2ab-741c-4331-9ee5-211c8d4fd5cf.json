@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/api_category\/mobile?_format=hal_json"
+            "href": "http:\/\/default\/apis\/mobile?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/api_category"
@@ -69,7 +69,7 @@
     "path": [
         {
             "alias": "\/apis\/mobile",
-            "pid": 25,
+            "pid": 5,
             "langcode": "en",
             "lang": "en"
         }
