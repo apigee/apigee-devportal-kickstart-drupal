@@ -942,23 +942,11 @@ $details-icon-up: str-replace(url("data:image/svg+xml,%3Csvg xmlns='http://www.w
 
 // Apigee Kickstart Colorable Elements
 $theme-elements: (
-  "ks-body-color":                $body-color,
-  "ks-body-bg":                   $body-bg,
-  "ks-link-color":                $link-color,
-  "ks-link-hover-color":          $link-hover-color,
   "ks-header-color":              $white,
   "ks-header-bg":                 theme-color("dark"),
+  "ks-accent-color":              $white,
+  "ks-accent-bg":                 $blue,
   "ks-footer-color":              $white,
-  "ks-footer-bg":                 theme-color("dark"),
-  'ks-primary-color':             $white,
-  'ks-primary-bg':                $blue,
-  'ks-secondary-color':           $blue,
-  'ks-secondary-bg':              transparent,
-  "ks-light-color":               $body-color,
-  "ks-light-bg":                  theme-color("light"),
-  "ks-lighter-color":             $body-color,
-  "ks-lighter-bg":                theme-color("lighter"),
-  "ks-dark-color":                $white,
-  "ks-dark-bg":                   theme-color("dark")
+  "ks-footer-bg":                 theme-color("dark")
 ) !default;
 

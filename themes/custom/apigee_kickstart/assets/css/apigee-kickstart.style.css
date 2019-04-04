@@ -1,4 +1,45 @@
 @charset "UTF-8";
+:root {
+  --blue: #2196f3;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #53BE6D;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #787878;
+  --gray-dark: #555;
+  --primary: #2196f3;
+  --secondary: #787878;
+  --success: #53BE6D;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f0f0f0;
+  --dark: #555;
+  --lighter: #f9f9f9;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-family-sans-serif: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+:root {
+  --ks-header-color: #fff;
+  --ks-header-bg: #555;
+  --ks-accent-color: #fff;
+  --ks-accent-bg: #2196f3;
+  --ks-footer-color: #fff;
+  --ks-footer-bg: #555;
+}
+
 @media print {
   *,
 *::before,
