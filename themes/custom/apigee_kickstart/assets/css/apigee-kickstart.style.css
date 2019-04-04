@@ -10013,6 +10013,22 @@ small {
   font-size: 0.75rem;
 }
 
+html,
+body {
+  height: 100%;
+}
+
+body,
+.dialog-off-canvas-main-canvas {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.page {
+  flex-grow: 1;
+}
+
 .page__breadcrumbs {
   background-color: #2196f3;
   background-color: var(--ak-accent-bg);
@@ -11166,28 +11182,6 @@ ul.social-links li a {
   border-bottom: solid 1px #ddd;
 }
 
-@media (min-width: 768px) {
-  .user--full .field {
-    display: flex;
-    align-items: center;
-  }
-}
-.user--full .field + .field {
-  margin-top: 1.2rem;
-}
-@media (min-width: 768px) {
-  .user--full .field + .field {
-    margin-top: 0.8rem;
-  }
-}
-.user--full .field__label {
-  line-height: 1;
-  margin-right: 0.2rem;
-}
-.user--full .user__user-picture img {
-  border-radius: 4px;
-}
-
 @media (max-width: 767.98px) {
   .path-forum .block--apigee-kickstart-content {
     display: grid;
@@ -11235,4 +11229,26 @@ ul.social-links li a {
 }
 .forum__submitted a {
   color: #555;
+}
+
+@media (min-width: 768px) {
+  .user--full .field {
+    display: flex;
+    align-items: center;
+  }
+}
+.user--full .field + .field {
+  margin-top: 1.2rem;
+}
+@media (min-width: 768px) {
+  .user--full .field + .field {
+    margin-top: 0.8rem;
+  }
+}
+.user--full .field__label {
+  line-height: 1;
+  margin-right: 0.2rem;
+}
+.user--full .user__user-picture img {
+  border-radius: 4px;
 }

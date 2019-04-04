@@ -1,0 +1,17 @@
+// Page
+// -----------------------------------------------------------------------------
+html,
+body {
+  height: 100%;
+}
+
+body,
+.dialog-off-canvas-main-canvas {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.page {
+  flex-grow: 1;
+}
