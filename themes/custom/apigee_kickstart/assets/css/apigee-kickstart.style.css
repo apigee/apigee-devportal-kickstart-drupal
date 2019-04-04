@@ -10437,6 +10437,10 @@ fieldset.closed legend button {
   margin-bottom: 0;
 }
 
+.form-control.form-textarea {
+  min-height: 130px;
+}
+
 @media (min-width: 768px) {
   .hero {
     height: 400px;
@@ -10993,6 +10997,10 @@ ul.social-links li a {
   background: inherit;
 }
 
+.contact-message-form .form-item-copy {
+  margin-top: 1.5rem;
+}
+
 .path-user form {
   max-width: 540px;
 }
@@ -11029,6 +11037,7 @@ ul.social-links li a {
 .views-exposed-form .form-actions {
   font-size: 0.875rem;
   letter-spacing: 1px;
+  margin: 0 !important;
 }
 .views-exposed-form .form-actions input {
   width: 100%;
@@ -11048,6 +11057,8 @@ ul.social-links li a {
 .views-exposed-form .form-actions input.btn-reset {
   padding-left: 3.2rem;
   background: url("../images/icons/close.svg") no-repeat 25px center;
+  margin: 0;
+  border-radius: 0;
 }
 
 .article__tags {

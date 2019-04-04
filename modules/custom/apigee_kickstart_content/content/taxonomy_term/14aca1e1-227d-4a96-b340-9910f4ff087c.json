@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/api_category\/identity?_format=hal_json"
+            "href": "http:\/\/default\/apis\/identity?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/api_category"
@@ -69,7 +69,7 @@
     "path": [
         {
             "alias": "\/apis\/identity",
-            "pid": 24,
+            "pid": 17,
             "langcode": "en",
             "lang": "en"
         }

@@ -18,7 +18,7 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/apidoc\/apidoc\/field_image": [
             {
-                "href": "http:\/\/default\/media\/10?_format=hal_json"
+                "href": "http:\/\/default\/media\/5?_format=hal_json"
             }
         ]
     },
