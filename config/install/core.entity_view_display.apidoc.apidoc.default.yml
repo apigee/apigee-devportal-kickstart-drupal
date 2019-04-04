@@ -12,37 +12,29 @@ targetEntityType: apidoc
 bundle: apidoc
 mode: default
 content:
-  api_product:
-    type: entity_reference_label
-    weight: 0
-    region: content
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
   spec:
     label: hidden
     type: swagger_ui_file
-    weight: 3
+    weight: 0
     region: content
     settings:
       validator: default
       validator_url: ''
-      doc_expansion: list
-      show_top_bar: false
-      sort_tags_by_name: false
+      doc_expansion: full
+      show_top_bar: 0
+      sort_tags_by_name: 0
       supported_submit_methods:
-        get: '0'
-        put: '0'
-        post: '0'
-        delete: '0'
-        options: '0'
-        head: '0'
-        patch: '0'
+        get: 0
+        put: 0
+        post: 0
+        delete: 0
+        options: 0
+        head: 0
+        patch: 0
     third_party_settings: {  }
 hidden:
+  api_product: true
   description: true
   field_categories: true
   field_image: true
   name: true
-  spec: true
