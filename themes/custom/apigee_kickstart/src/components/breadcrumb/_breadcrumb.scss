@@ -9,3 +9,23 @@
     padding-left: 0.375rem;
   }
 }
+
+// Color customization overrides
+// -----------------------------------------------------------------------------
+
+.breadcrumb {
+  @include var(background-color, 'ak-accent-bg');
+}
+
+.breadcrumb-item {
+  + .breadcrumb-item {
+    &::before {
+      @include var(color, 'ak-accent-color');
+      color: $breadcrumb-divider-color;
+    }
+  }
+
+  &.active {
+    @include var(color, 'ak-accent-color');
+  }
+}

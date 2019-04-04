@@ -2,10 +2,10 @@
 // -----------------------------------------------------------------------------
 
 .page__breadcrumbs {
-  background-color: $blue;
+  @include var(background-color, 'ak-accent-bg');
   font-size: 0.875rem;
 
   a {
-    color: $white;
+    @include var(color, 'ak-accent-color');
   }
 }
