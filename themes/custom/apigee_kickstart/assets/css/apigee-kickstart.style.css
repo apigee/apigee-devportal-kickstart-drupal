@@ -32,12 +32,12 @@
 }
 
 :root {
-  --ks-header-bg: #555;
-  --ks-header-color: #fff;
-  --ks-footer-bg: #555;
-  --ks-footer-color: #fff;
-  --ks-accent-bg: #2196f3;
-  --ks-accent-color: #fff;
+  --ak-header-bg: #555;
+  --ak-header-color: #fff;
+  --ak-footer-bg: #555;
+  --ak-footer-color: #fff;
+  --ak-accent-bg: #2196f3;
+  --ak-accent-color: #fff;
 }
 
 @media print {
