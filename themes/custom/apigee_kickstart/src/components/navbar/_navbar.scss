@@ -36,3 +36,33 @@
 .navbar-toggler {
   background: $white;
 }
+
+.navbar-nav .nav-item {
+  position: relative;
+
+  &.active {
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0.5rem;
+      right: 0.5rem;
+      bottom: 2px;
+      height: 2px;
+      background-color: $primary;
+      display: none;
+
+      @include media-breakpoint-up(md) {
+        display: block;
+      }
+    }
+
+    .nav-link {
+      color: $primary;
+
+      @include media-breakpoint-up(md) {
+        color: $white;
+      }
+    }
+  }
+}
