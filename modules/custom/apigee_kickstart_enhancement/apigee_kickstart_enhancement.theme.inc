@@ -64,7 +64,10 @@ function template_preprocess_apidoc(&$variables) {
   $variables['entity'] = $entity = $variables['elements']["#apidoc"];
 
   // Add a link to the entity.
-  $variables['content']['field_link'] = $entity->toLink(t('View Documentation'))->toRenderable();
+  if ($variables['view_mode'] !== 'full') {
+    $variables['content']['field_link'] = $entity->toLink(t('View Documentation'))
+      ->toRenderable();
+  }
 }
 
 /**

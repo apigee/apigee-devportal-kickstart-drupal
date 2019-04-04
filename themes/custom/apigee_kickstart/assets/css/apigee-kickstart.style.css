@@ -10999,9 +10999,6 @@ ul.social-links li a {
   height: 100%;
 }
 
-.swagger-ui {
-  margin-top: 2rem;
-}
 .swagger-ui > div > .wrapper,
 .swagger-ui > div > .scheme-container {
   border: 1px solid #ddd;
