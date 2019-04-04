@@ -6,6 +6,7 @@ dependencies:
   module:
     - block_content
     - system
+    - apigee_kickstart_content
   theme:
     - apigee_kickstart
 id: apigee_kickstart_title_bar_blog
