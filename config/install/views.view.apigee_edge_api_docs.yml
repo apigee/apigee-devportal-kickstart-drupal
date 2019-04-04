@@ -467,7 +467,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: 'No API documentation is currently available.'
+            value: '<p>No API documentation is currently available.</p>'
             format: basic_html
           plugin_id: text
       relationships: {  }

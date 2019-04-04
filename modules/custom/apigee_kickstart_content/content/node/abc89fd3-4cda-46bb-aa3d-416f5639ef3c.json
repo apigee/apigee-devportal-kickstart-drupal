@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/article\/pretium-viverra-suspendisse-potenti-fermentum-0?_format=hal_json"
+            "href": "http:\/\/default\/article\/pretium-viverra-suspendisse-potenti-fermentum?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/node\/article"
@@ -74,7 +74,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "13a077ca-48a0-4f73-9093-5a174ff6c970"
+                        "value": "24482b6d-ec75-4b49-b5e6-353844c52b13"
                     }
                 ]
             }
@@ -91,7 +91,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "13a077ca-48a0-4f73-9093-5a174ff6c970"
+                        "value": "24482b6d-ec75-4b49-b5e6-353844c52b13"
                     }
                 ],
                 "lang": "en"
@@ -185,8 +185,8 @@
     ],
     "path": [
         {
-            "alias": "\/article\/pretium-viverra-suspendisse-potenti-fermentum-0",
-            "pid": 56,
+            "alias": "\/article\/pretium-viverra-suspendisse-potenti-fermentum",
+            "pid": 19,
             "langcode": "en",
             "lang": "en"
         }

@@ -69,7 +69,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "13a077ca-48a0-4f73-9093-5a174ff6c970"
+                        "value": "24482b6d-ec75-4b49-b5e6-353844c52b13"
                     }
                 ]
             }
@@ -86,7 +86,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "13a077ca-48a0-4f73-9093-5a174ff6c970"
+                        "value": "24482b6d-ec75-4b49-b5e6-353844c52b13"
                     }
                 ],
                 "lang": "en"
@@ -164,7 +164,7 @@
     "path": [
         {
             "alias": "\/forum\/automate-service-ticket-creation",
-            "pid": 48,
+            "pid": 10,
             "langcode": "en",
             "lang": "en"
         }

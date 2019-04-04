@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/api_category\/payment-transaction?_format=hal_json"
+            "href": "http:\/\/default\/apis\/payment-transaction?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/api_category"
@@ -69,7 +69,7 @@
     "path": [
         {
             "alias": "\/apis\/payment-transaction",
-            "pid": 26,
+            "pid": 12,
             "langcode": "en",
             "lang": "en"
         }
