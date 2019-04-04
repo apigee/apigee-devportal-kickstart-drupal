@@ -10488,6 +10488,33 @@ fieldset.closed legend button {
   background: #fff;
 }
 
+.navbar-nav .nav-item {
+  position: relative;
+}
+.navbar-nav .nav-item.active:after {
+  content: "";
+  position: absolute;
+  left: 0.5rem;
+  right: 0.5rem;
+  bottom: 2px;
+  height: 2px;
+  background-color: #2196f3;
+  display: none;
+}
+@media (min-width: 768px) {
+  .navbar-nav .nav-item.active:after {
+    display: block;
+  }
+}
+.navbar-nav .nav-item.active .nav-link {
+  color: #2196f3;
+}
+@media (min-width: 768px) {
+  .navbar-nav .nav-item.active .nav-link {
+    color: #fff;
+  }
+}
+
 .navbar-brand img {
   height: auto;
   width: auto !important;
