@@ -10952,6 +10952,10 @@ ul.social-links li a {
   background: inherit;
 }
 
+.contact-message-form .form-item-copy {
+  margin-top: 1.5rem;
+}
+
 .path-user form {
   max-width: 540px;
 }

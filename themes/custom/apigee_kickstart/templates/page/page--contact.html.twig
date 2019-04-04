@@ -1,0 +1,17 @@
+{#
+/**
+ * @file
+ * Template for the Contact page layout.
+ */
+#}
+{% embed 'page.html.twig' %}
+  {% block content %}
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-lg-7 col-xl-6">
+          {{ page.content }}
+        </div>
+      </div>
+    </div>
+  {% endblock %}
+{% endembed %}
