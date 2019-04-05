@@ -32,12 +32,12 @@
 }
 
 :root {
-  --ak-header-bg: #555;
-  --ak-header-color: #fff;
-  --ak-footer-bg: #555;
-  --ak-footer-color: #fff;
-  --ak-accent-bg: #2196f3;
-  --ak-accent-color: #fff;
+  --ak-header-bg: var(--dark);
+  --ak-header-color: var(--white);
+  --ak-footer-bg: var(--dark);
+  --ak-footer-color: var(--white);
+  --ak-accent-bg: var(--blue);
+  --ak-accent-color: var(--white);
 }
 
 @media print {
@@ -10030,12 +10030,10 @@ body,
 }
 
 .page__breadcrumbs {
-  background-color: #2196f3;
   background-color: var(--ak-accent-bg);
   font-size: 0.875rem;
 }
 .page__breadcrumbs a {
-  color: #fff;
   color: var(--ak-accent-color);
 }
 
@@ -10091,17 +10089,13 @@ body,
 }
 
 .breadcrumb {
-  background-color: #2196f3;
   background-color: var(--ak-accent-bg);
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
-  color: #fff;
   color: var(--ak-accent-color);
-  color: rgba(0, 0, 0, 0.4);
 }
 .breadcrumb-item.active {
-  color: #fff;
   color: var(--ak-accent-color);
 }
 

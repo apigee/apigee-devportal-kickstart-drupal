@@ -14,18 +14,17 @@
 // -----------------------------------------------------------------------------
 
 .breadcrumb {
-  @include var(background-color, 'ak-accent-bg');
+  background-color: var(--ak-accent-bg);
 }
 
 .breadcrumb-item {
   + .breadcrumb-item {
     &::before {
-      @include var(color, 'ak-accent-color');
-      color: $breadcrumb-divider-color;
+      color: var(--ak-accent-color);
     }
   }
 
   &.active {
-    @include var(color, 'ak-accent-color');
+    color: var(--ak-accent-color);
   }
 }
