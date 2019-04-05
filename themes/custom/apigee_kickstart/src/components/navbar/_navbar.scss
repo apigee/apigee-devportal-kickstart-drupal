@@ -49,19 +49,128 @@
       right: 0.5rem;
       bottom: 2px;
       height: 2px;
-      background-color: $primary;
+      background-color: var(--ak-accent-bg);
       display: none;
 
-      @include media-breakpoint-up(md) {
+      @include media-breakpoint-up(lg) {
         display: block;
       }
     }
 
     .nav-link {
-      color: $primary;
+      color: var(--ak-header-color); // $white
+    }
+  }
+}
 
-      @include media-breakpoint-up(md) {
-        color: $white;
+// Color customization overrides
+// -----------------------------------------------------------------------------
+
+// Navbar: .bg-dark / .bg-light
+.navbar.bg-dark,
+.navbar.bg-light {
+  background-color: var(--ak-header-bg) !important;
+}
+
+// Navbar: .text-dark / .text-light
+.navbar.text-dark,
+.navbar.text-light {
+  color: var(--ak-header-color) !important;
+}
+
+// Navbar
+.navbar-light {
+  .navbar-brand {
+    color: var(--ak-header-color); // $navbar-light-active-color
+
+    @include hover-focus {
+      color: var(--ak-header-color); // $navbar-light-active-color
+    }
+  }
+
+  .navbar-nav {
+    .nav-link {
+      color: var(--ak-header-color); // $navbar-light-color
+
+      @include hover-focus {
+        color: var(--ak-header-color); // $navbar-light-hover-color
+      }
+
+      &.disabled {
+        color: var(--ak-header-color); // $navbar-light-disabled-color
+      }
+    }
+
+    .show > .nav-link,
+    .active > .nav-link,
+    .nav-link.show,
+    .nav-link.active {
+      color: var(--ak-header-color); // $navbar-light-active-color
+    }
+  }
+
+  .navbar-toggler {
+    color: var(--ak-accent-color); // $navbar-light-color
+    border-color: var(--ak-accent-bg); // $navbar-light-toggler-border-colors
+  }
+
+  .navbar-text {
+    color: var(--ak-header-color); // $navbar-light-color
+
+    a {
+      color: var(--ak-header-color); // $navbar-light-active-color;
+
+      @include hover-focus {
+        color: var(--ak-header-color); // $navbar-light-active-color;
+      }
+    }
+  }
+}
+
+// White links against a dark background
+.navbar-dark {
+  .navbar-brand {
+    color: var(--ak-header-color); // $navbar-dark-active-color;
+
+    @include hover-focus {
+      color: var(--ak-header-color); // $navbar-dark-active-color;
+    }
+  }
+
+  .navbar-nav {
+    .nav-link {
+      color: var(--ak-header-color); // $navbar-dark-color
+
+      @include hover-focus {
+        color: var(--ak-header-color); // $navbar-dark-hover-color
+      }
+
+      &.disabled {
+        color: var(--ak-header-color); // $navbar-dark-disabled-color
+      }
+    }
+
+    .show > .nav-link,
+    .active > .nav-link,
+    .nav-link.show,
+    .nav-link.active {
+      color: var(--ak-header-color); // $navbar-dark-active-color
+    }
+  }
+
+  .navbar-toggler {
+    color: var(--ak-accent-color); // $navbar-dark-color
+    border-color: var(--ak-accent-bg); // $navbar-dark-toggler-border-color
+  }
+
+  .navbar-text {
+    color: var(--ak-header-color); // $navbar-dark-color
+
+    a {
+      color: var(--ak-header-color); // $navbar-dark-active-color
+
+      @include hover-focus {
+        color: var(--ak-header-color); // $navbar-dark-active-color
       }
     }
   }

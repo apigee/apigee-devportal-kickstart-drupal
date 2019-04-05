@@ -10574,21 +10574,96 @@ fieldset.closed legend button {
   right: 0.5rem;
   bottom: 2px;
   height: 2px;
-  background-color: #2196f3;
+  background-color: var(--ak-accent-bg);
   display: none;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .navbar-nav .nav-item.active:after {
     display: block;
   }
 }
 .navbar-nav .nav-item.active .nav-link {
-  color: #2196f3;
+  color: var(--ak-header-color);
 }
-@media (min-width: 768px) {
-  .navbar-nav .nav-item.active .nav-link {
-    color: #fff;
-  }
+
+.navbar.bg-dark,
+.navbar.bg-light {
+  background-color: var(--ak-header-bg) !important;
+}
+
+.navbar.text-dark,
+.navbar.text-light {
+  color: var(--ak-header-color) !important;
+}
+
+.navbar-light .navbar-brand {
+  color: var(--ak-header-color);
+}
+.navbar-light .navbar-brand:hover, .navbar-light .navbar-brand:focus {
+  color: var(--ak-header-color);
+}
+.navbar-light .navbar-nav .nav-link {
+  color: var(--ak-header-color);
+}
+.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
+  color: var(--ak-header-color);
+}
+.navbar-light .navbar-nav .nav-link.disabled {
+  color: var(--ak-header-color);
+}
+.navbar-light .navbar-nav .show > .nav-link,
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .nav-link.active {
+  color: var(--ak-header-color);
+}
+.navbar-light .navbar-toggler {
+  color: var(--ak-accent-color);
+  border-color: var(--ak-accent-bg);
+}
+.navbar-light .navbar-text {
+  color: var(--ak-header-color);
+}
+.navbar-light .navbar-text a {
+  color: var(--ak-header-color);
+}
+.navbar-light .navbar-text a:hover, .navbar-light .navbar-text a:focus {
+  color: var(--ak-header-color);
+}
+
+.navbar-dark .navbar-brand {
+  color: var(--ak-header-color);
+}
+.navbar-dark .navbar-brand:hover, .navbar-dark .navbar-brand:focus {
+  color: var(--ak-header-color);
+}
+.navbar-dark .navbar-nav .nav-link {
+  color: var(--ak-header-color);
+}
+.navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
+  color: var(--ak-header-color);
+}
+.navbar-dark .navbar-nav .nav-link.disabled {
+  color: var(--ak-header-color);
+}
+.navbar-dark .navbar-nav .show > .nav-link,
+.navbar-dark .navbar-nav .active > .nav-link,
+.navbar-dark .navbar-nav .nav-link.show,
+.navbar-dark .navbar-nav .nav-link.active {
+  color: var(--ak-header-color);
+}
+.navbar-dark .navbar-toggler {
+  color: var(--ak-accent-color);
+  border-color: var(--ak-accent-bg);
+}
+.navbar-dark .navbar-text {
+  color: var(--ak-header-color);
+}
+.navbar-dark .navbar-text a {
+  color: var(--ak-header-color);
+}
+.navbar-dark .navbar-text a:hover, .navbar-dark .navbar-text a:focus {
+  color: var(--ak-header-color);
 }
 
 .navbar-brand img {
