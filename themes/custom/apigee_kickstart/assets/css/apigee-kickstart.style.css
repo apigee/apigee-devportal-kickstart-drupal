@@ -10839,7 +10839,7 @@ ul.social-links li a {
 }
 .nav-tabs--secondary .nav-link.active {
   color: #3c3c3c;
-  border-bottom-color: #2196f3;
+  border-bottom-color: var(--ak-accent-color);
 }
 
 .secret {
