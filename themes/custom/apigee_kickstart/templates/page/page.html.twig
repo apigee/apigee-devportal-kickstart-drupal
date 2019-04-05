@@ -12,11 +12,10 @@
 {% set main_attributes = create_attribute() %}
 
 <div{{ attributes.addClass(classes) }}>
-  {% embed '@radix/navbar/navbar.twig' with {
+  {% embed '@apigee-kickstart/navbar/navbar.twig' with {
     placement: 'sticky-top',
     container: 'fixed',
-    color: 'dark',
-    utility_classes: ['bg-dark'],
+    color: false
   } %}
 
     {% block branding %}
