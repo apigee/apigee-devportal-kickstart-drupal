@@ -10261,10 +10261,22 @@ input.btn + .btn {
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
 }
 
+@media (max-width: 991.98px) {
+  .card-group__title {
+    font-size: 1.5rem;
+  }
+}
+
 pre {
   background: #f0f0f0;
   margin: 2.1255rem 0;
   padding: 0.9975rem;
+}
+
+@media (max-width: 991.98px) {
+  .cta__title {
+    font-size: 1.5rem;
+  }
 }
 
 details.details {
@@ -10534,6 +10546,7 @@ fieldset.closed legend button {
   grid-column: main/media-end;
   justify-content: center;
   text-align: center;
+  padding-right: 15px;
 }
 @media (min-width: 768px) {
   .hero__content {
@@ -10741,7 +10754,7 @@ ul.social-links li a {
     grid-template-columns: [gutter-left] 15px [media] 1fr [main] 1fr [gutter-right] 15px;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .text-image__wrapper {
     grid-template-columns: [gutter-left] minmax(15px, 1fr) [main] minmax(0, 345px) [media] minmax(0, 345px) [gutter-right] minmax(15px, 1fr);
   }
@@ -10762,11 +10775,21 @@ ul.social-links li a {
   }
 }
 
+@media (max-width: 991.98px) {
+  .text-image__title {
+    font-size: 1.5rem;
+  }
+}
+
 .text-image__text {
   display: grid;
   grid-column: main;
   justify-content: center;
-  padding-right: 85px;
+}
+@media (min-width: 992px) {
+  .text-image__text {
+    padding-right: 85px;
+  }
 }
 
 .text-image__image {
