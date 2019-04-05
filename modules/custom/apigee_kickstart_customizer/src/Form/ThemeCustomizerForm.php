@@ -21,6 +21,9 @@
 namespace Drupal\apigee_kickstart_customizer\Form;
 
 use Drupal\apigee_kickstart_customizer\CustomizerInterface;
+use Drupal\Core\Ajax\AjaxFormHelperTrait;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\RedirectCommand;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -31,6 +34,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * The theme customizer form.
  */
 class ThemeCustomizerForm extends ConfigFormBase {
+
+  use AjaxFormHelperTrait;
 
   /**
    * The theme customizer.
@@ -82,6 +87,10 @@ class ThemeCustomizerForm extends ConfigFormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state, $theme = NULL) {
     $form = parent::buildForm($form, $form_state);
+    $form['actions']['submit']['#ajax'] = [
+      'callback' => '::ajaxSubmit',
+    ];
+    $form['#attached']['library'][] = 'core/drupal.dialog.ajax';
     $values = $this->configFactory->get('customizer.theme.' . $theme)->get('values');
 
     $form_state->set('theme', $theme);
@@ -132,11 +141,16 @@ class ThemeCustomizerForm extends ConfigFormBase {
     $values = $form_state->getValues();
     $config->set('values', $values)->save();
 
-    // Redirect to current page.
-    $url = Url::fromRoute('<current>')->setAbsolute();
-    $form_state->setRedirectUrl($url);
-
     parent::submitForm($form, $form_state);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function successfulAjaxSubmit(array $form, FormStateInterface $form_state) {
+    $command = new RedirectCommand(Url::fromRoute('<front>')->toString());
+    $response = new AjaxResponse();
+    return $response->addCommand($command);
   }
 
 }
