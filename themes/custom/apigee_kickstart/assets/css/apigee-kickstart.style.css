@@ -10446,7 +10446,7 @@ form > .form-actions:last-child {
   position: absolute;
 }
 .form-check .fa-check-square {
-  color: #2196f3;
+  color: var(--ak-accent-bg);
 }
 .form-check .form-check-input {
   display: none;
@@ -10555,7 +10555,12 @@ fieldset.closed legend button {
 }
 
 .navbar {
+  background: var(--ak-header-bg);
+  color: var(--ak-header-bg);
   font-size: 0.875rem;
+}
+.navbar a, .navbar .nav-link {
+  color: var(--ak-header-color);
 }
 @media (max-width: 991.98px) {
   .navbar .search-block-form {
@@ -10587,7 +10592,8 @@ fieldset.closed legend button {
 }
 
 .navbar-toggler {
-  background: #fff;
+  background: var(--ak-accent-color);
+  color: var(--ak-accent-bg);
 }
 
 .navbar-nav .nav-item {
@@ -10609,86 +10615,6 @@ fieldset.closed legend button {
   }
 }
 .navbar-nav .nav-item.active .nav-link {
-  color: var(--ak-header-color);
-}
-
-.navbar.bg-dark,
-.navbar.bg-light {
-  background-color: var(--ak-header-bg) !important;
-}
-
-.navbar.text-dark,
-.navbar.text-light {
-  color: var(--ak-header-color) !important;
-}
-
-.navbar-light .navbar-brand {
-  color: var(--ak-header-color);
-}
-.navbar-light .navbar-brand:hover, .navbar-light .navbar-brand:focus {
-  color: var(--ak-header-color);
-}
-.navbar-light .navbar-nav .nav-link {
-  color: var(--ak-header-color);
-}
-.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
-  color: var(--ak-header-color);
-}
-.navbar-light .navbar-nav .nav-link.disabled {
-  color: var(--ak-header-color);
-}
-.navbar-light .navbar-nav .show > .nav-link,
-.navbar-light .navbar-nav .active > .nav-link,
-.navbar-light .navbar-nav .nav-link.show,
-.navbar-light .navbar-nav .nav-link.active {
-  color: var(--ak-header-color);
-}
-.navbar-light .navbar-toggler {
-  color: var(--ak-accent-color);
-  border-color: var(--ak-accent-bg);
-}
-.navbar-light .navbar-text {
-  color: var(--ak-header-color);
-}
-.navbar-light .navbar-text a {
-  color: var(--ak-header-color);
-}
-.navbar-light .navbar-text a:hover, .navbar-light .navbar-text a:focus {
-  color: var(--ak-header-color);
-}
-
-.navbar-dark .navbar-brand {
-  color: var(--ak-header-color);
-}
-.navbar-dark .navbar-brand:hover, .navbar-dark .navbar-brand:focus {
-  color: var(--ak-header-color);
-}
-.navbar-dark .navbar-nav .nav-link {
-  color: var(--ak-header-color);
-}
-.navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
-  color: var(--ak-header-color);
-}
-.navbar-dark .navbar-nav .nav-link.disabled {
-  color: var(--ak-header-color);
-}
-.navbar-dark .navbar-nav .show > .nav-link,
-.navbar-dark .navbar-nav .active > .nav-link,
-.navbar-dark .navbar-nav .nav-link.show,
-.navbar-dark .navbar-nav .nav-link.active {
-  color: var(--ak-header-color);
-}
-.navbar-dark .navbar-toggler {
-  color: var(--ak-accent-color);
-  border-color: var(--ak-accent-bg);
-}
-.navbar-dark .navbar-text {
-  color: var(--ak-header-color);
-}
-.navbar-dark .navbar-text a {
-  color: var(--ak-header-color);
-}
-.navbar-dark .navbar-text a:hover, .navbar-dark .navbar-text a:focus {
   color: var(--ak-header-color);
 }
 
@@ -11205,13 +11131,12 @@ ul.social-links li a {
   font-size: 0.875rem;
   letter-spacing: 1px;
   background-color: transparent;
-  color: #2196f3;
+  color: var(--ak-accent-bg);
   border: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.125);
   text-align: left;
 }
 .views-exposed-form .form-actions input:hover {
-  color: #505050;
   text-decoration: none;
 }
 .views-exposed-form .form-actions input.btn-reset {
