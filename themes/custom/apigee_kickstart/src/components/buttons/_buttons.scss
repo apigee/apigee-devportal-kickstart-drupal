@@ -16,6 +16,8 @@ input.btn {
 
 [class*='btn-outline-'] {
   border-width: 2px;
+  border-color: var(--ak-accent-color);
+  color: var(--ak-accent-color);
 }
 
 .btn-lg {
@@ -25,4 +27,31 @@ input.btn {
   letter-spacing: 1px;
   min-width: 150px;
   border-radius: 2px;
+}
+
+.btn-link {
+  color: var(--ak-accent-color);
+
+  &:hover, &:focus {
+    color: var(--ak-accent-color-dark);
+  }
+}
+
+.btn-primary {
+  background-color: var(--ak-accent-color);
+  border-width: 2px;
+  border-color: var(--ak-accent-color);
+  color: var(--ak-accent-color-light);
+
+  &:hover, &:focus {
+    background-color: var(--ak-accent-color-dark);
+    border-color: var(--ak-accent-color-dark);
+  }
+}
+
+.btn-outline-primary:focus,
+.btn-outline-primary:hover {
+  background-color: transparent;
+  border-color: var(--ak-accent-color-dark);
+  color: var(--ak-accent-color-dark);
 }

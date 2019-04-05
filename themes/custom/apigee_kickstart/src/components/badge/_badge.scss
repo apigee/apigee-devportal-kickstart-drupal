@@ -11,4 +11,9 @@
     font-size: 0.563rem;
     line-height: 1.25;
   }
+
+  &-primary {
+    background-color: var(--ak-accent-color);
+    color: var(--ak-accent-color-light)
+  }
 }

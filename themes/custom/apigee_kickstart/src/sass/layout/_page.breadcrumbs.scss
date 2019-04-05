@@ -2,10 +2,10 @@
 // -----------------------------------------------------------------------------
 
 .page__breadcrumbs {
-  background-color: $blue;
+  background-color: var(--ak-accent-color);
   font-size: 0.875rem;
 
   a {
-    color: $white;
+    color: var(--ak-accent-color-light);
   }
 }

@@ -1,0 +1,9 @@
+// CSS Variables
+// -----------------------------------------------------------------------------
+
+:root {
+  // Custom variable values only support SassScript inside `#{}`.
+  @each $color, $value in $theme-elements {
+    --#{$color}: #{$value};
+  }
+}

@@ -30,6 +30,7 @@
     line-height: 38px;
     margin: 0;
 
+    &:focus,
     &:hover {
       background-color: $lighter;
     }
@@ -38,9 +39,14 @@
   .is-active {
 
     .page-link {
+      background-color: var(--ak-accent-color);
+      border-color: var(--ak-accent-color);
+      color: var(--ak-accent-color-light);
 
+      &:focus,
       &:hover {
-        background-color: $primary;
+        background-color: var(--ak-accent-color-dark);
+        color: var(--ak-accent-color-light);
       }
     }
   }

@@ -2,7 +2,13 @@
 // -----------------------------------------------------------------------------
 
 .navbar {
+  background: var(--ak-header-color-bg);
+  color: var(--ak-header-color);
   font-size: 0.875rem;
+
+  a, .nav-link {
+    color: var(--ak-header-color);
+  }
 
   .search-block-form {
     @include media-breakpoint-down(md) {
@@ -34,7 +40,8 @@
 }
 
 .navbar-toggler {
-  background: $white;
+  background: var(--ak-accent-color-light);
+  color: var(--ak-accent-color);
 }
 
 .navbar-nav .nav-item {
@@ -49,20 +56,16 @@
       right: 0.5rem;
       bottom: 2px;
       height: 2px;
-      background-color: $primary;
+      background-color: var(--ak-accent-color);
       display: none;
 
-      @include media-breakpoint-up(md) {
+      @include media-breakpoint-up(lg) {
         display: block;
       }
     }
 
     .nav-link {
-      color: $primary;
-
-      @include media-breakpoint-up(md) {
-        color: $white;
-      }
+      color: var(--ak-header-color); // $white
     }
   }
 }
