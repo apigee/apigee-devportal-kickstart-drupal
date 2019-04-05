@@ -2,8 +2,8 @@
 // -----------------------------------------------------------------------------
 
 .navbar {
-  background: var(--ak-header-bg);
-  color: var(--ak-header-bg);
+  background: var(--ak-header-color-bg);
+  color: var(--ak-header-color);
   font-size: 0.875rem;
 
   a, .nav-link {
@@ -40,8 +40,8 @@
 }
 
 .navbar-toggler {
-  background: var(--ak-accent-color);
-  color: var(--ak-accent-bg);
+  background: var(--ak-accent-color-light);
+  color: var(--ak-accent-color);
 }
 
 .navbar-nav .nav-item {
@@ -56,7 +56,7 @@
       right: 0.5rem;
       bottom: 2px;
       height: 2px;
-      background-color: var(--ak-accent-bg);
+      background-color: var(--ak-accent-color);
       display: none;
 
       @include media-breakpoint-up(lg) {

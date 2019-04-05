@@ -1,6 +1,7 @@
 @charset "UTF-8";
 :root {
   --blue: #2196f3;
+  --blue-dark: #0c83e2;
   --indigo: #6610f2;
   --purple: #6f42c1;
   --pink: #e83e8c;
@@ -32,12 +33,13 @@
 }
 
 :root {
-  --ak-header-bg: var(--dark);
+  --ak-header-color-bg: var(--dark);
   --ak-header-color: var(--white);
-  --ak-footer-bg: var(--dark);
+  --ak-footer-color-bg: var(--dark);
   --ak-footer-color: var(--white);
-  --ak-accent-bg: var(--blue);
-  --ak-accent-color: var(--white);
+  --ak-accent-color: var(--blue);
+  --ak-accent-color-light: var(--white);
+  --ak-accent-color-dark: var(--blue-dark);
 }
 
 @media print {
@@ -9956,8 +9958,12 @@ a.text-lighter:hover, a.text-lighter:focus {
 }
 
 a {
-  color: var(--ak-accent-bg);
+  color: var(--ak-accent-color);
 }
+a:hover {
+  color: var(--ak-accent-color);
+}
+
 blockquote {
   color: #3c3c3c;
   font-size: 1rem;
@@ -10033,11 +10039,11 @@ body,
 }
 
 .page__breadcrumbs {
-  background-color: var(--ak-accent-bg);
+  background-color: var(--ak-accent-color);
   font-size: 0.875rem;
 }
 .page__breadcrumbs a {
-  color: var(--ak-accent-color);
+  color: var(--ak-accent-color-light);
 }
 
 @media (max-width: 767.98px) {
@@ -10047,7 +10053,7 @@ body,
 }
 
 .page__footer {
-  background: var(--ak-footer-bg);
+  background: var(--ak-footer-color-bg);
   font-size: 0.875rem;
 }
 .page__footer, .page__footer a {
@@ -10059,7 +10065,7 @@ body,
 }
 
 .footer.bg-dark, .footer.bg-light {
-  background: var(--ak-footer-bg) !important;
+  background: var(--ak-footer-color-bg) !important;
 }
 .footer.text-dark, .footer.text-light {
   color: var(--ak-footer-color) !important;
@@ -10069,7 +10075,7 @@ body,
 }
 
 .copyright {
-  background: var(--ak-footer-bg) linear-gradient(to bottom, rgba(255, 255, 255, 0.19) 0%, var(--ak-footer-bg) 100%) center;
+  background: var(--ak-footer-color-bg) linear-gradient(to bottom, rgba(255, 255, 255, 0.19) 0%, var(--ak-footer-color-bg) 100%) center;
   background-size: 100vw 100vh;
 }
 
@@ -10104,14 +10110,14 @@ body,
 }
 
 .breadcrumb {
-  background-color: var(--ak-accent-bg);
+  background-color: var(--ak-accent-color);
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
-  color: var(--ak-accent-color);
+  color: var(--ak-accent-color-light);
 }
 .breadcrumb-item.active {
-  color: var(--ak-accent-color);
+  color: var(--ak-accent-color-light);
 }
 
 .btn {
@@ -10131,8 +10137,8 @@ input.btn + .btn {
 
 [class*=btn-outline-] {
   border-width: 2px;
-  border-color: var(--ak-accent-bg);
-  color: var(--ak-accent-bg);
+  border-color: var(--ak-accent-color);
+  color: var(--ak-accent-color);
 }
 
 .btn-lg, .path-user form .form-actions .btn, .btn-group-lg > .btn {
@@ -10145,20 +10151,25 @@ input.btn + .btn {
 }
 
 .btn-link {
-  color: var(--ak-accent-color);
+  color: var(--ak-accent-color-light);
 }
 
 .btn-primary {
-  background-color: var(--ak-accent-bg);
+  background-color: var(--ak-accent-color);
   border-width: 2px;
-  border-color: var(--ak-accent-bg);
-  color: var(--ak-accent-color);
+  border-color: var(--ak-accent-color);
+  color: var(--ak-accent-color-light);
+}
+.btn-primary:hover, .btn-primary:focus {
+  background-color: var(--ak-accent-color-dark);
+  border-color: var(--ak-accent-color-dark);
 }
 
 .btn-outline-primary:focus,
 .btn-outline-primary:hover {
-  background: var(--ak-accent-bg);
-  border-color: var(--ak-accent-bg);
+  background-color: transparent;
+  border-color: var(--ak-accent-color-dark);
+  color: var(--ak-accent-color-dark);
 }
 
 .card {
@@ -10191,7 +10202,7 @@ input.btn + .btn {
 }
 .card-footer {
   background-color: transparent;
-  color: var(--ak-accent-bg);
+  color: var(--ak-accent-color);
   font-size: 0.875rem;
   font-weight: 500;
   letter-spacing: 1px;
@@ -10201,8 +10212,8 @@ input.btn + .btn {
   border-radius: 0 0 4px 4px;
 }
 .card:focus .card-footer, .card:hover .card-footer {
-  background-color: var(--ak-accent-bg);
-  color: var(--ak-accent-color);
+  background-color: var(--ak-accent-color);
+  color: var(--ak-accent-color-light);
 }
 .card.has-hover-shadow:focus, .card.has-hover-shadow:hover {
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
@@ -10446,7 +10457,7 @@ form > .form-actions:last-child {
   position: absolute;
 }
 .form-check .fa-check-square {
-  color: var(--ak-accent-bg);
+  color: var(--ak-accent-color);
 }
 .form-check .form-check-input {
   display: none;
@@ -10555,8 +10566,8 @@ fieldset.closed legend button {
 }
 
 .navbar {
-  background: var(--ak-header-bg);
-  color: var(--ak-header-bg);
+  background: var(--ak-header-color-bg);
+  color: var(--ak-header-color);
   font-size: 0.875rem;
 }
 .navbar a, .navbar .nav-link {
@@ -10592,8 +10603,8 @@ fieldset.closed legend button {
 }
 
 .navbar-toggler {
-  background: var(--ak-accent-color);
-  color: var(--ak-accent-bg);
+  background: var(--ak-accent-color-light);
+  color: var(--ak-accent-color);
 }
 
 .navbar-nav .nav-item {
@@ -10606,7 +10617,7 @@ fieldset.closed legend button {
   right: 0.5rem;
   bottom: 2px;
   height: 2px;
-  background-color: var(--ak-accent-bg);
+  background-color: var(--ak-accent-color);
   display: none;
 }
 @media (min-width: 992px) {
@@ -10672,12 +10683,12 @@ ul.social-links li a {
 }
 .nav-tabs .nav-link.active {
   color: #3c3c3c;
-  border-bottom-color: var(--ak-accent-bg);
+  border-bottom-color: var(--ak-accent-color);
 }
 .nav-tabs .nav-link.active:after {
   content: "";
   height: 4px;
-  background-color: var(--ak-accent-bg);
+  background-color: var(--ak-accent-color);
   position: absolute;
   left: 0;
   right: 0;
@@ -10804,12 +10815,12 @@ ul.social-links li a {
 }
 .nav-tabs .nav-link.active {
   color: #3c3c3c;
-  border-bottom-color: var(--ak-accent-bg);
+  border-bottom-color: var(--ak-accent-color);
 }
 .nav-tabs .nav-link.active:after {
   content: "";
   height: 4px;
-  background-color: var(--ak-accent-bg);
+  background-color: var(--ak-accent-color);
   position: absolute;
   left: 0;
   right: 0;
@@ -11131,7 +11142,7 @@ ul.social-links li a {
   font-size: 0.875rem;
   letter-spacing: 1px;
   background-color: transparent;
-  color: var(--ak-accent-bg);
+  color: var(--ak-accent-color);
   border: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.125);
   text-align: left;

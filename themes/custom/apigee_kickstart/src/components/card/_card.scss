@@ -39,7 +39,7 @@
 
   &-footer {
     background-color: transparent;
-    color: var(--ak-accent-bg);
+    color: var(--ak-accent-color);
     font-size: .875rem;
     font-weight: 500;
     letter-spacing: 1px;
@@ -53,8 +53,8 @@
   &:focus,
   &:hover {
     .card-footer {
-      background-color: var(--ak-accent-bg);
-      color: var(--ak-accent-color);
+      background-color: var(--ak-accent-color);
+      color: var(--ak-accent-color-light);
     }
   }
 

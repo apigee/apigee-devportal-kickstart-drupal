@@ -16,8 +16,8 @@ input.btn {
 
 [class*='btn-outline-'] {
   border-width: 2px;
-  border-color: var(--ak-accent-bg);
-  color: var(--ak-accent-bg);
+  border-color: var(--ak-accent-color);
+  color: var(--ak-accent-color);
 }
 
 .btn-lg {
@@ -30,18 +30,24 @@ input.btn {
 }
 
 .btn-link {
-  color: var(--ak-accent-color);
+  color: var(--ak-accent-color-light);
 }
 
 .btn-primary {
-  background-color: var(--ak-accent-bg);
+  background-color: var(--ak-accent-color);
   border-width: 2px;
-  border-color: var(--ak-accent-bg);
-  color: var(--ak-accent-color);
+  border-color: var(--ak-accent-color);
+  color: var(--ak-accent-color-light);
+
+  &:hover, &:focus {
+    background-color: var(--ak-accent-color-dark);
+    border-color: var(--ak-accent-color-dark);
+  }
 }
 
 .btn-outline-primary:focus,
 .btn-outline-primary:hover {
-  background: var(--ak-accent-bg);
-  border-color: var(--ak-accent-bg);
+  background-color: transparent;
+  border-color: var(--ak-accent-color-dark);
+  color: var(--ak-accent-color-dark);
 }
