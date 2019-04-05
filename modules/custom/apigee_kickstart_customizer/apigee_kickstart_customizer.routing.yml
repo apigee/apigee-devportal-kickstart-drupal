@@ -1,0 +1,2 @@
+route_callbacks:
+  - '\Drupal\apigee_kickstart_customizer\Routing\CustomizerRoutes::routes'

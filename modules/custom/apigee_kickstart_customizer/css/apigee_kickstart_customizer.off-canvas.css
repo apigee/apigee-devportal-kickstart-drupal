@@ -1,0 +1,52 @@
+#drupal-off-canvas .theme-customizer-form details {
+  background: #474747 !important;
+}
+
+#drupal-off-canvas .theme-customizer-form details > div {
+  padding: 1rem 0;
+  display: block;
+}
+
+#drupal-off-canvas .theme-customizer-form .form-item + .form-item {
+  margin-top: 1rem;
+}
+
+#drupal-off-canvas details[open] > summary {
+  background-color: #333 !important;
+  color: #eee !important;
+}
+
+#drupal-off-canvas .farbtastic {
+  position: relative;
+}
+#drupal-off-canvas .farbtastic * {
+  position: absolute;
+  cursor: crosshair;
+}
+#drupal-off-canvas .farbtastic,
+#drupal-off-canvas .farbtastic .wheel {
+  width: 195px;
+  height: 195px;
+}
+#drupal-off-canvas .farbtastic .color,
+#drupal-off-canvas .farbtastic .overlay {
+  top: 47px;
+  left: 47px;
+  width: 101px;
+  height: 101px;
+}
+#drupal-off-canvas .farbtastic .wheel {
+  background: url(../images/wheel.png) no-repeat;
+  width: 195px;
+  height: 195px;
+}
+#drupal-off-canvas .farbtastic .overlay {
+  background: url(../images/mask.png) no-repeat;
+}
+#drupal-off-canvas .farbtastic .marker {
+  width: 17px;
+  height: 17px;
+  margin: -8px 0 0 -8px;
+  overflow: hidden;
+  background: url(../images/marker.png) no-repeat;
+}
