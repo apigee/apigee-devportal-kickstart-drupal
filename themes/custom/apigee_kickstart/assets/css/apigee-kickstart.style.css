@@ -10151,7 +10151,10 @@ input.btn + .btn {
 }
 
 .btn-link {
-  color: var(--ak-accent-color-light);
+  color: var(--ak-accent-color);
+}
+.btn-link:hover, .btn-link:focus {
+  color: var(--ak-accent-color-dark);
 }
 
 .btn-primary {
@@ -10858,17 +10861,17 @@ ul.social-links li a {
   margin-left: 0.5rem;
 }
 .secret__toggle:hover {
-  color: #2196f3;
+  color: var(--ak-accent-color);
 }
 .secret__copy {
   margin-left: auto;
 }
 .secret__copy button {
-  color: #2196f3;
+  color: var(--ak-accent-color);
   font-size: 1.6rem;
 }
 .secret__copy button:hover {
-  color: #505050;
+  color: var(--ak-accent-color-dark);
 }
 
 .table {

@@ -30,7 +30,11 @@ input.btn {
 }
 
 .btn-link {
-  color: var(--ak-accent-color-light);
+  color: var(--ak-accent-color);
+
+  &:hover, &:focus {
+    color: var(--ak-accent-color-dark);
+  }
 }
 
 .btn-primary {
