@@ -16,6 +16,8 @@ input.btn {
 
 [class*='btn-outline-'] {
   border-width: 2px;
+  border-color: var(--ak-accent-bg);
+  color: var(--ak-accent-bg);
 }
 
 .btn-lg {
@@ -25,4 +27,21 @@ input.btn {
   letter-spacing: 1px;
   min-width: 150px;
   border-radius: 2px;
+}
+
+.btn-link {
+  color: var(--ak-accent-color);
+}
+
+.btn-primary {
+  background-color: var(--ak-accent-bg);
+  border-width: 2px;
+  border-color: var(--ak-accent-bg);
+  color: var(--ak-accent-color);
+}
+
+.btn-outline-primary:focus,
+.btn-outline-primary:hover {
+  background: var(--ak-accent-bg);
+  border-color: var(--ak-accent-bg);
 }

@@ -8,14 +8,21 @@
   &, a {
     color: var(--ak-footer-color);
   }
+
+  .text-dark,
+  .text-light {
+    color: var(--ak-footer-color) !important;
+  }
 }
 
 .footer {
-  &.bg-dark, &.bg-light {
+  &.bg-dark,
+  &.bg-light {
       background: var(--ak-footer-bg) !important;
     }
 
-  &.text-dark, &.text-light {
+  &.text-dark,
+  &.text-light {
     color: var(--ak-footer-color) !important;
   }
 

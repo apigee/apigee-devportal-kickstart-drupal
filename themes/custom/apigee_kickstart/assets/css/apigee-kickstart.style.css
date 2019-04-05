@@ -9955,6 +9955,9 @@ a.text-lighter:hover, a.text-lighter:focus {
   border-radius: 4px;
 }
 
+a {
+  color: var(--ak-accent-bg);
+}
 blockquote {
   color: #3c3c3c;
   font-size: 1rem;
@@ -10050,6 +10053,10 @@ body,
 .page__footer, .page__footer a {
   color: var(--ak-footer-color);
 }
+.page__footer .text-dark,
+.page__footer .text-light {
+  color: var(--ak-footer-color) !important;
+}
 
 .footer.bg-dark, .footer.bg-light {
   background: var(--ak-footer-bg) !important;
@@ -10124,6 +10131,8 @@ input.btn + .btn {
 
 [class*=btn-outline-] {
   border-width: 2px;
+  border-color: var(--ak-accent-bg);
+  color: var(--ak-accent-bg);
 }
 
 .btn-lg, .path-user form .form-actions .btn, .btn-group-lg > .btn {
@@ -10133,6 +10142,23 @@ input.btn + .btn {
   letter-spacing: 1px;
   min-width: 150px;
   border-radius: 2px;
+}
+
+.btn-link {
+  color: var(--ak-accent-color);
+}
+
+.btn-primary {
+  background-color: var(--ak-accent-bg);
+  border-width: 2px;
+  border-color: var(--ak-accent-bg);
+  color: var(--ak-accent-color);
+}
+
+.btn-outline-primary:focus,
+.btn-outline-primary:hover {
+  background: var(--ak-accent-bg);
+  border-color: var(--ak-accent-bg);
 }
 
 .card {
@@ -10165,7 +10191,7 @@ input.btn + .btn {
 }
 .card-footer {
   background-color: transparent;
-  color: #2196f3;
+  color: var(--ak-accent-bg);
   font-size: 0.875rem;
   font-weight: 500;
   letter-spacing: 1px;
@@ -10175,8 +10201,8 @@ input.btn + .btn {
   border-radius: 0 0 4px 4px;
 }
 .card:focus .card-footer, .card:hover .card-footer {
-  background-color: #2196f3;
-  color: #fff;
+  background-color: var(--ak-accent-bg);
+  color: var(--ak-accent-color);
 }
 .card.has-hover-shadow:focus, .card.has-hover-shadow:hover {
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
@@ -10720,12 +10746,12 @@ ul.social-links li a {
 }
 .nav-tabs .nav-link.active {
   color: #3c3c3c;
-  border-bottom-color: #2196f3;
+  border-bottom-color: var(--ak-accent-bg);
 }
 .nav-tabs .nav-link.active:after {
   content: "";
   height: 4px;
-  background-color: #2196f3;
+  background-color: var(--ak-accent-bg);
   position: absolute;
   left: 0;
   right: 0;
@@ -10852,12 +10878,12 @@ ul.social-links li a {
 }
 .nav-tabs .nav-link.active {
   color: #3c3c3c;
-  border-bottom-color: #2196f3;
+  border-bottom-color: var(--ak-accent-bg);
 }
 .nav-tabs .nav-link.active:after {
   content: "";
   height: 4px;
-  background-color: #2196f3;
+  background-color: var(--ak-accent-bg);
   position: absolute;
   left: 0;
   right: 0;
