@@ -4353,13 +4353,13 @@ input[type=button].btn-block {
   padding: 0.5rem 0.75rem;
   margin-left: -1px;
   line-height: 1.25;
-  color: #2196f3;
+  color: var(--ak-accent-color);
   background-color: #fff;
   border: 1px solid #ddd;
 }
 .page-link:hover {
   z-index: 2;
-  color: #0a6ebd;
+  color: var(--ak-accent-color-dark);
   text-decoration: none;
   background-color: #f0f0f0;
   border-color: #ddd;
@@ -10711,11 +10711,17 @@ ul.social-links li a {
   line-height: 38px;
   margin: 0;
 }
-.pagination .page-link:hover {
+.pagination .page-link:focus, .pagination .page-link:hover {
   background-color: #f9f9f9;
 }
-.pagination .is-active .page-link:hover {
-  background-color: #2196f3;
+.pagination .is-active .page-link {
+  background-color: var(--ak-accent-color);
+  border-color: var(--ak-accent-color);
+  color: var(--ak-accent-color-light);
+}
+.pagination .is-active .page-link:focus, .pagination .is-active .page-link:hover {
+  background-color: var(--ak-accent-color-dark);
+  color: var(--ak-accent-color-light);
 }
 
 @media (min-width: 992px) {
