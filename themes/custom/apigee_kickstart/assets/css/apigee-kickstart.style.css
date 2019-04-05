@@ -261,13 +261,13 @@ sup {
 }
 
 a {
-  color: #2196f3;
+  color: var(--ak-accent-color);
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
 a:hover {
-  color: #0a6ebd;
+  color: var(--ak-accent-color-dark);
   text-decoration: underline;
 }
 
@@ -2861,11 +2861,11 @@ fieldset:disabled a.btn {
 
 .btn-link {
   font-weight: 400;
-  color: #2196f3;
+  color: var(--ak-accent-color);
   background-color: transparent;
 }
 .btn-link:hover {
-  color: #0a6ebd;
+  color: var(--ak-accent-color-dark);
   text-decoration: underline;
   background-color: transparent;
   border-color: transparent;
@@ -9955,13 +9955,6 @@ a.text-lighter:hover, a.text-lighter:focus {
 
 .rounded-sm {
   border-radius: 4px;
-}
-
-a {
-  color: var(--ak-accent-color);
-}
-a:hover {
-  color: var(--ak-accent-color);
 }
 
 blockquote {
