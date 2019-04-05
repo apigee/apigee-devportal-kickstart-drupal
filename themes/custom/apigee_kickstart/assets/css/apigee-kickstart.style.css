@@ -10044,18 +10044,26 @@ body,
 }
 
 .page__footer {
+  background: var(--ak-footer-bg);
   font-size: 0.875rem;
 }
-.page__footer a {
-  color: #fff;
+.page__footer, .page__footer a {
+  color: var(--ak-footer-color);
 }
 
+.footer.bg-dark, .footer.bg-light {
+  background: var(--ak-footer-bg) !important;
+}
+.footer.text-dark, .footer.text-light {
+  color: var(--ak-footer-color) !important;
+}
 .footer .nav {
   margin-left: -0.5rem;
 }
 
 .copyright {
-  background: rgba(85, 85, 85, 0.9);
+  background: var(--ak-footer-bg) linear-gradient(to bottom, rgba(255, 255, 255, 0.19) 0%, var(--ak-footer-bg) 100%) center;
+  background-size: 100vw 100vh;
 }
 
 .alert {
