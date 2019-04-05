@@ -942,11 +942,11 @@ $details-icon-up: str-replace(url("data:image/svg+xml,%3Csvg xmlns='http://www.w
 
 // Apigee Kickstart Colorable Elements
 $theme-elements: (
-  "ak-header-bg":                 theme-color("dark"),
-  "ak-header-color":              $white,
-  "ak-footer-bg":                 theme-color("dark"),
-  "ak-footer-color":              $white,
-  "ak-accent-bg":                 $blue,
-  "ak-accent-color":              $white,
+  "ak-header-bg":                 var(--dark),
+  "ak-header-color":              var(--white),
+  "ak-footer-bg":                 var(--dark),
+  "ak-footer-color":              var(--white),
+  "ak-accent-bg":                 var(--blue),
+  "ak-accent-color":              var(--white)
 ) !default;
 
