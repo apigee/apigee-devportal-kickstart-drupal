@@ -10343,6 +10343,10 @@ details.details {
   font-size: 0.563rem;
   line-height: 1.25;
 }
+.badge-primary {
+  background-color: var(--ak-accent-color);
+  color: var(--ak-accent-color-light);
+}
 
 .callout {
   font-size: 0.875rem;
