@@ -10857,7 +10857,7 @@ ul.social-links li a {
   font-size: 1.2rem;
 }
 .secret__toggle {
-  color: #505050;
+  color: currentColor;
   margin-left: 0.5rem;
 }
 .secret__toggle:hover {
