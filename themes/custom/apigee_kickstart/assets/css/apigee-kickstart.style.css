@@ -11135,6 +11135,7 @@ ul.social-links li a {
   border: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.125);
   text-align: left;
+  text-transform: none;
 }
 .views-exposed-form .form-actions input:hover {
   text-decoration: none;
