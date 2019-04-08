@@ -1,17 +1,10 @@
-off-canvas:
+form:
   css:
     theme:
-      css/apigee_kickstart_customizer.off-canvas.css: {}
+      css/apigee_kickstart_customizer.farbtastic.css: {}
+      css/apigee_kickstart_customizer.form.css: {}
   js:
-    js/apigee_kickstart_customizer.off-canvas.js: {}
-  dependencies:
-    - core/jquery
-    - core/drupal
-    - apigee_kickstart_customizer/color
-
-color:
-  js:
-    js/apigee_kickstart_customizer.color.js: {}
+    js/apigee_kickstart_customizer.form.js: {}
   dependencies:
     - core/jquery
     - core/drupal

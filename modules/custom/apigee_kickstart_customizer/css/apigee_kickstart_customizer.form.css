@@ -1,0 +1,60 @@
+/*
+ * Copyright 2018 Google Inc.
+ *
+ * This program is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License version 2 as published by the
+ * Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public
+ * License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc., 51
+ * Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ */
+
+/**
+ * @file
+ * Add style fixes for the customizer form in an off-canvas dialog.
+ */
+#drupal-off-canvas .customizer-form .form-item + .form-item {
+  margin-top: 1rem;
+}
+
+#drupal-off-canvas .customizer-form #farbtastic-wrapper {
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+#drupal-off-canvas .customizer-form .farbtastic-help {
+  display: block;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+
+#drupal-off-canvas .customizer-form details {
+  background: #333 !important;
+}
+
+#drupal-off-canvas .customizer-form details > div {
+  padding: 0;
+  display: block;
+  background: #333 !important;
+}
+
+#drupal-off-canvas .customizer-form details > div > div,
+#drupal-off-canvas .customizer-form details > div label {
+  background: none !important;
+}
+
+#drupal-off-canvas .customizer-form details > summary,
+#drupal-off-canvas .customizer-form details summary:hover,
+#drupal-off-canvas .customizer-form details summary:focus{
+  background-color: #333 !important;
+  color: #eee !important;
+}

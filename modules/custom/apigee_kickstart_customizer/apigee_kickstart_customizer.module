@@ -36,12 +36,14 @@ function apigee_kickstart_customizer_toolbar() {
       'contexts' => [
         'user.permissions',
         'theme',
+        'url',
       ],
     ],
   ];
 
   if (!Drupal::service('apigee_kickstart_customizer')->isCustomizable()
-    || !\Drupal::currentUser()->hasPermission('administer themes')
+    || !Drupal::currentUser()->hasPermission('administer themes')
+    || !($active_theme = Drupal::theme()->getActiveTheme())
   ) {
     return $items;
   }
@@ -51,8 +53,14 @@ function apigee_kickstart_customizer_toolbar() {
     'tab' => [
       '#type' => 'link',
       '#title' => t('Customize'),
-      '#url' => Url::fromRoute('apigee_kickstart_customizer.customizer_theme_apigee_kickstart', [
-        'theme' => 'apigee_kickstart'
+      '#url' => Url::fromRoute('apigee_kickstart_customizer.form', [
+        'theme' => $active_theme->getName(),
+      ], [
+        'query' => [
+          // TODO: Figure out why Drupal::destination()->getAsArray() is not
+          // working here.
+          'destination' => Drupal::service('path.current')->getPath(),
+        ],
       ]),
       '#attributes' => [
         'class' => ['toolbar-icon', 'toolbar-icon-edit', 'use-ajax'],
@@ -69,7 +77,7 @@ function apigee_kickstart_customizer_toolbar() {
     ],
     '#attached' => [
       'library' => [
-        'apigee_kickstart_customizer/off-canvas',
+        'apigee_kickstart_customizer/form',
         'core/drupal.dialog.ajax',
       ],
     ],
@@ -82,11 +90,18 @@ function apigee_kickstart_customizer_toolbar() {
  * Implements hook_page_attachments_alter().
  */
 function apigee_kickstart_customizer_page_attachments_alter(array &$attachments) {
+  // TODO: Move this to a service.
   if ($theme = Drupal::theme()->getActiveTheme()->getName()) {
-    if ($values = Drupal::configFactory()->get('customizer.theme.' . $theme)->get('values')) {
+    if ($values = Drupal::configFactory()
+      ->get('customizer.theme.' . $theme)
+      ->get('values')) {
+
+      // TODO: Add scope support.
       $css = 'body {';
       foreach ($values as $name => $value) {
-        $css .= "$name: $value;";
+        if ($value) {
+          $css .= "$name: $value;";
+        }
       }
       $css .= '}';
 
@@ -96,7 +111,7 @@ function apigee_kickstart_customizer_page_attachments_alter(array &$attachments)
           '#weight' => 1000,
           '#value' => $css,
         ],
-        'customizer-css'
+        'customizer-css',
       ];
     }
   }

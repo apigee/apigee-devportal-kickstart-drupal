@@ -1,2 +1,7 @@
-route_callbacks:
-  - '\Drupal\apigee_kickstart_customizer\Routing\CustomizerRoutes::routes'
+apigee_kickstart_customizer.form:
+  path: '/admin/appearance/customizer/{theme}'
+  defaults:
+    _form: '\Drupal\apigee_kickstart_customizer\Form\CustomizerForm'
+    _title_callback: 'theme_handler:getName'
+  requirements:
+    _permission: 'administer themes'

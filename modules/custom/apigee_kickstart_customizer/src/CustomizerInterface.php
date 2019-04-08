@@ -32,6 +32,7 @@ interface CustomizerInterface {
    *   The name of the theme.
    *
    * @return bool
+   *   TRUE is the given theme is customizable.
    */
   public function isCustomizable($theme = NULL): bool;
 
@@ -39,6 +40,7 @@ interface CustomizerInterface {
    * Returns an array of customizable themes.
    *
    * @return \Drupal\Core\Extension\Extension[]
+   *   An array of theme extensions.
    */
   public function listAll(): array;
 
@@ -68,6 +70,7 @@ interface CustomizerInterface {
    * Returns an array of keys that are not passed down to the customizer.
    *
    * @return array
+   *   An array of reserved keys.
    */
   public function reservedKeys(): array;
 

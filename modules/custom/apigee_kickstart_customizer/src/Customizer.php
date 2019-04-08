@@ -26,6 +26,9 @@ use Drupal\Core\Extension\ThemeHandlerInterface;
 use Drupal\Core\Plugin\DefaultPluginManager;
 use Drupal\Core\Theme\ThemeManagerInterface;
 
+/**
+ * Defines the 'apigee_kickstart_customizer' service.
+ */
 class Customizer extends DefaultPluginManager implements CustomizerInterface {
 
   /**
@@ -53,9 +56,9 @@ class Customizer extends DefaultPluginManager implements CustomizerInterface {
    * CustomizerThemeHandler constructor.
    *
    * @param \Drupal\Core\Theme\ThemeManagerInterface $theme_manager
-   *  The theme manager.
+   *   The theme manager.
    * @param \Drupal\Core\Extension\ThemeHandlerInterface $theme_handler
-   *  The theme handler.
+   *   The theme handler.
    */
   public function __construct(ThemeManagerInterface $theme_manager, ThemeHandlerInterface $theme_handler) {
     $this->themeManager = $theme_manager;
@@ -69,7 +72,6 @@ class Customizer extends DefaultPluginManager implements CustomizerInterface {
   protected function getDiscovery() {
     return new YamlDiscovery('customizer', $this->themeHandler->getThemeDirectories());
   }
-
 
   /**
    * {@inheritdoc}
@@ -105,9 +107,7 @@ class Customizer extends DefaultPluginManager implements CustomizerInterface {
    * {@inheritdoc}
    */
   public function getDefinitionForTheme($theme = NULL): array {
-    if (!$theme) {
-      $theme = $this->activeTheme->getName();
-    }
+    $theme = $theme ?? $this->activeTheme->getName();
 
     $definitions = $this->getDefinitions();
     return isset($definitions[$theme]) ? $definitions[$theme] : [];
@@ -117,13 +117,11 @@ class Customizer extends DefaultPluginManager implements CustomizerInterface {
    * {@inheritdoc}
    */
   public function getConfig($theme = NULL): array {
-    if (!$theme) {
-      $theme = $this->activeTheme->getName();
-    }
+    $theme = $theme ?? $this->activeTheme->getName();
 
     // Load theme.
-    $theme = $this->themeHandler->getTheme($theme);
-    if (! $definitions = $this->getDefinitionForTheme($theme->getName())) {
+    if (!($theme = $this->themeHandler->getTheme($theme))
+      || !($definitions = $this->getDefinitionForTheme($theme->getName()))) {
       return [];
     }
 
@@ -138,4 +136,5 @@ class Customizer extends DefaultPluginManager implements CustomizerInterface {
       'stylesheet',
     ];
   }
+
 }
