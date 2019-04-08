@@ -1,0 +1,9 @@
+customizer.theme.*:
+  type: config_object
+  label: 'Customizer theme settings'
+  mapping:
+    values:
+      type: sequence
+      label: 'Values'
+      sequence:
+        type: string

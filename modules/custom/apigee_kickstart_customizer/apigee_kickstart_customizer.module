@@ -1,0 +1,118 @@
+<?php
+
+/**
+ * @file
+ * Copyright 2018 Google Inc.
+ *
+ * This program is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License version 2 as published by the
+ * Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public
+ * License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc., 51
+ * Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ */
+
+use Drupal\Component\Serialization\Json;
+use Drupal\Core\Url;
+
+/**
+ * @file
+ * Main module file for Apigee Kickstart Customizer.
+ */
+
+/**
+ * Implements hook_toolbar().
+ */
+function apigee_kickstart_customizer_toolbar() {
+  $items = [];
+  $items['customizer'] = [
+    '#cache' => [
+      'contexts' => [
+        'user.permissions',
+        'theme',
+        'url',
+      ],
+    ],
+  ];
+
+  if (!Drupal::service('apigee_kickstart_customizer')->isCustomizable()
+    || !Drupal::currentUser()->hasPermission('administer themes')
+    || !($active_theme = Drupal::theme()->getActiveTheme())
+  ) {
+    return $items;
+  }
+
+  $items['customizer'] += [
+    '#type' => 'toolbar_item',
+    'tab' => [
+      '#type' => 'link',
+      '#title' => t('Customize'),
+      '#url' => Url::fromRoute('apigee_kickstart_customizer.form', [
+        'theme' => $active_theme->getName(),
+      ], [
+        'query' => [
+          // TODO: Figure out why Drupal::destination()->getAsArray() is not
+          // working here.
+          'destination' => Drupal::service('path.current')->getPath(),
+        ],
+      ]),
+      '#attributes' => [
+        'class' => ['toolbar-icon', 'toolbar-icon-edit', 'use-ajax'],
+        'aria-pressed' => 'false',
+        'data-dialog-type' => 'dialog',
+        'data-dialog-renderer' => 'off_canvas',
+        'data-dialog-options' => Json::encode([
+          'width' => 350,
+        ]),
+      ],
+    ],
+    '#wrapper_attributes' => [
+      'class' => ['customizer-toolbar-tab'],
+    ],
+    '#attached' => [
+      'library' => [
+        'apigee_kickstart_customizer/form',
+        'core/drupal.dialog.ajax',
+      ],
+    ],
+  ];
+
+  return $items;
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function apigee_kickstart_customizer_page_attachments_alter(array &$attachments) {
+  // TODO: Move this to a service.
+  if ($theme = Drupal::theme()->getActiveTheme()->getName()) {
+    if ($values = Drupal::configFactory()
+      ->get('customizer.theme.' . $theme)
+      ->get('values')) {
+
+      // TODO: Add scope support.
+      $css = 'body {';
+      foreach ($values as $name => $value) {
+        if ($value) {
+          $css .= "$name: $value;";
+        }
+      }
+      $css .= '}';
+
+      $attachments['#attached']['html_head'][] = [
+        [
+          '#tag' => 'style',
+          '#weight' => 1000,
+          '#value' => $css,
+        ],
+        'customizer-css',
+      ];
+    }
+  }
+}

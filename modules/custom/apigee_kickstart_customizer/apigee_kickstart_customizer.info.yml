@@ -1,0 +1,5 @@
+name: Apigee Kickstart Customizer
+description: "Provides a UI for customizing the Apigee Kickstart theme."
+type: module
+core: 8.x
+package: Apigee Kickstart
