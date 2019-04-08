@@ -10619,7 +10619,10 @@ fieldset.closed legend button {
 .navbar-nav .nav-item {
   position: relative;
 }
-.navbar-nav .nav-item.active:after {
+.navbar-nav .nav-item .active .nav-link {
+  color: var(--ak-header-color);
+}
+.navbar-nav .nav-item .nav-link.is-active::after, .navbar-nav .nav-item.active::after {
   content: "";
   position: absolute;
   left: 0.5rem;
@@ -10630,12 +10633,9 @@ fieldset.closed legend button {
   display: none;
 }
 @media (min-width: 992px) {
-  .navbar-nav .nav-item.active:after {
+  .navbar-nav .nav-item .nav-link.is-active::after, .navbar-nav .nav-item.active::after {
     display: block;
   }
-}
-.navbar-nav .nav-item.active .nav-link {
-  color: var(--ak-header-color);
 }
 
 .navbar-brand {
