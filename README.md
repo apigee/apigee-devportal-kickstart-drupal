@@ -8,6 +8,10 @@ This project is a [Drupal installation profile](https://www.drupal.org/docs/8/di
 
 The core functionality of this profile is in active development. The features and functionality will evolve as the project grows. We encourage you to download and evaluate the profile, and to use our [GitHub issue queue](https://github.com/apigee/apigee-devportal-kickstart-drupal/issues) to give feedback, ask questions, or log issues.
 
+## Backlog items
+
+* **Apigee Edge configuration:** The ability to configure the site to an Apigee organization during installation.
+
 ## Prerequisites
 
 * [Git](https://git-scm.com)
