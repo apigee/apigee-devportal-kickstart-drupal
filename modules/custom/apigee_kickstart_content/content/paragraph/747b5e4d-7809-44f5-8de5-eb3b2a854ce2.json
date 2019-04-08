@@ -107,7 +107,7 @@
     ],
     "field_link": [
         {
-            "uri": "internal:#",
+            "uri": "internal:\/user\/register",
             "title": "Get Your Key",
             "options": []
         }

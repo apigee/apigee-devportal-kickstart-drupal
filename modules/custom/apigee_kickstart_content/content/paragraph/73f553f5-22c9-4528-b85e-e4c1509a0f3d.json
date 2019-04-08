@@ -107,7 +107,7 @@
     ],
     "field_link": [
         {
-            "uri": "internal:#",
+            "uri": "entity:node\/2",
             "title": "Get Started",
             "options": []
         }
