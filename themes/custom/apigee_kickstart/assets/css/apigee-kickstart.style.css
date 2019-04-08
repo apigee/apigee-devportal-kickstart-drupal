@@ -10638,9 +10638,13 @@ fieldset.closed legend button {
   color: var(--ak-header-color);
 }
 
+.navbar-brand {
+  display: flex;
+}
 .navbar-brand img {
   height: auto;
   width: auto !important;
+  max-height: 60px;
 }
 
 ul.social-links {

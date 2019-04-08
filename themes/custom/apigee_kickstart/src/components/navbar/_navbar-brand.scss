@@ -7,8 +7,11 @@
 //     this with theme settings + CSS Variables.
 
 .navbar-brand {
+  display: flex;
+
   img {
     height: auto;
     width: auto !important;
+    max-height: 60px;
   }
 }
