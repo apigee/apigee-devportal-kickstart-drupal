@@ -47,25 +47,23 @@
 .navbar-nav .nav-item {
   position: relative;
 
-  &.active {
+  .active .nav-link {
+    color: var(--ak-header-color);
+  }
 
-    &:after {
-      content: '';
-      position: absolute;
-      left: 0.5rem;
-      right: 0.5rem;
-      bottom: 2px;
-      height: 2px;
-      background-color: var(--ak-accent-color);
-      display: none;
+  .nav-link.is-active::after,
+  &.active::after {
+    content: '';
+    position: absolute;
+    left: 0.5rem;
+    right: 0.5rem;
+    bottom: 2px;
+    height: 2px;
+    background-color: var(--ak-accent-color);
+    display: none;
 
-      @include media-breakpoint-up(lg) {
-        display: block;
-      }
-    }
-
-    .nav-link {
-      color: var(--ak-header-color); // $white
+    @include media-breakpoint-up(lg) {
+      display: block;
     }
   }
 }
