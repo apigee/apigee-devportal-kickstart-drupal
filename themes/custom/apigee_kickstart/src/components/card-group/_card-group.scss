@@ -1,0 +1,8 @@
+// Style for the Card group component
+// -----------------------------------------------------------------------------
+
+.card-group__title {
+  @include media-breakpoint-down(md) {
+    font-size: 1.5rem;
+  }
+}

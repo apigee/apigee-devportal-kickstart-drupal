@@ -40,6 +40,7 @@
   grid-column: main / media-end;
   justify-content: center;
   text-align: center;
+  padding-right: 15px;
 
   @include media-breakpoint-up(md) {
     text-align: left;

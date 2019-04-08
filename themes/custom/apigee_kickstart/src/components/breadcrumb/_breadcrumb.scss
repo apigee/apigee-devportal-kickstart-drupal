@@ -14,17 +14,17 @@
 // -----------------------------------------------------------------------------
 
 .breadcrumb {
-  background-color: var(--ak-accent-bg);
+  background-color: var(--ak-accent-color);
 }
 
 .breadcrumb-item {
   + .breadcrumb-item {
     &::before {
-      color: var(--ak-accent-color);
+      color: var(--ak-accent-color-light);
     }
   }
 
   &.active {
-    color: var(--ak-accent-color);
+    color: var(--ak-accent-color-light);
   }
 }

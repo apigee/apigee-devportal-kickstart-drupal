@@ -1,3 +1,6 @@
+// Style for the text + image component
+// -----------------------------------------------------------------------------
+
 .text-image {
   @include media-breakpoint-up(lg) {
     height: 480px;
@@ -20,7 +23,7 @@
         [gutter-right] 15px;
   }
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(md) {
     // 720 (15 + 345 + 345 + 15)
     grid-template-columns:
       [gutter-left] minmax(15px, 1fr)
@@ -52,11 +55,20 @@
   }
 }
 
+.text-image__title {
+  @include media-breakpoint-down(md) {
+    font-size: 1.5rem;
+  }
+}
+
 .text-image__text {
   display: grid;
   grid-column: main;
   justify-content: center;
-  padding-right: 85px;
+
+  @include media-breakpoint-up(lg) {
+    padding-right: 85px;
+  }
 }
 
 .text-image__image {

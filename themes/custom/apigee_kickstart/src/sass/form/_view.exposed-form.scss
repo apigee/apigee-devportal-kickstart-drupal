@@ -29,13 +29,13 @@
       font-size: .875rem;
       letter-spacing: 1px;
       background-color: transparent;
-      color: $primary;
+      color: var(--ak-accent-color);
       border: 0;
       border-top: 1px solid $card-border-color;
       text-align: left;
+      text-transform: none;
 
       &:hover {
-        color: $dark;
         text-decoration: none;
       }
 

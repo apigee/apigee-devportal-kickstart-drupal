@@ -17,20 +17,15 @@ details.details {
     font-size: 1.25rem;
   }
 
-  &::after {
-    background: transparent $details-icon-down no-repeat 50% 50%;
-    background-size: 100% auto;
-    color: $blue;
-    content: '';
+  .details__icon {
+    color: var(--ak-accent-color);
     position: absolute;
     top: 0;
     right: 0;
-    width: 18px;
-    height: 12px;
   }
 
-  .details[open] > &::after {
-    background-image: $details-icon-up;
+  .details[open] > & .details__icon {
+    transform: rotate(-180deg);
   }
 
   &:focus {

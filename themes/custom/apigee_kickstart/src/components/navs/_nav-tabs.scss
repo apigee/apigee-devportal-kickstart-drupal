@@ -28,12 +28,12 @@
 
     &.active {
       color: $gray-900;
-      border-bottom-color: var(--ak-accent-bg);
+      border-bottom-color: var(--ak-accent-color);
 
       &:after {
         content: "";
         height: 4px;
-        background-color: var(--ak-accent-bg);
+        background-color: var(--ak-accent-color);
         position: absolute;
         left: 0;
         right: 0;
