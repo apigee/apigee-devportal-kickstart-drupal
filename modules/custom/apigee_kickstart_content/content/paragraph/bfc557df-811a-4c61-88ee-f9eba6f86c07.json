@@ -107,7 +107,7 @@
     ],
     "field_link": [
         {
-            "uri": "internal:#",
+            "uri": "internal:\/apis",
             "title": "Get Documentation",
             "options": []
         }
