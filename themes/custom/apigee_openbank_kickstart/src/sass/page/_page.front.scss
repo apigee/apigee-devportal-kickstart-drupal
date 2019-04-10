@@ -1,0 +1,49 @@
+.path-frontpage {
+  .card {
+    background: rgba($card-bg, 0.9);
+    text-align: center;
+
+    &:hover {
+      background: $card-bg;
+
+      .card-footer {
+        background: transparent;
+        color: $orange;
+      }
+    }
+
+    > a {
+      color: $gray-800;
+    }
+  }
+
+  .card-img-top {
+    padding: 1.25rem;
+
+    img {
+      height: 120px;
+      width: 120px;
+    }
+  }
+
+  .card-title {
+    color: $dark-blue;
+    font-size: 1.25rem;
+  }
+
+  .card-body p {
+    font-size: 1rem;
+  }
+
+  .card-footer {
+    border-top: 0;
+    color: $orange;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .hero,
+  .bg-light {
+    background: $light-bg !important;
+  }
+}

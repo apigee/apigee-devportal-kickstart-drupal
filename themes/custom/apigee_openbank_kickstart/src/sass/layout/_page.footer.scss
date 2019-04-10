@@ -8,10 +8,14 @@
   }
 }
 
-.footer .nav {
-  margin-left: -0.5rem;
+.footer {
+  background: rgba($dark-blue, 0.9);
+
+  .nav {
+    margin-left: -0.5rem;
+  }
 }
 
 .copyright {
-  background: rgba($dark, .9);
+  background: $dark-blue;
 }

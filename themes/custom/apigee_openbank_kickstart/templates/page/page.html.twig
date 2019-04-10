@@ -16,7 +16,7 @@
     placement: 'sticky-top',
     container: 'fixed',
     color: 'dark',
-    utility_classes: ['bg-dark'],
+    utility_classes: ['bg-primary'],
   } %}
 
     {% block branding %}
@@ -103,7 +103,7 @@
   {% if page.footer or page.copyright %}
     <footer class="page__footer">
       {% if page.footer %}
-        <div class="footer bg-dark text-light pt-5 pb-4 pb-md-8">
+        <div class="footer text-light pt-5 pb-4 pb-md-8">
           <div class="container">
             <div class="d-md-flex justify-content-md-between">
               {{ page.footer }}

@@ -4040,7 +4040,7 @@ input[type=button].btn-block {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #fff;
+  background-color: #f7f6e4;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 2px;
@@ -9993,12 +9993,15 @@ small {
   color: #fff;
 }
 
+.footer {
+  background: rgba(33, 77, 135, 0.9);
+}
 .footer .nav {
   margin-left: -0.5rem;
 }
 
 .copyright {
-  background: rgba(85, 85, 85, 0.9);
+  background: #214D87;
 }
 
 .alert {
@@ -11030,4 +11033,43 @@ details .form-select {
 }
 .view-faq .item-list li:last-child {
   border-bottom: solid 1px #ddd;
+}
+
+.path-frontpage .card {
+  background: rgba(247, 246, 228, 0.9);
+  text-align: center;
+}
+.path-frontpage .card:hover {
+  background: #f7f6e4;
+}
+.path-frontpage .card:hover .card-footer {
+  background: transparent;
+  color: #fd7e14;
+}
+.path-frontpage .card > a {
+  color: #555;
+}
+.path-frontpage .card-img-top {
+  padding: 1.25rem;
+}
+.path-frontpage .card-img-top img {
+  height: 120px;
+  width: 120px;
+}
+.path-frontpage .card-title {
+  color: #214D87;
+  font-size: 1.25rem;
+}
+.path-frontpage .card-body p {
+  font-size: 1rem;
+}
+.path-frontpage .card-footer {
+  border-top: 0;
+  color: #fd7e14;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.path-frontpage .hero,
+.path-frontpage .bg-light {
+  background: #eff3f6 !important;
 }
