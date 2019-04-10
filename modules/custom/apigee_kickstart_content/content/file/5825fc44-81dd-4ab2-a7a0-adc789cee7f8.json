@@ -1,0 +1,87 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/sites\/default\/files\/2019-04\/chuttersnap-255216-unsplash_0.png"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 17
+        }
+    ],
+    "uuid": [
+        {
+            "value": "5825fc44-81dd-4ab2-a7a0-adc789cee7f8"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "24482b6d-ec75-4b49-b5e6-353844c52b13"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "chuttersnap-255216-unsplash.png"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/2019-04\/chuttersnap-255216-unsplash_0.png",
+            "url": "\/sites\/default\/files\/2019-04\/chuttersnap-255216-unsplash_0.png"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "image\/png"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 2261757
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-04-10T13:33:10+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2019-04-10T13:33:15+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ]
+}
