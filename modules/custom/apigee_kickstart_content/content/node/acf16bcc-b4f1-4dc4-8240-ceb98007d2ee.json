@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/welcome?_format=hal_json"
+            "href": "http:\/\/default\/home?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/node\/landing"
@@ -219,7 +219,7 @@
     ],
     "title": [
         {
-            "value": "Welcome",
+            "value": "Home",
             "lang": "en"
         }
     ],
