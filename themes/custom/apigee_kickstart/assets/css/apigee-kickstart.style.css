@@ -10947,6 +10947,8 @@ ul.social-links li a {
   }
 }
 .title-bar__icon svg.svg-inline--fa {
+  align-items: center;
+  display: flex;
   height: 18px;
   width: 18px;
 }
