@@ -64,7 +64,9 @@ function template_preprocess_apidoc(&$variables) {
   $variables['entity'] = $entity = $variables['elements']["#apidoc"];
 
   // Add a link to the entity.
-  $variables['content']['field_link'] = $entity->toLink(t('View Documentation'))->toRenderable();
+  if ($view_mode == 'card') {
+      $variables['content']['field_link'] = $entity->toLink(t('View Documentation'))->toRenderable();
+  }
 }
 
 /**

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c7dc735a65d939f0b8bb21812d45fcb4",
+    "content-hash": "3bbaa481db3ccbe071a32902ac0426e9",
     "packages": [
         {
             "name": "apigee/apigee-client-php",
@@ -1285,7 +1285,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/apigee_edge.git",
-                "reference": "ec2aa48ead414e0629bf70748e0238957e843537"
+                "reference": "c4e248d3f2186e2bbdd45cd343d5a502db1c9217"
             },
             "require": {
                 "apigee/apigee-client-php": "^2.0.1",
@@ -1309,8 +1309,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-rc1+19-dev",
-                    "datestamp": "1553318288",
+                    "version": "8.x-1.0-rc2+0-dev",
+                    "datestamp": "1554779588",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
@@ -1357,7 +1357,7 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/apigee_edge"
             },
-            "time": "2019-03-21T19:40:11+00:00"
+            "time": "2019-04-09T00:54:44+00:00"
         },
         {
             "name": "drupal/better_exposed_filters",
@@ -2282,7 +2282,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/radix.git",
-                "reference": "60d0f938a16f9acbe1f8637b033a6061d1e65240"
+                "reference": "0d1c9ac3a1b77ab561398775cff17c6fc31a0411"
             },
             "require": {
                 "drupal/components": "^1.0",
@@ -2294,8 +2294,8 @@
                     "dev-4.x": "4.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-4.1+1-dev",
-                    "datestamp": "1554116581",
+                    "version": "8.x-4.1+5-dev",
+                    "datestamp": "1554541385",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
@@ -2324,15 +2324,21 @@
                 "source": "https://git.drupalcode.org/project/radix",
                 "issues": "https://www.drupal.org/project/issues/radix"
             },
-            "time": "2019-04-01T11:22:52+00:00"
+            "time": "2019-04-06T08:58:19+00:00"
         },
         {
-            "name": "drupal/swagger_ui_formatter",
-            "version": "dev-2.x",
+            "name": "drupal/svg_image",
+            "version": "1.9.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/swagger_ui_formatter.git",
-                "reference": "8aa7cbc6083f47a22b9259b5d35c93cdf78bbc96"
+                "url": "https://git.drupalcode.org/project/svg_image.git",
+                "reference": "8.x-1.9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/svg_image-8.x-1.9.zip",
+                "reference": "8.x-1.9",
+                "shasum": "7b193de6ec7b7fc3626f170d0f5f8fccaa2f26bf"
             },
             "require": {
                 "drupal/core": "*"
@@ -2340,11 +2346,53 @@
             "type": "drupal-module",
             "extra": {
                 "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.9",
+                    "datestamp": "1548492180",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "zvse",
+                    "homepage": "https://www.drupal.org/user/2870933"
+                }
+            ],
+            "description": "Overrides the standard image formatter and widget to support SVG files.",
+            "homepage": "https://www.drupal.org/project/svg_image",
+            "support": {
+                "source": "https://git.drupalcode.org/project/svg_image"
+            }
+        },
+        {
+            "name": "drupal/swagger_ui_formatter",
+            "version": "dev-2.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/swagger_ui_formatter.git",
+                "reference": "d929c12ed880d6a4c93d9a2383788d97e67cc968"
+            },
+            "require": {
+                "drupal/core": "*",
+                "symfony/dom-crawler": "~3.4|~4.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.1+4-dev",
-                    "datestamp": "1548328980",
+                    "version": "8.x-2.1+6-dev",
+                    "datestamp": "1554140285",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
@@ -2387,7 +2435,7 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/swagger_ui_formatter"
             },
-            "time": "2019-04-01T17:26:07+00:00"
+            "time": "2019-04-04T12:33:53+00:00"
         },
         {
             "name": "drupal/token",
@@ -4107,6 +4155,63 @@
             "description": "Symfony DependencyInjection Component",
             "homepage": "https://symfony.com",
             "time": "2019-03-25T07:48:46+00:00"
+        },
+        {
+            "name": "symfony/dom-crawler",
+            "version": "v4.2.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/dom-crawler.git",
+                "reference": "53c97769814c80a84a8403efcf3ae7ae966d53bb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/53c97769814c80a84a8403efcf3ae7ae966d53bb",
+                "reference": "53c97769814c80a84a8403efcf3ae7ae966d53bb",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3",
+                "symfony/polyfill-ctype": "~1.8",
+                "symfony/polyfill-mbstring": "~1.0"
+            },
+            "require-dev": {
+                "symfony/css-selector": "~3.4|~4.0"
+            },
+            "suggest": {
+                "symfony/css-selector": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\DomCrawler\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony DomCrawler Component",
+            "homepage": "https://symfony.com",
+            "time": "2019-02-23T15:17:42+00:00"
         },
         {
             "name": "symfony/event-dispatcher",

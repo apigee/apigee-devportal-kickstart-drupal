@@ -8,3 +8,10 @@ secret:
   dependencies:
     - core/jquery
     - core/drupal
+hash_url:
+  version: 1.0
+  js:
+    js/apigee_openbank_kickstart_enhancement.hash-url.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

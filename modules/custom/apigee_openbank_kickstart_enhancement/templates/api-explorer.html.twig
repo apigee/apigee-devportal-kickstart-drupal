@@ -1,0 +1,29 @@
+{{ attach_library('apigee_openbank_kickstart_enhancement/hash_url') }}
+{% if items %}
+  <ul id="api-explorer">
+    {% for item in items %}
+      <li class="api-explorer-item">
+        <strong><a href={{ base_path ~ item.uri }}>{{ item.label }}</a></strong>
+        {% if item.methods %}
+          <ul>
+            {% for method in item.methods %}
+              <a href={{ base_path ~ item.uri ~ method.uri }}>
+                <li class="api-explorer-item" class={{ method.method }}>
+                  <div><span class="api-explorer-method">{{ method.method | capitalize }}</span>
+                  {% if method.auth_required %}
+                    <i class="fa fa-lock api-explorer-lock" aria-hidden="true"></i>
+                  {% endif %}
+                  <span class="api-explorer-operation-id">{{ method.operation_id }}</span>
+                  </div>
+                  <div>
+                    {{ method.path }}
+                  </div>
+                </li>
+              </a>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
