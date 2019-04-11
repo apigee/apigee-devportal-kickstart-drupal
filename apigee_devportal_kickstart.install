@@ -45,6 +45,7 @@ function apigee_devportal_kickstart_install() {
   $filesets = [
     '' => [
       'aditya-vyas-1392552-unsplash.jpg',
+      'chuttersnap-255216-unsplash.png',
       'donald-giannatti-671274-unsplash.jpg',
       'nasa-43567-unsplash.jpg',
       'nasa-43569-unsplash.jpg',

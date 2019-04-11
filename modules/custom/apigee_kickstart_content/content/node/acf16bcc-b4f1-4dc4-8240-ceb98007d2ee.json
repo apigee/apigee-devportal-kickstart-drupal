@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/welcome?_format=hal_json"
+            "href": "http:\/\/default\/home?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/node\/landing"
@@ -219,7 +219,7 @@
     ],
     "title": [
         {
-            "value": "Welcome",
+            "value": "Home",
             "lang": "en"
         }
     ],
@@ -232,7 +232,7 @@
     ],
     "changed": [
         {
-            "value": "2019-04-08T14:25:38+00:00",
+            "value": "2019-04-10T14:07:05+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
@@ -263,7 +263,7 @@
     ],
     "path": [
         {
-            "alias": "\/welcome",
+            "alias": "\/home",
             "pid": 26,
             "langcode": "en",
             "lang": "en"

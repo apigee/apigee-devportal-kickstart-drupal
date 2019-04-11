@@ -1,14 +1,14 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/media\/3?_format=hal_json"
+            "href": "http:\/\/default\/media\/9?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
         },
         "http:\/\/drupal.org\/rest\/relation\/media\/image\/thumbnail": [
             {
-                "href": "http:\/\/default\/sites\/default\/files\/nasa-89116-unsplash.jpg",
+                "href": "http:\/\/default\/sites\/default\/files\/2019-04\/chuttersnap-255216-unsplash_0.png",
                 "lang": "en"
             }
         ],
@@ -20,24 +20,24 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/media\/image\/field_media_image": [
             {
-                "href": "http:\/\/default\/sites\/default\/files\/nasa-89116-unsplash.jpg",
+                "href": "http:\/\/default\/sites\/default\/files\/2019-04\/chuttersnap-255216-unsplash_0.png",
                 "lang": "en"
             }
         ]
     },
     "mid": [
         {
-            "value": 3
+            "value": 9
         }
     ],
     "uuid": [
         {
-            "value": "e5ef1b62-468c-42be-a305-d0005c029619"
+            "value": "08ad78f2-dcad-403e-8ca6-4c2ae1555216"
         }
     ],
     "vid": [
         {
-            "value": 3
+            "value": 9
         }
     ],
     "langcode": [
@@ -65,7 +65,7 @@
     ],
     "name": [
         {
-            "value": "nasa-89116-unsplash.jpg",
+            "value": "chuttersnap-255216-unsplash.png",
             "lang": "en"
         }
     ],
@@ -74,7 +74,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/nasa-89116-unsplash.jpg"
+                        "href": "http:\/\/default\/sites\/default\/files\/2019-04\/chuttersnap-255216-unsplash_0.png"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -82,7 +82,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "67087e35-c4e4-4f3b-8757-99a60bc95bb8"
+                        "value": "5825fc44-81dd-4ab2-a7a0-adc789cee7f8"
                     }
                 ],
                 "lang": "en"
@@ -110,7 +110,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/nasa-89116-unsplash.jpg"
+                        "href": "http:\/\/default\/sites\/default\/files\/2019-04\/chuttersnap-255216-unsplash_0.png"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -118,7 +118,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "67087e35-c4e4-4f3b-8757-99a60bc95bb8"
+                        "value": "5825fc44-81dd-4ab2-a7a0-adc789cee7f8"
                     }
                 ],
                 "lang": "en"
@@ -127,14 +127,14 @@
     },
     "created": [
         {
-            "value": "2019-03-15T18:48:27+00:00",
+            "value": "2019-04-10T13:33:10+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "changed": [
         {
-            "value": "2019-03-15T18:48:27+00:00",
+            "value": "2019-04-10T13:33:10+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }

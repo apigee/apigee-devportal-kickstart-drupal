@@ -10521,57 +10521,48 @@ fieldset.closed legend button {
   min-height: 130px;
 }
 
+.hero {
+  position: relative;
+}
+.hero .field {
+  width: 100%;
+}
 @media (min-width: 768px) {
   .hero {
     height: 400px;
   }
 }
 
-.hero__wrapper {
-  align-items: center;
-  display: grid;
-  justify-content: center;
-  max-height: 400px;
-  grid-template-columns: [gutter-left] minmax(15px, 1fr) [main] minmax(0, 276px) [media] minmax(0, 414px) [gutter-right] minmax(15px, 1fr);
-}
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .hero__wrapper {
-    grid-template-columns: [gutter-left] minmax(15px, 1fr) [main] minmax(0, 372px) [media] minmax(0, 558px) [gutter-right] minmax(15px, 1fr);
-  }
-}
-@media (min-width: 1200px) {
-  .hero__wrapper {
-    grid-template-columns: [gutter-left] minmax(15px, 1fr) [main] minmax(0, 440px) [media] minmax(0, 670px) [gutter-right] minmax(15px, 1fr);
+    height: 100%;
   }
 }
 
-.hero__content {
-  display: grid;
-  grid-column: main/media-end;
-  justify-content: center;
-  text-align: center;
-  padding-right: 15px;
-}
-@media (min-width: 768px) {
-  .hero__content {
-    text-align: left;
-    grid-column: main;
-    padding-right: 85px;
-  }
-}
-
-@media (min-width: 768px) {
-  .hero__media {
-    grid-column: media/gutter-right-end;
-  }
+.hero__media {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
 }
 @media (min-width: 768px) {
   .hero__media img {
     height: 400px;
-    -o-object-fit: cover;
-       object-fit: cover;
+    -o-object-fit: fill;
+       object-fit: fill;
     width: 100%;
   }
+}
+
+.hero__content {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 100%;
+  z-index: 1;
 }
 
 .navbar {
@@ -10947,6 +10938,8 @@ ul.social-links li a {
   }
 }
 .title-bar__icon svg.svg-inline--fa {
+  align-items: center;
+  display: flex;
   height: 18px;
   width: 18px;
 }
@@ -11021,7 +11014,7 @@ ul.social-links li a {
   font-size: 0.875rem;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
 }
 @media (min-width: 576px) {
   .app .tab-pane .field,

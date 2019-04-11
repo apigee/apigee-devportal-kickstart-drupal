@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 13_4_2600x800
+label: '13:4 Ratio - Max 2600 x 800'
+effects:
+  370e9c59-8eb7-45f7-90d7-1d61abade783:
+    uuid: 370e9c59-8eb7-45f7-90d7-1d61abade783
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 2600
+      height: 800
+      anchor: center-center
