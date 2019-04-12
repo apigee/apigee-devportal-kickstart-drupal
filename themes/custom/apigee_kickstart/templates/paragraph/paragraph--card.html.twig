@@ -8,6 +8,7 @@
 {% block paragraph %}
 
   {% include '@apigee-kickstart/card/card.twig' with {
+    print_attributes: true,
     classes: classes,
     image: content.field_image,
     title: content.field_title,

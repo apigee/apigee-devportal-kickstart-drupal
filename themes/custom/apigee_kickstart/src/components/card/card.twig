@@ -11,7 +11,19 @@
   hover_shadow ? 'has-hover-shadow' : ''
 ]|merge(classes|default([])) %}
 
-<div class="{{ classes|join(' ')|trim }}">
+{% if print_attributes and attributes %}
+  {# This is a workaround for QuickEdit that allows the extending template to
+  print the attributes in this component template, as opposed to the paragraph
+  wrapper. When displaying a card in a cark deck, the card needs to be a direct
+  descendant, and cannot have an "extra" element in between. Just removing the
+  Paragraph wrapper is an option, but doing so also omits attributes needed by
+  QuickEdit, and that cause a JavaScript error. This code allows both attributes
+  to be printed, and the card deck component to work as designed. #}
+  <div{{ attributes.addClass(classes) }}
+{% else %}
+  <div class="{{ classes|join(' ')|trim }}">
+{% endif %}
+
   {% if url %}
     <a href="{{ url }}">
   {% endif %}
@@ -25,7 +37,7 @@
     {% if title or body %}
       <div class="card-body">
         {% if title %}
-          <h4>{{ title }}</h4>
+          <h4 class="card-title">{{ title }}</h4>
         {% endif %}
         {% block body %}
           {{ body }}
