@@ -39,12 +39,14 @@
     {% endblock %}
   {% endembed %}
 
-  {% if page.breadcrumbs %}
-    <div class="page__breadcrumbs">
+  {% if page.breadcrumbs|render %}
+    <nav aria-label="breadcrumb" class="page__breadcrumbs">
       <div class="container">
-        {{ page.breadcrumbs }}
+        <ol class="breadcrumb">
+          {{ page.breadcrumbs }}
+        </ol>
       </div>
-    </div>
+    </nav>
   {% endif %}
 
   {% if page.header|render %}
