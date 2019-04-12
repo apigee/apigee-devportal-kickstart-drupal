@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/sites\/default\/files\/2019-04\/chuttersnap-255216-unsplash_0.png"
+            "href": "http:\/\/default\/sites\/default\/files\/chuttersnap-255216-unsplash.png"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -53,8 +53,8 @@
     ],
     "uri": [
         {
-            "value": "public:\/\/2019-04\/chuttersnap-255216-unsplash_0.png",
-            "url": "\/sites\/default\/files\/2019-04\/chuttersnap-255216-unsplash_0.png"
+            "value": "public:\/\/chuttersnap-255216-unsplash.png",
+            "url": "\/sites\/default\/files\/chuttersnap-255216-unsplash.png"
         }
     ],
     "filemime": [

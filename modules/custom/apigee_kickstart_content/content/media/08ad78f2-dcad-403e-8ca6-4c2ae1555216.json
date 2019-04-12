@@ -8,7 +8,7 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/media\/image\/thumbnail": [
             {
-                "href": "http:\/\/default\/sites\/default\/files\/2019-04\/chuttersnap-255216-unsplash_0.png",
+                "href": "http:\/\/default\/sites\/default\/files\/chuttersnap-255216-unsplash.png",
                 "lang": "en"
             }
         ],
@@ -20,7 +20,7 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/media\/image\/field_media_image": [
             {
-                "href": "http:\/\/default\/sites\/default\/files\/2019-04\/chuttersnap-255216-unsplash_0.png",
+                "href": "http:\/\/default\/sites\/default\/files\/chuttersnap-255216-unsplash.png",
                 "lang": "en"
             }
         ]
@@ -74,7 +74,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/2019-04\/chuttersnap-255216-unsplash_0.png"
+                        "href": "http:\/\/default\/sites\/default\/files\/chuttersnap-255216-unsplash.png"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -110,7 +110,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/2019-04\/chuttersnap-255216-unsplash_0.png"
+                        "href": "http:\/\/default\/sites\/default\/files\/chuttersnap-255216-unsplash.png"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
