@@ -1,5 +1,10 @@
+.breadcrumb {
+  padding: 0;
+}
 
 .breadcrumb-item {
+  padding-bottom: $breadcrumb-padding-y;
+  padding-top: $breadcrumb-padding-y;
   a {
     font-size: 0.875rem;
     letter-spacing: 1px;
