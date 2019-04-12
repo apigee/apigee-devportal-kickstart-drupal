@@ -39,6 +39,19 @@ class ApigeeEdgeConfigurationForm extends AuthenticationForm {
     // Add a form title for the installer.
     $form['#title'] = $this->t('Configure Apigee Edge');
 
+    // Show help text.
+    $form['help'] = [
+      '#theme' => 'status_messages',
+      '#message_list' => [
+        MessengerInterface::TYPE_WARNING => [
+          $this->t('Note: Your connection settings are going to be saved in Drupal\'s configuration system. If you wish to do this later or <a href=":url" target="_blank">use a different key provider</a>, you may skip this step.', [
+            ':url' => 'https://www.drupal.org/docs/8/modules/apigee-edge/configure-the-connection-to-apigee-edge',
+          ]),
+        ],
+      ],
+      '#weight' => -100,
+    ];
+
     // Hide the test_connection fields.
     $form['test_connection']['#access'] = FALSE;
 
