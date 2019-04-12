@@ -21,7 +21,9 @@
 namespace Drupal\apigee_devportal_kickstart\Installer\Form;
 
 use Drupal\apigee_edge\Form\AuthenticationForm;
+use Drupal\apigee_edge\Plugin\EdgeKeyTypeInterface;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Messenger\MessengerInterface;
 
 /**
  * Configuration form for Apigee Edge.
@@ -60,6 +62,41 @@ class ApigeeEdgeConfigurationForm extends AuthenticationForm {
     if ((string) $form_state->getValue('op') !== (string) $form['actions']['skip']['#value']) {
       parent::validateForm($form, $form_state);
     }
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function submitForm(array &$form, FormStateInterface $form_state) {
+    // Clear error messages.
+    $this->messenger->deleteByType(MessengerInterface::TYPE_ERROR);
+
+    // \Drupal\apigee_edge\Form\AuthenticationForm::submitForm is not saving
+    // keys properly. For now we fix this here.
+    // TODO: Remove this when above is fixed.
+    // Get the processed value from the form state.
+    $processed_submitted = $form_state->get('processed_submitted');
+
+    if (!empty($processed_submitted) && $this->keyIsWritable($this->activeKey)) {
+      // Set the active key's value.
+      $this->activeKey->setKeyValue($processed_submitted);
+      $this->activeKey->save();
+    }
+
+    // The only time `submitForm` gets called is when the key provider is
+    // writable so submitted values should be available here. The only time the
+    // values wouldn't be available is if the token input type was changed.
+    $auth_type = $form_state->getUserInput()['key_input_settings']['auth_type'] ?? FALSE;
+    if ($auth_type === EdgeKeyTypeInterface::EDGE_AUTH_TYPE_OAUTH) {
+      // Make sure we don't try to re-use old tokens.
+      $this->oauthTokenStorage->removeToken();
+    }
+    else {
+      // Since OAUTH isn't being used clean up by removing the storage file.
+      $this->oauthTokenStorage->removeTokenFile();
+    }
+
+    parent::submitForm($form, $form_state);
   }
 
   /**
