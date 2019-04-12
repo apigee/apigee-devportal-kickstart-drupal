@@ -5,8 +5,8 @@
     letter-spacing: 1px;
   }
 
-  + .breadcrumb-item::before {
-    padding-left: 0.375rem;
+  + .breadcrumb-item::after {
+    padding-right: 0.375rem;
   }
 }
 
