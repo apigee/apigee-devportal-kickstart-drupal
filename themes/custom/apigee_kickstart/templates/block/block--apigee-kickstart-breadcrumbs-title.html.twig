@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * Template for the 'Breadcrumbs: Page title' block.
+ */
+#}
+
+{% embed '@radix/block/block.twig' with {
+  html_tag: 'li',
+  utility_classes: [
+    'breadcrumb-item',
+    'active'
+  ]
+} %}
+  {% block content %}
+    {{ content['#title'] }}
+  {% endblock %}
+{% endembed %}

@@ -10094,23 +10094,24 @@ body,
   display: none;
 }
 
-.breadcrumb-item a {
-  font-size: 0.875rem;
-  letter-spacing: 1px;
-}
-.breadcrumb-item + .breadcrumb-item::before {
-  padding-left: 0.375rem;
-}
-
 .breadcrumb {
   background-color: var(--ak-accent-color);
+  padding: 0;
 }
 
-.breadcrumb-item + .breadcrumb-item::before {
-  color: var(--ak-accent-color-light);
+.breadcrumb-item {
+  padding-bottom: 0.375rem;
+  padding-top: 0.375rem;
 }
 .breadcrumb-item.active {
   color: var(--ak-accent-color-light);
+}
+.breadcrumb-item + .breadcrumb-item::after {
+  padding-right: 0.375rem;
+}
+.breadcrumb-item a {
+  font-size: 0.875rem;
+  letter-spacing: 1px;
 }
 
 .btn {
