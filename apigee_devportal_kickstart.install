@@ -23,6 +23,7 @@
  * Install, update and uninstall functions for Apigee Kickstart profile.
  */
 
+use Drupal\apigee_devportal_kickstart\Installer\Form\ApigeeEdgeConfigurationForm;
 use Drupal\Core\Messenger\MessengerInterface;
 
 /**
@@ -72,10 +73,28 @@ function apigee_devportal_kickstart_install() {
         if (!empty($destination)) {
           file_prepare_directory($directory, FILE_CREATE_DIRECTORY);
         }
-        file_unmanaged_copy($src_path . '/' . $file, $directory. $file);
+        file_unmanaged_copy($src_path . '/' . $file, $directory . $file);
       }
     }
   }
+}
+
+/**
+ * Implements hook_install_tasks_alter().
+ */
+function apigee_devportal_kickstart_install_tasks_alter(&$tasks, $install_state) {
+  // Add a task for configuring Apigee Edge Authentication.
+  $tasks_copy = $tasks;
+  $apigee_edge_configure_form = [
+    'apigee_edge_configure_form' => [
+      'display_name' => t('Configure Apigee Edge'),
+      'type' => 'form',
+      'function' => ApigeeEdgeConfigurationForm::class,
+    ],
+  ];
+
+  // The task should run before install_configure_form which creates the user.
+  $tasks = array_slice($tasks_copy, 0, array_search('install_configure_form', array_keys($tasks))) + $apigee_edge_configure_form + $tasks_copy;
 }
 
 /**
