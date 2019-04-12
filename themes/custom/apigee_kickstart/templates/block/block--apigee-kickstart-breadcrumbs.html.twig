@@ -1,0 +1,17 @@
+{#
+/**
+ * @file
+ * Template for the 'Breadcrumbs' block.
+ */
+#}
+
+{% embed '@radix/block/block.twig' with {
+  html_tag: 'li'
+} %}
+  {% block content %}
+    {# Contextual links. #}
+  {% endblock %}
+{% endembed %}
+
+{# Breadcrumbs #}
+{{ content }}
