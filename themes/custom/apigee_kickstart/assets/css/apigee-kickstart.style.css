@@ -10106,9 +10106,6 @@ body,
   background-color: var(--ak-accent-color);
 }
 
-.breadcrumb-item + .breadcrumb-item::before {
-  color: var(--ak-accent-color-light);
-}
 .breadcrumb-item.active {
   color: var(--ak-accent-color-light);
 }

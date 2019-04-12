@@ -18,12 +18,6 @@
 }
 
 .breadcrumb-item {
-  + .breadcrumb-item {
-    &::before {
-      color: var(--ak-accent-color-light);
-    }
-  }
-
   &.active {
     color: var(--ak-accent-color-light);
   }
