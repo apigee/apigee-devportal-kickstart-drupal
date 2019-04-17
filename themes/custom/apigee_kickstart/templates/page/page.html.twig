@@ -81,11 +81,11 @@
     {% block content %}
       {% if page.content %}
         <div class="page__content">
-          {% if not node.field_content.value %}
+          {% if not node.field_content %}
             <div class="container py-5">
           {% endif %}
             {{ page.content }}
-          {% if not node.field_content.value %}
+          {% if not node.field_content %}
             </div>
           {% endif %}
         </div>
