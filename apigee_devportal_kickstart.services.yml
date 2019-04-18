@@ -1,0 +1,3 @@
+services:
+  apigee_devportal_kickstart.manager:
+    class: Drupal\apigee_devportal_kickstart\ApigeeDevportalKickstartManager

@@ -56,6 +56,7 @@ install:
 - admin_toolbar_links_access_filter
 - admin_toolbar_tools
 - adminimal_admin_toolbar
+- address
 - apigee_edge
 - apigee_edge_apidocs
 - apigee_kickstart_customizer

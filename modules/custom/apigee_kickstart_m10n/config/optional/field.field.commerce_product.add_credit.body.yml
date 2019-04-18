@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.add_credit
+    - field.storage.commerce_product.body
+  module:
+    - text
+id: commerce_product.add_credit.body
+field_name: body
+entity_type: commerce_product
+bundle: add_credit
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: null
+settings:
+  display_summary: false
+field_type: text_with_summary

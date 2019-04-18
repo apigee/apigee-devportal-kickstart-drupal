@@ -1,0 +1,44 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.add_credit
+    - field.field.commerce_product.add_credit.body
+    - field.field.commerce_product.add_credit.stores
+    - field.field.commerce_product.add_credit.variations
+  module:
+    - commerce_product
+    - text
+id: commerce_product.add_credit.default
+targetEntityType: commerce_product
+bundle: add_credit
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  title:
+    label: hidden
+    type: string
+    weight: 0
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  variations:
+    type: commerce_add_to_cart
+    weight: 1
+    label: hidden
+    settings:
+      combine: true
+    third_party_settings: {  }
+    region: content
+hidden:
+  apigee_add_credit_enabled: true
+  created: true
+  stores: true
+  uid: true
