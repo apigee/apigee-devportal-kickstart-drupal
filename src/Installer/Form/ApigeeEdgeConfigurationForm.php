@@ -103,6 +103,14 @@ class ApigeeEdgeConfigurationForm extends AuthenticationForm {
     // Clear error messages.
     $this->messenger()->deleteByType(MessengerInterface::TYPE_ERROR);
 
+//    if ($buildInfo = $form_state->getBuildInfo()) {
+//      $buildInfo['args'][0]['monetization_enabled'] = \Drupal::service('apigee_devportal_kickstart.manager')->isMonetizationEnabled();
+//      $form_state->setBuildInfo($buildInfo);
+//    }
+
+    global $install_state;
+    $install_state['completed_task'] = install_verify_completed_task();
+
     parent::submitForm($form, $form_state);
   }
 

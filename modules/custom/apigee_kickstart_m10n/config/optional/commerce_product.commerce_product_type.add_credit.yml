@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - apigee_m10n_add_credit
+third_party_settings:
+  apigee_m10n_add_credit:
+    apigee_m10n_enable_add_credit: true
+    apigee_m10n_enable_skip_cart: true
+id: add_credit
+label: 'Add credit'
+description: 'This product is used to add credit to prepaid balances.'
+variationType: add_credit
+multipleVariations: true
+injectVariationFields: true
+traits: {  }
+locked: false

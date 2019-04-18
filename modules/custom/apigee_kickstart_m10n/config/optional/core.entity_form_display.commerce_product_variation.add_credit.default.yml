@@ -1,0 +1,39 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.add_credit
+  module:
+    - apigee_m10n_add_credit
+id: commerce_product_variation.add_credit.default
+targetEntityType: commerce_product_variation
+bundle: add_credit
+mode: default
+content:
+  apigee_price_range:
+    type: price_range_default
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  sku:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 2
+    region: content
+    third_party_settings: {  }
+hidden:
+  created: true
+  list_price: true
+  price: true
+  title: true
+  uid: true

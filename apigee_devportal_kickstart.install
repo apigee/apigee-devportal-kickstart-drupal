@@ -24,6 +24,8 @@
  */
 
 use Drupal\apigee_devportal_kickstart\Installer\Form\ApigeeEdgeConfigurationForm;
+use Drupal\apigee_devportal_kickstart\Installer\Form\ApigeeDevportalKickstartConfigurationForm;
+use Drupal\apigee_devportal_kickstart\Installer\Form\DemoInstallForm;
 use Drupal\Core\Messenger\MessengerInterface;
 
 /**
@@ -91,10 +93,9 @@ function apigee_devportal_kickstart_install_tasks_alter(&$tasks, $install_state)
     return;
   }
 
-  // Add a task for configuring Apigee Edge Authentication.
-  $tasks_copy = $tasks;
-  $apigee_edge_configure_form = [
-    'apigee_edge_configure_form' => [
+  // Add tasks for configuring Apigee authentication and monetization.
+  $apigee_kickstart_tasks = [
+    ApigeeEdgeConfigurationForm::class => [
       'display_name' => t('Configure Apigee Edge'),
       'type' => 'form',
       'function' => ApigeeEdgeConfigurationForm::class,
@@ -102,7 +103,8 @@ function apigee_devportal_kickstart_install_tasks_alter(&$tasks, $install_state)
   ];
 
   // The task should run before install_configure_form which creates the user.
-  $tasks = array_slice($tasks_copy, 0, array_search('install_configure_form', array_keys($tasks))) + $apigee_edge_configure_form + $tasks_copy;
+  $tasks_copy = $tasks;
+  $tasks = array_slice($tasks_copy, 0, array_search('install_configure_form', array_keys($tasks))) + $apigee_kickstart_tasks + $tasks_copy;
 }
 
 /**
@@ -110,7 +112,12 @@ function apigee_devportal_kickstart_install_tasks_alter(&$tasks, $install_state)
  */
 function apigee_devportal_kickstart_install_tasks(&$install_state) {
   $tasks = [
+    ApigeeDevportalKickstartConfigurationForm::class => [
+      'display_name' => t('Configure kickstart'),
+      'type' => 'form',
+    ],
     '\Drupal\apigee_devportal_kickstart\Installer\Form\DemoInstallForm' => [
+    DemoInstallForm::class => [
       'display_name' => t('Install demo content'),
       'type' => 'form',
     ],
@@ -148,3 +155,24 @@ function apigee_devportal_kickstart_theme_setup(array &$install_state) {
     ->set('use_admin_theme', TRUE)
     ->save(TRUE);
 }
+
+//function apigee_devportal_kickstart_isMonetizationEnabled() {
+//  if (Drupal::moduleHandler()->moduleExists('apigee_edge')) {
+//    try {
+//      $active_key_id = Drupal::configFactory()
+//        ->get(AuthenticationForm::CONFIG_NAME)
+//        ->get('active_key');
+//      if ($active_key = Drupal::service('key.repository')
+//        ->getKey($active_key_id)) {
+//        $sdk_connector = \Drupal::service('apigee_edge.sdk_connector');
+//        $org_controller = new OrganizationController($sdk_connector->getClient());
+//        $org = $org_controller->load($sdk_connector->getOrganization());
+//        return $org->getPropertyValue('features.isMonetizationEnabled') === 'true';
+//      }
+//    } catch (\Exception $e) {
+//      return FALSE;
+//    }
+//  }
+//
+//  return FALSE;
+//}
