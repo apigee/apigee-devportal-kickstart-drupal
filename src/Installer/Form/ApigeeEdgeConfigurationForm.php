@@ -67,6 +67,8 @@ class ApigeeEdgeConfigurationForm extends AuthenticationForm {
       '#limit_validation_errors' => [],
     ];
 
+    $form['#attached']['library'][] = 'apigee_devportal_kickstart/apigee_edge_form';
+
     return $form;
   }
 

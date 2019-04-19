@@ -1,0 +1,5 @@
+apigee_edge_form:
+  version: VERSION
+  css:
+    theme:
+      css/apigee_devportal_kickstart.apigee_edge_form.css: {}
