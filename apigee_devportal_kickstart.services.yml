@@ -1,4 +1,0 @@
-services:
-  apigee_devportal_kickstart.tasks_manager:
-    class: Drupal\apigee_devportal_kickstart\Installer\ApigeeDevportalKickstartTasksManager
-    arguments: ['@entity_type.manager', '@module_installer', '@config.factory']
