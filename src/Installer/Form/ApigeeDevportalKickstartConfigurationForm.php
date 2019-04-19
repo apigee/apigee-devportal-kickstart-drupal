@@ -29,7 +29,7 @@ use CommerceGuys\Addressing\AddressFormat\FieldOverride;
 use CommerceGuys\Intl\Currency\CurrencyRepository;
 use Drupal\apigee_edge\Form\AuthenticationForm;
 use Drupal\apigee_edge\SDKConnectorInterface;
-use Drupal\apigee_m10n_add_credit\AddCreditConfig;
+use Drupal\apigee_kickstart_m10n_add_credit\AddCreditConfig;
 use Drupal\commerce_price\CurrencyImporterInterface;
 use Drupal\commerce_price\Price;
 use Drupal\Core\Config\ConfigFactoryInterface;
@@ -228,7 +228,7 @@ class ApigeeDevportalKickstartConfigurationForm extends FormBase {
       '#description' => $this->t('Enable monetization for your Apigee Edge organization.'),
     ];
 
-    $form['modules']['apigee_m10n_add_credit'] = [
+    $form['modules']['apigee_kickstart_m10n_add_credit'] = [
       '#title' => $this->t('Enable prepaid balance top up'),
       '#type' => 'checkbox',
       '#description' => $this->t('Allow users to add credit to their prepaid balances.'),
@@ -248,7 +248,7 @@ class ApigeeDevportalKickstartConfigurationForm extends FormBase {
       '#states' => [
         'visible' => [
           'input[name="modules[apigee_m10n]"]' => ['checked' => TRUE],
-          'input[name="modules[apigee_m10n_add_credit]"]' => ['checked' => TRUE],
+          'input[name="modules[apigee_kickstart_m10n_add_credit]"]' => ['checked' => TRUE],
         ],
       ],
     ];
@@ -261,7 +261,7 @@ class ApigeeDevportalKickstartConfigurationForm extends FormBase {
       '#default_value' => $site_config->get('name'),
       '#states' => [
         'required' => [
-          'input[name="modules[apigee_m10n_add_credit]"]' => ['checked' => TRUE],
+          'input[name="modules[apigee_kickstart_m10n_add_credit]"]' => ['checked' => TRUE],
         ],
       ],
     ];
@@ -274,7 +274,7 @@ class ApigeeDevportalKickstartConfigurationForm extends FormBase {
       '#description' => $this->t('Store email notifications are sent from this address.'),
       '#states' => [
         'required' => [
-          'input[name="modules[apigee_m10n_add_credit]"]' => ['checked' => TRUE],
+          'input[name="modules[apigee_kickstart_m10n_add_credit]"]' => ['checked' => TRUE],
         ],
       ],
     ];
@@ -310,7 +310,7 @@ class ApigeeDevportalKickstartConfigurationForm extends FormBase {
         '#states' => [
           'visible' => [
             'input[name="modules[apigee_m10n]"]' => ['checked' => TRUE],
-            'input[name="modules[apigee_m10n_add_credit]"]' => ['checked' => TRUE],
+            'input[name="modules[apigee_kickstart_m10n_add_credit]"]' => ['checked' => TRUE],
           ],
         ],
       ];
@@ -366,91 +366,87 @@ class ApigeeDevportalKickstartConfigurationForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    if ($modules = array_keys(array_filter($form_state->getValue('modules')))) {
-      $operations = [
-        [[$this, 'installModules'], [$form_state]],
-      ];
+    global $install_state;
+    $form_state->cleanValues();
+    $install_state['m10n_config'] = $form_state->getValues();
 
-      if (in_array('apigee_m10n_add_credit', $modules)) {
-        $operations += [
-          [[$this, 'importCurrencies'], [$form_state]],
-          [[$this, 'createStore'], [$form_state]],
-          [[$this, 'createProducts'], [$form_state]],
-        ];
-      }
-
-      $batch = [
-        'operations' => $operations,
-        'title' => $this->t('Performing additional tasks'),
-        'error_message' => $this->t('The installation has encountered an error.'),
-        'progress_message' => $this->t('Completed @current out of @total tasks.'),
-      ];
-
-      return $batch;
-    }
-  }
-
-  public function installModules(FormStateInterface $form_state, &$context) {
-    if ($modules = array_keys(array_filter($form_state->getValue('modules')))) {
-      // Enable the apigee_kickstart_m10n module also.
-      // This holds all default config for m10n.
-      $modules[] = 'apigee_kickstart_m10n';
-
-      // Enable the modules.
-      try {
-        $this->moduleInstaller->install($modules);
-      } catch (MissingDependencyException $exception) {
-        watchdog_exception('apigee_kickstart', $exception);
+    // Update the supported currencies.
+    if (isset($install_state['m10n_config']['supported_currencies'])) {
+      foreach ($install_state['m10n_config']['supported_currencies'] as $currency_code) {
+        $install_state['m10n_config']['supported_currencies'][$currency_code] = $this->supportedCurrencies[strtolower($currency_code)];
       }
     }
 
-    if (!isset($context['sandbox']['progress'])) {
-      $context['sandbox']['progress'] = 0;
-    }
-
-    $context['sandbox']['progress']++;
-    $context['message'] = $this->t('Installed monetization modules');
-  }
-
-  public function importCurrencies(FormStateInterface $form_state, &$context) {
-    if ($currencies = array_filter($form_state->getValue('supported_currencies'))) {
-      /** @var CurrencyImporterInterface $currency_importer */
-      // This cannot be injected because this has to be run after the required
-      // modules is installed.
-      $currency_importer = \Drupal::service('commerce_price.currency_importer');
-
-      foreach ($currencies as $currency_code) {
-        // Import the currency.
-        $currency_importer->import($currency_code);
-
-        // Save it to context.
-        $context['results']['currencies'][$currency_code] = $this->supportedCurrencies[strtolower($currency_code)];
-      }
-    }
-
-    $context['sandbox']['progress']++;
-    $context['message'] = $this->t('Imported supported currencies');
-  }
-
-  public function createStore(FormStateInterface $form_state, &$context) {
-    // Create a store.
-    $store = $this->entityTypeManager->getStorage('commerce_store')
-      ->create($form_state->getValue('store'));
-    $store->save();
-
-    // Create a payment gateway.
-    $this->entityTypeManager->getStorage('commerce_payment_gateway')->create([
+    // Add values for a payment gateway.
+    // TODO: Figure out if this should be configurable in the form.
+    $install_state['m10n_config']['gateway'] = [
       'id' => 'default',
       'label' => 'Default',
       'plugin' => 'manual',
-    ])->save();
-
-    // Save to context.
-    $context['results']['store'] = $store;
-
-    $context['sandbox']['progress']++;
-    $context['message'] = $this->t('Created a default store and payment gateway');
+    ];
   }
+
+//  public function installModules(FormStateInterface $form_state, &$context) {
+//    if ($modules = array_keys(array_filter($form_state->getValue('modules')))) {
+//      // Enable the apigee_kickstart_m10n module also.
+//      // This holds all default config for m10n.
+//      $modules[] = 'apigee_kickstart_m10n';
+//
+//      // Enable the modules.
+//      try {
+//        $this->moduleInstaller->install($modules);
+//      } catch (MissingDependencyException $exception) {
+//        watchdog_exception('apigee_kickstart', $exception);
+//      }
+//    }
+//
+//    if (!isset($context['sandbox']['progress'])) {
+//      $context['sandbox']['progress'] = 0;
+//    }
+//
+//    $context['sandbox']['progress']++;
+//    $context['message'] = $this->t('Installed monetization modules');
+//  }
+
+//  public function importCurrencies(FormStateInterface $form_state, &$context) {
+//    if ($currencies = array_filter($form_state->getValue('supported_currencies'))) {
+//      /** @var CurrencyImporterInterface $currency_importer */
+//      // This cannot be injected because this has to be run after the required
+//      // modules is installed.
+//      $currency_importer = \Drupal::service('commerce_price.currency_importer');
+//
+//      foreach ($currencies as $currency_code) {
+//        // Import the currency.
+//        $currency_importer->import($currency_code);
+//
+//        // Save it to context.
+//        $context['results']['currencies'][$currency_code] = $this->supportedCurrencies[strtolower($currency_code)];
+//      }
+//    }
+//
+//    $context['sandbox']['progress']++;
+//    $context['message'] = $this->t('Imported supported currencies');
+//  }
+
+//  public function createStore(FormStateInterface $form_state, &$context) {
+//    // Create a store.
+//    $store = $this->entityTypeManager->getStorage('commerce_store')
+//      ->create($form_state->getValue('store'));
+//    $store->save();
+//
+//    // Create a payment gateway.
+//    $this->entityTypeManager->getStorage('commerce_payment_gateway')->create([
+//      'id' => 'default',
+//      'label' => 'Default',
+//      'plugin' => 'manual',
+//    ])->save();
+//
+//    // Save to context.
+//    $context['results']['store'] = $store;
+//
+//    $context['sandbox']['progress']++;
+//    $context['message'] = $this->t('Created a default store and payment gateway');
+//  }
 
   public function createProducts(FormStateInterface $form_state, &$context) {
     // If we have currencies and a store, create products.
