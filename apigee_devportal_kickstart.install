@@ -75,4 +75,3 @@ function apigee_devportal_kickstart_install() {
     }
   }
 }
-

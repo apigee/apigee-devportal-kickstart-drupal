@@ -39,8 +39,6 @@ class ApigeeDevportalKickstartTasksManager implements ApigeeDevportalKickstartTa
    * {@inheritdoc}
    */
   public static function installModules(array $modules, array &$context) {
-    sleep(2);
-
     try {
       \Drupal::service('module_installer')->install($modules);
       $context['message'] = t('Installed monetization modules.');
