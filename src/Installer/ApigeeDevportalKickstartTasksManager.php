@@ -71,17 +71,25 @@ class ApigeeDevportalKickstartTasksManager implements ApigeeDevportalKickstartTa
 //  }
 
   /**
+   * This is a dummy batch operation to show visual feedback to the user.
+   *
+   * @param $config
+   *   An array of config.
+   * @param $context
+   *   The batch context.
+   */
+  public static function init($config, &$context) {
+    $context['message'] = t('Preparing setup...');
+  }
+
+  /**
    * {@inheritdoc}
    */
   public static function installModules(array $modules, &$context) {
+    sleep(2);
+
     try {
       \Drupal::service('module_installer')->install($modules);
-
-      if (!isset($context['sandbox']['progress'])) {
-        $context['sandbox']['progress'] = 0;
-      }
-
-      $context['sandbox']['progress']++;
       $context['message'] = t('Installed monetization modules.');
     } catch (\Exception $exception) {
       watchdog_exception('apigee_kickstart', $exception);
@@ -97,7 +105,6 @@ class ApigeeDevportalKickstartTasksManager implements ApigeeDevportalKickstartTa
       \Drupal::service('commerce_price.currency_importer')->import($currency->getName());
     }
 
-    $context['sandbox']['progress']++;
     $context['message'] = t('Imported supported currencies.');
   }
 
@@ -112,7 +119,6 @@ class ApigeeDevportalKickstartTasksManager implements ApigeeDevportalKickstartTa
 
       // Save to context.
       $context['results']['store'] = $store;
-      $context['sandbox']['progress']++;
       $context['message'] = t('Created a default store.');
     } catch (\Exception $exception) {
       watchdog_exception('apigee_kickstart', $exception);
@@ -130,7 +136,6 @@ class ApigeeDevportalKickstartTasksManager implements ApigeeDevportalKickstartTa
 
       // Save to context.
       $context['results']['$gateway'] = $gateway;
-      $context['sandbox']['progress']++;
       $context['message'] = t('Created a default payment gateway.');
     } catch (\Exception $exception) {
       watchdog_exception('apigee_kickstart', $exception);
@@ -188,8 +193,7 @@ class ApigeeDevportalKickstartTasksManager implements ApigeeDevportalKickstartTa
             ->set('products', $add_credit_products)
             ->save();
 
-          $context['sandbox']['progress']++;
-          $context['message'] = t('Created the default products.');
+          $context['message'] = t('Created default products.');
         } catch (\Exception $exception) {
           watchdog_exception('apigee_kickstart', $exception);
         }
