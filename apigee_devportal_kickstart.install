@@ -151,12 +151,12 @@ function apigee_devportal_setup_monetization(array &$install_state) {
 
     // Perform additional tasks for apigee_kickstart_m10n_add_credit.
     if (in_array('apigee_kickstart_m10n_add_credit', $config['modules'])) {
-      $operations += [
+      $operations = array_merge($operations, [
         [[ApigeeDevportalKickstartTasksManager::class, 'importCurrencies'], [$config['supported_currencies']]],
         [[ApigeeDevportalKickstartTasksManager::class, 'createStore'], [$config['store']]],
         [[ApigeeDevportalKickstartTasksManager::class, 'createPaymentGateway'], [$config['gateway']]],
         [[ApigeeDevportalKickstartTasksManager::class, 'createProducts'], [$config['supported_currencies']]],
-      ];
+      ]);
     }
 
     $batch = [
