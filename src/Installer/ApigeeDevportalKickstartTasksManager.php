@@ -161,6 +161,7 @@ class ApigeeDevportalKickstartTasksManager implements ApigeeDevportalKickstartTa
             ]);
           $variation->set('apigee_price_range', [
             'minimum' => $minimum_amount,
+            'maximum' => 999,
             'default' => $minimum_amount,
             'currency_code' => $currency_code,
           ]);
