@@ -28,6 +28,7 @@ use Drupal\apigee_devportal_kickstart\Installer\Form\ApigeeDevportalKickstartCon
 use Drupal\apigee_devportal_kickstart\Installer\Form\ApigeeEdgeConfigurationForm;
 use Drupal\apigee_devportal_kickstart\Installer\Form\DemoInstallForm;
 use Drupal\contact\Entity\ContactForm;
+use Drupal\Core\Extension\InfoParserException;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Messenger\MessengerInterface;
 
@@ -35,15 +36,7 @@ use Drupal\Core\Messenger\MessengerInterface;
  * Implements hook_install_tasks().
  */
 function apigee_devportal_kickstart_install_tasks(&$install_state) {
-  return [
-    ApigeeDevportalKickstartConfigurationForm::class => [
-      'display_name' => t('Configure kickstart'),
-      'type' => 'form',
-    ],
-    'apigee_devportal_setup_monetization' => [
-      'display_name' => t('Setup monetization'),
-      'type' => 'batch',
-    ],
+  $tasks = [
     DemoInstallForm::class => [
       'display_name' => t('Install demo content'),
       'type' => 'form',
@@ -53,6 +46,23 @@ function apigee_devportal_kickstart_install_tasks(&$install_state) {
       'display' => FALSE,
     ],
   ];
+
+  // Add monetization tasks if the apigee_m10n modules are available.
+  if (_apigee_devportal_kickstart_is_monetizable()) {
+    $tasks = array_merge([
+      'apigee_devportal_monetization_preflight' => [],
+      ApigeeDevportalKickstartConfigurationForm::class => [
+        'display_name' => t('Configure kickstart'),
+        'type' => 'form',
+      ],
+      'apigee_devportal_setup_monetization' => [
+        'display_name' => t('Setup monetization'),
+        'type' => 'batch',
+      ],
+    ], $tasks);
+  }
+
+  return $tasks;
 }
 
 /**
@@ -73,6 +83,23 @@ function apigee_devportal_kickstart_install_tasks_alter(&$tasks, $install_state)
 }
 
 /**
+ * Prepares profile for monetization setup.
+ *
+ * @param array $install_state
+ *   The install state.
+ */
+function apigee_devportal_monetization_preflight(array &$install_state) {
+  // The monetization configuration form needs an address field.
+  // Enable the address module.
+  try {
+    \Drupal::service('module_installer')->install(['address']);
+  }
+  catch (\Exception $exception) {
+    watchdog_exception('apigee_kickstart', $exception);
+  }
+}
+
+/**
  * Install task for setting up monetization and additional modules.
  *
  * @param array $install_state
@@ -85,17 +112,31 @@ function apigee_devportal_setup_monetization(array &$install_state) {
   if (isset($install_state['m10n_config']) && ($config = $install_state['m10n_config'])) {
     // Add an operations to install modules.
     $operations = [
-      [[ApigeeDevportalKickstartTasksManager::class, 'init'], [$config]],
-      [[ApigeeDevportalKickstartTasksManager::class, 'installModules'], [$config['modules']]],
+      [
+        [ApigeeDevportalKickstartTasksManager::class, 'init'],
+        [$config]
+      ],
+      [
+        [ApigeeDevportalKickstartTasksManager::class, 'installModules'],
+        [$config['modules']],
+      ],
     ];
 
     // Perform additional tasks for apigee_kickstart_m10n_add_credit.
     if (in_array('apigee_kickstart_m10n_add_credit', $config['modules'])) {
       $operations = array_merge($operations, [
-        [[ApigeeDevportalKickstartTasksManager::class, 'importCurrencies'], [$config['supported_currencies']]],
-        [[ApigeeDevportalKickstartTasksManager::class, 'createStore'], [$config['store']]],
-        //        [[ApigeeDevportalKickstartTasksManager::class, 'createPaymentGateway'], [$config['gateway']]],
-        [[ApigeeDevportalKickstartTasksManager::class, 'createProducts'], [$config['supported_currencies']]],
+        [
+          [ApigeeDevportalKickstartTasksManager::class, 'importCurrencies'],
+          [$config['supported_currencies']],
+        ],
+        [
+          [ApigeeDevportalKickstartTasksManager::class, 'createStore'],
+          [$config['store']],
+        ],
+        [
+          [ApigeeDevportalKickstartTasksManager::class, 'createProducts'],
+          [$config['supported_currencies']],
+        ],
       ]);
     }
 
@@ -151,5 +192,23 @@ function apigee_devportal_kickstart_form_install_configure_form_alter(&$form, Fo
  */
 function apigee_devportal_kickstart_form_install_configure_submit($form, FormStateInterface $form_state) {
   $site_mail = $form_state->getValue('site_mail');
-  ContactForm::load('feedback')->setRecipients([$site_mail])->trustData()->save();
+  ContactForm::load('feedback')
+    ->setRecipients([$site_mail])
+    ->trustData()
+    ->save();
+}
+
+/**
+ * Helper to check if monetization can be enabled for kickstart.
+ */
+function _apigee_devportal_kickstart_is_monetizable() {
+  try {
+    $modules = \Drupal::service('extension.list.module')->getList();
+    return isset($modules['apigee_m10n']) && isset($modules['apigee_m10n_add_credit']);
+  }
+  catch (InfoParserException $exception) {
+    watchdog_exception('apigee_kickstart', $exception);
+  }
+
+  return FALSE;
 }
