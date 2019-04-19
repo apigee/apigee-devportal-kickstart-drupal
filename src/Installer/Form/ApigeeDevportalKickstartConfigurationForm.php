@@ -324,7 +324,9 @@ class ApigeeDevportalKickstartConfigurationForm extends FormBase {
     if (count($values['modules'])) {
       // Update the supported currencies.
       if (isset($values['supported_currencies'])) {
-        foreach ($values['supported_currencies'] as $currency_code) {
+        $supported_currencies = array_keys(array_filter($values['supported_currencies']));
+        $values['supported_currencies'] = [];
+        foreach ($supported_currencies as $currency_code) {
           $values['supported_currencies'][$currency_code] = $this->supportedCurrencies[strtolower($currency_code)];
         }
       }
