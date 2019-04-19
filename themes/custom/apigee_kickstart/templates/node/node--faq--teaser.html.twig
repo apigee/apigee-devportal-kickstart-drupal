@@ -6,8 +6,13 @@
 #}
 {% extends '@apigee-kickstart/node/node.twig' %}
 {% block content %}
+
+  {%- set summary -%}
+    <h2 class="details__title">{{ label }}</h2>
+  {%- endset -%}
+
   {% include '@apigee-kickstart/details/details.twig' with {
-    summary: label,
+    summary: summary,
     content: content
   } %}
 {% endblock %}
