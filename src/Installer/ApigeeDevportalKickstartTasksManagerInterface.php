@@ -26,53 +26,63 @@ namespace Drupal\apigee_devportal_kickstart\Installer;
 interface ApigeeDevportalKickstartTasksManagerInterface {
 
   /**
+   * This is a dummy batch operation to show visual feedback to the user.
+   *
+   * @param array $config
+   *   An array of config.
+   * @param array $context
+   *   The batch context.
+   */
+  public static function init(array $config, array &$context);
+
+  /**
    * Installs the given array of modules. Used as a batch operations.
    *
    * @param array $modules
    *   An array of module names.
-   * @param $context
+   * @param array $context
    *   The batch context.
    */
-  public static function installModules(array $modules, &$context);
+  public static function installModules(array $modules, array &$context);
 
   /**
    * Imports an array of currencies.
    *
    * @param \Apigee\Edge\Api\Monetization\Entity\SupportedCurrencyInterface[] $currencies
    *   An array of supported currencies.
-   * @param $context
+   * @param array $context
    *   The batch context.
    */
-  public static function importCurrencies(array $currencies, &$context);
+  public static function importCurrencies(array $currencies, array &$context);
 
   /**
    * Creates a commerce store.
    *
    * @param array $values
    *   An array of values for the store.
-   * @param $context
+   * @param array $context
    *   The batch context.
    */
-  public static function createStore(array $values, &$context);
+  public static function createStore(array $values, array &$context);
 
   /**
    * Creates a payment gateway.
    *
    * @param array $values
    *   An array of values for the gateway.
-   * @param $context
+   * @param array $context
    *   The batch context.
    */
-  public static function createPaymentGateway(array $values, &$context);
+  public static function createPaymentGateway(array $values, array &$context);
 
   /**
    * Creates commerce products for each supported currencies.
    *
    * @param \Apigee\Edge\Api\Monetization\Entity\SupportedCurrencyInterface[] $currencies
    *   An array of supported currencies.
-   * @param $context
+   * @param array $context
    *   The batch context.
    */
-  public static function createProducts(array $currencies, &$context);
+  public static function createProducts(array $currencies, array &$context);
 
 }
