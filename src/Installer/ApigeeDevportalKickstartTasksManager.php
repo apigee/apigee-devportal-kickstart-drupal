@@ -147,15 +147,23 @@ class ApigeeDevportalKickstartTasksManager implements ApigeeDevportalKickstartTa
       /** @var \Apigee\Edge\Api\Monetization\Entity\SupportedCurrencyInterface $currency */
       foreach ($currencies as $currency) {
         try {
+          $minimum_amount = (string) $currency->getMinimumTopUpAmount();
+          $currency_code = $currency->getName();
           // Create a product variation for this currency.
+          /** @var \Drupal\commerce_product\Entity\ProductVariationInterface $variation */
           $variation = \Drupal::entityTypeManager()->getStorage('commerce_product_variation')
             ->create([
               'type' => 'add_credit',
               'sku' => "ADD-CREDIT-{$currency->getName()}",
               'title' => $currency->getName(),
               'status' => 1,
-              'price' => new Price((string) $currency->getMinimumTopUpAmount(), $currency->getId()),
+              'price' => new Price($minimum_amount, $currency_code),
             ]);
+          $variation->set('apigee_price_range', [
+            'minimum' => $minimum_amount,
+            'default' => $minimum_amount,
+            'currency_code' => $currency_code,
+          ]);
           $variation->save();
 
           // Create an add credit product for this currency.
