@@ -21,77 +21,31 @@
 namespace Drupal\apigee_devportal_kickstart\Installer;
 
 use Drupal\apigee_m10n_add_credit\AddCreditConfig;
-use Drupal\commerce_price\CurrencyImporterInterface;
 use Drupal\commerce_price\Price;
-use Drupal\Core\Config\ConfigFactoryInterface;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Extension\MissingDependencyException;
-use Drupal\Core\Extension\ModuleInstallerInterface;
 
 /**
  * Defines a service for performing additional tasks in batch.
  */
 class ApigeeDevportalKickstartTasksManager implements ApigeeDevportalKickstartTasksManagerInterface {
 
-//  /**
-//   * The entity type manager.
-//   *
-//   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
-//   */
-//  protected $entityTypeManager;
-//
-//  /**
-//   * The module installer.
-//   *
-//   * @var \Drupal\Core\Extension\ModuleInstallerInterface
-//   */
-//  protected $moduleInstaller;
-//
-//  /**
-//   * The config factory.
-//   *
-//   * @var \Drupal\Core\Config\ConfigFactoryInterface
-//   */
-//  protected $configFactory;
-//
-//  /**
-//   * ApigeeDevportalKickstartTasksManager constructor.
-//   *
-//   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
-//   *   The entity type manager.
-//   * @param \Drupal\Core\Extension\ModuleInstallerInterface $module_installer
-//   *   The module installer.
-//   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
-//   *   The config factory.
-//   */
-//  public function __construct(EntityTypeManagerInterface $entity_type_manager, ModuleInstallerInterface $module_installer, ConfigFactoryInterface $config_factory) {
-//    $this->entityTypeManager = $entity_type_manager;
-//    $this->moduleInstaller = $module_installer;
-//    $this->configFactory = $config_factory;
-//  }
-
   /**
-   * This is a dummy batch operation to show visual feedback to the user.
-   *
-   * @param $config
-   *   An array of config.
-   * @param $context
-   *   The batch context.
+   * {@inheritdoc}
    */
-  public static function init($config, &$context) {
+  public static function init(array $config, array &$context) {
     $context['message'] = t('Preparing setup...');
   }
 
   /**
    * {@inheritdoc}
    */
-  public static function installModules(array $modules, &$context) {
+  public static function installModules(array $modules, array &$context) {
     sleep(2);
 
     try {
       \Drupal::service('module_installer')->install($modules);
       $context['message'] = t('Installed monetization modules.');
-    } catch (\Exception $exception) {
+    }
+    catch (\Exception $exception) {
       watchdog_exception('apigee_kickstart', $exception);
     }
   }
@@ -99,7 +53,7 @@ class ApigeeDevportalKickstartTasksManager implements ApigeeDevportalKickstartTa
   /**
    * {@inheritdoc}
    */
-  public static function importCurrencies(array $currencies, &$context) {
+  public static function importCurrencies(array $currencies, array &$context) {
     foreach ($currencies as $currency) {
       // Import the currency.
       \Drupal::service('commerce_price.currency_importer')->import($currency->getName());
@@ -111,7 +65,7 @@ class ApigeeDevportalKickstartTasksManager implements ApigeeDevportalKickstartTa
   /**
    * {@inheritdoc}
    */
-  public static function createStore(array $values, &$context) {
+  public static function createStore(array $values, array &$context) {
     try {
       $store = \Drupal::entityTypeManager()->getStorage('commerce_store')
         ->create($values);
@@ -120,7 +74,8 @@ class ApigeeDevportalKickstartTasksManager implements ApigeeDevportalKickstartTa
       // Save to context.
       $context['results']['store'] = $store;
       $context['message'] = t('Created a default store.');
-    } catch (\Exception $exception) {
+    }
+    catch (\Exception $exception) {
       watchdog_exception('apigee_kickstart', $exception);
     }
   }
@@ -128,7 +83,7 @@ class ApigeeDevportalKickstartTasksManager implements ApigeeDevportalKickstartTa
   /**
    * {@inheritdoc}
    */
-  public static function createPaymentGateway(array $values, &$context) {
+  public static function createPaymentGateway(array $values, array &$context) {
     try {
       $gateway = \Drupal::entityTypeManager()->getStorage('commerce_payment_gateway')
         ->create($values);
@@ -137,7 +92,8 @@ class ApigeeDevportalKickstartTasksManager implements ApigeeDevportalKickstartTa
       // Save to context.
       $context['results']['$gateway'] = $gateway;
       $context['message'] = t('Created a default payment gateway.');
-    } catch (\Exception $exception) {
+    }
+    catch (\Exception $exception) {
       watchdog_exception('apigee_kickstart', $exception);
     }
   }
@@ -145,7 +101,7 @@ class ApigeeDevportalKickstartTasksManager implements ApigeeDevportalKickstartTa
   /**
    * {@inheritdoc}
    */
-  public static function createProducts(array $currencies, &$context) {
+  public static function createProducts(array $currencies, array &$context) {
     if (isset($context['results']['store'])) {
       $add_credit_products = [];
 
@@ -194,7 +150,8 @@ class ApigeeDevportalKickstartTasksManager implements ApigeeDevportalKickstartTa
             ->save();
 
           $context['message'] = t('Created default products.');
-        } catch (\Exception $exception) {
+        }
+        catch (\Exception $exception) {
           watchdog_exception('apigee_kickstart', $exception);
         }
       }
