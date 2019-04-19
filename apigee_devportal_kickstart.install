@@ -111,7 +111,6 @@ function apigee_devportal_kickstart_install_tasks(&$install_state) {
     'apigee_devportal_setup_monetization' => [
       'display_name' => t('Setup monetization'),
       'type' => 'batch',
-//      'display' => isset($install_state['m10n_config']),
     ],
     DemoInstallForm::class => [
       'display_name' => t('Install demo content'),
@@ -134,17 +133,14 @@ function apigee_devportal_kickstart_install_tasks(&$install_state) {
  *   A batch definition.
  */
 function apigee_devportal_setup_monetization(array &$install_state) {
-  if (isset($install_state['m10n_config'])
-    && ($config = $install_state['m10n_config'])
-    && ($modules = array_keys(array_filter($config['modules'])))) {
-
+  if (isset($install_state['m10n_config']) && ($config = $install_state['m10n_config'])) {
     // Add an operations to install modules.
     $operations = [
-      [[ApigeeDevportalKickstartTasksManager::class, 'installModules'], [$modules]],
+      [[ApigeeDevportalKickstartTasksManager::class, 'installModules'], [$config['modules']]],
     ];
 
-    // Perform additional tasks for apigee_m10n_add_credit.
-    if (in_array('apigee_kickstart_m10n_add_credit', $modules)) {
+    // Perform additional tasks for apigee_kickstart_m10n_add_credit.
+    if (in_array('apigee_kickstart_m10n_add_credit', $config['modules'])) {
       $operations += [
         [[ApigeeDevportalKickstartTasksManager::class, 'importCurrencies'], [$config['supported_currencies']]],
         [[ApigeeDevportalKickstartTasksManager::class, 'createStore'], [$config['store']]],
@@ -155,7 +151,7 @@ function apigee_devportal_setup_monetization(array &$install_state) {
 
     $batch = [
       'operations' => $operations,
-      'title' => t('Performing additional tasks'),
+      'title' => t('Setting up monetization'),
       'error_message' => t('The installation has encountered an error.'),
       'progress_message' => t('Completed @current out of @total tasks.'),
     ];
