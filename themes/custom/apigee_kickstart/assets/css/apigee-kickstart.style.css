@@ -577,7 +577,8 @@ mark,
   height: auto;
 }
 
-.img-thumbnail {
+.img-thumbnail, .text img, [class$=__body] img,
+.cke_widget_image img {
   padding: 0.25rem;
   background-color: #fff;
   border: 1px solid #ddd;
@@ -10993,7 +10994,6 @@ ul.social-links li a {
 .text li {
   margin: 0.5rem 0;
 }
-
 .field,
 .wrapper--primary,
 .wrapper--secondary {
