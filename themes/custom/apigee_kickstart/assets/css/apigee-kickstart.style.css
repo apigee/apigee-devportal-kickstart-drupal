@@ -10076,6 +10076,10 @@ body,
 .alert {
   font-size: 0.875rem;
   font-weight: 500;
+  margin-bottom: 0;
+}
+.container-fluid .alert, .container .alert {
+  margin-bottom: 1rem;
 }
 
 .blockquote {
