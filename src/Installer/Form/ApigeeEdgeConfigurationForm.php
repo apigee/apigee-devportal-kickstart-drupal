@@ -55,6 +55,9 @@ class ApigeeEdgeConfigurationForm extends AuthenticationForm {
     // Hide the test_connection fields.
     $form['test_connection']['#access'] = FALSE;
 
+    // Rename the submit button.
+    $form['actions']['submit']['#value'] = $this->t('Save and continue');
+
     // Add a skip this step button.
     $form['actions']['skip'] = [
       '#type' => 'submit',
