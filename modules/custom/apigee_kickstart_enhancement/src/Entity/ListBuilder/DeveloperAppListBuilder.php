@@ -25,7 +25,7 @@ use Drupal\apigee_edge\Entity\ListBuilder\DeveloperAppListBuilderForDeveloper;
 /**
  * Renders the Apps list as a list of entity views instead of a table.
  */
-class AppListBuilder extends DeveloperAppListBuilderForDeveloper {
+class DeveloperAppListBuilder extends DeveloperAppListBuilderForDeveloper {
 
   /**
    * {@inheritdoc}

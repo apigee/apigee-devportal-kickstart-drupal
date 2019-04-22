@@ -21,7 +21,7 @@
 namespace Drupal\apigee_kickstart_enhancement\Routing;
 
 use Drupal\apigee_kickstart_enhancement\ApigeeKickStartEnhancerInterface;
-use Drupal\apigee_kickstart_enhancement\Entity\ListBuilder\AppListBuilder;
+use Drupal\apigee_kickstart_enhancement\Entity\ListBuilder\DeveloperAppListBuilder;
 use Drupal\apigee_kickstart_enhancement\Entity\ListBuilder\TeamAppListBuilder;
 use Drupal\Core\Routing\RouteSubscriberBase;
 use Symfony\Component\Routing\RouteCollection;
@@ -60,7 +60,7 @@ class RouteSubscriber extends RouteSubscriberBase {
           $route->setDefault('_controller', TeamAppListBuilder::class . '::render');
         }
         else {
-          $route->setDefault('_controller', AppListBuilder::class . '::render');
+          $route->setDefault('_controller', DeveloperAppListBuilder::class . '::render');
         }
       }
     }
