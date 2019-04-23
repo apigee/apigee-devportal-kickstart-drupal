@@ -21,7 +21,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_buttons:
-    weight: 2
+    weight: 3
     settings:
       title: Paragraph
       title_plural: Paragraphs
@@ -41,7 +41,7 @@ content:
     region: content
   field_callouts:
     type: paragraphs
-    weight: 3
+    weight: 2
     settings:
       title: Paragraph
       title_plural: Paragraphs
