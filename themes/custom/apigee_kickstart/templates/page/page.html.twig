@@ -4,10 +4,9 @@
  * Template for the main page.
  */
 #}
-{% set attributes = create_attribute() %}
 {% set classes = [
   'page'
-]|merge(utility_classes|default([])) %}
+]|merge(classes|default([])) %}
 
 {% set main_attributes = create_attribute() %}
 
