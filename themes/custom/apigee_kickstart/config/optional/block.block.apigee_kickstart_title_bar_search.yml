@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:title_bar:ab494520-ff67-4260-b895-6854e09e9cd4'
+  module:
+    - block_content
+    - system
+  theme:
+    - apigee_kickstart
+id: apigee_kickstart_title_bar_search
+theme: apigee_kickstart
+region: header
+weight: 0
+provider: null
+plugin: 'block_content:ab494520-ff67-4260-b895-6854e09e9cd4'
+settings:
+  id: 'block_content:ab494520-ff67-4260-b895-6854e09e9cd4'
+  label: 'Title bar: Search'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/search\r\n/search/*"
+    negate: false
+    context_mapping: {  }
