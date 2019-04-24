@@ -10021,14 +10021,14 @@ body {
   height: 100%;
 }
 
-body,
+.page,
 .dialog-off-canvas-main-canvas {
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
-.page {
+main {
   flex-grow: 1;
 }
 
