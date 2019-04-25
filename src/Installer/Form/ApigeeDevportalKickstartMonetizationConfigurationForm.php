@@ -38,7 +38,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 /**
  * Configuration form for Apigee Monetization.
  */
-class ApigeeDevportalKickstartConfigurationForm extends FormBase {
+class ApigeeDevportalKickstartMonetizationConfigurationForm extends FormBase {
 
   /**
    * SDK connector service.
@@ -145,7 +145,7 @@ class ApigeeDevportalKickstartConfigurationForm extends FormBase {
    * {@inheritdoc}
    */
   public function getFormId() {
-    return 'apigee_devportal_kickstart_configuration_form';
+    return 'apigee_devportal_kickstart_m10n_configuration_form';
   }
 
   /**
@@ -155,7 +155,7 @@ class ApigeeDevportalKickstartConfigurationForm extends FormBase {
     // Some messages stick around for installation tasks. Clear them all.
     $this->messenger()->deleteAll();
 
-    $form['#title'] = $this->t('Configure Apigee Kickstart');
+    $form['#title'] = $this->t('Configure monetization');
 
     $form['actions']['#type'] = 'actions';
     $form['actions']['submit'] = [
