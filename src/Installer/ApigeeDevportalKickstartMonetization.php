@@ -52,7 +52,7 @@ class ApigeeDevportalKickstartMonetization {
    * Check if all dependencies are met.
    *
    * @return bool
-   *  TRUE if all dependencies are met. FALSE otherwise.
+   *   TRUE if all dependencies are met. FALSE otherwise.
    */
   protected static function meetsDependencies(): bool {
     $extension_list = \Drupal::service('extension.list.module');
@@ -69,6 +69,7 @@ class ApigeeDevportalKickstartMonetization {
    * Returns an array of module names required for monetization.
    *
    * @return array
+   *   An array of module names.
    */
   protected static function dependencies(): array {
     return [
