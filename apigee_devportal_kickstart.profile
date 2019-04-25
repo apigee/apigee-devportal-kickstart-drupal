@@ -47,19 +47,20 @@ function apigee_devportal_kickstart_install_tasks(&$install_state) {
     ],
   ];
 
-  // Add monetization tasks if the apigee_m10n modules are available.
-  if (_apigee_devportal_kickstart_is_monetizable()) {
-    $tasks = array_merge([
-      'apigee_devportal_monetization_preflight' => [],
-      ApigeeDevportalKickstartConfigurationForm::class => [
-        'display_name' => t('Configure kickstart'),
-        'type' => 'form',
-      ],
-      'apigee_devportal_setup_monetization' => [
-        'display_name' => t('Setup monetization'),
-        'type' => 'batch',
-      ],
-    ], $tasks);
+  // Add monetization tasks if the configured organization is monetizable.
+  if (Drupal::moduleHandler()->moduleExists('apigee_edge') && Drupal::hasService('apigee_devportal_kickstart.monetization') && Drupal::service('apigee_devportal_kickstart.monetization')->isMonetizable()) {
+//    if (Drupal::service('apigee_devportal_kickstart.monetization')->isMonetizable()) {
+      $tasks = array_merge([
+        ApigeeDevportalKickstartConfigurationForm::class => [
+          'display_name' => t('Configure kickstart'),
+          'type' => 'form',
+        ],
+        'apigee_devportal_setup_monetization' => [
+          'display_name' => t('Setup monetization'),
+          'type' => 'batch',
+        ],
+      ], $tasks);
+//    }
   }
 
   return $tasks;
@@ -75,6 +76,7 @@ function apigee_devportal_kickstart_install_tasks_alter(&$tasks, $install_state)
       'display_name' => t('Configure Apigee Edge'),
       'type' => 'form',
     ],
+    'apigee_devportal_monetization_preflight' => [],
   ];
 
   // The task should run before install_configure_form which creates the user.
@@ -196,19 +198,4 @@ function apigee_devportal_kickstart_form_install_configure_submit($form, FormSta
     ->setRecipients([$site_mail])
     ->trustData()
     ->save();
-}
-
-/**
- * Helper to check if monetization can be enabled for kickstart.
- */
-function _apigee_devportal_kickstart_is_monetizable() {
-  try {
-    $modules = \Drupal::service('extension.list.module')->getList();
-    return Drupal::service('apigee_devportal_kickstart.monetization')->isMonetizable() && isset($modules['apigee_m10n']) && isset($modules['apigee_m10n_add_credit']);
-  }
-  catch (InfoParserException $exception) {
-    watchdog_exception('apigee_kickstart', $exception);
-  }
-
-  return FALSE;
 }

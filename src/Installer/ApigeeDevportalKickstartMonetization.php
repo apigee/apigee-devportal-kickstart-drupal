@@ -22,21 +22,61 @@ namespace Drupal\apigee_devportal_kickstart\Installer;
 
 use Apigee\Edge\Api\Management\Controller\OrganizationController;
 
+/**
+ * Defines a service to handle monetization tasks.
+ */
 class ApigeeDevportalKickstartMonetization {
 
-  public function isMonetizable() {
+  /**
+   * Determines if the configured organization is monetizable.
+   *
+   * @return bool
+   *   TRUE if organization is monetizable.
+   */
+  public static function isMonetizable() {
     try {
-      $organization_id = \Drupal::service('apigee_edge.sdk_connector')
-        ->getOrganization();
-      $client = \Drupal::service('apigee_edge.sdk_connector')->getClient();
-      $organization_controller = new OrganizationController($client);
-      $organization = $organization_controller->load($organization_id);
-      return $organization->getPropertyValue('features.isMonetizationEnabled') === 'true';
+      $sdk_connector = \Drupal::service('apigee_edge.sdk_connector');
+      $organization_controller = new OrganizationController($sdk_connector->getClient());
+      $organization = $organization_controller->load($sdk_connector->getOrganization());
+      return ($organization->getPropertyValue('features.isMonetizationEnabled') === 'true');
     }
     catch (\Exception $exception) {
-      watchdog_exception('apigee_kickstart', $exception);
+      // Do not log the exception here. This litters the logs since this is run
+      // before each install tasks.
     }
 
     return FALSE;
   }
+
+  /**
+   * Check if all dependencies are met.
+   *
+   * @return bool
+   *  TRUE if all dependencies are met. FALSE otherwise.
+   */
+  protected static function meetsDependencies(): bool {
+    $extension_list = \Drupal::service('extension.list.module');
+    foreach (static::dependencies() as $dependency) {
+      if (!$extension_list->exists($dependency)) {
+        return FALSE;
+      }
+    }
+
+    return TRUE;
+  }
+
+  /**
+   * Returns an array of module names required for monetization.
+   *
+   * @return array
+   */
+  protected static function dependencies(): array {
+    return [
+      'address',
+      'apigee_m10n',
+      'apigee_m10n_add_credit',
+      'commerce',
+    ];
+  }
+
 }
