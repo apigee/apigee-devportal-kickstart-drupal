@@ -393,14 +393,6 @@ class ApigeeDevportalKickstartConfigurationForm extends FormBase {
         }
       }
 
-      // Add values for a payment gateway.
-      // TODO: Figure out if this should be configurable in the form.
-      $values['gateway'] = [
-        'id' => 'default',
-        'label' => 'Default',
-        'plugin' => 'manual',
-      ];
-
       // Save to install state.
       $buildInfo = $form_state->getBuildInfo();
       $buildInfo['args'][0]['m10n_config'] = $values;
