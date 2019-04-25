@@ -48,7 +48,9 @@ function apigee_devportal_kickstart_install_tasks(&$install_state) {
   ];
 
   // Add monetization tasks if the configured organization is monetizable.
-  if (Drupal::moduleHandler()->moduleExists('apigee_edge') && Drupal::hasService('apigee_devportal_kickstart.monetization') && Drupal::service('apigee_devportal_kickstart.monetization')->isMonetizable()) {
+  if (Drupal::moduleHandler()->moduleExists('apigee_edge')
+    && Drupal::hasService('address.subdivision_repository')
+    && Drupal::hasService('apigee_devportal_kickstart.monetization') && Drupal::service('apigee_devportal_kickstart.monetization')->isMonetizable()) {
     $tasks = array_merge([
       ApigeeDevportalKickstartMonetizationConfigurationForm::class => [
         'display_name' => t('Configure monetization'),
