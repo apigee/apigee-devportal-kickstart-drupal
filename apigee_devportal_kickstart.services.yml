@@ -1,0 +1,3 @@
+services:
+  apigee_devportal_kickstart.monetization:
+    class: Drupal\apigee_devportal_kickstart\Installer\ApigeeDevportalKickstartMonetization

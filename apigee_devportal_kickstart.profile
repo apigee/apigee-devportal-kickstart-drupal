@@ -204,7 +204,7 @@ function apigee_devportal_kickstart_form_install_configure_submit($form, FormSta
 function _apigee_devportal_kickstart_is_monetizable() {
   try {
     $modules = \Drupal::service('extension.list.module')->getList();
-    return isset($modules['apigee_m10n']) && isset($modules['apigee_m10n_add_credit']);
+    return Drupal::service('apigee_devportal_kickstart.monetization')->isMonetizable() && isset($modules['apigee_m10n']) && isset($modules['apigee_m10n_add_credit']);
   }
   catch (InfoParserException $exception) {
     watchdog_exception('apigee_kickstart', $exception);
