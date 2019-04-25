@@ -24,8 +24,10 @@ use Apigee\Edge\Api\Management\Controller\OrganizationController;
 use Apigee\Edge\Api\Monetization\Controller\OrganizationProfileController;
 use Apigee\Edge\Api\Monetization\Controller\SupportedCurrencyController;
 use CommerceGuys\Addressing\AddressFormat\AddressField;
-use CommerceGuys\Addressing\AddressFormat\FieldOverride;
+use CommerceGuys\Addressing\Subdivision\SubdivisionRepositoryInterface;
 use CommerceGuys\Intl\Currency\CurrencyRepository;
+use Drupal\address\FieldHelper;
+use Drupal\address\LabelHelper;
 use Drupal\apigee_edge\SDKConnectorInterface;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -60,6 +62,13 @@ class ApigeeDevportalKickstartConfigurationForm extends FormBase {
   protected $languageManager;
 
   /**
+   * The subdivision repository.
+   *
+   * @var \CommerceGuys\Addressing\Subdivision\SubdivisionRepositoryInterface
+   */
+  protected $subdivisionRepository;
+
+  /**
    * The Apigee Organization.
    *
    * @var \Apigee\Edge\Api\Monetization\Entity\OrganizationProfileInterface
@@ -87,10 +96,13 @@ class ApigeeDevportalKickstartConfigurationForm extends FormBase {
    *   SDK connector service.
    * @param \Drupal\Core\Language\LanguageManagerInterface $language_manager
    *   The language manager.
+   * @param \CommerceGuys\Addressing\Subdivision\SubdivisionRepositoryInterface $subdivision_repository
+   *   The subdivision repository.
    */
-  public function __construct(SDKConnectorInterface $sdk_connector, LanguageManagerInterface $language_manager) {
+  public function __construct(SDKConnectorInterface $sdk_connector, LanguageManagerInterface $language_manager, SubdivisionRepositoryInterface $subdivision_repository) {
     $this->sdkConnector = $sdk_connector;
     $this->languageManager = $language_manager;
+    $this->subdivisionRepository = $subdivision_repository;
     $this->currencyRepository = new CurrencyRepository();
 
     try {
@@ -116,7 +128,6 @@ class ApigeeDevportalKickstartConfigurationForm extends FormBase {
     catch (\Exception $exception) {
       watchdog_exception('apigee_kickstart', $exception);
     }
-
   }
 
   /**
@@ -125,7 +136,8 @@ class ApigeeDevportalKickstartConfigurationForm extends FormBase {
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('apigee_edge.sdk_connector'),
-      $container->get('language_manager')
+      $container->get('language_manager'),
+      $container->get('address.subdivision_repository')
     );
   }
 
@@ -240,30 +252,62 @@ class ApigeeDevportalKickstartConfigurationForm extends FormBase {
       '#value' => 'online',
     ];
 
+    // Create individual address fields.
+    // We cannot use the address field because #ajax forms won't work in the
+    // installer.
     $form['store']['address'] = [
-      '#title' => $this->t('Address'),
-      '#type' => 'address',
-      '#field_overrides' => [
-        AddressField::GIVEN_NAME => FieldOverride::HIDDEN,
-        AddressField::FAMILY_NAME => FieldOverride::HIDDEN,
-        AddressField::ORGANIZATION => FieldOverride::HIDDEN,
-        AddressField::ADDRESS_LINE2 => FieldOverride::HIDDEN,
-        AddressField::POSTAL_CODE => FieldOverride::OPTIONAL,
+      '#type' => 'tree',
+    ];
+
+    $form['store']['address']['country_code'] = [
+      '#title' => $this->t('Country'),
+      '#type' => 'address_country',
+      '#required' => TRUE,
+    ];
+
+    $address_fields = [
+      AddressField::ADDRESS_LINE1 => [
+        'size' => 60,
+        'placeholder' => 'Acme Street',
+      ],
+      AddressField::ADDRESS_LINE2 => [
+        'size' => 60,
+        'placeholder' => '',
+      ],
+      AddressField::LOCALITY => [
+        'size' => 30,
+        'placeholder' => 'Santa Clara',
+      ],
+      AddressField::ADMINISTRATIVE_AREA => [
+        'size' => 30,
+        'placeholder' => 'CA',
+      ],
+      AddressField::POSTAL_CODE => [
+        'size' => 10,
+        'placeholder' => '95050',
       ],
     ];
+    $labels = LabelHelper::getGenericFieldLabels();
+    foreach ($address_fields as $address_field => $settings) {
+      $form['store']['address'][FieldHelper::getPropertyName($address_field)] = [
+        '#title' => $labels[$address_field],
+        '#type' => 'textfield',
+        '#size' => $settings['size'],
+        '#placeholder' => $settings['placeholder'],
+      ];
+    }
 
     // Add default address from organization.
     if ($addresses = $this->organization->getAddresses()) {
       /** @var \Apigee\Edge\Api\Monetization\Structure\Address $address */
       $address = reset($addresses);
 
-      $form['store']['address']['#default_value'] = [
-        'address_line1' => $address->getAddress1(),
-        'locality' => $address->getCity(),
-        'administrative_area' => $address->getState(),
-        'country_code' => $address->getCountry(),
-        'postal_code' => $address->getZip(),
-      ];
+      $form['store']['address']['country_code']['#default_value'] = $address->getCountry();
+      $form['store']['address'][FieldHelper::getPropertyName(AddressField::ADDRESS_LINE1)]['#default_value'] = $address->getAddress1();
+      $form['store']['address'][FieldHelper::getPropertyName(AddressField::ADDRESS_LINE1)]['#default_value'] = $address->getAddress1();
+      $form['store']['address'][FieldHelper::getPropertyName(AddressField::LOCALITY)]['#default_value'] = $address->getCity();
+      $form['store']['address'][FieldHelper::getPropertyName(AddressField::ADMINISTRATIVE_AREA)]['#default_value'] = $address->getState();
+      $form['store']['address'][FieldHelper::getPropertyName(AddressField::POSTAL_CODE)]['#default_value'] = $address->getZip();
     }
 
     if (count($this->supportedCurrencies)) {
@@ -311,6 +355,24 @@ class ApigeeDevportalKickstartConfigurationForm extends FormBase {
     ];
 
     return $form;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function validateForm(array &$form, FormStateInterface $form_state) {
+    parent::validateForm($form, $form_state);
+
+    // Validate administrative area.
+    if (($store = $form_state->getValue('store'))
+      && ($address = $store['address'])
+      && ($property_name = FieldHelper::getPropertyName(AddressField::ADMINISTRATIVE_AREA))
+      && isset($address[$property_name])
+      && ($subdivisions = $this->subdivisionRepository->getList([$address['country_code']]))
+      && !isset($subdivisions[strtoupper($address[$property_name])])
+    ) {
+      $form_state->setErrorByName('address][' . $property_name, $this->t('Please enter a valid administrative area.'));
+    }
   }
 
   /**
