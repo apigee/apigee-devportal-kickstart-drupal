@@ -24,7 +24,7 @@
  */
 
 use Drupal\apigee_devportal_kickstart\Installer\ApigeeDevportalKickstartTasksManager;
-use Drupal\apigee_devportal_kickstart\Installer\Form\ApigeeDevportalKickstartConfigurationForm;
+use Drupal\apigee_devportal_kickstart\Installer\Form\ApigeeDevportalKickstartMonetizationConfigurationForm;
 use Drupal\apigee_devportal_kickstart\Installer\Form\ApigeeEdgeConfigurationForm;
 use Drupal\apigee_devportal_kickstart\Installer\Form\DemoInstallForm;
 use Drupal\contact\Entity\ContactForm;
@@ -50,8 +50,8 @@ function apigee_devportal_kickstart_install_tasks(&$install_state) {
   // Add monetization tasks if the configured organization is monetizable.
   if (Drupal::moduleHandler()->moduleExists('apigee_edge') && Drupal::hasService('apigee_devportal_kickstart.monetization') && Drupal::service('apigee_devportal_kickstart.monetization')->isMonetizable()) {
     $tasks = array_merge([
-      ApigeeDevportalKickstartConfigurationForm::class => [
-        'display_name' => t('Configure kickstart'),
+      ApigeeDevportalKickstartMonetizationConfigurationForm::class => [
+        'display_name' => t('Configure monetization'),
         'type' => 'form',
       ],
       'apigee_devportal_setup_monetization' => [
