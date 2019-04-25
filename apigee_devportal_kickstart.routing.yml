@@ -1,7 +1,0 @@
-kickstart.debug:
-  path: '/admin/config/m10n'
-  defaults:
-    _form: '\Drupal\apigee_devportal_kickstart\Installer\Form\ApigeeM10nConfigurationForm'
-    _title: 'Configure m10n'
-  requirements:
-    _permission: 'administer site'
