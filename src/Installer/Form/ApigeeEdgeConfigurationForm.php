@@ -55,6 +55,9 @@ class ApigeeEdgeConfigurationForm extends AuthenticationForm {
     // Hide the test_connection fields.
     $form['test_connection']['#access'] = FALSE;
 
+    // Rename the submit button.
+    $form['actions']['submit']['#value'] = $this->t('Save and continue');
+
     // Add a skip this step button.
     $form['actions']['skip'] = [
       '#type' => 'submit',
@@ -63,6 +66,8 @@ class ApigeeEdgeConfigurationForm extends AuthenticationForm {
       '#validate' => [],
       '#limit_validation_errors' => [],
     ];
+
+    $form['#attached']['library'][] = 'apigee_devportal_kickstart/apigee_edge_form';
 
     return $form;
   }

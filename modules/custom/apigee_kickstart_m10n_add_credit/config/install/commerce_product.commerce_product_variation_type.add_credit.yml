@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: add_credit
+label: 'Add credit'
+orderItemType: add_credit
+generateTitle: false
+traits: {  }
+locked: false

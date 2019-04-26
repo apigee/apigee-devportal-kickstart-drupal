@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.add_credit
+id: commerce_product_variation.add_credit.default
+targetEntityType: commerce_product_variation
+bundle: add_credit
+mode: default
+content: {  }
+hidden:
+  apigee_price_range: true
+  list_price: true
+  price: true
+  product_id: true
+  sku: true
+  title: true

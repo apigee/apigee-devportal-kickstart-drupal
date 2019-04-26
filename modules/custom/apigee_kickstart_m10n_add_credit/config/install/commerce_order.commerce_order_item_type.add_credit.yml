@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+label: 'Add credit'
+id: add_credit
+purchasableEntityType: commerce_product_variation
+orderType: default
+traits: {  }
+locked: false
