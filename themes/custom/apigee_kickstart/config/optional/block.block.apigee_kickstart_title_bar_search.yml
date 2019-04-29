@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:title_bar:ab494520-ff67-4260-b895-6854e09e9cd4'
+    - 'block_content:title_bar:1efa0b42-0ce4-4c67-bd3d-bdb26ed63934'
   module:
     - block_content
     - system
@@ -13,9 +13,9 @@ theme: apigee_kickstart
 region: header
 weight: 0
 provider: null
-plugin: 'block_content:ab494520-ff67-4260-b895-6854e09e9cd4'
+plugin: 'block_content:1efa0b42-0ce4-4c67-bd3d-bdb26ed63934'
 settings:
-  id: 'block_content:ab494520-ff67-4260-b895-6854e09e9cd4'
+  id: 'block_content:1efa0b42-0ce4-4c67-bd3d-bdb26ed63934'
   label: 'Title bar: Search'
   provider: block_content
   label_display: '0'
