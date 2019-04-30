@@ -11203,6 +11203,9 @@ ul.social-links li a {
   background: none;
   color: #2196f3;
 }
+.article__title {
+  font-size: 1.25rem;
+}
 
 @media (max-width: 767.98px) {
   .article--teaser .article__field-image {
