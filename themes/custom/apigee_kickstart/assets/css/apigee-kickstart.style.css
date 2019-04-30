@@ -10077,8 +10077,10 @@ main {
   font-size: 0.875rem;
   font-weight: 500;
   margin-bottom: 0;
+  border-radius: 0;
 }
 .container-fluid .alert, .container .alert {
+  border-radius: 2px;
   margin-bottom: 1rem;
 }
 
