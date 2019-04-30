@@ -306,8 +306,14 @@ class ApigeeDevportalKickstartMonetizationConfigurationForm extends FormBase {
       $form['store']['address'][FieldHelper::getPropertyName(AddressField::ADDRESS_LINE1)]['#default_value'] = $address->getAddress1();
       $form['store']['address'][FieldHelper::getPropertyName(AddressField::ADDRESS_LINE1)]['#default_value'] = $address->getAddress1();
       $form['store']['address'][FieldHelper::getPropertyName(AddressField::LOCALITY)]['#default_value'] = $address->getCity();
-      $form['store']['address'][FieldHelper::getPropertyName(AddressField::ADMINISTRATIVE_AREA)]['#default_value'] = $address->getState();
       $form['store']['address'][FieldHelper::getPropertyName(AddressField::POSTAL_CODE)]['#default_value'] = $address->getZip();
+
+      // Find the state code from the country subdivisions.
+      if (($state = $address->getState())
+        && ($subdivisions = $this->subdivisionRepository->getList([$address->getCountry()]))
+        && ($key = array_search($state, $subdivisions))) {
+        $form['store']['address'][FieldHelper::getPropertyName(AddressField::ADMINISTRATIVE_AREA)]['#default_value'] = $key;
+      }
     }
 
     if (count($this->supportedCurrencies)) {
