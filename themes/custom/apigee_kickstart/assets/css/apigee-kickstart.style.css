@@ -11399,6 +11399,7 @@ form.search-form .search-advanced {
   border: 0;
 }
 .page--search .page__tasks,
+.page--search .page__messages,
 .page--search form.search-form {
   grid-column: 1/-1;
 }

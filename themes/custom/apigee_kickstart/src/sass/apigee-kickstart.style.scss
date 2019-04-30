@@ -97,13 +97,16 @@
 @import "apigee/swagger";
 @import "block/block";
 @import "form/form.contact";
+@import "form/form.search-form";
 @import "form/form.user";
 @import "form/view.exposed-form";
 @import "content/node.page";
 @import "content/node.article";
+@import "content/search-results";
 @import "comment/comment";
 @import "view/view.blog";
 @import "page/page.user";
 @import "page/page.faq";
 @import "page/page.forum";
+@import "page/page.search";
 @import "user/user";
