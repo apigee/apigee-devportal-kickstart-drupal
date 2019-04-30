@@ -5,6 +5,7 @@
   background: var(--ak-header-color-bg);
   color: var(--ak-header-color);
   font-size: 0.875rem;
+  flex-shrink: 0;
 
   a, .nav-link {
     color: var(--ak-header-color);
