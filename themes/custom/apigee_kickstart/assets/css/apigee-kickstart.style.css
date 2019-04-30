@@ -10707,8 +10707,11 @@ ul.social-links li a {
 
 .pagination {
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 1px;
+}
+.pagination .pager__item {
+  border: solid 1px #f0f0f0;
 }
 .pagination .pager__item:first-child {
   border-radius: 4px 0 0 4px;
@@ -10717,7 +10720,7 @@ ul.social-links li a {
   border-radius: 0 4px 4px 0;
 }
 .pagination .pager__item + .pager__item {
-  border-left: 1px solid #f0f0f0;
+  border-left: 0;
 }
 .pagination .page-link {
   border: 0;
