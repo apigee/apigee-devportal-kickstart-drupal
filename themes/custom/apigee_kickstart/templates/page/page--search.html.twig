@@ -1,0 +1,11 @@
+{#
+/**
+ * @file
+ * Template for the Search page layout.
+ */
+#}
+{% embed 'page.html.twig' with { classes: ['page--search'] } %}
+  {% block content %}
+    {{ page.content }}
+  {% endblock %}
+{% endembed %}

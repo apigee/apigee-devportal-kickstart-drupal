@@ -11,7 +11,7 @@ dependencies:
 id: apigee_kickstart_title_bar_blog
 theme: apigee_kickstart
 region: header
-weight: -10
+weight: 0
 provider: null
 plugin: 'block_content:bae58a0b-4f55-484f-9ee5-f2ecbf7c715e'
 settings:

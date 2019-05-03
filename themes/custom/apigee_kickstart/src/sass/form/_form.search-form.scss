@@ -1,0 +1,44 @@
+// Search form on /search
+// -----------------------------------------------------------------------------
+
+form.search-form {
+  border-bottom: solid 1px $gray-300;
+  font-size: 0.875rem;
+
+  .search-help-link {
+    @include sr-only;
+  }
+
+  fieldset {
+    .fieldset-wrapper {
+      padding-top: 0 !important;
+    }
+  }
+
+  .container-inline {
+    display: flex;
+    align-items: stretch;
+
+    .form-type-search {
+      align-items: stretch;
+      display: flex;
+      position: relative;
+      flex-grow: 1;
+      margin: 0;
+
+      input.form-control {
+        height: auto;
+        margin-right: map-get($spacers, 1);
+      }
+
+      label {
+        position: absolute;
+        top: -1.5rem;
+      }
+    }
+  }
+
+  .search-advanced {
+    margin: map-get($spacers, 5) 0;
+  }
+}
