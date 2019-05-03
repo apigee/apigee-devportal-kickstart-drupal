@@ -280,7 +280,7 @@ class ApigeeDevportalKickstartMonetizationConfigurationForm extends FormBase {
       ],
       AddressField::ADMINISTRATIVE_AREA => [
         'size' => 30,
-        'placeholder' => 'CA',
+        'placeholder' => 'CA or California',
       ],
       AddressField::POSTAL_CODE => [
         'size' => 10,
@@ -311,8 +311,8 @@ class ApigeeDevportalKickstartMonetizationConfigurationForm extends FormBase {
       // Find the state code from the country subdivisions.
       if (($state = $address->getState())
         && ($subdivisions = $this->subdivisionRepository->getList([$address->getCountry()]))
-        && ($key = array_search($state, $subdivisions))) {
-        $form['store']['address'][FieldHelper::getPropertyName(AddressField::ADMINISTRATIVE_AREA)]['#default_value'] = $key;
+        && (in_array($state, $subdivisions)) || (isset($subdivisions[$state]))) {
+        $form['store']['address'][FieldHelper::getPropertyName(AddressField::ADMINISTRATIVE_AREA)]['#default_value'] = $state;
       }
     }
 
@@ -369,15 +369,9 @@ class ApigeeDevportalKickstartMonetizationConfigurationForm extends FormBase {
   public function validateForm(array &$form, FormStateInterface $form_state) {
     parent::validateForm($form, $form_state);
 
-    // Validate administrative area.
-    if (($store = $form_state->getValue('store'))
-      && ($address = $store['address'])
-      && ($property_name = FieldHelper::getPropertyName(AddressField::ADMINISTRATIVE_AREA))
-      && isset($address[$property_name])
-      && ($subdivisions = $this->subdivisionRepository->getList([$address['country_code']]))
-      && !isset($subdivisions[strtoupper($address[$property_name])])
-    ) {
-      $form_state->setErrorByName('address][' . $property_name, $this->t('Please enter a valid administrative area.'));
+    // Validate the state.
+    if (! $this->getStateCode($form_state)) {
+      $form_state->setErrorByName('address][' . FieldHelper::getPropertyName(AddressField::ADMINISTRATIVE_AREA), $this->t('Please enter a valid administrative area.'));
     }
   }
 
@@ -399,11 +393,29 @@ class ApigeeDevportalKickstartMonetizationConfigurationForm extends FormBase {
         }
       }
 
+      // Convert state to state code.
+      $values['store']['address'][FieldHelper::getPropertyName(AddressField::ADMINISTRATIVE_AREA)] = $this->getStateCode($form_state);
+
       // Save to install state.
       $buildInfo = $form_state->getBuildInfo();
       $buildInfo['args'][0]['m10n_config'] = $values;
       $form_state->setBuildInfo($buildInfo);
     }
+  }
+  
+  protected function getStateCode(FormStateInterface $form_state): String {
+    if (($store = $form_state->getValue('store'))
+      && ($address = $store['address'])
+      && ($property_name = FieldHelper::getPropertyName(AddressField::ADMINISTRATIVE_AREA))
+      && isset($address[$property_name])
+      && ($state = $address[$property_name])
+      && ($subdivisions = $this->subdivisionRepository->getList([$address['country_code']]))
+      && (isset($subdivisions[strtoupper($state)]) || ($state = array_search($state, $subdivisions)))
+    ) {
+      return $state;
+    }
+
+    return FALSE;
   }
 
   /**
