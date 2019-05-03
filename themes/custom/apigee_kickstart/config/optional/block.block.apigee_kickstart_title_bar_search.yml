@@ -2,21 +2,21 @@ langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:title_bar:ed93a36e-95ee-4bfe-b8db-1d5ae5ae99cb'
+    - 'block_content:title_bar:1efa0b42-0ce4-4c67-bd3d-bdb26ed63934'
   module:
     - block_content
     - system
   theme:
     - apigee_kickstart
-id: apigee_kickstart_title_bar_faqs
+id: apigee_kickstart_title_bar_search
 theme: apigee_kickstart
 region: header
 weight: 0
 provider: null
-plugin: 'block_content:ed93a36e-95ee-4bfe-b8db-1d5ae5ae99cb'
+plugin: 'block_content:1efa0b42-0ce4-4c67-bd3d-bdb26ed63934'
 settings:
-  id: 'block_content:ed93a36e-95ee-4bfe-b8db-1d5ae5ae99cb'
-  label: 'Title bar: FAQs'
+  id: 'block_content:1efa0b42-0ce4-4c67-bd3d-bdb26ed63934'
+  label: 'Title bar: Search'
   provider: block_content
   label_display: '0'
   status: true
@@ -25,6 +25,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "/faq\r\n/faq/*"
+    pages: "/search\r\n/search/*"
     negate: false
     context_mapping: {  }

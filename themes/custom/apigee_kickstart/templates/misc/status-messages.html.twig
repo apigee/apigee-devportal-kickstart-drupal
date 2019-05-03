@@ -12,7 +12,7 @@
 } %}
 
 {% for type, messages in message_list %}
-  <div role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes|without('role', 'aria-label') }}>
+  <div role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes|without('role', 'aria-label').addClass('page__messages') }}>
     {% embed '@apigee-kickstart/alert/alert.twig' with {
       type: types[type],
     } %}
