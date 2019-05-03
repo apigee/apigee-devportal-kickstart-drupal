@@ -38,7 +38,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 /**
  * Configuration form for Apigee Monetization.
  */
-class ApigeeDevportalKickstartMonetizationConfigurationForm extends FormBase {
+class ApigeeMonetizationConfigurationForm extends FormBase {
 
   /**
    * SDK connector service.
@@ -280,7 +280,7 @@ class ApigeeDevportalKickstartMonetizationConfigurationForm extends FormBase {
       ],
       AddressField::ADMINISTRATIVE_AREA => [
         'size' => 30,
-        'placeholder' => 'CA',
+        'placeholder' => 'CA or California',
       ],
       AddressField::POSTAL_CODE => [
         'size' => 10,
@@ -306,8 +306,14 @@ class ApigeeDevportalKickstartMonetizationConfigurationForm extends FormBase {
       $form['store']['address'][FieldHelper::getPropertyName(AddressField::ADDRESS_LINE1)]['#default_value'] = $address->getAddress1();
       $form['store']['address'][FieldHelper::getPropertyName(AddressField::ADDRESS_LINE1)]['#default_value'] = $address->getAddress1();
       $form['store']['address'][FieldHelper::getPropertyName(AddressField::LOCALITY)]['#default_value'] = $address->getCity();
-      $form['store']['address'][FieldHelper::getPropertyName(AddressField::ADMINISTRATIVE_AREA)]['#default_value'] = $address->getState();
       $form['store']['address'][FieldHelper::getPropertyName(AddressField::POSTAL_CODE)]['#default_value'] = $address->getZip();
+
+      // Find the state code from the country subdivisions.
+      if (($state = $address->getState())
+        && ($subdivisions = $this->subdivisionRepository->getList([$address->getCountry()]))
+        && (in_array($state, $subdivisions)) || (isset($subdivisions[$state]))) {
+        $form['store']['address'][FieldHelper::getPropertyName(AddressField::ADMINISTRATIVE_AREA)]['#default_value'] = $state;
+      }
     }
 
     if (count($this->supportedCurrencies)) {
@@ -363,15 +369,9 @@ class ApigeeDevportalKickstartMonetizationConfigurationForm extends FormBase {
   public function validateForm(array &$form, FormStateInterface $form_state) {
     parent::validateForm($form, $form_state);
 
-    // Validate administrative area.
-    if (($store = $form_state->getValue('store'))
-      && ($address = $store['address'])
-      && ($property_name = FieldHelper::getPropertyName(AddressField::ADMINISTRATIVE_AREA))
-      && isset($address[$property_name])
-      && ($subdivisions = $this->subdivisionRepository->getList([$address['country_code']]))
-      && !isset($subdivisions[strtoupper($address[$property_name])])
-    ) {
-      $form_state->setErrorByName('address][' . $property_name, $this->t('Please enter a valid administrative area.'));
+    // Validate the state.
+    if (!$this->getStateCode($form_state)) {
+      $form_state->setErrorByName('address][' . FieldHelper::getPropertyName(AddressField::ADMINISTRATIVE_AREA), $this->t('Please enter a valid administrative area.'));
     }
   }
 
@@ -393,11 +393,38 @@ class ApigeeDevportalKickstartMonetizationConfigurationForm extends FormBase {
         }
       }
 
+      // Convert state to state code.
+      $values['store']['address'][FieldHelper::getPropertyName(AddressField::ADMINISTRATIVE_AREA)] = $this->getStateCode($form_state);
+
       // Save to install state.
       $buildInfo = $form_state->getBuildInfo();
       $buildInfo['args'][0]['m10n_config'] = $values;
       $form_state->setBuildInfo($buildInfo);
     }
+  }
+
+  /**
+   * Helper to get the state code from form state.
+   *
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *   The form state.
+   *
+   * @return string
+   *   The state code. eg. CA.
+   */
+  protected function getStateCode(FormStateInterface $form_state): String {
+    if (($store = $form_state->getValue('store'))
+      && ($address = $store['address'])
+      && ($property_name = FieldHelper::getPropertyName(AddressField::ADMINISTRATIVE_AREA))
+      && isset($address[$property_name])
+      && ($state = $address[$property_name])
+      && ($subdivisions = $this->subdivisionRepository->getList([$address['country_code']]))
+      && (isset($subdivisions[strtoupper($state)]) || ($state = array_search($state, $subdivisions)))
+    ) {
+      return $state;
+    }
+
+    return FALSE;
   }
 
   /**
@@ -419,7 +446,7 @@ class ApigeeDevportalKickstartMonetizationConfigurationForm extends FormBase {
    * @return array|\CommerceGuys\Intl\Currency\Currency[]
    *   An array of importable currencies.
    */
-  protected function getImportableCurrencies() {
+  protected function getImportableCurrencies(): array {
     $language = $this->languageManager->getConfigOverrideLanguage() ?: $this->languageManager->getCurrentLanguage();
     return $this->currencyRepository->getAll($language->getId());
   }
