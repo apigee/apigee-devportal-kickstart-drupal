@@ -24,7 +24,7 @@
  */
 
 use Drupal\apigee_devportal_kickstart\Installer\ApigeeDevportalKickstartTasksManager;
-use Drupal\apigee_devportal_kickstart\Installer\Form\ApigeeDevportalKickstartMonetizationConfigurationForm;
+use Drupal\apigee_devportal_kickstart\Installer\Form\ApigeeMonetizationConfigurationForm;
 use Drupal\apigee_devportal_kickstart\Installer\Form\ApigeeEdgeConfigurationForm;
 use Drupal\apigee_devportal_kickstart\Installer\Form\DemoInstallForm;
 use Drupal\contact\Entity\ContactForm;
@@ -52,7 +52,7 @@ function apigee_devportal_kickstart_install_tasks(&$install_state) {
     && Drupal::hasService('address.subdivision_repository')
     && Drupal::hasService('apigee_devportal_kickstart.monetization') && Drupal::service('apigee_devportal_kickstart.monetization')->isMonetizable()) {
     $tasks = array_merge([
-      ApigeeDevportalKickstartMonetizationConfigurationForm::class => [
+      ApigeeMonetizationConfigurationForm::class => [
         'display_name' => t('Configure monetization'),
         'type' => 'form',
       ],

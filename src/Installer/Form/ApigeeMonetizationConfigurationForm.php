@@ -38,7 +38,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 /**
  * Configuration form for Apigee Monetization.
  */
-class ApigeeDevportalKickstartMonetizationConfigurationForm extends FormBase {
+class ApigeeMonetizationConfigurationForm extends FormBase {
 
   /**
    * SDK connector service.
