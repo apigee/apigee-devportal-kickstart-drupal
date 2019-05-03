@@ -370,7 +370,7 @@ class ApigeeDevportalKickstartMonetizationConfigurationForm extends FormBase {
     parent::validateForm($form, $form_state);
 
     // Validate the state.
-    if (! $this->getStateCode($form_state)) {
+    if (!$this->getStateCode($form_state)) {
       $form_state->setErrorByName('address][' . FieldHelper::getPropertyName(AddressField::ADMINISTRATIVE_AREA), $this->t('Please enter a valid administrative area.'));
     }
   }
@@ -402,7 +402,16 @@ class ApigeeDevportalKickstartMonetizationConfigurationForm extends FormBase {
       $form_state->setBuildInfo($buildInfo);
     }
   }
-  
+
+  /**
+   * Helper to get the state code from form state.
+   *
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *   The form state.
+   *
+   * @return string
+   *   The state code. eg. CA.
+   */
   protected function getStateCode(FormStateInterface $form_state): String {
     if (($store = $form_state->getValue('store'))
       && ($address = $store['address'])
@@ -437,7 +446,7 @@ class ApigeeDevportalKickstartMonetizationConfigurationForm extends FormBase {
    * @return array|\CommerceGuys\Intl\Currency\Currency[]
    *   An array of importable currencies.
    */
-  protected function getImportableCurrencies() {
+  protected function getImportableCurrencies(): array {
     $language = $this->languageManager->getConfigOverrideLanguage() ?: $this->languageManager->getCurrentLanguage();
     return $this->currencyRepository->getAll($language->getId());
   }
