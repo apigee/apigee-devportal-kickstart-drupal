@@ -8,7 +8,7 @@ dependencies:
 id: apigee_kickstart_messages
 theme: apigee_kickstart
 region: content
-weight: 1
+weight: -8
 provider: null
 plugin: system_messages_block
 settings:

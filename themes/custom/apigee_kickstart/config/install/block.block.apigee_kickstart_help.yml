@@ -8,7 +8,7 @@ dependencies:
 id: apigee_kickstart_help
 theme: apigee_kickstart
 region: content
-weight: 0
+weight: -9
 provider: null
 plugin: help_block
 settings:

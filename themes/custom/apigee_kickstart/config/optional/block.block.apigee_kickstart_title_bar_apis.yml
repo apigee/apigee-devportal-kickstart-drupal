@@ -11,7 +11,7 @@ dependencies:
 id: apigee_kickstart_title_bar_apis
 theme: apigee_kickstart
 region: header
-weight: 0
+weight: -11
 provider: null
 plugin: 'block_content:a94fbb45-8667-451a-b173-cb50cc6faabb'
 settings:

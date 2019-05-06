@@ -6,7 +6,7 @@ dependencies:
 id: apigee_kickstart_actions
 theme: apigee_kickstart
 region: tasks
-weight: 1
+weight: -7
 provider: null
 plugin: local_actions_block
 settings:

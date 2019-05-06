@@ -5,13 +5,13 @@ body {
   height: 100%;
 }
 
-.page,
+body,
 .dialog-off-canvas-main-canvas {
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
-main {
+.page {
   flex-grow: 1;
 }
