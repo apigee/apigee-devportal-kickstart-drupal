@@ -83,6 +83,14 @@ function apigee_devportal_kickstart_install() {
  * Implements hook_install_tasks_alter().
  */
 function apigee_devportal_kickstart_install_tasks_alter(&$tasks, $install_state) {
+  // Do not add the apigee_edge_configure_form tasks if non-interactive install
+  // since drush si cannot set default values for the form.
+  // Use `drush key-save apigee_edge_connection_default '{\"auth_type\":\"basic\",\"organization\":\"ORGANIZATION\",\"username\":\"USERNAME\",\"password\":\"PASSWORD"}' --key-type=apigee_auth -y`
+  // to create a key after drush si.
+  if (!$install_state['interactive']) {
+    return;
+  }
+
   // Add a task for configuring Apigee Edge Authentication.
   $tasks_copy = $tasks;
   $apigee_edge_configure_form = [
