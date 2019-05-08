@@ -11,13 +11,8 @@
  * @ingroup themeable
  */
 #}
-{%
-  set classes = [
-  'apidoc',
-  view_mode ? 'apidoc--view-mode-' ~ view_mode|clean_class,
-]
-%}
-<article{{ attributes.addClass(classes) }}>
+{% extends 'apigee-entity.html.twig' %}
+{% block content %}
   {% include '@apigee-kickstart/card/card.twig' with {
     classes: ['api-card'],
     url: content.field_link['#url'],
@@ -27,4 +22,4 @@
     footer: content.field_link['#title'],
     hover_shadow: true
   } %}
-</article>
+{% endblock %}

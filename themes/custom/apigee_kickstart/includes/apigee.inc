@@ -5,10 +5,32 @@
  * Theme and preprocess functions for Apigee Edge Entities.
  */
 
+use Drupal\apigee_edge\Entity\AppInterface;
+
 /**
- * Implements template_preprocess_app().
+ * Implements template_preprocess_apigee_entity().
  */
-function apigee_kickstart_preprocess_app(array &$variables) {
+function apigee_kickstart_preprocess_apigee_entity(&$variables) {
+  /** @var \Drupal\Core\Entity\EntityInterface $entity */
+  $entity = $variables['entity'];
+
+  // Use a common preprocess for all apps.
+  if ($entity instanceof AppInterface) {
+    apigee_kickstart_preprocess_apigee_entity__app($variables);
+    return;
+  }
+
+  // Entity specific preprocess functions.
+  $function = __FUNCTION__ . '__' . $entity->getEntityTypeId();
+  if (function_exists($function)) {
+    $function($variables);
+  }
+}
+
+/**
+ * Implements template_preprocess_apigee_entity__app().
+ */
+function apigee_kickstart_preprocess_apigee_entity__app(array &$variables) {
   /** @var \Drupal\apigee_edge\Entity\AppInterface $app */
   $app = $variables['entity'];
 
@@ -65,5 +87,23 @@ function apigee_kickstart_preprocess_app(array &$variables) {
         ];
       }
     }
+  }
+}
+
+/**
+ * Implements template_preprocess_apigee_entity__apidoc().
+ */
+function apigee_kickstart_preprocess_apigee_entity__apidoc(&$variables) {
+  // Add the view_mode to the template.
+  $variables['view_mode'] = $variables['elements']['#view_mode'];
+
+  // Add the entity to the template.
+  /** @var \Drupal\Core\Entity\EntityInterface $entity */
+  $variables['entity'] = $entity = $variables['elements']["#apidoc"];
+
+  // Add a link to the entity.
+  if ($variables['view_mode'] !== 'full') {
+    $variables['content']['field_link'] = $entity->toLink(t('View Documentation'))
+      ->toRenderable();
   }
 }

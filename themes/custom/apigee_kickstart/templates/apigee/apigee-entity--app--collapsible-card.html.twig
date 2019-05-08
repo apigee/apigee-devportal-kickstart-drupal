@@ -1,0 +1,80 @@
+{#
+/**
+ * @file
+ * Template for Apigee Edge App in Collapsible card display mode.
+ *
+ * Available variables:
+ * - entity: The Apigee Edge App entity.
+ * - content: All app items. Use {{ content }} to print them all,
+ * - attributes: HTML attributes for the containing element.
+ *
+ * @ingroup themeable
+ */
+#}
+{% extends 'apigee-entity--app.html.twig' %}
+{% block content %}
+    {% set tab_suffix = entity.name|clean_class %}
+
+    {% embed '@apigee-kickstart/card/collapsible-card.twig' with {
+        utility_classes: classes,
+        title: entity.label
+    } %}
+
+        {% block header %}
+            {{ content.status }}
+        {% endblock %}
+
+        {% block content %}
+            <ul class="nav nav-tabs--secondary mb-4">
+                {% if content.callbackUrl or content.credentials.primary_wrapper %}
+                    <li class="nav-item">
+                        <a class="nav-link active" id="keys-tab-{{ tab_suffix }}" data-toggle="tab" href="#keys-{{ tab_suffix }}">
+                            {{ "Keys"|t }}
+                        </a>
+                    </li>
+                {% endif %}
+
+                {% if content.credentials.secondary_wrapper %}
+                    <li class="nav-item">
+                        <a class="nav-link" id="products-tab-{{ tab_suffix }}" data-toggle="tab" href="#products-{{ tab_suffix }}">
+                            {{ "Products"|t }}
+                        </a>
+                    </li>
+                {% endif %}
+
+                <li class="nav-item">
+                    <a class="nav-link" id="details-tab-{{ tab_suffix }}" data-toggle="tab" href="#details-{{ tab_suffix }}">
+                        {{ "Details"|t }}
+                    </a>
+                </li>
+
+                {% for tab in additional_tabs %}
+                    <li class="nav-item">
+                        <a href="{{ tab.url }}" class="nav-link">{{ tab.title }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+
+            <div class="tab-content">
+                {% if content.callbackUrl or content.credentials.primary_wrapper %}
+                    <div class="tab-pane show active" id="keys-{{ tab_suffix }}">
+                        {{ content.callbackUrl }}
+                        {{ content.credentials.primary_wrapper }}
+                    </div>
+                {% endif %}
+
+                {% if content.credentials.secondary_wrapper %}
+                    <div class="tab-pane" id="products-{{ tab_suffix }}">
+                        {{ content.credentials.secondary_wrapper|without('title') }}
+                    </div>
+                {% endif %}
+
+                <div class="tab-pane" id="details-{{ tab_suffix }}">
+                    {{ content|without('status', 'callbackUrl', 'credentials') }}
+                </div>
+            </div>
+
+        {% endblock %}
+    {% endembed %}
+{% endblock %}
+

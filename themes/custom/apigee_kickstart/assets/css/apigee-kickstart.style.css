@@ -12618,22 +12618,16 @@ ul.social-links li a {
 .text li {
   margin: 0.5rem 0;
 }
-.field,
-.wrapper--primary,
-.wrapper--secondary {
-  width: auto;
-}
-
-.app .tab-pane .field + .wrapper--primary {
+.apigee-entity--app .tab-pane .field + .wrapper--primary {
   padding-top: 1.2rem;
   border-top: 1px solid #ddd;
 }
-.app .tab-pane .field__label {
+.apigee-entity--app .tab-pane .field__label {
   margin: 0;
 }
-.app .tab-pane .field,
-.app .tab-pane .api-product-list-row,
-.app .tab-pane .item-property {
+.apigee-entity--app .tab-pane .field,
+.apigee-entity--app .tab-pane .api-product-list-row,
+.apigee-entity--app .tab-pane .item-property {
   width: 100%;
   padding: 1.2rem 0;
   font-size: 0.875rem;
@@ -12642,57 +12636,57 @@ ul.social-links li a {
   align-items: flex-start;
 }
 @media (min-width: 576px) {
-  .app .tab-pane .field,
-.app .tab-pane .api-product-list-row,
-.app .tab-pane .item-property {
+  .apigee-entity--app .tab-pane .field,
+.apigee-entity--app .tab-pane .api-product-list-row,
+.apigee-entity--app .tab-pane .item-property {
     flex-direction: row;
     align-items: center;
   }
 }
-.app .tab-pane .field:first-child,
-.app .tab-pane .api-product-list-row:first-child,
-.app .tab-pane .item-property:first-child {
+.apigee-entity--app .tab-pane .field:first-child,
+.apigee-entity--app .tab-pane .api-product-list-row:first-child,
+.apigee-entity--app .tab-pane .item-property:first-child {
   padding-top: 0;
 }
-.app .tab-pane .field:last-child,
-.app .tab-pane .api-product-list-row:last-child,
-.app .tab-pane .item-property:last-child {
+.apigee-entity--app .tab-pane .field:last-child,
+.apigee-entity--app .tab-pane .api-product-list-row:last-child,
+.apigee-entity--app .tab-pane .item-property:last-child {
   padding-bottom: 0;
 }
-.app .tab-pane .field + .field,
-.app .tab-pane .field + .api-product-list-row,
-.app .tab-pane .field + .item-property,
-.app .tab-pane .api-product-list-row + .field,
-.app .tab-pane .api-product-list-row + .api-product-list-row,
-.app .tab-pane .api-product-list-row + .item-property,
-.app .tab-pane .item-property + .field,
-.app .tab-pane .item-property + .api-product-list-row,
-.app .tab-pane .item-property + .item-property {
+.apigee-entity--app .tab-pane .field + .field,
+.apigee-entity--app .tab-pane .field + .api-product-list-row,
+.apigee-entity--app .tab-pane .field + .item-property,
+.apigee-entity--app .tab-pane .api-product-list-row + .field,
+.apigee-entity--app .tab-pane .api-product-list-row + .api-product-list-row,
+.apigee-entity--app .tab-pane .api-product-list-row + .item-property,
+.apigee-entity--app .tab-pane .item-property + .field,
+.apigee-entity--app .tab-pane .item-property + .api-product-list-row,
+.apigee-entity--app .tab-pane .item-property + .item-property {
   border-top: 1px solid #ddd;
 }
-.app .tab-pane .field label,
-.app .tab-pane .field .field__label,
-.app .tab-pane .field .api-product-name,
-.app .tab-pane .api-product-list-row label,
-.app .tab-pane .api-product-list-row .field__label,
-.app .tab-pane .api-product-list-row .api-product-name,
-.app .tab-pane .item-property label,
-.app .tab-pane .item-property .field__label,
-.app .tab-pane .item-property .api-product-name {
+.apigee-entity--app .tab-pane .field label,
+.apigee-entity--app .tab-pane .field .field__label,
+.apigee-entity--app .tab-pane .field .api-product-name,
+.apigee-entity--app .tab-pane .api-product-list-row label,
+.apigee-entity--app .tab-pane .api-product-list-row .field__label,
+.apigee-entity--app .tab-pane .api-product-list-row .api-product-name,
+.apigee-entity--app .tab-pane .item-property label,
+.apigee-entity--app .tab-pane .item-property .field__label,
+.apigee-entity--app .tab-pane .item-property .api-product-name {
   display: inline-block;
   min-width: 160px;
   letter-spacing: 0.25px;
   font-weight: 500;
 }
 
-.app--view-mode-full {
+.apigee-entity--app--view-mode-full {
   margin-bottom: 5rem;
 }
-.app--view-mode-full .nav-tabs--secondary {
+.apigee-entity--app--view-mode-full .nav-tabs--secondary {
   margin-top: 2rem;
 }
 
-.app--view-mode-collapsible-card .nav-tabs--secondary {
+.apigee-entity--app--view-mode-collapsible-card .nav-tabs--secondary {
   margin-top: -1rem;
   flex-wrap: nowrap;
   overflow: scroll;
