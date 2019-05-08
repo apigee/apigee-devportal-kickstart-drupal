@@ -1,0 +1,98 @@
+{#
+/**
+ * @file
+ * Generic theme implementation to display a developer- or team app entity.
+
+ * Available variables:
+ * - entity: The entity with limited access to object properties and methods.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - entity.getEntityTypeId() will return the entity type ID.
+ *   - entity.hasField('field_example') returns TRUE if the entity includes
+ *     field_example. (This does not indicate the presence of a value in this
+ *     field.)
+ *   Calling other methods, such as entity.delete(), will result in an exception.
+ *   See \Drupal\apigee_edge\Entity\EdgeEntityInterface for a full list of
+ *   methods.
+ * - label: The title of the entity.
+ * - content: All rendered field items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - url: Direct URL of the current entity.
+ * - attributes: HTML attributes for the containing element.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ *
+ * @see \Drupal\apigee_edge\Entity\EdgeEntityViewBuilder::getBuildDefaults()
+ * @see \Drupal\Core\Entity\EntityViewBuilder::getBuildDefaults()
+ * @see template_preprocess_apigee_entity()
+ * @see https://www.drupal.org/project/drupal/issues/2808481
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% if entity.getEntityTypeId in ['developer_app', 'team_app'] %}
+  {% set classes = [
+    'apigee-entity--app',
+    'apigee-entity--app--view-mode-' ~ view_mode|clean_class
+  ] %}
+{% endif %}
+
+{% block content %}
+  {% set tab_suffix = entity.name|clean_class %}
+
+  <div{{ attributes.addClass(classes) }}>
+    <ul class="nav nav-tabs--secondary mb-4">
+      {% if content.callbackUrl or content.credentials.primary_wrapper %}
+        <li class="nav-item">
+          <a class="nav-link active" id="keys-tab-{{ tab_suffix }}" data-toggle="tab" href="#keys-{{ tab_suffix }}">
+            {{ "Keys"|t }}
+          </a>
+        </li>
+      {% endif %}
+
+      {% if content.credentials.secondary_wrapper %}
+        <li class="nav-item">
+          <a class="nav-link" id="products-tab-{{ tab_suffix }}" data-toggle="tab" href="#products-{{ tab_suffix }}">
+            {{ "Products"|t }}
+          </a>
+        </li>
+      {% endif %}
+
+      <li class="nav-item">
+        <a class="nav-link" id="details-tab-{{ tab_suffix }}" data-toggle="tab" href="#details-{{ tab_suffix }}">
+          {{ "Details"|t }}
+        </a>
+      </li>
+    </ul>
+
+    <div class="tab-content">
+      {% if content.callbackUrl or content.credentials.primary_wrapper %}
+        <div class="tab-pane show active" id="keys-{{ tab_suffix }}">
+          {{ content.status }}
+          {{ content.callbackUrl }}
+          {{ content.credentials.primary_wrapper }}
+        </div>
+      {% endif %}
+
+      {% if content.credentials.secondary_wrapper %}
+        <div class="tab-pane" id="products-{{ tab_suffix }}">
+          {{ content.credentials.secondary_wrapper|without('title') }}
+        </div>
+      {% endif %}
+
+      <div class="tab-pane" id="details-{{ tab_suffix }}">
+        {{ content|without('status', 'callbackUrl', 'credentials') }}
+      </div>
+    </div>
+  </div>
+{% endblock %}

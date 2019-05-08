@@ -2,6 +2,7 @@
 // -----------------------------------------------------------------------------
 @import "~bootstrap/scss/functions";
 @import "base/variables";
+@import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/root";
 @import "base/root";
 @import "~bootstrap/scss/mixins";
@@ -91,7 +92,6 @@
 
 // Other
 // -----------------------------------------------------------------------------
-@import "apigee/overrides";
 @import "apigee/app";
 @import "apigee/apidoc";
 @import "apigee/swagger";
