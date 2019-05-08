@@ -20,6 +20,11 @@
             "value": "40d3bba3-edec-4794-9481-3c4e21cdd396"
         }
     ],
+    "revision_id": [
+        {
+            "value": 2
+        }
+    ],
     "langcode": [
         {
             "value": "en",
@@ -29,6 +34,12 @@
     "vid": [
         {
             "target_id": "forums"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2019-05-08T14:50:16+00:00",
+            "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "status": [
@@ -74,10 +85,16 @@
             "lang": "en"
         }
     ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
     "path": [
         {
             "alias": "\/forum\/sales-apis",
-            "pid": 4,
+            "pid": 1,
             "langcode": "en",
             "lang": "en"
         }

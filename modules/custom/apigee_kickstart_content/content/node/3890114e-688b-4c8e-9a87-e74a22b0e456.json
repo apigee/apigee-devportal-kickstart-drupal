@@ -19,7 +19,7 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_image": [
             {
-                "href": "http:\/\/default\/media\/5?_format=hal_json"
+                "href": "http:\/\/default\/media\/5\/edit?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_tags": [
@@ -74,7 +74,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "24482b6d-ec75-4b49-b5e6-353844c52b13"
+                        "value": "6eb64048-db73-41c5-b8bb-ac8e908dae13"
                     }
                 ]
             }
@@ -91,7 +91,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "24482b6d-ec75-4b49-b5e6-353844c52b13"
+                        "value": "6eb64048-db73-41c5-b8bb-ac8e908dae13"
                     }
                 ],
                 "lang": "en"
@@ -101,7 +101,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/media\/5?_format=hal_json"
+                        "href": "http:\/\/default\/media\/5\/edit?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
@@ -197,6 +197,17 @@
             "format": "basic_html",
             "processed": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pulvinar erat eget malesuada ultrices. Praesent nec porta tellus. Curabitur sollicitudin elementum maximus. Ut vel massa vitae turpis rhoncus congue. Donec aliquam justo a fermentum fermentum. Cras augue turpis, tempor quis sapien ut, eleifend suscipit nibh. Sed sapien felis, bibendum sed est sit amet, ullamcorper rhoncus nulla. Quisque eget accumsan diam. Cras vel consequat arcu. Quisque nec diam placerat, molestie urna finibus, aliquam ipsum. Phasellus vitae pulvinar urna. Fusce eu velit imperdiet massa finibus gravida vel at tellus. Suspendisse ipsum urna, pulvinar eu nunc blandit, consectetur iaculis turpis. Quisque ac volutpat odio, quis efficitur lectus. Curabitur vel sagittis ligula.<\/p>\n\n<p>Nam hendrerit orci id neque vehicula, vitae vulputate enim sagittis. Suspendisse potenti. Pellentesque vestibulum sollicitudin nulla ac convallis. Phasellus eu ante tempus quam consequat placerat. Phasellus quis ligula ut augue maximus lobortis id et felis. Phasellus eu dapibus dui. Suspendisse molestie finibus cursus. Suspendisse potenti. Vivamus sollicitudin cursus tristique. Vestibulum eget leo a magna efficitur mattis. Mauris convallis ut quam ac fermentum. Nunc pulvinar venenatis nisi, sit amet varius neque suscipit id. Fusce ullamcorper, mi sed eleifend eleifend, velit mauris ullamcorper ipsum, a commodo felis libero ut elit.<\/p>",
             "summary": "Tellus cras adipiscing enim eu turpis egestas pretium aenean. Est ultricies integer quis auctor. Tortor aliquam nulla facilisi cras fermentum odio eu.",
+            "lang": "en"
+        }
+    ],
+    "comment": [
+        {
+            "status": 2,
+            "cid": 0,
+            "last_comment_timestamp": 1552792578,
+            "last_comment_name": null,
+            "last_comment_uid": 1,
+            "comment_count": 0,
             "lang": "en"
         }
     ]

@@ -13,7 +13,7 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/hero\/field_media": [
             {
-                "href": "http:\/\/default\/media\/9?_format=hal_json"
+                "href": "http:\/\/default\/media\/9\/edit?_format=hal_json"
             }
         ]
     },
@@ -111,7 +111,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/media\/9?_format=hal_json"
+                        "href": "http:\/\/default\/media\/9\/edit?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/media\/image"

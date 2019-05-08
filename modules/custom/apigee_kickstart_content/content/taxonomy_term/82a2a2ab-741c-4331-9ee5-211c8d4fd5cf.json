@@ -20,6 +20,11 @@
             "value": "82a2a2ab-741c-4331-9ee5-211c8d4fd5cf"
         }
     ],
+    "revision_id": [
+        {
+            "value": 5
+        }
+    ],
     "langcode": [
         {
             "value": "en",
@@ -29,6 +34,12 @@
     "vid": [
         {
             "target_id": "api_category"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2019-05-08T14:50:16+00:00",
+            "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "status": [
@@ -66,10 +77,16 @@
             "lang": "en"
         }
     ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
     "path": [
         {
             "alias": "\/apis\/mobile",
-            "pid": 5,
+            "pid": 7,
             "langcode": "en",
             "lang": "en"
         }
