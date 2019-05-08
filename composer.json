@@ -32,9 +32,9 @@
     "drupal-composer/drupal-scaffold": "^2",
     "drupal/admin_toolbar": "^1.0",
     "drupal/adminimal_admin_toolbar": "^1.9",
-    "drupal/apigee_edge": "1.x-dev",
+    "drupal/apigee_edge": "^1.0",
     "drupal/better_exposed_filters": "^3.0@alpha",
-    "drupal/core": "^8.6.0",
+    "drupal/core": "~8.6.0",
     "drupal/default_content": "^1.0@alpha",
     "drupal/fontawesome": "^2.12",
     "drupal/paragraphs": "^1.6",
@@ -64,9 +64,6 @@
       "drupal/core": "-p2"
     },
     "patches": {
-      "drupal/core": {
-        "`EntityViewBuilder::getBuildDefaults()` doesn't check for `RevisionableInterface`.": "https://www.drupal.org/files/issues/2019-01-10/2951487_15_no-tests.patch"
-      },
       "drupal/better_exposed_filters": {
         "Fix issue with #summary_details introduced in Drupal 8.6.x": "https://www.drupal.org/files/issues/2018-10-05/bef-summary-attributes-3001967-4.patch"
       }

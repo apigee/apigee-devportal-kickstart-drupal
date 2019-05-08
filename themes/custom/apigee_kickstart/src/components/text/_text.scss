@@ -35,4 +35,8 @@
   li {
     margin: 0.5rem 0;
   }
+
+  img {
+    @extend .img-thumbnail;
+  }
 }

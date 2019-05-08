@@ -577,7 +577,8 @@ mark,
   height: auto;
 }
 
-.img-thumbnail {
+.img-thumbnail, .text img, [class$=__body] img,
+.cke_widget_image img {
   padding: 0.25rem;
   background-color: #fff;
   border: 1px solid #ddd;
@@ -10020,14 +10021,14 @@ body {
   height: 100%;
 }
 
-body,
+.page,
 .dialog-off-canvas-main-canvas {
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
-.page {
+main {
   flex-grow: 1;
 }
 
@@ -10075,6 +10076,12 @@ body,
 .alert {
   font-size: 0.875rem;
   font-weight: 500;
+  margin-bottom: 0;
+  border-radius: 0;
+}
+.container-fluid .alert, .container .alert {
+  border-radius: 2px;
+  margin-bottom: 1rem;
 }
 
 .blockquote {
@@ -10570,6 +10577,7 @@ fieldset.closed legend button {
   background: var(--ak-header-color-bg);
   color: var(--ak-header-color);
   font-size: 0.875rem;
+  flex-shrink: 0;
 }
 .navbar a, .navbar .nav-link {
   color: var(--ak-header-color);
@@ -10702,8 +10710,11 @@ ul.social-links li a {
 
 .pagination {
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 1px;
+}
+.pagination .pager__item {
+  border: solid 1px #f0f0f0;
 }
 .pagination .pager__item:first-child {
   border-radius: 4px 0 0 4px;
@@ -10712,7 +10723,7 @@ ul.social-links li a {
   border-radius: 0 4px 4px 0;
 }
 .pagination .pager__item + .pager__item {
-  border-left: 1px solid #f0f0f0;
+  border-left: 0;
 }
 .pagination .page-link {
   border: 0;
@@ -10993,7 +11004,6 @@ ul.social-links li a {
 .text li {
   margin: 0.5rem 0;
 }
-
 .field,
 .wrapper--primary,
 .wrapper--secondary {
@@ -11121,6 +11131,46 @@ ul.social-links li a {
   margin-top: 1.5rem;
 }
 
+form.search-form {
+  border-bottom: solid 1px #ddd;
+  font-size: 0.875rem;
+}
+form.search-form .search-help-link {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+form.search-form fieldset .fieldset-wrapper {
+  padding-top: 0 !important;
+}
+form.search-form .container-inline {
+  display: flex;
+  align-items: stretch;
+}
+form.search-form .container-inline .form-type-search {
+  align-items: stretch;
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  margin: 0;
+}
+form.search-form .container-inline .form-type-search input.form-control {
+  height: auto;
+  margin-right: 0.495rem;
+}
+form.search-form .container-inline .form-type-search label {
+  position: absolute;
+  top: -1.5rem;
+}
+form.search-form .search-advanced {
+  margin: 2.1255rem 0;
+}
+
 .path-user form {
   max-width: 540px;
 }
@@ -11199,6 +11249,9 @@ ul.social-links li a {
   background: none;
   color: #2196f3;
 }
+.article__title {
+  font-size: 1.25rem;
+}
 
 @media (max-width: 767.98px) {
   .article--teaser .article__field-image {
@@ -11215,6 +11268,27 @@ ul.social-links li a {
     font-size: 3rem;
     line-height: 57px;
   }
+}
+
+.search-results__list,
+.search-results__item {
+  list-style: none;
+  padding: 0;
+}
+
+.search-result__type {
+  background: none;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 0;
+  text-transform: uppercase;
+}
+.search-result__title {
+  font-size: 1.25rem;
+}
+.search-result__meta {
+  font-size: 0.75rem;
 }
 
 .comment {
@@ -11292,6 +11366,42 @@ ul.social-links li a {
 }
 .forum__submitted a {
   color: #3c3c3c;
+}
+
+.page--search main {
+  display: grid;
+  grid-auto-rows: -webkit-min-content;
+  grid-auto-rows: min-content;
+  grid-template-columns: [gutter-left] minmax(15px, 1fr) [main] minmax(0, 690px) [gutter-right] minmax(15px, 1fr);
+  padding-bottom: 3.9975rem;
+}
+@media (min-width: 992px) {
+  .page--search main {
+    grid-template-columns: [gutter-left] minmax(15px, 1fr) [main] minmax(0, 930px) [gutter-right] minmax(15px, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .page--search main {
+    grid-template-columns: [gutter-left] minmax(15px, 1fr) [main] minmax(0, 1110px) [gutter-right] minmax(15px, 1fr);
+  }
+}
+.page--search main > * {
+  grid-column: main;
+}
+.page--search main > h2 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.page--search .page__tasks,
+.page--search .page__messages,
+.page--search form.search-form {
+  grid-column: 1/-1;
 }
 
 @media (min-width: 768px) {

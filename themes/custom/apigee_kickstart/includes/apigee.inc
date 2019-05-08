@@ -31,7 +31,25 @@ function apigee_kickstart_preprocess_app(array &$variables) {
 
   // Add local tasks on the app canonical route as additional tabs.
   $variables['additional_tabs'] = [];
-  $canonical_route_name = "entity.{$app->getEntityTypeId()}.canonical_by_" . str_replace('_app', '', $app->getEntityTypeId());
+
+  switch ($app->getEntityTypeId()) {
+    case 'team_app':
+      $canonical_route_name = 'entity.team_app.canonical';
+      $route_parameters = [
+        'team' => $app->getAppOwner(),
+        'app' => $app->getName(),
+      ];
+      break;
+
+    default:
+      $canonical_route_name = "entity.{$app->getEntityTypeId()}.canonical_by_" . str_replace('_app', '', $app->getEntityTypeId());
+      $route_parameters = [
+        'user' => $app->getOwnerId(),
+        'app' => $app->getName(),
+      ];
+      break;
+  }
+
   if ($tasks = Drupal::service('plugin.manager.menu.local_task')->getLocalTasks($canonical_route_name)) {
     foreach ($tasks['tabs'] as $tab) {
       $link = $tab['#link'];
@@ -39,10 +57,7 @@ function apigee_kickstart_preprocess_app(array &$variables) {
       /** @var \Drupal\Core\Url $url */
       $url = $link['url'];
       if ($url->getRouteName() !== $canonical_route_name) {
-        $url->setRouteParameters([
-          'user' => $app->getOwnerId(),
-          'app' => $app->getName(),
-        ]);
+        $url->setRouteParameters($route_parameters);
 
         $variables['additional_tabs'][] = [
           'title' => $link['title'],

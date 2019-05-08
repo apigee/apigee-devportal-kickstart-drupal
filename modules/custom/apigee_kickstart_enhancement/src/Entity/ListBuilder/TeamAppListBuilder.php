@@ -20,12 +20,12 @@
 
 namespace Drupal\apigee_kickstart_enhancement\Entity\ListBuilder;
 
-use Drupal\apigee_edge\Entity\ListBuilder\DeveloperAppListBuilderForDeveloper;
+use Drupal\apigee_edge_teams\Entity\ListBuilder\TeamAppListByTeam;
 
 /**
  * Renders the Apps list as a list of entity views instead of a table.
  */
-class AppListBuilder extends DeveloperAppListBuilderForDeveloper {
+class TeamAppListBuilder extends TeamAppListByTeam {
 
   /**
    * {@inheritdoc}
