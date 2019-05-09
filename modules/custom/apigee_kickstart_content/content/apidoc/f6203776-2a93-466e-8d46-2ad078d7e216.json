@@ -21,7 +21,7 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/apidoc\/apidoc\/field_image": [
             {
-                "href": "http:\/\/default\/media\/2?_format=hal_json"
+                "href": "http:\/\/default\/media\/2\/edit?_format=hal_json"
             }
         ]
     },
@@ -107,7 +107,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/media\/2?_format=hal_json"
+                        "href": "http:\/\/default\/media\/2\/edit?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/media\/image"

@@ -1,20 +1,20 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/media\/5?_format=hal_json"
+            "href": "http:\/\/default\/media\/5\/edit?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
         },
-        "http:\/\/drupal.org\/rest\/relation\/media\/image\/thumbnail": [
-            {
-                "href": "http:\/\/default\/sites\/default\/files\/aditya-vyas-1392552-unsplash.jpg",
-                "lang": "en"
-            }
-        ],
         "http:\/\/drupal.org\/rest\/relation\/media\/image\/uid": [
             {
                 "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/media\/image\/thumbnail": [
+            {
+                "href": "http:\/\/default\/sites\/default\/files\/aditya-vyas-1392552-unsplash.jpg",
                 "lang": "en"
             }
         ],
@@ -53,7 +53,7 @@
     ],
     "revision_created": [
         {
-            "value": "2019-04-10T13:59:54+00:00",
+            "value": "2019-05-08T14:50:16+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -63,13 +63,25 @@
             "lang": "en"
         }
     ],
-    "name": [
-        {
-            "value": "aditya-vyas-1392552-unsplash.jpg",
-            "lang": "en"
-        }
-    ],
     "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/media\/image\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "6eb64048-db73-41c5-b8bb-ac8e908dae13"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
         "http:\/\/drupal.org\/rest\/relation\/media\/image\/thumbnail": [
             {
                 "_links": {
@@ -83,24 +95,6 @@
                 "uuid": [
                     {
                         "value": "08759418-466d-4ab8-bcb6-0fee31849e2b"
-                    }
-                ],
-                "lang": "en"
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/media\/image\/uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "24482b6d-ec75-4b49-b5e6-353844c52b13"
                     }
                 ],
                 "lang": "en"
@@ -125,6 +119,12 @@
             }
         ]
     },
+    "name": [
+        {
+            "value": "aditya-vyas-1392552-unsplash.jpg",
+            "lang": "en"
+        }
+    ],
     "created": [
         {
             "value": "2019-03-15T18:59:44+00:00",

@@ -19,7 +19,7 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_image": [
             {
-                "href": "http:\/\/default\/media\/8?_format=hal_json"
+                "href": "http:\/\/default\/media\/8\/edit?_format=hal_json"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/node\/article\/field_tags": [
@@ -74,7 +74,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "24482b6d-ec75-4b49-b5e6-353844c52b13"
+                        "value": "6eb64048-db73-41c5-b8bb-ac8e908dae13"
                     }
                 ]
             }
@@ -91,7 +91,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "24482b6d-ec75-4b49-b5e6-353844c52b13"
+                        "value": "6eb64048-db73-41c5-b8bb-ac8e908dae13"
                     }
                 ],
                 "lang": "en"
@@ -101,7 +101,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/media\/8?_format=hal_json"
+                        "href": "http:\/\/default\/media\/8\/edit?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
@@ -197,6 +197,17 @@
             "format": "basic_html",
             "processed": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dictum nibh justo, a facilisis libero sodales vel. Vivamus ut nisi non nunc malesuada sagittis non condimentum tellus. Ut pharetra quis augue sed placerat. In ut mollis turpis. Aliquam sed luctus nibh, sed mattis urna. Integer mattis mi in massa hendrerit commodo. Sed et consequat nibh. Nam efficitur nunc non mi lacinia eleifend. Phasellus tempus ipsum vel elit iaculis lacinia.<\/p>\n\n<p>Ut ac efficitur orci. Phasellus commodo orci neque, a lobortis purus malesuada in. Nullam id eros vel enim suscipit tristique vestibulum sit amet orci. Duis sed iaculis elit, et tincidunt turpis. Sed venenatis mauris vitae molestie lobortis. Mauris aliquam, lacus dictum blandit tincidunt, elit mauris vestibulum risus, eu consequat nisi arcu sit amet dui. Vivamus malesuada volutpat sapien, id feugiat dolor finibus nec. Suspendisse vulputate erat eu elit ultricies, vel congue dui tempor. Sed hendrerit gravida eros a imperdiet. Donec eget euismod metus. Curabitur enim dui, posuere non euismod mattis, varius id justo.<\/p>\n\n<p>Praesent porttitor mattis justo ac interdum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla rutrum, sapien in faucibus cursus, lorem mauris tempus mi, nec cursus elit nunc eu purus. Quisque vulputate dolor in diam convallis, in rhoncus erat fermentum. Suspendisse a eros justo. Duis magna mi, semper sed nisl vitae, venenatis pellentesque lacus. Aenean blandit quam sed ligula cursus fringilla. Quisque id diam pharetra, rhoncus odio non, hendrerit sem. Nunc condimentum diam et suscipit lacinia. Sed vitae tellus vel quam finibus pharetra. Aenean rutrum velit urna, id dignissim sem pellentesque molestie. Quisque et vulputate augue, nec viverra sapien. Nunc aliquam orci eu dolor gravida pretium. Aliquam a rhoncus urna. Nam leo turpis, vehicula sit amet vehicula nec, fermentum non ipsum.<\/p>",
             "summary": "Tellus cras adipiscing enim eu turpis egestas pretium aenean. Est ultricies integer quis auctor. Tortor aliquam nulla facilisi cras fermentum odio eu.",
+            "lang": "en"
+        }
+    ],
+    "comment": [
+        {
+            "status": 2,
+            "cid": 1,
+            "last_comment_timestamp": 1554122417,
+            "last_comment_name": "",
+            "last_comment_uid": 1,
+            "comment_count": 1,
             "lang": "en"
         }
     ]

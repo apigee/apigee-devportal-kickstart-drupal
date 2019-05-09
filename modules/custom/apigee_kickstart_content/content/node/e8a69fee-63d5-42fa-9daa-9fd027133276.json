@@ -69,7 +69,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "24482b6d-ec75-4b49-b5e6-353844c52b13"
+                        "value": "6eb64048-db73-41c5-b8bb-ac8e908dae13"
                     }
                 ]
             }
@@ -86,7 +86,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "24482b6d-ec75-4b49-b5e6-353844c52b13"
+                        "value": "6eb64048-db73-41c5-b8bb-ac8e908dae13"
                     }
                 ],
                 "lang": "en"
@@ -175,6 +175,17 @@
             "format": "basic_html",
             "processed": "<p>In a gravida nisi, in interdum urna. Nunc nec eros sed magna tincidunt vestibulum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis facilisis tortor augue, eget facilisis arcu hendrerit at.<\/p>\n\n<p>Aliquam ultricies erat augue, sodales finibus dui rutrum et. Maecenas eget ipsum eu ante dictum auctor.<\/p>\n\n<p>Suspendisse sed orci nulla. Nullam id rhoncus lacus. Fusce velit enim, viverra ut tortor ultricies, tincidunt aliquet felis. Praesent porta eros et lacus blandit rutrum. Nulla sollicitudin ex elit, sit amet lobortis magna malesuada eget.<\/p>\n\n<p>Donec et dolor sed mi ornare imperdiet sit amet et justo. Duis blandit malesuada leo a pellentesque. Maecenas suscipit gravida leo, at convallis quam ullamcorper eu. Donec sollicitudin augue vitae luctus consequat. In tristique varius dapibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;<\/p>\n\n<p>Quisque eget erat risus. Phasellus iaculis orci id erat porttitor, quis tristique turpis cursus. Nulla gravida fermentum erat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc eu mollis velit.<\/p>",
             "summary": "",
+            "lang": "en"
+        }
+    ],
+    "comment_forum": [
+        {
+            "status": 2,
+            "cid": 0,
+            "last_comment_timestamp": 1553029414,
+            "last_comment_name": null,
+            "last_comment_uid": 1,
+            "comment_count": 0,
             "lang": "en"
         }
     ]

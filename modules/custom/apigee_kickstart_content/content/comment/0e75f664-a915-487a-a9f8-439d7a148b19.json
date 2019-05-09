@@ -6,15 +6,15 @@
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/comment\/comment_forum"
         },
-        "http:\/\/drupal.org\/rest\/relation\/comment\/comment_forum\/entity_id": [
-            {
-                "href": "http:\/\/default\/forum\/security-tokens-documentation?_format=hal_json"
-            }
-        ],
         "http:\/\/drupal.org\/rest\/relation\/comment\/comment_forum\/uid": [
             {
                 "href": "http:\/\/default\/user\/1?_format=hal_json",
                 "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/comment\/comment_forum\/entity_id": [
+            {
+                "href": "http:\/\/default\/forum\/security-tokens-documentation?_format=hal_json"
             }
         ]
     },
@@ -46,6 +46,24 @@
         }
     ],
     "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/comment\/comment_forum\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "6eb64048-db73-41c5-b8bb-ac8e908dae13"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
         "http:\/\/drupal.org\/rest\/relation\/comment\/comment_forum\/entity_id": [
             {
                 "_links": {
@@ -61,24 +79,6 @@
                         "value": "08dd5a22-1712-41b2-8afb-3623b83d9a74"
                     }
                 ]
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/comment\/comment_forum\/uid": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "24482b6d-ec75-4b49-b5e6-353844c52b13"
-                    }
-                ],
-                "lang": "en"
             }
         ]
     },

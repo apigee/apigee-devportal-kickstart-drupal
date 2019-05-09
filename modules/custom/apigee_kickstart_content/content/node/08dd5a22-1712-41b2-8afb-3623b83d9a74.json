@@ -69,7 +69,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "24482b6d-ec75-4b49-b5e6-353844c52b13"
+                        "value": "6eb64048-db73-41c5-b8bb-ac8e908dae13"
                     }
                 ]
             }
@@ -86,7 +86,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "24482b6d-ec75-4b49-b5e6-353844c52b13"
+                        "value": "6eb64048-db73-41c5-b8bb-ac8e908dae13"
                     }
                 ],
                 "lang": "en"
@@ -164,7 +164,7 @@
     "path": [
         {
             "alias": "\/forum\/security-tokens-documentation",
-            "pid": 11,
+            "pid": 13,
             "langcode": "en",
             "lang": "en"
         }
@@ -175,6 +175,17 @@
             "format": "basic_html",
             "processed": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dictum nibh justo, a facilisis libero sodales vel. Vivamus ut nisi non nunc malesuada sagittis non condimentum tellus. Ut pharetra quis augue sed placerat. In ut mollis turpis. Aliquam sed luctus nibh, sed mattis urna. Integer mattis mi in massa hendrerit commodo. Sed et consequat nibh. Nam efficitur nunc non mi lacinia eleifend. Phasellus tempus ipsum vel elit iaculis lacinia.<\/p>\n\n<p>Ut ac efficitur orci. Phasellus commodo orci neque, a lobortis purus malesuada in. Nullam id eros vel enim suscipit tristique vestibulum sit amet orci. Duis sed iaculis elit, et tincidunt turpis. Sed venenatis mauris vitae molestie lobortis. Mauris aliquam, lacus dictum blandit tincidunt, elit mauris vestibulum risus, eu consequat nisi arcu sit amet dui. Vivamus malesuada volutpat sapien, id feugiat dolor finibus nec. Suspendisse vulputate erat eu elit ultricies, vel congue dui tempor. Sed hendrerit gravida eros a imperdiet. Donec eget euismod metus. Curabitur enim dui, posuere non euismod mattis, varius id justo.<\/p>",
             "summary": "",
+            "lang": "en"
+        }
+    ],
+    "comment_forum": [
+        {
+            "status": 2,
+            "cid": 2,
+            "last_comment_timestamp": 1554318655,
+            "last_comment_name": "",
+            "last_comment_uid": 1,
+            "comment_count": 1,
             "lang": "en"
         }
     ]
