@@ -10,7 +10,7 @@ dependencies:
 id: apigee_kickstart_menu_account
 theme: apigee_kickstart
 region: navbar_right
-weight: -10
+weight: 0
 provider: null
 plugin: 'system_menu_block:account'
 settings:
@@ -20,4 +20,5 @@ settings:
   label_display: visible
   level: 1
   depth: 0
+  expand_all_items: false
 visibility: {  }

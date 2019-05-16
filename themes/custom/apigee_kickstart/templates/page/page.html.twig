@@ -4,10 +4,9 @@
  * Template for the main page.
  */
 #}
-{% set attributes = create_attribute() %}
 {% set classes = [
   'page'
-]|merge(utility_classes|default([])) %}
+]|merge(classes|default([])) %}
 
 {% set main_attributes = create_attribute() %}
 
@@ -96,28 +95,28 @@
       </div>
     </div>
   {% endif %}
+
+  {% if page.footer or page.copyright %}
+    <footer class="page__footer">
+      {% if page.footer %}
+        <div class="footer pt-5 pb-4 pb-md-8">
+          <div class="container">
+            <div class="d-md-flex justify-content-md-between">
+              {{ page.footer }}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if page.copyright %}
+        <div class="copyright py-1">
+          <div class="container">
+            <div class="d-md-flex justify-content-md-end">
+              {{ page.copyright }}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    </footer>
+  {% endif %}
 </div>
-
-{% if page.footer or page.copyright %}
-  <footer class="page__footer">
-    {% if page.footer %}
-      <div class="footer pt-5 pb-4 pb-md-8">
-        <div class="container">
-          <div class="d-md-flex justify-content-md-between">
-            {{ page.footer }}
-          </div>
-        </div>
-      </div>
-    {% endif %}
-
-    {% if page.copyright %}
-      <div class="copyright py-1">
-        <div class="container">
-          <div class="d-md-flex justify-content-md-end">
-            {{ page.copyright }}
-          </div>
-        </div>
-      </div>
-    {% endif %}
-  </footer>
-{% endif %}

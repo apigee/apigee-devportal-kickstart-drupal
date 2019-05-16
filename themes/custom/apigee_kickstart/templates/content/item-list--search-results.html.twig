@@ -1,0 +1,47 @@
+{#
+/**
+ * @file
+ * Theme override for an item list of search results.
+ *
+ * Available variables:
+ * - items: A list of items. Each item contains:
+ *   - attributes: HTML attributes to be applied to each list item.
+ *   - value: The content of the list element.
+ * - title: The title of the list.
+ * - list_type: The tag for list element ("ul" or "ol").
+ * - attributes: HTML attributes to be applied to the list.
+ * - empty: A message to display when there are no items. Allowed value is a
+ *   string or render array.
+ * - context: An list of contextual data associated with the list. For search
+ *   results, the following data is set:
+ *   - plugin: The search plugin ID, for example "node_search".
+ *
+ * @see template_preprocess_item_list()
+ */
+#}
+{%
+  set classes = [
+    'search-results',
+    'py-4'
+  ]
+%}
+
+<div{{attributes.addClass(classes)}}>
+  {% if items %}
+
+    {%- if title is not empty -%}
+      <h3 class="search-results__title">{{ title }}</h3>
+    {%- endif -%}
+
+    <{{- list_type }} class="search-results__list">
+      {%- for item in items -%}
+        <li{{ item.attributes.addClass('search-results__item', 'my-4') }}>
+          {{- item.value -}}
+        </li>
+      {%- endfor -%}
+    </{{- list_type -}}>
+
+  {% elseif empty %}
+    {{- empty -}}
+  {%- endif %}
+</div>

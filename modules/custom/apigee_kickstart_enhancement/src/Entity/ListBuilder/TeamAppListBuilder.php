@@ -31,18 +31,8 @@ class TeamAppListBuilder extends TeamAppListByTeam {
    * {@inheritdoc}
    */
   public function render() {
-    $build = [];
-    $view_builder = $this->entityTypeManager->getViewBuilder($this->entityTypeId);
-
     // Render a list of apps.
-    // We cannot do ViewBuilder::viewMultiple here because \Drupal\apigee_edge\Entity\AppViewBuilder::buildMultiple
-    // assumes $build_list is an array of render arrays whereas $build_list may
-    // contain non-renderaable elements. Example: #sorted or #pre_render.
-    foreach ($this->load() as $entity) {
-      $build[] = $view_builder->view($entity, 'collapsible_card');
-    }
-
-    return $build;
+    return $this->entityTypeManager->getViewBuilder($this->entityTypeId)->viewMultiple($this->load(), 'collapsible_card');
   }
 
 }

@@ -20,6 +20,11 @@
             "value": "21610fde-d521-4f1b-b56f-63cdee1aec2a"
         }
     ],
+    "revision_id": [
+        {
+            "value": 4
+        }
+    ],
     "langcode": [
         {
             "value": "en",
@@ -29,6 +34,12 @@
     "vid": [
         {
             "target_id": "forums"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2019-05-08T14:50:16+00:00",
+            "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "status": [
@@ -74,10 +85,16 @@
             "lang": "en"
         }
     ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
     "path": [
         {
             "alias": "\/forum\/miscellaneous",
-            "pid": 2,
+            "pid": 3,
             "langcode": "en",
             "lang": "en"
         }

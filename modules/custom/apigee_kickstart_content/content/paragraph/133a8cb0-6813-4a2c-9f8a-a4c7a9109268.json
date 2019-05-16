@@ -8,7 +8,7 @@
         },
         "http:\/\/drupal.org\/rest\/relation\/paragraph\/card\/field_image": [
             {
-                "href": "http:\/\/default\/media\/4?_format=hal_json",
+                "href": "http:\/\/default\/media\/4\/edit?_format=hal_json",
                 "lang": "en"
             }
         ]
@@ -89,7 +89,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/media\/4?_format=hal_json"
+                        "href": "http:\/\/default\/media\/4\/edit?_format=hal_json"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/media\/image"

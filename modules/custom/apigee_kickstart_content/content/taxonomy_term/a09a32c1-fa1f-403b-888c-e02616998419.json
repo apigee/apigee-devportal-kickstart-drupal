@@ -20,6 +20,11 @@
             "value": "a09a32c1-fa1f-403b-888c-e02616998419"
         }
     ],
+    "revision_id": [
+        {
+            "value": 6
+        }
+    ],
     "langcode": [
         {
             "value": "en",
@@ -29,6 +34,12 @@
     "vid": [
         {
             "target_id": "api_category"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2019-05-08T14:50:16+00:00",
+            "format": "Y-m-d\\TH:i:sP"
         }
     ],
     "status": [
@@ -66,10 +77,16 @@
             "lang": "en"
         }
     ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
     "path": [
         {
             "alias": "\/apis\/payment-transaction",
-            "pid": 12,
+            "pid": 11,
             "langcode": "en",
             "lang": "en"
         }

@@ -21,7 +21,6 @@
 namespace Drupal\apigee_devportal_kickstart\Installer\Form;
 
 use Drupal\apigee_edge\Form\AuthenticationForm;
-use Drupal\apigee_edge\Plugin\EdgeKeyTypeInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Messenger\MessengerInterface;
 
@@ -52,22 +51,37 @@ class ApigeeEdgeConfigurationForm extends AuthenticationForm {
       '#weight' => -100,
     ];
 
-    // Hide the test_connection fields.
-    $form['test_connection']['#access'] = FALSE;
-
-    // Rename the submit button.
-    $form['actions']['submit']['#value'] = $this->t('Save and continue');
-
     // Add a skip this step button.
     $form['actions']['skip'] = [
       '#type' => 'submit',
       '#value' => $this->t('Skip this step'),
       '#submit' => [[$this, 'skipStepSubmit']],
-      '#validate' => [],
+      '#name' => 'skip',
       '#limit_validation_errors' => [],
     ];
 
-    $form['#attached']['library'][] = 'apigee_devportal_kickstart/apigee_edge_form';
+    // Add a custom after_build callback.
+    $form['#after_build'][] = '::formAfterBuild';
+
+    return $form;
+  }
+
+  /**
+   * Custom after_build callback for the form.
+   *
+   * @param array $form
+   *   The form array.
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   *   The form state.
+   *
+   * @return array
+   *   The form array.
+   */
+  public static function formAfterBuild(array $form, FormStateInterface $form_state) {
+    // Hide the provider and test connection section.
+    // These won't work anyway since AJAX forms cannot work on the installer.
+    $form['settings']['provider_section']['#access'] = FALSE;
+    $form['settings']['test_connection']['#access'] = FALSE;
 
     return $form;
   }
@@ -87,32 +101,7 @@ class ApigeeEdgeConfigurationForm extends AuthenticationForm {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     // Clear error messages.
-    $this->messenger->deleteByType(MessengerInterface::TYPE_ERROR);
-
-    // \Drupal\apigee_edge\Form\AuthenticationForm::submitForm is not saving
-    // keys properly. For now we fix this here.
-    // TODO: Remove this when above is fixed.
-    // Get the processed value from the form state.
-    $processed_submitted = $form_state->get('processed_submitted');
-
-    if (!empty($processed_submitted) && $this->keyIsWritable($this->activeKey)) {
-      // Set the active key's value.
-      $this->activeKey->setKeyValue($processed_submitted);
-      $this->activeKey->save();
-    }
-
-    // The only time `submitForm` gets called is when the key provider is
-    // writable so submitted values should be available here. The only time the
-    // values wouldn't be available is if the token input type was changed.
-    $auth_type = $form_state->getUserInput()['key_input_settings']['auth_type'] ?? FALSE;
-    if ($auth_type === EdgeKeyTypeInterface::EDGE_AUTH_TYPE_OAUTH) {
-      // Make sure we don't try to re-use old tokens.
-      $this->oauthTokenStorage->removeToken();
-    }
-    else {
-      // Since OAUTH isn't being used clean up by removing the storage file.
-      $this->oauthTokenStorage->removeTokenFile();
-    }
+    $this->messenger()->deleteByType(MessengerInterface::TYPE_ERROR);
 
     parent::submitForm($form, $form_state);
   }
