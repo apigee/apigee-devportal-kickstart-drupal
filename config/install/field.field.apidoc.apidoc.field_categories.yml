@@ -5,7 +5,7 @@ dependencies:
     - field.storage.apidoc.field_categories
     - taxonomy.vocabulary.api_category
   module:
-    - apigee_edge_apidocs
+    - apigee_api_catalog
 id: apidoc.apidoc.field_categories
 field_name: field_categories
 entity_type: apidoc

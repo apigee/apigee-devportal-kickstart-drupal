@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   module:
-    - apigee_edge_apidocs
+    - apigee_api_catalog
     - taxonomy
 id: apidoc.field_categories
 field_name: field_categories

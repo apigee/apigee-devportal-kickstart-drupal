@@ -3,19 +3,18 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.apidoc.card
-    - field.storage.apidoc.field_categories
     - system.menu.main
     - taxonomy.vocabulary.api_category
   module:
-    - apigee_edge_apidocs
+    - apigee_api_catalog
     - better_exposed_filters
     - taxonomy
     - text
     - user
-id: apigee_edge_api_docs
-label: 'Apigee Edge API Docs'
+id: apigee_api_catalog
+label: 'API Catalog'
 module: views
-description: 'APIs published using the API Docs Apigee Edge module.'
+description: 'APIs published using the Apigee API Catalog module.'
 tag: ''
 base_table: apidoc_field_data
 base_field: id
@@ -95,7 +94,7 @@ display:
       style:
         type: grid
         options:
-          uses_fields: false
+          grouping: {  }
           columns: 12
           automatic_width: true
           alignment: horizontal
@@ -174,69 +173,6 @@ display:
           entity_type: null
           entity_field: name
           plugin_id: field
-        field_categories:
-          id: field_categories
-          table: apidoc__field_categories
-          field: field_categories
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: Categories
-          exclude: false
-          alter:
-            alter_text: true
-            text: '<a href="/apis/{{ field_categories__target_id }}"> {{ field_categories }}</a>'
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: cust-padd
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: false
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ''
-          field_api_classes: false
-          plugin_id: field
         description__value:
           id: description__value
           table: apidoc_field_data
@@ -263,14 +199,14 @@ display:
             suffix: ''
             target: ''
             nl2br: false
-            max_length: 180
-            word_boundary: false
+            max_length: 0
+            word_boundary: true
             ellipsis: true
             more_link: false
             more_link_text: ''
             more_link_path: ''
             strip_tags: false
-            trim: true
+            trim: false
             preserve_tags: ''
             html: false
           element_type: ''
@@ -301,59 +237,6 @@ display:
           entity_type: apidoc
           entity_field: description
           plugin_id: field
-        view_apidoc:
-          id: view_apidoc
-          table: apidoc
-          field: view_apidoc
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: card-action
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          text: 'Read More'
-          output_url_as_text: false
-          absolute: false
-          entity_type: apidoc
-          plugin_id: entity_link
       filters:
         status:
           id: status
@@ -467,53 +350,12 @@ display:
           empty: true
           tokenize: false
           content:
-            value: '<p>No API documentation is currently available.</p>'
+            value: 'No API documentation is currently available.'
             format: basic_html
           plugin_id: text
       relationships: {  }
-      arguments:
-        field_categories_target_id:
-          id: field_categories_target_id
-          table: apidoc__field_categories
-          field: field_categories_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          default_action: ignore
-          exception:
-            value: all
-            title_enable: false
-            title: All
-          title_enable: false
-          title: ''
-          default_argument_type: fixed
-          default_argument_options:
-            argument: ''
-          default_argument_skip_url: false
-          summary_options:
-            base_path: ''
-            count: true
-            items_per_page: 25
-            override: false
-          summary:
-            sort_order: asc
-            number_of_records: 0
-            format: default_summary
-          specify_validation: false
-          validate:
-            type: none
-            fail: 'not found'
-          validate_options: {  }
-          break_phrase: false
-          not: false
-          plugin_id: numeric
+      arguments: {  }
       display_extenders: {  }
-      filter_groups:
-        operator: AND
-        groups:
-          1: AND
-      use_ajax: true
-      css_class: api-view
     cache_metadata:
       max-age: -1
       contexts:
@@ -523,12 +365,10 @@ display:
         - url.query_args
         - user
         - user.permissions
-      tags:
-        - 'config:field.storage.apidoc.field_categories'
-        - extensions
-  page:
+      tags: {  }
+  page_1:
     display_plugin: page
-    id: page
+    id: page_1
     display_title: Page
     position: 1
     display_options:
@@ -537,7 +377,7 @@ display:
       menu:
         type: normal
         title: APIs
-        description: 'API documentation'
+        description: 'API Catalog'
         expanded: false
         parent: ''
         weight: 0
@@ -552,6 +392,5 @@ display:
         - url.query_args
         - user
         - user.permissions
-      tags:
-        - 'config:field.storage.apidoc.field_categories'
-        - extensions
+      tags: {  }
+

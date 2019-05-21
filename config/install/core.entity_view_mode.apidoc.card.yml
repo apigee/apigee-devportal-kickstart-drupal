@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   module:
-    - apigee_edge_apidocs
+    - apigee_api_catalog
 id: apidoc.card
 label: Card
 targetEntityType: apidoc

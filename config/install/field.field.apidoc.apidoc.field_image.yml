@@ -5,7 +5,7 @@ dependencies:
     - field.storage.apidoc.field_image
     - media.type.image
   module:
-    - apigee_edge_apidocs
+    - apigee_api_catalog
 id: apidoc.apidoc.field_image
 field_name: field_image
 entity_type: apidoc

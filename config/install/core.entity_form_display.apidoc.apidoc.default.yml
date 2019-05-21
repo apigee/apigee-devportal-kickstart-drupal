@@ -5,7 +5,7 @@ dependencies:
     - field.field.apidoc.apidoc.field_categories
     - field.field.apidoc.apidoc.field_image
   module:
-    - apigee_edge_apidocs
+    - apigee_api_catalog
     - file
     - media_library
     - text
