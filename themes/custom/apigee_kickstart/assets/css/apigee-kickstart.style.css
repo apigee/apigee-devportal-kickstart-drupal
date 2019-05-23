@@ -12442,7 +12442,7 @@ ul.social-links li a {
 }
 @media (max-width: 991.98px) {
   .text-image__wrapper {
-    grid-template-areas: "media media media meida" "gutter-left main main gutter-right";
+    grid-template-areas: "media media media media" "gutter-left main main gutter-right";
     grid-template-columns: [gutter-left] 15px [media] 1fr [main] 1fr [gutter-right] 15px;
   }
 }
