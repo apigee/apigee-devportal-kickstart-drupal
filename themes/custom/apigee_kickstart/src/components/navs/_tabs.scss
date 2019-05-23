@@ -1,0 +1,115 @@
+// Responsive Tabs
+// -----------------------------------------------------------------------------
+
+.is-collapse-enabled .nav-tabs,
+.is-horizontal .nav-tabs {
+  clear: both;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+
+  // Bottom border should not affect overall container height.
+  &:before {
+    border-bottom: 1px solid $gray-400;
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: 10;
+  }
+}
+
+// Collapsed state
+.is-collapse-enabled .nav-tabs {
+  max-height: 0;
+  overflow: hidden;
+  padding-top: 40px;
+
+  &:before {
+    right: 60px;
+  }
+
+  &.is-open::before {
+    display: none;
+  }
+}
+
+// Collapsed and open.
+.nav-tabs.is-open {
+  max-height: 999em;
+}
+
+// Horizontal state
+.is-horizontal .nav-tabs {
+  overflow: visible;
+  max-height: none !important;
+  padding-top: 0 !important;
+  border-bottom: 0;
+}
+
+
+// Tab List Item
+// -----------------------------------------------------------------------------
+
+.nav-tabs .nav-item {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Show active item at the top of the list when collapsed.
+.is-collapse-enabled .nav-item.active {
+  position: absolute;
+  top: 0;
+  left: 0; /* LTR */
+  width: calc(100% - 60px);
+  z-index: 15;
+}
+
+.is-horizontal .nav-item {
+  float: left; /* LTR */
+  width: auto;
+  height: auto;
+  text-align: center;
+}
+
+// Override the states above
+// .is-horizontal .nav-tabs.nav-tabs--primary .nav-item.active
+.is-horizontal .nav-item.active,
+.is-horizontal .nav-tabs.nav-tabs--primary .nav-item.active {
+  position: relative;
+  top: 0;
+  width: auto;
+}
+
+
+// Tab Trigger & Nav Positining
+// -----------------------------------------------------------------------------
+
+.tabs__trigger,
+.is-horizontal .tabs__trigger {
+  display: none;
+}
+
+/* JS dependent styling */
+.is-collapse-enabled .tabs__trigger {
+  background: var(--ak-accent-color);
+  border: 0;
+  color: var(--ak-accent-color-light);
+  display: block;
+  height: 40px;
+  left: auto;
+  outline: 0;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 60px;
+  z-index: 10;
+}
