@@ -21,7 +21,9 @@
   }
 }
 
-.forum__add {
+div.forum__add {
+  margin-top: 0 !important;
+
   @include media-breakpoint-up(md) {
     float: right;
     clear: right;
