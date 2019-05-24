@@ -1,0 +1,43 @@
+{#
+/**
+ * @file
+ * Template for links within a dropbutton.
+ */
+#}
+{% if links -%}
+  {%- if heading -%}
+    {%- if heading.level -%}
+      <{{ heading.level }}{{ heading.attributes }}>{{ heading.text }}</{{ heading.level }}>
+    {%- else -%}
+      <h2{{ heading.attributes }}>{{ heading.text }}</h2>
+    {%- endif -%}
+  {%- endif -%}
+  <ul{{ attributes }}>
+
+    {% if split %}
+      {% if button['#options'].attributes %}
+        {% set button_attributes = create_attribute(button['#options'].attributes) %}
+      {% else %}
+        {% set button_attributes = create_attribute() %}
+      {% endif %}
+      <li><a{{ button_attributes.removeClass(['btn', 'btn-sm', 'btn-outline-dark']) }} href="{{ button['#url'].toString }}">{{- button['#title'] -}}</a></li>
+    {% endif %}
+
+    {%- for item in links -%}
+      <li{{ item.attributes.removeClass('dropdown-item') }}>
+        {%- if item.link -%}
+          {% if item.link['#options'].attributes %}
+            {% set link_attributes = create_attribute(item.link['#options'].attributes) %}
+          {% else %}
+            {% set link_attributes = create_attribute() %}
+          {% endif %}
+          <a{{ link_attributes.removeClass('dropdown-item') }} href="{{ item.link['#url'].toString }}">{{- item.link['#title'] -}}</a>
+        {%- elseif item.text_attributes -%}
+          <span{{ item.text_attributes }}>{{ item.text }}</span>
+        {%- else -%}
+          {{ item.text }}
+        {%- endif -%}
+      </li>
+    {%- endfor -%}
+  </ul>
+{%- endif %}
