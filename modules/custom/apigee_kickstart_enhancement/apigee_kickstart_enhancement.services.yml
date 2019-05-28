@@ -5,6 +5,12 @@ services:
       - { name: event_subscriber }
     arguments: ['@apigee_kickstart.enhancer']
 
+  apigee_kickstart_enhancement.page_not_found_subscriber:
+    class: Drupal\apigee_kickstart_enhancement\EventSubscriber\PageNotFoundEventSubscriber
+    arguments: ['@path.validator']
+    tags:
+      - { name: event_subscriber }
+
   apigee_kickstart.enhancer:
     class: Drupal\apigee_kickstart_enhancement\ApigeeKickStartEnhancer
     arguments: ['@entity_type.manager']
