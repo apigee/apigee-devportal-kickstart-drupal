@@ -39,5 +39,4 @@ content:
     third_party_settings: {  }
 hidden:
   field_categories: true
-  file_link: true
-  spec_file_source: true
+  spec: true

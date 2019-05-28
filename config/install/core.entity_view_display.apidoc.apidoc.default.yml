@@ -10,11 +10,16 @@ id: apidoc.apidoc.default
 targetEntityType: apidoc
 bundle: apidoc
 mode: default
-content: {  }
+content:
+  spec:
+    label: hidden
+    type: apigee_api_catalog_smartdocs
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   description: true
   field_categories: true
   field_image: true
-  file_link: true
   name: true
-  spec_file_source: true

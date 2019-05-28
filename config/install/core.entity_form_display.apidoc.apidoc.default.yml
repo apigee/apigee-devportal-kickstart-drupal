@@ -39,14 +39,6 @@ content:
       media_types: {  }
     third_party_settings: {  }
     region: content
-  file_link:
-    weight: 0
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-    type: file_link_default
   name:
     type: string_textfield
     weight: 0
@@ -55,10 +47,19 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  spec_file_source:
-    type: options_buttons
-    weight: 0
+  spec:
+    label: hidden
+    type: file_generic
     region: content
-    settings: {  }
+    weight: 26
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
 hidden: {  }
