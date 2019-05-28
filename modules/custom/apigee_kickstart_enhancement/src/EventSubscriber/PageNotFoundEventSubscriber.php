@@ -20,6 +20,7 @@
 
 namespace Drupal\apigee_kickstart_enhancement\EventSubscriber;
 
+use Drupal\Core\Path\PathMatcherInterface;
 use Drupal\Core\Path\PathValidatorInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -42,13 +43,23 @@ class PageNotFoundEventSubscriber implements EventSubscriberInterface {
   protected $pathValidator;
 
   /**
+   * The patch matcher service.
+   *
+   * @var \Drupal\Core\Path\PathMatcherInterface
+   */
+  protected $pathMatcher;
+
+  /**
    * PageNotFoundEventSubscriber constructor.
    *
+   * @param \Drupal\Core\Path\PathMatcherInterface $path_matcher
+   *   The patch matcher service.
    * @param \Drupal\Core\Path\PathValidatorInterface $path_validator
    *   The path validator service.
    */
-  public function __construct(PathValidatorInterface $path_validator) {
+  public function __construct(PathMatcherInterface $path_matcher, PathValidatorInterface $path_validator) {
     $this->pathValidator = $path_validator;
+    $this->pathMatcher = $path_matcher;
   }
 
   /**
@@ -63,8 +74,10 @@ class PageNotFoundEventSubscriber implements EventSubscriberInterface {
     // Check if the request uri matches an apidoc canonical route.
     // Also check for apidoc valid path.
     if (!($event->getException() instanceof NotFoundHttpException)
-      || !(preg_match('/^\/api\/([0-9]+)\/.+$/', $event->getRequest()->getRequestUri(), $matches)
-        && ($path = "/api/{$matches[1]}")
+      || !(($uri = $event->getRequest()->getRequestUri())
+        && ($this->pathMatcher->matchPath($uri, '/api/*/*'))
+        && ([, $prefix, $id] = explode('/', $uri))
+        && ($path = "/api/{$id}")
         && $this->pathValidator->isValid($path))
     ) {
       return;
