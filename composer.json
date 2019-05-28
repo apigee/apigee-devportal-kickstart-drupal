@@ -10,7 +10,7 @@
       "type": "composer",
       "url": "https://packages.drupal.org/8"
     },
-    "swagger-api/swagger-ui":     {
+    "swagger-api/swagger-ui": {
       "type": "package",
       "package": {
         "name": "swagger-api/swagger-ui",
@@ -32,6 +32,7 @@
     "drupal-composer/drupal-scaffold": "^2",
     "drupal/admin_toolbar": "^1.0",
     "drupal/adminimal_admin_toolbar": "^1.9",
+    "drupal/apigee_api_catalog": "~1.0",
     "drupal/apigee_edge": "^1.0",
     "drupal/better_exposed_filters": "^3.0@alpha",
     "drupal/default_content": "^1.0@alpha",
