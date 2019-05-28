@@ -106,7 +106,7 @@
     },
     "field_link": [
         {
-            "uri": "internal:\/apidoc\/1",
+            "uri": "internal:\/api\/1",
             "title": "View Documentation",
             "options": [],
             "lang": "en"
