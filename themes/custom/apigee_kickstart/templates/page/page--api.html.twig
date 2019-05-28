@@ -1,0 +1,15 @@
+{#
+/**
+ * @file
+ * Template for the APIdoc page layout.
+ */
+#}
+{% embed 'page.html.twig' with {
+  main_classes: ['bg-lighter']
+} %}
+  {% block content %}
+    <div class="container">
+      {{ page.content }}
+    </div>
+  {% endblock %}
+{% endembed %}

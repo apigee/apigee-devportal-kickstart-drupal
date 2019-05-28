@@ -7,6 +7,7 @@ dependencies:
   module:
     - apigee_api_catalog
     - file
+    - file_link
     - media_library
     - text
 id: apidoc.apidoc.default
@@ -14,15 +15,6 @@ targetEntityType: apidoc
 bundle: apidoc
 mode: default
 content:
-  api_product:
-    type: entity_reference_autocomplete
-    weight: 2
-    region: content
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   description:
     type: text_textarea
     weight: 1
@@ -43,7 +35,8 @@ content:
   field_image:
     type: media_library_widget
     weight: 7
-    settings: {  }
+    settings:
+      media_types: {  }
     third_party_settings: {  }
     region: content
   name:
@@ -57,9 +50,16 @@ content:
   spec:
     label: hidden
     type: file_generic
-    weight: 3
     region: content
+    weight: 26
     settings:
       progress_indicator: throbber
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
 hidden: {  }

@@ -66,7 +66,6 @@ install:
 - forum
 - paragraphs
 - pathauto
-- swagger_ui_formatter
 
 # List any themes that should be installed as part of the profile installation.
 # Note that this will not set any theme as the default theme.
