@@ -12951,6 +12951,11 @@ ul.social-links li a {
   height: 100%;
 }
 
+.apidoc--view-mode-full .apidoc__spec .container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .swagger-ui > div > .wrapper,
 .swagger-ui > div > .scheme-container {
   border: 1px solid #ddd;

@@ -38,6 +38,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
 hidden:
-  api_product: true
   field_categories: true
-  spec: true
+  file_link: true
+  spec_file_source: true
