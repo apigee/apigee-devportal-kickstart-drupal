@@ -52,6 +52,6 @@ We'd love to accept your patches and contributions to this project. Make sure to
 Development is happening in our [GitHub repository](https://github.com/apigee/apigee-devportal-kickstart-drupal). The drupal.org issue
 queue is disabled, we use the [Github issue queue](https://github.com/apigee/apigee-devportal-kickstart-drupal/issues) instead.
 
-## Disclaimer
+## Support
 
-This is not an officially supported Google product.
+This project, which integrates Drupal 8 with Apigee Edge, is supported by Google.
