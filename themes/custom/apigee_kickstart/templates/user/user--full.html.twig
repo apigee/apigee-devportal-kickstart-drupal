@@ -6,8 +6,8 @@
 #}
 {% extends 'user.html.twig' %}
 {% block content %}
-  <div class="row">
-    <div class="col-lg-6">
+  {# <div class="row"> #}
+    {# <div class="col-lg-6"> #}
       <div class="bg-light p-4 rounded-sm">
         {{ content.user_picture }}
         {{ content.display_name }}
@@ -21,6 +21,6 @@
           {{ additional_fields }}
         </div>
       {% endif %}
-    </div>
-  </div>
+    {# </div> #}
+  {# </div> #}
 {% endblock %}

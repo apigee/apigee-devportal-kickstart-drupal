@@ -4,11 +4,63 @@
  * Template for the main page.
  */
 #}
+
+{# Allow sidebars  #}
+{% set sidebar_supported = sidebar_supported ?? true %}
+{% set has_sidebar = has_sidebar ?? false %}
+{% set main_attributes = create_attribute() %}
+{% set main_classes = []|merge(main_classes|default([])) %}
+{% set content_attributes = create_attribute() %}
+{% set content_classes = []|merge(content_classes|default([])) %}
+{% set sidebar_first_attributes = create_attribute() %}
+{% set sidebar_first_classes = []|merge(sidebar_first_classes|default([])) %}
+{% set sidebar_second_attributes = create_attribute() %}
+{% set sidebar_second_classes = []|merge(sidebar_second_classes|default([])) %}
+
+{# Classes for page wrapper. #}
 {% set classes = [
-  'page'
+  'page',
 ]|merge(classes|default([])) %}
 
-{% set main_attributes = create_attribute() %}
+{# Sandbox sidebar classes so they can be disabled from extending templates. #}
+{% if sidebar_supported %}
+
+  {% if page.sidebar_second or page.sidebar_first %}
+    {% set content_classes = content_classes|merge(['col-md-6']) %}
+  {% elseif page.sidebar_second and page.sidebar_first %}
+    {% set content_classes = content_classes|merge(['col-md-8', 'col-lg-9']) %}
+  {% else %}
+    {% set content_classes = content_classes|merge(['col-lg-7', 'col-xl-6']) %}
+  {% endif %}
+
+  {# At least one Sidebar. #}
+  {% if page.sidebar_first or page.sidebar_second %}
+    {% set has_sidebar = true %}
+  {% endif %}
+
+  {# Only Sidebar First. #}
+  {% if page.sidebar_first and not page.sidebar_second %}
+    {% set sidebar_first_classes = sidebar_first_classes|merge(['col-md', 'order-first']) %}
+    {# {% set sidebar_first_classes = sidebar_first_classes|merge(['col-md-4', 'col-lg-3', 'order-first']) %} #}
+  {% endif %}
+
+  {# Only Sidebar Second. #}
+  {% if page.sidebar_second and not page.sidebar_first %}
+    {% set sidebar_second_classes = sidebar_second_classes|merge(['col-md', 'order-last']) %}
+    {# {% set sidebar_second_classes = sidebar_second_classes|merge(['col-md-4', 'col-lg-3', 'order-last']) %} #}
+  {% endif %}
+
+  {# Both Sidebars. #}
+  {% if page.sidebar_second and page.sidebar_first %}
+    {% set sidebar_first_classes = sidebar_first_classes|merge(['col-md', 'order-first']) %}
+    {% set sidebar_second_classes = sidebar_second_classes|merge(['col-md', 'order-last']) %}
+  {% endif %}
+
+{% else %}
+  {% set content_classes = content_classes|merge(['col-md-12']) %}
+  {% set sidebar_first_classes = sidebar_first_classes|merge(['col-md-auto', 'order-first']) %}
+  {% set sidebar_second_classes = sidebar_second_classes|merge(['col-md-auto', 'order-last']) %}
+{% endif %}
 
 <div{{ attributes.addClass(classes) }}>
   {% embed '@apigee-kickstart/navbar/navbar.twig' with {
@@ -59,37 +111,76 @@
     </header>
   {% endif %}
 
-  <main{{ main_attributes.addClass(main_classes|default([])) }}>
-    {# If field_header has a value, the tabs will print in the node template.#}
-    {% if page.tasks|render and not node.field_header.value %}
-      <div class="page__tasks">
-        <div class="container">
-          {{ page.tasks }}
-        </div>
+  {# If field_header has a value, the tabs will print in the node template.#}
+  {% if page.tasks|render and not node.field_header.value %}
+    <div class="page__tasks">
+      <div class="container">
+        {{ page.tasks }}
       </div>
-    {% endif %}
+    </div>
+  {% endif %}
 
-    {% if page.content_above %}
-      <div class="page__content_above">
-        <div class="container-fluid px-0">
-          {{ page.content_above }}
-        </div>
+  {% if page.content_above %}
+    <div class="page__content-above">
+      <div class="container-fluid px-0">
+        {{ page.content_above }}
       </div>
+    </div>
+  {% endif %}
+
+  <main{{ main_attributes.addClass(main_classes) }}>
+
+    {% if sidebar_supported and has_sidebar %}
+      <div class="container py-5">
+        <div class="row">
+    {% elseif sidebar_supported %}
+      <div class="container py-5">
     {% endif %}
 
     {% block content %}
       {% if page.content %}
-        <div class="page__content">
-          <div class="container py-5">
-            {{ page.content }}
-          </div>
+        <div{{ content_attributes.addClass('page__content', content_classes) }}>
+          {{ page.content }}
         </div>
       {% endif %}
     {% endblock %}
+
+    {% if not sidebar_supported %}
+      <div class="container py-5">
+        <div class="row justify-content-around">
+    {% endif %}
+
+    {% block sidebar_first %}
+      {% if page.sidebar_first %}
+        <aside{{ sidebar_first_attributes.addClass('page__sidebar', 'sidebar-first', sidebar_first_classes) }}>
+          {{ page.sidebar_first }}
+        </aside>
+      {% endif %}
+    {% endblock %}
+
+    {% block sidebar_second %}
+      {% if page.sidebar_second %}
+        <aside{{ sidebar_second_attributes.addClass('page__sidebar', 'sidebar-second', sidebar_second_classes) }}>
+          {{ page.sidebar_second }}
+        </aside>
+      {% endif %}
+    {% endblock %}
+
+    {% if not sidebar_supported  %}
+        </div>{# .row #}
+      </div>{# .container #}
+    {% endif %}
+
+    {% if sidebar_supported and has_sidebar %}
+        </div>{# .row #}
+      </div>{# .container #}
+    {% elseif sidebar_supported %}
+      </div>
+    {% endif %}
   </main>
 
   {% if page.content_below %}
-    <div class="page__content_below">
+    <div class="page__content-below">
       <div class="container-fluid px-0">
         {{ page.content_below }}
       </div>

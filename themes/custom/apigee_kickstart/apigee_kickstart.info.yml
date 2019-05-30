@@ -6,14 +6,16 @@ type: theme
 base theme: radix
 
 regions:
-  navbar_branding: 'Navbar branding'
-  navbar_left:  'Navbar left'
-  navbar_right: 'Navbar right'
+  navbar_branding: 'Navbar Branding'
+  navbar_left:  'Navbar Left'
+  navbar_right: 'Navbar Right'
   breadcrumbs: Breadcrumbs
   header: Header
   content_above: 'Content Above'
   tasks: Tasks
   content: Content
+  sidebar_first: 'Sidebar First (where supported)'
+  sidebar_second: 'Sidebar Second (where supported)'
   content_below: 'Content Below'
   footer: Footer
   copyright: Copyright

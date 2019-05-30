@@ -4,7 +4,7 @@
  * Template for an Landing page layout.
  */
 #}
-{% extends 'page.html.twig' %}
-{% block content %}
-  {{ page.content }}
-{% endblock %}
+
+{% include 'page.html.twig' with {
+  sidebar_supported: false
+} %}
