@@ -10,6 +10,9 @@ The core functionality of this profile is in active development. The features an
 
 ## Planned features
 
+* **Sidebars & Subtheming:** The apigee_kickstart theme included in this profile does not yet contain sidebars for content. Subtheming
+  documentation and sidebars will be added in the 1.1 release.  It is recommended to wait for the 1.1 release before creating a
+  subtheme in order to reduce rework.
 * **Monetization:** The ability to configure the site with [Apigee Monetization](https://www.drupal.org/project/apigee_m10n) features during installation.
 
 ## Prerequisites
