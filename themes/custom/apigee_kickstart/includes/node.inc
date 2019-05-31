@@ -16,4 +16,12 @@ function apigee_kickstart_preprocess_node(&$variables) {
   if ($variables['view_mode'] == 'full' && $node->hasField('field_header') && $node->field_header->getValue()) {
     apigee_kickstart_add_regions_to_node(['tasks'], $variables);
   }
+
+  // Allow sidebar regions to be printed in node templates.
+  // Note: When printing sidebars in templates, you must ensure they don't also
+  // print within the corresponding page template.
+  $sidebar_types = ['article', 'forum', 'page'];
+  if (in_array($node->bundle(), $sidebar_types)) {
+    apigee_kickstart_add_regions_to_node(['sidebar_first', 'sidebar_second'], $variables);
+  }
 }

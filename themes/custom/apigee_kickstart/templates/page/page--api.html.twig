@@ -4,12 +4,8 @@
  * Template for the APIdoc page layout.
  */
 #}
-{% embed 'page.html.twig' with {
-  main_classes: ['bg-lighter']
+
+{% include 'page.html.twig' with {
+  main_classes: ['bg-lighter'],
+  sidebar_placement: 'bottom'
 } %}
-  {% block content %}
-    <div class="container">
-      {{ page.content }}
-    </div>
-  {% endblock %}
-{% endembed %}

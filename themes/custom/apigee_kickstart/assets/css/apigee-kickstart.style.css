@@ -12995,6 +12995,17 @@ ul.social-links li a {
   background: inherit;
 }
 
+.block > h2 {
+  font-size: 1.25rem;
+}
+.main .block {
+  margin-bottom: 3.9975rem;
+}
+
+.block--searchform {
+  align-items: stretch;
+}
+
 .contact-message-form .form-item-copy {
   margin-top: 1.5rem;
 }
@@ -13259,7 +13270,7 @@ div.forum__add {
 .page--search main > * {
   grid-column: main;
 }
-.page--search main > h2 {
+.page--search main .page__content > h2 {
   position: absolute;
   width: 1px;
   height: 1px;

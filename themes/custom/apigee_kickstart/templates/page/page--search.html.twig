@@ -4,8 +4,8 @@
  * Template for the Search page layout.
  */
 #}
-{% embed 'page.html.twig' with { classes: ['page--search'] } %}
-  {% block content %}
-    {{ page.content }}
-  {% endblock %}
-{% endembed %}
+
+{% include 'page.html.twig' with {
+  classes: ['page--search'],
+  sidebar_placement: 'bottom'
+} %}

@@ -33,7 +33,7 @@
       grid-column: main;
     }
 
-    > h2 {
+    .page__content > h2 {
       @include sr-only;
     }
   }

@@ -17,4 +17,4 @@ Update `proxy` in **webpack.mix.json**.
 Run the following command to compile Sass and watch for changes: `npm run watch`.
 
 ## Customizing this theme
-It is recommended to [create a subtheme](https://www.drupal.org/docs/8/theming-drupal-8/creating-a-drupal-8-sub-theme-or-sub-theme-of-sub-theme) in order to [customize this theme](https://www.drupal.org/docs/8/theming). Note: Sidebar block regions will be added to this theme in the 8.x-1.1 release. It is recommended to wait for the 8.x-1.1 release before creating a subtheme if you intend to make changes to the page or node templates in order to reduce rework.
+It is recommended to [create a subtheme](https://www.drupal.org/docs/8/theming-drupal-8/creating-a-drupal-8-sub-theme-or-sub-theme-of-sub-theme) in order to [customize this theme](https://www.drupal.org/docs/8/theming).
