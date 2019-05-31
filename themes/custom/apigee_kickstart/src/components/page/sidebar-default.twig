@@ -36,11 +36,7 @@
 ]|merge(content_classes|default([])) %}
 
 {% set content_no_sidebar_row_classes = content_no_sidebar_row_classes|default([]) %}
-
-{% set content_no_sidebar_col_classes = [
-  'col'
-]|merge(content_no_sidebar_col_classes|default([])) %}
-
+{% set content_no_sidebar_col_classes = ['col-md']|merge(content_no_sidebar_col_classes|default([])) %}
 
 {% set sidebar_default_content %}
   {% if content %}
