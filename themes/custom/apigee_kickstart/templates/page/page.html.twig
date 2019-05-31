@@ -91,31 +91,34 @@
     </div>
   {% endif %}
 
-  <main{{ main_attributes.addClass(main_classes) }}>
-    {% if sidebar_placement == 'bottom' %}
-      {% include '@apigee-kickstart/page/sidebar-bottom.twig' with {
-        container: main_container,
-        content: page.content,
-        sidebar_first: page.sidebar_first,
-        sidebar_second: page.sidebar_second,
-      } %}
+  <main{{ main_attributes.addClass(main_classes) }} role="main">
+    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+    {% block main %}
+      {% if sidebar_placement == 'bottom' %}
+        {% include '@apigee-kickstart/page/sidebar-bottom.twig' with {
+          container: main_container,
+          content: page.content,
+          sidebar_first: page.sidebar_first,
+          sidebar_second: page.sidebar_second,
+        } %}
 
-    {% elseif sidebar_placement == 'none' %}
-      {% include '@apigee-kickstart/page/sidebar-none.twig'with {
-        container: main_container,
-        content: page.content,
-        sidebar_first: page.sidebar_first,
-        sidebar_second: page.sidebar_second,
-      } %}
+      {% elseif sidebar_placement == 'none' %}
+        {% include '@apigee-kickstart/page/sidebar-none.twig'with {
+          container: main_container,
+          content: page.content,
+          sidebar_first: page.sidebar_first,
+          sidebar_second: page.sidebar_second,
+        } %}
 
-    {% else %}
-      {% include '@apigee-kickstart/page/sidebar-default.twig' with {
-        container: main_container,
-        content: page.content,
-        sidebar_first: page.sidebar_first,
-        sidebar_second: page.sidebar_second,
-      } %}
-    {% endif %}
+      {% else %}
+        {% include '@apigee-kickstart/page/sidebar-default.twig' with {
+          container: main_container,
+          content: page.content,
+          sidebar_first: page.sidebar_first,
+          sidebar_second: page.sidebar_second,
+        } %}
+      {% endif %}
+    {% endblock %}
   </main>
 
   {% if page.content_below %}
