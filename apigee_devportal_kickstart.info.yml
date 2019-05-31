@@ -57,7 +57,7 @@ install:
 - admin_toolbar_tools
 - adminimal_admin_toolbar
 - apigee_edge
-- apigee_edge_apidocs
+- apigee_api_catalog
 - apigee_kickstart_customizer
 - apigee_kickstart_enhancement
 - better_exposed_filters
@@ -66,7 +66,6 @@ install:
 - forum
 - paragraphs
 - pathauto
-- swagger_ui_formatter
 
 # List any themes that should be installed as part of the profile installation.
 # Note that this will not set any theme as the default theme.

@@ -1,0 +1,73 @@
+{#
+/**
+ * @file
+ * Template for an 'Sidebar bottom' layout.
+ *
+ * This layout can be used where the main content area requires the full-width
+ * page width. It will split the contents into 2 rows, and print the content in
+ * the first, followed by another row containing the two sidebars.
+ *
+ * The layout adjusts via 'sidebar_classes' below, to take up space in the most
+ * efficient possible way. In summary:
+ *
+ *  - both sidebars exist: They're displayed in two 'auto' columns whose width
+ *    adjust based on the content inside them, and set to align using
+ *    'justify-content-around'.
+ *
+ *  - one sidebar exists: In this case, the sidebar wrapper is aligned as above,
+ *    and in addition, the contents are displayed as flex items. This has the
+ *    appearance of columns, as well.
+ *
+ */
+#}
+
+{% set sidebar_classes = [
+  sidebar_first and sidebar_second ? 'col-md-auto',
+  sidebar_first and not sidebar_second ? 'col-md d-md-flex justify-content-around',
+  not sidebar_first and sidebar_second ? 'col-md d-md-flex justify-content-around'
+]|merge(sidebar_classes|default([])) %}
+
+{% set sidebar_bottom_content %}
+  {% if content %}
+    <div class="page-layout-sidebar-bottom__top">
+      {% if container %}
+        <div class="container py-5">
+          <div class="row">
+            <div class="page__content col">
+              {{ content }}
+            </div>
+          </div>
+        </div>
+
+      {% else %}
+        <div class="page__content">
+          {{ content }}
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  {% if sidebar_first or sidebar_second %}
+    <div class="page-layout-sidebar-bottom__bottom border-top">
+      <div class="container py-5">
+        <div class="row justify-content-around pt-7">
+          {% if sidebar_first %}
+            <aside class="sidebar sidebar-first {{ sidebar_classes|join(' ')|trim }}">
+              {{ sidebar_first }}
+            </aside>
+          {% endif %}
+
+          {% if sidebar_second %}
+            <aside class="sidebar sidebar-second {{ sidebar_classes|join(' ')|trim }}">
+              {{ sidebar_second }}
+            </aside>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endset %}
+
+<div class="page-layout-sidebar-bottom">
+  {{ sidebar_bottom_content }}
+</div>

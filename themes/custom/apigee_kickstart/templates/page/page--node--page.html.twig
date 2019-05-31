@@ -4,7 +4,8 @@
  * Template for an Basic page layout.
  */
 #}
-{% extends 'page.html.twig' %}
-{% block content %}
-  {{ page.content }}
-{% endblock %}
+
+{% include 'page.html.twig' with {
+  sidebar_placement: 'none',
+  main_container: false
+} %}

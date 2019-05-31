@@ -1,10 +1,11 @@
 {#
 /**
  * @file
- * Template for an Forum page layout.
+ * Template for an Forum post layout.
  */
 #}
-{% extends 'page.html.twig' %}
-{% block content %}
-  {{ page.content }}
-{% endblock %}
+
+{% include 'page.html.twig' with {
+  sidebar_placement: 'none',
+  main_container: false
+} %}
