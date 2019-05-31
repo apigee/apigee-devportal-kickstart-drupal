@@ -10,6 +10,7 @@ The core functionality of this profile is in active development. The features an
 
 ## Planned features
 
+* **Sidebar regions:** Two sidebar block regions will be added to the `apigee_kickstart` theme, included in this profile, in the 8.x-1.1 release. It is recommended to wait for the 8.x-1.1 release before creating a subtheme if you intend to make changes to the page or node templates in order to reduce rework.
 * **Monetization:** The ability to configure the site with [Apigee Monetization](https://www.drupal.org/project/apigee_m10n) features during installation.
 
 ## Prerequisites
@@ -52,6 +53,6 @@ We'd love to accept your patches and contributions to this project. Make sure to
 Development is happening in our [GitHub repository](https://github.com/apigee/apigee-devportal-kickstart-drupal). The drupal.org issue
 queue is disabled, we use the [Github issue queue](https://github.com/apigee/apigee-devportal-kickstart-drupal/issues) instead.
 
-## Disclaimer
+## Support
 
-This is not an officially supported Google product.
+This project, which integrates Drupal 8 with Apigee Edge, is supported by Google.
