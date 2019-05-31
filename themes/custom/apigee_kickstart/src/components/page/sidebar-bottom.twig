@@ -2,6 +2,22 @@
 /**
  * @file
  * Template for an 'Sidebar bottom' layout.
+ *
+ * This layout can be used where the main content area requires the full-width
+ * page width. It will split the contents into 2 rows, and print the content in
+ * the first, followed by another row containing the two sidebars.
+ *
+ * The layout adjusts via 'sidebar_classes' below, to take up space in the most
+ * efficient possible way. In summary:
+ *
+ *  - both sidebars exist: They're displayed in two 'auto' columns whose width
+ *    adjust based on the content inside them, and set to align using
+ *    'justify-content-around'.
+ *
+ *  - one sidebar exists: In this case, the sidebar wrapper is aligned as above,
+ *    and in addition, the contents are displayed as flex items. This has the
+ *    appearance of columns, as well.
+ *
  */
 #}
 
