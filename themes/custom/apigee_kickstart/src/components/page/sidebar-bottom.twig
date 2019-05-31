@@ -1,0 +1,57 @@
+{#
+/**
+ * @file
+ * Template for an 'Sidebar bottom' layout.
+ */
+#}
+
+{% set sidebar_classes = [
+  sidebar_first and sidebar_second ? 'col-md-auto',
+  sidebar_first and not sidebar_second ? 'col-md d-md-flex justify-content-around',
+  not sidebar_first and sidebar_second ? 'col-md d-md-flex justify-content-around'
+]|merge(sidebar_classes|default([])) %}
+
+{% set sidebar_bottom_content %}
+  {% if content %}
+    <div class="page-layout-sidebar-bottom__top">
+      {% if container %}
+        <div class="container py-5">
+          <div class="row">
+            <div class="page__content col">
+              {{ content }}
+            </div>
+          </div>
+        </div>
+
+      {% else %}
+        <div class="page__content">
+          {{ content }}
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  {% if sidebar_first or sidebar_second %}
+    <div class="page-layout-sidebar-bottom__bottom border-top">
+      <div class="container py-5">
+        <div class="row justify-content-around pt-7">
+          {% if sidebar_first %}
+            <aside class="sidebar sidebar-first {{ sidebar_classes|join(' ')|trim }}">
+              {{ sidebar_first }}
+            </aside>
+          {% endif %}
+
+          {% if sidebar_second %}
+            <aside class="sidebar sidebar-second {{ sidebar_classes|join(' ')|trim }}">
+              {{ sidebar_second }}
+            </aside>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endset %}
+
+<div class="page-layout-sidebar-bottom">
+  {{ sidebar_bottom_content }}
+</div>

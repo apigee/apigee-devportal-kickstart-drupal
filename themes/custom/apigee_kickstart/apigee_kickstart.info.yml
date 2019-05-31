@@ -14,8 +14,8 @@ regions:
   content_above: 'Content Above'
   tasks: Tasks
   content: Content
-  sidebar_first: 'Sidebar First (where supported)'
-  sidebar_second: 'Sidebar Second (where supported)'
+  sidebar_first: 'Sidebar First'
+  sidebar_second: 'Sidebar Second'
   content_below: 'Content Below'
   footer: Footer
   copyright: Copyright

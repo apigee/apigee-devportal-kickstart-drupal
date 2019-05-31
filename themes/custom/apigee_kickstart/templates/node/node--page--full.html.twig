@@ -19,8 +19,12 @@
     {% endif %}
   {% endif %}
 
-  <div class="col-lg-8 pb-7">
-    {{ content|without('field_header') }}
-  </div>
+  {% include '@apigee-kickstart/page/sidebar-default.twig' with {
+    container: true,
+    content: content|without('field_header'),
+    sidebar_first: sidebar_first,
+    sidebar_second: sidebar_second,
+    content_no_sidebar_classes: ['col-lg-8']
+  } %}
 
 {% endblock %}

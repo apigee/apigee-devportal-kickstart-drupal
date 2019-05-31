@@ -4,9 +4,9 @@
  * Template for the Contact page layout.
  */
 #}
-{% extends 'page.html.twig'%}
-{# {% block content %}
-  <div class="col-lg-7 col-xl-6">
-    {{ page.content }}
-  </div>
-{% endblock %} #}
+{% include 'page.html.twig' with {
+  content_no_sidebar_classes: [
+    'col-lg-7',
+    'col-xl-6'
+  ]
+}%}

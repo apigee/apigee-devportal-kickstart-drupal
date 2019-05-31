@@ -2,65 +2,28 @@
 /**
  * @file
  * Template for the main page.
+ *
+ * - sidebar_placement:
+ *   - default: Prints the sidebars normally alongside content, in 3 columns.
+ *   - bottom: Prints the sidebars below the content, in 2 columns.
+ *   - none: Disbales sidebars entirely and doesn't print them at all. This
+ *     is useful when sidebars print inside the node template. See
+ *     node--article--full.html.twig and page--node--article.html.twig
  */
-#}
-
-{# Allow sidebars  #}
-{% set sidebar_supported = sidebar_supported ?? true %}
-{% set has_sidebar = has_sidebar ?? false %}
-{% set main_attributes = create_attribute() %}
-{% set main_classes = []|merge(main_classes|default([])) %}
-{% set content_attributes = create_attribute() %}
-{% set content_classes = []|merge(content_classes|default([])) %}
-{% set sidebar_first_attributes = create_attribute() %}
-{% set sidebar_first_classes = []|merge(sidebar_first_classes|default([])) %}
-{% set sidebar_second_attributes = create_attribute() %}
-{% set sidebar_second_classes = []|merge(sidebar_second_classes|default([])) %}
+ #}
 
 {# Classes for page wrapper. #}
 {% set classes = [
   'page',
 ]|merge(classes|default([])) %}
 
-{# Sandbox sidebar classes so they can be disabled from extending templates. #}
-{% if sidebar_supported %}
+{% set main_container = main_container ?? true %}
+{% set main_attributes = create_attribute() %}
+{% set main_classes = [
+  'main'
+]|merge(main_classes|default([])) %}
 
-  {% if page.sidebar_second or page.sidebar_first %}
-    {% set content_classes = content_classes|merge(['col-md-6']) %}
-  {% elseif page.sidebar_second and page.sidebar_first %}
-    {% set content_classes = content_classes|merge(['col-md-8', 'col-lg-9']) %}
-  {% else %}
-    {% set content_classes = content_classes|merge(['col-lg-7', 'col-xl-6']) %}
-  {% endif %}
-
-  {# At least one Sidebar. #}
-  {% if page.sidebar_first or page.sidebar_second %}
-    {% set has_sidebar = true %}
-  {% endif %}
-
-  {# Only Sidebar First. #}
-  {% if page.sidebar_first and not page.sidebar_second %}
-    {% set sidebar_first_classes = sidebar_first_classes|merge(['col-md', 'order-first']) %}
-    {# {% set sidebar_first_classes = sidebar_first_classes|merge(['col-md-4', 'col-lg-3', 'order-first']) %} #}
-  {% endif %}
-
-  {# Only Sidebar Second. #}
-  {% if page.sidebar_second and not page.sidebar_first %}
-    {% set sidebar_second_classes = sidebar_second_classes|merge(['col-md', 'order-last']) %}
-    {# {% set sidebar_second_classes = sidebar_second_classes|merge(['col-md-4', 'col-lg-3', 'order-last']) %} #}
-  {% endif %}
-
-  {# Both Sidebars. #}
-  {% if page.sidebar_second and page.sidebar_first %}
-    {% set sidebar_first_classes = sidebar_first_classes|merge(['col-md', 'order-first']) %}
-    {% set sidebar_second_classes = sidebar_second_classes|merge(['col-md', 'order-last']) %}
-  {% endif %}
-
-{% else %}
-  {% set content_classes = content_classes|merge(['col-md-12']) %}
-  {% set sidebar_first_classes = sidebar_first_classes|merge(['col-md-auto', 'order-first']) %}
-  {% set sidebar_second_classes = sidebar_second_classes|merge(['col-md-auto', 'order-last']) %}
-{% endif %}
+{% set sidebar_placement = sidebar_placement|default('default') %}
 
 <div{{ attributes.addClass(classes) }}>
   {% embed '@apigee-kickstart/navbar/navbar.twig' with {
@@ -129,53 +92,29 @@
   {% endif %}
 
   <main{{ main_attributes.addClass(main_classes) }}>
+    {% if sidebar_placement == 'bottom' %}
+      {% include '@apigee-kickstart/page/sidebar-bottom.twig' with {
+        container: main_container,
+        content: page.content,
+        sidebar_first: page.sidebar_first,
+        sidebar_second: page.sidebar_second,
+      } %}
 
-    {% if sidebar_supported and has_sidebar %}
-      <div class="container py-5">
-        <div class="row">
-    {% elseif sidebar_supported %}
-      <div class="container py-5">
-    {% endif %}
+    {% elseif sidebar_placement == 'none' %}
+      {% include '@apigee-kickstart/page/sidebar-none.twig'with {
+        container: main_container,
+        content: page.content,
+        sidebar_first: page.sidebar_first,
+        sidebar_second: page.sidebar_second,
+      } %}
 
-    {% block content %}
-      {% if page.content %}
-        <div{{ content_attributes.addClass('page__content', content_classes) }}>
-          {{ page.content }}
-        </div>
-      {% endif %}
-    {% endblock %}
-
-    {% if not sidebar_supported %}
-      <div class="container py-5">
-        <div class="row justify-content-around">
-    {% endif %}
-
-    {% block sidebar_first %}
-      {% if page.sidebar_first %}
-        <aside{{ sidebar_first_attributes.addClass('page__sidebar', 'sidebar-first', sidebar_first_classes) }}>
-          {{ page.sidebar_first }}
-        </aside>
-      {% endif %}
-    {% endblock %}
-
-    {% block sidebar_second %}
-      {% if page.sidebar_second %}
-        <aside{{ sidebar_second_attributes.addClass('page__sidebar', 'sidebar-second', sidebar_second_classes) }}>
-          {{ page.sidebar_second }}
-        </aside>
-      {% endif %}
-    {% endblock %}
-
-    {% if not sidebar_supported  %}
-        </div>{# .row #}
-      </div>{# .container #}
-    {% endif %}
-
-    {% if sidebar_supported and has_sidebar %}
-        </div>{# .row #}
-      </div>{# .container #}
-    {% elseif sidebar_supported %}
-      </div>
+    {% else %}
+      {% include '@apigee-kickstart/page/sidebar-default.twig' with {
+        container: main_container,
+        content: page.content,
+        sidebar_first: page.sidebar_first,
+        sidebar_second: page.sidebar_second,
+      } %}
     {% endif %}
   </main>
 
