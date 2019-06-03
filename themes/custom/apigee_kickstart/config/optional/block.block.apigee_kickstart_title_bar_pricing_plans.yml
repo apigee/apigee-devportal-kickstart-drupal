@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:title_bar:f2a03392-4abc-4f25-9f35-e28e63bb1a88'
+  module:
+    - block_content
+    - system
+  theme:
+    - apigee_kickstart
+id: apigee_kickstart_title_bar_pricing_plans
+theme: apigee_kickstart
+region: header
+weight: 0
+provider: null
+plugin: 'block_content:f2a03392-4abc-4f25-9f35-e28e63bb1a88'
+settings:
+  id: 'block_content:f2a03392-4abc-4f25-9f35-e28e63bb1a88'
+  label: 'Title bar: Pricing & Plans'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '/user/*/monetization/packages'
+    negate: false
+    context_mapping: {  }
