@@ -8,6 +8,7 @@
 use Drupal\apigee_m10n_add_credit\AddCreditConfig;
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Link;
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
@@ -44,4 +45,47 @@ function apigee_kickstart_form_alter(array &$form, FormStateInterface $form_stat
 function apigee_kickstart_form_previous_balances_reports_download_form_alter(array &$form, FormStateInterface $form_state) {
   // Move the heading out of the form.
   $form['#prefix'] = render($form['heading']);
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function apigee_kickstart_form_commerce_checkout_flow_multistep_default_alter(array &$form, FormStateInterface $form_state) {
+  $step = $form['#step_id'];
+
+  // Add a class for the step.
+  $form['#attributes']['class'][] = 'commerce-checkout-flow--' . Html::cleanCssIdentifier($step);
+
+  switch ($step) {
+    case 'review':
+      $form['review']['title'] = [
+        '#type' => 'html_tag',
+        '#value' => t('Review Order'),
+        '#tag' => 'h3',
+        '#weight' => -100,
+      ];
+      break;
+
+    case 'complete':
+      $order = $form_state->getFormObject()->getOrder();
+      /** @var \Drupal\commerce_order\Entity\OrderItemInterface $item */
+      foreach ($order->getItems() as $item) {
+        $purchased_entity = $item->getPurchasedEntity();
+        $product = $purchased_entity->getProduct();
+
+        // If an add credit product was checkout, add a link to the balance page.
+        if ($product->get(AddCreditConfig::ADD_CREDIT_ENABLED_FIELD_NAME)->value) {
+          $form['go_to_balance'] = Link::createFromRoute(t('Go to Balance'), 'apigee_monetization.my_billing', [], [
+            'attributes' => [
+              'class' => [
+                'btn',
+                'btn-lg',
+                'btn-primary'
+              ],
+            ],
+          ])->toRenderable();
+        }
+      }
+      break;
+  }
 }

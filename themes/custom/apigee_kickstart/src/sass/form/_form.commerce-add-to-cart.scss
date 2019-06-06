@@ -1,0 +1,26 @@
+// Form: Add to cart.
+// -----------------------------------------------------------------------------
+.commerce-order-item-add-to-cart-form {
+  max-width: 540px;
+
+  .field--name-unit-price {
+
+    .form-item {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+
+      label {
+        width: 100%;
+      }
+
+      input {
+        max-width: 160px;
+      }
+
+      .field-suffix {
+        margin-left: .5rem;
+      }
+    }
+  }
+}

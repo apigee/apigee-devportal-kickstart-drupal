@@ -13243,6 +13243,138 @@ form.search-form .search-advanced {
   border-color: var(--ak-accent-color);
 }
 
+@media (min-width: 768px) {
+  form.commerce-checkout-flow .layout-region-checkout-main,
+form.commerce-checkout-flow .layout-region-checkout-secondary,
+form.commerce-checkout-flow .layout-region-checkout-footer {
+    width: 50%;
+  }
+}
+form.commerce-checkout-flow .layout-region-checkout-footer {
+  clear: left;
+}
+form.commerce-checkout-flow .checkout-pane {
+  padding: 0;
+}
+form.commerce-checkout-flow .checkout-pane .card-header {
+  padding: 0 !important;
+}
+form.commerce-checkout-flow .checkout-pane .card-body {
+  padding: 0 !important;
+}
+form.commerce-checkout-flow .checkout-pane .card-body p {
+  font-size: 1rem;
+}
+form.commerce-checkout-flow .address-container-inline {
+  display: flex;
+  margin-left: -2%;
+  margin-right: -2%;
+  margin-bottom: 1rem;
+}
+form.commerce-checkout-flow .address-container-inline > .form-item {
+  flex: 1 1 0;
+  margin: 0;
+  padding: 0 2%;
+}
+form.commerce-checkout-flow .form-select,
+form.commerce-checkout-flow .form-control {
+  background-color: #f9f9f9;
+  border: 1px solid #c8c8c8;
+}
+form.commerce-checkout-flow .layout-region-checkout-secondary {
+  background-color: #f9f9f9 !important;
+  padding: 1.5rem;
+  border-radius: 4px;
+  margin-top: 3rem;
+}
+form.commerce-checkout-flow .layout-region-checkout-secondary h3 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+form.commerce-checkout-flow .layout-region-checkout-secondary table tbody td {
+  border: 0;
+  border-top: 1px solid #c8c8c8;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 0.75rem 0;
+}
+form.commerce-checkout-flow .layout-region-checkout-secondary table tbody td.views-field-purchased-entity {
+  width: 80%;
+}
+form.commerce-checkout-flow .layout-region-checkout-secondary table tbody td.views-field-total-price__number {
+  text-align: right;
+}
+form.commerce-checkout-flow .cart-form__total-price {
+  padding: 0;
+}
+form.commerce-checkout-flow .cart-form__total-price .order-total-line {
+  padding-right: 0;
+}
+form.commerce-checkout-flow .cart-form__total-price .order-total-line-value {
+  width: 20%;
+  text-align: right;
+}
+form.commerce-checkout-flow .form-actions {
+  display: flex;
+  align-items: center;
+}
+form.commerce-checkout-flow .form-actions a {
+  display: inline-block;
+  font-family: "Roboto-Medium", Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+  padding: 0.5rem 1.5rem;
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--ak-accent-color);
+  color: var(--ak-accent-color);
+  text-decoration: none;
+  margin-left: 0.75rem;
+  text-transform: uppercase;
+}
+form.commerce-checkout-flow .form-actions a:hover {
+  background-color: transparent;
+  border-color: var(--ak-accent-color-dark);
+  color: var(--ak-accent-color-dark);
+}
+
+.commerce-checkout-flow--order-information .checkout-pane .card-header h4 {
+  font-size: 1.5rem;
+  line-height: 28px;
+  font-weight: 400;
+  margin-bottom: 1rem !important;
+}
+.commerce-checkout-flow--order-information .checkout-pane .card-body {
+  padding: 0 !important;
+}
+
+.commerce-checkout-flow--review .checkout-pane h3 {
+  margin-bottom: 1rem !important;
+}
+.commerce-checkout-flow--review .checkout-pane .card-header {
+  background: none !important;
+  padding: 0 !important;
+}
+.commerce-checkout-flow--review .checkout-pane .card-header h4 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem !important;
+}
+.commerce-checkout-flow--review fieldset {
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.commerce-checkout-flow--complete .checkout-complete {
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  padding: 1.5rem;
+  max-width: 540px;
+  margin-bottom: 1.5rem;
+}
+.commerce-checkout-flow--complete .checkout-complete p:last-child {
+  margin-bottom: 0;
+}
+
 .article__tags {
   margin-bottom: 1rem;
 }
