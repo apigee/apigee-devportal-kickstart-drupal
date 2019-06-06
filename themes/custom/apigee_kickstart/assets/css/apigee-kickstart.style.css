@@ -11657,6 +11657,18 @@ table tbody td,
   padding: 1.5rem 0;
 }
 
+table.table-bordered thead {
+  background-color: #f9f9f9 !important;
+}
+table.table-bordered thead th {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: 0;
+}
+table.table-bordered tbody td {
+  padding: 1rem;
+}
+
 html,
 body {
   height: 100%;
@@ -13170,6 +13182,65 @@ form.search-form .search-advanced {
 }
 .commerce-order-item-add-to-cart-form .field--name-unit-price .form-item .field-suffix {
   margin-left: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .cart-form form .table-responsive {
+    overflow: visible;
+  }
+}
+.cart-form table .form-item {
+  margin-bottom: 0;
+}
+.cart-form table td.views-field-purchased-entity {
+  width: 30%;
+}
+.cart-form table td.views-field-edit-quantity {
+  padding: 0.5rem 1rem;
+}
+.cart-form .button.delete-order-item {
+  padding: 0;
+  border: 0;
+  background: none;
+  text-transform: none;
+  color: var(--ak-accent-color);
+  font-weight: 400;
+}
+.cart-form .button.delete-order-item:hover {
+  color: var(--ak-accent-color);
+}
+.cart-form__total-price {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  min-width: 300px;
+  font-size: 0.875rem;
+}
+@media (min-width: 768px) {
+  .cart-form__total-price {
+    float: right;
+  }
+}
+.cart-form__total-price .order-total-line-value {
+  width: 50%;
+  text-align: left;
+  margin-left: 1rem;
+}
+.cart-form .form-actions {
+  clear: both;
+}
+@media (min-width: 768px) {
+  .cart-form .form-actions {
+    float: right;
+  }
+}
+.cart-form .form-actions #edit-submit {
+  background: none;
+  color: var(--ak-accent-color);
+}
+.cart-form .form-actions #edit-submit:hover {
+  background-color: var(--ak-accent-color);
+  color: var(--ak-accent-color-light);
+  border-color: var(--ak-accent-color);
 }
 
 .article__tags {
