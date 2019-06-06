@@ -14,7 +14,7 @@
 
   @include media-breakpoint-down(md) {
     grid-template-areas:
-      "media media media meida"
+      "media media media media"
       "gutter-left main main gutter-right";
     grid-template-columns:
         [gutter-left] 15px

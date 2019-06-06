@@ -22,7 +22,7 @@ The core functionality of this profile is in active development. The features an
 The following command will download Drupal core, the Apigee Developer Portal Kickstart profile, and their dependencies, into the `MY_PROJECT` directory:
 
 ```sh
-composer create-project apigee/devportal-kickstart-project:8.x-dev MY_PROJECT --stability dev --no-interaction
+composer create-project apigee/devportal-kickstart-project:8.x-dev MY_PROJECT --no-interaction
 ```
 
 The actual web root will be `MY_PROJECT/web`. You will need to point your [web server](https://www.drupal.org/docs/develop/local-server-setup) to serve that directory. Then, visit the site in a web browser, and you'll be redirected to `core/install.php`, where you can run the installer like any Drupal site installation. Running the installation via web browser is recommended for the best experience.
@@ -52,6 +52,6 @@ We'd love to accept your patches and contributions to this project. Make sure to
 Development is happening in our [GitHub repository](https://github.com/apigee/apigee-devportal-kickstart-drupal). The drupal.org issue
 queue is disabled, we use the [Github issue queue](https://github.com/apigee/apigee-devportal-kickstart-drupal/issues) instead.
 
-## Disclaimer
+## Support
 
-This is not an officially supported Google product.
+This project, which integrates Drupal 8 with Apigee Edge, is supported by Google.

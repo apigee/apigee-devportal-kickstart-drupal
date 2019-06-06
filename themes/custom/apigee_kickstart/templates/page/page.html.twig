@@ -2,13 +2,75 @@
 /**
  * @file
  * Template for the main page.
+ *
+ * For full documentation of variables available in this template see:
+ * https://api.drupal.org/api/drupal/core%21modules%21system%21templates%21page.html.twig/8.7.x
+ *
+ *
+ * Sidebar Page Layouts
+ *
+ * This template uses a set of component templates to break up the different
+ * options available in the sidebar. These component templates are located in
+ * the `src/components/page` directory. They can be customized from extending
+ * templates. Below is a summary of the options, and corresponding examples:
+ *
+ *  - sidebar_placement (string): Variable that controls which sidebar layout template is
+ *    used. Options include:
+ *
+ *    - default: Prints the sidebars normally alongside content, in 3 columns.
+ *      This option corresponds to src/components/page/sidebar-default.twig. If
+ *      the sidebar_placement variable is not defined when extending this
+ *      template this layout will be used by default.
+ *
+ *    - bottom: Prints the sidebars below the content, in 2 columns. This is
+ *      useful when the typical 3-column layout does not work well because the
+ *      main page content requires a full width container. This option
+ *      corresponds to src/components/page/sidebar-bottom.twig. For example, the
+ *      landing page content type, which is used for the Home and Getting
+ *      Started pages, uses this layout. The page--node--landing.html.twig
+ *      extends this template to use the 'bottom' layout, and remove
+ *      the main_container which would otherwise constrain the content to a
+ *      max-width:
+ *
+ *        {% include 'page.html.twig' with {
+ *          sidebar_placement: 'bottom',
+ *          main_container: false,
+ *        } %}
+ *
+ *    - none: Disbales sidebars entirely and doesn't print them in this template
+ *      at all. This is useful when sidebars need to print inside the node
+ *      template. For example, the article and forum node templates print the
+ *      sidebars in their respective node templates, and use both the 'none' and
+ *      the 'default' sidebar layouts. Using Article as an example:
+ *      - templates/page/page--node--article.html.twig: extends this template
+ *        with the 'none' optio, to prevent the sidebars from printing.
+ *      - includes/node.inc: includes a preprocess function that makes the
+ *        sidebar regions available to the node template.
+ *      - templates/node/node--article--full.html.twig: Prints the sidebars in
+ *        the node template, where desired, using the 'default' sidebar option.
+ *
+ *  - main_container (bool): Controls whether wrapping .container and .row
+ *    prints for the main content. This is passed to the sidebar component
+ *    templates as 'container'.
+ *
+ *  - main_classes (array): Allows for adding additional classes to the <main>
+ *    wrapper from extending templates.
+ *
  */
-#}
+ #}
+
+{# Classes for page wrapper. #}
 {% set classes = [
-  'page'
+  'page',
 ]|merge(classes|default([])) %}
 
+{% set main_container = main_container ?? true %}
 {% set main_attributes = create_attribute() %}
+{% set main_classes = [
+  'main'
+]|merge(main_classes|default([])) %}
+
+{% set sidebar_placement = sidebar_placement|default('default') %}
 
 <div{{ attributes.addClass(classes) }}>
   {% embed '@apigee-kickstart/navbar/navbar.twig' with {
@@ -59,37 +121,53 @@
     </header>
   {% endif %}
 
-  <main{{ main_attributes.addClass(main_classes|default([])) }}>
-    {# If field_header has a value, the tabs will print in the node template.#}
-    {% if page.tasks|render and not node.field_header.value %}
-      <div class="page__tasks">
-        <div class="container">
-          {{ page.tasks }}
-        </div>
+  {# If field_header has a value, the tabs will print in the node template.#}
+  {% if page.tasks|render and not node.field_header.value %}
+    <div class="page__tasks">
+      <div class="container">
+        {{ page.tasks }}
       </div>
-    {% endif %}
+    </div>
+  {% endif %}
 
-    {% if page.content_above %}
-      <div class="page__content_above">
-        <div class="container-fluid px-0">
-          {{ page.content_above }}
-        </div>
+  {% if page.content_above %}
+    <div class="page__content-above">
+      <div class="container-fluid px-0">
+        {{ page.content_above }}
       </div>
-    {% endif %}
+    </div>
+  {% endif %}
 
-    {% block content %}
-      {% if page.content %}
-        <div class="page__content">
-          <div class="container py-5">
-            {{ page.content }}
-          </div>
-        </div>
+  <main{{ main_attributes.addClass(main_classes) }} role="main">
+    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+    {% block main %}
+      {% if sidebar_placement == 'bottom' %}
+        {% include '@apigee-kickstart/page/sidebar-bottom.twig' with {
+          container: main_container,
+          content: page.content,
+          sidebar_first: page.sidebar_first,
+          sidebar_second: page.sidebar_second,
+        } %}
+
+      {% elseif sidebar_placement == 'none' %}
+        {% include '@apigee-kickstart/page/sidebar-none.twig'with {
+          container: main_container,
+          content: page.content,
+        } %}
+
+      {% else %}
+        {% include '@apigee-kickstart/page/sidebar-default.twig' with {
+          container: main_container,
+          content: page.content,
+          sidebar_first: page.sidebar_first,
+          sidebar_second: page.sidebar_second,
+        } %}
       {% endif %}
     {% endblock %}
   </main>
 
   {% if page.content_below %}
-    <div class="page__content_below">
+    <div class="page__content-below">
       <div class="container-fluid px-0">
         {{ page.content_below }}
       </div>
