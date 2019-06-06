@@ -11646,6 +11646,17 @@ small {
   font-size: 0.75rem;
 }
 
+table thead th,
+.table thead th {
+  font-weight: 500;
+  padding-left: 0;
+  padding-right: 0;
+}
+table tbody td,
+.table tbody td {
+  padding: 1.5rem 0;
+}
+
 html,
 body {
   height: 100%;
@@ -12995,6 +13006,59 @@ ul.social-links li a {
   background: inherit;
 }
 
+.apigee-m10n-prepaid-balance-wrapper h3 {
+  margin-bottom: 1.5rem;
+}
+.apigee-m10n-prepaid-balance-wrapper table .dropbutton-single .button {
+  border-radius: 2px;
+}
+
+form.prepaid-balance-refresh-form .btn {
+  font-size: 0.875rem;
+  text-transform: none;
+}
+form.prepaid-balance-refresh-form .btn:hover {
+  background-color: var(--ak-accent-color);
+  color: var(--ak-accent-color-light);
+  border-color: var(--ak-accent-color);
+}
+
+form.previous-balances-reports-download-form {
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  padding: 1rem 1.5rem 1.2rem;
+  max-width: none !important;
+}
+@media (min-width: 768px) {
+  form.previous-balances-reports-download-form {
+    display: flex;
+    align-items: flex-end;
+  }
+}
+form.previous-balances-reports-download-form label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin: 0;
+}
+@media (min-width: 768px) {
+  form.previous-balances-reports-download-form .form-item {
+    margin: 0 1rem 0 0;
+  }
+}
+form.previous-balances-reports-download-form .form-select {
+  background-color: #fff;
+}
+@media (min-width: 768px) {
+  form.previous-balances-reports-download-form .form-actions {
+    margin: 0 0 0 auto !important;
+  }
+}
+form.previous-balances-reports-download-form .form-actions .btn {
+  font-size: 0.875rem;
+  padding: 0.625rem 1rem;
+  text-transform: none;
+}
+
 .block > h2 {
   font-size: 1.25rem;
 }
@@ -13187,6 +13251,9 @@ form.search-form .search-advanced {
 
 .path-user .page__content > .container {
   padding-top: 0.5rem !important;
+}
+.path-user main .container.py-5 {
+  padding-top: 0 !important;
 }
 
 .view-faq .item-list ul {

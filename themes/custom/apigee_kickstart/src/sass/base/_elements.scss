@@ -104,3 +104,25 @@ small {
   letter-spacing: 0.4px;
   font-size: .75rem;
 }
+
+// Table
+// -----------------------------------------------------------------------------
+table,
+.table {
+
+  thead {
+
+    th {
+      font-weight: 500;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  tbody {
+
+    td {
+      padding: 1.5rem 0 ;
+    }
+  }
+}

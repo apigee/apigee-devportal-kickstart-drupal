@@ -58,7 +58,7 @@
 @import "../components/alert/alert";
 @import "../components/blockquote/blockquote";
 @import "../components/breadcrumb/breadcrumb";
-@import "../components/buttons/buttons";
+@import "../components/button/button";
 @import "../components/card/card";
 @import "../components/card/api-card";
 @import "../components/card/collapsible-card";
@@ -98,6 +98,7 @@
 @import "apigee/apidoc";
 @import "apigee/smartdocs";
 @import "apigee/swagger";
+@import "apigee/prepaid-balance";
 @import "block/block";
 @import "form/form.contact";
 @import "form/form.search-form";
