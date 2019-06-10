@@ -24,9 +24,12 @@
  */
 
 use Drupal\apigee_edge\Entity\EdgeEntityViewBuilder;
+use Drupal\Component\Serialization\Json;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Menu\LocalActionDefault;
+use Drupal\Core\Render\Element;
 use Drupal\user\UserInterface;
 
 /*
@@ -145,6 +148,92 @@ function apigee_kickstart_enhancement_user_view(array &$build, EntityInterface $
         ];
       }
     }
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function apigee_kickstart_enhancement_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Alter the billing details form.
+  if (strpos($form_id, '_billing_details_form')) {
+    // Add a form heading.
+    $form['heading'] = [
+      '#type' => 'html_tag',
+      '#value' => t('Billing Details'),
+      '#tag' => 'h4',
+      '#weight' => -100,
+    ];
+
+    // Wrap all elements in a div.
+    $form['heading']['#suffix'] = '<div class="wrapper">';
+    $form['actions']['#suffix'] = '</div>';
+
+    // Render fieldsets as simple containers.
+    foreach (Element::children($form) as $child) {
+      if ($form[$child]['#type'] === 'fieldset') {
+        $form[$child]['#type'] = 'container';
+      }
+    }
+
+    // Add an edit toggle.
+    $form['edit'] = [
+      '#title' => '<i class="fa fa-pencil"></i>',
+      '#type' => 'checkbox',
+      '#weight' => -100,
+    ];
+
+    // These are visible when editing only.
+    $form['actions']['#states'] = [
+      'visible' => [
+        'input[name="edit"]' => ['checked' => TRUE],
+      ],
+    ];
+
+    $editable_fields = [
+      'company' => ['legal_company_name'],
+    ];
+
+    foreach ($editable_fields as $group => $fields) {
+      foreach ($fields as $field) {
+        // Hide label and show it as a shared title.
+        $form[$group][$field]['#title_display'] = 'hidden';
+        $form[$group]['title'] = [
+          '#type' => 'html_tag',
+          '#tag' => 'strong',
+          '#value' => $form[$group][$field]['#title'] . ': ',
+          '#weight' => -10,
+        ];
+
+        $form[$group]["{$field}_value"] = [
+          '#type' => 'html_tag',
+          '#value' => $form[$group][$field]['#default_value'],
+          '#tag' => 'div',
+          '#weight' => 10,
+          '#attributes' => [
+            'class' => [
+              'js-form-wrapper',
+            ],
+            'data-drupal-states' => Json::encode([
+              'visible' => [
+                'input[name="edit"]' => ['checked' => FALSE],
+              ],
+            ]),
+          ],
+        ];
+
+        $form['company'][$field]['#states'] = [
+          'visible' => [
+            'input[name="edit"]' => ['checked' => TRUE],
+          ],
+        ];
+      }
+    }
+
+    // Fix for billing type.
+    $form['billing']['billing_type']['#prefix'] = '<strong>' . $form['billing']['#title'] . ': </strong><span>';
+    $form['billing']['billing_type']['#suffix'] = '</span>';
+    $form['billing']['billing_type']['#markup'] = ucfirst(strtolower($form['billing']['billing_type']['#markup']));
   }
 }
 

@@ -2,30 +2,55 @@
 // -----------------------------------------------------------------------------
 .user-billing-details-form {
 
-  fieldset {
+  .wrapper {
     background-color: $lighter;
     border-radius: 2px;
     padding: 1.5rem;
+    position: relative;
+  }
 
-    .card-header,
-    .card-body {
-      padding: 0 !important;
+  strong {
+    margin-right: .25rem;
+  }
+
+  .form-wrapper {
+    display: flex;
+    align-items: center;
+
+    + .form-wrapper {
+      margin-top: 1rem;
     }
 
-    .card-header {
-      background: none !important;
-      padding: 0 0 1rem !important;
-
-      h4 {
-        font-size: 1rem;
-      }
-    }
-
+    .form-group,
     .form-item {
+      max-width: 50%;
       margin: 0;
+    }
 
-      + .form-item {
-        margin-top: 1rem;
+    .form-control {
+      background-color: $white;
+    }
+  }
+
+  .form-item-edit {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    color: $gray-500;
+
+    &:hover {
+      color: var(--ak-accent-color);
+    }
+
+    .fa-square,
+    .fa-check-square {
+      display: none !important;
+    }
+
+    label {
+
+      svg {
+        position: relative;
       }
     }
   }
