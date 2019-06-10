@@ -13032,6 +13032,47 @@ ul.social-links li a {
   align-items: stretch;
 }
 
+.form-editable .wrapper {
+  background-color: #f9f9f9;
+  border-radius: 2px;
+  padding: 1.5rem;
+  position: relative;
+}
+.form-editable strong {
+  margin-right: 0.25rem;
+}
+.form-editable .form-wrapper {
+  display: flex;
+  align-items: center;
+}
+.form-editable .form-wrapper + .form-wrapper {
+  margin-top: 1rem;
+}
+.form-editable .form-wrapper .form-group,
+.form-editable .form-wrapper .form-item {
+  max-width: 50%;
+  margin: 0;
+}
+.form-editable .form-wrapper .form-control {
+  background-color: #fff;
+}
+.form-editable .form-item-edit {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  color: #a3a3a3;
+}
+.form-editable .form-item-edit:hover {
+  color: var(--ak-accent-color);
+}
+.form-editable .form-item-edit .fa-square,
+.form-editable .form-item-edit .fa-check-square {
+  display: none !important;
+}
+.form-editable .form-item-edit label svg {
+  position: relative;
+}
+
 .contact-message-form .form-item-copy {
   margin-top: 1.5rem;
 }
@@ -13096,47 +13137,6 @@ form.search-form .search-advanced {
 .path-user form .form-type-managed-file .form-text span {
   margin-right: 0.05rem;
 }
-.user-billing-details-form .wrapper {
-  background-color: #f9f9f9;
-  border-radius: 2px;
-  padding: 1.5rem;
-  position: relative;
-}
-.user-billing-details-form strong {
-  margin-right: 0.25rem;
-}
-.user-billing-details-form .form-wrapper {
-  display: flex;
-  align-items: center;
-}
-.user-billing-details-form .form-wrapper + .form-wrapper {
-  margin-top: 1rem;
-}
-.user-billing-details-form .form-wrapper .form-group,
-.user-billing-details-form .form-wrapper .form-item {
-  max-width: 50%;
-  margin: 0;
-}
-.user-billing-details-form .form-wrapper .form-control {
-  background-color: #fff;
-}
-.user-billing-details-form .form-item-edit {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  color: #a3a3a3;
-}
-.user-billing-details-form .form-item-edit:hover {
-  color: var(--ak-accent-color);
-}
-.user-billing-details-form .form-item-edit .fa-square,
-.user-billing-details-form .form-item-edit .fa-check-square {
-  display: none !important;
-}
-.user-billing-details-form .form-item-edit label svg {
-  position: relative;
-}
-
 .views-exposed-form {
   border-radius: 4px;
   background-color: #fff;
