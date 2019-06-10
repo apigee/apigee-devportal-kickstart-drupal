@@ -1,0 +1,45 @@
+// Team switcher
+// -----------------------------------------------------------------------------
+.team-switcher {
+  max-width: 540px;
+
+  .dropbutton-wrapper {
+
+    &.open {
+
+      .dropbutton-widget {
+        background-color: $lighter;
+      }
+    }
+  }
+
+  .dropbutton-action {
+
+    a {
+      background-color: $lighter;
+      //border-right: 0;
+      padding: 0.65rem 1rem;
+      color: $body-color;
+    }
+
+    &.secondary-action {
+
+      a {
+        color: var(--ak-accent-color);
+
+        &:hover {
+          background-color: var(--ak-accent-color);
+          color: var(--ak-accent-color-light);
+        }
+      }
+    }
+  }
+
+  .dropbutton-toggle button {
+    background-color: $lighter;
+  }
+}
+
+.main .team-switcher.block {
+  margin-bottom: 2rem;
+}

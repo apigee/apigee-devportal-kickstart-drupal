@@ -1,0 +1,32 @@
+// Form: Billing details
+// -----------------------------------------------------------------------------
+.user-billing-details-form {
+
+  fieldset {
+    background-color: $lighter;
+    border-radius: 2px;
+    padding: 1.5rem;
+
+    .card-header,
+    .card-body {
+      padding: 0 !important;
+    }
+
+    .card-header {
+      background: none !important;
+      padding: 0 0 1rem !important;
+
+      h4 {
+        font-size: 1rem;
+      }
+    }
+
+    .form-item {
+      margin: 0;
+
+      + .form-item {
+        margin-top: 1rem;
+      }
+    }
+  }
+}

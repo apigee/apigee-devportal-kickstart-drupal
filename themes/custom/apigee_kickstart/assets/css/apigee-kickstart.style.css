@@ -12995,6 +12995,32 @@ ul.social-links li a {
   background: inherit;
 }
 
+.team-switcher {
+  max-width: 540px;
+}
+.team-switcher .dropbutton-wrapper.open .dropbutton-widget {
+  background-color: #f9f9f9;
+}
+.team-switcher .dropbutton-action a {
+  background-color: #f9f9f9;
+  padding: 0.65rem 1rem;
+  color: #3c3c3c;
+}
+.team-switcher .dropbutton-action.secondary-action a {
+  color: var(--ak-accent-color);
+}
+.team-switcher .dropbutton-action.secondary-action a:hover {
+  background-color: var(--ak-accent-color);
+  color: var(--ak-accent-color-light);
+}
+.team-switcher .dropbutton-toggle button {
+  background-color: #f9f9f9;
+}
+
+.main .team-switcher.block {
+  margin-bottom: 2rem;
+}
+
 .block > h2 {
   font-size: 1.25rem;
 }
@@ -13070,6 +13096,29 @@ form.search-form .search-advanced {
 .path-user form .form-type-managed-file .form-text span {
   margin-right: 0.05rem;
 }
+.user-billing-details-form fieldset {
+  background-color: #f9f9f9;
+  border-radius: 2px;
+  padding: 1.5rem;
+}
+.user-billing-details-form fieldset .card-header,
+.user-billing-details-form fieldset .card-body {
+  padding: 0 !important;
+}
+.user-billing-details-form fieldset .card-header {
+  background: none !important;
+  padding: 0 0 1rem !important;
+}
+.user-billing-details-form fieldset .card-header h4 {
+  font-size: 1rem;
+}
+.user-billing-details-form fieldset .form-item {
+  margin: 0;
+}
+.user-billing-details-form fieldset .form-item + .form-item {
+  margin-top: 1rem;
+}
+
 .views-exposed-form {
   border-radius: 4px;
   background-color: #fff;
@@ -13286,6 +13335,9 @@ div.forum__add {
   grid-column: 1/-1;
 }
 
+.user--full {
+  max-width: 540px;
+}
 @media (min-width: 768px) {
   .user--full .field {
     display: flex;
