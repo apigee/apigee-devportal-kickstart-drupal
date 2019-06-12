@@ -24,9 +24,12 @@
  */
 
 use Drupal\apigee_edge\Entity\EdgeEntityViewBuilder;
+use Drupal\Component\Serialization\Json;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Menu\LocalActionDefault;
+use Drupal\Core\Render\Element;
 use Drupal\user\UserInterface;
 
 /*
@@ -125,6 +128,39 @@ function apigee_kickstart_enhancement_user_view(array &$build, EntityInterface $
         ];
       }
     }
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function apigee_kickstart_enhancement_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Alter the billing details form.
+  if (strpos($form_id, '_billing_details_form')) {
+    $form['#attributes']['class'] = 'form-editable';
+    // Add a form heading.
+    $form['heading'] = [
+      '#type' => 'html_tag',
+      '#value' => t('Billing Details'),
+      '#tag' => 'h4',
+      '#weight' => -100,
+    ];
+
+    // Wrap all elements in a div.
+    $form['heading']['#suffix'] = '<div class="wrapper">';
+    $form['actions']['#suffix'] = '</div>';
+
+    // Render fieldsets as simple containers.
+    foreach (Element::children($form) as $child) {
+      if ($form[$child]['#type'] === 'fieldset') {
+        $form[$child]['#type'] = 'container';
+      }
+    }
+
+    // Fix for billing type.
+    $form['billing']['billing_type']['#prefix'] = '<strong>' . $form['billing']['#title'] . ': </strong><span>';
+    $form['billing']['billing_type']['#suffix'] = '</span>';
+    $form['billing']['billing_type']['#markup'] = ucfirst(strtolower($form['billing']['billing_type']['#markup']));
   }
 }
 

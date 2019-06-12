@@ -1,0 +1,69 @@
+// Form: Billing details
+// -----------------------------------------------------------------------------
+#user-billing-details-form {
+
+  .wrapper {
+    background-color: $lighter;
+    border-radius: 2px;
+    padding: 1.5rem;
+    position: relative;
+  }
+
+  strong {
+    margin-right: .25rem;
+  }
+
+  .form-wrapper {
+    display: flex;
+    align-items: center;
+
+    + .form-wrapper {
+      margin-top: 1rem;
+    }
+
+    .form-group,
+    .form-item {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin: 0;
+    }
+
+    label {
+      font-weight: 600;
+      margin: 0 .25rem 0 0;
+
+      &:after {
+        content: ":";
+      }
+    }
+
+    .form-control {
+      background-color: $white;
+      max-width: 50%;
+    }
+  }
+
+  .form-item-edit {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    color: $gray-500;
+
+    &:hover {
+      color: var(--ak-accent-color);
+    }
+
+    .fa-square,
+    .fa-check-square {
+      display: none !important;
+    }
+
+    label {
+
+      svg {
+        position: relative;
+      }
+    }
+  }
+}

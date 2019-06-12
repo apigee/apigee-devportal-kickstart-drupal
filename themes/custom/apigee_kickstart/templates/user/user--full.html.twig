@@ -6,9 +6,9 @@
 #}
 {% extends 'user.html.twig' %}
 {% block content %}
-  {# @todo Find a good way to constrict this to col-lg-6 that works with all
-  3 sidebar layout options. #}
-  <div class="bg-light p-4 rounded-sm">
+  <h3>{{ "Profile Details"|t }}</h3>
+
+  <div class="bg-lighter p-4 rounded-sm">
     {{ content.user_picture }}
     {{ content.display_name }}
     {{ content.username }}
@@ -17,7 +17,7 @@
 
   {% set additional_fields = content|without('user_picture', 'display_name', 'username', 'email') %}
   {% if additional_fields %}
-    <div class="bg-light p-4 rounded-sm mt-4">
+    <div class="bg-lighter p-4 rounded-sm mt-4">
       {{ additional_fields }}
     </div>
   {% endif %}

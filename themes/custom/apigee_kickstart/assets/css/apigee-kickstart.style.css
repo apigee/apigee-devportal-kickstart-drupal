@@ -13071,6 +13071,32 @@ form.previous-balances-reports-download-form .form-actions .btn {
   text-transform: none;
 }
 
+.team-switcher {
+  max-width: 540px;
+}
+.team-switcher .dropbutton-wrapper.open .dropbutton-widget {
+  background-color: #f9f9f9;
+}
+.team-switcher .dropbutton-action a {
+  background-color: #f9f9f9;
+  padding: 0.65rem 1rem;
+  color: #3c3c3c;
+}
+.team-switcher .dropbutton-action.secondary-action a {
+  color: var(--ak-accent-color);
+}
+.team-switcher .dropbutton-action.secondary-action a:hover {
+  background-color: var(--ak-accent-color);
+  color: var(--ak-accent-color-light);
+}
+.team-switcher .dropbutton-toggle button {
+  background-color: #f9f9f9;
+}
+
+.main .team-switcher.block {
+  margin-bottom: 2rem;
+}
+
 .block > h2 {
   font-size: 1.25rem;
 }
@@ -13146,44 +13172,6 @@ form.search-form .search-advanced {
 .path-user form .form-type-managed-file .form-text span {
   margin-right: 0.05rem;
 }
-.path-user form {
-  max-width: 540px;
-}
-.path-user form .form-item-name {
-  margin-bottom: 0.25rem;
-}
-.path-user form .form-item-name + p {
-  font-size: 0.75rem;
-  letter-spacing: 0.4px;
-  color: #787878;
-}
-.path-user form .field--type-image {
-  margin-top: 1rem;
-}
-.path-user form .form-type-managed-file .form-text br {
-  display: none;
-}
-.path-user form .form-type-managed-file .form-text span {
-  margin-right: 0.05rem;
-}
-.commerce-order-item-add-to-cart-form {
-  max-width: 540px;
-}
-.commerce-order-item-add-to-cart-form .field--name-unit-price .form-item {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.commerce-order-item-add-to-cart-form .field--name-unit-price .form-item label {
-  width: 100%;
-}
-.commerce-order-item-add-to-cart-form .field--name-unit-price .form-item input {
-  max-width: 160px;
-}
-.commerce-order-item-add-to-cart-form .field--name-unit-price .form-item .field-suffix {
-  margin-left: 0.5rem;
-}
-
 @media (min-width: 768px) {
   .cart-form form .table-responsive {
     overflow: visible;
@@ -13375,6 +13363,57 @@ form.commerce-checkout-flow .form-actions a:hover {
   margin-bottom: 0;
 }
 
+#user-billing-details-form .wrapper {
+  background-color: #f9f9f9;
+  border-radius: 2px;
+  padding: 1.5rem;
+  position: relative;
+}
+#user-billing-details-form strong {
+  margin-right: 0.25rem;
+}
+#user-billing-details-form .form-wrapper {
+  display: flex;
+  align-items: center;
+}
+#user-billing-details-form .form-wrapper + .form-wrapper {
+  margin-top: 1rem;
+}
+#user-billing-details-form .form-wrapper .form-group,
+#user-billing-details-form .form-wrapper .form-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0;
+}
+#user-billing-details-form .form-wrapper label {
+  font-weight: 600;
+  margin: 0 0.25rem 0 0;
+}
+#user-billing-details-form .form-wrapper label:after {
+  content: ":";
+}
+#user-billing-details-form .form-wrapper .form-control {
+  background-color: #fff;
+  max-width: 50%;
+}
+#user-billing-details-form .form-item-edit {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  color: #a3a3a3;
+}
+#user-billing-details-form .form-item-edit:hover {
+  color: var(--ak-accent-color);
+}
+#user-billing-details-form .form-item-edit .fa-square,
+#user-billing-details-form .form-item-edit .fa-check-square {
+  display: none !important;
+}
+#user-billing-details-form .form-item-edit label svg {
+  position: relative;
+}
+
 .article__tags {
   margin-bottom: 1rem;
 }
@@ -13554,6 +13593,9 @@ div.forum__add {
   grid-column: 1/-1;
 }
 
+.user--full {
+  max-width: 540px;
+}
 @media (min-width: 768px) {
   .user--full .field {
     display: flex;
