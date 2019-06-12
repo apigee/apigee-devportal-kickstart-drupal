@@ -1,0 +1,191 @@
+// Form: Checkout
+// -----------------------------------------------------------------------------
+form.commerce-checkout-flow {
+
+  .layout-region-checkout-main,
+  .layout-region-checkout-secondary,
+  .layout-region-checkout-footer {
+
+    @include media-breakpoint-up(md) {
+      width: 50%;
+    }
+  }
+
+  .layout-region-checkout-footer {
+    clear: left;
+  }
+
+  .checkout-pane {
+    padding: 0;
+
+    .card-header {
+      padding: 0 !important;
+    }
+
+    .card-body {
+      padding: 0 !important;
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .address-container-inline {
+    display: flex;
+    margin-left: -2%;
+    margin-right: -2%;
+    margin-bottom: 1rem;
+
+    > .form-item {
+      flex: 1 1 0;
+      margin: 0;
+      padding: 0 2%;
+    }
+  }
+
+  .form-select,
+  .form-control {
+    background-color: $lighter;
+    border: 1px solid $gray-400;
+  }
+
+  .layout-region-checkout-secondary {
+    background-color: $lighter !important;
+    padding: 1.5rem;
+    border-radius: 4px;
+    margin-top: 3rem;
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    table {
+
+      tbody {
+
+        td {
+          border: 0;
+          border-top: 1px solid $gray-400;
+          border-bottom: 1px solid $gray-200;
+          padding: .75rem 0;
+        }
+
+        td.views-field-purchased-entity {
+          width: 80%;
+        }
+
+        td.views-field-total-price__number {
+          text-align: right;
+        }
+      }
+    }
+  }
+
+  .cart-form__total-price {
+    padding: 0;
+
+    .order-total-line {
+      padding-right: 0;
+    }
+
+    .order-total-line-value {
+      width: 20%;
+      text-align: right;
+    }
+  }
+
+  .form-actions {
+    display: flex;
+    align-items: center;
+
+    a {
+      display: inline-block;
+      font-family: 'Roboto-Medium', $font-family-sans-serif;
+      font-size: 0.875rem;
+      letter-spacing: 1px;
+      padding: 0.5rem map-get($spacers, 4);
+      border-width: 2px;
+      border-style: solid;
+      border-color: var(--ak-accent-color);
+      color: var(--ak-accent-color);
+      text-decoration: none;
+      margin-left: .75rem;
+      text-transform: uppercase;
+
+      &:hover {
+        background-color: transparent;
+        border-color: var(--ak-accent-color-dark);
+        color: var(--ak-accent-color-dark);
+      }
+    }
+  }
+}
+
+// Step: Order Information
+// -----------------------------------------------------------------------------
+.commerce-checkout-flow--order-information {
+
+  .checkout-pane {
+
+    .card-header {
+
+      h4 {
+        font-size: 1.5rem;
+        line-height: 28px;
+        font-weight: 400;
+        margin-bottom: 1rem !important;
+      }
+    }
+
+    .card-body {
+      padding: 0 !important;
+    }
+  }
+}
+
+// Step: Review
+// -----------------------------------------------------------------------------
+.commerce-checkout-flow--review {
+
+  .checkout-pane {
+
+    h3 {
+      margin-bottom: 1rem !important;
+    }
+
+    .card-header {
+      background: none !important;
+      padding: 0 !important;
+
+      h4 {
+        font-size: 1rem;
+        margin-bottom: .5rem !important;
+      }
+    }
+  }
+
+  fieldset {
+    background-color: $lighter;
+    border-radius: 4px;
+    padding: 1rem;
+  }
+}
+
+// Step: Complete
+// -----------------------------------------------------------------------------
+.commerce-checkout-flow--complete {
+
+  .checkout-complete {
+    background-color: $lighter;
+    border-radius: 4px;
+    padding: 1.5rem;
+    max-width: 540px;
+    margin-bottom: 1.5rem;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

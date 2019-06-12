@@ -54,26 +54,6 @@ function apigee_kickstart_enhancement_theme($existing, $type, $theme, $path) {
 }
 
 /**
- * Implements hook_menu_local_actions_alter().
- */
-function apigee_kickstart_enhancement_menu_local_actions_alter(&$local_actions) {
-  /** @var \Drupal\Core\Entity\EntityTypeInterface $app_entity_type */
-  foreach (\Drupal::service('apigee_kickstart.enhancer')->getAppEntityTypes() as $entity_type_id => $app_entity_type) {
-    // Update the local action title for app entity types.
-    $local_action_name = $app_entity_type->getProvider() . ".$entity_type_id.add_form_for_" . str_replace('_app', '', $entity_type_id);
-    if (isset($local_actions[$local_action_name])) {
-      $local_actions[$local_action_name]['title'] = t('Register new @entity_type', [
-        '@entity_type' => $app_entity_type->getLowercaseLabel(),
-      ]);
-
-      // Setting the title with entity type label is handled above.
-      // So we can fallback to the default class here.
-      $local_actions[$local_action_name]['class'] = LocalActionDefault::class;
-    }
-  }
-}
-
-/**
  * Implements hook_local_tasks_alter().
  */
 function apigee_kickstart_enhancement_local_tasks_alter(&$local_tasks) {
@@ -152,91 +132,19 @@ function apigee_kickstart_enhancement_user_view(array &$build, EntityInterface $
 }
 
 /**
- * Implements hook_form_FORM_ID_alter().
+ * Implements hook_apigee_m10n_prepaid_balance_list_alter().
  */
-function apigee_kickstart_enhancement_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  // Alter the billing details form.
-  if (strpos($form_id, '_billing_details_form')) {
-    $form['#attributes']['class'] = 'form-editable';
+function apigee_kickstart_enhancement_apigee_m10n_prepaid_balance_list_alter(array &$build, EntityInterface $entity) {
+  // Add a title to the list.
+  $build['title'] = [
+    '#type' => 'html_tag',
+    '#value' => t('Prepaid Balance'),
+    '#tag' => 'h3',
+    '#weight' => -100,
+  ];
 
-    // Add a form heading.
-    $form['heading'] = [
-      '#type' => 'html_tag',
-      '#value' => t('Billing Details'),
-      '#tag' => 'h4',
-      '#weight' => -100,
-    ];
-
-    // Wrap all elements in a div.
-    $form['heading']['#suffix'] = '<div class="wrapper">';
-    $form['actions']['#suffix'] = '</div>';
-
-    // Render fieldsets as simple containers.
-    foreach (Element::children($form) as $child) {
-      if ($form[$child]['#type'] === 'fieldset') {
-        $form[$child]['#type'] = 'container';
-      }
-    }
-
-    // Add an edit toggle.
-    $form['edit'] = [
-      '#title' => '<i class="fa fa-pencil"></i>',
-      '#type' => 'checkbox',
-      '#weight' => -100,
-    ];
-
-    // These are visible when editing only.
-    $form['actions']['#states'] = [
-      'visible' => [
-        'input[name="edit"]' => ['checked' => TRUE],
-      ],
-    ];
-
-    $editable_fields = [
-      'company' => ['legal_company_name'],
-    ];
-
-    foreach ($editable_fields as $group => $fields) {
-      foreach ($fields as $field) {
-        // Hide label and show it as a shared title.
-        $form[$group][$field]['#title_display'] = 'hidden';
-        $form[$group]['title'] = [
-          '#type' => 'html_tag',
-          '#tag' => 'strong',
-          '#value' => $form[$group][$field]['#title'] . ': ',
-          '#weight' => -10,
-        ];
-
-        $form[$group]["{$field}_value"] = [
-          '#type' => 'html_tag',
-          '#value' => $form[$group][$field]['#default_value'],
-          '#tag' => 'div',
-          '#weight' => 10,
-          '#attributes' => [
-            'class' => [
-              'js-form-wrapper',
-            ],
-            'data-drupal-states' => Json::encode([
-              'visible' => [
-                'input[name="edit"]' => ['checked' => FALSE],
-              ],
-            ]),
-          ],
-        ];
-
-        $form['company'][$field]['#states'] = [
-          'visible' => [
-            'input[name="edit"]' => ['checked' => TRUE],
-          ],
-        ];
-      }
-    }
-
-    // Fix for billing type.
-    $form['billing']['billing_type']['#prefix'] = '<strong>' . $form['billing']['#title'] . ': </strong><span>';
-    $form['billing']['billing_type']['#suffix'] = '</span>';
-    $form['billing']['billing_type']['#markup'] = ucfirst(strtolower($form['billing']['billing_type']['#markup']));
-  }
+  // Remove the table caption.
+  $build['table']['#caption'] = '';
 }
 
 /**
