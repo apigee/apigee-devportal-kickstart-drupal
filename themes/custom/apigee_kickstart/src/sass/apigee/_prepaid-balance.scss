@@ -1,0 +1,78 @@
+// Style for Prepaid balance pages.
+// -----------------------------------------------------------------------------
+.apigee-m10n-prepaid-balance-wrapper {
+
+  h3 {
+    margin-bottom: 1.5rem;
+  }
+
+  table {
+
+    .dropbutton-single {
+
+      .button {
+        border-radius: 2px;
+      }
+    }
+  }
+}
+
+// Refresh form
+// -----------------------------------------------------------------------------
+form.prepaid-balance-refresh-form {
+
+  .btn {
+    font-size: 0.875rem;
+    text-transform: none;
+
+    &:hover {
+      background-color: var(--ak-accent-color);
+      color: var(--ak-accent-color-light);
+      border-color: var(--ak-accent-color);
+    }
+  }
+}
+
+// Download form
+// -----------------------------------------------------------------------------
+form.previous-balances-reports-download-form {
+  background-color: $lighter;
+  border-radius: 4px;
+  padding: 1rem 1.5rem 1.2rem;
+  max-width: none !important;
+
+  @include media-breakpoint-up(md) {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  .form-item {
+
+    @include media-breakpoint-up(md) {
+      margin: 0 1rem 0 0;
+    }
+  }
+
+  .form-select {
+    background-color: $white;
+  }
+
+  .form-actions {
+
+    @include media-breakpoint-up(md) {
+      margin: 0 0 0 auto !important;
+    }
+
+    .btn {
+      font-size: 0.875rem;
+      padding: 0.625rem 1rem;
+      text-transform: none;
+    }
+  }
+}

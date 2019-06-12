@@ -1,0 +1,78 @@
+// Form: Cart
+// -----------------------------------------------------------------------------
+.cart-form {
+
+  form {
+
+    .table-responsive {
+
+      @include media-breakpoint-up(md) {
+        overflow: visible;
+      }
+    }
+  }
+
+  table {
+
+    .form-item {
+      margin-bottom: 0;
+    }
+
+    td.views-field-purchased-entity {
+      width: 30%;
+    }
+
+    td.views-field-edit-quantity {
+      padding: .5rem 1rem;
+    }
+  }
+
+  .button.delete-order-item {
+    padding: 0;
+    border: 0;
+    background: none;
+    text-transform: none;
+    color: var(--ak-accent-color);
+    font-weight: 400;
+
+    &:hover {
+      color: var(--ak-accent-color);
+    }
+  }
+
+  &__total-price {
+    background-color: $lighter;
+    padding: 1rem;
+    min-width: 300px;
+    font-size: 0.875rem;
+
+    @include media-breakpoint-up(md) {
+      float: right;
+    }
+
+    .order-total-line-value {
+      width: 50%;
+      text-align: left;
+      margin-left: 1rem;
+    }
+  }
+
+  .form-actions {
+    clear: both;
+
+    @include media-breakpoint-up(md) {
+      float: right;
+    }
+
+    #edit-submit {
+      background: none;
+      color: var(--ak-accent-color);
+
+      &:hover {
+        background-color: var(--ak-accent-color);
+        color: var(--ak-accent-color-light);
+        border-color: var(--ak-accent-color);
+      }
+    }
+  }
+}

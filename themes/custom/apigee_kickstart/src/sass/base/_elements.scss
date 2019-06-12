@@ -104,3 +104,45 @@ small {
   letter-spacing: 0.4px;
   font-size: .75rem;
 }
+
+// Table
+// -----------------------------------------------------------------------------
+table,
+.table {
+
+  thead {
+
+    th {
+      font-weight: 500;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  tbody {
+
+    td {
+      padding: 1.5rem 0;
+    }
+  }
+}
+
+table.table-bordered {
+
+  thead {
+    background-color: $gray-100 !important;
+
+    th {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      border: 0;
+    }
+  }
+
+  tbody {
+
+    td {
+      padding: 1rem;
+    }
+  }
+}

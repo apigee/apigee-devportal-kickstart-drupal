@@ -129,6 +129,22 @@ function apigee_kickstart_enhancement_user_view(array &$build, EntityInterface $
 }
 
 /**
+ * Implements hook_apigee_m10n_prepaid_balance_list_alter().
+ */
+function apigee_kickstart_enhancement_apigee_m10n_prepaid_balance_list_alter(array &$build, EntityInterface $entity) {
+  // Add a title to the list.
+  $build['title'] = [
+    '#type' => 'html_tag',
+    '#value' => t('Prepaid Balance'),
+    '#tag' => 'h3',
+    '#weight' => -100,
+  ];
+
+  // Remove the table caption.
+  $build['table']['#caption'] = '';
+}
+
+/**
  * Returns an array of extra fields for the user profile.
  */
 function _apigee_kickstart_user_extra_fields() {

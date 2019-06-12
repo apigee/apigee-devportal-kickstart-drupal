@@ -4,7 +4,7 @@
  * Template for links within a dropbutton.
  */
 #}
-{% if links -%}
+{% if links or button -%}
   {%- if heading -%}
     {%- if heading.level -%}
       <{{ heading.level }}{{ heading.attributes }}>{{ heading.text }}</{{ heading.level }}>
