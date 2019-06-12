@@ -1,6 +1,6 @@
-// Form: Editable
+// Form: Billing details
 // -----------------------------------------------------------------------------
-.form-editable {
+#user-billing-details-form {
 
   .wrapper {
     background-color: $lighter;
@@ -23,12 +23,24 @@
 
     .form-group,
     .form-item {
-      max-width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
       margin: 0;
+    }
+
+    label {
+      font-weight: 600;
+      margin: 0 .25rem 0 0;
+
+      &:after {
+        content: ":";
+      }
     }
 
     .form-control {
       background-color: $white;
+      max-width: 50%;
     }
   }
 
