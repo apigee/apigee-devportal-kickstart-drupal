@@ -51,26 +51,6 @@ function apigee_kickstart_enhancement_theme($existing, $type, $theme, $path) {
 }
 
 /**
- * Implements hook_menu_local_actions_alter().
- */
-function apigee_kickstart_enhancement_menu_local_actions_alter(&$local_actions) {
-  /** @var \Drupal\Core\Entity\EntityTypeInterface $app_entity_type */
-  foreach (\Drupal::service('apigee_kickstart.enhancer')->getAppEntityTypes() as $entity_type_id => $app_entity_type) {
-    // Update the local action title for app entity types.
-    $local_action_name = $app_entity_type->getProvider() . ".$entity_type_id.add_form_for_" . str_replace('_app', '', $entity_type_id);
-    if (isset($local_actions[$local_action_name])) {
-      $local_actions[$local_action_name]['title'] = t('Register new @entity_type', [
-        '@entity_type' => $app_entity_type->getLowercaseLabel(),
-      ]);
-
-      // Setting the title with entity type label is handled above.
-      // So we can fallback to the default class here.
-      $local_actions[$local_action_name]['class'] = LocalActionDefault::class;
-    }
-  }
-}
-
-/**
  * Implements hook_local_tasks_alter().
  */
 function apigee_kickstart_enhancement_local_tasks_alter(&$local_tasks) {
