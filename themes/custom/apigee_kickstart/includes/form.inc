@@ -9,6 +9,7 @@ use Drupal\apigee_m10n_add_credit\AddCreditConfig;
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
@@ -17,7 +18,7 @@ function apigee_kickstart_theme_suggestions_input_alter(array &$suggestions, arr
   // Add a suggestion for submit button based on the untranslated value.
   if ($variables['element']['#type'] == 'submit') {
     /** @var \Drupal\Core\StringTranslation\TranslatableMarkup $value */
-    if (($value = $variables['element']['#value']) && ($untranslated = $value->getUntranslatedString())) {
+    if (($value = $variables['element']['#value']) && ($value instanceof TranslatableMarkup) && ($untranslated = $value->getUntranslatedString())) {
       $suggestions[] = $variables['theme_hook_original'] . '__' . Html::cleanCssIdentifier(strtolower($untranslated));
     }
   }
