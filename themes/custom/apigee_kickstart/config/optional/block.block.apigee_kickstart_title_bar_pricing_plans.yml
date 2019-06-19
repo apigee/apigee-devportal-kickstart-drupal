@@ -25,6 +25,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: '/user/*/monetization/packages'
+    pages: '/user/*/plans'
     negate: false
     context_mapping: {  }
