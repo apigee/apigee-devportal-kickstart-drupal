@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * Template for the item element of "Pricing & Plans" page content.
+ */
+#}
+{% set classes = [
+  'col-12',
+  'col-sm-6',
+  'col-lg-4',
+  'mb-5',
+  'd-flex',
+  'align-items-stretch',
+] %}
+
+<div{{attributes.addClass(classes)}}>
+  {{ children }}
+</div>

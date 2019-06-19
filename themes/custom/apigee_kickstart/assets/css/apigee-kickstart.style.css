@@ -13071,6 +13071,51 @@ form.previous-balances-reports-download-form .form-actions .btn {
   text-transform: none;
 }
 
+.rate-plan--view-mode-teaser {
+  border: 0;
+}
+.pricing-and-plans .rate-plan--view-mode-teaser {
+  width: 100%;
+}
+.rate-plan--view-mode-teaser .card-body {
+  padding: 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+}
+.rate-plan--view-mode-teaser .card-body > * {
+  flex: 1 0 100%;
+}
+.rate-plan--view-mode-teaser .card-title {
+  font-size: 1.5rem;
+  font-weight: 200;
+  letter-spacing: normal;
+  margin-bottom: 1rem;
+}
+.rate-plan--view-mode-teaser .card-title a {
+  color: currentColor;
+}
+.rate-plan--view-mode-teaser .btn--subscribe {
+  align-self: flex-end;
+}
+
+.rate-plan .field {
+  font-size: 0.75rem;
+}
+.rate-plan .field__label {
+  margin-bottom: 0.625rem;
+  line-height: 1;
+}
+
+.rate-plan__packageproducts .field__items {
+  display: flex;
+  flex-flow: row wrap;
+}
+.rate-plan__packageproducts .field__item:not(:last-child)::after {
+  content: ",";
+  margin-right: 1ch;
+}
+
 .team-switcher {
   max-width: 540px;
 }
@@ -13492,7 +13537,7 @@ form.commerce-checkout-flow .form-actions a:hover {
 .path-user .page__content > .container {
   padding-top: 0.5rem !important;
 }
-.path-user main .container.py-5 {
+.path-user main:not(.pricing-plans) .container.py-5 {
   padding-top: 0 !important;
 }
 
