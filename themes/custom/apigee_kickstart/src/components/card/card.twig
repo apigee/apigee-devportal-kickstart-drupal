@@ -37,7 +37,7 @@
     {% if title or body %}
       <div class="card-body">
         {% if title %}
-          <h4 class="card-title">{{ title }}</h4>
+          {{ title }}
         {% endif %}
         {% block body %}
           {{ body }}
