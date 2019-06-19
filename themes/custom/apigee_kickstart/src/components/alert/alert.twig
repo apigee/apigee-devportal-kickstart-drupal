@@ -1,0 +1,38 @@
+{#
+/**
+ * @file
+ * Template for Alert component.
+ *
+ * Available config:
+ * - type: primary | secondary | success | danger | warning | info | light | dark
+ * - heading: string,
+ * - dimissible: true | false
+ * - utility_classes: An array of utility classes.
+ */
+#}
+{% set classes = [
+  'alert',
+  type ? 'alert-' ~ type,
+  'border-0',
+  'rounded-sm',
+]|merge(utility_classes ? utility_classes : []) %}
+
+{% set dismissible = dismissible ?? 'true' %}
+
+<div class="{{ classes|join(' ') }}" role="alert">
+  {% if heading %}
+    <h4 class="alert-heading">{{ heading }}</h4>
+  {% endif %}
+
+  {% block content %}
+    {{ content }}
+  {% endblock %}
+
+  {% if dismissible %}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <svg width="14" height="14" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14 1.41L12.59 0 7 5.59 1.41 0 0 1.41 5.59 7 0 12.59 1.41 14 7 8.41 12.59 14 14 12.59 8.41 7z" fill="currentColor" fill-rule="nonzero" />
+      </svg>
+    </button>
+  {% endif %}
+</div>

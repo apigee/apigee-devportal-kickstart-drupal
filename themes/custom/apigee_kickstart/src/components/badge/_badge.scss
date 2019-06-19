@@ -1,0 +1,19 @@
+// Overrides for the Badge component
+// -----------------------------------------------------------------------------
+
+.badge {
+  opacity: 0.87;
+  letter-spacing: 0.6px;
+  line-height: 16px;
+  text-transform: capitalize;
+
+  .forum-list__forum & {
+    font-size: 0.563rem;
+    line-height: 1.25;
+  }
+
+  &-primary {
+    background-color: var(--ak-accent-color);
+    color: var(--ak-accent-color-light)
+  }
+}

@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.apidoc.apidoc.field_categories
+    - field.field.apidoc.apidoc.field_image
+  module:
+    - apigee_api_catalog
+id: apidoc.apidoc.default
+targetEntityType: apidoc
+bundle: apidoc
+mode: default
+content:
+  spec:
+    label: hidden
+    type: apigee_api_catalog_smartdocs
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  description: true
+  field_categories: true
+  field_image: true
+  name: true

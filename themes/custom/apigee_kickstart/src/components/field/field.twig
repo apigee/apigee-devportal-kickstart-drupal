@@ -1,0 +1,50 @@
+{#
+/**
+ * @file
+ * Template for a field component.
+ */
+#}
+{%
+  set classes = [
+  'field',
+  'field--' ~ label_display,
+  label_display == 'inline' ? 'd-sm-flex align-items-sm-center',
+  bundle|clean_class ~ '__' ~ field_name_clean|clean_class,
+]
+%}
+
+{%
+  set title_classes = [
+  'field__label',
+  label_display == 'visually_hidden' ? 'visually-hidden',
+]
+%}
+
+{% if label_hidden %}
+  {% if multiple %}
+    <div{{ attributes.addClass(classes) }}>
+      {% for item in items %}
+        <div{{ item.attributes.addClass('field__item') }}>{{ item.content }}</div>
+      {% endfor %}
+    </div>
+  {% else %}
+    {% for item in items %}
+      <div{{ attributes.addClass(classes) }}>{{ item.content }}</div>
+    {% endfor %}
+  {% endif %}
+{% else %}
+  <div{{ attributes.addClass(classes) }}>
+    <div{{ title_attributes.addClass(title_classes) }}>
+      {{ label }}
+    </div>
+    {% if multiple %}
+    <div class="field__items">
+      {% endif %}
+      {% for item in items %}
+        <div{{ item.attributes.addClass('field__item') }}>{{ item.content }}</div>
+      {% endfor %}
+      {% if multiple %}
+    </div>
+    {% endif %}
+  </div>
+{% endif %}

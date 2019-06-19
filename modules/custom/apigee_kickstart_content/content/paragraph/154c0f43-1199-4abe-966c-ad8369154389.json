@@ -1,0 +1,89 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/text"
+        }
+    },
+    "id": [
+        {
+            "value": 38
+        }
+    ],
+    "uuid": [
+        {
+            "value": "154c0f43-1199-4abe-966c-ad8369154389"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 153
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "text"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-03-21T19:47:36+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "2"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "node"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_content"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<h2>Introduction<\/h2>\r\n\r\n<p>Our APIs offer the following benefits:<\/p>\r\n\r\n<ul>\r\n\t<li><strong>Get started right away<\/strong>: Visit our Developer Portal to find out what our APIs do, how they work and what you need to do to interface with them. Use our sandboxes and get building now. Our APIs need just a few lines of code to run in your applications.<\/li>\r\n\t<li><strong>Clear overview<\/strong>: You always know what is happening. Use our API analytics to track your users\u2019 activity in your applications and adjust your tactics if necessary.<\/li>\r\n\t<li><strong>Be creative<\/strong>: We are giving you the opportunity to use exclusive APIs to help shape the future of banking.<\/li>\r\n<\/ul>\r\n\r\n<p>The ACME API developer portal contains a wealth of information about our business ready APIs. Take some time familiarizing yourself with the portal before starting to build your apps.<\/p>\r\n\r\n<p><a href=\"#how-to-use\">Step 1: How to Use<\/a><br \/>\r\n<a href=\"#how-to-go-live\">Step 2: How to Go Live<\/a><br \/>\r\n<a href=\"#authentication\">Step 3: Authentication<\/a><br \/>\r\n<a href=\"#error-handling\">Step 4: Error Handling<\/a><br \/>\r\n<a href=\"#support\">Step 5: Support<\/a><\/p>\r\n\r\n<hr \/>\r\n<h2 id=\"how-to-use\">How to Use<\/h2>\r\n\r\n<h3>Registration<\/h3>\r\n\r\n<p>To use our API products, just create a Developer account.<\/p>\r\n\r\n<p>Creating an account is quick and easy:<\/p>\r\n\r\n<ul>\r\n\t<li>Click on <a href=\"\/user\/register\">Sign Up<\/a>.<\/li>\r\n\t<li>Fill in the form with your personal details, including your name, email address and username.<\/li>\r\n\t<li>Submit the form.<\/li>\r\n\t<li>You will receive an email with an activation link. Click the link, and you are ready to go!<\/li>\r\n<\/ul>\r\n\r\n<h3>Explore API Products<\/h3>\r\n\r\n<p>Want to be inspired and learn what you could build? Our available APIs are displayed on the API Products page. From here you can navigate to the underlying API Overview pages for details of a specific API. Next, go to the Documentation pages for technical information.<\/p>\r\n\r\n<hr \/>\r\n<h2 id=\"how-to-go-live\">How to Go Live<\/h2>\r\n\r\n<p>Once you have tested your application and related proposition(s) in our sandbox environment, you can submit a request to go live.<\/p>\r\n\r\n<ul>\r\n\t<li>First, create a new App for production. By doing so, you will get a different API-Key which you can use for your production environment.<\/li>\r\n\t<li>To get production access, it is important that both your account and App details are registered correctly.<\/li>\r\n\t<li>Subscribe to the API products you want to use in the production environment.<\/li>\r\n\t<li>Submit your request and <a href=\"\/contact\">contact us<\/a> to request production access. Depending on the API, our API Services team might contact you to discuss the details of your request.<\/li>\r\n\t<li>Once approved, you are ready to use our API in a live environment.<\/li>\r\n<\/ul>\r\n\r\n<hr \/>\r\n<h2 id=\"authentication\">Authentication<\/h2>\r\n\r\n<p>The authentication for this API is done on the basis of access token. To obtain an access token, you need to call our OAuth API. The authentication mechanism can vary per API depending on the required level of authentication.<\/p>\r\n\r\n<h3>Environments<\/h3>\r\n\r\n<p>These are the URLs for the endpoints to get the tokens.<\/p>\r\n\r\n<p>Sandbox: https:\/\/auth-sandbox.connect.example.com<\/p>\r\n\r\n<p>Production: https:\/\/auth.connect.example.com<\/p>\r\n\r\n<h3>OAuth Flows<\/h3>\r\n\r\n<p>Our APIs are secured using OAuth 2.0. This means you will need to pass an access token when making your request to the APIs. This page will explain how to obtain an access token. We use the following three flows for getting an access token: Client credentials, Authorization code flow and Refresh token.<\/p>\r\n\r\n<p>If you want to go more in depth on some of the OAuth protocol, have a look at the OAuth RFC.<\/p>\r\n\r\n<hr \/>\r\n<h2 id=\"error-handling\">Error Handling<\/h2>\r\n\r\n<p>This section provides an overview of the Acme APIs error model.<\/p>\r\n\r\n<h3>Error Format<\/h3>\r\n\r\n<p>All Acme APIs throw errors in following JSON format:<\/p>\r\n\r\n<pre>\r\n{\r\n\t\"errors\": [\r\n\t\t{\r\n\t\t\t\"code\": \"ERROR_UNIQUE_CODE\",    \r\n\t\t\t\"message\": \"ERROR_MESSAGE\",\r\n\t\t\t\"category\" : \"SHORT_DESCRIPTION\/ERROR_CATEGORY\",\r\n\t\t\t\"reference\" : \"API_DOCUMENTATION_LINK\",\r\n\t\t\t\"status\" : \"HTTP_STATUS_CODE\",\r\n\t\t\t\"traceId\" : \"UUID\"\r\n\t\t\t\r\n\t\t}\r\n\t]\r\n\r\n}<\/pre>\r\n\r\n<h2 id=\"support\">Support<\/h2>\r\n\r\n<p>Questions or problems? We are happy to help. Please check our <a href=\"\/faq\">FAQ page<\/a> for the answers to frequently asked questions.<\/p>\r\n\r\n<p>Encountering an unusual use case or implementation? Post in our <a href=\"\/forum\">developer Forum<\/a> and leverage the experience of our community.<\/p>\r\n\r\n<p>Inspired by success stories? Check out our <a href=\"\/blog\">Blog<\/a> and catch up on the latest ways businesses have integrated our API products.<\/p>\r\n\r\n<p>Can\u2019t find the answer you need? Please <a href=\"\/contact\">contact us<\/a> and we will get back to you as soon as possible.<\/p>\r\n",
+            "format": "full_html",
+            "processed": "<h2>Introduction<\/h2>\n\n<p>Our APIs offer the following benefits:<\/p>\n\n<ul>\n\t<li><strong>Get started right away<\/strong>: Visit our Developer Portal to find out what our APIs do, how they work and what you need to do to interface with them. Use our sandboxes and get building now. Our APIs need just a few lines of code to run in your applications.<\/li>\n\t<li><strong>Clear overview<\/strong>: You always know what is happening. Use our API analytics to track your users\u2019 activity in your applications and adjust your tactics if necessary.<\/li>\n\t<li><strong>Be creative<\/strong>: We are giving you the opportunity to use exclusive APIs to help shape the future of banking.<\/li>\n<\/ul>\n\n<p>The ACME API developer portal contains a wealth of information about our business ready APIs. Take some time familiarizing yourself with the portal before starting to build your apps.<\/p>\n\n<p><a href=\"#how-to-use\">Step 1: How to Use<\/a><br \/>\n<a href=\"#how-to-go-live\">Step 2: How to Go Live<\/a><br \/>\n<a href=\"#authentication\">Step 3: Authentication<\/a><br \/>\n<a href=\"#error-handling\">Step 4: Error Handling<\/a><br \/>\n<a href=\"#support\">Step 5: Support<\/a><\/p>\n\n<hr \/>\n<h2 id=\"how-to-use\">How to Use<\/h2>\n\n<h3>Registration<\/h3>\n\n<p>To use our API products, just create a Developer account.<\/p>\n\n<p>Creating an account is quick and easy:<\/p>\n\n<ul>\n\t<li>Click on <a href=\"\/user\/register\">Sign Up<\/a>.<\/li>\n\t<li>Fill in the form with your personal details, including your name, email address and username.<\/li>\n\t<li>Submit the form.<\/li>\n\t<li>You will receive an email with an activation link. Click the link, and you are ready to go!<\/li>\n<\/ul>\n\n<h3>Explore API Products<\/h3>\n\n<p>Want to be inspired and learn what you could build? Our available APIs are displayed on the API Products page. From here you can navigate to the underlying API Overview pages for details of a specific API. Next, go to the Documentation pages for technical information.<\/p>\n\n<hr \/>\n<h2 id=\"how-to-go-live\">How to Go Live<\/h2>\n\n<p>Once you have tested your application and related proposition(s) in our sandbox environment, you can submit a request to go live.<\/p>\n\n<ul>\n\t<li>First, create a new App for production. By doing so, you will get a different API-Key which you can use for your production environment.<\/li>\n\t<li>To get production access, it is important that both your account and App details are registered correctly.<\/li>\n\t<li>Subscribe to the API products you want to use in the production environment.<\/li>\n\t<li>Submit your request and <a href=\"\/contact\">contact us<\/a> to request production access. Depending on the API, our API Services team might contact you to discuss the details of your request.<\/li>\n\t<li>Once approved, you are ready to use our API in a live environment.<\/li>\n<\/ul>\n\n<hr \/>\n<h2 id=\"authentication\">Authentication<\/h2>\n\n<p>The authentication for this API is done on the basis of access token. To obtain an access token, you need to call our OAuth API. The authentication mechanism can vary per API depending on the required level of authentication.<\/p>\n\n<h3>Environments<\/h3>\n\n<p>These are the URLs for the endpoints to get the tokens.<\/p>\n\n<p>Sandbox: https:\/\/auth-sandbox.connect.example.com<\/p>\n\n<p>Production: https:\/\/auth.connect.example.com<\/p>\n\n<h3>OAuth Flows<\/h3>\n\n<p>Our APIs are secured using OAuth 2.0. This means you will need to pass an access token when making your request to the APIs. This page will explain how to obtain an access token. We use the following three flows for getting an access token: Client credentials, Authorization code flow and Refresh token.<\/p>\n\n<p>If you want to go more in depth on some of the OAuth protocol, have a look at the OAuth RFC.<\/p>\n\n<hr \/>\n<h2 id=\"error-handling\">Error Handling<\/h2>\n\n<p>This section provides an overview of the Acme APIs error model.<\/p>\n\n<h3>Error Format<\/h3>\n\n<p>All Acme APIs throw errors in following JSON format:<\/p>\n\n<pre>\n{\n\t\"errors\": [\n\t\t{\n\t\t\t\"code\": \"ERROR_UNIQUE_CODE\",    \n\t\t\t\"message\": \"ERROR_MESSAGE\",\n\t\t\t\"category\" : \"SHORT_DESCRIPTION\/ERROR_CATEGORY\",\n\t\t\t\"reference\" : \"API_DOCUMENTATION_LINK\",\n\t\t\t\"status\" : \"HTTP_STATUS_CODE\",\n\t\t\t\"traceId\" : \"UUID\"\n\t\t\t\n\t\t}\n\t]\n\n}<\/pre>\n\n<h2 id=\"support\">Support<\/h2>\n\n<p>Questions or problems? We are happy to help. Please check our <a href=\"\/faq\">FAQ page<\/a> for the answers to frequently asked questions.<\/p>\n\n<p>Encountering an unusual use case or implementation? Post in our <a href=\"\/forum\">developer Forum<\/a> and leverage the experience of our community.<\/p>\n\n<p>Inspired by success stories? Check out our <a href=\"\/blog\">Blog<\/a> and catch up on the latest ways businesses have integrated our API products.<\/p>\n\n<p>Can\u2019t find the answer you need? Please <a href=\"\/contact\">contact us<\/a> and we will get back to you as soon as possible.<\/p>\n",
+            "lang": "en"
+        }
+    ]
+}

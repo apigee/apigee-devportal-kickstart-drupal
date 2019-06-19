@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: button
+label: 'Button link'
+icon_uuid: null
+description: 'A <em>Button link</em> contains a URL, link text, and a button style, and is typically used within a <em>Button group</em>.'
+behavior_plugins: {  }

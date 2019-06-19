@@ -1,0 +1,54 @@
+{#
+/**
+ * @file
+ * Template for Navbar component.
+ *
+ * Available config:
+ * - container: fixed | fluid.
+ * - placement: default | fixed-top | fixed-bottom | sticky-top
+ * - color: light | dark
+ * - utility_classes: An array of utility classes.
+ *
+ * Available blocks:
+ * - branding
+ * - left
+ * - right
+ */
+#}
+{{ attach_library('radix/navbar') }}
+
+{% set container = container == 'fixed' ? 'container' : false %}
+{% set placement = placement ?? '' %}
+{% set color = color ?? 'light' %}
+
+<nav class="navbar navbar-expand-lg justify-content-between navbar-{{ color }} {{ placement }} {{ utility_classes|join(' ') }}">
+  {% if container %}
+    <div class="{{ container }}">
+  {% endif %}
+
+  {% block branding %}
+    {{ branding }}
+  {% endblock %}
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon">
+      {% if not color %}
+        {% include "@apigee-kickstart/icons/navbar-toggle.svg" %}
+      {% endif %}
+    </span>
+  </button>
+
+  <div class="collapse navbar-collapse">
+    {% block left %}
+      {{ left }}
+    {% endblock %}
+
+    {% block right %}
+      {{ right }}
+    {% endblock %}
+  </div>
+
+  {% if container %}
+    </div>
+  {% endif %}
+</nav>

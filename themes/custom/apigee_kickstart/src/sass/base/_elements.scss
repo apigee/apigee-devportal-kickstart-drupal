@@ -1,0 +1,106 @@
+// Headings
+// -----------------------------------------------------------------------------
+h1, h2, h3, h4, h5, h6 {
+
+}
+
+// Text
+// -----------------------------------------------------------------------------
+p {
+
+}
+
+// Links
+// -----------------------------------------------------------------------------
+a {
+
+  @include hover {
+
+  }
+}
+
+// Lists
+// -----------------------------------------------------------------------------
+ol,
+ul,
+dl {
+
+}
+
+// Image
+// -----------------------------------------------------------------------------
+img {
+
+}
+
+figure {
+
+}
+
+figcaption {
+
+}
+
+// Other
+// -----------------------------------------------------------------------------
+blockquote {
+  color: $body-color;
+  font-size: $font-size-base;
+  letter-spacing: 0.44px;
+  line-height: 1.75;
+  margin: map-get($spacers, 7) 0;
+  padding: 4rem 1rem;
+  position: relative;
+
+  @include media-breakpoint-up(md) {
+    font-size: $blockquote-font-size;
+    padding: 3.75rem 7.75rem;
+  }
+
+  &::before,
+  &::after {
+    background: transparent none no-repeat;
+    display: block;
+    height: 32px;
+    position: absolute;
+    width: 36px;
+
+    @include media-breakpoint-up(md) {
+      height: 64px;
+      width: 71px;
+    }
+  }
+
+  &::before {
+    content: ' ';
+    background-image: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='#{$gray-300}' d='M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z'%3E%3C/path%3E%3C/svg%3E"), "#", "%23");
+    left: 15px;
+    top: 15px;
+
+    @include media-breakpoint-up(md) {
+      left: 24px;
+      top: 24px;
+    }
+  }
+
+  &::after {
+    content: ' ';
+    background-image: str-replace(url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='#{$gray-300}' d='M464 32H336c-26.5 0-48 21.5-48 48v128c0 26.5 21.5 48 48 48h80v64c0 35.3-28.7 64-64 64h-8c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h8c88.4 0 160-71.6 160-160V80c0-26.5-21.5-48-48-48zm-288 0H48C21.5 32 0 53.5 0 80v128c0 26.5 21.5 48 48 48h80v64c0 35.3-28.7 64-64 64h-8c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h8c88.4 0 160-71.6 160-160V80c0-26.5-21.5-48-48-48z'%3E%3C/path%3E%3C/svg%3E"), "#", "%23");
+    bottom: 15px;
+    right: 15px;
+
+    @include media-breakpoint-up(md) {
+      bottom: 24px;
+      right: 24px;
+    }
+  }
+}
+
+strong {
+
+}
+
+small {
+  letter-spacing: 0.4px;
+  font-size: .75rem;
+}

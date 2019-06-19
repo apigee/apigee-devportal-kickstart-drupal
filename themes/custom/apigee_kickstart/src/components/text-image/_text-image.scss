@@ -1,0 +1,90 @@
+// Style for the text + image component
+// -----------------------------------------------------------------------------
+
+.text-image {
+  @include media-breakpoint-up(lg) {
+    height: 480px;
+  }
+}
+
+.text-image__wrapper {
+  align-items: center;
+  display: grid;
+  justify-content: center;
+
+  @include media-breakpoint-down(md) {
+    grid-template-areas:
+      "media media media media"
+      "gutter-left main main gutter-right";
+    grid-template-columns:
+        [gutter-left] 15px
+        [media] 1fr
+        [main] 1fr
+        [gutter-right] 15px;
+  }
+
+  @include media-breakpoint-up(md) {
+    // 720 (15 + 345 + 345 + 15)
+    grid-template-columns:
+      [gutter-left] minmax(15px, 1fr)
+      [main] minmax(0, 345px)
+      [media] minmax(0, 345px)
+      [gutter-right] minmax(15px, 1fr);
+  }
+
+  // 960 (15 + 465 + 465 + 15)
+  @include media-breakpoint-up(lg) {
+    grid-template-columns:
+      [gutter-left] minmax(15px, 1fr)
+      [main] minmax(0, 465px)
+      [media] minmax(0, 465px)
+      [gutter-right] minmax(15px, 1fr);
+  }
+
+  // 1140 (15 + 555 + 555 + 15)
+  @include media-breakpoint-up(xl) {
+    grid-template-columns:
+    [gutter-left] minmax(15px, 1fr)
+    [main] minmax(0, 555px)
+    [media] minmax(0, 555px)
+    [gutter-right] minmax(15px, 1fr);
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-height: 480px;
+  }
+}
+
+.text-image__title {
+  @include media-breakpoint-down(md) {
+    font-size: 1.5rem;
+  }
+}
+
+.text-image__text {
+  display: grid;
+  grid-column: main;
+  justify-content: center;
+
+  @include media-breakpoint-up(lg) {
+    padding-right: 85px;
+  }
+}
+
+.text-image__image {
+  align-self: stretch;
+  grid-column: media / gutter-right-end;
+
+  * {
+    height: 100%;
+  }
+
+  img {
+    object-fit: cover;
+
+    @include media-breakpoint-up(lg) {
+      height: 480px;
+      width: 100%;
+    }
+  }
+}

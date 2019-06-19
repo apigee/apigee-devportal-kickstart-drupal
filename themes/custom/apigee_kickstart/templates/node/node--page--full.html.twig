@@ -1,0 +1,30 @@
+{#
+/**
+ * @file
+ * Template for a 'Basic page' node in full display mode.
+ */
+#}
+{% extends '@apigee-kickstart/node/node.twig' %}
+{% block content %}
+
+  {% if content.field_header|render %}
+    {{ content.field_header }}
+
+    {% if tasks|render %}
+      <div class="page__tasks">
+        <div class="container">
+          {{ tasks }}
+        </div>
+      </div>
+    {% endif %}
+  {% endif %}
+
+  {% include '@apigee-kickstart/page/sidebar-default.twig' with {
+    container: true,
+    content: content|without('field_header'),
+    sidebar_first: sidebar_first,
+    sidebar_second: sidebar_second,
+    content_no_sidebar_col_classes: ['col-lg-8']
+  } %}
+
+{% endblock %}

@@ -1,0 +1,7 @@
+.form-actions {
+  margin-top: map-get($spacers, 4);
+
+  form > &:last-child {
+    margin-bottom: map-get($spacers, 4);
+  }
+}

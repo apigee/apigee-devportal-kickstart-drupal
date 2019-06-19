@@ -1,0 +1,53 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_header
+    - node.type.landing
+    - paragraphs.paragraphs_type.hero
+    - paragraphs.paragraphs_type.title_bar
+  module:
+    - entity_reference_revisions
+id: node.landing.field_header
+field_name: field_header
+entity_type: node
+bundle: landing
+label: Header
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      hero: hero
+      title_bar: title_bar
+    target_bundles_drag_drop:
+      blockquote:
+        enabled: false
+      button:
+        enabled: false
+      button_group:
+        enabled: false
+      callout:
+        enabled: false
+      callout_group:
+        enabled: false
+      card:
+        enabled: false
+      card_group:
+        enabled: false
+      cta:
+        enabled: false
+      hero:
+        enabled: true
+      text:
+        enabled: false
+      text_image:
+        enabled: false
+      title_bar:
+        enabled: true
+field_type: entity_reference_revisions

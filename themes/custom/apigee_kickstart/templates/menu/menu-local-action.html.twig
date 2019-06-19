@@ -1,0 +1,15 @@
+{#
+/**
+ * @file
+ * Template for local action links.
+ */
+#}
+
+{% set classes = [
+    'my-4',
+    element['#link'].url.routeParameters.node_type == 'forum' ? 'forum__add' : ''
+]|merge(classes|default([])) %}
+
+<div class="{{ classes|join(' ')|trim }}">
+  {{ link }}
+</div>

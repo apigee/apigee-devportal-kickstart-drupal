@@ -1,0 +1,61 @@
+{#
+/**
+ * @file
+ * Template for an forum node in full display mode.
+ */
+#}
+
+{% extends '@apigee-kickstart/node/node.twig' %}
+{% block content %}
+
+  {% set forum_content %}
+    <h1>{{ label }}</h1>
+
+    {% if display_submitted %}
+      <hr class="mt-4 mb-4 border-top" />
+      <div class="forum__byline d-md-flex align-items-center my-0">
+
+        {% if author_picture %}
+          <div class="forum__byline-photo mr-2 float-left">
+            {{ author_picture }}
+          </div>
+        {% endif %}
+
+        <div class="forum__byline-text">
+          {% trans %} Posted by {{ author_name }} on {{ date }} in {% endtrans %}
+          {{ content.taxonomy_forums }}
+        </div>
+      </div>
+    {% endif %}
+
+    <hr class="mt-4 mb-4 border-top" />
+    <div class="forum__content mb-4">
+      {{ content|without('taxonomy_forums', 'comment_forum', 'links') }}
+    </div>
+
+    {% if content.comment_forum[0].comment_form %}
+      <a class="btn btn-primary" href="#comment-form">{{ "Add new comment"|t }}</a>
+    {% endif %}
+  {% endset %}
+
+  {% include '@apigee-kickstart/page/sidebar-default.twig' with {
+    container: true,
+    content: forum_content,
+    sidebar_first: sidebar_first,
+    sidebar_second: sidebar_second,
+    content_no_sidebar_row_classes: ['justify-content-center'],
+    content_no_sidebar_col_classes: ['col-lg-8']
+  } %}
+
+  {% if content.comment_forum[0] %}
+    <div class="bg-lighter">
+      <div class="container py-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            {{ content.comment_forum }}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}

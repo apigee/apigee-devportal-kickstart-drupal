@@ -1,0 +1,22 @@
+.breadcrumb {
+  background-color: var(--ak-accent-color);
+  padding: 0;
+}
+
+.breadcrumb-item {
+  padding-bottom: $breadcrumb-padding-y;
+  padding-top: $breadcrumb-padding-y;
+
+  &.active {
+    color: var(--ak-accent-color-light);
+  }
+
+  + .breadcrumb-item::after {
+    padding-right: 0.375rem;
+  }
+
+  a {
+    font-size: 0.875rem;
+    letter-spacing: 1px;
+  }
+}

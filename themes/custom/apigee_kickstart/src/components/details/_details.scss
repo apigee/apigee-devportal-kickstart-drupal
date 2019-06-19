@@ -1,0 +1,60 @@
+// Details / Summary
+//------------------------------------------------------------------------------
+
+// Note: A `details` class is added to <html> to indicate the status of browser
+// support for the <details> element. We need to use the element in the selector
+// to prevent styles from being applied to <html>.
+details.details {
+  border-top: solid 1px $gray-300;
+}
+
+.details__summary {
+  cursor: pointer;
+  position: relative;
+
+  @include media-breakpoint-up(md) {
+    letter-spacing: 0.15px;
+    font-size: 1.25rem;
+  }
+
+  .details__icon {
+    color: var(--ak-accent-color);
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .details[open] > & .details__icon {
+    transform: rotate(-180deg);
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+}
+
+.details__summary,
+.details__title {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.11px;
+  margin: 0;
+
+  @include media-breakpoint-up(md) {
+    font-size: 1.25rem;
+    letter-spacing: 0.15px;
+  }
+}
+
+.details__content {
+  font-size: 0.875rem;
+  letter-spacing: 0.25px;
+
+  *:last-child {
+    margin-bottom: 0;
+  }
+}

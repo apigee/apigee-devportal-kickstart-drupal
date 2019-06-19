@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: title_bar
+label: 'Title bar block'
+revision: 1
+description: 'A <em>Title bar</em> block, which utilizes a Paragraph by the same name, contains a title, summary, and icon.'

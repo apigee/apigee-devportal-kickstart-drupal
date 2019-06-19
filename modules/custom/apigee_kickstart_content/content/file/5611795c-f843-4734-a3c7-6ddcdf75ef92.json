@@ -1,0 +1,87 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/sites\/default\/files\/donald-giannatti-671274-unsplash.jpg"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 4
+        }
+    ],
+    "uuid": [
+        {
+            "value": "5611795c-f843-4734-a3c7-6ddcdf75ef92"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "6eb64048-db73-41c5-b8bb-ac8e908dae13"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "donald-giannatti-671274-unsplash.jpg"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/donald-giannatti-671274-unsplash.jpg",
+            "url": "\/sites\/default\/files\/donald-giannatti-671274-unsplash.jpg"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "image\/jpeg"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 2141899
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-03-15T18:45:46+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2019-03-15T18:47:38+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ]
+}

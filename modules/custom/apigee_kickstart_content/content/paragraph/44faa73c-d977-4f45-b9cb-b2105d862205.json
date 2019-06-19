@@ -1,0 +1,108 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/button_group"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/button_group\/field_buttons": [
+            {
+                "href": "",
+                "lang": "en"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 29
+        }
+    ],
+    "uuid": [
+        {
+            "value": "44faa73c-d977-4f45-b9cb-b2105d862205"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 177
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "button_group"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-03-17T05:22:49+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "30"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_buttons"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/button_group\/field_buttons": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/button"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "ecbc1c18-156a-4fe4-90e5-f4db4cce8bc4"
+                    }
+                ],
+                "lang": "en",
+                "target_revision_id": "103"
+            }
+        ]
+    }
+}

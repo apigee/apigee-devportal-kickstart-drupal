@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies: {  }
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access shortcuts'
+  - 'access site-wide contact form'
+  - 'analytics own developer_app'
+  - 'create developer_app'
+  - 'delete own developer_app'
+  - 'post comments'
+  - 'search content'
+  - 'skip comment approval'
+  - 'update own developer_app'
+  - 'use text format basic_html'
+  - 'view media'
+  - 'view own developer_app'
+  - 'view published apidoc entities'

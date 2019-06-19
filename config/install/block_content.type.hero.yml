@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: hero
+label: 'Hero block'
+revision: 1
+description: 'A <em>Hero</em>, which utilizes a Paragraph by the same name, contains a background image, title, summary, and link(s). The background image is scaled to fill the browser''s width.  '

@@ -1,0 +1,21 @@
+// Tabs: Secondary
+// -----------------------------------------------------------------------------
+.nav-tabs--secondary {
+  border-bottom: 1px solid $gray-400;
+  font-size: .875rem;
+
+  .nav-link {
+    color: $gray-500;
+    border-bottom: 4px solid transparent;
+    padding: 0.25rem 1rem;
+
+    &:hover {
+      color: $gray-900;
+    }
+
+    &.active {
+      color: $gray-900;
+      border-bottom-color: var(--ak-accent-color);
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * Template for a 'Title bar' Paragraph.
+ */
+#}
+{% embed 'paragraph.html.twig' with { classes: ['bg-lighter', 'py-4'] } %}
+  {% block content %}
+    <div class="container">
+      <div class="d-flex align-items-center">
+        {{ content.field_title }}
+        {% if content.field_text|render %}
+          <div class="title-bar__content border-left d-none d-lg-block pl-4 flex-grow-1">
+            {{ content|without('field_title', 'field_icon') }}
+          </div>
+        {% endif %}
+        <div class="title-bar__icon">
+          {{ content.field_icon }}
+        </div>
+      </div>
+    </div>
+  {% endblock %}
+{% endembed %}

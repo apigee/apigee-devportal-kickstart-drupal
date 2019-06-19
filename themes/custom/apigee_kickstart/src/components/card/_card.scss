@@ -1,0 +1,65 @@
+// Style for the Card component.
+// -----------------------------------------------------------------------------
+
+.card {
+  border-radius: $border-radius-lg;
+  transition: $transition-base;
+
+  &.bg-light {
+    border: 0;
+  }
+
+  > a {
+    color: $body-color;
+    text-decoration: none;
+  }
+
+  &-img-top {
+    padding: 2px;
+
+    img {
+      border-radius: $border-radius-lg $border-radius-lg 0 0;
+    }
+  }
+
+  &-body {
+    p {
+      font-size: .75rem;
+      letter-spacing: 0.4px;
+      line-height: 1.5;
+    }
+
+    h4,
+    .card-title {
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.11px;
+    }
+  }
+
+  &-footer {
+    background-color: transparent;
+    color: var(--ak-accent-color);
+    font-size: .875rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: $transition-base;
+  }
+  &-footer,
+  &-footer:last-child {
+    border-radius: 0 0 $border-radius-lg $border-radius-lg;
+  }
+
+  &:focus,
+  &:hover {
+    .card-footer {
+      background-color: var(--ak-accent-color);
+      color: var(--ak-accent-color-light);
+    }
+  }
+
+  &.has-hover-shadow:focus,
+  &.has-hover-shadow:hover {
+    box-shadow: 0 2px 8px 0 rgba($black, 0.3);
+  }
+}

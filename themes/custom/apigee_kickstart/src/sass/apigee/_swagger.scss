@@ -1,0 +1,55 @@
+// Swagger UI fixes
+// -----------------------------------------------------------------------------
+.swagger-ui {
+
+  > div {
+
+    > .wrapper,
+    > .scheme-container {
+      border: 1px solid $gray-300;
+      border-radius: 4px;
+      box-shadow: none;
+      padding: 1rem;
+
+      + .wrapper {
+        margin-top: 2rem;
+      }
+
+      > .block {
+        padding: 0;
+
+        .info {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .information-container {
+    background-color: $lighter;
+  }
+
+  .scheme-container {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  section.models {
+    margin: 0;
+
+    + .models {
+      margin-top: 1rem;
+    }
+  }
+
+  table {
+
+    .col {
+      width: auto;
+    }
+  }
+
+  pre {
+    background: inherit;
+  }
+}

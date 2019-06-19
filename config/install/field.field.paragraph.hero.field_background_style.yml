@@ -1,0 +1,21 @@
+uuid: b741d587-cdc9-4fda-9062-5f2fb0019e74
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_background_style
+    - paragraphs.paragraphs_type.hero
+  module:
+    - options
+id: paragraph.hero.field_background_style
+field_name: field_background_style
+entity_type: paragraph
+bundle: hero
+label: 'Hero background style'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

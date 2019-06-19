@@ -1,0 +1,17 @@
+// @todo We should stop hard-coding the image width in Radix.
+//
+// (a) There is an issue where the macro is calculating the radix image, not the
+//     subtheme.s
+// (b) The users need be able to change the logo which we won't know the
+//     dimensions of, and won't be able to compile. We could potentially solve
+//     this with theme settings + CSS Variables.
+
+.navbar-brand {
+  display: flex;
+
+  img {
+    height: auto;
+    width: auto !important;
+    max-height: 60px;
+  }
+}

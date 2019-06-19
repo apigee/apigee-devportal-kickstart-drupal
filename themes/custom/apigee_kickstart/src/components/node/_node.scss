@@ -1,0 +1,7 @@
+// Custom style for the Node component.
+// -----------------------------------------------------------------------------
+
+[class$="__body"] img,
+.cke_widget_image img {
+  @extend .img-thumbnail;
+}

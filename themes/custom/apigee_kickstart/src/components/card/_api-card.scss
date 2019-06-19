@@ -1,0 +1,14 @@
+// Style for the Api card component.
+// -----------------------------------------------------------------------------
+.api-card {
+  border: 0;
+  height: 100%;
+
+  > a {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: $body-color;
+    height: 100%;
+  }
+}

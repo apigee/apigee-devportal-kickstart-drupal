@@ -1,0 +1,14 @@
+{#
+/**
+ * @file
+ * Template for a node.
+ */
+#}
+
+{% extends '@apigee-kickstart/node/node.twig' %}
+{% block content %}
+  {% if not page %}
+    <h2 class="node__title"><a href="{{ url }}">{{ label }}</a></h2>
+  {% endif %}
+  {{ parent() }}
+{% endblock %}

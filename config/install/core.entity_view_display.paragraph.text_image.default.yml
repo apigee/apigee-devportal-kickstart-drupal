@@ -1,0 +1,53 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.text_image.field_background_style
+    - field.field.paragraph.text_image.field_buttons
+    - field.field.paragraph.text_image.field_image
+    - field.field.paragraph.text_image.field_text
+    - field.field.paragraph.text_image.field_title
+    - paragraphs.paragraphs_type.text_image
+  module:
+    - entity_reference_revisions
+    - text
+id: paragraph.text_image.default
+targetEntityType: paragraph
+bundle: text_image
+mode: default
+content:
+  field_buttons:
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    weight: 3
+    label: hidden
+    settings:
+      view_mode: text_image
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_text:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  field_background_style: true

@@ -1,0 +1,122 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/title_bar"
+        }
+    },
+    "id": [
+        {
+            "value": 19
+        }
+    ],
+    "uuid": [
+        {
+            "value": "65d6bf7f-d664-446e-9dc7-0909a5161c63"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 64
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "title_bar"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-03-15T19:45:05+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "8"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "block_content"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_title_bar"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_icon": [
+        {
+            "icon_name": "newspaper",
+            "style": "fas",
+            "settings": {
+                "masking": {
+                    "mask": "",
+                    "style": "fas"
+                },
+                "power_transforms": {
+                    "scale": {
+                        "type": "",
+                        "value": ""
+                    },
+                    "position_y": {
+                        "type": "",
+                        "value": ""
+                    },
+                    "position_x": {
+                        "type": "",
+                        "value": ""
+                    }
+                }
+            },
+            "lang": "en"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>Our blog posts about technical challenges faced at Acme and how we go about solving them.<\/p>\r\n",
+            "format": "basic_html",
+            "processed": "<p>Our blog posts about technical challenges faced at Acme and how we go about solving them.<\/p>",
+            "lang": "en"
+        }
+    ],
+    "field_title": [
+        {
+            "value": "Blog",
+            "lang": "en"
+        }
+    ]
+}

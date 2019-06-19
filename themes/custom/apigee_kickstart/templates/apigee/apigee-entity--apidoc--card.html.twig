@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display an Apigee Edge Api Doc.
+ *
+ * Available variables:
+ * - entity: The Apigee Edge Api DOc entity.
+ * - content: All items. Use {{ content }} to print them all,
+ * - attributes: HTML attributes for the containing element.
+ *
+ * @ingroup themeable
+ */
+#}
+{% extends 'apigee-entity.html.twig' %}
+{% block content %}
+  {% include '@apigee-kickstart/card/card.twig' with {
+    classes: ['api-card'],
+    url: content.field_link['#url'],
+    title: entity.label,
+    image: content.field_image,
+    body: content|without('name', 'field_image', 'field_link', 'spec'),
+    footer: content.field_link['#title'],
+    hover_shadow: true
+  } %}
+{% endblock %}

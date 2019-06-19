@@ -1,0 +1,40 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.title_bar.field_icon
+    - field.field.paragraph.title_bar.field_text
+    - field.field.paragraph.title_bar.field_title
+    - paragraphs.paragraphs_type.title_bar
+  module:
+    - fontawesome
+    - text
+id: paragraph.title_bar.default
+targetEntityType: paragraph
+bundle: title_bar
+mode: default
+content:
+  field_icon:
+    weight: 0
+    label: hidden
+    settings:
+      layers: false
+    third_party_settings: {  }
+    type: fontawesome_icon_formatter
+    region: content
+  field_text:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

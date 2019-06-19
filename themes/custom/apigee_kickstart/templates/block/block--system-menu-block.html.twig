@@ -1,0 +1,12 @@
+{#
+/**
+ * @file
+ * Template for the system menu block.
+ */
+#}
+
+{% set title_attributes = title_attributes.setAttribute('class', ['sr-only']) %}
+
+{% include '@radix/block/block.twig' with {
+  html_tag: 'div',
+} %}

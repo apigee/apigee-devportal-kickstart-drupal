@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_buttons
+    - paragraphs.paragraphs_type.button_group
+    - paragraphs.paragraphs_type.hero
+  module:
+    - entity_reference_revisions
+id: paragraph.hero.field_buttons
+field_name: field_buttons
+entity_type: paragraph
+bundle: hero
+label: Buttons
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      button_group: button_group
+    target_bundles_drag_drop:
+      button_group:
+        enabled: true
+field_type: entity_reference_revisions

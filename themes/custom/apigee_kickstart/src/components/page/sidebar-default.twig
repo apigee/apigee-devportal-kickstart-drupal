@@ -1,0 +1,88 @@
+{#
+/**
+ * @file
+ * Template for an 'Sidebar default' layout.
+ *
+ * This layout provides a standard 3-column layout.
+ *
+ *  - container (bool): Determines whether the contents are wrapped with .container
+ *    and .row markup.
+ *
+ *  - content_classes (array): The sidebar columns do not contain column widths,
+ *    intentionally, so that only the content column size needs to be adjusted
+ *    via 'content_classes'.
+ *
+ *  - content_no_sidebar_row_classes (array): In some cases, where there are no
+ *    sidebars present, it's helpful to adjust the alignment of the one column
+ *    that exists, e.g. to center it. This variable can be used from extending
+ *    templates to accomplish this. For example, node--article--full.html.twig
+ *    uses this variable to center the column.
+ *
+ *  - content_no_sidebar_col_classes (array): In some cases, where there are no
+ *    sidebars present, it's helpful to adjust the size of the one column
+ *    that exists. This variable can be used from extending templates to
+ *    accomplish this. For example, page--contact.html.twig and
+ *    node--article--full.html.twig uses this variable to contrain the width
+ *    so that the column is not too wide.
+ *
+ */
+#}
+
+{% set content_classes = [
+  sidebar_first and sidebar_second ? 'col-md-5 offset-md-1',
+  sidebar_first and not sidebar_second ? 'col-md-8 offset-md-1',
+  not sidebar_first and sidebar_second ? 'col-md-8',
+  not sidebar_first and not sidebar_second ? 'col-lg-7 col-xl-6'
+]|merge(content_classes|default([])) %}
+
+{% set content_no_sidebar_row_classes = content_no_sidebar_row_classes|default([]) %}
+{% set content_no_sidebar_col_classes = ['col-md']|merge(content_no_sidebar_col_classes|default([])) %}
+
+{% set sidebar_default_content %}
+  {% if content %}
+    {% if sidebar_first or sidebar_second %}
+      <div class="page__content {{ content_classes|join(' ')|trim }}">
+        {{ content }}
+      </div>
+    {% else %}
+      {% set content_no_sidebar %}
+        <div class="page__content {{ content_no_sidebar_col_classes|join(' ')|trim }}">
+          {{ content }}
+        </div>
+      {% endset %}
+
+      {% if content_no_sidebar_row_classes %}
+        <div class="row {{ content_no_sidebar_row_classes|join(' ')|trim }}">
+          {{ content_no_sidebar }}
+        </div>
+      {% else %}
+        {{ content_no_sidebar }}
+      {% endif %}
+    {% endif %}
+  {% endif %}
+
+  {% if sidebar_first %}
+    <aside class="sidebar sidebar-first col-md order-md-first">
+      {{ sidebar_first }}
+    </aside>
+  {% endif %}
+
+  {% if sidebar_second %}
+    <aside class="sidebar sidebar-second col-md order-md-last offset-md-1">
+      {{ sidebar_second }}
+    </aside>
+  {% endif %}
+{% endset %}
+
+<div class="page-layout-sidebar-default">
+  {% if container %}
+    <div class="container py-5">
+      <div class="row">
+        {{ sidebar_default_content }}
+      </div>
+    </div>
+
+  {% else %}
+    {{ sidebar_default_content }}
+  {% endif %}
+</div>

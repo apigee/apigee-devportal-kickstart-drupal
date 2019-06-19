@@ -1,0 +1,65 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.apidoc.apidoc.field_categories
+    - field.field.apidoc.apidoc.field_image
+  module:
+    - apigee_api_catalog
+    - file
+    - file_link
+    - media_library
+    - text
+id: apidoc.apidoc.default
+targetEntityType: apidoc
+bundle: apidoc
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+      rows: 5
+    third_party_settings: {  }
+  field_categories:
+    weight: 4
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_image:
+    type: media_library_widget
+    weight: 7
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  spec:
+    label: hidden
+    type: file_generic
+    region: content
+    weight: 26
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden: {  }

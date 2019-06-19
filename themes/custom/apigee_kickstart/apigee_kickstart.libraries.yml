@@ -1,0 +1,20 @@
+style:
+  version: VERSION
+  css:
+    theme:
+      assets/css/apigee-kickstart.style.css: {}
+  js:
+    assets/js/apigee-kickstart.script.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+
+font.roboto:
+  version: VERSION
+  license:
+    name: 'Apache License 2.0'
+    url: https://github.com/google/roboto/blob/master/LICENSE
+    gpl-compatible: true
+  css:
+    base:
+      https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700: { external: true }

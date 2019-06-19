@@ -1,0 +1,35 @@
+{#
+/**
+ * @file
+ * Template for an Article node in Teaser display mode.
+ */
+#}
+
+{% extends '@apigee-kickstart/node/node.twig' %}
+{% block content %}
+  <div class="row">
+    <div class="col-md-5 col-lg-4">
+      {{ content.field_image }}
+    </div>
+
+    <div class="col-md-7 col-lg-8">
+      <div class="py-3">
+        {% if content.field_tags %}
+          <div class="article__tags">
+            {{ content.field_tags }}
+          </div>
+        {% endif %}
+
+        <h2 class="article__title">
+          <a href="{{ url }}">{{ label }}</a>
+        </h2>
+
+        {{ content|without('field_image', 'field_tags') }}
+
+        {% if display_submitted %}
+          <small class="article__meta mt-3 d-block">{% trans %}by {{ author_name }} <span class="mx-1">|</span>  {{ date }}{% endtrans %}</small>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

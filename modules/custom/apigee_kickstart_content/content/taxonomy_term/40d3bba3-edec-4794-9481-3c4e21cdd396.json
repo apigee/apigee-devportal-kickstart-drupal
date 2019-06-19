@@ -1,0 +1,107 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/forum\/sales-apis?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/forums"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/forums\/parent": [
+            null
+        ]
+    },
+    "tid": [
+        {
+            "value": 3
+        }
+    ],
+    "uuid": [
+        {
+            "value": "40d3bba3-edec-4794-9481-3c4e21cdd396"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 2
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "vid": [
+        {
+            "target_id": "forums"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2019-05-08T14:50:16+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "name": [
+        {
+            "value": "Sales APIs",
+            "lang": "en"
+        }
+    ],
+    "description": [
+        {
+            "value": "<p>Donec et dolor sed mi ornare imperdiet sit amet.<\/p>\r\n",
+            "format": "basic_html",
+            "processed": "<p>Donec et dolor sed mi ornare imperdiet sit amet.<\/p>",
+            "lang": "en"
+        }
+    ],
+    "weight": [
+        {
+            "value": 2
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/taxonomy_term\/forums\/parent": [
+            null
+        ]
+    },
+    "changed": [
+        {
+            "value": "2019-03-19T21:37:40+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/forum\/sales-apis",
+            "pid": 1,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "forum_container": [
+        {
+            "value": false
+        }
+    ]
+}

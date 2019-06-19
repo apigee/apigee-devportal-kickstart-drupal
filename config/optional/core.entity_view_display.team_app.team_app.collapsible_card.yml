@@ -1,0 +1,69 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.team_app.collapsible_card
+  module:
+    - apigee_edge
+    - apigee_edge_teams
+id: team_app.team_app.collapsible_card
+targetEntityType: team_app
+bundle: team_app
+mode: collapsible_card
+content:
+  callbackUrl:
+    label: inline
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+    type: uri_link
+  createdAt:
+    type: timestamp_ago
+    label: inline
+    weight: 1
+    region: content
+    settings:
+      future_format: '@interval hence'
+      past_format: '@interval ago'
+      granularity: 2
+    third_party_settings: {  }
+  credentials:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  description:
+    label: inline
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+  lastModifiedAt:
+    type: timestamp_ago
+    label: inline
+    weight: 4
+    region: content
+    settings:
+      future_format: '@interval hence'
+      past_format: '@interval ago'
+      granularity: 2
+    third_party_settings: {  }
+  status:
+    label: hidden
+    type: status_property
+    weight: 0
+    region: content
+    settings:
+      indicator_status_ok: approved
+      indicator_status_warning: ''
+      indicator_status_error: revoked
+    third_party_settings: {  }
+hidden:
+  appFamily: true
+  appId: true
+  companyName: true
+  displayName: true
+  name: true
+  scopes: true

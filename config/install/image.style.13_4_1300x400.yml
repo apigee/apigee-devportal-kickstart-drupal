@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 13_4_1300x400
+label: '13:4 Ratio - Max 1300 x 400'
+effects:
+  e217079f-8364-454a-b360-47a3a54926a4:
+    uuid: e217079f-8364-454a-b360-47a3a54926a4
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1300
+      height: 400
+      anchor: center-center

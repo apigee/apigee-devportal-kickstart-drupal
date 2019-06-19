@@ -1,0 +1,59 @@
+.path-forum {
+  .block--apigee-kickstart-content {
+    @include media-breakpoint-down(sm) {
+      display: grid;
+    }
+  }
+}
+
+.forum__name {
+  // As the page title.
+  font-size: 1.5rem;
+
+  @include media-breakpoint-down(sm) {
+    order: -1;
+  }
+
+  // Inside the table.
+  .forum-list__forum & {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+}
+
+div.forum__add {
+  margin-top: 0 !important;
+
+  @include media-breakpoint-up(md) {
+    float: right;
+    clear: right;
+  }
+}
+
+.forum__title {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.forum__submitted {
+  font-size: 0.875rem;
+  font-weight: 300;
+  letter-spacing: 0.25px;
+
+  * {
+    display: block;
+  }
+
+  small {
+    font-size: 0.875rem;
+  }
+
+  .forum__title & {
+    font-weight: 300;
+  }
+
+  a {
+    color: $body-color;
+  }
+}
+

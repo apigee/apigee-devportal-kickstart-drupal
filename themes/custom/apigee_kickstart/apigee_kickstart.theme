@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * @file
+ * Theme functions.
+ */
+
+// Include all files from the includes directory.
+$includes_path = dirname(__FILE__) . '/includes/*.inc';
+foreach (glob($includes_path) as $filename) {
+  require_once dirname(__FILE__) . '/includes/' . basename($filename);
+}
+
+/**
+ * Helper function to facilitate rendering blocks within a node template.
+ *
+ * @see apigee_kickstart_preprocess_node()
+ */
+function apigee_kickstart_add_regions_to_node(array $regions, &$variables) {
+  // Retrieve active theme.
+  $theme = \Drupal::theme()->getActiveTheme()->getName();
+  $available_regions = system_region_list($theme);
+
+  // Validate allowed regions with available regions.
+  $regions = array_intersect(array_keys($available_regions), $regions);
+
+  foreach ($regions as $key => $region) {
+    $blocks = entity_load_multiple_by_properties('block', ['theme' => $theme, 'region' => $region]);
+    uasort($blocks, 'Drupal\block\Entity\Block::sort');
+
+    // Capture viewable blocks and their settings to $build.
+    $build = [];
+    foreach ($blocks as $key => $block) {
+      if ($block->access('view')) {
+        $build[$key] = entity_view($block, 'block');
+      }
+    }
+
+    // Add build to region.
+    $variables[$region] = $build;
+  }
+}

@@ -1,0 +1,56 @@
+{#
+/**
+ * @file
+ * Template for an article node in full display mode.
+ */
+#}
+
+{% extends '@apigee-kickstart/node/node.twig' %}
+{% block content %}
+
+  {% set node_content %}
+    {% if content.field_tags %}
+      <div class="article__tags">
+        {{ content.field_tags }}
+      </div>
+    {% endif %}
+
+    <h1 class="article__title">{{ label }}</h1>
+    {{ content.field_image }}
+
+    {% if display_submitted %}
+      <p class="article__meta mt-3 d-block mt-5">{% trans %}by {{ author_name }}
+        <span class="mx-1">|</span> {{ date }}{% endtrans %}
+      </p>
+    {% endif %}
+
+    <hr class="mt-0 mb-4 border-top"/>
+
+    {{ content|without('field_tags', 'field_image', 'comment') }}
+
+    {% if content.comment[0].comment_form %}
+      <a href="#comment-form" class="btn btn-primary">{{ "Add new comment"|t }}</a>
+    {% endif %}
+  {% endset %}
+
+  {% include '@apigee-kickstart/page/sidebar-default.twig' with {
+    container: true,
+    content: node_content,
+    sidebar_first: sidebar_first,
+    sidebar_second: sidebar_second,
+    content_no_sidebar_row_classes: ['justify-content-center'],
+    content_no_sidebar_col_classes: ['col-lg-8']
+  } %}
+
+  {% if content.comment[0] %}
+    <div class="bg-lighter">
+      <div class="container py-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            {{ content.comment }}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}

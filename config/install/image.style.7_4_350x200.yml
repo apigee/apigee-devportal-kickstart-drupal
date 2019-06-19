@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 7_4_350x200
+label: '7:4 Ratio - Max 350 x 200'
+effects:
+  1a231641-a369-4c16-8b9f-ee00ddd49b56:
+    uuid: 1a231641-a369-4c16-8b9f-ee00ddd49b56
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 350
+      height: 200
+      anchor: center-center

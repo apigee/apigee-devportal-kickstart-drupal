@@ -1,0 +1,187 @@
+<?php
+
+/**
+ * @file
+ * Copyright 2018 Google Inc.
+ *
+ * This program is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License version 2 as published by the
+ * Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public
+ * License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc., 51
+ * Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ */
+
+/**
+ * @file
+ * Main module file for Apigee Kickstart Enhancement.
+ */
+
+use Drupal\apigee_edge\Entity\EdgeEntityViewBuilder;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Menu\LocalActionDefault;
+use Drupal\user\UserInterface;
+
+/*
+ * Load all theme functions.
+ */
+require_once __DIR__ . '/apigee_kickstart_enhancement.theme.inc';
+
+/**
+ * Implements hook_theme().
+ */
+function apigee_kickstart_enhancement_theme($existing, $type, $theme, $path) {
+  return [
+    'secret' => [
+      'render element' => 'elements',
+      'file' => 'apigee_kickstart_enhancement.theme.inc',
+    ],
+    'pseudo_field' => [
+      'variables' => ['field' => NULL],
+      'file' => 'apigee_kickstart_enhancement.theme.inc',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_menu_local_actions_alter().
+ */
+function apigee_kickstart_enhancement_menu_local_actions_alter(&$local_actions) {
+  /** @var \Drupal\Core\Entity\EntityTypeInterface $app_entity_type */
+  foreach (\Drupal::service('apigee_kickstart.enhancer')->getAppEntityTypes() as $entity_type_id => $app_entity_type) {
+    // Update the local action title for app entity types.
+    $local_action_name = $app_entity_type->getProvider() . ".$entity_type_id.add_form_for_" . str_replace('_app', '', $entity_type_id);
+    if (isset($local_actions[$local_action_name])) {
+      $local_actions[$local_action_name]['title'] = t('Register new @entity_type', [
+        '@entity_type' => $app_entity_type->getLowercaseLabel(),
+      ]);
+
+      // Setting the title with entity type label is handled above.
+      // So we can fallback to the default class here.
+      $local_actions[$local_action_name]['class'] = LocalActionDefault::class;
+    }
+  }
+}
+
+/**
+ * Implements hook_local_tasks_alter().
+ */
+function apigee_kickstart_enhancement_local_tasks_alter(&$local_tasks) {
+  // Rename the user local tasks and show these first.
+  if (isset($local_tasks['entity.user.canonical'])) {
+    $local_tasks['entity.user.canonical']['title'] = t('Profile home');
+    $local_tasks['entity.user.canonical']['weight'] = -10;
+  }
+  if (isset($local_tasks['entity.user.edit_form'])) {
+    $local_tasks['entity.user.edit_form']['title'] = t('Edit profile');
+    $local_tasks['entity.user.edit_form']['weight'] = -9;
+  }
+}
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function apigee_kickstart_enhancement_entity_type_alter(array &$entity_types) {
+  // Update the view builder for apidoc.
+  if (isset($entity_types['apidoc'])) {
+    $entity_types['apidoc']->setViewBuilderClass(EdgeEntityViewBuilder::class);
+  }
+}
+
+/**
+ * Implements hook_preprocess().
+ */
+function apigee_kickstart_enhancement_preprocess_menu(&$variables) {
+  // Hide the registration link for authenticated users.
+  foreach ($variables['items'] as $key => &$item) {
+    if ($item['url']->isRouted() && $item['url']->getRouteName() === 'user.register' && \Drupal::currentUser()->isAuthenticated()) {
+      unset($variables['items'][$key]);
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function apigee_kickstart_enhancement_entity_extra_field_info() {
+  $fields = [];
+
+  // Make the user fields configurable.
+  foreach (_apigee_kickstart_user_extra_fields() as $field_name => $field_info) {
+    $fields['user']['user']['display'][$field_name] = [
+      'label' => $field_info['label'],
+      'weight' => 10,
+      'visible' => FALSE,
+    ];
+  }
+
+  return $fields;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function apigee_kickstart_enhancement_user_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  foreach (_apigee_kickstart_user_extra_fields() as $field_name => $field) {
+    if ($display->getComponent($field_name)) {
+      $value = is_callable($field['value_callback']) ? $field['value_callback']($entity) : NULL;
+
+      if ($value) {
+        // Render as pseudo-fields.
+        $build[$field_name] = [
+          '#theme' => 'pseudo_field',
+          '#field' => [
+            'name' => $field_name,
+            'label' => $field['label'],
+            'value' => $value,
+          ],
+        ];
+      }
+    }
+  }
+}
+
+/**
+ * Returns an array of extra fields for the user profile.
+ */
+function _apigee_kickstart_user_extra_fields() {
+  return [
+    'display_name' => [
+      'label' => t('Name'),
+      'value_callback' => function (UserInterface $user) {
+        return $user->label();
+      },
+    ],
+    'username' => [
+      'label' => t('Username'),
+      'value_callback' => function (UserInterface $user) {
+        return $user->getDisplayName();
+      },
+    ],
+    'email' => [
+      'label' => t('Email'),
+      'value_callback' => function (UserInterface $user) {
+        return $user->getEmail();
+      },
+    ],
+    'roles' => [
+      'label' => t('Roles'),
+      'value_callback' => function (UserInterface $user) {
+        return implode(', ', $user->getRoles(TRUE));
+      },
+    ],
+    'timezone' => [
+      'label' => t('Timezone'),
+      'value_callback' => function (UserInterface $user) {
+        return $user->getTimeZone();
+      },
+    ],
+  ];
+}

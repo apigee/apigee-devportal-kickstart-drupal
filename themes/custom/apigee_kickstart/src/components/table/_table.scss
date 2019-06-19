@@ -1,0 +1,11 @@
+.table {
+  font-size: 0.875rem;
+
+  th {
+    border-top: 0;
+  }
+  thead th {
+    border-bottom-width: 1px;
+    border-bottom-color: $gray-400;
+  }
+}

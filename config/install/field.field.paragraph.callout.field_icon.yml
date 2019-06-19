@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_icon
+    - paragraphs.paragraphs_type.callout
+  module:
+    - fontawesome
+id: paragraph.callout.field_icon
+field_name: field_icon
+entity_type: paragraph
+bundle: callout
+label: 'Callout Icon'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: fontawesome_icon

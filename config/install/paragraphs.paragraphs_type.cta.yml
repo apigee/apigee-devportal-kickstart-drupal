@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: cta
+label: 'Call to Action'
+icon_uuid: null
+description: 'A <em>Call to Action</em> contains a title, summary, and button links. <em>Call to Action</em> can be used via the "Content" field, where available, or via the custom <em>Call to Action</em> block type.'
+behavior_plugins: {  }

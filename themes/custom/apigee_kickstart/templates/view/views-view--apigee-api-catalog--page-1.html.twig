@@ -1,0 +1,58 @@
+{#
+/**
+ * @file
+ * Template for the APIs page.
+ *
+ * @see template_preprocess_views_view()
+ */
+#}
+{%
+  set classes = [
+    'view',
+    'view-' ~ id|clean_class,
+    'view-id-' ~ id,
+    'view-display-id-' ~ display_id,
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {{ title }}
+  {{ title_suffix }}
+
+  {% if header %}
+    <header>
+      {{ header }}
+    </header>
+  {% endif %}
+
+  <div class="row">
+    <div class="col-md-4 col-lg-3">
+      {{ exposed }}
+    </div>
+
+    <div class="col-md-8 col-lg-9">
+      {{ attachment_before }}
+
+      {{ rows }}
+
+      {% if empty %}
+        <div class="p-4 text-center text-muted">
+          {{ empty }}
+        </div>
+      {% endif %}
+      {{ pager }}
+
+      {{ attachment_after }}
+      {{ more }}
+    </div>
+  </div>
+
+  {% if footer %}
+    <footer>
+      {{ footer }}
+    </footer>
+  {% endif %}
+
+  {{ feed_icons }}
+</div>

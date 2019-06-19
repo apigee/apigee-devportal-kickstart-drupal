@@ -1,0 +1,32 @@
+// Full display mode.
+// -----------------------------------------------------------------------------
+.user--full {
+
+  .field {
+
+    @include media-breakpoint-up(md) {
+      display: flex;
+      align-items: center;
+    }
+
+    + .field {
+      margin-top: 1.2rem;
+
+      @include media-breakpoint-up(md) {
+        margin-top: .8rem;
+      }
+    }
+
+    &__label {
+      line-height: 1;
+      margin-right: .2rem;
+    }
+  }
+
+  .user__user-picture {
+
+    img {
+      border-radius: 4px;
+    }
+  }
+}

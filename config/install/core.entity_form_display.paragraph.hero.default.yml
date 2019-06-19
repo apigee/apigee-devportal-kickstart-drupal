@@ -1,0 +1,70 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.hero.field_background_style
+    - field.field.paragraph.hero.field_buttons
+    - field.field.paragraph.hero.field_media
+    - field.field.paragraph.hero.field_text
+    - field.field.paragraph.hero.field_title
+    - paragraphs.paragraphs_type.hero
+  module:
+    - media_library
+    - paragraphs
+    - text
+id: paragraph.hero.default
+targetEntityType: paragraph
+bundle: hero
+mode: default
+content:
+  field_background_style:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_buttons:
+    type: paragraphs
+    weight: 4
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed_expand_nested
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
+        add_above: '0'
+    third_party_settings: {  }
+    region: content
+  field_media:
+    type: media_library_widget
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_text:
+    weight: 3
+    settings:
+      rows: 2
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_title:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Template for an 'Sidebar none' layout.
+ *
+ * This layout will suppress the sidebars from printing entirely. This is useful
+ * when you want to hide them, or print them within the node template.
+ *
+ */
+#}
+
+{% if content %}
+  {% if container %}
+    <div class="container py-5">
+      <div class="row">
+        <div class="page__content col">
+          {{ content }}
+        </div>
+      </div>
+    </div>
+
+  {% else %}
+    <div class="page__content">
+      {{ content }}
+    </div>
+  {% endif %}
+{% endif %}

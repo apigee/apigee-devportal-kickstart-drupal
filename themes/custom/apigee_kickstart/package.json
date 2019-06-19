@@ -1,0 +1,23 @@
+{
+  "name": "apigee_kickstart",
+  "description": "A theme based on Radix.",
+  "private": true,
+  "scripts": {
+    "dev": "NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hot": "NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "devDependencies": {
+    "bootstrap": "^4.3.1",
+    "browser-sync": "^2.26.5",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "jquery": "^3.4.1",
+    "laravel-mix": "^4.0.15",
+    "popper.js": "^1.15.0",
+    "resolve-url-loader": "^2.3.1",
+    "sass": "^1.20.1",
+    "sass-loader": "^7.1.0",
+    "vue-template-compiler": "^2.6.10"
+  }
+}

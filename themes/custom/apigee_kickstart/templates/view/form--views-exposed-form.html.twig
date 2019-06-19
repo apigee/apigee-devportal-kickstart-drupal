@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * Template for a views exposed form element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ *
+ * @ingroup themeable
+ */
+#}
+{% set classes = [
+  'mb-4',
+] %}
+<form{{ attributes.addClass(classes) }}>
+  {{ children }}
+</form>

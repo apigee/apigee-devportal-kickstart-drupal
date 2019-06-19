@@ -1,0 +1,33 @@
+{#
+/**
+ * @file
+ * Template for a Hero Paragraph.
+ */
+#}
+{# Make the background style dark by default. The style and related classes are
+applied in the main paragraph template. #}
+{% if not paragraph.field_background_style.0.value %}
+  {% set background_style = 'dark' %}
+{% endif %}
+
+{% embed 'paragraph.html.twig' %}
+  {% block content %}
+    <div class="hero__wrapper">
+      <div class="hero__content text-center py-9 py-md-0">
+        <div class="container">
+          {{ content.field_title }}
+          {{ content.field_text }}
+          {% if content.field_buttons|render %}
+            <div class="hero__buttons mt-5">
+              {{ content.field_buttons }}
+            </div>
+          {% endif %}
+          {{ content|without('field_buttons', 'field_media', 'field_text', 'field_title') }}
+        </div>
+      </div>
+      <div class="hero__media d-none d-md-block">
+        {{- content.field_media -}}
+      </div>
+    </div>
+  {% endblock %}
+{% endembed %}

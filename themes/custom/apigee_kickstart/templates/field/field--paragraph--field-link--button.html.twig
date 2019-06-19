@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Template for field_link on a Button Paragraph.
+ */
+#}
+{% for item in items %}
+
+  {% set classes = ['btn'] %}
+  {% set button_style = element['#object'].field_button_style.value|default('primary') %}
+
+  {% if button_style == 'primary' %}
+    {% set classes = classes|merge(['btn-primary']) %}
+  {% elseif button_style == 'secondary' %}
+    {% set classes = classes|merge(['btn-outline-primary']) %}
+  {% endif %}
+
+  {# Create attributes object, retaining UI/programatically added attributes.#}
+  {% if item.content['#options'].attributes %}
+    {% set link_attributes = create_attribute(item.content['#options'].attributes) %}
+  {% else %}
+    {% set link_attributes = create_attribute() %}
+  {% endif %}
+
+  <a{{ link_attributes.addClass(classes) }} href="{{ item.content['#url'].toString }}">{{- item.content['#title'] -}}</a>
+
+{% endfor %}

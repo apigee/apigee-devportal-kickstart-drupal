@@ -1,0 +1,42 @@
+.text {
+  a {
+    font-weight: 500;
+  }
+
+  h2, h3, h4, h5, h5 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+
+    @include media-breakpoint-down(sm) {
+      margin-top: 1.5rem;
+    }
+  }
+
+  h2 {
+    font-size: 2.215rem;
+
+    @include media-breakpoint-down(sm) {
+      font-size: 1.5rem;
+    }
+  }
+
+  .text__field-text h2:first-child {
+    margin-top: 0;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  ol, ul, dt {
+    margin-bottom: 2rem;
+  }
+
+  li {
+    margin: 0.5rem 0;
+  }
+
+  img {
+    @extend .img-thumbnail;
+  }
+}

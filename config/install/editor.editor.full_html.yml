@@ -38,6 +38,7 @@ settings:
             - DrupalImage
             - Table
             - HorizontalRule
+            - DrupalFontAwesome
         -
           name: 'Block Formatting'
           items:

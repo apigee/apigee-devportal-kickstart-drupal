@@ -1,0 +1,60 @@
+// Article
+// -----------------------------------------------------------------------------
+.article {
+
+  &__tags {
+    margin-bottom: 1rem;
+
+    .badge {
+      text-transform: uppercase;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      font-size: .625rem;
+      padding: 0;
+      background: none;
+
+      + .badge {
+        margin-left: 1rem;
+      }
+
+      &:hover {
+        background: none;
+        color: $primary;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 1.25rem;
+  }
+}
+
+// Teaser.
+// -----------------------------------------------------------------------------
+.article--teaser {
+
+  .article {
+
+    &__field-image {
+
+      @include media-breakpoint-down(sm) {
+        margin-left: - $grid-gutter-width / 2;
+        margin-right: - $grid-gutter-width / 2;
+      }
+    }
+  }
+}
+
+// Full display mode.
+// -----------------------------------------------------------------------------
+.article--full {
+
+  h1 {
+    margin-bottom: 1.6rem;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 3rem;
+      line-height: 57px;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.block {
+  > h2 {
+    font-size: 1.25rem;
+  }
+
+  .main & {
+    margin-bottom: map-get($spacers, 7);
+  }
+}
+
+.block--searchform {
+  align-items: stretch;
+}

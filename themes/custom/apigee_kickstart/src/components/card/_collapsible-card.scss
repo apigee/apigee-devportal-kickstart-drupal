@@ -1,0 +1,39 @@
+// Style for the Collapsible card component.
+// -----------------------------------------------------------------------------
+.collapsible-card {
+  border-radius: 4px;
+  transition: $transition-base;
+
+  + .collapsible-card {
+    margin-top: 1rem;
+  }
+}
+
+.collapsible-card__content {
+  display: none;
+
+  .field,
+  .tab-pane .field {
+    width: 100%;
+    padding: 1.2rem 0;
+    font-size: 0.875rem;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    + .field {
+      border-top: 1px solid $border-color;
+    }
+
+    .field__label {
+      min-width: 160px;
+    }
+  }
+}
+
+  // Active state
+// -----------------------------------------------------------------------------
+.collapsible-card--active {
+  box-shadow: $box-shadow-sm;
+}

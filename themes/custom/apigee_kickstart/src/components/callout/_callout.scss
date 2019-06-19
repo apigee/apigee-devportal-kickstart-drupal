@@ -1,0 +1,39 @@
+.callout {
+  font-size: 0.875rem;
+  line-height: 1.25;
+  letter-spacing: 0.25px;
+  padding: map-get($spacers, 4);
+
+}
+
+.callout__title {
+  font-size: 1.25rem;
+  letter-spacing: 0.15px;
+  margin: map-get($spacers, 4) 0 map-get($spacers, 2) 0;
+}
+
+.callout__field-icon {
+  display: flex;
+  justify-content: center;
+
+  svg.svg-inline--fa {
+    color: $body-color;
+    height: 56px;
+    width: 56px;
+  }
+}
+
+.callout__field-icon .fontawesome-icon {
+  align-items: center;
+  background: theme-color('light');
+  border-radius: 100%;
+  display: flex;
+  height: 160px;
+  justify-content: center;
+  width: 160px;
+}
+
+.callout__field-link a {
+  font-weight: 500;
+  text-decoration: none;
+}

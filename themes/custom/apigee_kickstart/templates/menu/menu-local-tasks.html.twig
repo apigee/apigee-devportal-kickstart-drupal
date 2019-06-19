@@ -1,0 +1,70 @@
+{#
+/**
+ * @file
+ * Template primary and secondary local tasks.
+ *
+ * This theme uses the seven/drupal.nav-tabs library implementation for
+ * responsive tabs. The option to toggling between horizontal and vertical view
+ * is currently supported via CSS for Primary tabs. The script detects wrapping
+ * automatically, by comparing the height of the container to the height of the
+ * list item, instead of using media queries/breakpoints. As a result, you can
+ * style them normally, and when the height of the container exceeds that of a
+ * single <li>, the .is-horizontal class is removed and .is-collapse-enabled is
+ * added. Key attributes, classes and states are described below:
+ *
+ * Data Attributes
+ * ---------------
+ *
+ * - [data-tabs]: Applies to the container (nav) of the tabs list.
+ * - [data-tabs-target]: Applies to the (ul) element containing the tabs.
+ *   Required for .is-collapsible option.
+ * - [data-tabs-trigger]: The trigger <button>. Required for .is-collapsible
+ *   option.
+ *
+ * Options
+ * -------
+ *
+ * - .is-collapsible: Add this class on the same element as [data-tabs] if you
+ *   want the tabs to collapse to a single item (the active one), when the state
+ *   is NOT horizontal. Without this the tabs will just toggle the
+ *   .is-horizontal class.
+ *
+ * States
+ * ------
+ *
+ * Added via Markup:
+ *
+ * - li.active: Required for .is-collapsible implementation on at least one
+ *   tab <li>, as this determines which item shows beside the toggle button when
+ *   the tabs are collapsed.
+ *
+ * Added via JavaScript:
+ *
+ * - .is-horizontal-enabled: Indeicates the script is active and listening for
+ *   changes on resize.
+ * - .is-horitonzal: Indicates the tabs are currently horizontal. This is true
+ *   when the height of the <ul> does not exceed the height of the
+ *    li.tabs__tab element.
+ * - .is-collapsed-enabled: Opposite of .is-horizontal, indicates the the tabs
+ *    are currently collapsed.
+ * - .is-open: Works with .is-collapsible. When the list is collapsed, and the
+ *    trigger has been clicked, this class is added to the [data-tabs-target]
+ *    list element.
+ *
+ */
+#}
+{{ attach_library('seven/drupal.nav-tabs') }}
+
+{% if primary %}
+  <h2 class="visually-hidden" id="primary-tabs-title">{{ 'Primary tabs'|t }}</h2>
+  <nav aria-labelledby="primary-tabs-title" class="is-horizontal is-collapsible mb-3" data-drupal-nav-tabs role="navigation">
+    <button class="reset-appearance tabs__trigger" aria-label="{{ 'Primary tabs display toggle'|t }}" data-drupal-nav-tabs-trigger>&bull;&bull;&bull;</button>
+    <ul class="tabs nav-tabs nav-tabs--primary clearfix" data-drupal-nav-tabs-target>{{ primary }}</ul>
+  </nav>
+{% endif %}
+{% if secondary %}
+  <h2 class="visually-hidden" id="secondary-tabs-title">{{ 'Secondary tabs'|t }}</h2>
+  <nav aria-labelledby="secondary-tabs-title" class="is-horizontal mb-3" data-drupal-nav-tabs role="navigation">
+    <ul class="tabs nav nav-tabs--secondary clearfix">{{ secondary }}</ul>
+  </nav>
+{% endif %}

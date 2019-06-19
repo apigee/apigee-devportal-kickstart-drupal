@@ -1,0 +1,15 @@
+{#
+/**
+ * @file
+ * Template for a User.
+ */
+#}
+{% set classes = [
+  'user',
+  'user--' ~ view_mode|clean_class,
+] %}
+<article{{ attributes.addClass(classes) }}>
+  {% block content %}
+    {{- content|without('summary') -}}
+  {% endblock %}
+</article>

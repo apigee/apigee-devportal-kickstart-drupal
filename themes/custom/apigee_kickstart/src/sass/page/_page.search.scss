@@ -1,0 +1,47 @@
+// Styles for the Search Results Page template.
+// -----------------------------------------------------------------------------
+
+.page--search {
+  main {
+    display: grid;
+    grid-auto-rows: min-content;
+    // 720 (15 + 690 + 15)
+    grid-template-columns:
+      [gutter-left] minmax(15px, 1fr)
+      [main] minmax(0, 690px)
+      [gutter-right] minmax(15px, 1fr);
+    padding-bottom: map-get($spacers, 7);
+
+    @include media-breakpoint-up(lg) {
+      // 960 (15 + 930 + 15)
+      grid-template-columns:
+        [gutter-left] minmax(15px, 1fr)
+        [main] minmax(0, 930px)
+        [gutter-right] minmax(15px, 1fr);
+    }
+
+    @include media-breakpoint-up(xl) {
+      // 1140 (15 + 1110 + 15)
+      grid-template-columns:
+        [gutter-left] minmax(15px, 1fr)
+        [main] minmax(0, 1110px)
+        [gutter-right] minmax(15px, 1fr);
+    }
+
+    // Assume everyhing sits in the "main" column.
+    > * {
+      grid-column: main;
+    }
+
+    .page__content > h2 {
+      @include sr-only;
+    }
+  }
+
+  // Override "main" for full-width elements.
+  .page__tasks,
+  .page__messages,
+  form.search-form {
+    grid-column: 1 / -1;
+  }
+}

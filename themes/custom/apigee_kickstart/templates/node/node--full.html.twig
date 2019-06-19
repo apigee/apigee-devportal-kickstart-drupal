@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * Template for a node in full display mode.
+ */
+#}
+
+{% extends '@apigee-kickstart/node/node.twig' %}
+{% block content %}
+
+  {% if content.field_header|render %}
+    {{ content.field_header }}
+    {% if tasks|render %}
+      <div class="page__tasks">
+        <div class="container">
+          {{ tasks }}
+        </div>
+      </div>
+    {% endif %}
+  {% endif %}
+
+  {{ content|without('field_header') }}
+{% endblock %}

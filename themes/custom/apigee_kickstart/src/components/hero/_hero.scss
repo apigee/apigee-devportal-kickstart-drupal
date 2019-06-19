@@ -1,0 +1,43 @@
+.hero {
+  position: relative;
+
+  .field {
+    width: 100%; // apigee_edge override.
+  }
+
+  @include media-breakpoint-up(md) {
+    height: 400px;
+  }
+}
+
+.hero__wrapper {
+  @include media-breakpoint-up(md) {
+    height: 100%;
+  }
+}
+
+.hero__media {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+
+  img {
+    @include media-breakpoint-up(md) {
+      height: 400px;
+      object-fit: fill;
+      width: 100%;
+    }
+  }
+}
+
+.hero__content {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 100%;
+  z-index: 1;
+}

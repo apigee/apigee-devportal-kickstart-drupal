@@ -1,0 +1,38 @@
+// Page: Footer
+// -----------------------------------------------------------------------------
+
+.page__footer {
+  background: var(--ak-footer-color-bg);
+  font-size: 0.875rem;
+
+  &, a {
+    color: var(--ak-footer-color);
+  }
+
+  .text-dark,
+  .text-light {
+    color: var(--ak-footer-color) !important;
+  }
+}
+
+.footer {
+  &.bg-dark,
+  &.bg-light {
+      background: var(--ak-footer-color-bg) !important;
+    }
+
+  &.text-dark,
+  &.text-light {
+    color: var(--ak-footer-color) !important;
+  }
+
+  .nav {
+    margin-left: -0.5rem;
+  }
+}
+
+.copyright {
+  // Fakes rgba($dark, 0.9) = #505050 to #616161
+  background: var(--ak-footer-color-bg) linear-gradient(to bottom, rgba(255, 255, 255, 0.19) 0%, var(--ak-footer-color-bg) 100%) center;
+  background-size: 100vw 100vh;
+}

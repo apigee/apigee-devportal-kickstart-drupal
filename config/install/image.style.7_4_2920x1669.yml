@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 7_4_2920x1669
+label: '7:4 Ratio - Max 2920 x 1669'
+effects:
+  bee6041e-fb17-40dd-b67c-81f7b103a6ad:
+    uuid: bee6041e-fb17-40dd-b67c-81f7b103a6ad
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 2920
+      height: 1669
+      anchor: center-center

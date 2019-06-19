@@ -1,0 +1,36 @@
+{#
+/**
+ * @file
+ * Template for a Collapsible Card component.
+ *
+ * Available config:
+ * - utility_classes: An array of utility classes.
+ */
+#}
+{%
+  set attributes = create_attribute()
+%}
+{%
+  set classes = [
+    'collapsible-card',
+    'collapsible-card--collapsed'
+  ]|merge(utility_classes ? utility_classes : [])
+%}
+<div{{ attributes.addClass(classes) }}>
+
+  <div class="collapsible-card__header px-4 py-3 bg-light d-flex justify-content-between align-items-center">
+    {% if title %}
+      <button class="btn btn-link collapsible-card__toggle px-0">{{ title }}</button>
+    {% endif %}
+
+    {% block header %}
+      {{ header }}
+    {% endblock %}
+  </div>
+
+  <div class="collapsible-card__content p-4">
+    {% block content %}
+      {{ content }}
+    {% endblock %}
+  </div>
+</div>

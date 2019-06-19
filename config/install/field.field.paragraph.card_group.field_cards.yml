@@ -1,0 +1,51 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cards
+    - paragraphs.paragraphs_type.card
+    - paragraphs.paragraphs_type.card_group
+  module:
+    - entity_reference_revisions
+id: paragraph.card_group.field_cards
+field_name: field_cards
+entity_type: paragraph
+bundle: card_group
+label: 'Card group items'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      card: card
+    target_bundles_drag_drop:
+      blockquote:
+        enabled: false
+      button:
+        enabled: false
+      button_group:
+        enabled: false
+      callout:
+        enabled: false
+      callout_group:
+        enabled: false
+      card:
+        enabled: true
+      card_group:
+        enabled: false
+      cta:
+        enabled: false
+      hero:
+        enabled: false
+      text:
+        enabled: false
+      text_image:
+        enabled: false
+      title_bar:
+        enabled: false
+field_type: entity_reference_revisions

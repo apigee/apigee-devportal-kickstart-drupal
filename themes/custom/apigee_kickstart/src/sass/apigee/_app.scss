@@ -1,0 +1,79 @@
+// App
+// -----------------------------------------------------------------------------
+.apigee-entity--app {
+
+  .tab-pane {
+
+    .field {
+
+      + .wrapper--primary {
+        padding-top: 1.2rem;
+        border-top: 1px solid $border-color;
+      }
+
+      &__label {
+        margin: 0;
+      }
+    }
+
+    .field,
+    .api-product-list-row,
+    .item-property {
+      width: 100%;
+      padding: 1.2rem 0;
+      font-size: 0.875rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      @include media-breakpoint-up(sm) {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      &:first-child {
+        padding-top: 0;
+      }
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+
+      + .field,
+      + .api-product-list-row,
+      + .item-property {
+        border-top: 1px solid $border-color;
+      }
+
+      label,
+      .field__label,
+      .api-product-name {
+        display: inline-block;
+        min-width: 160px;
+        letter-spacing: 0.25px;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+// Full view mode.
+// -----------------------------------------------------------------------------
+.apigee-entity--app--view-mode-full {
+  margin-bottom: 5rem;
+
+  .nav-tabs--secondary {
+    margin-top: 2rem;
+  }
+}
+
+// Collapsible card
+// -----------------------------------------------------------------------------
+.apigee-entity--app--view-mode-collapsible-card {
+
+  .nav-tabs--secondary {
+    margin-top: -1rem;
+    flex-wrap: nowrap;
+    overflow: scroll;
+  }
+}

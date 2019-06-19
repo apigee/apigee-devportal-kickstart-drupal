@@ -1,0 +1,34 @@
+{#
+/**
+ * @file
+ * Theme override for a details element.
+ */
+#}
+{% set css_classes = [
+  'card',
+  'bg-lighter',
+  'mb-3',
+] %}
+
+<details{{ attributes.addClass(css_classes) }}>
+  {%
+    set summary_classes = [
+    'card-header',
+    'bg-lighter',
+    required ? 'js-form-required',
+    required ? 'form-required',
+  ]
+  %}
+  {%- if title -%}
+    <summary{{ summary_attributes.addClass(summary_classes) }}>
+      {{ title }}
+    </summary>
+  {%- endif -%}
+
+  <div class="card-body">
+    {{ errors }}
+    {{ description }}
+    {{ children }}
+    {{ value }}
+  </div>
+</details>

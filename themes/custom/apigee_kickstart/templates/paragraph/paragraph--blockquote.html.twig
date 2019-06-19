@@ -1,0 +1,19 @@
+{#
+/**
+ * @file
+ * Template for a Blockquote Paragraph.
+ */
+#}
+{% extends 'paragraph.html.twig' %}
+{% block content %}
+  <div class="container">
+    <blockquote class="bg-light text-center">
+      {{ content|without('field_blockquote_source') }}
+      {% if content.field_blockquote_source|render %}
+        <footer class="blockquote-footer mt-4">
+          {{ content.field_blockquote_source }}
+        </footer>
+      {% endif %}
+    </blockquote>
+  </div>
+{% endblock %}
