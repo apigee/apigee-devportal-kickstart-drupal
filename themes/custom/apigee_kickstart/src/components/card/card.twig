@@ -2,6 +2,33 @@
 /**
  * @file
  * Template for a Card component.
+ *
+ * - attributes: Drupal attributes object. Prints only when print_attributes is
+ *   set to true.
+ * - print_attributes: This is a workaround for QuickEdit that allows the
+ *   extending template to print the attributes in this component template, as
+ *   opposed to the paragraph wrapper. When displaying a card in a cark deck,
+ *   the card needs to be a direct descendant, and cannot have an "extra"
+ *   element in between. Just removing the Paragraph wrapper is an option, but
+ *   doing so also omits attributes needed by QuickEdit, and that causes a
+ *   JavaScript error. This code allows both attributes to be printed, and the
+ *   card deck component to work as designed.
+ * - classes: An array of classes applied to the Card wrapper element. Any
+ *   additional classes provided from extending templates are merged with the
+ *   defaults provided below.
+ * - url: If url is populated the contents of the entire card will be wrapped in
+ *   a link to the url. Note: This should be disabled when the contents of the
+ *   card contain a link, as nesting <a> within <a> is problematic. If working
+ *   in an entity template (which already has this variable set) you may need to
+ *   either explicitly set this variable to false, or use the `only` keyword
+ *   when referencing this component template.
+ * - image: Image/media section of the Card component.
+ * - title: Expects a properly marked up title, wrapped in a heading element.
+ * - body: Body section of the Card component.
+ * - footer: Footer section of the Card comeponent.
+ * - hover_shadow (boolean): When true, hovering over the card will have a box
+ *   shadow effect.
+ *
  */
 #}
 
@@ -12,13 +39,7 @@
 ]|merge(classes|default([])) %}
 
 {% if print_attributes and attributes %}
-  {# This is a workaround for QuickEdit that allows the extending template to
-  print the attributes in this component template, as opposed to the paragraph
-  wrapper. When displaying a card in a cark deck, the card needs to be a direct
-  descendant, and cannot have an "extra" element in between. Just removing the
-  Paragraph wrapper is an option, but doing so also omits attributes needed by
-  QuickEdit, and that cause a JavaScript error. This code allows both attributes
-  to be printed, and the card deck component to work as designed. #}
+  {# See documentation above #}
   <div{{ attributes.addClass(classes) }}>
 {% else %}
   <div class="{{ classes|join(' ')|trim }}">
@@ -36,10 +57,8 @@
 
     {% if title or body %}
       <div class="card-body">
-        {% if title %}
-          <h4 class="card-title">{{ title }}</h4>
-        {% endif %}
         {% block body %}
+          {{ title }}
           {{ body }}
         {% endblock %}
       </div>

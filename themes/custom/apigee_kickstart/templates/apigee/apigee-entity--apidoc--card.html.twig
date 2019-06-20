@@ -13,10 +13,15 @@
 #}
 {% extends 'apigee-entity.html.twig' %}
 {% block content %}
+
+  {% set title %}
+    <h2 class="card-title">{{ entity.label }}</h2>
+  {% endset %}
+
   {% include '@apigee-kickstart/card/card.twig' with {
     classes: ['api-card'],
     url: content.field_link['#url'],
-    title: entity.label,
+    title: title,
     image: content.field_image,
     body: content|without('name', 'field_image', 'field_link', 'spec'),
     footer: content.field_link['#title'],
