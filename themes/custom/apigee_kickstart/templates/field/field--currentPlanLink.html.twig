@@ -1,0 +1,16 @@
+{#
+/**
+ * @file
+ * Template for future plan link field.
+ */
+#}
+<nav class="is-horizontal is-collapsible mb-3 position-container is-horizontal-enabled">
+    <ul class="tabs nav-tabs nav-tabs--primary clearfix">
+        {% for item in items %}
+            {% set title = item.content['#title'] %}
+            <li{{ item.attributes.addClass('nav-item') }}>
+                <a href="{{ item.content['#url'] }}" class="nav-link {{ title == 'Future rate plan' ? 'active' }}">{{ title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</nav>
