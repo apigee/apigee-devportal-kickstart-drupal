@@ -2,7 +2,7 @@
 /**
  * @file
  * Default theme implementation to display a Apigee Rate Plan entity rendered
- * in Teaser view mode.
+ * in Full view mode.
  *
  * This template uses Apigee Edge's default entity template, which can be found
  * at apigee_edge/templates/apigee-entity.html.twig.
@@ -140,26 +140,53 @@
 #}
 
 {% extends 'apigee-entity.html.twig' %}
-{% block apigee_entity %}
-
-  {% set body %}
-    <h2 class="card-title mt-1">
-      <a href="{{ url }}">{{ label }}</a>
-    </h2>
-
-    {{ content|without('packageProducts', 'purchase') }}
-
-    {% if content.packageProducts|render %}
-      <hr class="my-4">
+{% block content %}
+  <div class="row">
+    <div class="col-lg-6">
+      {{ content.description }}
+    </div>
+    <div class="col-lg-6">
       {{ content.packageProducts }}
-    {% endif %}
+    </div>
+  </div>
 
-    {{ content.purchase }}
-  {% endset %}
+  {% if content.futurePlanStartDate[0] %}
+    <div class="py-2 px-3 rounded-lg bg-dark text-white mt-4">
+      {{ content.futurePlanStartDate }}
+    </div>
+  {% endif %}
 
-  {% include '@apigee-kickstart/card/card.twig' with {
-    classes: classes,
-    body: body,
-  } only %}
+  {% if content.currentPlanLink or content.futurePlanLink %}
+    <div class="mt-4">
+      {{ content.currentPlanLink }}
+      {{ content.futurePlanLink }}
+    </div>
+  {% endif %}
 
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="rate-plan__card bg-lighter p-4">
+        <h3>{{ 'Fees'|t }}</h3>
+
+        {{ content.setUpFee }}
+        {{ content.recurringFee }}
+        {{ content.earlyTerminationFee }}
+      </div>
+
+      {% if content.ratePlanDetails[0] %}
+        <div class="rate-plan__card bg-lighter p-4">
+          <h3>{{ 'Rate Card'|t }}</h3>
+
+          {{ content.ratePlanDetails }}
+        </div>
+      {% endif %}
+
+      {% if content.purchase %}
+        <div class="rate-plan__card bg-lighter p-4 mt-4">
+          <h3>{{ 'Purchase'|t }} {{ label }}</h3>
+          {{ content.purchase }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
 {% endblock %}

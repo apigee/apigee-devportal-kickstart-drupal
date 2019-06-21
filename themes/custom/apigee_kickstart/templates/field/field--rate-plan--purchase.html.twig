@@ -1,0 +1,40 @@
+{#
+/**
+ * @file
+ * Template for field_purchase a Rate Plan entity.
+ */
+#}
+{% set classes = [
+  'btn',
+  'btn-primary',
+  'btn-block',
+  'mt-5',
+  'text-uppercase',
+] %}
+
+<div{{ attributes }}>
+  {% for item in items %}
+
+    {# Create attributes object, retaining programatically added attributes.#}
+    {% if item.content['#options'].attributes %}
+      {% set link_attributes = create_attribute(item.content['#options'].attributes) %}
+    {% else %}
+      {% set link_attributes = create_attribute() %}
+    {% endif %}
+
+    {# If this is a link to the purchase page, show link as a button. #}
+    {% if item.content['#url'].routeName == 'entity.rate_plan.purchase' %}
+      <a{{link_attributes.addClass(classes)}} href="{{ item.content['#url'].toString }}">
+        {{- item.content['#title'] -}}
+      </a>
+    {% elseif element['#view_mode'] == 'teaser'%}
+      {# Rate plan is purchased. Show a view pricing link for teaser. #}
+      <a{{link_attributes.addClass(classes)}} href="{{ rate_plan_url }}">
+        {{- 'View Pricing'|t -}}
+      </a>
+    {% else %}
+      {{ item.content }}
+    {% endif %}
+
+  {% endfor %}
+</div>
