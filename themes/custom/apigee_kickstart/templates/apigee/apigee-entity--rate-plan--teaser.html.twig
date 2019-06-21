@@ -32,7 +32,7 @@
  *   date of the parent rate plan. Defaults to false. Note This setting applies
  *   to future rate plans only.
  * - monetizationPackage: Name of the API package for the rate plan.
- * - subscribeLink: Subscribe to a plan (link/form).
+ * - purchase: Purchase a plan (link/form).
  * - name: Name of the rate plan.
  * - organization: Organization details.
  * - parentRatePlan: The rate plan from which this rate plan was derived.
@@ -147,14 +147,14 @@
       <a href="{{ url }}">{{ label }}</a>
     </h2>
 
-    {{ content|without('packageProducts', 'subscribe') }}
+    {{ content|without('packageProducts', 'purchase') }}
 
     {% if content.packageProducts|render %}
       <hr class="my-4">
       {{ content.packageProducts }}
     {% endif %}
 
-    {{ content.subscribe }}
+    {{ content.purchase }}
   {% endset %}
 
   {% include '@apigee-kickstart/card/card.twig' with {
