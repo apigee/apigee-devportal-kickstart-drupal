@@ -32,7 +32,13 @@ class TeamAppListBuilder extends TeamAppListByTeam {
    */
   public function render() {
     // Render a list of apps.
-    return $this->entityTypeManager->getViewBuilder($this->entityTypeId)->viewMultiple($this->load(), 'collapsible_card');
+    $build = $this->entityTypeManager->getViewBuilder($this->entityTypeId)->viewMultiple($this->load(), 'collapsible_card');
+
+    // Add cache contexts.
+    $build['#cache']['contexts'] = $this->entityType->getListCacheContexts();
+    $build['#cache']['tags'] = $this->entityType->getListCacheTags();
+
+    return $build;
   }
 
 }
