@@ -1,9 +1,0 @@
-langcode: en
-status: true
-dependencies:
-  module:
-    - apigee_m10n
-id: rate_plan.teaser
-label: Teaser
-targetEntityType: rate_plan
-cache: true
