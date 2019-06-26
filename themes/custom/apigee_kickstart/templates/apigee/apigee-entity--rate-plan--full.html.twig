@@ -163,8 +163,7 @@
       <div class="col-lg-6">
         {{ content|without(
           'futurePlanStartDate',
-          'currentPlanLink',
-          'futurePlanLink',
+          'futurePlanLinks',
           'setUpFee',
           'recurringFee',
           'earlyTerminationFee',
@@ -174,37 +173,36 @@
       </div>
     </div>
 
-    {% if content.futurePlanStartDate[0] %}
+    {% if content.futurePlanStartDate|render %}
       <div class="py-2 px-3 rounded-lg bg-dark text-white mt-4">
         {{ content.futurePlanStartDate }}
       </div>
     {% endif %}
 
-    {% if content.currentPlanLink or content.futurePlanLink %}
+    {% if content.futurePlanLinks|render %}
       <div class="mt-4">
-        {{ content.currentPlanLink }}
-        {{ content.futurePlanLink }}
+        {{ content.futurePlanLinks }}
       </div>
     {% endif %}
 
     <div class="row">
       <div class="col-lg-6">
 
-        <div class="rate-plan__card bg-lighter p-4 my-5">
+        <div class="rate-plan__card rate-plan__card--fees bg-lighter p-4 my-5 rounded-lg">
           <h2>{{ 'Fees'|t }}</h2>
           {{ content.setUpFee }}
           {{ content.recurringFee }}
           {{ content.earlyTerminationFee }}
         </div>
 
-        {% if content.ratePlanDetails[0] %}
-          <div class="rate-plan__card bg-lighter p-4 my-5">
+        {% if content.ratePlanDetails|render %}
+          <div class="rate-plan__card rate-plan__card--details bg-lighter p-4 my-5 rounded-lg">
             {{ content.ratePlanDetails }}
           </div>
         {% endif %}
 
         {% if content.purchase %}
-          <div class="rate-plan__card bg-lighter p-4 mt-4" id="purchase">
+          <div class="rate-plan__card rate-plan__card--purchase bg-lighter p-4 mt-4 rounded-lg" id="purchase">
             <h2>{{ 'Purchase'|t }} {{ label }}</h2>
             {{ content.purchase }}
           </div>
