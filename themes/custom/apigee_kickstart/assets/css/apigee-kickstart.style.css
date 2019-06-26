@@ -12824,26 +12824,20 @@ ul.social-links li a {
 }
 
 .title-bar__icon {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  background: #f0f0f0;
   border-radius: 4px;
-  margin-left: auto;
   height: 36px;
   width: 36px;
-  min-width: 36px;
 }
 @media (min-width: 576px) {
   .title-bar__icon {
     height: 64px;
     width: 64px;
-    min-width: 64px;
   }
 }
 .title-bar__icon svg.svg-inline--fa {
-  align-items: center;
   display: flex;
+  align-items: center;
+  justify-content: center;
   height: 18px;
   width: 18px;
 }
@@ -12862,6 +12856,12 @@ ul.social-links li a {
   padding-bottom: 0.75rem;
   padding-top: 0.75rem;
   padding-right: 30vw;
+}
+
+.title-bar__button {
+  align-self: flex-end;
+  align-items: center;
+  display: flex;
 }
 
 .text a {
@@ -13074,7 +13074,7 @@ form.previous-balances-reports-download-form .form-actions .btn {
 .rate-plan--view-mode-teaser {
   border: 0;
 }
-.pricing-and-plans .rate-plan--view-mode-teaser {
+.main--pricing-and-plans .rate-plan--view-mode-teaser {
   width: 100%;
 }
 .rate-plan--view-mode-teaser .card-body {
@@ -13591,7 +13591,7 @@ form.commerce-checkout-flow .form-actions a:hover {
 .path-user .page__content > .container {
   padding-top: 0.5rem !important;
 }
-.path-user main:not(.pricing-plans) .container.py-5 {
+.path-user main:not(.main--pricing-plans, .main--rate-plan) .container.py-5 {
   padding-top: 0 !important;
 }
 

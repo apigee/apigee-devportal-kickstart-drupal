@@ -141,52 +141,77 @@
 
 {% extends 'apigee-entity.html.twig' %}
 {% block content %}
-  <div class="row">
-    <div class="col-lg-6">
-      {{ content.description }}
-    </div>
-    <div class="col-lg-6">
-      {{ content.packageProducts }}
-    </div>
-  </div>
 
-  {% if content.futurePlanStartDate[0] %}
-    <div class="py-2 px-3 rounded-lg bg-dark text-white mt-4">
-      {{ content.futurePlanStartDate }}
-    </div>
+  {% if content.purchase %}
+    {% set button %}
+      {% include '@apigee-kickstart/button/button-link.twig' with {
+        'type': 'primary',
+        'text': 'READY TO PURCHASE'|t,
+        'url': '#purchase',
+      } only %}
+    {% endset %}
+
+    {% include '@apigee-kickstart/title-bar/title-bar.twig' with {
+      'title': label,
+      'button': button,
+    } only %}
   {% endif %}
 
-  {% if content.currentPlanLink or content.futurePlanLink %}
-    <div class="mt-4">
-      {{ content.currentPlanLink }}
-      {{ content.futurePlanLink }}
-    </div>
-  {% endif %}
+  <div class="container py-5">
 
-  <div class="row">
-    <div class="col-lg-6">
-      <div class="rate-plan__card bg-lighter p-4">
-        <h3>{{ 'Fees'|t }}</h3>
-
-        {{ content.setUpFee }}
-        {{ content.recurringFee }}
-        {{ content.earlyTerminationFee }}
+    <div class="row">
+      <div class="col-lg-6">
+        {{ content|without(
+          'futurePlanStartDate',
+          'currentPlanLink',
+          'futurePlanLink',
+          'setUpFee',
+          'recurringFee',
+          'earlyTerminationFee',
+          'ratePlanDetails',
+          'purchase'
+          ) }}
       </div>
-
-      {% if content.ratePlanDetails[0] %}
-        <div class="rate-plan__card bg-lighter p-4">
-          <h3>{{ 'Rate Card'|t }}</h3>
-
-          {{ content.ratePlanDetails }}
-        </div>
-      {% endif %}
-
-      {% if content.purchase %}
-        <div class="rate-plan__card bg-lighter p-4 mt-4">
-          <h3>{{ 'Purchase'|t }} {{ label }}</h3>
-          {{ content.purchase }}
-        </div>
-      {% endif %}
     </div>
+
+    {% if content.futurePlanStartDate[0] %}
+      <div class="py-2 px-3 rounded-lg bg-dark text-white mt-4">
+        {{ content.futurePlanStartDate }}
+      </div>
+    {% endif %}
+
+    {% if content.currentPlanLink or content.futurePlanLink %}
+      <div class="mt-4">
+        {{ content.currentPlanLink }}
+        {{ content.futurePlanLink }}
+      </div>
+    {% endif %}
+
+    <div class="row">
+      <div class="col-lg-6">
+
+        <div class="rate-plan__card bg-lighter p-4 my-5">
+          <h2>{{ 'Fees'|t }}</h2>
+          {{ content.setUpFee }}
+          {{ content.recurringFee }}
+          {{ content.earlyTerminationFee }}
+        </div>
+
+        {% if content.ratePlanDetails[0] %}
+          <div class="rate-plan__card bg-lighter p-4 my-5">
+            {{ content.ratePlanDetails }}
+          </div>
+        {% endif %}
+
+        {% if content.purchase %}
+          <div class="rate-plan__card bg-lighter p-4 mt-4" id="purchase">
+            <h2>{{ 'Purchase'|t }} {{ label }}</h2>
+            {{ content.purchase }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
   </div>
+
 {% endblock %}

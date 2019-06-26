@@ -10,7 +10,7 @@
     }
   }
 
-  main:not(.pricing-plans) {
+  main:not(.main--pricing-plans, .main--rate-plan) {
 
     .container.py-5 {
       padding-top: 0 !important;
