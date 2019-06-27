@@ -12824,26 +12824,20 @@ ul.social-links li a {
 }
 
 .title-bar__icon {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  background: #f0f0f0;
   border-radius: 4px;
-  margin-left: auto;
   height: 36px;
   width: 36px;
-  min-width: 36px;
 }
 @media (min-width: 576px) {
   .title-bar__icon {
     height: 64px;
     width: 64px;
-    min-width: 64px;
   }
 }
 .title-bar__icon svg.svg-inline--fa {
-  align-items: center;
   display: flex;
+  align-items: center;
+  justify-content: center;
   height: 18px;
   width: 18px;
 }
@@ -12862,6 +12856,12 @@ ul.social-links li a {
   padding-bottom: 0.75rem;
   padding-top: 0.75rem;
   padding-right: 30vw;
+}
+
+.title-bar__button {
+  align-self: flex-end;
+  align-items: center;
+  display: flex;
 }
 
 .text a {
@@ -13018,6 +13018,10 @@ ul.social-links li a {
   background: inherit;
 }
 
+.package--view-mode-full .field {
+  margin-bottom: 1.5rem;
+}
+
 .apigee-m10n-prepaid-balance-wrapper h3 {
   margin-bottom: 1.5rem;
 }
@@ -13074,7 +13078,7 @@ form.previous-balances-reports-download-form .form-actions .btn {
 .rate-plan--view-mode-teaser {
   border: 0;
 }
-.pricing-and-plans .rate-plan--view-mode-teaser {
+.main--pricing-and-plans .rate-plan--view-mode-teaser {
   width: 100%;
 }
 .rate-plan--view-mode-teaser .card-body {
@@ -13116,11 +13120,12 @@ form.previous-balances-reports-download-form .form-actions .btn {
   margin-right: 1ch;
 }
 
+.rate-plan--view-mode-full h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+}
 .rate-plan--view-mode-full .field {
   font-size: 0.875rem;
-}
-.rate-plan--view-mode-full .rate-plan__card h3 {
-  margin-bottom: 1.25rem;
 }
 .rate-plan--view-mode-full .rate-plan__card .field {
   font-size: 1rem;
@@ -13138,7 +13143,9 @@ form.previous-balances-reports-download-form .form-actions .btn {
 .rate-plan--view-mode-full .rate-plan__card .field--inline .field__label:after {
   content: ":";
   position: relative;
-  left: -3px;
+}
+.rate-plan--view-mode-full .rate-plan__card--fees .field--inline .field__label::after {
+  left: -0.5ch;
 }
 @media (min-width: 768px) {
   .rate-plan--view-mode-full .rate_plan__detail-card {
@@ -13168,6 +13175,18 @@ form.previous-balances-reports-download-form .form-actions .btn {
 }
 .rate-plan--view-mode-full form .field--name-startdate .form-control {
   background-color: #fff;
+}
+
+.rate-plan-detail__table .table {
+  font-size: 1rem;
+}
+.rate-plan-detail__table .table tbody th,
+.rate-plan-detail__table .table tbody td {
+  vertical-align: top;
+  padding: 1.25rem 0;
+}
+.rate-plan-detail__table .table tbody tr:not(:last-child) {
+  border-bottom: 1px dotted #f0f0f0;
 }
 
 .team-switcher {
@@ -13591,7 +13610,7 @@ form.commerce-checkout-flow .form-actions a:hover {
 .path-user .page__content > .container {
   padding-top: 0.5rem !important;
 }
-.path-user main:not(.pricing-plans) .container.py-5 {
+.path-user main:not(.main--pricing-plans):not(.main--rate-plan) .container.py-5 {
   padding-top: 0 !important;
 }
 

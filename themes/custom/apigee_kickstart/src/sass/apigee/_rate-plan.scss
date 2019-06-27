@@ -4,7 +4,7 @@
 .rate-plan--view-mode-teaser {
   border: 0;
 
-  .pricing-and-plans & {
+  .main--pricing-and-plans & {
     width: 100%;
   }
 
@@ -64,15 +64,16 @@
 // -----------------------------------------------------------------------------
 .rate-plan--view-mode-full {
 
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+
   .field {
     font-size: 0.875rem;
   }
 
   .rate-plan__card {
-
-    h3 {
-      margin-bottom: 1.25rem;
-    }
 
     .field {
       font-size: 1rem;
@@ -92,10 +93,15 @@
         &:after {
           content: ":";
           position: relative;
-          left: -3px;
         }
       }
     }
+  }
+
+  // @todo This is annoying. Some fields have whitespace after the label and
+  // some don't. Shouldn't have to use CSS for this.
+  .rate-plan__card--fees .field--inline .field__label::after {
+    left: -0.5ch;
   }
 
   .rate_plan__detail-card {
@@ -134,5 +140,19 @@
         background-color: $white;
       }
     }
+  }
+}
+
+.rate-plan-detail__table {
+  .table {
+    font-size: 1rem;
+  }
+  .table tbody th,
+  .table tbody td {
+    vertical-align: top;
+    padding: 1.25rem 0;
+  }
+  .table tbody tr:not(:last-child) {
+    border-bottom: 1px dotted theme-color('light');
   }
 }

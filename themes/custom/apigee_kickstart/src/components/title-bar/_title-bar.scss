@@ -15,27 +15,20 @@
   }
 }
 
-// @todo... Workaround .field from apigee_edge 😢
 .title-bar__icon {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  background: theme-color('light');
   border-radius: $border-radius-lg;
-  margin-left: auto;
   height: 36px;
   width: 36px;
-  min-width: 36px;
 
   @include media-breakpoint-up(sm) {
     height: 64px;
     width: 64px;
-    min-width: 64px;
   }
 
   svg.svg-inline--fa {
-    align-items: center;
     display: flex;
+    align-items: center;
+    justify-content: center;
     height: 18px;
     width: 18px;
 
@@ -54,4 +47,11 @@
   padding-bottom: 0.75rem;
   padding-top: 0.75rem;
   padding-right: 30vw;
+}
+
+
+.title-bar__button {
+  align-self: flex-end;
+  align-items: center;
+  display: flex;
 }
