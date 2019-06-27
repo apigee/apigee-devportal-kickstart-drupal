@@ -13610,7 +13610,7 @@ form.commerce-checkout-flow .form-actions a:hover {
 .path-user .page__content > .container {
   padding-top: 0.5rem !important;
 }
-.path-user main:not(.main--pricing-plans):not(.main--package-or-rate-plan) .container.py-5 {
+.path-user main:not(.main--pricing-plans):not(.main--rate-plan) .container.py-5 {
   padding-top: 0 !important;
 }
 
