@@ -8,13 +8,13 @@
   <ul class="tabs nav-tabs nav-tabs--primary clearfix">
     {% for item in items %}
       {% set linkClasses = item.content['#url'].options.attributes.class %}
-      <li{{ item.attributes.addClass('nav-item') }}>
-        {% set activeClass = '' %}
-        {% if 'is-active' in linkClasses %}
-          {% set activeClass = 'active' %}
-        {% endif %}
-
-        {{ link(item.content['#title'], item.content['#url'], { 'class':['nav-link', activeClass]}) }}
+      <li{{item.attributes.addClass('nav-item')}}>
+        {{ link(item.content['#title'], item.content['#url'], {
+          'class':[
+            'nav-link',
+            render_var(path('<current>')) == item.content['#url'].toString ? 'active'
+          ]
+        }) }}
       </li>
     {% endfor %}
   </ul>
