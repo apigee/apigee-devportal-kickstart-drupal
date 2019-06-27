@@ -415,7 +415,7 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
    *   The property name.
    *
    * @return mixed
-   *   The value of the giving property.
+   *   The value of the given property.
    */
   protected function getAddressPropertyValueFromFormState(FormStateInterface $form_state, String $property_name): String {
     if (($store = $form_state->getValue('store'))
