@@ -124,8 +124,7 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
         $supported_currency_controller = new SupportedCurrencyController($organization_id, $client);
         $this->supportedCurrencies = $supported_currency_controller->getEntities();
       }
-    }
-    catch (\Exception $exception) {
+    } catch (\Exception $exception) {
       watchdog_exception('apigee_kickstart', $exception);
     }
   }
@@ -369,8 +368,11 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
   public function validateForm(array &$form, FormStateInterface $form_state) {
     parent::validateForm($form, $form_state);
 
-    // Validate the state.
-    if (!$this->getStateCode($form_state)) {
+    // Validate the state for given country..
+    if (($state = $this->getAddressPropertyValueFromFormState($form_state, FieldHelper::getPropertyName(AddressField::ADMINISTRATIVE_AREA)))
+      && ($country_code = $this->getAddressPropertyValueFromFormState($form_state, 'country_code'))
+      && !$this->validateStateCode($state, $country_code)
+    ) {
       $form_state->setErrorByName('address][' . FieldHelper::getPropertyName(AddressField::ADMINISTRATIVE_AREA), $this->t('Please enter a valid administrative area.'));
     }
   }
@@ -394,7 +396,8 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
       }
 
       // Convert state to state code.
-      $values['store']['address'][FieldHelper::getPropertyName(AddressField::ADMINISTRATIVE_AREA)] = $this->getStateCode($form_state);
+      $property_name = FieldHelper::getPropertyName(AddressField::ADMINISTRATIVE_AREA);
+      $values['store']['address'][$property_name] = $this->getAddressPropertyValueFromFormState($form_state, $property_name);
 
       // Save to install state.
       $buildInfo = $form_state->getBuildInfo();
@@ -404,24 +407,42 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
   }
 
   /**
-   * Helper to get the state code from form state.
+   * Helper to get the value of an address property from form state.
    *
    * @param \Drupal\Core\Form\FormStateInterface $form_state
    *   The form state.
+   * @param String $property_name
+   *   The property name.
    *
-   * @return string
-   *   The state code. eg. CA.
+   * @return mixed
+   *   The value of the given property.
    */
-  protected function getStateCode(FormStateInterface $form_state): String {
+  protected function getAddressPropertyValueFromFormState(FormStateInterface $form_state, String $property_name): String {
     if (($store = $form_state->getValue('store'))
       && ($address = $store['address'])
-      && ($property_name = FieldHelper::getPropertyName(AddressField::ADMINISTRATIVE_AREA))
       && isset($address[$property_name])
-      && ($state = $address[$property_name])
-      && ($subdivisions = $this->subdivisionRepository->getList([$address['country_code']]))
-      && (isset($subdivisions[strtoupper($state)]) || ($state = array_search($state, $subdivisions)))
+      && ($value = $address[$property_name])
     ) {
-      return $state;
+      return $value;
+    }
+
+    return FALSE;
+  }
+
+  /**
+   * Validates a state for the given country.
+   *
+   * @param $state
+   *   The state code or name. eg. CA or California.
+   * @param $country_code
+   *   The country code. eg. US.
+   *
+   * @return bool
+   *   TRUE if valid state for given country. Otherwise FALSE.
+   */
+  protected function validateStateCode($state, $country_code) {
+    if ($subdivisions = $this->subdivisionRepository->getList([$country_code])) {
+      return isset($subdivisions[strtoupper($state)]) || ($state = array_search($state, $subdivisions));
     }
 
     return FALSE;
