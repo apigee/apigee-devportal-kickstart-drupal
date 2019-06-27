@@ -1,0 +1,26 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a Apigee Package entity.
+ *
+ * This template uses Apigee Edge's default entity template, which can be found
+ * at apigee_edge/templates/apigee-entity.html.twig.
+ *
+ * Additional variables:
+ * - name: Name of the API product.
+ * - organization: The organizaiton the product belongs to.
+ * - apiProducts: A list of included product entities.
+ * - status: Status indicator for the API product. Valid values include:
+ *   CREATED, ACTIVE, INACTIVE.
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% extends 'apigee-entity.html.twig' %}
+
+{% block content %}
+  <div class="container py-5">
+    {{ parent() }}
+  </div>
+{% endblock %}
