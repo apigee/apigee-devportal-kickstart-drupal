@@ -9,7 +9,7 @@
     {% for item in items %}
       {% set title = item.content['#title'] %}
       <li{{ item.attributes.addClass('nav-item') }}>
-        <a href="{{ item.content['#url'] }}" class="nav-link {{ title == 'Current rate plan' ? 'active' }}">{{ title }}</a>
+        {{ link(item.content['#title'], item.content['#url'], { 'class':['nav-link']}) }}
       </li>
     {% endfor %}
   </ul>
