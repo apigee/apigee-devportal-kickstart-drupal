@@ -22,6 +22,7 @@ namespace Drupal\apigee_devportal_kickstart\Installer;
 
 use Drupal\apigee_m10n_add_credit\AddCreditConfig;
 use Drupal\commerce_price\Price;
+use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
 
 /**
  * Defines a service for performing additional tasks in batch.
@@ -52,12 +53,17 @@ class ApigeeDevportalKickstartTasksManager implements ApigeeDevportalKickstartTa
    * {@inheritdoc}
    */
   public static function importCurrencies(array $currencies, array &$context) {
-    foreach ($currencies as $currency) {
-      // Import the currency.
-      \Drupal::service('commerce_price.currency_importer')->import($currency->getName());
-    }
+    try {
+      foreach ($currencies as $currency) {
+        // Import the currency.
+        \Drupal::service('commerce_price.currency_importer')->import($currency->getName());
+      }
 
-    $context['message'] = t('Imported supported currencies.');
+      $context['message'] = t('Imported supported currencies.');
+    }
+     catch (ServiceNotFoundException $exception) {
+       watchdog_exception('apigee_kickstart', $exception);
+     }
   }
 
   /**
