@@ -147,14 +147,23 @@
       <a href="{{ url }}">{{ label }}</a>
     </h2>
 
-    {{ content|without('packageProducts', 'purchase') }}
+    {{ content|without('packageProducts') }}
 
     {% if content.packageProducts|render %}
       <hr class="my-4">
       {{ content.packageProducts }}
     {% endif %}
 
-    {{ content.purchase }}
+    {% include '@apigee-kickstart/button/button-link.twig' with {
+      'type': 'primary',
+      'text': 'VIEW DETAILS'|t,
+      'url': url,
+      'block': true,
+      'classes': [
+        'mt-5',
+      ],
+    } only %}
+
   {% endset %}
 
   {% include '@apigee-kickstart/card/card.twig' with {
