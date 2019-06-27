@@ -4,7 +4,8 @@
  * Template for a button link component.
  *
  * Available config:
- * - type: primary | secondary | success | danger | warning | info | light | dark
+ * - type: primary | secondary | success | danger | warning | info | light | dark | link
+ * - block: true | false
  * - outline: true | false
  * - size: xs | md | sm | lg
  * - text: string
@@ -18,6 +19,7 @@
 {% set classes = [
   'btn',
   type ? (outline ? 'btn-outline-' : 'btn-') ~ type,
+  block ? 'btn-block',
   size ? 'btn-' ~ size,
 ]|merge(classes|default([])) %}
 

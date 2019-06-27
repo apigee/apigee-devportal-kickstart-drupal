@@ -4,7 +4,8 @@
  * Template for a button component.
  *
  * Available config:
- * - type: primary | secondary | success | danger | warning | info | light | dark
+ * - type: primary | secondary | success | danger | warning | info | light | dark | link
+ * - block: true | false
  * - outline: true | false
  * - tag: button, input
  * - size: xs | md | sm | lg
@@ -12,11 +13,13 @@
  * - attributes: Attributes array.
  */
 #}
-{% set css_classes = [
+{% set classes = [
   'btn',
   type ? (outline ? 'btn-outline-' : 'btn-') ~ type,
+  block ? 'btn-block',
   size ? 'btn-' ~ size,
-] %}
+]|merge(classes|default([])) %}
+
 {% if tag == 'input' %}
   <input{{ attributes.addClass(css_classes) }} />
 {% else %}
