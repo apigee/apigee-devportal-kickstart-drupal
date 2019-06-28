@@ -1,0 +1,50 @@
+{#
+/**
+ * @file
+ * Template for conflicting/overlapping products message.
+ *
+ * This template will appear when you try to purchase a rate plan that has
+ * conflicting products, on the "purchase" page, e.g.
+ * /user/UID/monetization/package/PACKAGE-NAME/plan/RATE-PLAN/purchase
+ *
+ */
+#}
+{% if items %}
+
+  <div class="conflicting-products-message">
+    <h1>{{ 'Conflicting Products'|t }}</h1>
+    <p>{{ 'The plans below share some common products with the plan you are
+      trying to purchase. However if you continue to purchase then these plans
+      will be replaced by the plan you are about to purchase.'|t }}
+    </p>
+
+    <div class="bg-white p5">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">{{ 'Already Purchased Plan'|t }}</th>
+            <th scope="col">{{ 'Has Product'|t }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in items %}
+            <tr>
+              <td>{{ item.data }}</td>
+              <td>
+                {%- for situation_item in item.children -%}
+                  <strong>{{ situation_item.data }}</strong>
+                  <ul class="pl-3">
+                    {% for situation_children in situation_item.children %}
+                      <li>{{ situation_children }}</li>
+                    {%- endfor -%}
+                  </ul>
+                {% endfor %}
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+{% endif %}
