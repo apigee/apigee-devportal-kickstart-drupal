@@ -12338,7 +12338,7 @@ fieldset.closed legend button {
   font-size: 0.875rem;
   flex-shrink: 0;
 }
-.navbar a, .navbar .nav-link {
+.navbar .nav-link {
   color: var(--ak-header-color);
 }
 @media (max-width: 991.98px) {
