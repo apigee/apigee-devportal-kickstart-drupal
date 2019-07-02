@@ -13006,6 +13006,16 @@ ul.social-links li a {
   align-items: stretch;
 }
 
+label {
+  vertical-align: middle;
+}
+
+.form-required__indicator {
+  display: inline-block;
+  font-size: 0.5rem;
+  vertical-align: text-top;
+}
+
 .contact-message-form .form-item-copy {
   margin-top: 1.5rem;
 }
