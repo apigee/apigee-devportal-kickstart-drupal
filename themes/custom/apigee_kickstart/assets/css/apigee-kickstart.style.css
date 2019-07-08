@@ -13189,6 +13189,10 @@ form.previous-balances-reports-download-form .form-actions .btn {
   border-bottom: 1px dotted #f0f0f0;
 }
 
+.purchased-plan-form .form-actions [data-drupal-selector=edit-cancel] {
+  margin-left: 1rem;
+}
+
 .team-switcher {
   max-width: 540px;
 }
