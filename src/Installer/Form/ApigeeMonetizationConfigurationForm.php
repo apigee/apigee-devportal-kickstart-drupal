@@ -315,7 +315,7 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
       }
     }
 
-    if (count($this->supportedCurrencies)) {
+    if (!empty($this->supportedCurrencies)) {
       $form['currencies'] = [
         '#type' => 'details',
         '#title' => $this->t('Currencies'),
