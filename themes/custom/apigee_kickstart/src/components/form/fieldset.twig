@@ -11,7 +11,6 @@
   'js-form-wrapper',
   'form-wrapper',
   'card',
-  'border-0',
   'mb-3',
 ]
 %}
@@ -25,11 +24,11 @@
   ]
   %}
   {#  Always wrap fieldset legends in a SPAN for CSS positioning. #}
-  <div class="card-header bg-white border-0 pt-4 pb-3">
+  <div class="card-header bg-white">
     <legend{{ legend.attributes.addClass('m-0') }}>
-      <h4{{ legend_span.attributes.addClass(legend_span_classes) }}>
+      <span{{ legend_span.attributes.addClass(legend_span_classes) }}>
         {{ legend.title }}
-      </h4>
+      </span>
 
       <button class="btn-link">
         <i class="fas fa-chevron-down d-md-none"></i>

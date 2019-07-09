@@ -12287,6 +12287,11 @@ fieldset legend h4 {
   line-height: 1;
   font-weight: 500;
 }
+fieldset legend span {
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+}
 fieldset legend button {
   font-size: 1.2rem;
   color: #2196f3;
@@ -13366,12 +13371,6 @@ form.commerce-checkout-flow .layout-region-checkout-footer {
 form.commerce-checkout-flow .checkout-pane {
   padding: 0;
 }
-form.commerce-checkout-flow .checkout-pane .card-header {
-  padding: 0 !important;
-}
-form.commerce-checkout-flow .checkout-pane .card-body {
-  padding: 0 !important;
-}
 form.commerce-checkout-flow .checkout-pane .card-body p {
   font-size: 1rem;
 }
@@ -13385,6 +13384,9 @@ form.commerce-checkout-flow .address-container-inline > .form-item {
   flex: 1 1 0;
   margin: 0;
   padding: 0 2%;
+}
+form.commerce-checkout-flow .credit-card-form__expiration {
+  margin-bottom: 1rem;
 }
 form.commerce-checkout-flow .form-select,
 form.commerce-checkout-flow .form-control {
@@ -13447,31 +13449,40 @@ form.commerce-checkout-flow .form-actions a:hover {
   color: var(--ak-accent-color-dark);
 }
 
-.commerce-checkout-flow--order-information .checkout-pane .card-header h4 {
+.commerce-checkout-flow--order-information .checkout-pane {
+  border: 0;
+}
+.commerce-checkout-flow--order-information .checkout-pane > .card-header {
+  padding: 0 !important;
+  border: 0;
+}
+.commerce-checkout-flow--order-information .checkout-pane > .card-header span {
   font-size: 1.5rem;
   line-height: 28px;
   font-weight: 400;
-  margin-bottom: 1rem !important;
 }
-.commerce-checkout-flow--order-information .checkout-pane .card-body {
-  padding: 0 !important;
+.commerce-checkout-flow--order-information .checkout-pane > .card-body {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 .commerce-checkout-flow--review .checkout-pane h3 {
   margin-bottom: 1rem !important;
 }
 .commerce-checkout-flow--review .checkout-pane .card-header {
-  background: none !important;
-  padding: 0 !important;
+  background-color: #f9f9f9 !important;
+  border: 0 !important;
 }
-.commerce-checkout-flow--review .checkout-pane .card-header h4 {
+.commerce-checkout-flow--review .checkout-pane .card-header span {
   font-size: 1rem;
-  margin-bottom: 0.5rem !important;
+}
+.commerce-checkout-flow--review .checkout-pane .card-body {
+  padding-top: 0 !important;
 }
 .commerce-checkout-flow--review fieldset {
   background-color: #f9f9f9;
   border-radius: 4px;
-  padding: 1rem;
 }
 
 .commerce-checkout-flow--complete .checkout-complete {

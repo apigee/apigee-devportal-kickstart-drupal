@@ -18,12 +18,7 @@ form.commerce-checkout-flow {
   .checkout-pane {
     padding: 0;
 
-    .card-header {
-      padding: 0 !important;
-    }
-
     .card-body {
-      padding: 0 !important;
 
       p {
         font-size: 1rem;
@@ -42,6 +37,10 @@ form.commerce-checkout-flow {
       margin: 0;
       padding: 0 2%;
     }
+  }
+
+  .credit-card-form__expiration {
+    margin-bottom: 1rem;
   }
 
   .form-select,
@@ -128,19 +127,23 @@ form.commerce-checkout-flow {
 .commerce-checkout-flow--order-information {
 
   .checkout-pane {
+    border: 0;
 
-    .card-header {
+    > .card-header {
+      padding: 0 !important;
+      border: 0;
 
-      h4 {
+      span {
         font-size: 1.5rem;
         line-height: 28px;
         font-weight: 400;
-        margin-bottom: 1rem !important;
       }
     }
 
-    .card-body {
-      padding: 0 !important;
+    > .card-body {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      padding-bottom: 0 !important;
     }
   }
 }
@@ -156,20 +159,22 @@ form.commerce-checkout-flow {
     }
 
     .card-header {
-      background: none !important;
-      padding: 0 !important;
+      background-color: $lighter !important;
+      border: 0 !important;
 
-      h4 {
+      span {
         font-size: 1rem;
-        margin-bottom: .5rem !important;
       }
+    }
+
+    .card-body {
+      padding-top: 0 !important;
     }
   }
 
   fieldset {
     background-color: $lighter;
     border-radius: 4px;
-    padding: 1rem;
   }
 }
 
