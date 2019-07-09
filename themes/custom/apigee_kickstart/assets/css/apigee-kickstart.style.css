@@ -12240,6 +12240,7 @@ form > .form-actions:last-child {
   margin-bottom: 1.5rem;
 }
 
+.form-radios .form-item + .form-item,
 .form-checkboxes .form-item + .form-item {
   margin-top: 0.5rem;
 }
@@ -12253,7 +12254,9 @@ form > .form-actions:last-child {
 .form-check svg {
   font-size: 1.3rem;
   position: absolute;
+  top: 2px;
 }
+.form-check .fa-dot-circle,
 .form-check .fa-check-square {
   color: var(--ak-accent-color);
 }
