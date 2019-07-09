@@ -1,5 +1,6 @@
 // Style for checkboxes
 // -----------------------------------------------------------------------------
+.form-radios,
 .form-checkboxes {
 
   .form-item {
@@ -20,8 +21,10 @@
   svg {
     font-size: 1.3rem;
     position: absolute;
+    top: 2px;
   }
 
+  .fa-dot-circle,
   .fa-check-square {
     color: var(--ak-accent-color);
   }
