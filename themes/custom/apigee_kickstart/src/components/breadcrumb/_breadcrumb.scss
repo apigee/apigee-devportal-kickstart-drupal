@@ -6,6 +6,7 @@
 .breadcrumb-item {
   padding-bottom: $breadcrumb-padding-y;
   padding-top: $breadcrumb-padding-y;
+  display: flex;
 
   &.active {
     color: var(--ak-accent-color-light);
@@ -18,5 +19,13 @@
   a {
     font-size: 0.875rem;
     letter-spacing: 1px;
+  }
+
+  .field {
+    display: flex;
+
+    .field__label {
+      margin-right: 1ch;
+    }
   }
 }
