@@ -18,7 +18,6 @@ const mix = require('laravel-mix');
 mix
   .setPublicPath('assets')
   .disableNotifications()
-  .sourceMaps()
   .options({
     processCssUrls: false
   });
@@ -46,4 +45,6 @@ mix.sass('src/sass/apigee-kickstart.style.scss', 'css');
  | JS
  |--------------------------------------------------------------------------
  */
-mix.js('src/js/apigee-kickstart.script.js', 'js');
+mix
+  .js('src/js/apigee-kickstart.script.js', 'js')
+  .js('node_modules/popper.js/dist/popper.js', 'js').sourceMaps();
