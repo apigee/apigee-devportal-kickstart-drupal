@@ -13099,6 +13099,7 @@ form.previous-balances-reports-download-form .form-actions .btn {
 .rate-plan--view-mode-teaser .card-title a {
   color: currentColor;
 }
+.rate-plan--view-mode-teaser .btn,
 .rate-plan--view-mode-teaser .btn--subscribe {
   align-self: flex-end;
 }
