@@ -4,8 +4,17 @@
   th {
     border-top: 0;
   }
+
   thead th {
     border-bottom-width: 1px;
     border-bottom-color: $gray-400;
+  }
+
+  td {
+
+    .nav-link {
+      padding: 0;
+      margin-right: .5rem;
+    }
   }
 }
