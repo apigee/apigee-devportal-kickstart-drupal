@@ -12207,6 +12207,16 @@ li.dropbutton-toggle {
   color: #787878;
 }
 
+label {
+  vertical-align: middle;
+}
+
+.form-required__indicator {
+  display: inline-block;
+  font-size: 0.5rem;
+  vertical-align: text-top;
+}
+
 fieldset summary,
 details summary {
   font-size: 0.875rem;
@@ -12263,7 +12273,7 @@ form > .form-actions:last-child {
   padding: 0;
   position: relative;
 }
-.form-check svg {
+.form-check > svg {
   font-size: 1.3rem;
   position: absolute;
   top: 2px;
@@ -13268,16 +13278,6 @@ form.previous-balances-reports-download-form .form-actions .btn {
 
 .block--searchform {
   align-items: stretch;
-}
-
-label {
-  vertical-align: middle;
-}
-
-.form-required__indicator {
-  display: inline-block;
-  font-size: 0.5rem;
-  vertical-align: text-top;
 }
 
 .contact-message-form .form-item-copy {
