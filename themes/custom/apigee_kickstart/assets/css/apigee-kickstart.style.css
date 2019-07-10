@@ -11762,6 +11762,7 @@ main {
 .breadcrumb-item {
   padding-bottom: 0.375rem;
   padding-top: 0.375rem;
+  display: flex;
 }
 .breadcrumb-item.active {
   color: var(--ak-accent-color-light);
@@ -11772,6 +11773,12 @@ main {
 .breadcrumb-item a {
   font-size: 0.875rem;
   letter-spacing: 1px;
+}
+.breadcrumb-item .field {
+  display: flex;
+}
+.breadcrumb-item .field .field__label {
+  margin-right: 1ch;
 }
 
 .btn {
@@ -12233,6 +12240,10 @@ details .form-select {
   background-color: #f0f0f0;
 }
 
+.custom-select {
+  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0.75rem center/8px 10px;
+}
+
 .form-actions {
   margin-top: 1.5rem;
 }
@@ -12240,6 +12251,7 @@ form > .form-actions:last-child {
   margin-bottom: 1.5rem;
 }
 
+.form-radios .form-item + .form-item,
 .form-checkboxes .form-item + .form-item {
   margin-top: 0.5rem;
 }
@@ -12253,7 +12265,9 @@ form > .form-actions:last-child {
 .form-check svg {
   font-size: 1.3rem;
   position: absolute;
+  top: 2px;
 }
+.form-check .fa-dot-circle,
 .form-check .fa-check-square {
   color: var(--ak-accent-color);
 }
@@ -13104,6 +13118,7 @@ form.previous-balances-reports-download-form .form-actions .btn {
 .rate-plan--view-mode-teaser .card-title a {
   color: currentColor;
 }
+.rate-plan--view-mode-teaser .btn,
 .rate-plan--view-mode-teaser .btn--subscribe {
   align-self: flex-end;
 }
