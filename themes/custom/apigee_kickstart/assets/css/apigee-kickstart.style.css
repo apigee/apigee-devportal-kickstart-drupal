@@ -12390,7 +12390,7 @@ fieldset > .fieldset-wrapper p:last-child {
   font-size: 0.875rem;
   flex-shrink: 0;
 }
-.navbar a, .navbar .nav-link {
+.navbar .nav-link {
   color: var(--ak-header-color);
 }
 @media (max-width: 991.98px) {
@@ -13268,6 +13268,16 @@ form.previous-balances-reports-download-form .form-actions .btn {
 
 .block--searchform {
   align-items: stretch;
+}
+
+label {
+  vertical-align: middle;
+}
+
+.form-required__indicator {
+  display: inline-block;
+  font-size: 0.5rem;
+  vertical-align: text-top;
 }
 
 .contact-message-form .form-item-copy {
