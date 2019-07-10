@@ -12834,6 +12834,10 @@ ul.social-links li a {
   border-bottom-width: 1px;
   border-bottom-color: #c8c8c8;
 }
+.table td .nav-link {
+  padding: 0;
+  margin-right: 0.5rem;
+}
 
 .title-bar p:only-child {
   margin: 0;
