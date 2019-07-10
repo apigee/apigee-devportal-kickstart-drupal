@@ -11,19 +11,33 @@ form.commerce-checkout-flow {
     }
   }
 
+  .layout-region-checkout-main {
+
+    > fieldset {
+      border: 0 !important;
+
+      > legend,
+      > .fieldset-wrapper {
+        padding: 0 !important;
+        border: 0 !important;
+      }
+
+      > legend {
+        margin-bottom: 1rem !important;
+
+        .fieldset-legend {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
   .layout-region-checkout-footer {
     clear: left;
   }
 
   .checkout-pane {
     padding: 0;
-
-    .card-body {
-
-      p {
-        font-size: 1rem;
-      }
-    }
   }
 
   .address-container-inline {
@@ -53,7 +67,6 @@ form.commerce-checkout-flow {
     background-color: $lighter !important;
     padding: 1.5rem;
     border-radius: 4px;
-    margin-top: 3rem;
 
     h3 {
       font-size: 1rem;
@@ -128,23 +141,6 @@ form.commerce-checkout-flow {
 
   .checkout-pane {
     border: 0;
-
-    > .card-header {
-      padding: 0 !important;
-      border: 0;
-
-      span {
-        font-size: 1.5rem;
-        line-height: 28px;
-        font-weight: 400;
-      }
-    }
-
-    > .card-body {
-      padding-left: 0 !important;
-      padding-right: 0 !important;
-      padding-bottom: 0 !important;
-    }
   }
 }
 
@@ -157,24 +153,6 @@ form.commerce-checkout-flow {
     h3 {
       margin-bottom: 1rem !important;
     }
-
-    .card-header {
-      background-color: $lighter !important;
-      border: 0 !important;
-
-      span {
-        font-size: 1rem;
-      }
-    }
-
-    .card-body {
-      padding-top: 0 !important;
-    }
-  }
-
-  fieldset {
-    background-color: $lighter;
-    border-radius: 4px;
   }
 }
 
