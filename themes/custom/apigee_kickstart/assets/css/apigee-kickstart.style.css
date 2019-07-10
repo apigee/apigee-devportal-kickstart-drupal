@@ -12273,7 +12273,7 @@ form > .form-actions:last-child {
   padding: 0;
   position: relative;
 }
-.form-check svg {
+.form-check > svg {
   font-size: 1.3rem;
   position: absolute;
   top: 2px;
