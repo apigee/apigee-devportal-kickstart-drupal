@@ -21,7 +21,7 @@
 ]|merge(classes|default([])) %}
 
 {% if tag == 'input' %}
-  <input{{ attributes.addClass(css_classes) }} />
+  <input{{ attributes.addClass(classes) }} />
 {% else %}
-  <{{ tag }}{{ attributes}}>{{ value }}</{{ tag }}>
+  <{{ tag }}{{ attributes.addClass(classes) }}>{{ value }}</{{ tag }}>
 {% endif %}
