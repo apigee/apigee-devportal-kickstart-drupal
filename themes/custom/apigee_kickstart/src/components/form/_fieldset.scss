@@ -14,6 +14,12 @@ fieldset {
       font-weight: 500;
     }
 
+    span {
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.1px;
+    }
+
     button {
       font-size: 1.2rem;
       color: $primary;
@@ -30,6 +36,14 @@ fieldset {
       button {
         transform: rotate(180deg);
       }
+    }
+  }
+
+  > .fieldset-wrapper {
+    clear: both;
+
+    p:last-child {
+      margin-bottom: 0;
     }
   }
 }

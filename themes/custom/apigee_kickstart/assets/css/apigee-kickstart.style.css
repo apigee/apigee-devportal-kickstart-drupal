@@ -12301,6 +12301,11 @@ fieldset legend h4 {
   line-height: 1;
   font-weight: 500;
 }
+fieldset legend span {
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+}
 fieldset legend button {
   font-size: 1.2rem;
   color: #2196f3;
@@ -12311,6 +12316,12 @@ fieldset legend button {
 fieldset.closed legend button {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
+}
+fieldset > .fieldset-wrapper {
+  clear: both;
+}
+fieldset > .fieldset-wrapper p:last-child {
+  margin-bottom: 0;
 }
 
 .filter-wrapper {
@@ -13375,20 +13386,25 @@ form.commerce-checkout-flow .layout-region-checkout-footer {
     width: 50%;
   }
 }
+form.commerce-checkout-flow .layout-region-checkout-main > fieldset {
+  border: 0 !important;
+}
+form.commerce-checkout-flow .layout-region-checkout-main > fieldset > legend,
+form.commerce-checkout-flow .layout-region-checkout-main > fieldset > .fieldset-wrapper {
+  padding: 0 !important;
+  border: 0 !important;
+}
+form.commerce-checkout-flow .layout-region-checkout-main > fieldset > legend {
+  margin-bottom: 1rem !important;
+}
+form.commerce-checkout-flow .layout-region-checkout-main > fieldset > legend .fieldset-legend {
+  font-size: 1.5rem;
+}
 form.commerce-checkout-flow .layout-region-checkout-footer {
   clear: left;
 }
 form.commerce-checkout-flow .checkout-pane {
   padding: 0;
-}
-form.commerce-checkout-flow .checkout-pane .card-header {
-  padding: 0 !important;
-}
-form.commerce-checkout-flow .checkout-pane .card-body {
-  padding: 0 !important;
-}
-form.commerce-checkout-flow .checkout-pane .card-body p {
-  font-size: 1rem;
 }
 form.commerce-checkout-flow .address-container-inline {
   display: flex;
@@ -13401,6 +13417,9 @@ form.commerce-checkout-flow .address-container-inline > .form-item {
   margin: 0;
   padding: 0 2%;
 }
+form.commerce-checkout-flow .credit-card-form__expiration {
+  margin-bottom: 1rem;
+}
 form.commerce-checkout-flow .form-select,
 form.commerce-checkout-flow .form-control {
   background-color: #f9f9f9;
@@ -13410,7 +13429,6 @@ form.commerce-checkout-flow .layout-region-checkout-secondary {
   background-color: #f9f9f9 !important;
   padding: 1.5rem;
   border-radius: 4px;
-  margin-top: 3rem;
 }
 form.commerce-checkout-flow .layout-region-checkout-secondary h3 {
   font-size: 1rem;
@@ -13462,31 +13480,12 @@ form.commerce-checkout-flow .form-actions a:hover {
   color: var(--ak-accent-color-dark);
 }
 
-.commerce-checkout-flow--order-information .checkout-pane .card-header h4 {
-  font-size: 1.5rem;
-  line-height: 28px;
-  font-weight: 400;
-  margin-bottom: 1rem !important;
-}
-.commerce-checkout-flow--order-information .checkout-pane .card-body {
-  padding: 0 !important;
+.commerce-checkout-flow--order-information .checkout-pane {
+  border: 0;
 }
 
 .commerce-checkout-flow--review .checkout-pane h3 {
   margin-bottom: 1rem !important;
-}
-.commerce-checkout-flow--review .checkout-pane .card-header {
-  background: none !important;
-  padding: 0 !important;
-}
-.commerce-checkout-flow--review .checkout-pane .card-header h4 {
-  font-size: 1rem;
-  margin-bottom: 0.5rem !important;
-}
-.commerce-checkout-flow--review fieldset {
-  background-color: #f9f9f9;
-  border-radius: 4px;
-  padding: 1rem;
 }
 
 .commerce-checkout-flow--complete .checkout-complete {
