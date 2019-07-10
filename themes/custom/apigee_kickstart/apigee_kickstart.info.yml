@@ -33,6 +33,10 @@ libraries-override:
   apigee_m10n/rate_plan.future_links_field: false
   apigee_m10n/rate_plan.details_field: false
 
+libraries-extend:
+  commerce_authnet/form-authnet:
+    - apigee_kickstart/commerce_authnet
+
 ckeditor_stylesheets:
   - assets/css/apigee-kickstart.style.css
 
