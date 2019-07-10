@@ -12258,6 +12258,7 @@ form > .form-actions:last-child {
 
 .form-check {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
   padding: 0;
   position: relative;
@@ -12288,6 +12289,9 @@ form > .form-actions:last-child {
   z-index: 10;
   position: relative;
   cursor: pointer;
+}
+.form-check .description {
+  width: 100%;
 }
 
 fieldset legend {
@@ -13193,6 +13197,12 @@ form.previous-balances-reports-download-form .form-actions .btn {
 }
 .rate-plan--view-mode-full .rate_plan__detail-card .field + .field {
   margin-top: 0;
+}
+.rate-plan--view-mode-full form > .form-wrapper {
+  margin-bottom: 1rem;
+}
+.rate-plan--view-mode-full form > .form-wrapper:last-child {
+  margin-bottom: 0;
 }
 .rate-plan--view-mode-full form .field--name-startdate {
   font-size: 0.875rem;

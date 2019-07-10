@@ -126,6 +126,14 @@
 
   form {
 
+    > .form-wrapper {
+      margin-bottom: 1rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
     .field--name-startdate {
       font-size: 0.875rem;
 
