@@ -48,4 +48,5 @@ mix.sass('src/sass/apigee-kickstart.style.scss', 'css');
 mix
   .js('src/js/apigee-kickstart.script.js', 'js')
   .js('src/js/apigee-kickstart.commerce-authnet.js', 'js').sourceMaps()
+  .js('src/js/apigee-kickstart.commerce-stripe.js', 'js').sourceMaps()
   .js('node_modules/popper.js/dist/popper.js', 'js').sourceMaps();

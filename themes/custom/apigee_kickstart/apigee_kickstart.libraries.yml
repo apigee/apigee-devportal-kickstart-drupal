@@ -22,3 +22,7 @@ font.roboto:
 commerce_authnet:
   js:
     assets/js/apigee-kickstart.commerce-authnet.js: {}
+
+commerce_stripe:
+  js:
+    assets/js/apigee-kickstart.commerce-stripe.js: {}

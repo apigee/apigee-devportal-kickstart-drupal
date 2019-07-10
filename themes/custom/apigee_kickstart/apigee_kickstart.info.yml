@@ -36,6 +36,8 @@ libraries-override:
 libraries-extend:
   commerce_authnet/form-authnet:
     - apigee_kickstart/commerce_authnet
+  commerce_stripe/form:
+    - apigee_kickstart/commerce_stripe
 
 ckeditor_stylesheets:
   - assets/css/apigee-kickstart.style.css
