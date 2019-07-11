@@ -37,12 +37,7 @@ use Drupal\Core\Messenger\MessengerInterface;
  */
 function apigee_devportal_kickstart_install_tasks(&$install_state) {
   $tasks = [
-    DemoInstallForm::class => [
-      'display_name' => t('Install demo content'),
-      'type' => 'form',
-    ],
     'apigee_devportal_kickstart_theme_setup' => [
-      'display_name' => t('Install theme'),
       'display' => FALSE,
     ],
   ];
@@ -178,6 +173,16 @@ function apigee_devportal_kickstart_theme_setup(array &$install_state) {
     ->getEditable('node.settings')
     ->set('use_admin_theme', TRUE)
     ->save(TRUE);
+
+  // Install demo content.
+  \Drupal::service('module_installer')
+    ->install(['apigee_kickstart_content']);
+
+  // Set the front page to node 1.
+  \Drupal::configFactory()
+    ->getEditable('system.site')
+    ->set('page.front', '/node/1')
+    ->save();
 }
 
 /**
