@@ -34,3 +34,19 @@ function apigee_kickstart_content_install() {
     }
   }
 }
+
+/**
+ * Implements hook_uninstall().
+ */
+function apigee_kickstart_content_uninstall() {
+  $entity_type_manager = Drupal::entityTypeManager();
+
+  /** @var \Drupal\Core\Extension\Extension $module */
+  $module = Drupal::service('extension.list.module')->get('apigee_kickstart_content');
+  // Delete imported entities.
+  foreach ($module->info['default_content'] as $entity_type_id => $entity_ids) {
+    if (!empty($entity_ids) && ($entities = $entity_type_manager->getStorage($entity_type_id)->loadByProperties(['uuid' => $entity_ids]))) {
+      $entity_type_manager->getStorage($entity_type_id)->delete($entities);
+    }
+  }
+}
