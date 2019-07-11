@@ -3,6 +3,9 @@ status: true
 dependencies:
   content:
     - 'block_content:cta:003ef719-eca7-4ad1-83a3-dc9b403a49b3'
+  enforced:
+    module:
+      - apigee_kickstart_content
   module:
     - block_content
     - node

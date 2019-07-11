@@ -3,6 +3,9 @@ status: true
 dependencies:
   content:
     - 'block_content:title_bar:c9d29264-1428-4f25-ba78-736d7748459e'
+  enforced:
+    module:
+      - apigee_kickstart_content
   module:
     - block_content
     - system

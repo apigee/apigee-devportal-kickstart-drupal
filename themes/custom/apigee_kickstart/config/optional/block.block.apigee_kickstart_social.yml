@@ -3,6 +3,9 @@ status: true
 dependencies:
   content:
     - 'block_content:basic:b0b4fd9e-4a0c-4c21-b1b4-77ed6586d40c'
+  enforced:
+    module:
+      - apigee_kickstart_content
   module:
     - block_content
   theme:
