@@ -13061,7 +13061,7 @@ ul.social-links li a {
   background: inherit;
 }
 
-.package--view-mode-full .field {
+.product-bundle--view-mode-full .field {
   margin-bottom: 1.5rem;
 }
 
@@ -13121,7 +13121,7 @@ form.previous-balances-reports-download-form .form-actions .btn {
 .rate-plan--view-mode-teaser {
   border: 0;
 }
-.main--pricing-and-plans .rate-plan--view-mode-teaser {
+.main--pricing-plans .rate-plan--view-mode-teaser {
   width: 100%;
 }
 .rate-plan--view-mode-teaser .card-body {
@@ -13155,11 +13155,11 @@ form.previous-balances-reports-download-form .form-actions .btn {
   line-height: 1;
 }
 
-.rate-plan__packageproducts .field__items {
+.rate-plan__products .field__items {
   display: flex;
   flex-flow: row wrap;
 }
-.rate-plan__packageproducts .field__item:not(:last-child)::after {
+.rate-plan__products .field__item:not(:last-child)::after {
   content: ",";
   margin-right: 1ch;
 }

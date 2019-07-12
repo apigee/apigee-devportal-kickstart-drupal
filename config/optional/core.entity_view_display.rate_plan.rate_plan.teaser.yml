@@ -18,6 +18,14 @@ content:
     settings:
       link: false
     third_party_settings: {  }
+  products:
+    type: entity_reference_label
+    weight: 0
+    region: content
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
 hidden:
   advance: true
   contractDuration: true
@@ -40,6 +48,7 @@ hidden:
   packageEntity: true
   paymentDueDays: true
   private: true
+  productBundle: true
   prorate: true
   published: true
   purchase: true
