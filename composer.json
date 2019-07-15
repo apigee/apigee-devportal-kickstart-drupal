@@ -20,7 +20,6 @@
     "sort-packages": true
   },
   "extra": {
-    "enable-patching": true,
     "patches": {
       "drupal/better_exposed_filters": {
         "Fix issue with #summary_details introduced in Drupal 8.6.x": "https://www.drupal.org/files/issues/2018-10-05/bef-summary-attributes-3001967-4.patch"
