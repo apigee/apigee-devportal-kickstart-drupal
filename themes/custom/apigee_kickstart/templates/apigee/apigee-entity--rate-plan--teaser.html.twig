@@ -147,11 +147,11 @@
       <a href="{{ url }}">{{ label }}</a>
     </h2>
 
-    {{ content|without('packageProducts') }}
+    {{ content|without('products') }}
 
-    {% if content.packageProducts|render %}
+    {% if content.products|render %}
       <hr class="my-4">
-      {{ content.packageProducts }}
+      {{ content.products }}
     {% endif %}
 
     {% include '@apigee-kickstart/button/button-link.twig' with {

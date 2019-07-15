@@ -4,7 +4,7 @@
 .rate-plan--view-mode-teaser {
   border: 0;
 
-  .main--pricing-and-plans & {
+  .main--pricing-plans & {
     width: 100%;
   }
 
@@ -49,7 +49,7 @@
 }
 
 // Product field.
-.rate-plan__packageproducts {
+.rate-plan__products {
   .field__items {
     display: flex;
     flex-flow: row wrap;
