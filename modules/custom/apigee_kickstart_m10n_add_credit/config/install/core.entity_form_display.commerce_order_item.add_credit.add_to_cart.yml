@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_order.commerce_order_item_type.add_credit
+    - core.entity_form_mode.commerce_order_item.add_to_cart
+  module:
+    - apigee_m10n_add_credit
+    - commerce_price
+    - commerce_product
+id: commerce_order_item.add_credit.add_to_cart
+targetEntityType: commerce_order_item
+bundle: add_credit
+mode: add_to_cart
+content:
+  add_credit_target:
+    type: add_credit_target_entity
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  purchased_entity:
+    type: commerce_product_variation_attributes
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  unit_price:
+    type: commerce_unit_price
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  quantity: true

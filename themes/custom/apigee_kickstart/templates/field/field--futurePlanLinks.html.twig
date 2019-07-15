@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * Template for future plan links field.
+ */
+#}
+<nav class="is-horizontal is-collapsible mb-3 position-container is-horizontal-enabled">
+  <ul class="tabs nav-tabs nav-tabs--primary clearfix">
+    {% for item in items %}
+      <li{{ item.attributes.addClass('nav-item') }}>
+        {{ link(item.content['#title'], item.content['#url'], {
+          'class': [
+            'nav-link',
+            path('<current>') == item.content['#url'].toString ? 'active',
+          ]
+        }) }}
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

@@ -45,4 +45,7 @@ mix.sass('src/sass/apigee-kickstart.style.scss', 'css');
  | JS
  |--------------------------------------------------------------------------
  */
-mix.js('src/js/apigee-kickstart.script.js', 'js');
+mix
+  .js('src/js/apigee-kickstart.script.js', 'js')
+  .js('src/js/apigee-kickstart.commerce-authnet.js', 'js')
+  .js('src/js/apigee-kickstart.commerce-stripe.js', 'js');

@@ -1,0 +1,173 @@
+// Rate Plan Teaser
+// -----------------------------------------------------------------------------
+
+.rate-plan--view-mode-teaser {
+  border: 0;
+
+  .main--pricing-and-plans & {
+    width: 100%;
+  }
+
+  .card-body {
+    padding: 1.5rem;
+    height: 100%;
+    display: flex;
+    flex-flow: row wrap;
+
+    > * {
+      flex: 1 0 100%;
+    }
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: 200;
+    letter-spacing: normal;
+    margin-bottom: 1rem;
+
+    a {
+      color: currentColor;
+    }
+  }
+
+  .btn,
+  .btn--subscribe {
+    align-self: flex-end;
+  }
+}
+
+// Rate plan field defaults.
+.rate-plan {
+  .field {
+    font-size: 0.75rem;
+  }
+
+  .field__label {
+    margin-bottom: 0.625rem;
+    line-height: 1;
+  }
+}
+
+// Product field.
+.rate-plan__packageproducts {
+  .field__items {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .field__item:not(:last-child)::after {
+    content: ',';
+    margin-right: 1ch;
+  }
+}
+
+// Rate Plan Full
+// -----------------------------------------------------------------------------
+.rate-plan--view-mode-full {
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .field {
+    font-size: 0.875rem;
+  }
+
+  .rate-plan__card {
+
+    .field {
+      font-size: 1rem;
+
+      + .field {
+        margin-top: .5rem;
+      }
+    }
+
+    .field--inline {
+      display: flex;
+      align-items: center;
+
+      .field__label {
+        margin: 0 .25rem 0 0;
+
+        &:after {
+          content: ":";
+          position: relative;
+        }
+      }
+    }
+  }
+
+  // @todo This is annoying. Some fields have whitespace after the label and
+  // some don't. Shouldn't have to use CSS for this.
+  .rate-plan__card--fees .field--inline .field__label::after {
+    left: -0.5ch;
+  }
+
+  .rate_plan__detail-card {
+    @include media-breakpoint-up(md) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .field {
+      margin: 0 0 1rem;
+
+      @include media-breakpoint-up(md) {
+        width: 50%;
+      }
+
+      + .field {
+        margin-top: 0;
+      }
+    }
+  }
+
+  form {
+
+    > .form-wrapper {
+      margin-bottom: 1rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .field--name-startdate {
+      font-size: 0.875rem;
+
+      h4 {
+        font-size: 1rem;
+      }
+
+      .form-item {
+        margin-bottom: .25rem;
+      }
+
+      .form-control {
+        background-color: $white;
+      }
+    }
+  }
+}
+
+.rate-plan-detail__table {
+  .table {
+    font-size: 1rem;
+  }
+  .table tbody th,
+  .table tbody td {
+    vertical-align: top;
+    padding: 1.25rem 0;
+  }
+  .table tbody tr:not(:last-child) {
+    border-bottom: 1px dotted theme-color('light');
+  }
+}
+
+ .purchased-plan-form {
+   .form-actions [data-drupal-selector='edit-cancel'] {
+      margin-left: 1rem;
+   }
+ }

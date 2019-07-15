@@ -18,3 +18,11 @@ font.roboto:
   css:
     base:
       https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700: { external: true }
+
+commerce_authnet:
+  js:
+    assets/js/apigee-kickstart.commerce-authnet.js: {}
+
+commerce_stripe:
+  js:
+    assets/js/apigee-kickstart.commerce-stripe.js: {}

@@ -1,0 +1,143 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a apigee rate plan detail.
+ *
+ * Variables:
+ * - detail                       The rate plan detail object.
+ *   - id:                          The unique ID for the rate plan detail.
+ *   - ratePlanRates:               All rate plan rate details, such as the type of rate plan (REVSHARE or RATECARD), the rate for a rate card plan, the revenue share for a revenue share plan, and the range (starting unit and ending unit for which the rate plan rate applies).
+ *     - id:                          The unique ID of the rate plan rate.
+ *     - startUnit:                   The number the rate starts at.
+ *     - endUnit:                     The rate is good until this number of units.
+ *     - rate:                        The rate that is applies within this range.
+ *     - revshare:                    The revenue share percentage.
+ *   - aggregateFreemiumCounters:   Flag that specifies whether or not aggregate counters are enabled to determine if usage of an API product is in the free range. Aggregate counters must be enabled to set up a freemium plan for a product.
+ *   - aggregateStandardCounters:   Flag that specifies whether or not aggregate counters are used to determine the band of usage (such as a volume band for a rate card plan).
+ *   - currency:                    The rate plan currency.
+ *   - customPaymentTerm:           Flag that specifies whether or not there is a custom payment term.
+ *   - duration:                    Period of time for the aggregation basis, together with durationType. For example, set duration to 30 and durationType to DAY to specify an aggregation basis of 30 days.
+ *   - durationType:                Period of time for the aggregation basis, together with durationType. Valid values include: DAY, WEEK, MONTH, QUARTER, or YEAR.
+ *   - freemiumDuration:            Period of time for the freemium period for an individual API product together with freemiumDurationType. For example, to specify that the freemium period is 30 days, set freemiumDuration to 30 and freemiumDurationType to DAY.
+ *   - freemiumDurationType:        Period of time for the freemium period for an individual API product together with freemiumDuration. Valid values include: DAY, WEEK, MONTH, QUARTER, or YEAR.
+ *   - freemiumUnit:                Freemium quantity for an API product. The value can be the number of transactions or the number of units pertaining to a custom attribute recorded in the transaction recording policy.
+ *   - meteringType:                Charging model for a rate card plan. Valid values include: UNIT (flat rate), VOLUME (volume-banded), STAIR_STEP (bundled), or DEV_SPECIFIC (adjustable notification revenue model only).
+ *   - organization:                The rate plan organization.
+ *   - paymentDueDays:              Payment due date for a postpaid developer. For example, set the value to 30 to indicate that payment is due in 30 days.
+ *   - ratingParameter:             Basis for the rate plan. The rate plan is based on transactions or on a custom attribute. Valid values include: VOLUME (based on volume of transactions) or MINT_CUSTOM_ATTRIBUTE_{num}. If you set it to MINT_CUSTOM_ATTRIBUTE_{num}, then the rate plan is based on a custom attribute, where {num} is an integer for example, MINT_CUSTOM_ATTRIBUTE_1. This value is defined in the transaction recording policy for the API product and is valid for rate card plans only. The custom attribute name cannot be defined as VOLUME.
+ *   - ratingParameterUnit:         Unit that applies to the ratingParameter.
+ *   - revenueType:                 Basis of the revenue share in a revenue share plan. Valid values include: GROSS (based on percentage of the gross price of a transaction) and NET (based on a percentage of the net price of a transaction).
+ *   - type:                        Revenue model for the plan. Valid values include: REVSHARE, RATECARD, REVSHARE_RATECARD, USAGE_TARGET (adjustable notifications).
+ * - ratecard_rates:             The RATECARD rates.
+ *   - id:                          The unique ID of the rate plan rate.
+ *   - startUnit:                   The number the rate starts at.
+ *   - endUnit:                     The rate is good until this number of units.
+ *   - rate:                        The rate that is applies within this range.
+ * - revshare_rates:             The REVSHARE rates.
+ *   - id:                          The unique ID of the rate plan rate.
+ *   - startUnit:                   The number the rate starts at.
+ *   - endUnit:                     The rate is good until this nuber of units.
+ *   - revshare:                    The revenue share percentage.
+ * - entity:                     The rate plan entity.
+ */
+#}
+<div class="rate-plan-detail">
+
+  {% if detail.type == 'REVSHARE_RATECARD' %}
+    <h2>{{ 'Rate Card & Revenue'|t }}</h2>
+  {% elseif detail.type == 'REVSHARE' %}
+    <h2>{{ 'Revenue'|t }}</h2>
+  {% else %}
+    <h2>{{ 'Rate Card'|t }}</h2>
+  {% endif %}
+
+  <div class="field field--inline">
+    <div class="field__label">{{ 'Rate card is based on'|t }}</div>
+    <div class="field__item">{{ detail.meteringType }}</div>
+  </div>
+  <div class="field field--inline">
+    <div class="field__label">{{ 'Volume aggregation basis'|t }}</div>
+    <div class="field__item">{{ detail.duration }} {{ (detail.duration == 1 ? detail.durationType : detail.durationType ~ 's')|lower|t }}</div>
+  </div>
+
+  {% if free_quantity %}
+    <div class="field field--inline">
+      <div class="field__label">{{ 'Free quantity'|t }}</div>
+      <div class="field__item">{{ free_quantity }}</div>
+    </div>
+  {% endif %}
+
+
+  <div class="bg-white py-2 px-4 mt-4">
+    <div class="row">
+      <div class="field field--inline col-md-6">
+        <div class="field__label">{{ 'Operator'|t }}</div>
+        <div class="field__item">{{ detail.organization.description }}</div>
+      </div>
+      <div class="field field--inline col-md-6">
+        <div class="field__label">{{ 'Currency'|t }}</div>
+        <div class="field__item">{{ detail.currency.name }}</div>
+      </div>
+      <div class="field field--inline col-md-6">
+        <div class="field__label">{{ 'Country'|t }}</div>
+        <div class="field__item">{{ detail.organization.country }}</div>
+      </div>
+      <div class="field field--inline col-md-6">
+        <div class="field__label">{{ 'Pricing type'|t }}</div>
+        <div class="field__item">{{ detail.revenueType|upper }}</div>
+      </div>
+    </div>
+  </div>
+
+  {% if ratecard_rates %}
+    <div class="rate-plan-detail__table px-4 py-2 mt-4 bg-white">
+      <table class="table table-borderless mb-0">
+        <thead>
+          <tr>
+            <th scope="col">{{ 'Volume Bands'|t }}</th>
+            <th scope="col">{{ 'Cost per API call'|t }}</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for rate in ratecard_rates %}
+          <tr>
+            <td>
+              {%- set endUnitStr = rate.endUnit ?  'up to'|t  : '' -%}
+              {%- trans -%}
+                Greater than {{ rate.startUnit }} {{ endUnitStr }} {{ rate.endUnit }}
+              {%- endtrans -%}
+            </td>
+            <td>{{ rate.rate }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% endif %}
+
+  {% if revshare_rates %}
+    <div class="rate-plan-detail__table px-4 py-2 mt-4 bg-white">
+      <table class="table table-borderless mb-0">
+        <thead>
+          <tr>
+            <th scope="col">{{ 'Volume Bands'|t }}</th>
+            <th scope="col">{{ 'Revenue Share %'|t }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%- for rate in revshare_rates -%}
+            {%- set endUnitStr = rate.endUnit ?  'up to'|t  : '' -%}
+            <tr>
+              <td>
+                {%- trans -%}
+                  Greater than {{ rate.startUnit }} {{ endUnitStr }} {{ rate.endUnit }}
+                {%- endtrans -%}
+              </td>
+              <td>{{ rate.revshare }}</td>
+            </tr>
+          {%- endfor -%}
+        </tbody>
+      </table>
+    </div>
+  {% endif %}
+</div>

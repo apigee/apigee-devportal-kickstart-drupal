@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Template for a button link component.
+ *
+ * Available config:
+ * - type: primary | secondary | success | danger | warning | info | light | dark | link
+ * - block: true | false
+ * - outline: true | false
+ * - size: xs | md | sm | lg
+ * - text: string
+ * - attributes: Attributes array.
+ */
+#}
+{% if not attributes %}
+  {% set attributes = create_attribute() %}
+{% endif %}
+
+{% set classes = [
+  'btn',
+  type ? (outline ? 'btn-outline-' : 'btn-') ~ type,
+  block ? 'btn-block',
+  size ? 'btn-' ~ size,
+]|merge(classes|default([])) %}
+
+<a{{ attributes.addClass(classes) }} href="{{ url }}">
+  {{- text -}}
+</a>

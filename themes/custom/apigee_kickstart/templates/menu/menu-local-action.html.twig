@@ -5,11 +5,20 @@
  */
 #}
 
+{% set show_title = route_name in [
+    'entity.commerce_payment_method.collection'
+] %}
+
 {% set classes = [
     'my-4',
-    element['#link'].url.routeParameters.node_type == 'forum' ? 'forum__add' : ''
+    element['#link'].url.routeParameters.node_type == 'forum' ? 'forum__add' : '',
+    show_title ? 'd-flex justify-content-between align-items-center',
 ]|merge(classes|default([])) %}
 
 <div class="{{ classes|join(' ')|trim }}">
-  {{ link }}
+    {% if show_title %}
+        <h4 class="mb-0">{{ title }}</h4>
+    {% endif %}
+
+    {{ link }}
 </div>

@@ -1,11 +1,19 @@
 // Style for user pages.
 // -----------------------------------------------------------------------------
+
 .path-user {
 
   .page__content {
 
     > .container {
       padding-top: .5rem !important;
+    }
+  }
+
+  main:not(.main--pricing-plans):not(.main--rate-plan) {
+
+    .container.py-5 {
+      padding-top: 0 !important;
     }
   }
 }

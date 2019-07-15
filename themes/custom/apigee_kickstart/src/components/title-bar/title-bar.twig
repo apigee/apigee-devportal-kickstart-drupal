@@ -1,0 +1,59 @@
+{#
+/**
+ * Template for a 'Title bar' component.
+ *
+ * - classes: An array of classes applied to the wrapper element. Any additional
+ *   classes provided from extending templates are merged with the defaults
+ *   provided below.
+ * - title: Expects a plain text title, which is wrapped in <h1>.
+ * - content: A since 1-2 short sentence sumamry/intro to compliment the title.
+ * - button: A string that represents a fully marked up button. Should not be
+ *   used alongside 'icon'. If both are passed, `button` will take precidence
+ *   anf icon will not print.
+ * - icon: A string that represents a FontAwesome icon. Should not be used
+ *   alongside 'button'. If both are passed, `button` will take precidence and
+ *   icon will not print.
+ *
+ */
+#}
+
+{% set classes = [
+  'title-bar',
+  'bg-lighter',
+  icon ? 'py-4' : '',
+  button ? 'py-5' : '',
+]|merge(classes|default([])) %}
+
+<header class="{{ classes|join(' ')|trim }}">
+  <div class="container">
+    <div class="d-flex align-items-center{% if button %} flex-wrap{% endif %}">
+
+      {% if title %}
+        <h1 class="title-bar__title pr-4">
+          {{- title -}}
+        </h1>
+      {% endif %}
+
+      {% if content %}
+        <div class="title-bar__content d-none d-lg-block flex-grow-1 pl-4 border-left">
+          {{ content }}
+        </div>
+      {% endif %}
+
+      {% if icon or button %}
+
+        {% if button %}
+          <div class="title-bar__button mt-4 mt-lg-0 ml-lg-auto">
+            {{ button }}
+          </div>
+
+        {% elseif icon %}
+          <div class="title-bar__icon ml-auto d-flex flex-shrink-0 justify-content-center align-items-center bg-light">
+            <i class="fas fa-{{ icon }}"></i>
+          </div>
+        {% endif %}
+      {% endif %}
+
+    </div>
+  </div>
+</header>

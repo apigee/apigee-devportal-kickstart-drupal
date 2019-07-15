@@ -14,7 +14,8 @@
             {{ content|without('field_title', 'field_icon') }}
           </div>
         {% endif %}
-        <div class="title-bar__icon">
+
+        <div class="title-bar__icon ml-auto d-flex flex-shrink-0 justify-content-center align-items-center bg-light">
           {{ content.field_icon }}
         </div>
       </div>

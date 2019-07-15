@@ -29,6 +29,15 @@ libraries-override:
   radix/bootstrap: false
   apigee_edge/apigee_edge.components: false
   apigee_edge/apigee_edge.app_view: false
+  apigee_m10n/rate_plan.entity_list: false
+  apigee_m10n/rate_plan.future_links_field: false
+  apigee_m10n/rate_plan.details_field: false
+
+libraries-extend:
+  commerce_authnet/form-authnet:
+    - apigee_kickstart/commerce_authnet
+  commerce_stripe/form:
+    - apigee_kickstart/commerce_stripe
 
 ckeditor_stylesheets:
   - assets/css/apigee-kickstart.style.css

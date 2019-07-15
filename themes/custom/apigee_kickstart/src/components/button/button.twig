@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Template for a button component.
+ *
+ * Available config:
+ * - type: primary | secondary | success | danger | warning | info | light | dark | link
+ * - block: true | false
+ * - outline: true | false
+ * - tag: button, input
+ * - size: xs | md | sm | lg
+ * - value: string
+ * - attributes: Attributes array.
+ */
+#}
+{% set classes = [
+  'btn',
+  type ? (outline ? 'btn-outline-' : 'btn-') ~ type,
+  block ? 'btn-block',
+  size ? 'btn-' ~ size,
+]|merge(classes|default([])) %}
+
+{% if tag == 'input' %}
+  <input{{ attributes.addClass(classes) }} />
+{% else %}
+  <{{ tag }}{{ attributes.addClass(classes) }}>{{ value }}</{{ tag }}>
+{% endif %}

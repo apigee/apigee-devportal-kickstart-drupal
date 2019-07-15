@@ -1,0 +1,4 @@
+services:
+  apigee_devportal_kickstart.monetization:
+    class: Drupal\apigee_devportal_kickstart\Installer\ApigeeDevportalKickstartMonetization
+    # We cannot pass constructor arguments here because dependent services do not exist at this point.
