@@ -63,6 +63,10 @@ function apigee_devportal_kickstart_install_tasks(&$install_state) {
     ], $tasks);
   }
 
+  $tasks['apigee_devportal_kickstart_finish'] = [
+    'display' => FALSE,
+  ];
+
   return $tasks;
 }
 
@@ -70,6 +74,14 @@ function apigee_devportal_kickstart_install_tasks(&$install_state) {
  * Implements hook_install_tasks_alter().
  */
 function apigee_devportal_kickstart_install_tasks_alter(&$tasks, $install_state) {
+  // Do not add the apigee_edge_configure_form tasks if non-interactive install
+  // since drush si cannot set default values for the form.
+  // Use `drush key-save apigee_edge_connection_default '{\"auth_type\":\"basic\",\"organization\":\"ORGANIZATION\",\"username\":\"USERNAME\",\"password\":\"PASSWORD"}' --key-type=apigee_auth -y`
+  // to create a key after drush si.
+  if (!$install_state['interactive']) {
+    return;
+  }
+
   // Add tasks for configuring Apigee authentication and monetization.
   $apigee_kickstart_tasks = [
     ApigeeEdgeConfigurationForm::class => [
@@ -178,6 +190,17 @@ function apigee_devportal_kickstart_theme_setup(array &$install_state) {
     ->getEditable('node.settings')
     ->set('use_admin_theme', TRUE)
     ->save(TRUE);
+}
+
+/**
+ * Run any additional tasks for the installation.
+ */
+function apigee_devportal_kickstart_finish() {
+  // Re-run the optional config import again since Drupal installation profile
+  // imports optional configuration only once.
+  // @see \Drupal\Core\Config\ConfigInstaller::installDefaultConfig
+  // @see install_install_profile()
+  \Drupal::service('config.installer')->installOptionalConfig();
 }
 
 /**

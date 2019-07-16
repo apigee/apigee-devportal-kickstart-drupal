@@ -93,7 +93,7 @@ function apigee_kickstart_customizer_page_attachments_alter(array &$attachments)
   // TODO: Move this to a service.
   if ($theme = Drupal::theme()->getActiveTheme()->getName()) {
     if ($values = Drupal::configFactory()
-      ->get('customizer.theme.' . $theme)
+      ->get('apigee_kickstart_customizer.theme.' . $theme)
       ->get('values')) {
 
       // TODO: Add scope support.

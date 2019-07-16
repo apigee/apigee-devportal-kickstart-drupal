@@ -132,7 +132,7 @@ class CustomizerForm extends ConfigFormBase {
       ],
     ];
 
-    $values = $this->configFactory->get('customizer.theme.' . $theme)->get('values');
+    $values = $this->configFactory->get('apigee_kickstart_customizer.theme.' . $theme)->get('values');
     $theme_config = $this->customizer->getConfig($theme);
 
     foreach ($theme_config as $group_name => $group) {
@@ -166,7 +166,7 @@ class CustomizerForm extends ConfigFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $form_state->cleanValues();
     $values = $form_state->getValues();
-    $this->configFactory->getEditable('customizer.theme.' . $form_state->get('theme'))
+    $this->configFactory->getEditable('apigee_kickstart_customizer.theme.' . $form_state->get('theme'))
       ->set('values', $values)->save();
 
     parent::submitForm($form, $form_state);
