@@ -1,4 +1,4 @@
-customizer.theme.*:
+apigee_kickstart_customizer.theme.*:
   type: config_object
   label: 'Customizer theme settings'
   mapping:
