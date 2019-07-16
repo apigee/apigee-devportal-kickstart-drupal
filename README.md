@@ -19,8 +19,7 @@ our [Github issue queue](https://github.com/apigee/apigee-devportal-kickstart-dr
 
 ## Known issues
 
-* Using `drush si` to install the site with Apigee Edge credentials is not working. See [#109](https://github.com/apigee/apigee-devportal-kickstart-drupal/issues/109) for details.
-* When "Enable demo content" is not selected during installation, associated custom blocks are still placed. See [#72](https://github.com/apigee/apigee-devportal-kickstart-drupal/issues/72) for details.
+There are no known issues at this time.
 
 ## Contribute
 
