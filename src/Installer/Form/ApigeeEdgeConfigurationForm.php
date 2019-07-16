@@ -63,6 +63,8 @@ class ApigeeEdgeConfigurationForm extends AuthenticationForm {
     // Add a custom after_build callback.
     $form['#after_build'][] = '::formAfterBuild';
 
+    $form['#attached']['library'][] = 'apigee_devportal_kickstart/apigee_edge_form';
+
     return $form;
   }
 
