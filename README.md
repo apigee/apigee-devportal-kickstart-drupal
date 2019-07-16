@@ -19,7 +19,7 @@ our [Github issue queue](https://github.com/apigee/apigee-devportal-kickstart-dr
 
 ## Known issues
 
-* Using `drush si` + `drush key-save` to install the site with Apigee Edge credentials does not result in a saved connection. Note: Using a web browser to install this profile is recommended. See [#109](https://github.com/apigee/apigee-devportal-kickstart-drupal/issues/109) for details.
+There are no known issues at this time.
 
 ## Contribute
 
