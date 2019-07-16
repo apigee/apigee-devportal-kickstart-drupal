@@ -156,6 +156,17 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
 
     $form['#title'] = $this->t('Configure monetization');
 
+    // Note that apigee_m10n is experimental.
+    $form['help'] = [
+      '#theme' => 'status_messages',
+      '#message_list' => [
+        MessengerInterface::TYPE_WARNING => [
+          $this->t('Note: Apigee Monetization in Kickstart is currently experimental.'),
+        ],
+      ],
+      '#weight' => -100,
+    ];
+
     $form['actions']['#type'] = 'actions';
     $form['actions']['submit'] = [
       '#type' => 'submit',
