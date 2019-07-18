@@ -7,7 +7,7 @@
  | for your application. See https://github.com/JeffreyWay/laravel-mix.
  |
  */
-const proxy = 'http://drupal.local';
+const proxy = 'https://ks.demo';
 const mix = require('laravel-mix');
 
 /*
@@ -50,5 +50,5 @@ mix
  */
 mix
   .js('src/js/apigee-kickstart.script.js', 'js')
-  .js('src/js/apigee-kickstart.commerce-authnet.js', 'js')
-  .js('src/js/apigee-kickstart.commerce-stripe.js', 'js');
+  .js('src/js/apigee-kickstart.commerce.authnet.js', 'js')
+  .js('src/js/apigee-kickstart.commerce.stripe.js', 'js');
