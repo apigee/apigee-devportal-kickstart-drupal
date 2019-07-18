@@ -142,6 +142,8 @@
 {% extends 'apigee-entity.html.twig' %}
 {% block apigee_entity %}
 
+  {{ attach_library('apigee_kickstart/monetization') }}
+
   {% set body %}
     <h2 class="card-title mt-1">
       <a href="{{ url }}">{{ label }}</a>

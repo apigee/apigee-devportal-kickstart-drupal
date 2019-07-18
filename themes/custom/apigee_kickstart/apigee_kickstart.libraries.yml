@@ -1,5 +1,4 @@
 style:
-  version: VERSION
   css:
     theme:
       assets/css/apigee-kickstart.style.css: {}
@@ -26,3 +25,13 @@ commerce_authnet:
 commerce_stripe:
   js:
     assets/js/apigee-kickstart.commerce-stripe.js: {}
+
+monetization:
+  css:
+    theme:
+      assets/css/apigee-kickstart.monetization.css: {}
+
+monetization.add-credit:
+  css:
+    theme:
+      assets/css/apigee-kickstart.monetization.add-credit.css: {}

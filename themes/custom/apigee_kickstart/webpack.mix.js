@@ -38,7 +38,10 @@ mix.browserSync({
  | SASS
  |--------------------------------------------------------------------------
  */
-mix.sass('src/sass/apigee-kickstart.style.scss', 'css');
+mix
+  .sass('src/sass/apigee-kickstart.style.scss', 'css')
+  .sass('src/sass/apigee-kickstart.monetization.scss', 'css')
+  .sass('src/sass/apigee-kickstart.monetization.add-credit.scss', 'css');
 
 /*
  |--------------------------------------------------------------------------
