@@ -1,11 +1,14 @@
-// Bootstrap
+// Bases
 // -----------------------------------------------------------------------------
-@import "~bootstrap/scss/functions";
-@import "base/variables";
-@import "~bootstrap/scss/variables";
+@import "base/base";
+
+// CSS Variables
+// -----------------------------------------------------------------------------
 @import "~bootstrap/scss/root";
 @import "base/root";
-@import "~bootstrap/scss/mixins";
+
+// Bootstrap
+// -----------------------------------------------------------------------------
 @import "~bootstrap/scss/print";
 @import "~bootstrap/scss/reboot";
 @import "~bootstrap/scss/type";
@@ -38,10 +41,8 @@
 @import "~bootstrap/scss/carousel";
 @import "~bootstrap/scss/utilities";
 
-// Base
+// Global
 // -----------------------------------------------------------------------------
-@import "base/mixins";
-@import "base/functions";
 @import "base/helpers";
 @import "base/elements";
 
