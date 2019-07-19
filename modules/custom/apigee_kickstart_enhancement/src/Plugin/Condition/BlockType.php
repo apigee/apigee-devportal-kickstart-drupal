@@ -165,9 +165,9 @@ class BlockType extends ConditionPluginBase implements ContainerFactoryPluginInt
         foreach ($blocks as $block) {
           if (($plugin = $block->getPlugin())
             && ($plugin->getPluginDefinition()['provider'] == 'block_content')
-          && ($id = $this->uuidLookup->get($plugin->getDerivativeId()))
-          && ($block_content = $block_content_storage->load($id))) {
-            if (!empty($this->configuration['bundles'][$block_content->bundle()])) {
+            && ($id = $this->uuidLookup->get($plugin->getDerivativeId()))
+            && ($block_content = $block_content_storage->load($id))) {
+            if ($block->access('view') && !empty($this->configuration['bundles'][$block_content->bundle()])) {
               return FALSE;
             }
           }
