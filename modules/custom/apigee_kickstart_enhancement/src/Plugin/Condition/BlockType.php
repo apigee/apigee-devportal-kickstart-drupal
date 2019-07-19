@@ -52,7 +52,7 @@ class BlockType extends ConditionPluginBase implements ContainerFactoryPluginInt
   protected $uuidLookup;
 
   /**
-   * Creates a new NodeType instance.
+   * Creates a new BlockType instance.
    *
    * @param array $configuration
    *   The plugin configuration.
