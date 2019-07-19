@@ -4,7 +4,8 @@
   border-radius: 4px;
   background-color: $white;
   overflow: hidden;
-  font-size: .875rem;
+  font-size: 0.875rem;
+  padding-top: 0.5rem;
 
   fieldset,
   details {
@@ -12,6 +13,16 @@
   }
 
   fieldset {
+    border: 0 !important;
+
+    legend {
+      border: 0 !important;
+      line-height: 1.2;
+
+      span {
+        font-size: 1.25rem;
+      }
+    }
 
     .fieldset-wrapper {
       padding-top: 0 !important;
