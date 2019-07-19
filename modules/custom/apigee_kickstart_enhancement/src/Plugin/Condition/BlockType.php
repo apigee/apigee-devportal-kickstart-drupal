@@ -20,6 +20,7 @@
 
 namespace Drupal\apigee_kickstart_enhancement\Plugin\Condition;
 
+use Drupal\block\BlockInterface;
 use Drupal\block_content\BlockContentUuidLookup;
 use Drupal\Core\Condition\ConditionPluginBase;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
@@ -91,6 +92,7 @@ class BlockType extends ConditionPluginBase implements ContainerFactoryPluginInt
     return [
         'uuid' => NULL,
         'bundles' => [],
+        'is_adjacent' => NULL,
       ] + parent::defaultConfiguration();
   }
 
@@ -119,6 +121,13 @@ class BlockType extends ConditionPluginBase implements ContainerFactoryPluginInt
       '#default_value' => $this->configuration['bundles'],
     ];
 
+    $form['is_adjacent'] = [
+      '#title' => $this->t('Hide if block is next to each other'),
+      '#type' => 'checkbox',
+      '#description' => $this->t('This will hide the block only if the selected block types is next to it.'),
+      '#default_value' => $this->configuration['is_adjacent'],
+    ];
+
     // Store the block uuid so that we can retrieve it on evaluate.
     $form['uuid'] = [
       '#type' => 'value',
@@ -134,6 +143,7 @@ class BlockType extends ConditionPluginBase implements ContainerFactoryPluginInt
   public function submitConfigurationForm(array &$form, FormStateInterface $form_state) {
     $this->configuration['uuid'] = $form_state->getValue('uuid');
     $this->configuration['bundles'] = array_filter($form_state->getValue('bundles'));
+    $this->configuration['is_adjacent'] = $form_state->getValue('is_adjacent');
     parent::submitConfigurationForm($form, $form_state);
   }
 
@@ -156,9 +166,23 @@ class BlockType extends ConditionPluginBase implements ContainerFactoryPluginInt
         'theme' => $current_block->getTheme(),
         'region' => $current_block->getRegion(),
       ])) {
-
-        // Remove the current block.
+        // Find all other visible blocks.
         unset($blocks[$current_block->id()]);
+        $blocks = array_filter($blocks, function(BlockInterface $block) {
+          return $block->access('view');
+        });
+
+        if ($this->configuration['is_adjacent']) {
+          // Add the current block and sort the blocks by weight.
+          $blocks[$current_block->id()] = $current_block;
+          uasort($blocks, 'Drupal\block\Entity\Block::sort');
+
+          // Find adjacent blocks.
+          $block_ids = array_keys($blocks);
+          $key = (array_search($current_block->id(), $block_ids));
+          $blocks = array_slice($blocks, $key === 0 ? 0 : $key - 1, 2 + $key);
+          unset($blocks[$current_block->id()]);
+        }
 
         // Check if we have a block content of configured type.
         $block_content_storage = $this->entityTypeManager->getStorage('block_content');
@@ -167,7 +191,7 @@ class BlockType extends ConditionPluginBase implements ContainerFactoryPluginInt
             && ($plugin->getPluginDefinition()['provider'] == 'block_content')
             && ($id = $this->uuidLookup->get($plugin->getDerivativeId()))
             && ($block_content = $block_content_storage->load($id))) {
-            if ($block->access('view') && !empty($this->configuration['bundles'][$block_content->bundle()])) {
+            if (!empty($this->configuration['bundles'][$block_content->bundle()])) {
               return FALSE;
             }
           }
