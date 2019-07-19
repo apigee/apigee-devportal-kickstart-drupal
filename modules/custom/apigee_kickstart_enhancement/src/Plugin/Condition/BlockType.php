@@ -33,7 +33,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *
  * @Condition(
  *   id = "block_type",
- *   label = @Translation("Block type"),
+ *   label = @Translation("Block types"),
  * )
  */
 class BlockType extends ConditionPluginBase implements ContainerFactoryPluginInterface {
