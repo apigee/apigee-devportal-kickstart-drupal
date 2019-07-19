@@ -10,21 +10,13 @@ targetEntityType: rate_plan
 bundle: rate_plan
 mode: teaser
 content:
-  packageProducts:
-    type: entity_reference_label
-    weight: 0
-    region: content
-    label: above
-    settings:
-      link: false
-    third_party_settings: {  }
   products:
     type: entity_reference_label
     weight: 0
     region: content
     label: above
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
 hidden:
   advance: true
@@ -45,7 +37,6 @@ hidden:
   id: true
   name: true
   organization: true
-  packageEntity: true
   paymentDueDays: true
   private: true
   productBundle: true

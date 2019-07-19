@@ -125,7 +125,7 @@ function apigee_devportal_setup_monetization(array &$install_state) {
     $operations = [
       [
         [ApigeeDevportalKickstartTasksManager::class, 'init'],
-        [$config]
+        [$config],
       ],
       [
         [ApigeeDevportalKickstartTasksManager::class, 'installModules'],

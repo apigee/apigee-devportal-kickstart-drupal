@@ -156,7 +156,7 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
 
     $form['#title'] = $this->t('Configure monetization');
 
-    // Note that apigee_m10n is experimental.
+    // Note that apigee_kickstart_m10n is experimental.
     $form['help'] = [
       '#theme' => 'status_messages',
       '#message_list' => [
@@ -195,7 +195,7 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
       '#tree' => TRUE,
     ];
 
-    $form['modules']['apigee_m10n'] = [
+    $form['modules']['apigee_kickstart_m10n'] = [
       '#title' => $this->t('Enable monetization'),
       '#type' => 'checkbox',
       '#description' => $this->t('Enable monetization for your Apigee Edge organization.'),
@@ -207,7 +207,7 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
       '#description' => $this->t('Allow users to add credit to their prepaid balances.'),
       '#states' => [
         'visible' => [
-          'input[name="modules[apigee_m10n]"]' => ['checked' => TRUE],
+          'input[name="modules[apigee_kickstart_m10n]"]' => ['checked' => TRUE],
         ],
       ],
     ];
@@ -220,7 +220,7 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
       '#description' => $this->t('Create a store for handling prepaid balance top ups.'),
       '#states' => [
         'visible' => [
-          'input[name="modules[apigee_m10n]"]' => ['checked' => TRUE],
+          'input[name="modules[apigee_kickstart_m10n]"]' => ['checked' => TRUE],
           'input[name="modules[apigee_kickstart_m10n_add_credit]"]' => ['checked' => TRUE],
         ],
       ],
@@ -334,7 +334,7 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
         '#description' => $this->t('Create a product to add credit for the following supported currencies.'),
         '#states' => [
           'visible' => [
-            'input[name="modules[apigee_m10n]"]' => ['checked' => TRUE],
+            'input[name="modules[apigee_kickstart_m10n]"]' => ['checked' => TRUE],
             'input[name="modules[apigee_kickstart_m10n_add_credit]"]' => ['checked' => TRUE],
           ],
         ],
