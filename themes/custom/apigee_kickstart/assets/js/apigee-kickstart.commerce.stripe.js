@@ -81,40 +81,40 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/js/apigee-kickstart.commerce-authnet.js":
-/*!*****************************************************!*\
-  !*** ./src/js/apigee-kickstart.commerce-authnet.js ***!
-  \*****************************************************/
+/***/ "./src/js/apigee-kickstart.commerce.stripe.js":
+/*!****************************************************!*\
+  !*** ./src/js/apigee-kickstart.commerce.stripe.js ***!
+  \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
 /**
  * @file
- * Contains Apigee Kickstart customizations for commerce_authnet module.
+ * Contains Apigee Kickstart customizations for commerce_stripe module.
  */
 (function ($, Drupal) {
   'use strict';
 
-  Drupal.theme.commerceAuthorizeNetError = function (message) {
+  Drupal.theme.commerceStripeError = function (message) {
     return $('<div class="alert alert-danger"></div>').html(message);
   };
 })(jQuery, Drupal);
 
 /***/ }),
 
-/***/ 1:
-/*!***********************************************************!*\
-  !*** multi ./src/js/apigee-kickstart.commerce-authnet.js ***!
-  \***********************************************************/
+/***/ 2:
+/*!**********************************************************!*\
+  !*** multi ./src/js/apigee-kickstart.commerce.stripe.js ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/jacine/Sites/kickstart_m10n/web/profiles/contrib/apigee_devportal_kickstart/themes/custom/apigee_kickstart/src/js/apigee-kickstart.commerce-authnet.js */"./src/js/apigee-kickstart.commerce-authnet.js");
+module.exports = __webpack_require__(/*! /Users/jacine/Sites/ks/web/profiles/contrib/apigee_devportal_kickstart/themes/custom/apigee_kickstart/src/js/apigee-kickstart.commerce.stripe.js */"./src/js/apigee-kickstart.commerce.stripe.js");
 
 
 /***/ })
