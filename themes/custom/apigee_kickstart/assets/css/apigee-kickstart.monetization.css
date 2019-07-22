@@ -5,7 +5,8 @@
 .rate-plan--view-mode-teaser {
   border: 0;
 }
-.main--pricing-plans .rate-plan--view-mode-teaser {
+.main--pricing-plans .rate-plan--view-mode-teaser .card {
+  height: 100%;
   width: 100%;
 }
 .rate-plan--view-mode-teaser .card-body {

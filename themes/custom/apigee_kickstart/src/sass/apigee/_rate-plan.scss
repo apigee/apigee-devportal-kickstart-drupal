@@ -4,7 +4,8 @@
 .rate-plan--view-mode-teaser {
   border: 0;
 
-  .main--pricing-plans & {
+  .main--pricing-plans & .card {
+    height: 100%;
     width: 100%;
   }
 
