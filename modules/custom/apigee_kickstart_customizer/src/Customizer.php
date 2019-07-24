@@ -172,7 +172,6 @@ class Customizer extends DefaultPluginManager implements CustomizerInterface {
     Cache::invalidateTags(['library_info']);
   }
 
-
   /**
    * {@inheritdoc}
    */

@@ -58,7 +58,7 @@ interface CustomizerInterface {
   /**
    * Updates the stylesheet for a theme.
    *
-   * @param null $theme
+   * @param string $theme
    *   The name of the theme.
    */
   public function updateStylesheetForTheme($theme = NULL): void;
