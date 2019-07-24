@@ -166,8 +166,11 @@ class CustomizerForm extends ConfigFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $form_state->cleanValues();
     $values = $form_state->getValues();
-    $this->configFactory->getEditable('apigee_kickstart_customizer.theme.' . $form_state->get('theme'))
+    $theme = $form_state->get('theme');
+    $this->configFactory->getEditable('apigee_kickstart_customizer.theme.' . $theme)
       ->set('values', $values)->save();
+
+    $this->customizer->updateStylesheetForTheme($theme);
 
     parent::submitForm($form, $form_state);
   }
