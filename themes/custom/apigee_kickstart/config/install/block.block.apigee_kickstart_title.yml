@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - apigee_kickstart_enhancement
     - system
   theme:
     - apigee_kickstart
@@ -20,5 +21,14 @@ visibility:
   request_path:
     id: request_path
     pages: "/article/*\r\n/apis\r\n/blog\r\n/contact\r\n/faq\r\n/forum\r\n/forum/*\r\n/search\r\n/search/*\r\n/user/*/plans\r\n/user/*/monetization/product-bundle/*/plan/*"
+    pages: '/user/*/monetization/product-bundle/*/plan/*'
     negate: true
+    context_mapping: {  }
+  block_type:
+    id: block_type
+    uuid: 676576be-83bf-4d28-92aa-47160be749d5
+    bundles:
+      title_bar: title_bar
+    is_adjacent: 0
+    negate: false
     context_mapping: {  }
