@@ -20,9 +20,13 @@
 
 namespace Drupal\apigee_kickstart_customizer;
 
+use Drupal\Core\Asset\AssetCollectionOptimizerInterface;
+use Drupal\Core\Cache\Cache;
+use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Discovery\YamlDiscovery;
 use Drupal\Core\Extension\Extension;
 use Drupal\Core\Extension\ThemeHandlerInterface;
+use Drupal\Core\File\FileSystemInterface;
 use Drupal\Core\Plugin\DefaultPluginManager;
 use Drupal\Core\Theme\ThemeManagerInterface;
 
@@ -53,17 +57,47 @@ class Customizer extends DefaultPluginManager implements CustomizerInterface {
   protected $activeTheme;
 
   /**
+   * The file system service.
+   *
+   * @var \Drupal\Core\File\FileSystemInterface
+   */
+  protected $fileSystem;
+
+  /**
+   * The config factory.
+   *
+   * @var \Drupal\Core\Config\ConfigFactoryInterface
+   */
+  protected $configFactory;
+
+  /**
+   * The asset collection optimizer.
+   *
+   * @var \Drupal\Core\Asset\AssetCollectionOptimizerInterface
+   */
+  protected $collectionOptimizer;
+
+  /**
    * CustomizerThemeHandler constructor.
    *
    * @param \Drupal\Core\Theme\ThemeManagerInterface $theme_manager
    *   The theme manager.
    * @param \Drupal\Core\Extension\ThemeHandlerInterface $theme_handler
    *   The theme handler.
+   * @param \Drupal\Core\File\FileSystemInterface $file_system
+   *   The file system service.
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
+   *   The config factory.
+   * @param \Drupal\Core\Asset\AssetCollectionOptimizerInterface $collection_optimizer
+   *   The asset collection optimizer.
    */
-  public function __construct(ThemeManagerInterface $theme_manager, ThemeHandlerInterface $theme_handler) {
+  public function __construct(ThemeManagerInterface $theme_manager, ThemeHandlerInterface $theme_handler, FileSystemInterface $file_system, ConfigFactoryInterface $config_factory, AssetCollectionOptimizerInterface $collection_optimizer) {
     $this->themeManager = $theme_manager;
     $this->themeHandler = $theme_handler;
     $this->activeTheme = $this->themeManager->getActiveTheme();
+    $this->fileSystem = $file_system;
+    $this->configFactory = $config_factory;
+    $this->collectionOptimizer = $collection_optimizer;
   }
 
   /**
@@ -111,6 +145,44 @@ class Customizer extends DefaultPluginManager implements CustomizerInterface {
 
     $definitions = $this->getDefinitions();
     return isset($definitions[$theme]) ? $definitions[$theme] : [];
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function updateStylesheetForTheme($theme = NULL): void {
+    $theme = $theme ?? $this->activeTheme->getName();
+    $values = $this->configFactory->get('apigee_kickstart_customizer.theme.' . $theme)
+      ->get('values');
+
+    // TODO: Add scope support.
+    $css = ':root {';
+    foreach ($values as $name => $value) {
+      if ($value) {
+        $css .= "$name: $value;";
+      }
+    }
+    $css .= '}';
+
+    // Save value to file.
+    $this->fileSystem->saveData($css, "public://apigee_kickstart_customizer.$theme.css", FileSystemInterface::EXISTS_REPLACE);
+
+    // Rebuild caches.
+    $this->collectionOptimizer->deleteAll();
+    Cache::invalidateTags(['library_info']);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function deleteStylesheetForTheme($theme = NULL): void {
+    $theme = $theme ?? $this->activeTheme->getName();
+
+    $this->fileSystem->delete("public://apigee_kickstart_customizer.$theme.css");
+
+    // Rebuild caches.
+    $this->collectionOptimizer->deleteAll();
+    Cache::invalidateTags(['library_info']);
   }
 
   /**

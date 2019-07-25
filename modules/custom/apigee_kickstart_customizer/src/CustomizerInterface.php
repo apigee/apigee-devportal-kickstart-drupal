@@ -56,6 +56,22 @@ interface CustomizerInterface {
   public function getDefinitionForTheme($theme = NULL): array;
 
   /**
+   * Updates the stylesheet for a theme.
+   *
+   * @param string $theme
+   *   The name of the theme.
+   */
+  public function updateStylesheetForTheme($theme = NULL): void;
+
+  /**
+   * Deletes the stylesheet for a theme.
+   *
+   * @param string $theme
+   *   The name of the theme.
+   */
+  public function deleteStylesheetForTheme($theme = NULL): void;
+
+  /**
    * Returns customizer config for a theme.
    *
    * @param string $theme
