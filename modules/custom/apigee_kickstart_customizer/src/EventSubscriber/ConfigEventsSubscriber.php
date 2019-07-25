@@ -48,14 +48,26 @@ class ConfigEventsSubscriber implements EventSubscriberInterface {
   }
 
   /**
-   * Re-create stylesheet for theme when config is updated.
+   * Re-creates stylesheet for theme when config is updated.
    *
    * @param \Drupal\Core\Config\ConfigCrudEvent $event
    *   The config event.
    */
-  public function onChange(ConfigCrudEvent $event) {
+  public function onSave(ConfigCrudEvent $event) {
     if (preg_match('/^apigee_kickstart_customizer\.theme\.([^\.]*)$/', $event->getConfig()->getName(), $matches)) {
       $this->customizer->updateStylesheetForTheme($matches[1]);
+    }
+  }
+
+  /**
+   * Removes stylesheet for theme when config is deleted.
+   *
+   * @param \Drupal\Core\Config\ConfigCrudEvent $event
+   *   The config event.
+   */
+  public function onDelete(ConfigCrudEvent $event) {
+    if (preg_match('/^apigee_kickstart_customizer\.theme\.([^\.]*)$/', $event->getConfig()->getName(), $matches)) {
+      $this->customizer->deleteStylesheetForTheme($matches[1]);
     }
   }
 
@@ -63,8 +75,8 @@ class ConfigEventsSubscriber implements EventSubscriberInterface {
    * {@inheritdoc}
    */
   public static function getSubscribedEvents() {
-    $events[ConfigEvents::SAVE][] = ['onChange'];
-    $events[ConfigEvents::DELETE][] = ['onChange'];
+    $events[ConfigEvents::SAVE][] = ['onSave'];
+    $events[ConfigEvents::DELETE][] = ['onDelete'];
 
     return $events;
   }

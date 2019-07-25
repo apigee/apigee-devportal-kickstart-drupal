@@ -175,6 +175,19 @@ class Customizer extends DefaultPluginManager implements CustomizerInterface {
   /**
    * {@inheritdoc}
    */
+  public function deleteStylesheetForTheme($theme = NULL): void {
+    $theme = $theme ?? $this->activeTheme->getName();
+
+    $this->fileSystem->delete("public://apigee_kickstart_customizer.$theme.css");
+
+    // Rebuild caches.
+    $this->collectionOptimizer->deleteAll();
+    Cache::invalidateTags(['library_info']);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function getConfig($theme = NULL): array {
     $theme = $theme ?? $this->activeTheme->getName();
 
