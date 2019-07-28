@@ -142,6 +142,8 @@
 {% extends 'apigee-entity.html.twig' %}
 {% block content %}
 
+  {{ attach_library('apigee_kickstart/monetization') }}
+
   {% if content.purchase %}
     {% set button %}
       {% include '@apigee-kickstart/button/button-link.twig' with {

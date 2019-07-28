@@ -1,5 +1,4 @@
 style:
-  version: VERSION
   css:
     theme:
       assets/css/apigee-kickstart.style.css: {}
@@ -19,10 +18,21 @@ font.roboto:
     base:
       https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700: { external: true }
 
-commerce_authnet:
-  js:
-    assets/js/apigee-kickstart.commerce-authnet.js: {}
 
-commerce_stripe:
+commerce.authnet:
   js:
-    assets/js/apigee-kickstart.commerce-stripe.js: {}
+    assets/js/apigee-kickstart.commerce.authnet.js: {}
+
+commerce.stripe:
+  js:
+    assets/js/apigee-kickstart.commerce.stripe.js: {}
+
+monetization:
+  css:
+    theme:
+      assets/css/apigee-kickstart.monetization.css: {}
+
+monetization.add-credit:
+  css:
+    theme:
+      assets/css/apigee-kickstart.monetization.add-credit.css: {}

@@ -140,7 +140,9 @@
 #}
 
 {% extends 'apigee-entity.html.twig' %}
-{% block apigee_entity %}
+{% block content %}
+
+  {{ attach_library('apigee_kickstart/monetization') }}
 
   {% set body %}
     <h2 class="card-title mt-1">
@@ -167,8 +169,9 @@
   {% endset %}
 
   {% include '@apigee-kickstart/card/card.twig' with {
-    classes: classes,
     body: body,
+    attributes: attributes,
+    print_attributes: true
   } only %}
 
 {% endblock %}

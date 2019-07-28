@@ -87,32 +87,31 @@ function apigee_kickstart_customizer_toolbar() {
 }
 
 /**
- * Implements hook_page_attachments_alter().
+ * Implements hook_page_attachments().
  */
-function apigee_kickstart_customizer_page_attachments_alter(array &$attachments) {
-  // TODO: Move this to a service.
-  if ($theme = Drupal::theme()->getActiveTheme()->getName()) {
-    if ($values = Drupal::configFactory()
-      ->get('apigee_kickstart_customizer.theme.' . $theme)
-      ->get('values')) {
+function apigee_kickstart_customizer_page_attachments(array &$attachments) {
+  // Add the theme customizer library.
+  if (($theme = Drupal::theme()->getActiveTheme()->getName()) && (Drupal::service('apigee_kickstart_customizer')->isCustomizable($theme))) {
+    $attachments['#attached']['library'][] = "$theme/customizer";
+  }
+}
 
-      // TODO: Add scope support.
-      $css = 'body {';
-      foreach ($values as $name => $value) {
-        if ($value) {
-          $css .= "$name: $value;";
-        }
-      }
-      $css .= '}';
-
-      $attachments['#attached']['html_head'][] = [
-        [
-          '#tag' => 'style',
-          '#weight' => 1000,
-          '#value' => $css,
+/**
+ * Implements hook_library_info_alter().
+ */
+function apigee_kickstart_customizer_library_info_alter(&$libraries, $extension) {
+  // Implement a library on behalf of the customizable theme.
+  if (($theme = Drupal::theme()->getActiveTheme()->getName())
+    && (Drupal::service('apigee_kickstart_customizer')->isCustomizable($theme))
+    && ($extension === $theme)) {
+    $libraries['customizer'] = [
+      'css' => [
+        'theme' => [
+          "public://apigee_kickstart_customizer.$theme.css" => [
+            'weight' => 1000,
+          ],
         ],
-        'customizer-css',
-      ];
-    }
+      ],
+    ];
   }
 }

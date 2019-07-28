@@ -1,0 +1,129 @@
+.product-bundle--view-mode-full .field {
+  margin-bottom: 1.5rem;
+}
+
+.rate-plan--view-mode-teaser {
+  border: 0;
+}
+.main--pricing-plans .rate-plan--view-mode-teaser .card {
+  height: 100%;
+  width: 100%;
+}
+.rate-plan--view-mode-teaser .card-body {
+  padding: 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+}
+.rate-plan--view-mode-teaser .card-body > * {
+  flex: 1 0 100%;
+}
+.rate-plan--view-mode-teaser .card-title {
+  font-size: 1.5rem;
+  font-weight: 200;
+  letter-spacing: normal;
+  margin-bottom: 1rem;
+}
+.rate-plan--view-mode-teaser .card-title a {
+  color: currentColor;
+}
+.rate-plan--view-mode-teaser .btn,
+.rate-plan--view-mode-teaser .btn--subscribe {
+  align-self: flex-end;
+}
+
+.rate-plan .field {
+  font-size: 0.75rem;
+}
+.rate-plan .field__label {
+  margin-bottom: 0.625rem;
+  line-height: 1;
+}
+
+.rate-plan__products .field__items {
+  display: flex;
+  flex-flow: row wrap;
+}
+.rate-plan__products .field__item:not(:last-child)::after {
+  content: ",";
+  margin-right: 1ch;
+}
+
+.rate-plan--view-mode-full h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+.rate-plan--view-mode-full .field {
+  font-size: 0.875rem;
+}
+.rate-plan--view-mode-full .rate-plan__card .field {
+  font-size: 1rem;
+}
+.rate-plan--view-mode-full .rate-plan__card .field + .field {
+  margin-top: 0.5rem;
+}
+.rate-plan--view-mode-full .rate-plan__card .field--inline {
+  display: flex;
+  align-items: center;
+}
+.rate-plan--view-mode-full .rate-plan__card .field--inline .field__label {
+  margin: 0 0.25rem 0 0;
+}
+.rate-plan--view-mode-full .rate-plan__card .field--inline .field__label:after {
+  content: ":";
+  position: relative;
+}
+.rate-plan--view-mode-full .rate-plan__card--fees .field--inline .field__label::after {
+  left: -0.5ch;
+}
+@media (min-width: 768px) {
+  .rate-plan--view-mode-full .rate_plan__detail-card {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+.rate-plan--view-mode-full .rate_plan__detail-card .field {
+  margin: 0 0 1rem;
+}
+@media (min-width: 768px) {
+  .rate-plan--view-mode-full .rate_plan__detail-card .field {
+    width: 50%;
+  }
+}
+.rate-plan--view-mode-full .rate_plan__detail-card .field + .field {
+  margin-top: 0;
+}
+.rate-plan--view-mode-full form > .form-wrapper {
+  margin-bottom: 1rem;
+}
+.rate-plan--view-mode-full form > .form-wrapper:last-child {
+  margin-bottom: 0;
+}
+.rate-plan--view-mode-full form .field--name-startdate {
+  font-size: 0.875rem;
+}
+.rate-plan--view-mode-full form .field--name-startdate h4 {
+  font-size: 1rem;
+}
+.rate-plan--view-mode-full form .field--name-startdate .form-item {
+  margin-bottom: 0.25rem;
+}
+.rate-plan--view-mode-full form .field--name-startdate .form-control {
+  background-color: #fff;
+}
+
+.rate-plan-detail__table .table {
+  font-size: 1rem;
+}
+.rate-plan-detail__table .table tbody th,
+.rate-plan-detail__table .table tbody td {
+  vertical-align: top;
+  padding: 1.25rem 0;
+}
+.rate-plan-detail__table .table tbody tr:not(:last-child) {
+  border-bottom: 1px dotted #f0f0f0;
+}
+
+.purchased-plan-form .form-actions [data-drupal-selector=edit-cancel] {
+  margin-left: 1rem;
+}

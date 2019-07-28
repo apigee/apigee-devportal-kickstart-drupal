@@ -35,9 +35,11 @@ libraries-override:
 
 libraries-extend:
   commerce_authnet/form-authnet:
-    - apigee_kickstart/commerce_authnet
+    - apigee_kickstart/commerce.authnet
   commerce_stripe/form:
-    - apigee_kickstart/commerce_stripe
+    - apigee_kickstart/commerce.stripe
+  apigee_m10n/prepaid_balance:
+    - apigee_kickstart/monetization.add-credit
 
 ckeditor_stylesheets:
   - assets/css/apigee-kickstart.style.css
