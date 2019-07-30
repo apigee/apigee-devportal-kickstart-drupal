@@ -143,6 +143,7 @@ class AddCreditProducts extends ProfileRequirementBase implements ContainerFacto
         '#title' => $this->t('Supported currencies'),
         '#description' => $this->t('Create a product to add credit for the following supported currencies.'),
         '#options' => $currency_options,
+        '#required' => TRUE,
         '#default_value' => array_keys($currency_options),
       ];
 
@@ -158,6 +159,7 @@ class AddCreditProducts extends ProfileRequirementBase implements ContainerFacto
         '#type' => 'radios',
         '#title' => $this->t('Store'),
         '#options' => $store_options,
+        '#required' => TRUE,
         '#default_value' => $default_store ? $default_store->id() : NULL,
       ];
     }
