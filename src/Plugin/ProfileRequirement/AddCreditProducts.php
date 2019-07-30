@@ -234,7 +234,7 @@ class AddCreditProducts extends ProfileRequirementBase implements ContainerFacto
    * {@inheritdoc}
    */
   public function isCompleted(): bool {
-    return !count($this->supportedCurrencies);
+    return !empty($this->supportedCurrencies);
   }
 
   /**
