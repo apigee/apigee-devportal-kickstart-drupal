@@ -38,8 +38,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   id="add_credit_products",
  *   label="Add credit products",
  *   description="Create an add credit product for each supported currencies.",
- *   severity="warning",
- *   action_button_label="Create products"
+ *   severity="error",
+ *   action_button_label="Create products",
  * )
  */
 class AddCreditProducts extends ProfileRequirementBase implements ContainerFactoryPluginInterface {

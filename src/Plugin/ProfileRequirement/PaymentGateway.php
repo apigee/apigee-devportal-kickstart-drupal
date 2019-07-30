@@ -30,7 +30,7 @@ use Drupal\profile_requirement\Plugin\ProfileRequirementBase;
  *   label = "Payment gateway",
  *   description = "Configure a payment gateway to handle prepaid balance checkouts.",
  *   action_button_label="Create payment gateway",
- *   severity="warning"
+ *   severity="error"
  * )
  */
 class PaymentGateway extends ProfileRequirementBase {
