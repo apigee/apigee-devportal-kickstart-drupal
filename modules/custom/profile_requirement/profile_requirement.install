@@ -1,8 +1,5 @@
 <?php
 
-use Drupal\Core\Link;
-use Drupal\Core\Url;
-
 /**
  * @file
  * Copyright 2019 Google Inc.
@@ -21,6 +18,12 @@ use Drupal\Core\Url;
  * Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
+use Drupal\Core\Link;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_requirements().
+ */
 function profile_requirement_requirements($phase) {
   $requirements = [];
 
