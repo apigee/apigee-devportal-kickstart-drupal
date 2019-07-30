@@ -20,7 +20,7 @@
 
 .profile-requirement-report {
   background: #fcfcfa;
-  padding: 1rem 1rem 1rem 6.5rem;
+  padding: .65rem 1rem .65rem 5rem;
   border: 1px solid #e6e4df;
   border-radius: 3px;
   position: relative;
@@ -39,7 +39,7 @@
   top: 0;
   left: 0;
   bottom: 0;
-  width: 5rem;
+  width: 4rem;
   background: #faf9f5 no-repeat 50% center;
   border-right: 1px solid #e6e4df;
   background-size: 35px;
@@ -47,7 +47,7 @@
 
 .profile-requirement-report__label {
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin: 0;
 }
 
