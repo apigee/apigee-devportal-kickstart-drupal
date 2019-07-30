@@ -161,7 +161,7 @@ class AddCreditProducts extends ProfileRequirementBase implements ContainerFacto
         '#type' => 'radios',
         '#title' => $this->t('Store'),
         '#options' => $store_options,
-        '#default_value' => $default_store->id(),
+        '#default_value' => $default_store ? $default_store->id() : NULL,
       ];
     }
 
