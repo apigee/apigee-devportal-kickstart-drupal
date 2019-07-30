@@ -27,8 +27,8 @@ use Drupal\profile_requirement\Plugin\ProfileRequirementBase;
  * @ProfileRequirement(
  *   id = "add_credit_product_type",
  *   label = "Add Credit product type",
- *   description = "Configure an add credit product type to handle prepaid
- *   balance top ups.", action_button_label="Create product type",
+ *   description = "Configure an add credit product type to handle prepaid balance top ups.",
+ *   action_button_label="Create product type",
  *   severity="error"
  * )
  */
