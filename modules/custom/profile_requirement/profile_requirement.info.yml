@@ -1,0 +1,4 @@
+name: Profile Requirement
+description: Provides a plugin for modules to implement profile requirements.
+type: module
+core: 8.x

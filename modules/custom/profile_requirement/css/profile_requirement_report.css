@@ -1,0 +1,76 @@
+/*
+ * Copyright 2019 Google Inc.
+ *
+ * This program is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License version 2 as published by the
+ * Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public
+ * License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc., 51
+ * Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ */
+.profile-requirement-report__heading {
+  margin-top: 2rem;
+}
+
+.profile-requirement-report {
+  background: #fcfcfa;
+  padding: 1rem 1rem 1rem 6.5rem;
+  border: 1px solid #e6e4df;
+  border-radius: 3px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profile-requirement-report + .profile-requirement-report {
+  margin-top: 1rem;
+}
+
+.profile-requirement-report::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 5rem;
+  background: #faf9f5 no-repeat 50% center;
+  border-right: 1px solid #e6e4df;
+  background-size: 35px;
+}
+
+.profile-requirement-report__label {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.profile-requirement-report__description {
+  margin: .25rem 0 0;
+}
+
+.profile-requirement-report--warning::before {
+  background-image: url("../images/icons/warning.svg");
+}
+
+.profile-requirement-report--error::before {
+  background-image: url("../images/icons/error.svg");
+}
+
+.profile-requirement-report--recommendation::before {
+  background-image: url("../images/icons/chevron.svg");
+}
+
+.profile-requirement-report--completed {
+  opacity: .65;
+}
+
+.profile-requirement-report--completed::before {
+  background-image: url("../images/icons/check.svg");
+}

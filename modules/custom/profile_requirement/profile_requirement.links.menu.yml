@@ -1,0 +1,5 @@
+profile_requirement.report:
+  title: 'Profile report'
+  parent: system.admin_reports
+  description: 'Displays a report of the installation profile''s status.'
+  route_name: profile_requirement.report

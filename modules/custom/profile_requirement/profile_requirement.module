@@ -1,0 +1,68 @@
+<?php
+
+/**
+ * @file
+ * Copyright 2019 Google Inc.
+ *
+ * This program is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License version 2 as published by the
+ * Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public
+ * License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc., 51
+ * Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Template\Attribute;
+
+/**
+ * Implements hook_help().
+ */
+function profile_requirement_help($route_name, RouteMatchInterface $route_match) {
+  if ($route_name === 'profile_requirement.report') {
+    $profile = Drupal::installProfile();
+    $info = system_get_info('module', $profile);
+    return '<p>' . t('Here you can find a short overview of requirements and recommendations for <strong>@profile_name</strong>.', ['@profile_name' => $info['name']]) . '</p>';
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function profile_requirement_theme($existing, $type, $theme, $path) {
+  return [
+    'profile_requirement_report' => [
+      'variables' => [
+        'requirement' => NULL,
+      ],
+    ],
+    'profile_requirement_report_page' => [
+      'variables' => [
+        'requirements' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Preprocesses variables for the profile-requirement-report template.
+ */
+function template_preprocess_profile_requirement_report(&$variables) {
+  /** @var \Drupal\profile_requirement\Plugin\ProfileRequirementInterface $requirement */
+  $requirement = $variables['requirement'];
+
+  $variables['attributes'] = new Attribute();
+  $variables['label'] = $requirement->getLabel();
+  $variables['description'] = $requirement->getDescription();
+  $variables['is_completed'] = $requirement->isCompleted();
+  $variables['severity'] = $requirement->getSeverity();
+  $variables['button'] = $requirement->getActionButton();
+
+  $variables['#attached']['library'][] = 'profile_requirement/profile_requirement_report';
+}

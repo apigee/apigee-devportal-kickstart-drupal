@@ -1,0 +1,15 @@
+{#
+/**
+ * @file
+ * Template for profile requirement report page.
+ */
+#}
+{% for requirement in requirements %}
+  {% if requirement.requirements %}
+    <h3 class="profile-requirement-report__heading">{{ requirement.title }}</h3>
+
+    {% for requirement in requirement.requirements %}
+      {{ requirement }}
+    {% endfor %}
+  {% endif %}
+{% endfor %}

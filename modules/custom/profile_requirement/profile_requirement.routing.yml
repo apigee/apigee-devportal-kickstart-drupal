@@ -1,0 +1,10 @@
+profile_requirement.report:
+  path: '/admin/reports/profile'
+  defaults:
+    _controller: '\Drupal\profile_requirement\Controller\ProfileRequirementReportController::status'
+    _title: 'Profile report'
+  requirements:
+    _permission: 'administer site configuration'
+
+route_callbacks:
+  - '\Drupal\profile_requirement\Routing\ProfileRequirementRoutes::routes'
