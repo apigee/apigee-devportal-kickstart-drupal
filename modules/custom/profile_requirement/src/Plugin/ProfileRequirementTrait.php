@@ -60,6 +60,13 @@ trait ProfileRequirementTrait {
   protected $configStorage;
 
   /**
+   * The config manager.
+   *
+   * @var \Drupal\Core\Config\ConfigManagerInterface
+   */
+  protected $configManager;
+
+  /**
    * The profile requirement manager.
    *
    * @var \Drupal\profile_requirement\Plugin\ProfileRequirementManagerInterface
@@ -155,6 +162,20 @@ trait ProfileRequirementTrait {
     }
 
     return $this->configStorage;
+  }
+
+  /**
+   * Gets the config manager.
+   *
+   * @return \Drupal\Core\Config\ConfigManagerInterface|mixed
+   *   The config manager.
+   */
+  public function getConfigManager() {
+    if (!$this->configManager) {
+      $this->configManager = \Drupal::service('config.manager');
+    }
+
+    return $this->configManager;
   }
 
   /**
