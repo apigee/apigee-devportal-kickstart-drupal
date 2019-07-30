@@ -47,12 +47,12 @@
 
 .profile-requirement-report__label {
   font-weight: bold;
-  font-size: 1rem;
   margin: 0;
+  text-transform: uppercase;
 }
 
 .profile-requirement-report__description {
-  margin: .25rem 0 0;
+  margin: 0;
 }
 
 .profile-requirement-report--warning::before {
