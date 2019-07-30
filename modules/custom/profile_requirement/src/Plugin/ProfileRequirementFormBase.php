@@ -91,6 +91,7 @@ class ProfileRequirementFormBase extends FormBase {
     /** @var \Drupal\profile_requirement\Plugin\ProfileRequirementInterface $requirement */
     if ($this->requirement = $this->profileRequirementManager->createInstance($requirement_id)) {
       $form = $this->requirement->buildConfigurationForm($form, $form_state);
+      $form['#title'] = $this->requirement->getLabel();
     }
 
     return $form;
