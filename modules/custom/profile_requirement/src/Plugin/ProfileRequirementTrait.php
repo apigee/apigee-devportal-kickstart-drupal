@@ -53,6 +53,13 @@ trait ProfileRequirementTrait {
   protected $configFactory;
 
   /**
+   * The config storage.
+   *
+   * @var \Drupal\Core\Config\StorageInterface
+   */
+  protected $configStorage;
+
+  /**
    * The profile requirement manager.
    *
    * @var \Drupal\profile_requirement\Plugin\ProfileRequirementManagerInterface
@@ -134,6 +141,20 @@ trait ProfileRequirementTrait {
     }
 
     return $this->configFactory;
+  }
+
+  /**
+   * Gets the config storage.
+   *
+   * @return \Drupal\Core\Config\StorageInterface
+   *   The config storage.
+   */
+  public function getConfigStorage() {
+    if (!$this->configStorage) {
+      $this->configStorage = \Drupal::service('config.storage');
+    }
+
+    return $this->configStorage;
   }
 
   /**
