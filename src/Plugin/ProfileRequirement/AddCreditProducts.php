@@ -90,18 +90,16 @@ class AddCreditProducts extends ProfileRequirementBase implements ContainerFacto
    *   The plugin implementation definition.
    * @param \Drupal\Core\Language\LanguageManagerInterface $language_manager
    *   The language manager.
-   * @param \Drupal\apigee_m10n_add_credit\AddCreditProductManager $add_credit_product_manager
-   *   The add credit product manager.
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, LanguageManagerInterface $language_manager, AddCreditProductManager $add_credit_product_manager) {
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, LanguageManagerInterface $language_manager) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->languageManager = $language_manager;
     $this->currencyRepository = new CurrencyRepository();
-    $this->addCreditProductManager = $add_credit_product_manager;
     $this->importableCurrencies = $this->getImportableCurrencies();
 
     // Get organization supported currencies.
     try {
+      $this->addCreditProductManager = \Drupal::service('apigee_m10n_add_credit.product_manager');
       $organization_id = $this->getApigeeEdgeSdkConnector()->getOrganization();
       $client = $this->getApigeeEdgeSdkConnector()->getClient();
 
@@ -124,8 +122,7 @@ class AddCreditProducts extends ProfileRequirementBase implements ContainerFacto
       $configuration,
       $plugin_id,
       $plugin_definition,
-      $container->get('language_manager'),
-      $container->get('apigee_m10n_add_credit.product_manager')
+      $container->get('language_manager')
     );
   }
 
