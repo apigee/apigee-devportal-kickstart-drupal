@@ -39,10 +39,9 @@ function profile_requirement_requirements($phase) {
     }
 
     if (count($unmet_requirements)) {
-      $profile = Drupal::installProfile();
-      $info = system_get_info('module', $profile);
+      $profile = _profile_requirement_get_install_profile();
       $requirements['profile_requirement'] = [
-        'title' => $info['name'],
+        'title' => $profile['name'],
         'value' => Link::createFromRoute(t('Profile report'), 'profile_requirement.report'),
         'description' => t('The following requirements for the installation profile have not been met: <strong>@requirements</strong>. <a href=":uri">See the profile report</a>.', [
           '@requirements' => implode(', ', $unmet_requirements),

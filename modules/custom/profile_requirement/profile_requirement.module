@@ -26,9 +26,8 @@ use Drupal\Core\Template\Attribute;
  */
 function profile_requirement_help($route_name, RouteMatchInterface $route_match) {
   if ($route_name === 'profile_requirement.report') {
-    $profile = Drupal::installProfile();
-    $info = system_get_info('module', $profile);
-    return '<p>' . t('Here you can find a short overview of requirements and recommendations for <strong>@profile_name</strong>.', ['@profile_name' => $info['name']]) . '</p>';
+    $profile = _profile_requirement_get_install_profile();
+    return '<p>' . t('Here you can find a short overview of requirements and recommendations for <strong>@profile_name</strong>.', ['@profile_name' => $profile['name']]) . '</p>';
   }
 }
 
@@ -65,4 +64,15 @@ function template_preprocess_profile_requirement_report(&$variables) {
   $variables['button'] = $requirement->getActionButton();
 
   $variables['#attached']['library'][] = 'profile_requirement/profile_requirement_report';
+}
+
+/**
+ * Helper to get the installation profile.
+ *
+ * @return array
+ *   The installation profile.
+ */
+function _profile_requirement_get_install_profile() {
+  $profile = Drupal::installProfile();
+  return system_get_info('module', $profile);
 }
