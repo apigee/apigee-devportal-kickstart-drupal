@@ -80,7 +80,7 @@ abstract class ProfileRequirementBase extends PluginBase implements ProfileRequi
    * {@inheritdoc}
    */
   public function getDependencies(): array {
-    return $this->pluginDefinition['dependencies'];
+    return $this->pluginDefinition['dependencies'] ?? [];
   }
 
   /**

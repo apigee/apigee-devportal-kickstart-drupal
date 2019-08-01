@@ -34,10 +34,7 @@ use Drupal\profile_requirement\Plugin\ProfileRequirementBase;
  *   label = "Commerce store",
  *   description = "Setup a commerce store to handle prepaid balance checkouts.",
  *   action_button_label="Setup store",
- *   severity="error",
- *   dependencies= {
- *      "apigee_edge_connection",
- *   }
+ *   severity="error"
  * )
  */
 class CommerceStore extends ProfileRequirementBase {

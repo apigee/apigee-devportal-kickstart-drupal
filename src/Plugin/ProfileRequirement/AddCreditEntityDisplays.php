@@ -33,7 +33,10 @@ use Drupal\profile_requirement\Plugin\ProfileRequirementBase;
  *   description="Configure default view displays for add credit products and checkout forms. An add credit product type will be created if none is found.",
  *   severity="recommendation",
  *   action_button_label="Update displays",
- *   weight=100
+ *   weight=100,
+ *   dependencies={
+ *      "apigee_edge_connection",
+ *   }
  * )
  */
 class AddCreditEntityDisplays extends ProfileRequirementBase {

@@ -40,6 +40,9 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   description="Create an add credit product for each supported currencies.",
  *   severity="error",
  *   action_button_label="Create products",
+ *   dependencies={
+ *      "apigee_edge_connection",
+ *   }
  * )
  */
 class AddCreditProducts extends ProfileRequirementBase implements ContainerFactoryPluginInterface {

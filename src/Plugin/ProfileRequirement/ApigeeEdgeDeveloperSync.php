@@ -30,7 +30,10 @@ use Drupal\profile_requirement\Plugin\ProfileRequirementBase;
  *   description="Sync Drupal users with Apigee Edge developers.",
  *   severity="error",
  *   form="\Drupal\apigee_edge\Form\DeveloperSyncForm",
- *   action_button_label="Sync developers"
+ *   action_button_label="Sync developers",
+ *   dependencies={
+ *      "apigee_edge_connection",
+ *   }
  * )
  */
 class ApigeeEdgeDeveloperSync extends ProfileRequirementBase {
