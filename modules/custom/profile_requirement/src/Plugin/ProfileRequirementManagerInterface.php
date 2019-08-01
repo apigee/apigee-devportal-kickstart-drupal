@@ -34,4 +34,15 @@ interface ProfileRequirementManagerInterface extends PluginManagerInterface {
    */
   public function listRequirements(): array;
 
+  /**
+   * Resolves dependencies for the requirement.
+   *
+   * @param \Drupal\profile_requirement\Plugin\ProfileRequirementInterface $requirement
+   *   The profile requirement instance.
+   *
+   * @return bool
+   *   TRUE if dependencies are resolved. Otherwise FALSE;
+   */
+  public function resolveDependencies(ProfileRequirementInterface $requirement): bool;
+
 }

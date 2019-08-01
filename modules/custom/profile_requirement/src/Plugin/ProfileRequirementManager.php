@@ -51,7 +51,7 @@ class ProfileRequirementManager extends DefaultPluginManager implements ProfileR
     $requirements = [];
     foreach ($this->getDefinitions() as $plugin_id => $definition) {
       /** @var \Drupal\profile_requirement\Plugin\ProfileRequirementInterface $instance */
-      if (($instance = $this->createInstance($plugin_id)) && ($instance->isApplicable())) {
+      if (($instance = $this->createInstance($plugin_id)) && $this->resolveDependencies($instance) && ($instance->isApplicable())) {
         $requirements[$plugin_id] = $instance;
       }
     }
@@ -70,6 +70,20 @@ class ProfileRequirementManager extends DefaultPluginManager implements ProfileR
     });
 
     return $definitions;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function resolveDependencies(ProfileRequirementInterface $requirement): bool {
+    // TODO: Implement a dependency tree so we can avoid circular dependencies.
+    foreach ($requirement->getDependencies() as $dependency) {
+      if (!$this->createInstance($dependency)->isCompleted()) {
+        return FALSE;
+      }
+    }
+
+    return TRUE;
   }
 
 }
