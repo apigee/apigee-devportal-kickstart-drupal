@@ -124,4 +124,18 @@ abstract class ProfileRequirementBase extends PluginBase implements ProfileRequi
 
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function isResolvable(): bool {
+    // TODO: Implement a dependency tree so we can avoid circular dependencies.
+    foreach ($this->getDependencies() as $dependency) {
+      if (!$this->getProfileRequirementManager()->createInstance($dependency)->isCompleted()) {
+        return FALSE;
+      }
+    }
+
+    return TRUE;
+  }
+
 }

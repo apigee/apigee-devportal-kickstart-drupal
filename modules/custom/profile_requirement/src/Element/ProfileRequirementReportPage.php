@@ -51,10 +51,12 @@ class ProfileRequirementReportPage extends RenderElement {
 
     /** @var \Drupal\profile_requirement\Plugin\ProfileRequirementInterface $requirement */
     foreach ($requirements as $key => $requirement) {
-      $element['#requirements'][$requirement->getSeverity()]['requirements'][$key] = [
-        '#type' => 'profile_requirement_report',
-        '#requirement' => $requirement,
-      ];
+      if ($requirement->isResolvable()) {
+        $element['#requirements'][$requirement->getSeverity()]['requirements'][$key] = [
+          '#type' => 'profile_requirement_report',
+          '#requirement' => $requirement,
+        ];
+      }
     }
 
     return $element;

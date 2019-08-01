@@ -129,4 +129,12 @@ interface ProfileRequirementInterface {
    */
   public function isCompleted(): bool;
 
+  /**
+   * Determines if the requirements can be resolved.
+   *
+   * @return bool
+   *  TRUE if requirement can be resolved. FALSE otherwise.
+   */
+  public function isResolvable(): bool;
+
 }
