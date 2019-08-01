@@ -19,13 +19,8 @@
 
 namespace Drupal\apigee_devportal_kickstart\Plugin\ProfileRequirement;
 
-use Drupal\apigee_edge\SDKConnectorInterface;
-use Drupal\Core\Entity\EntityTypeManagerInterface;
-use Drupal\Core\Extension\ModuleHandlerInterface;
-use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\profile_requirement\Annotation\ProfileRequirement;
 use Drupal\profile_requirement\Plugin\ProfileRequirementBase;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * @ProfileRequirement(
