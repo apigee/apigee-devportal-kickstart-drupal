@@ -53,7 +53,7 @@ class AddCreditProductType extends ProfileRequirementBase {
    * {@inheritdoc}
    */
   public function submitConfigurationForm(array &$form, FormStateInterface $form_state) {
-    $this->getModuleHandler()->install(['apigee_kickstart_m10n_add_credit']);
+    $this->getModuleInstaller()->install(['apigee_kickstart_m10n_add_credit']);
   }
 
   /**
