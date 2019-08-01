@@ -133,7 +133,7 @@ interface ProfileRequirementInterface {
    * Determines if the requirements can be resolved.
    *
    * @return bool
-   *  TRUE if requirement can be resolved. FALSE otherwise.
+   *   TRUE if requirement can be resolved. FALSE otherwise.
    */
   public function isResolvable(): bool;
 
