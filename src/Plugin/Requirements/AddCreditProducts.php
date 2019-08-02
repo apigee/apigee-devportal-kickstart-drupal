@@ -17,7 +17,7 @@
  * Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-namespace Drupal\apigee_devportal_kickstart\Plugin\ProfileRequirement;
+namespace Drupal\apigee_devportal_kickstart\Plugin\Requirements;
 
 use Apigee\Edge\Api\Monetization\Controller\SupportedCurrencyController;
 use Apigee\Edge\Api\Monetization\Entity\SupportedCurrencyInterface;
@@ -27,12 +27,12 @@ use Drupal\commerce_price\Price;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Drupal\profile_requirement\Annotation\ProfileRequirement;
-use Drupal\profile_requirement\Plugin\ProfileRequirementBase;
+use Drupal\requirements\Annotation\Requirements;
+use Drupal\requirements\Plugin\RequirementsBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * @ProfileRequirement(
+ * @Requirements(
  *   id="add_credit_products",
  *   label="Add credit products",
  *   description="Create an add credit product for each supported currencies.",
@@ -43,7 +43,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   }
  * )
  */
-class AddCreditProducts extends ProfileRequirementBase implements ContainerFactoryPluginInterface {
+class AddCreditProducts extends RequirementsBase implements ContainerFactoryPluginInterface {
 
   /**
    * An array of supported currencies.

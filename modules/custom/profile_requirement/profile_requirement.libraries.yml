@@ -1,5 +1,0 @@
-profile_requirement_report:
-  version: VERSION
-  css:
-    theme:
-      css/profile_requirement_report.css: {}

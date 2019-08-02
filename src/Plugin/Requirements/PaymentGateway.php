@@ -17,15 +17,15 @@
  * Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-namespace Drupal\apigee_devportal_kickstart\Plugin\ProfileRequirement;
+namespace Drupal\apigee_devportal_kickstart\Plugin\Requirements;
 
 use Drupal\Core\Link;
 use Drupal\Core\Url;
-use Drupal\profile_requirement\Annotation\ProfileRequirement;
-use Drupal\profile_requirement\Plugin\ProfileRequirementBase;
+use Drupal\requirements\Annotation\Requirements;
+use Drupal\requirements\Plugin\RequirementsBase;
 
 /**
- * @ProfileRequirement(
+ * @Requirements(
  *   id = "payment_gateway",
  *   label = "Payment gateway",
  *   description = "Configure a payment gateway to handle prepaid balance checkouts.",
@@ -33,7 +33,7 @@ use Drupal\profile_requirement\Plugin\ProfileRequirementBase;
  *   severity="error"
  * )
  */
-class PaymentGateway extends ProfileRequirementBase {
+class PaymentGateway extends RequirementsBase {
 
   /**
    * {@inheritdoc}

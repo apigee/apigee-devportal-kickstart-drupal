@@ -17,17 +17,17 @@
  * Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-namespace Drupal\apigee_devportal_kickstart\Plugin\ProfileRequirement;
+namespace Drupal\apigee_devportal_kickstart\Plugin\Requirements;
 
 use Drupal\Core\Config\FileStorage;
 use Drupal\Core\Config\StorageComparer;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Messenger\MessengerInterface;
-use Drupal\profile_requirement\Annotation\ProfileRequirement;
-use Drupal\profile_requirement\Plugin\ProfileRequirementBase;
+use Drupal\requirements\Annotation\Requirements;
+use Drupal\requirements\Plugin\RequirementsBase;
 
 /**
- * @ProfileRequirement(
+ * @Requirements(
  *   id="add_credit_entity_displays",
  *   label="Add credit entity displays",
  *   description="Configure default view displays for add credit products and checkout forms. An add credit product type will be created if none is found.",
@@ -39,7 +39,7 @@ use Drupal\profile_requirement\Plugin\ProfileRequirementBase;
  *   }
  * )
  */
-class AddCreditEntityDisplays extends ProfileRequirementBase {
+class AddCreditEntityDisplays extends RequirementsBase {
 
   /**
    * The name of the module.

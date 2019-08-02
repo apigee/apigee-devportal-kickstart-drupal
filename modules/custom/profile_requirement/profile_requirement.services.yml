@@ -1,4 +1,0 @@
-services:
-  plugin.manager.profile_requirement:
-    class: Drupal\profile_requirement\Plugin\ProfileRequirementManager
-    parent: default_plugin_manager

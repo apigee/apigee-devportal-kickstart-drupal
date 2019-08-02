@@ -17,7 +17,7 @@
  * Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-namespace Drupal\apigee_devportal_kickstart\Plugin\ProfileRequirement;
+namespace Drupal\apigee_devportal_kickstart\Plugin\Requirements;
 
 use Apigee\Edge\Api\Management\Controller\OrganizationController;
 use Apigee\Edge\Api\Monetization\Controller\OrganizationProfileController;
@@ -25,11 +25,11 @@ use CommerceGuys\Addressing\AddressFormat\AddressField;
 use Drupal\address\FieldHelper;
 use Drupal\address\LabelHelper;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\profile_requirement\Annotation\ProfileRequirement;
-use Drupal\profile_requirement\Plugin\ProfileRequirementBase;
+use Drupal\requirements\Annotation\Requirements;
+use Drupal\requirements\Plugin\RequirementsBase;
 
 /**
- * @ProfileRequirement(
+ * @Requirements(
  *   id = "commerce_store",
  *   label = "Commerce store",
  *   description = "Setup a commerce store to handle prepaid balance checkouts.",
@@ -37,7 +37,7 @@ use Drupal\profile_requirement\Plugin\ProfileRequirementBase;
  *   severity="error"
  * )
  */
-class CommerceStore extends ProfileRequirementBase {
+class CommerceStore extends RequirementsBase {
 
   /**
    * The Apigee Organization.

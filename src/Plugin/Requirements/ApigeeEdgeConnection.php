@@ -17,13 +17,13 @@
  * Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-namespace Drupal\apigee_devportal_kickstart\Plugin\ProfileRequirement;
+namespace Drupal\apigee_devportal_kickstart\Plugin\Requirements;
 
-use Drupal\profile_requirement\Annotation\ProfileRequirement;
-use Drupal\profile_requirement\Plugin\ProfileRequirementBase;
+use Drupal\requirements\Annotation\Requirements;
+use Drupal\requirements\Plugin\RequirementsBase;
 
 /**
- * @ProfileRequirement(
+ * @Requirements(
  *   id="apigee_edge_connection",
  *   label="Apigee Edge connection",
  *   description="A working connection to Apigee Edge is required.",
@@ -33,7 +33,7 @@ use Drupal\profile_requirement\Plugin\ProfileRequirementBase;
  *   weight=-100
  * )
  */
-class ApigeeEdgeConnection extends ProfileRequirementBase {
+class ApigeeEdgeConnection extends RequirementsBase {
 
   /**
    * {@inheritdoc}
@@ -51,7 +51,7 @@ class ApigeeEdgeConnection extends ProfileRequirementBase {
       $this->getApigeeEdgeSdkConnector()->testConnection();
       return TRUE;
     } catch (\Exception $exception) {
-      watchdog_exception('profile_requirement', $exception);
+      watchdog_exception('requirements', $exception);
     }
 
     return FALSE;

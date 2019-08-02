@@ -17,14 +17,14 @@
  * Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-namespace Drupal\apigee_devportal_kickstart\Plugin\ProfileRequirement;
+namespace Drupal\apigee_devportal_kickstart\Plugin\Requirements;
 
 use Drupal\apigee_edge\Job\Job;
-use Drupal\profile_requirement\Annotation\ProfileRequirement;
-use Drupal\profile_requirement\Plugin\ProfileRequirementBase;
+use Drupal\requirements\Annotation\Requirements;
+use Drupal\requirements\Plugin\RequirementsBase;
 
 /**
- * @ProfileRequirement(
+ * @Requirements(
  *   id="apigee_edge_developer_sync",
  *   label="Developer Sync",
  *   description="Sync Drupal users with Apigee Edge developers.",
@@ -36,7 +36,7 @@ use Drupal\profile_requirement\Plugin\ProfileRequirementBase;
  *   }
  * )
  */
-class ApigeeEdgeDeveloperSync extends ProfileRequirementBase {
+class ApigeeEdgeDeveloperSync extends RequirementsBase {
 
   /**
    * {@inheritdoc}
