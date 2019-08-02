@@ -49,3 +49,14 @@ function apigee_devportal_kickstart_form_install_configure_submit($form, FormSta
     ->trustData()
     ->save();
 }
+
+/**
+ * Modify the list of available requirement plugins.
+ *
+ * @param $plugins
+ *   An array of all the existing plugin definitions, passed by reference.
+ */
+function apigee_devportal_kickstart_requirement_info_alter(array &$plugins) {
+  // Our plugin overrides one from the add credit module.
+  unset($plugins['add_credit_product_type']);
+}

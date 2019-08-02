@@ -25,7 +25,7 @@ use Drupal\requirement\Plugin\RequirementBase;
 
 /**
  * @Requirement(
- *   id = "add_credit_product_type",
+ *   id = "apigee_devportal_kickstart_add_credit_product_type",
  *   group="apigee_m10n_add_credit",
  *   label = "Add Credit product type",
  *   description = "Configure an add credit product type to handle prepaid balance top ups.",
