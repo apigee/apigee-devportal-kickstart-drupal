@@ -59,4 +59,9 @@ function apigee_devportal_kickstart_form_install_configure_submit($form, FormSta
 function apigee_devportal_kickstart_requirement_info_alter(array &$plugins) {
   // Our plugin overrides one from the add credit module.
   unset($plugins['add_credit_product_type']);
+  if (isset($plugins['add_credit_products']['dependencies'])) {
+    if ($key = array_search('add_credit_product_type', $plugins['add_credit_products']['dependencies'])) {
+      $plugins['add_credit_products']['dependencies'][$key] = 'apigee_devportal_kickstart_add_credit_product_type';
+    }
+  }
 }
