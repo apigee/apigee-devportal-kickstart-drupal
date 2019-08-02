@@ -17,7 +17,7 @@
  * Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-namespace Drupal\apigee_devportal_kickstart\Plugin\Requirements;
+namespace Drupal\apigee_devportal_kickstart\Plugin\Requirements\Requirements;
 
 use Drupal\Core\Config\FileStorage;
 use Drupal\Core\Config\StorageComparer;
@@ -29,6 +29,7 @@ use Drupal\requirements\Plugin\RequirementsBase;
 /**
  * @Requirements(
  *   id="add_credit_entity_displays",
+ *   group="apigee_m10n_add_credit",
  *   label="Add credit entity displays",
  *   description="Configure default view displays for add credit products and checkout forms. An add credit product type will be created if none is found.",
  *   severity="recommendation",

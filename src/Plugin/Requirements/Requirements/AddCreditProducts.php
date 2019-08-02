@@ -17,11 +17,12 @@
  * Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-namespace Drupal\apigee_devportal_kickstart\Plugin\Requirements;
+namespace Drupal\apigee_devportal_kickstart\Plugin\Requirements\Requirements;
 
 use Apigee\Edge\Api\Monetization\Controller\SupportedCurrencyController;
 use Apigee\Edge\Api\Monetization\Entity\SupportedCurrencyInterface;
 use CommerceGuys\Intl\Currency\CurrencyRepository;
+use Drupal\apigee_devportal_kickstart\ApigeeEdgeSdkConnectorTrait;
 use Drupal\apigee_m10n_add_credit\AddCreditConfig;
 use Drupal\commerce_price\Price;
 use Drupal\Core\Form\FormStateInterface;
@@ -34,6 +35,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 /**
  * @Requirements(
  *   id="add_credit_products",
+ *   group="apigee_m10n_add_credit",
  *   label="Add credit products",
  *   description="Create an add credit product for each supported currencies.",
  *   severity="error",
@@ -44,6 +46,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * )
  */
 class AddCreditProducts extends RequirementsBase implements ContainerFactoryPluginInterface {
+
+  use ApigeeEdgeSdkConnectorTrait;
 
   /**
    * An array of supported currencies.

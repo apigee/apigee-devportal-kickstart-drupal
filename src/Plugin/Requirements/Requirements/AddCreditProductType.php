@@ -17,7 +17,7 @@
  * Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-namespace Drupal\apigee_devportal_kickstart\Plugin\Requirements;
+namespace Drupal\apigee_devportal_kickstart\Plugin\Requirements\Requirements;
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\requirements\Annotation\Requirements;
@@ -26,6 +26,7 @@ use Drupal\requirements\Plugin\RequirementsBase;
 /**
  * @Requirements(
  *   id = "add_credit_product_type",
+ *   group="apigee_m10n_add_credit",
  *   label = "Add Credit product type",
  *   description = "Configure an add credit product type to handle prepaid balance top ups.",
  *   action_button_label="Create product type",

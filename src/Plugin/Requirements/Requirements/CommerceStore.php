@@ -17,20 +17,21 @@
  * Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-namespace Drupal\apigee_devportal_kickstart\Plugin\Requirements;
+namespace Drupal\apigee_devportal_kickstart\Plugin\Requirements\Requirements;
 
 use Apigee\Edge\Api\Management\Controller\OrganizationController;
 use Apigee\Edge\Api\Monetization\Controller\OrganizationProfileController;
 use CommerceGuys\Addressing\AddressFormat\AddressField;
 use Drupal\address\FieldHelper;
 use Drupal\address\LabelHelper;
+use Drupal\apigee_devportal_kickstart\ApigeeEdgeSdkConnectorTrait;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\requirements\Annotation\Requirements;
 use Drupal\requirements\Plugin\RequirementsBase;
 
 /**
  * @Requirements(
  *   id = "commerce_store",
+ *   group="apigee_m10n_add_credit",
  *   label = "Commerce store",
  *   description = "Setup a commerce store to handle prepaid balance checkouts.",
  *   action_button_label="Setup store",
@@ -38,6 +39,8 @@ use Drupal\requirements\Plugin\RequirementsBase;
  * )
  */
 class CommerceStore extends RequirementsBase {
+
+  use ApigeeEdgeSdkConnectorTrait;
 
   /**
    * The Apigee Organization.

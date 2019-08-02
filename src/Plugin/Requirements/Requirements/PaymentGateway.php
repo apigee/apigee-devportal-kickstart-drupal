@@ -17,7 +17,7 @@
  * Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-namespace Drupal\apigee_devportal_kickstart\Plugin\Requirements;
+namespace Drupal\apigee_devportal_kickstart\Plugin\Requirements\Requirements;
 
 use Drupal\Core\Link;
 use Drupal\Core\Url;
@@ -27,6 +27,7 @@ use Drupal\requirements\Plugin\RequirementsBase;
 /**
  * @Requirements(
  *   id = "payment_gateway",
+ *   group="apigee_m10n_add_credit",
  *   label = "Payment gateway",
  *   description = "Configure a payment gateway to handle prepaid balance checkouts.",
  *   action_button_label="Create payment gateway",
