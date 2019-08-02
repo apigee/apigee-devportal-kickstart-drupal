@@ -17,7 +17,7 @@
  * Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-namespace Drupal\apigee_devportal_kickstart\Plugin\Requirements\Requirements;
+namespace Drupal\apigee_devportal_kickstart\Plugin\Requirement\Requirement;
 
 use Apigee\Edge\Api\Monetization\Controller\SupportedCurrencyController;
 use Apigee\Edge\Api\Monetization\Entity\SupportedCurrencyInterface;
@@ -28,12 +28,12 @@ use Drupal\commerce_price\Price;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Drupal\requirements\Annotation\Requirements;
-use Drupal\requirements\Plugin\RequirementsBase;
+use Drupal\requirement\Annotation\Requirement;
+use Drupal\requirement\Plugin\RequirementBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * @Requirements(
+ * @Requirement(
  *   id="add_credit_products",
  *   group="apigee_m10n_add_credit",
  *   label="Add credit products",
@@ -45,7 +45,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   }
  * )
  */
-class AddCreditProducts extends RequirementsBase implements ContainerFactoryPluginInterface {
+class AddCreditProducts extends RequirementBase implements ContainerFactoryPluginInterface {
 
   use ApigeeEdgeSdkConnectorTrait;
 

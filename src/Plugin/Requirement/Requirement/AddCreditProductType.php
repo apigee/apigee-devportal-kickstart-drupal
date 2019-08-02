@@ -17,14 +17,14 @@
  * Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-namespace Drupal\apigee_devportal_kickstart\Plugin\Requirements\Requirements;
+namespace Drupal\apigee_devportal_kickstart\Plugin\Requirement\Requirement;
 
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\requirements\Annotation\Requirements;
-use Drupal\requirements\Plugin\RequirementsBase;
+use Drupal\requirement\Annotation\Requirement;
+use Drupal\requirement\Plugin\RequirementBase;
 
 /**
- * @Requirements(
+ * @Requirement(
  *   id = "add_credit_product_type",
  *   group="apigee_m10n_add_credit",
  *   label = "Add Credit product type",
@@ -36,7 +36,7 @@ use Drupal\requirements\Plugin\RequirementsBase;
  *   }
  * )
  */
-class AddCreditProductType extends RequirementsBase {
+class AddCreditProductType extends RequirementBase {
 
   /**
    * {@inheritdoc}

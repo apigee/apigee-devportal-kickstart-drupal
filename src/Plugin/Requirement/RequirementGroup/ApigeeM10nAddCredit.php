@@ -17,17 +17,17 @@
  * Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-namespace Drupal\apigee_devportal_kickstart\Plugin\Requirements\RequirementsGroup;
+namespace Drupal\apigee_devportal_kickstart\Plugin\Requirement\RequirementGroup;
 
-use Drupal\requirements\Plugin\RequirementsGroupBase;
+use Drupal\requirement\Plugin\RequirementGroupBase;
 
 /**
- * @RequirementsGroup(
+ * @RequirementGroup(
  *   id = "apigee_m10n_add_credit",
  *   label = "Apigee Monetization Add Credit",
  *   description = "Review the following configuration.",
  * )
  */
-class ApigeeM10nAddCredit extends RequirementsGroupBase {
+class ApigeeM10nAddCredit extends RequirementGroupBase {
 
 }

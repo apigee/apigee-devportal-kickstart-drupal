@@ -17,17 +17,17 @@
  * Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-namespace Drupal\apigee_devportal_kickstart\Plugin\Requirements\Requirements;
+namespace Drupal\apigee_devportal_kickstart\Plugin\Requirement\Requirement;
 
 use Drupal\Core\Config\FileStorage;
 use Drupal\Core\Config\StorageComparer;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Messenger\MessengerInterface;
-use Drupal\requirements\Annotation\Requirements;
-use Drupal\requirements\Plugin\RequirementsBase;
+use Drupal\requirement\Annotation\Requirement;
+use Drupal\requirement\Plugin\RequirementBase;
 
 /**
- * @Requirements(
+ * @Requirement(
  *   id="add_credit_entity_displays",
  *   group="apigee_m10n_add_credit",
  *   label="Add credit entity displays",
@@ -40,7 +40,7 @@ use Drupal\requirements\Plugin\RequirementsBase;
  *   }
  * )
  */
-class AddCreditEntityDisplays extends RequirementsBase {
+class AddCreditEntityDisplays extends RequirementBase {
 
   /**
    * The name of the module.

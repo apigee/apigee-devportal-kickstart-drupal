@@ -17,7 +17,7 @@
  * Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-namespace Drupal\apigee_devportal_kickstart\Plugin\Requirements\Requirements;
+namespace Drupal\apigee_devportal_kickstart\Plugin\Requirement\Requirement;
 
 use Apigee\Edge\Api\Management\Controller\OrganizationController;
 use Apigee\Edge\Api\Monetization\Controller\OrganizationProfileController;
@@ -26,10 +26,10 @@ use Drupal\address\FieldHelper;
 use Drupal\address\LabelHelper;
 use Drupal\apigee_devportal_kickstart\ApigeeEdgeSdkConnectorTrait;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\requirements\Plugin\RequirementsBase;
+use Drupal\requirement\Plugin\RequirementBase;
 
 /**
- * @Requirements(
+ * @Requirement(
  *   id = "commerce_store",
  *   group="apigee_m10n_add_credit",
  *   label = "Commerce store",
@@ -38,7 +38,7 @@ use Drupal\requirements\Plugin\RequirementsBase;
  *   severity="error"
  * )
  */
-class CommerceStore extends RequirementsBase {
+class CommerceStore extends RequirementBase {
 
   use ApigeeEdgeSdkConnectorTrait;
 

@@ -17,15 +17,15 @@
  * Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-namespace Drupal\apigee_devportal_kickstart\Plugin\Requirements\Requirements;
+namespace Drupal\apigee_devportal_kickstart\Plugin\Requirement\Requirement;
 
 use Drupal\Core\Link;
 use Drupal\Core\Url;
-use Drupal\requirements\Annotation\Requirements;
-use Drupal\requirements\Plugin\RequirementsBase;
+use Drupal\requirement\Annotation\Requirement;
+use Drupal\requirement\Plugin\RequirementBase;
 
 /**
- * @Requirements(
+ * @Requirement(
  *   id = "payment_gateway",
  *   group="apigee_m10n_add_credit",
  *   label = "Payment gateway",
@@ -34,7 +34,7 @@ use Drupal\requirements\Plugin\RequirementsBase;
  *   severity="error"
  * )
  */
-class PaymentGateway extends RequirementsBase {
+class PaymentGateway extends RequirementBase {
 
   /**
    * {@inheritdoc}

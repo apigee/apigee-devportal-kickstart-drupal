@@ -17,17 +17,17 @@
  * Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-namespace Drupal\apigee_devportal_kickstart\Plugin\Requirements\RequirementsGroup;
+namespace Drupal\apigee_devportal_kickstart\Plugin\Requirement\RequirementGroup;
 
-use Drupal\requirements\Plugin\RequirementsGroupBase;
+use Drupal\requirement\Plugin\RequirementGroupBase;
 
 /**
- * @RequirementsGroup(
+ * @RequirementGroup(
  *   id = "apigee_edge",
  *   label = "Apigee Edge",
  *   description = "Review the following configuration.",
  * )
  */
-class ApigeeEdge extends RequirementsGroupBase {
+class ApigeeEdge extends RequirementGroupBase {
 
 }
