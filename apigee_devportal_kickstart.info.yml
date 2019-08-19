@@ -62,6 +62,7 @@ install:
 - apigee_kickstart_enhancement
 - better_exposed_filters
 - components
+- email_registration
 - fontawesome
 - forum
 - paragraphs
