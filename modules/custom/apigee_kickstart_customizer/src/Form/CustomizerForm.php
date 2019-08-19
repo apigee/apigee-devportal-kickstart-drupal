@@ -148,6 +148,7 @@ class CustomizerForm extends ConfigFormBase {
           '#type' => 'pseudo_color',
           '#default_value' => $values[$name] ?? NULL,
           '#attributes' => [
+            'data-color' => $values[$name],
             'data-picker' => TRUE,
           ],
         ];
