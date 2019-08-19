@@ -5,6 +5,7 @@
       const styles = $('body').get(0).style;
       const $form = $('.customizer-form');
       const $pickerWrapper = $form.find('#farbtastic-wrapper');
+      const $window = $(window);
 
       if ($form.length && $pickerWrapper.length) {
         const $picker = $.farbtastic($pickerWrapper);
@@ -16,6 +17,13 @@
           attachColorPicker($(this));
         }).change(function () {
           styles.setProperty($(this).attr('name'), $(this).val());
+        });
+
+        // Handle dialog close.
+        $window.on('dialog:beforeclose', function (event, dialog, $element) {
+          $form.find('[data-picker]').each(function () {
+            styles.setProperty($(this).attr('name'), $(this).data().color);
+          });
         });
 
         /**
