@@ -25,22 +25,6 @@ function apigee_kickstart_theme_suggestions_input_alter(array &$suggestions, arr
 }
 
 /**
- * Implements hook_form_alter().
- */
-function apigee_kickstart_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
-  if (strpos($form_id, 'commerce_order_item_add_to_cart_form') === 0) {
-    $order_item = $form_state->getFormObject()->getEntity();
-    $purchased_entity = $order_item->getPurchasedEntity();
-    $product = $purchased_entity->getProduct();
-
-    // Update the label for the unit price for add_credit products.
-    if ($product->get(AddCreditConfig::ADD_CREDIT_ENABLED_FIELD_NAME)->value) {
-      $form['unit_price']['widget'][0]['amount']['#title'] = t('Amount to be added to your account balance');
-    }
-  }
-}
-
-/**
  * Implements hook_form_FORM_ID_alter().
  */
 function apigee_kickstart_form_previous_balances_reports_download_form_alter(array &$form, FormStateInterface $form_state) {
