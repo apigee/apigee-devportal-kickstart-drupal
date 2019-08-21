@@ -17,6 +17,12 @@
           attachColorPicker($(this));
         }).change(function () {
           styles.setProperty($(this).attr('name'), $(this).val());
+        }).on('paste', function (event) {
+          event.preventDefault();
+          const pasted = event.originalEvent.clipboardData.getData('text');
+          if (pasted) {
+            $picker.setColor(pasted);
+          }
         });
 
         // Handle dialog close.
