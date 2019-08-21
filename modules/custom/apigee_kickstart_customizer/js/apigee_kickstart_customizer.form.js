@@ -19,13 +19,6 @@
             styles.setProperty($(this).attr('name'), val);
             $picker.setColor(val);
           })
-          .on('paste', function (event) {
-            event.preventDefault();
-            const pasted = event.originalEvent.clipboardData.getData('text');
-            if (pasted) {
-              $picker.setColor(pasted);
-            }
-          })
           .on('focus', function () {
             attachColorPicker($(this));
           });
