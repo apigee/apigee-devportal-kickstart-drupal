@@ -13,11 +13,15 @@
         // Attach a color picker to color fields.
         $form.find('[data-picker]').each(function () {
           attachColorPicker($(this));
-        }).focus(function () {
-          attachColorPicker($(this));
-        }).change(function () {
-          styles.setProperty($(this).attr('name'), $(this).val());
-        });
+        })
+          .on('change keyup', function () {
+            const val = $(this).val();
+            styles.setProperty($(this).attr('name'), val);
+            $picker.setColor(val);
+          })
+          .on('focus', function () {
+            attachColorPicker($(this));
+          });
 
         // Handle dialog close.
         $window.on('dialog:beforeclose', function (event, dialog, $element) {
