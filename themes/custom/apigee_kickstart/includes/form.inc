@@ -10,6 +10,7 @@ use Drupal\Component\Utility\Html;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\Core\Url;
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
@@ -73,4 +74,22 @@ function apigee_kickstart_form_commerce_checkout_flow_multistep_default_alter(ar
       }
       break;
   }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function apigee_kickstart_form_team_add_form_alter(array &$form, FormStateInterface $form_state) {
+  $form['actions']['cancel'] = [
+    '#type' => 'link',
+    '#title' => t('Cancel'),
+    '#url' => Url::fromRoute('entity.team.collection'),
+    '#attributes' => [
+      'class' => [
+        'btn',
+        'btn-outline-primary',
+      ]
+    ],
+    '#weight' => 100,
+  ];
 }

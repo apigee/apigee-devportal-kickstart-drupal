@@ -13392,6 +13392,10 @@ form.commerce-checkout-flow .form-actions a:hover {
   position: relative;
 }
 
+form.team-add-form {
+  max-width: 540px;
+}
+
 .views-exposed-form {
   border-radius: 4px;
   background-color: #fff;
