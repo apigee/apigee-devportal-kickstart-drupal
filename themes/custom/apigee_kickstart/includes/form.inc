@@ -93,3 +93,24 @@ function apigee_kickstart_form_team_add_form_alter(array &$form, FormStateInterf
     '#weight' => 100,
   ];
 }
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function apigee_kickstart_form_team_app_add_for_team_form_alter(array &$form, FormStateInterface $form_state) {
+  // Get the current team.
+  /** @var \Drupal\apigee_edge_teams\Entity\TeamInterface $team */
+  if ($team = \Drupal::routeMatch()->getParameter('team')) {
+    $form['actions']['cancel'] = [
+      '#type' => 'link',
+      '#title' => t('Cancel'),
+      '#url' => $team->toUrl(),
+      '#attributes' => [
+        'class' => [
+          'btn',
+          'btn-outline-primary',
+        ]
+      ],
+      '#weight' => 100,
+    ];
+  }
+}

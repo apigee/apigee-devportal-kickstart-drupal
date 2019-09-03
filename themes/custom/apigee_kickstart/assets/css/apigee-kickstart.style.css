@@ -13396,6 +13396,17 @@ form.team-add-form {
   max-width: 540px;
 }
 
+form.team-app-form {
+  max-width: 540px;
+}
+form.team-app-form fieldset {
+  margin-top: 2rem;
+}
+form.team-app-form fieldset#edit-api-products--wrapper .fieldset-wrapper {
+  max-height: 300px;
+  overflow: scroll;
+}
+
 .views-exposed-form {
   border-radius: 4px;
   background-color: #fff;
