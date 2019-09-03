@@ -13632,11 +13632,28 @@ div.forum__add {
 @media (min-width: 768px) {
   .path-teams .page__tasks > .container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
   }
 }
 .path-teams .page__tasks > .container .block--apigee-kickstart-actions {
   margin-left: auto;
+}
+.path-teams .page__tasks > .container .block--apigee-kickstart-tabs,
+.path-teams .page__tasks > .container .block--team-switcher {
+  width: 100%;
+}
+.path-teams .team-switcher {
+  max-width: none;
+  margin-top: 1.5rem;
+  display: flex;
+}
+.path-teams .team-switcher .dropbutton-wrapper {
+  flex: 1;
+  margin-right: 0.5rem;
+}
+.path-teams .team-switcher > .btn-primary.btn-sm, .path-teams .btn-group-sm.team-switcher > .btn-primary.btn {
+  max-height: 36px;
 }
 .path-teams .page__content > table thead {
   display: none;
@@ -13651,6 +13668,10 @@ div.forum__add {
 .path-teams .page__content > table tr td:first-child {
   font-size: 1rem;
   width: 100%;
+}
+
+.path--entity-team-app-collection-by-team .block--apigee-kickstart-actions .my-4 {
+  margin: 0 !important;
 }
 
 .user--full {

@@ -12,12 +12,33 @@
 
       @include media-breakpoint-up(md) {
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
       }
 
       .block--apigee-kickstart-actions {
         margin-left: auto;
       }
+
+      .block--apigee-kickstart-tabs,
+      .block--team-switcher {
+        width: 100%;
+      }
+    }
+  }
+
+  .team-switcher {
+    max-width: none;
+    margin-top: 1.5rem;
+    display: flex;
+
+    .dropbutton-wrapper {
+      flex: 1;
+      margin-right: .5rem;
+    }
+
+    > .btn-primary.btn-sm {
+      max-height: 36px;
     }
   }
 
@@ -45,6 +66,16 @@
           width: 100%;
         }
       }
+    }
+  }
+}
+
+.path--entity-team-app-collection-by-team {
+
+  .block--apigee-kickstart-actions {
+
+    .my-4 {
+      margin: 0 !important;
     }
   }
 }
