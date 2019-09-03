@@ -13622,6 +13622,33 @@ div.forum__add {
   grid-column: 1/-1;
 }
 
+.path-teams .page__tasks .my-4 {
+  margin-bottom: 0 !important;
+}
+@media (min-width: 768px) {
+  .path-teams .page__tasks > .container {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.path-teams .page__tasks > .container .block--apigee-kickstart-actions {
+  margin-left: auto;
+}
+.path-teams .page__content > table thead {
+  display: none;
+}
+.path-teams .page__content > table tr td {
+  padding: 1.2rem;
+  vertical-align: middle;
+}
+.path-teams .page__content > table tr td .dropbutton-multiple {
+  margin-right: 0 !important;
+}
+.path-teams .page__content > table tr td:first-child {
+  font-size: 1rem;
+  width: 100%;
+}
+
 .user--full {
   max-width: 540px;
 }

@@ -1,0 +1,50 @@
+// Styles for the Teams page.
+// -----------------------------------------------------------------------------
+.path-teams {
+
+  .page__tasks {
+
+    .my-4 {
+      margin-bottom: 0 !important;
+    }
+
+    > .container {
+
+      @include media-breakpoint-up(md) {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .block--apigee-kickstart-actions {
+        margin-left: auto;
+      }
+    }
+  }
+
+  .page__content {
+
+    > table {
+
+      thead {
+        display: none;
+      }
+
+      tr {
+
+        td {
+          padding: 1.2rem;
+          vertical-align: middle;
+
+          .dropbutton-multiple {
+            margin-right: 0 !important;
+          }
+        }
+
+        td:first-child {
+          font-size: 1rem;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
