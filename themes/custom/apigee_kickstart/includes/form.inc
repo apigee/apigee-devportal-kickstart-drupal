@@ -117,11 +117,17 @@ function apigee_kickstart_form_team_app_add_for_team_form_alter(array &$form, Fo
 }
 
 /**
- * Implements hook_form_FORM_ID_alter().
+ * Implements hook_form_alter().
  */
-function apigee_kickstart_form_apigee_edge_teams_add_team_member_form_alter(array &$form, FormStateInterface $form_state) {
-  $form['team_roles']['description']['#markup'] = '<small class="form-text">' . $form['team_roles']['description']['#markup'] . '</small>';
-  $form['actions']['cancel']['#attributes']['class'][] = 'btn';
-  $form['actions']['cancel']['#attributes']['class'][] = 'btn-outline-primary';
+function apigee_kickstart_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
+  if (in_array($form_id, ['apigee_edge_teams_edit_team_member_form', 'apigee_edge_teams_add_team_member_form', 'apigee_edge_teams_remove_team_member_form'])) {
+    $form['#attributes']['class'][] = 'team-member-form';
+    $form['actions']['cancel']['#attributes']['class'][] = 'btn';
+    $form['actions']['cancel']['#attributes']['class'][] = 'btn-outline-primary';
+
+    if (isset($form['team_roles']['description'])) {
+      $form['team_roles']['description']['#markup'] = '<small class="form-text">' . $form['team_roles']['description']['#markup'] . '</small>';
+    }
+  }
 }
 
