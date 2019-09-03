@@ -30,6 +30,7 @@
   .team-switcher {
     max-width: none;
     margin-top: 1.5rem;
+    margin-bottom: .5rem;
     display: flex;
 
     .dropbutton-wrapper {
@@ -70,6 +71,7 @@
   }
 }
 
+.path--entity-team-members,
 .path--entity-team-app-collection-by-team {
 
   .block--apigee-kickstart-actions {

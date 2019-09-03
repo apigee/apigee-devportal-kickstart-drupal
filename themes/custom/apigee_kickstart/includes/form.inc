@@ -93,6 +93,7 @@ function apigee_kickstart_form_team_add_form_alter(array &$form, FormStateInterf
     '#weight' => 100,
   ];
 }
+
 /**
  * Implements hook_form_FORM_ID_alter().
  */
@@ -114,3 +115,13 @@ function apigee_kickstart_form_team_app_add_for_team_form_alter(array &$form, Fo
     ];
   }
 }
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function apigee_kickstart_form_apigee_edge_teams_add_team_member_form_alter(array &$form, FormStateInterface $form_state) {
+  $form['team_roles']['description']['#markup'] = '<small class="form-text">' . $form['team_roles']['description']['#markup'] . '</small>';
+  $form['actions']['cancel']['#attributes']['class'][] = 'btn';
+  $form['actions']['cancel']['#attributes']['class'][] = 'btn-outline-primary';
+}
+

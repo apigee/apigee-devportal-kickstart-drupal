@@ -13407,6 +13407,14 @@ form.team-app-form fieldset#edit-api-products--wrapper .fieldset-wrapper {
   overflow: scroll;
 }
 
+form.apigee-edge-teams-add-team-member-form {
+  max-width: 540px;
+}
+form.apigee-edge-teams-add-team-member-form .form-checkboxes small {
+  margin: 0 0 1rem;
+  display: block;
+}
+
 .views-exposed-form {
   border-radius: 4px;
   background-color: #fff;
@@ -13657,6 +13665,7 @@ div.forum__add {
 .path-teams .team-switcher {
   max-width: none;
   margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
   display: flex;
 }
 .path-teams .team-switcher .dropbutton-wrapper {
@@ -13681,6 +13690,7 @@ div.forum__add {
   width: 100%;
 }
 
+.path--entity-team-members .block--apigee-kickstart-actions .my-4,
 .path--entity-team-app-collection-by-team .block--apigee-kickstart-actions .my-4 {
   margin: 0 !important;
 }
