@@ -107,6 +107,9 @@
 @import "form/form.commerce-cart";
 @import "form/form.commerce-checkout";
 @import "form/form.billing-details";
+@import "form/form.team-add-form";
+@import "form/form.team-app-form";
+@import "form/form.team-member-form";
 @import "form/view.exposed-form";
 @import "content/node.page";
 @import "content/node.article";
@@ -117,4 +120,5 @@
 @import "page/page.faq";
 @import "page/page.forum";
 @import "page/page.search";
+@import "page/page.teams";
 @import "user/user";

@@ -1,0 +1,15 @@
+{#
+/**
+ * @file
+ * Template for the Team switcher block.
+ */
+#}
+{% embed '@radix/block/block.twig' with {
+  html_tag: 'div',
+} %}
+  {% block content %}
+    {{ content }}
+    <a href="/teams" class="btn btn-primary btn-sm">{{ "My Teams"|t }}</a>
+  {% endblock %}
+
+{% endembed %}

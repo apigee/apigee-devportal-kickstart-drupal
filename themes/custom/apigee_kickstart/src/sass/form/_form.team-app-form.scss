@@ -1,0 +1,15 @@
+form.team-app-form {
+  max-width: 540px;
+
+  fieldset {
+    margin-top: 2rem;
+
+    &#edit-api-products--wrapper {
+
+      .fieldset-wrapper {
+        max-height: 300px;
+        overflow: scroll;
+      }
+    }
+  }
+}

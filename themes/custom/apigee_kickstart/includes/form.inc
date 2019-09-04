@@ -10,6 +10,7 @@ use Drupal\Component\Utility\Html;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\Core\Url;
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
@@ -74,3 +75,59 @@ function apigee_kickstart_form_commerce_checkout_flow_multistep_default_alter(ar
       break;
   }
 }
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function apigee_kickstart_form_team_add_form_alter(array &$form, FormStateInterface $form_state) {
+  $form['actions']['cancel'] = [
+    '#type' => 'link',
+    '#title' => t('Cancel'),
+    '#url' => Url::fromRoute('entity.team.collection'),
+    '#attributes' => [
+      'class' => [
+        'btn',
+        'btn-outline-primary',
+      ]
+    ],
+    '#weight' => 100,
+  ];
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function apigee_kickstart_form_team_app_add_for_team_form_alter(array &$form, FormStateInterface $form_state) {
+  // Get the current team.
+  /** @var \Drupal\apigee_edge_teams\Entity\TeamInterface $team */
+  if ($team = \Drupal::routeMatch()->getParameter('team')) {
+    $form['actions']['cancel'] = [
+      '#type' => 'link',
+      '#title' => t('Cancel'),
+      '#url' => $team->toUrl(),
+      '#attributes' => [
+        'class' => [
+          'btn',
+          'btn-outline-primary',
+        ]
+      ],
+      '#weight' => 100,
+    ];
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function apigee_kickstart_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
+  if (in_array($form_id, ['apigee_edge_teams_edit_team_member_form', 'apigee_edge_teams_add_team_member_form', 'apigee_edge_teams_remove_team_member_form'])) {
+    $form['#attributes']['class'][] = 'team-member-form';
+    $form['actions']['cancel']['#attributes']['class'][] = 'btn';
+    $form['actions']['cancel']['#attributes']['class'][] = 'btn-outline-primary';
+
+    if (isset($form['team_roles']['description'])) {
+      $form['team_roles']['description']['#markup'] = '<small class="form-text">' . $form['team_roles']['description']['#markup'] . '</small>';
+    }
+  }
+}
+

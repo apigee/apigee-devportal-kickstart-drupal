@@ -13392,6 +13392,29 @@ form.commerce-checkout-flow .form-actions a:hover {
   position: relative;
 }
 
+form.team-add-form {
+  max-width: 540px;
+}
+
+form.team-app-form {
+  max-width: 540px;
+}
+form.team-app-form fieldset {
+  margin-top: 2rem;
+}
+form.team-app-form fieldset#edit-api-products--wrapper .fieldset-wrapper {
+  max-height: 300px;
+  overflow: scroll;
+}
+
+form.team-member-form {
+  max-width: 540px;
+}
+form.team-member-form .form-checkboxes small {
+  margin: 0 0 1rem;
+  display: block;
+}
+
 .views-exposed-form {
   border-radius: 4px;
   background-color: #fff;
@@ -13620,6 +13643,80 @@ div.forum__add {
 .page--search .page__messages,
 .page--search form.search-form {
   grid-column: 1/-1;
+}
+
+.path-teams .page__tasks .my-4 {
+  margin-bottom: 0 !important;
+}
+@media (min-width: 768px) {
+  .path-teams .page__tasks > .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+.path-teams .page__tasks > .container .block--apigee-kickstart-actions {
+  margin-left: auto;
+}
+.path-teams .page__tasks > .container .block--apigee-kickstart-tabs,
+.path-teams .page__tasks > .container .block--team-switcher {
+  width: 100%;
+}
+.path-teams .team-switcher {
+  max-width: none;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+}
+.path-teams .team-switcher .dropbutton-wrapper {
+  flex: 1;
+  margin-right: 0.5rem;
+}
+.path-teams .team-switcher > .btn-primary.btn-sm, .path-teams .btn-group-sm.team-switcher > .btn-primary.btn {
+  max-height: 36px;
+}
+.path-teams .page__content > table thead th {
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+}
+.path-teams .page__content > table tr td {
+  padding: 1.2rem;
+  vertical-align: middle;
+}
+.path-teams .page__content > table tr td .dropbutton-multiple {
+  margin-right: 0 !important;
+  padding-right: 7rem;
+}
+.path-teams .page__content > table tr td:first-child {
+  font-size: 1rem;
+  width: 100%;
+}
+
+.path--entity-team-collection .page__content thead {
+  display: none;
+}
+.path--entity-team-collection .page__content td .dropbutton-multiple {
+  padding-right: 9rem !important;
+}
+
+.path--entity-team-members .block--apigee-kickstart-actions .my-4,
+.path--entity-team-app-collection-by-team .block--apigee-kickstart-actions .my-4 {
+  margin: 0 !important;
+}
+
+.path--entity-team-members .page__content table td {
+  vertical-align: middle;
+  width: 30% !important;
+}
+.path--entity-team-members .page__content table td:last-child {
+  width: 5% !important;
+}
+.path--entity-team-members .page__content table td ul {
+  padding: 0;
+  margin: 0;
+}
+.path--entity-team-members .page__content table td ul li {
+  list-style: none outside none;
 }
 
 .user--full {

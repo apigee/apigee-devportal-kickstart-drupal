@@ -1,0 +1,132 @@
+// Styles for the Teams page.
+// -----------------------------------------------------------------------------
+.path-teams {
+
+  .page__tasks {
+
+    .my-4 {
+      margin-bottom: 0 !important;
+    }
+
+    > .container {
+
+      @include media-breakpoint-up(md) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .block--apigee-kickstart-actions {
+        margin-left: auto;
+      }
+
+      .block--apigee-kickstart-tabs,
+      .block--team-switcher {
+        width: 100%;
+      }
+    }
+  }
+
+  .team-switcher {
+    max-width: none;
+    margin-top: 1.5rem;
+    margin-bottom: .5rem;
+    display: flex;
+
+    .dropbutton-wrapper {
+      flex: 1;
+      margin-right: .5rem;
+    }
+
+    > .btn-primary.btn-sm {
+      max-height: 36px;
+    }
+  }
+
+  .page__content {
+
+    > table {
+
+      thead {
+
+        th {
+          padding-left: 1.2rem;
+          padding-right: 1.2rem;
+        }
+      }
+
+      tr {
+
+        td {
+          padding: 1.2rem;
+          vertical-align: middle;
+
+          .dropbutton-multiple {
+            margin-right: 0 !important;
+            padding-right: 7rem;
+          }
+
+          &:first-child {
+            font-size: 1rem;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.path--entity-team-collection {
+
+  .page__content {
+
+    thead {
+      display: none;
+    }
+
+    td {
+
+      .dropbutton-multiple {
+        padding-right: 9rem !important;
+      }
+    }
+  }
+}
+
+.path--entity-team-members,
+.path--entity-team-app-collection-by-team {
+
+  .block--apigee-kickstart-actions {
+
+    .my-4 {
+      margin: 0 !important;
+    }
+  }
+}
+
+.path--entity-team-members {
+
+  .page__content {
+
+    table {
+
+      td {
+        vertical-align: middle;
+        width: 30% !important;
+
+        &:last-child {
+          width: 5% !important;
+        }
+
+        ul {
+          padding: 0;
+          margin: 0;
+
+          li {
+            list-style: none outside none;
+          }
+        }
+      }
+    }
+  }
+}
