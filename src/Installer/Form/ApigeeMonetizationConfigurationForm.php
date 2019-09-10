@@ -326,20 +326,32 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
       }
     }
 
-    if (!empty($this->supportedCurrencies)) {
-      $form['currencies'] = [
-        '#type' => 'details',
-        '#title' => $this->t('Currencies'),
-        '#open' => TRUE,
-        '#description' => $this->t('Create a product to add credit for the following supported currencies.'),
-        '#states' => [
-          'visible' => [
-            'input[name="modules[apigee_m10n]"]' => ['checked' => TRUE],
-            'input[name="modules[apigee_kickstart_m10n_add_credit]"]' => ['checked' => TRUE],
+    $form['currencies'] = [
+      '#type' => 'details',
+      '#title' => $this->t('Currencies'),
+      '#open' => TRUE,
+      '#description' => $this->t('Create a product to add credit for the following supported currencies.'),
+      '#states' => [
+        'visible' => [
+          'input[name="modules[apigee_m10n]"]' => ['checked' => TRUE],
+          'input[name="modules[apigee_kickstart_m10n_add_credit]"]' => ['checked' => TRUE],
+        ],
+      ],
+    ];
+
+    if (empty($this->supportedCurrencies)) {
+      $form['currencies']['help'] = [
+        '#theme' => 'status_messages',
+        '#message_list' => [
+          MessengerInterface::TYPE_ERROR => [
+            $this->t('Please setup your Apigee organization supported currencies as described in the <a href="@docs" target="_blank">Apigee Docs</a>. Then reload this page to automate the creation of "Add credit" products.', [
+              '@docs' => 'https://docs.apigee.com/api-platform/monetization/manage-supported-currencies#ui',
+            ]),
           ],
         ],
       ];
-
+    }
+    else {
       $currency_options = [];
       $importable_currencies = $this->getImportableCurrencies();
       foreach ($this->supportedCurrencies as $currency) {
@@ -397,10 +409,11 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
     $values['modules'] = array_keys(array_filter($values['modules']));
 
     if (count($values['modules'])) {
+
       // Update the supported currencies.
+      $values['supported_currencies'] = [];
       if (isset($values['supported_currencies'])) {
         $supported_currencies = array_keys(array_filter($values['supported_currencies']));
-        $values['supported_currencies'] = [];
         foreach ($supported_currencies as $currency_code) {
           $values['supported_currencies'][$currency_code] = $this->supportedCurrencies[strtolower($currency_code)];
         }
