@@ -1,0 +1,31 @@
+/**
+ * CSS variables.
+ *
+ * The apigee_kickstart theme uses CSS Variables for some rules, which are
+ * also available to customize in the UI via Customizer. The color fields are
+ * defined in `THEME.customizer.yml`, and their default values (which should
+ * mirror the values you set below) are defined in
+ * `config/install/apigee_kickstart_customizer.theme.THEME.yml`.
+ *
+ * By default, the variables point to other CSS variable values, which originate
+ * from the Bootstrap build. See the partials linked in the "CSS Variables"
+ * section in apigee_kickstart/src/sass/apigee-kickstart.style.scss for more
+ * details.
+ *
+ * :root {
+ *   --ak-header-color-bg: var(--dark);
+ *   --ak-header-color: var(--white);
+ *   --ak-footer-color-bg: var(--dark);
+ *   --ak-footer-color: var(--white);
+ *   --ak-accent-color: var(--blue);
+ *   --ak-accent-color-light: var(--white);
+ *   --ak-accent-color-dark: var(--blue-dark);
+ * }
+ */
+
+/**
+ * Add custom CSS here.
+ */
+body {
+
+}

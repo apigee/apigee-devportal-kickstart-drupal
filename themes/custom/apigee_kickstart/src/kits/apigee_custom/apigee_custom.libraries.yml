@@ -1,0 +1,9 @@
+style:
+  css:
+    theme:
+      css/RADIX_SUBTHEME_MACHINE_NAME.style.css: {}
+  js:
+    js/RADIX_SUBTHEME_MACHINE_NAME.script.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

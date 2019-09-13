@@ -1,0 +1,5 @@
+# Schema for the configuration files of the RADIX_SUBTHEME_NAME theme.
+
+RADIX_SUBTHEME_MACHINE_NAME.settings:
+  type: theme_settings
+  label: 'RADIX_SUBTHEME_NAME settings'
