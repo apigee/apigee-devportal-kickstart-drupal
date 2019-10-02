@@ -13,6 +13,9 @@ process:
       plugin: skip_on_empty
       method: process
       source: pid
+    -
+      plugin: migration_lookup
+      migration: devportal_comment
   entity_id:
     -
       plugin: migration_lookup
