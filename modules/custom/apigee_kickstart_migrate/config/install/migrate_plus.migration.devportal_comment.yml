@@ -3,7 +3,7 @@ status: true
 migration_group: devportal
 label: Comment (Comment type)
 source:
-  plugin: d7_comment
+  plugin: devportal_comment
   constants:
     entity_type: node
 process:
@@ -25,19 +25,17 @@ process:
       plugin: skip_on_empty
       method: row
   entity_type: constants/entity_type
-  comment_type:
-    -
-      plugin: default_value
-      default_value: 'comment'
-    -
-      plugin: skip_on_empty
-      method: row
+  comment_type: comment_type_name
   langcode: language
   field_name: '@comment_type'
   subject: subject
-  uid: uid
+  uid:
+    plugin: entity_lookup
+    source: user_mail
+    value_key: mail
+    entity_type: user
   name: name
-  mail: mail
+  mail: user_mail
   homepage: homepage
   hostname: hostname
   created: created
