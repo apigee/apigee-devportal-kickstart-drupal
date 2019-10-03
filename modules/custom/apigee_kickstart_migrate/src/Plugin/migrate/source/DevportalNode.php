@@ -23,6 +23,8 @@ namespace Drupal\apigee_kickstart_migrate\Plugin\migrate\source;
 use Drupal\node\Plugin\migrate\source\d7\Node;
 
 /**
+ * Migrate source for Drupal 7 node with custom fields.
+ *
  * @MigrateSource(
  *   id = "devportal_node"
  * )
@@ -43,7 +45,7 @@ class DevportalNode extends Node {
    * {@inheritdoc}
    */
   public function fields() {
-    $fields =  parent::fields();
+    $fields = parent::fields();
     $fields['user_mail'] = $this->t('The email of the user');
     return $fields;
   }

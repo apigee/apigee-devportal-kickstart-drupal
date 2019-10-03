@@ -24,6 +24,8 @@ use Drupal\comment\Plugin\migrate\source\d7\Comment;
 use Drupal\migrate\Row;
 
 /**
+ * Migrate source for Drupal 7 comment with custom fields.
+ *
  * @MigrateSource(
  *   id = "devportal_comment"
  * )
@@ -40,6 +42,9 @@ class DevportalComment extends Comment {
     return $query;
   }
 
+  /**
+   * {@inheritdoc}
+   */
   public function prepareRow(Row $row) {
     $comment_type = $row->getSourceProperty('node_type') === 'forum' ? 'comment_forum' : 'comment';
     $row->setSourceProperty('comment_type_name', $comment_type);
@@ -50,7 +55,7 @@ class DevportalComment extends Comment {
    * {@inheritdoc}
    */
   public function fields() {
-    $fields =  parent::fields();
+    $fields = parent::fields();
     $fields['comment_type_name'] = $this->t('The comment type.');
     $fields['user_mail'] = $this->t('The email of the user.');
     return $fields;
