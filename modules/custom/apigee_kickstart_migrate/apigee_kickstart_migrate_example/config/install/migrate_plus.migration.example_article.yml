@@ -1,0 +1,38 @@
+id: example_article
+status: true
+label: Article (Example)
+migration_group: devportal_example
+source:
+  plugin: devportal_node
+  node_type: article
+destination:
+  plugin: 'entity:node'
+  default_bundle: article
+process:
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: und
+  title: title
+  uid:
+    plugin: entity_lookup
+    source: user_mail
+    value_key: mail
+    entity_type: user
+  status: status
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  body:
+    plugin: sub_process
+    source: body
+    process:
+      value: value
+      format:
+        plugin: default_value
+        default_value: full_html
+  field_foo: field_foo
