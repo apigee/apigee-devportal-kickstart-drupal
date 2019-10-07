@@ -19,7 +19,7 @@ Drush can be used to generate a subtheme of `apigee_kickstart` for you.
 
 3. Run the Drush command, substituting `subtheme` with what you'd like your subtheme's machine name to be:
 
-    `drush --include="web/themes/contrib/radix" radix:create "subtheme" --kit=web/profiles/contrib/apigee_devportal_kickstart/themes/custom/apigee_kickstart/src/kits/apigee_custom`
+    `drush --include="web/themes/contrib/radix" radix:create "subtheme" --kit=apigee_custom`
 
 Upon completion of the Drush command, you will have a newly created theme at `web/themes/custom/subtheme`.
 
