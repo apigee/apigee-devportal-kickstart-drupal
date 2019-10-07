@@ -1,0 +1,10 @@
+colors:
+  name: Colors
+  variables:
+    --ak-header-color-bg: 'Header: background color'
+    --ak-header-color: 'Header: text color'
+    --ak-footer-color-bg: 'Footer: background color'
+    --ak-footer-color: 'Footer: color'
+    --ak-accent-color: 'Accent color'
+    --ak-accent-color-light: 'Accent color: light'
+    --ak-accent-color-dark: 'Accent color: dark'
