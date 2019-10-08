@@ -4,13 +4,16 @@
 
 This project is a [Drupal installation profile](https://www.drupal.org/docs/8/distributions) which needs to be added to Drupal core and installed using [Composer](https://getcomposer.org). The [installation instructions](https://www.drupal.org/docs/8/modules/apigee-developer-portal-kickstart/get-started-with-kickstart)  use the [Apigee Developer Portal Kickstart Composer project](https://github.com/apigee/devportal-kickstart-project-composer) to install Drupal core and this installation profile to create a site.
 
-## Profile status
+## Project status
 
 The core functionality of this profile is in active development. The features and functionality will evolve as the project grows. We encourage you to download and evaluate the profile, and to use our [GitHub issue queue](https://github.com/apigee/apigee-devportal-kickstart-drupal/issues) to give feedback, ask questions, or log issues.
 
+## Customizing the look and feel
+Information on how to customize the look and feel of the site can be found in the subtheme's README at: `themes/custom/apigee_kickstart/README.md`.
+
 ## Documentation
 
-The documentation guide for the Apigee Developer Portal Kickstart profile is located at: https://www.drupal.org/docs/8/modules/apigee-developer-portal-kickstart
+Full documentation is up on the [Drupal.org Apigee Developer Portal Kickstart profile documentation page](https://www.drupal.org/docs/8/modules/apigee-developer-portal-kickstart).
 
 ## Issues, questions and feedback
 
