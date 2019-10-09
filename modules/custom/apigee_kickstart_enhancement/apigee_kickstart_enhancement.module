@@ -194,7 +194,7 @@ function _apigee_kickstart_user_extra_fields() {
     'username' => [
       'label' => t('Username'),
       'value_callback' => function (UserInterface $user) {
-        return $user->getDisplayName();
+        return $user->getAccountName();
       },
     ],
     'email' => [
