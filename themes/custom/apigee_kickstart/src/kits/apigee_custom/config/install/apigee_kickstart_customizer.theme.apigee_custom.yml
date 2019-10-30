@@ -1,0 +1,8 @@
+values:
+  '--ak-header-color-bg': '#505050'
+  '--ak-header-color': '#ffffff'
+  '--ak-footer-color-bg': '#505050'
+  '--ak-footer-color': '#fcfcfc'
+  '--ak-accent-color': '#2196f3'
+  '--ak-accent-color-light': '#ffffff'
+  '--ak-accent-color-dark': '#0c83e2'

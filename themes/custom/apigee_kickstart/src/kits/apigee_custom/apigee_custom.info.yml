@@ -1,0 +1,34 @@
+name: RADIX_SUBTHEME_NAME
+description: A sub-theme of Apigee Kickstart.
+screenshot: screenshot.png
+core: 8.x
+type: theme
+base theme: apigee_kickstart
+hidden: true
+
+regions:
+  navbar_branding: 'Navbar Branding'
+  navbar_left:  'Navbar Left'
+  navbar_right: 'Navbar Right'
+  breadcrumbs: Breadcrumbs
+  header: Header
+  content_above: 'Content Above'
+  tasks: Tasks
+  content: Content
+  sidebar_first: 'Sidebar First'
+  sidebar_second: 'Sidebar Second'
+  content_below: 'Content Below'
+  footer: Footer
+  copyright: Copyright
+
+libraries:
+  - radix/style
+  - apigee_kickstart/font.roboto
+  - apigee_kickstart/style
+  - RADIX_SUBTHEME_MACHINE_NAME/style
+
+libraries-override:
+  radix/bootstrap: false
+
+ckeditor_stylesheets:
+  - assets/css/RADIX_SUBTHEME_MACHINE_NAME.style.css
