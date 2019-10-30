@@ -1,0 +1,55 @@
+id: devportal_comment
+status: true
+migration_group: devportal
+label: Comment (Comment type)
+source:
+  plugin: devportal_comment
+  constants:
+    entity_type: node
+process:
+  cid: cid
+  pid:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: pid
+    -
+      plugin: migration_lookup
+      migration: devportal_comment
+  entity_id:
+    -
+      plugin: migration_lookup
+      migration:
+        - devportal_article
+        - devportal_forum
+        - devportal_page
+      source: nid
+    -
+      plugin: skip_on_empty
+      method: row
+  entity_type: constants/entity_type
+  comment_type: comment_type_name
+  langcode: language
+  field_name: '@comment_type'
+  subject: subject
+  uid:
+    plugin: entity_lookup
+    source: user_mail
+    value_key: mail
+    entity_type: user
+  name: name
+  mail: user_mail
+  homepage: homepage
+  hostname: hostname
+  created: created
+  changed: changed
+  status: status
+  thread: thread
+  comment_body: comment_body
+destination:
+  plugin: 'entity:comment'
+migration_dependencies:
+  required:
+    - devportal_article
+    - devportal_forum
+    - devportal_page

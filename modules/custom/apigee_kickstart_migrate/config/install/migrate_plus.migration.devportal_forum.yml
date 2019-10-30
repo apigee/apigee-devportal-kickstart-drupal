@@ -1,0 +1,46 @@
+id: devportal_forum
+status: true
+label: Forum (Content type)
+migration_group: devportal
+source:
+  plugin: devportal_node
+  node_type: forum
+destination:
+  plugin: 'entity:node'
+  default_bundle: forum
+process:
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: und
+  title: title
+  uid:
+    plugin: entity_lookup
+    source: user_mail
+    value_key: mail
+    entity_type: user
+  status: status
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  body:
+    plugin: sub_process
+    source: body
+    process:
+      value: value
+      format:
+        plugin: default_value
+        default_value: full_html
+  taxonomy_forums:
+    -
+      plugin: migration_lookup
+      source: taxonomy_forums
+      migration:
+        - devportal_taxonomy_forums
+migration_dependencies:
+  required:
+    - devportal_taxonomy_forums

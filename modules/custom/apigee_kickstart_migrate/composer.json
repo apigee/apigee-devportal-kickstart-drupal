@@ -1,0 +1,16 @@
+{
+    "name": "drupal/apigee_kickstart_migrate",
+    "license": "GPL-2.0",
+    "type": "drupal-module",
+    "description": "Provides a migration path from Drupal 7 Devportal to Drupal 8 Kickstart.",
+    "require": {
+        "php": ">=7.1",
+        "drupal/migrate_plus": "^4.2",
+        "drupal/migrate_tools": "^4.3"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
