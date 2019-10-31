@@ -23,6 +23,7 @@ use Drupal\apigee_devportal_kickstart\Installer\Form\ApigeeEdgeConfigurationForm
 use Drupal\apigee_devportal_kickstart\Installer\Form\ApigeeMonetizationConfigurationForm;
 use Drupal\apigee_devportal_kickstart\Installer\Form\DemoInstallForm;
 use Drupal\Core\Messenger\MessengerInterface;
+use Drupal\menu_link_content\Entity\MenuLinkContent;
 
 /**
  * @file
@@ -251,4 +252,28 @@ function apigee_devportal_kickstart_install() {
       }
     }
   }
+
+  // Create a forum link.
+  // This cannot be added as config since uninstalling forum.module will result
+  // in a RouteNotFoundException.
+  // See https://github.com/apigee/apigee-devportal-kickstart-drupal/issues/276.
+  MenuLinkContent::create([
+    'title' => 'Forum',
+    'menu_name' => 'main',
+    'link' => ['uri' => 'internal:/forum'],
+    'weight' => 3,
+  ])->save();
+}
+
+/**
+ * Replace 'Forum' menu link with one that can be edited.
+ */
+function apigee_devportal_kickstart_update_8001(&$sandbox) {
+  // Replaced apigee_devportal_kickstart.links.menu.yml with the following.
+  MenuLinkContent::create([
+    'title' => 'Forum',
+    'menu_name' => 'main',
+    'link' => ['uri' => 'internal:/forum'],
+    'weight' => 3,
+  ])->save();
 }
