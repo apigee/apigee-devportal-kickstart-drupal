@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/admin\/structure\/menu\/item\/4\/edit?_format=hal_json"
+            "href": "http:\/\/default\/admin\/structure\/menu\/item\/2\/edit?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/menu_link_content\/menu_link_content"
@@ -9,17 +9,17 @@
     },
     "id": [
         {
-            "value": 4
+            "value": 2
         }
     ],
     "uuid": [
         {
-            "value": "00d028d8-36f3-4758-b644-d4d55f7f0cce"
+            "value": "8065ce1c-387a-4a4f-a19e-6a042cbadd56"
         }
     ],
     "revision_id": [
         {
-            "value": 1
+            "value": 2
         }
     ],
     "langcode": [
@@ -35,7 +35,7 @@
     ],
     "revision_created": [
         {
-            "value": "2019-05-08T14:50:16+00:00",
+            "value": "2019-11-07T01:19:12+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -46,18 +46,18 @@
     ],
     "title": [
         {
-            "value": "Sign up",
+            "value": "Get Started",
             "lang": "en"
         }
     ],
     "menu_name": [
         {
-            "value": "account"
+            "value": "main"
         }
     ],
     "link": [
         {
-            "uri": "internal:\/user\/register",
+            "uri": "entity:node\/2",
             "title": "",
             "options": []
         }
@@ -69,12 +69,12 @@
     ],
     "rediscover": [
         {
-            "value": true
+            "value": false
         }
     ],
     "weight": [
         {
-            "value": 100
+            "value": 1
         }
     ],
     "expanded": [
@@ -84,7 +84,7 @@
     ],
     "changed": [
         {
-            "value": "2019-04-04T16:05:45+00:00",
+            "value": "2019-11-07T01:19:12+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }

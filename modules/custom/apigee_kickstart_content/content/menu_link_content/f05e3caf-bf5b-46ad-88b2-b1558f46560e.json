@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/admin\/structure\/menu\/item\/2\/edit?_format=hal_json"
+            "href": "http:\/\/default\/admin\/structure\/menu\/item\/4\/edit?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/menu_link_content\/menu_link_content"
@@ -9,17 +9,17 @@
     },
     "id": [
         {
-            "value": 2
+            "value": 4
         }
     ],
     "uuid": [
         {
-            "value": "0dc221ed-fabe-464a-9a09-18e7398952df"
+            "value": "f05e3caf-bf5b-46ad-88b2-b1558f46560e"
         }
     ],
     "revision_id": [
         {
-            "value": 2
+            "value": 4
         }
     ],
     "langcode": [
@@ -35,7 +35,7 @@
     ],
     "revision_created": [
         {
-            "value": "2019-05-08T14:50:16+00:00",
+            "value": "2019-11-07T01:20:17+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -84,7 +84,7 @@
     ],
     "changed": [
         {
-            "value": "2019-03-21T16:22:19+00:00",
+            "value": "2019-11-07T01:20:17+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
