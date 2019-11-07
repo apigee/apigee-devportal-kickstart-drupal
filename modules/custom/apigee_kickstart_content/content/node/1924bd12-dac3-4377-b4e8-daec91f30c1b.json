@@ -63,7 +63,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "bc33c1aa-a2e8-4a9d-9973-d60d109bb22c"
+                        "value": "de483854-a8b7-4eb6-bab3-5a4c196d2376"
                     }
                 ]
             }
@@ -80,7 +80,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "bc33c1aa-a2e8-4a9d-9973-d60d109bb22c"
+                        "value": "de483854-a8b7-4eb6-bab3-5a4c196d2376"
                     }
                 ],
                 "lang": "en"
@@ -139,7 +139,7 @@
     "path": [
         {
             "alias": "\/terms-and-conditions",
-            "pid": 6,
+            "pid": 8,
             "langcode": "en",
             "lang": "en"
         }

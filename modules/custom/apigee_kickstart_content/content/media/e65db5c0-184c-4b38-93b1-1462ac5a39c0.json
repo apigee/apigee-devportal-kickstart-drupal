@@ -53,7 +53,7 @@
     ],
     "revision_created": [
         {
-            "value": "2019-05-31T18:09:11+00:00",
+            "value": "2019-11-07T01:17:30+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -81,7 +81,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "bc33c1aa-a2e8-4a9d-9973-d60d109bb22c"
+                        "value": "de483854-a8b7-4eb6-bab3-5a4c196d2376"
                     }
                 ],
                 "lang": "en"
@@ -153,6 +153,14 @@
     "revision_translation_affected": [
         {
             "value": true,
+            "lang": "en"
+        }
+    ],
+    "path": [
+        {
+            "alias": null,
+            "pid": null,
+            "langcode": "en",
             "lang": "en"
         }
     ]
