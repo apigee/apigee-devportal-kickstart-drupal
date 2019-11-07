@@ -6,11 +6,6 @@
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/block_content\/title_bar"
         },
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/title_bar\/revision_user": [
-            {
-                "href": "http:\/\/default\/user\/1?_format=hal_json"
-            }
-        ],
         "http:\/\/drupal.org\/rest\/relation\/block_content\/title_bar\/field_title_bar": [
             {
                 "href": "",
@@ -50,44 +45,6 @@
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
-    "_embedded": {
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/title_bar\/revision_user": [
-            {
-                "_links": {
-                    "self": {
-                        "href": "http:\/\/default\/user\/1?_format=hal_json"
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "bc33c1aa-a2e8-4a9d-9973-d60d109bb22c"
-                    }
-                ]
-            }
-        ],
-        "http:\/\/drupal.org\/rest\/relation\/block_content\/title_bar\/field_title_bar": [
-            {
-                "_links": {
-                    "self": {
-                        "href": ""
-                    },
-                    "type": {
-                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/title_bar"
-                    }
-                },
-                "uuid": [
-                    {
-                        "value": "9098c59c-de97-4160-8f0c-eed7ed57f716"
-                    }
-                ],
-                "lang": "en",
-                "target_revision_id": "183"
-            }
-        ]
-    },
     "status": [
         {
             "value": true,
@@ -123,5 +80,26 @@
             "value": true,
             "lang": "en"
         }
-    ]
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/block_content\/title_bar\/field_title_bar": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/title_bar"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "9098c59c-de97-4160-8f0c-eed7ed57f716"
+                    }
+                ],
+                "lang": "en",
+                "target_revision_id": "183"
+            }
+        ]
+    }
 }
