@@ -34,6 +34,11 @@ use Drupal\menu_link_content\Entity\MenuLinkContent;
  * Implements hook_install_tasks().
  */
 function apigee_devportal_kickstart_install_tasks(&$install_state) {
+  // Initialize the seven theme and set it as active.
+  // This ensures the installation theme is maintained across tasks.
+  $theme = \Drupal::service('theme.initialization')->initTheme('seven');
+  \Drupal::theme()->setActiveTheme($theme);
+
   $tasks = [
     DemoInstallForm::class => [
       'display_name' => t('Install demo content'),

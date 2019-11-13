@@ -9,6 +9,8 @@ core: 8.x
 # a label for the software being installed.
 distribution:
  name: Apigee Developer Portal Kickstart
+ install:
+   theme: seven
 
 # Required modules
 # Note that any dependencies of the modules listed here will be installed
