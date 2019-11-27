@@ -14,9 +14,11 @@
   approved: 'success',
   active: 'success',
   revoked: 'danger',
+  expired: 'warning',
+  pending: 'warning',
 } %}
 
 {% include '@radix/badge/badge.twig' with {
-  type: statuses[element.value|trim]|default('info'),
+  type: statuses[element.value|trim|lower]|default('info'),
   content: element.value|capitalize,
 } %}
