@@ -21,10 +21,20 @@
     } %}
 
         {% block header %}
+          <div class="d-flex items-center">
+            {% if content.warnings %}
+              <span class="badge badge-warning d-inline-flex align-items-center mr-2">
+                <i class="fa fa-exclamation-circle d-inline-block mr-1"></i> {{ "Warnings"|t }}
+              </span>
+            {% endif %}
             {{ content.status }}
+          </div>
         {% endblock %}
 
         {% block content %}
+
+          {{ content.warnings }}
+
           {% if content.credentials %}
             <div class="tab-pane show active" id="credentials-{{ tab_suffix }}">
               <div class="card apigee-entity--app__details">
@@ -32,7 +42,7 @@
                   {{ "Details" }}
                 </h4>
                 <div class="card-body">
-                  {{ content|without('status', 'credentials') }}
+                  {{ content|without('status', 'credentials', 'warnings') }}
                 </div>
               </div>
 

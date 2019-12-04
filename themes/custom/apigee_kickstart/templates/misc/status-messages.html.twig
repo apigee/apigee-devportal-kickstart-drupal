@@ -21,7 +21,7 @@
           <h2 class="visually-hidden">{{ status_headings[type] }}</h2>
         {% endif %}
         {% if messages|length > 1 %}
-          <ul>
+          <ul class="mb-0">
             {% for message in messages %}
               <li>{{ message }}</li>
             {% endfor %}

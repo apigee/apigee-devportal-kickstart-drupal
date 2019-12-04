@@ -23,12 +23,14 @@
  * Main module file for Apigee Kickstart Enhancement.
  */
 
+use Apigee\Edge\Api\Management\Entity\AppCredential;
+use Apigee\Edge\Structure\CredentialProduct;
+use Drupal\apigee_edge\Entity\AppInterface;
 use Drupal\apigee_edge\Entity\EdgeEntityViewBuilder;
-use Drupal\Component\Serialization\Json;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Menu\LocalActionDefault;
 use Drupal\Core\Render\Element;
 use Drupal\user\UserInterface;
 
@@ -105,7 +107,35 @@ function apigee_kickstart_enhancement_entity_extra_field_info() {
     ];
   }
 
+  // Add warnings to app.
+  foreach (\Drupal::service('apigee_kickstart.enhancer')->getAppEntityTypes() as $entity_type_id => $app_entity_type) {
+    $fields[$entity_type_id][$entity_type_id]['display']['warnings'] = [
+      'label' => t('Warnings'),
+      'weight' => 10,
+      'visible' => FALSE,
+    ];
+  }
+
   return $fields;
+}
+
+/**
+ * Implements hook_entity_view().
+ */
+function apigee_kickstart_enhancement_entity_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  $entity_type = $entity->getEntityType();
+  if (\Drupal::service('apigee_kickstart.enhancer')
+    ->isAppEntityType($entity_type)) {
+    $warnings = _apigee_kickstart_enhancement_check_app_warnings($entity, $entity_type);
+    if (count($warnings)) {
+      $build['warnings'] = [
+        '#theme' => 'status_messages',
+        '#message_list' => [
+          'warning' => $warnings,
+        ],
+      ];
+    }
+  }
 }
 
 /**
@@ -216,4 +246,77 @@ function _apigee_kickstart_user_extra_fields() {
       },
     ],
   ];
+}
+
+/**
+ * Checks credentials of an app and returns warnings about them.
+ *
+ * TODO: Abstract
+ * \Drupal\apigee_edge\Entity\ListBuilder\AppListBuilder::checkAppCredentialWarnings.
+ *
+ * @param \Drupal\apigee_edge\Entity\AppInterface $app
+ *   The app entity to be checked.
+ * @param \Drupal\Core\Entity\EntityTypeInterface $entity_type
+ *   The app entity type.
+ *
+ * @return array
+ *   An associative array that contains information about the revoked
+ *   credentials and revoked or pending API products in a credential.
+ *
+ * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+ * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+ */
+function _apigee_kickstart_enhancement_check_app_warnings(AppInterface $app, EntityTypeInterface $entity_type) {
+  $warnings = [];
+  $warnings['revokedCred'] = FALSE;
+  $warnings['revokedOrPendingCredProduct'] = FALSE;
+  $warnings['expiredCred'] = FALSE;
+
+  foreach ($app->getCredentials() as $credential) {
+    if ($credential->getStatus() === AppCredential::STATUS_REVOKED) {
+      $args = [
+        '@app' => $entity_type->getLowercaseLabel(),
+      ];
+      if (count($app->getCredentials()) > 1) {
+        $warnings['revokedCred'] = t('One of the credentials associated with this @app is in revoked status.', $args);
+      }
+      else {
+        $warnings['revokedCred'] = t('The credential associated with this @app is in revoked status.', $args);
+      }
+      break;
+    }
+
+    // Check for expired credentials.
+    if (($expired_date = $credential->getExpiresAt()) && Drupal::time()->getRequestTime() - $expired_date->getTimestamp() > 0) {
+      $warnings['expiredCred'] = t('At least one of the credentials associated with this @app is expired.', [
+        '@app' => $entity_type->getLowercaseLabel(),
+      ]);
+    }
+
+    foreach ($credential->getApiProducts() as $cred_product) {
+      if ($cred_product->getStatus() == CredentialProduct::STATUS_REVOKED || $cred_product->getStatus() == CredentialProduct::STATUS_PENDING) {
+        $args = [
+          '@app' => $entity_type->getLowercaseLabel(),
+          '@api_product' => Drupal::entityTypeManager()
+            ->getDefinition('api_product')
+            ->getLowercaseLabel(),
+          '@status' => $cred_product->getStatus() == CredentialProduct::STATUS_REVOKED ? t('revoked') : t('pending'),
+        ];
+        if (count($app->getCredentials()) === 1) {
+          /** @var \Drupal\apigee_edge\Entity\ApiProductInterface $apiProduct */
+          $api_product = Drupal::entityTypeManager()
+            ->getStorage('api_product')
+            ->load($cred_product->getApiproduct());
+          $args['%name'] = $api_product->label();
+          $warnings['revokedOrPendingCredProduct'] = t('%name @api_product associated with this @app is in @status status.', $args);
+        }
+        else {
+          $warnings['revokedOrPendingCredProduct'] = t('At least one @api_product associated with one of the credentials of this @app is in @status status.', $args);
+        }
+        break;
+      }
+    }
+  }
+
+  return array_filter($warnings);
 }

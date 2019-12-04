@@ -18,14 +18,16 @@
 %}
 <div{{ attributes.addClass(classes) }}>
 
-  <div class="collapsible-card__header px-4 py-3 bg-light d-flex justify-content-between align-items-center">
-    {% if title %}
-      <button class="btn btn-link collapsible-card__toggle px-0">{{ title }}</button>
-    {% endif %}
+  <div class="collapsible-card__header">
+    <button class="collapsible-card__toggle border-0 d-flex d-flex justify-content-between align-items-center w-100 px-4 py-3 bg-light">
+      {% if title %}
+        <span class="btn btn-link px-0">{{ title }}</span>
+      {% endif %}
 
-    {% block header %}
-      {{ header }}
-    {% endblock %}
+      {% block header %}
+        {{ header }}
+      {% endblock %}
+    </button>
   </div>
 
   <div class="collapsible-card__content p-4">

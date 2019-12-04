@@ -48,9 +48,9 @@
 {% endif %}
 
 {% block content %}
-  {% set tab_suffix = entity.name|clean_class %}
-
   <div{{ attributes.addClass(classes) }}>
+
+    {{ content.warnings }}
 
     {% if content.credentials %}
       <div class="tab-pane show active" id="credentials-{{ tab_suffix }}">
@@ -59,7 +59,7 @@
             {{ "Details" }}
           </h4>
           <div class="card-body">
-            {{ content|without('credentials') }}
+            {{ content|without('credentials', 'warnings') }}
           </div>
         </div>
 
@@ -73,29 +73,5 @@
         </div>
       </div>
     {% endif %}
-
-{#    <ul class="nav nav-tabs--secondary mb-4">#}
-{#      {% if content.callbackUrl or content.credentials.primary_wrapper %}#}
-{#        <li class="nav-item">#}
-{#          <a class="nav-link active" id="keys-tab-{{ tab_suffix }}" data-toggle="tab" href="#credentials-{{ tab_suffix }}">#}
-{#            {{ "Credentials"|t }}#}
-{#          </a>#}
-{#        </li>#}
-{#      {% endif %}#}
-
-{#      <li class="nav-item">#}
-{#        <a class="nav-link" id="details-tab-{{ tab_suffix }}" data-toggle="tab" href="#details-{{ tab_suffix }}">#}
-{#          {{ "Details"|t }}#}
-{#        </a>#}
-{#      </li>#}
-{#    </ul>#}
-
-{#    <div class="tab-content">#}
-
-
-{#      <div class="tab-pane" id="details-{{ tab_suffix }}">#}
-{#        {{ content|without('credentials') }}#}
-{#      </div>#}
-{#    </div>#}
   </div>
 {% endblock %}
