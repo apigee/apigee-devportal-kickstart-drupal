@@ -34,23 +34,6 @@ function apigee_kickstart_preprocess_apigee_entity__app(array &$variables) {
   /** @var \Drupal\apigee_edge\Entity\AppInterface $app */
   $app = $variables['entity'];
 
-  // Preprocess the app credentials so that we can render individual fields.
-  if ($credentials = $app->getCredentials()) {
-    $credential_variables['elements']['#credential'] = reset($credentials);
-
-    template_preprocess_app_credential($credential_variables);
-
-    // Render the consumerKey and the consumerSecret as secret fields.
-    foreach (['consumerKey', 'consumerSecret'] as $field_name) {
-      $credential_variables['primary_wrapper'][$field_name]['value'] = [
-        '#type' => 'secret',
-        '#value' => $credential_variables['primary_wrapper'][$field_name]['value']['#value'],
-      ];
-    }
-
-    $variables['content']['credentials'] = $credential_variables;
-  }
-
   // Add local tasks on the app canonical route as additional tabs.
   $variables['additional_tabs'] = [];
 
@@ -88,6 +71,22 @@ function apigee_kickstart_preprocess_apigee_entity__app(array &$variables) {
       }
     }
   }
+}
+
+/**
+ * Implement template_preprocess_app_credentials().
+ */
+function apigee_kickstart_preprocess_app_credential(&$variables) {
+  // Render the consumerKey and the consumerSecret as secret fields.
+  foreach (['consumerKey', 'consumerSecret'] as $field_name) {
+    $variables['primary_wrapper'][$field_name]['value'] = [
+      '#type' => 'secret',
+      '#value' => $variables['primary_wrapper'][$field_name]['value']['#value'],
+    ];
+  }
+
+  // Rename title to products.
+  $variables['secondary_wrapper']['title']['#title'] = t('Products');
 }
 
 /**

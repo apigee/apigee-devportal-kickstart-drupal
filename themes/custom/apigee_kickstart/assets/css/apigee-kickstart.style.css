@@ -11916,10 +11916,6 @@ input.btn + .btn {
 .collapsible-card__content .tab-pane .field:first-child {
   padding-top: 0;
 }
-.collapsible-card__content .field + .field,
-.collapsible-card__content .tab-pane .field + .field {
-  border-top: 1px solid #ddd;
-}
 .collapsible-card__content .field .field__label,
 .collapsible-card__content .tab-pane .field .field__label {
   min-width: 160px;
@@ -12832,7 +12828,7 @@ ul.social-links li a {
 }
 .secret__copy button {
   color: var(--ak-accent-color);
-  font-size: 1.6rem;
+  font-size: 1.2rem;
 }
 .secret__copy button:hover {
   color: var(--ak-accent-color-dark);
@@ -12950,7 +12946,7 @@ ul.social-links li a {
 .apigee-entity--app .tab-pane .api-product-list-row,
 .apigee-entity--app .tab-pane .item-property {
   width: 100%;
-  padding: 1.2rem 0;
+  padding: 0.8rem 1.2rem;
   font-size: 0.875rem;
   display: flex;
   flex-direction: column;
@@ -12963,27 +12959,6 @@ ul.social-links li a {
     flex-direction: row;
     align-items: center;
   }
-}
-.apigee-entity--app .tab-pane .field:first-child,
-.apigee-entity--app .tab-pane .api-product-list-row:first-child,
-.apigee-entity--app .tab-pane .item-property:first-child {
-  padding-top: 0;
-}
-.apigee-entity--app .tab-pane .field:last-child,
-.apigee-entity--app .tab-pane .api-product-list-row:last-child,
-.apigee-entity--app .tab-pane .item-property:last-child {
-  padding-bottom: 0;
-}
-.apigee-entity--app .tab-pane .field + .field,
-.apigee-entity--app .tab-pane .field + .api-product-list-row,
-.apigee-entity--app .tab-pane .field + .item-property,
-.apigee-entity--app .tab-pane .api-product-list-row + .field,
-.apigee-entity--app .tab-pane .api-product-list-row + .api-product-list-row,
-.apigee-entity--app .tab-pane .api-product-list-row + .item-property,
-.apigee-entity--app .tab-pane .item-property + .field,
-.apigee-entity--app .tab-pane .item-property + .api-product-list-row,
-.apigee-entity--app .tab-pane .item-property + .item-property {
-  border-top: 1px solid #ddd;
 }
 .apigee-entity--app .tab-pane .field label,
 .apigee-entity--app .tab-pane .field .field__label,
@@ -12999,6 +12974,74 @@ ul.social-links li a {
   letter-spacing: 0.25px;
   font-weight: 500;
 }
+@media (min-width: 768px) {
+  .apigee-entity--app .tab-pane .field label,
+.apigee-entity--app .tab-pane .field .field__label,
+.apigee-entity--app .tab-pane .field .api-product-name,
+.apigee-entity--app .tab-pane .api-product-list-row label,
+.apigee-entity--app .tab-pane .api-product-list-row .field__label,
+.apigee-entity--app .tab-pane .api-product-list-row .api-product-name,
+.apigee-entity--app .tab-pane .item-property label,
+.apigee-entity--app .tab-pane .item-property .field__label,
+.apigee-entity--app .tab-pane .item-property .api-product-name {
+    margin-bottom: 0;
+  }
+}
+.apigee-entity--app .card {
+  border-radius: 0;
+}
+.apigee-entity--app .card + .card {
+  margin-top: 1rem;
+}
+.apigee-entity--app .card .card-header {
+  font-size: 1rem;
+}
+.apigee-entity--app .card .card-body {
+  padding: 0.5rem 0;
+}
+.apigee-entity--app__credentials fieldset {
+  padding-bottom: 0.5rem;
+}
+.apigee-entity--app__credentials fieldset + fieldset {
+  border-top: 1px solid #ddd;
+}
+.apigee-entity--app__credentials fieldset legend {
+  display: none;
+}
+@media (min-width: 992px) {
+  .apigee-entity--app__credentials fieldset .fieldset-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 992px) {
+  .apigee-entity--app__credentials fieldset .fieldset-wrapper > div {
+    width: 45%;
+  }
+}
+.apigee-entity--app__credentials fieldset .fieldset-wrapper > div.wrapper--secondary {
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+}
+.apigee-entity--app__credentials fieldset .fieldset-wrapper > div.wrapper--secondary label {
+  padding: 0.8rem 0;
+  margin: 0;
+  color: #a3a3a3;
+  font-size: 0.875rem;
+}
+.apigee-entity--app__credentials fieldset .fieldset-wrapper > div.wrapper--secondary .api-product-list-row {
+  border-top: 1px solid #ddd;
+  padding-left: 0;
+  padding-right: 0;
+}
+@media (min-width: 768px) {
+  .apigee-entity--app__credentials fieldset .fieldset-wrapper > div.wrapper--secondary .api-product-list-row {
+    display: flex;
+  }
+}
+.apigee-entity--app__credentials fieldset .fieldset-wrapper > div.wrapper--secondary .api-product-list-row .api-product-name {
+  flex: 1;
+}
 
 .apigee-entity--app--view-mode-full {
   margin-bottom: 5rem;
@@ -13007,6 +13050,9 @@ ul.social-links li a {
   margin-top: 2rem;
 }
 
+.apigee-entity--app--view-mode-collapsible-card .collapsible-card__header .badge {
+  min-width: 80px;
+}
 .apigee-entity--app--view-mode-collapsible-card .nav-tabs--secondary {
   margin-top: -1rem;
   flex-wrap: nowrap;

@@ -20,7 +20,7 @@
     .api-product-list-row,
     .item-property {
       width: 100%;
-      padding: 1.2rem 0;
+      padding: .8rem 1.2rem;
       font-size: 0.875rem;
       display: flex;
       flex-direction: column;
@@ -31,20 +31,6 @@
         align-items: center;
       }
 
-      &:first-child {
-        padding-top: 0;
-      }
-
-      &:last-child {
-        padding-bottom: 0;
-      }
-
-      + .field,
-      + .api-product-list-row,
-      + .item-property {
-        border-top: 1px solid $border-color;
-      }
-
       label,
       .field__label,
       .api-product-name {
@@ -52,6 +38,82 @@
         min-width: 160px;
         letter-spacing: 0.25px;
         font-weight: 500;
+
+        @include media-breakpoint-up(md) {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .card {
+    border-radius: 0;
+
+    + .card {
+      margin-top: 1rem;
+    }
+
+    .card-header {
+      font-size: 1rem;
+    }
+
+    .card-body {
+      padding: .5rem 0;
+    }
+  }
+
+  &__credentials {
+
+    fieldset {
+      padding-bottom: .5rem;
+
+      + fieldset {
+        border-top: 1px solid $border-color;
+      }
+
+      legend {
+        display: none;
+      }
+
+      .fieldset-wrapper {
+
+        @include media-breakpoint-up(lg) {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        > div {
+
+          @include media-breakpoint-up(lg) {
+            width: 45%;
+          }
+
+          &.wrapper--secondary {
+            padding-left: 1.2rem;
+            padding-right: 1.2rem;
+
+            label {
+              padding: .8rem 0;
+              margin: 0;
+              color: $gray-500;
+              font-size: .875rem;
+            }
+
+            .api-product-list-row {
+              border-top: 1px solid $border-color;
+              padding-left: 0;
+              padding-right: 0;
+
+              @include media-breakpoint-up(md) {
+                display: flex;
+              }
+
+              .api-product-name {
+                flex: 1;
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -70,6 +132,13 @@
 // Collapsible card
 // -----------------------------------------------------------------------------
 .apigee-entity--app--view-mode-collapsible-card {
+
+  .collapsible-card__header {
+
+    .badge {
+      min-width: 80px;
+    }
+  }
 
   .nav-tabs--secondary {
     margin-top: -1rem;

@@ -21,59 +21,59 @@
     } %}
 
         {% block header %}
+          <div class="d-flex items-center">
+            {% if content.warnings %}
+              <span class="badge badge-warning d-inline-flex align-items-center mr-2">
+                <i class="fa fa-exclamation-circle d-inline-block mr-1"></i> {{ "Warnings"|t }}
+              </span>
+            {% endif %}
             {{ content.status }}
+          </div>
         {% endblock %}
 
         {% block content %}
-            <ul class="nav nav-tabs--secondary mb-4">
-                {% if content.callbackUrl or content.credentials.primary_wrapper %}
-                    <li class="nav-item">
-                        <a class="nav-link active" id="keys-tab-{{ tab_suffix }}" data-toggle="tab" href="#keys-{{ tab_suffix }}">
-                            {{ "Keys"|t }}
-                        </a>
-                    </li>
-                {% endif %}
 
-                {% if content.credentials.secondary_wrapper %}
-                    <li class="nav-item">
-                        <a class="nav-link" id="products-tab-{{ tab_suffix }}" data-toggle="tab" href="#products-{{ tab_suffix }}">
-                            {{ "Products"|t }}
-                        </a>
-                    </li>
-                {% endif %}
+          <ul class="nav nav-tabs--secondary mt-2 mb-4">
+            {% if content.callbackUrl or content.credentials.primary_wrapper %}
+              <li class="nav-item">
+                <a class="nav-link active" id="keys-tab-{{ tab_suffix }}" data-toggle="tab" href="#keys-{{ tab_suffix }}">
+                  {{ "Credentials"|t }}
+                </a>
+              </li>
+            {% endif %}
 
-                <li class="nav-item">
-                    <a class="nav-link" id="details-tab-{{ tab_suffix }}" data-toggle="tab" href="#details-{{ tab_suffix }}">
-                        {{ "Details"|t }}
-                    </a>
-                </li>
+            {% for tab in additional_tabs %}
+              <li class="nav-item">
+                <a href="{{ tab.url }}" class="nav-link">{{ tab.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
 
-                {% for tab in additional_tabs %}
-                    <li class="nav-item">
-                        <a href="{{ tab.url }}" class="nav-link">{{ tab.title }}</a>
-                    </li>
-                {% endfor %}
-            </ul>
+          {{ content.warnings }}
 
+          {% if content.credentials %}
             <div class="tab-content">
-                {% if content.callbackUrl or content.credentials.primary_wrapper %}
-                    <div class="tab-pane show active" id="keys-{{ tab_suffix }}">
-                        {{ content.callbackUrl }}
-                        {{ content.credentials.primary_wrapper }}
-                    </div>
-                {% endif %}
-
-                {% if content.credentials.secondary_wrapper %}
-                    <div class="tab-pane" id="products-{{ tab_suffix }}">
-                        {{ content.credentials.secondary_wrapper|without('title') }}
-                    </div>
-                {% endif %}
-
-                <div class="tab-pane" id="details-{{ tab_suffix }}">
-                    {{ content|without('status', 'callbackUrl', 'credentials') }}
+              <div class="tab-pane show active" id="credentials-{{ tab_suffix }}">
+                <div class="card apigee-entity--app__details">
+                  <h4 class="card-header bg-white">
+                    {{ "Details" }}
+                  </h4>
+                  <div class="card-body">
+                    {{ content|without('status', 'credentials', 'warnings') }}
+                  </div>
                 </div>
-            </div>
 
+                <div class="card apigee-entity--app__credentials">
+                  <h4 class="card-header bg-white">
+                    {{ "Credentials"|t }}
+                  </h4>
+                  <div class="card-body pb-0">
+                    {{ content.credentials }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endif %}
         {% endblock %}
     {% endembed %}
 {% endblock %}
