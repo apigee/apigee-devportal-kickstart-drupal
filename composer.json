@@ -17,6 +17,9 @@
     "drupal/pathauto": "^1.6",
     "drupal/radix": "^4.6"
   },
+  "conflict": {
+    "drupal/pathauto": "<1.6"
+  },
   "config": {
     "sort-packages": true
   },
