@@ -284,7 +284,7 @@ function apigee_devportal_kickstart_requirements($phase) {
     if (!version_compare($current_version, $required_version, '>=')) {
       $requirements['apigee_devportal_kickstart_pathauto_version'] = [
         'title' => t('Apigee Devportal Kickstart'),
-        'description' => t('Apigee Devportal Kickstart requires <a href=":url">Pathauto</a> <em>@required_version</em>. The current version is <em>@current_version</em>. Please update to the required version to ensure future compatibility. <strong>Failure to update Pathauto before updating core could result in data loss.</strong>', [
+        'description' => t('Apigee Devportal Kickstart requires <a href=":url">Pathauto</a> <em>@required_version</em>. The current version is <em>@current_version</em>. Please update to the required version to ensure future compatibility.', [
           ':url' => 'https://drupal.org/project/pathauto',
           '@required_version' => $required_version,
           '@current_version' => $current_version,
