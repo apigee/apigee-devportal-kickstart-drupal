@@ -271,6 +271,33 @@ function apigee_devportal_kickstart_install() {
 }
 
 /**
+ * Implements hook_requirements().
+ */
+function apigee_devportal_kickstart_requirements($phase) {
+  $requirements = [];
+
+  // Drupal 8.8.x requires pathauto >=8.x-1.6.
+  // Make sure this requirement is met.
+  if ($pathauto = Drupal::service('extension.list.module')->get('pathauto')) {
+    $current_version = $pathauto->info['version'];
+    $required_version = '8.x-1.6';
+    if (!version_compare($current_version, $required_version, '>=')) {
+      $requirements['apigee_devportal_kickstart_pathauto_version'] = [
+        'title' => t('Apigee Devportal Kickstart'),
+        'description' => t('Apigee Devportal Kickstart requires <a href=":url">Pathauto</a> <em>@required_version</em>. The current version is <em>@current_version</em>. Please update to the required version to ensure future compatibility.', [
+          ':url' => 'https://drupal.org/project/pathauto',
+          '@required_version' => $required_version,
+          '@current_version' => $current_version,
+        ]),
+        'severity' => REQUIREMENT_ERROR,
+      ];
+    }
+  }
+
+  return $requirements;
+}
+
+/**
  * Replace 'Forum' menu link with one that can be edited.
  */
 function apigee_devportal_kickstart_update_8001(&$sandbox) {
