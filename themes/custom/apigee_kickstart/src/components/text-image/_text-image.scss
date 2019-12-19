@@ -53,6 +53,12 @@
   @include media-breakpoint-up(lg) {
     max-height: 480px;
   }
+
+  .no-cssgrid & {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
 }
 
 .text-image__title {
@@ -68,6 +74,13 @@
 
   @include media-breakpoint-up(lg) {
     padding-right: 85px;
+  }
+
+  .no-cssgrid & {
+
+    @include media-breakpoint-up(md) {
+       max-width: 550px;
+    }
   }
 }
 

@@ -43,14 +43,14 @@
     content: forum_content,
     sidebar_first: sidebar_first,
     sidebar_second: sidebar_second,
-    content_no_sidebar_row_classes: ['justify-content-center'],
+    content_no_sidebar_row_classes: ['justify-content-center', 'w-100'],
     content_no_sidebar_col_classes: ['col-lg-8']
   } %}
 
   {% if content.comment_forum[0] %}
     <div class="bg-lighter">
       <div class="container py-5">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center w-100">
           <div class="col-lg-8">
             {{ content.comment_forum }}
           </div>
