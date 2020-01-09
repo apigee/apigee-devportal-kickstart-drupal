@@ -46,6 +46,7 @@
  * @ingroup themeable
  */
 #}
+{% set has_errors = errors or element['#errors'] %}
 {%
   set classes = [
   'js-form-item',
@@ -56,7 +57,7 @@
   'js-form-item-' ~ name|clean_class,
   title_display not in ['after', 'before'] ? 'form-no-label',
   disabled == 'disabled' ? 'form-disabled',
-  errors ? 'form-item--error',
+  has_errors ? 'form-item--error is-invalid',
   'form-group',
 ]
 %}
@@ -64,7 +65,7 @@
   set description_classes = [
   'description',
   'form-text',
-  'text-muted',
+  has_errors ? 'text-danger' : 'text-muted',
   description_display == 'invisible' ? 'visually-hidden',
 ]
 %}
@@ -87,8 +88,8 @@
   {% if label_display == 'after' %}
     {{ label }}
   {% endif %}
-  {% if errors %}
-    <div class="form-item--error-message">
+  {% if has_errors %}
+    <div class="form-item--error-message text-danger">
       {{ errors }}
     </div>
   {% endif %}
