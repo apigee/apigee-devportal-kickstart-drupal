@@ -11684,6 +11684,10 @@ body {
 main {
   flex-grow: 1;
 }
+.no-cssgrid main {
+  padding-bottom: 120px;
+  flex-shrink: 0;
+}
 
 .page__breadcrumbs {
   background-color: var(--ak-accent-color);
@@ -11892,7 +11896,11 @@ input.btn + .btn {
   flex-direction: column;
   text-decoration: none;
   color: #3c3c3c;
-  height: 100%;
+}
+@media (min-width: 768px) {
+  .no-cssgrid .api-card .card-img-top {
+    max-height: 205px;
+  }
 }
 
 .collapsible-card {
@@ -11950,6 +11958,9 @@ details.details {
 .details__summary {
   cursor: pointer;
   position: relative;
+}
+.details__summary::marker {
+  content: "";
 }
 @media (min-width: 768px) {
   .details__summary {
@@ -12385,6 +12396,7 @@ fieldset > .fieldset-wrapper p:last-child {
   position: relative;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   display: flex;
   height: 100%;
   z-index: 1;
@@ -12609,6 +12621,11 @@ ul.social-links li a {
     max-height: 480px;
   }
 }
+.no-cssgrid .text-image__wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 
 @media (max-width: 991.98px) {
   .text-image__title {
@@ -12624,6 +12641,11 @@ ul.social-links li a {
 @media (min-width: 992px) {
   .text-image__text {
     padding-right: 85px;
+  }
+}
+@media (min-width: 768px) {
+  .no-cssgrid .text-image__text {
+    max-width: 550px;
   }
 }
 
@@ -13057,6 +13079,11 @@ ul.social-links li a {
   margin-top: -1rem;
   flex-wrap: nowrap;
   overflow: scroll;
+}
+@media (min-width: 768px) {
+  .apigee-entity--app--view-mode-collapsible-card .nav-tabs--secondary {
+    overflow: hidden;
+  }
 }
 
 .apidoc--view-mode-card {

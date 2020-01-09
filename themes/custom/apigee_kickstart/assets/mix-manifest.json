@@ -4,5 +4,6 @@
     "/js/apigee-kickstart.script.js": "/js/apigee-kickstart.script.js",
     "/css/apigee-kickstart.style.css": "/css/apigee-kickstart.style.css",
     "/css/apigee-kickstart.monetization.css": "/css/apigee-kickstart.monetization.css",
-    "/css/apigee-kickstart.monetization.add-credit.css": "/css/apigee-kickstart.monetization.add-credit.css"
+    "/css/apigee-kickstart.monetization.add-credit.css": "/css/apigee-kickstart.monetization.add-credit.css",
+    "/js/modernizr.js": "/js/modernizr.js"
 }

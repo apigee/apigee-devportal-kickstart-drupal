@@ -1,7 +1,7 @@
 (function($, Drupal) {
 
   Drupal.behaviors.customizerForm = {
-    attach(context, settings) {
+    attach: function(context, settings) {
       const styles = $('body').get(0).style;
       const $form = $('.customizer-form');
       const $pickerWrapper = $form.find('#farbtastic-wrapper');

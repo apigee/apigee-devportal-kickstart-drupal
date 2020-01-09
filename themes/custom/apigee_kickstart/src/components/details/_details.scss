@@ -12,6 +12,10 @@ details.details {
   cursor: pointer;
   position: relative;
 
+  &::marker {
+    content: "";
+  }
+
   @include media-breakpoint-up(md) {
     letter-spacing: 0.15px;
     font-size: 1.25rem;

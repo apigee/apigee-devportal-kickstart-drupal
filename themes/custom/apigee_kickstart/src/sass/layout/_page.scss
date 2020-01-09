@@ -14,4 +14,11 @@ body {
 
 main {
   flex-grow: 1;
+
+  // Fixes flexbox with navbar height adjustments.
+  // We use .no-cssgrid here because this is true for IE11.
+  .no-cssgrid & {
+    padding-bottom: 120px;
+    flex-shrink: 0;
+  }
 }

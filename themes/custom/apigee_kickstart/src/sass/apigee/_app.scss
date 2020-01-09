@@ -144,5 +144,9 @@
     margin-top: -1rem;
     flex-wrap: nowrap;
     overflow: scroll;
+
+    @include media-breakpoint-up(md) {
+       overflow: hidden;
+    }
   }
 }
