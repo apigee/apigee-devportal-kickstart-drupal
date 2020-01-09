@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.media.image.field_media_image
+    - image.style.original
     - media.type.image
   module:
     - image
@@ -14,7 +15,7 @@ content:
   field_media_image:
     label: hidden
     settings:
-      image_style: ''
+      image_style: original
       image_link: ''
     third_party_settings: {  }
     type: image
