@@ -126,6 +126,7 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
       }
     } catch (\Exception $exception) {
       watchdog_exception('apigee_kickstart', $exception);
+      $this->messenger()->addError($exception->getMessage());
     }
   }
 
@@ -151,9 +152,7 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    // Some messages stick around for installation tasks. Clear them all.
-    $this->messenger()->deleteAll();
-
+    $error_messages = [];
     $form['#title'] = $this->t('Configure monetization');
 
     // Note that apigee_m10n is experimental.
@@ -176,15 +175,21 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
       '#limit_validation_errors' => [],
     ];
 
-    // If monetization is not enabled, show a message and continue.
+    // Check if monetization is not enabled.
     if (!$this->isMonetizable) {
+      $error_messages[MessengerInterface::TYPE_WARNING][] = $this->t('Monetization is not enabled for your organization');
+    }
+
+    // Check if the organization profile could not be loaded.
+    if (!$this->organization) {
+      $error_messages[MessengerInterface::TYPE_ERROR][] = $this->t('The organization profile could not be loaded. You can continue to the next step and manually setup monetization later.');
+    }
+
+    // Show error messages and continue.
+    if (count($error_messages)) {
       $form['message'] = [
         '#theme' => 'status_messages',
-        '#message_list' => [
-          MessengerInterface::TYPE_WARNING => [
-            $this->t('Monetization is not enabled for your organization'),
-          ],
-        ],
+        '#message_list' => $error_messages,
       ];
 
       return $form;
