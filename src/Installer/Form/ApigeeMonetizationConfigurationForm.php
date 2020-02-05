@@ -202,7 +202,7 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
     ];
 
     $form['modules']['apigee_kickstart_m10n_add_credit'] = [
-      '#title' => $this->t('Enable prepaid balance top up'),
+      '#title' => $this->t('Enable Add Credit module'),
       '#type' => 'checkbox',
       '#description' => $this->t('Allow users to add credit to their prepaid balances.'),
       '#states' => [
