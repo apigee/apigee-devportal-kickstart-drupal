@@ -2,7 +2,7 @@ name: Apigee Kickstart Monetization
 description: "Handles monetization for Apigee Kickstart. Adds and configures a default product type for adding credit."
 type: module
 core: 8.x
-package: Apigee Kickstart (Experimental)
+package: Apigee Kickstart
 dependencies:
   - apigee_m10n:apigee_m10n
   - apigee_m10n_add_credit:apigee_m10n_add_credit
