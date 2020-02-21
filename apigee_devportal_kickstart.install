@@ -139,8 +139,8 @@ function apigee_devportal_setup_monetization(array &$install_state) {
       ],
     ];
 
-    // Perform additional tasks for apigee_kickstart_m10n_add_credit.
-    if (in_array('apigee_kickstart_m10n_add_credit', $config['modules'])) {
+    // Perform additional tasks for apigee_m10n_add_credit.
+    if (in_array('apigee_m10n_add_credit', $config['modules'])) {
       $operations = array_merge($operations, [
         [
           [ApigeeDevportalKickstartTasksManager::class, 'importCurrencies'],
@@ -149,6 +149,10 @@ function apigee_devportal_setup_monetization(array &$install_state) {
         [
           [ApigeeDevportalKickstartTasksManager::class, 'createStore'],
           [$config['store']],
+        ],
+        [
+          [ApigeeDevportalKickstartTasksManager::class, 'createProductType'],
+          [$config],
         ],
         [
           [ApigeeDevportalKickstartTasksManager::class, 'createProducts'],
@@ -308,4 +312,17 @@ function apigee_devportal_kickstart_update_8001(&$sandbox) {
     'link' => ['uri' => 'internal:/forum'],
     'weight' => 3,
   ])->save();
+}
+
+/**
+ * Disable deprecated module "apigee_kickstart_m10n_add_credit".
+ */
+function apigee_devportal_kickstart_update_8002(&$sandbox) {
+  try {
+    \Drupal::service('module_installer')->uninstall(['apigee_kickstart_m10n_add_credit']);
+    $context['message'] = t('Uninstalled "apigee_kickstart_m10n_add_credit" module.');
+  }
+  catch (\Exception $exception) {
+    watchdog_exception('apigee_kickstart', $exception);
+  }
 }
