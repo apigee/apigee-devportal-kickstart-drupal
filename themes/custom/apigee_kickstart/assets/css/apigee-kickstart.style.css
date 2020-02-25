@@ -11588,6 +11588,12 @@ a.text-lighter:hover, a.text-lighter:focus {
   border-radius: 4px;
 }
 
+ol + p,
+ul + p,
+dl + p {
+  margin-top: 1rem;
+}
+
 blockquote {
   color: #3c3c3c;
   font-size: 1rem;
@@ -13628,12 +13634,12 @@ form.team-member-form .form-checkboxes small {
   padding-top: 0 !important;
 }
 
-.view-faq .item-list ul {
+.view-faq .item-list > ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-.view-faq .item-list li:last-child {
+.view-faq .item-list > ul > li:last-child {
   border-bottom: solid 1px #ddd;
 }
 
