@@ -11896,6 +11896,7 @@ input.btn + .btn {
   flex-direction: column;
   text-decoration: none;
   color: #3c3c3c;
+  height: 100%;
 }
 @media (min-width: 768px) {
   .no-cssgrid .api-card .card-img-top {
