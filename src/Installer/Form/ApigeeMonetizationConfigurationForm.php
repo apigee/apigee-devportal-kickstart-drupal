@@ -361,6 +361,26 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
       ];
     }
 
+    $form['payment_gateway'] = [
+      '#type' => 'details',
+      '#title' => $this->t('Payment Gateway'),
+      '#description' => $this->t('A payment gateway is needed during checkout for the "Add Credit" module.'),
+      '#open' => TRUE,
+      '#states' => [
+        'visible' => [
+          'input[name="modules[apigee_m10n]"]' => ['checked' => TRUE],
+          'input[name="modules[apigee_m10n_add_credit]"]' => ['checked' => TRUE],
+        ],
+      ],
+    ];
+
+    $form['payment_gateway']['gateway'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Create a test payment gateway'),
+      '#description' => $this->t('Create a manual payment gateway (useful for tests).'),
+      '#default_value' => TRUE,
+    ];
+
     $form['actions']['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t('Save and continue'),

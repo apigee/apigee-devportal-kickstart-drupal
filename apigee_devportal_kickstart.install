@@ -159,6 +159,13 @@ function apigee_devportal_setup_monetization(array &$install_state) {
           [$config['supported_currencies']],
         ],
       ]);
+
+      if (!empty($config['gateway'])) {
+        $operations[] = [
+          [ApigeeDevportalKickstartTasksManager::class, 'createPaymentGateway'],
+          [$config],
+        ];
+      }
     }
 
     $batch = [

@@ -90,8 +90,13 @@ class ApigeeDevportalKickstartTasksManager implements ApigeeDevportalKickstartTa
    */
   public static function createPaymentGateway(array $values, array &$context) {
     try {
-      $gateway = \Drupal::entityTypeManager()->getStorage('commerce_payment_gateway')
-        ->create($values);
+      $gateway = \Drupal::entityTypeManager()
+        ->getStorage('commerce_payment_gateway')
+        ->create([
+          'id' => 'default',
+          'label' => 'Default',
+          'plugin' => 'manual',
+        ]);
       $gateway->save();
 
       // Save to context.
