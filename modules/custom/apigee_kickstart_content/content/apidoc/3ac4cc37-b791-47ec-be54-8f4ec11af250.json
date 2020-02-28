@@ -13,7 +13,7 @@
         ],
         "http:\/\/drupal.org\/rest\/relation\/apidoc\/apidoc\/spec": [
             {
-                "href": "http:\/\/default\/sites\/default\/files\/apidoc_specs\/petstore.yaml"
+                "href": "http:\/\/default\/sites\/default\/files\/apidoc_specs\/httpbin-simple-oas3.yaml"
             }
         ],
         "http:\/\/drupal.org\/rest\/relation\/apidoc\/apidoc\/field_categories": [
@@ -39,7 +39,7 @@
     ],
     "revision_id": [
         {
-            "value": 3
+            "value": 1
         }
     ],
     "langcode": [
@@ -50,7 +50,7 @@
     ],
     "revision_created": [
         {
-            "value": "2019-05-31T18:09:11+00:00",
+            "value": "2020-02-26T23:47:50+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],
@@ -76,7 +76,7 @@
             {
                 "_links": {
                     "self": {
-                        "href": "http:\/\/default\/sites\/default\/files\/apidoc_specs\/petstore.yaml"
+                        "href": "http:\/\/default\/sites\/default\/files\/apidoc_specs\/httpbin-simple-oas3.yaml"
                     },
                     "type": {
                         "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
@@ -84,7 +84,7 @@
                 },
                 "uuid": [
                     {
-                        "value": "0e1ac7bf-a77d-42c8-a6af-9026901081f7"
+                        "value": "faeb2bfd-53ce-4ee7-9a00-97f9ee4a5419"
                     }
                 ]
             }
@@ -160,7 +160,7 @@
     ],
     "changed": [
         {
-            "value": "2019-03-29T13:03:48+00:00",
+            "value": "2020-02-26T23:47:50+00:00",
             "format": "Y-m-d\\TH:i:sP"
         }
     ],

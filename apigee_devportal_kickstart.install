@@ -239,7 +239,7 @@ function apigee_devportal_kickstart_install() {
       'profile-default.jpg',
     ],
     'apidoc_specs/' => [
-      'petstore.yaml',
+      'httpbin-simple-oas3.yaml',
     ],
   ];
 
