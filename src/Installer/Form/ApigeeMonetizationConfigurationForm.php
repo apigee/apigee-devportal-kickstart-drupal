@@ -195,7 +195,7 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
       '#description' => $this->t('Enable monetization for your Apigee Edge organization.'),
     ];
 
-    $form['modules']['apigee_kickstart_m10n_add_credit'] = [
+    $form['modules']['apigee_m10n_add_credit'] = [
       '#title' => $this->t('Enable Add Credit module'),
       '#type' => 'checkbox',
       '#description' => $this->t('Allow users to add credit to their prepaid balances.'),
@@ -215,7 +215,7 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
       '#states' => [
         'visible' => [
           'input[name="modules[apigee_m10n]"]' => ['checked' => TRUE],
-          'input[name="modules[apigee_kickstart_m10n_add_credit]"]' => ['checked' => TRUE],
+          'input[name="modules[apigee_m10n_add_credit]"]' => ['checked' => TRUE],
         ],
       ],
     ];
@@ -228,7 +228,7 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
       '#default_value' => $site_config->get('name'),
       '#states' => [
         'required' => [
-          'input[name="modules[apigee_kickstart_m10n_add_credit]"]' => ['checked' => TRUE],
+          'input[name="modules[apigee_m10n_add_credit]"]' => ['checked' => TRUE],
         ],
       ],
     ];
@@ -241,7 +241,7 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
       '#description' => $this->t('Store email notifications are sent from this address.'),
       '#states' => [
         'required' => [
-          'input[name="modules[apigee_kickstart_m10n_add_credit]"]' => ['checked' => TRUE],
+          'input[name="modules[apigee_m10n_add_credit]"]' => ['checked' => TRUE],
         ],
       ],
     ];
@@ -328,7 +328,7 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
       '#states' => [
         'visible' => [
           'input[name="modules[apigee_m10n]"]' => ['checked' => TRUE],
-          'input[name="modules[apigee_kickstart_m10n_add_credit]"]' => ['checked' => TRUE],
+          'input[name="modules[apigee_m10n_add_credit]"]' => ['checked' => TRUE],
         ],
       ],
     ];
@@ -360,6 +360,26 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
         '#default_value' => array_keys($currency_options),
       ];
     }
+
+    $form['payment_gateway'] = [
+      '#type' => 'details',
+      '#title' => $this->t('Payment Gateway'),
+      '#description' => $this->t('A payment gateway is needed during checkout for the "Add Credit" module.'),
+      '#open' => TRUE,
+      '#states' => [
+        'visible' => [
+          'input[name="modules[apigee_m10n]"]' => ['checked' => TRUE],
+          'input[name="modules[apigee_m10n_add_credit]"]' => ['checked' => TRUE],
+        ],
+      ],
+    ];
+
+    $form['payment_gateway']['gateway'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Create a test payment gateway'),
+      '#description' => $this->t('Create a manual payment gateway (useful for tests).'),
+      '#default_value' => TRUE,
+    ];
 
     $form['actions']['submit'] = [
       '#type' => 'submit',
@@ -405,12 +425,10 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
     if (count($values['modules'])) {
 
       // Update the supported currencies.
+      $supported_currencies = empty($values['supported_currencies']) ? [] : array_keys(array_filter($values['supported_currencies']));
       $values['supported_currencies'] = [];
-      if (isset($values['supported_currencies'])) {
-        $supported_currencies = array_keys(array_filter($values['supported_currencies']));
-        foreach ($supported_currencies as $currency_code) {
-          $values['supported_currencies'][$currency_code] = $this->supportedCurrencies[strtolower($currency_code)];
-        }
+      foreach ($supported_currencies as $currency_code) {
+        $values['supported_currencies'][$currency_code] = $this->supportedCurrencies[strtolower($currency_code)];
       }
 
       // Convert state to state code.

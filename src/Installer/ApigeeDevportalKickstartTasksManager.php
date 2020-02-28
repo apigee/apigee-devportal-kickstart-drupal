@@ -22,6 +22,7 @@ namespace Drupal\apigee_devportal_kickstart\Installer;
 
 use Drupal\apigee_m10n_add_credit\AddCreditConfig;
 use Drupal\commerce_price\Price;
+use Drupal\Core\Form\FormState;
 use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
 
 /**
@@ -89,13 +90,39 @@ class ApigeeDevportalKickstartTasksManager implements ApigeeDevportalKickstartTa
    */
   public static function createPaymentGateway(array $values, array &$context) {
     try {
-      $gateway = \Drupal::entityTypeManager()->getStorage('commerce_payment_gateway')
-        ->create($values);
+      $gateway = \Drupal::entityTypeManager()
+        ->getStorage('commerce_payment_gateway')
+        ->create([
+          'id' => 'default',
+          'label' => 'Default',
+          'plugin' => 'manual',
+        ]);
       $gateway->save();
 
       // Save to context.
       $context['results']['$gateway'] = $gateway;
       $context['message'] = t('Created a default payment gateway.');
+    }
+    catch (\Exception $exception) {
+      \Drupal::messenger()->addError(t('Error creating a default payment gateway.'));
+      watchdog_exception('apigee_kickstart', $exception);
+    }
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function createProductType(array $values, array &$context) {
+    try {
+      $requirement = \Drupal::service('plugin.manager.requirement')
+        ->createInstance('add_credit_product_type');
+
+      if (!$requirement->isCompleted()) {
+        $form = [];
+        $requirement->submitConfigurationForm($form, new FormState());
+      }
+
+      $context['message'] = t('Created "Add Credit" product type.');
     }
     catch (\Exception $exception) {
       watchdog_exception('apigee_kickstart', $exception);
@@ -146,19 +173,19 @@ class ApigeeDevportalKickstartTasksManager implements ApigeeDevportalKickstartTa
           $add_credit_products[$currency->getId()] = [
             'product_id' => $product->id(),
           ];
-
-          // Save config.
-          \Drupal::configFactory()
-            ->getEditable(AddCreditConfig::CONFIG_NAME)
-            ->set('products', $add_credit_products)
-            ->save();
-
-          $context['message'] = t('Created default products.');
         }
         catch (\Exception $exception) {
           watchdog_exception('apigee_kickstart', $exception);
         }
+
+        $context['message'] = t('Created default products.');
       }
+
+      // Save config.
+      \Drupal::configFactory()
+        ->getEditable(AddCreditConfig::CONFIG_NAME)
+        ->set('products', $add_credit_products)
+        ->save();
     }
   }
 
