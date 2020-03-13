@@ -13375,6 +13375,19 @@ form.commerce-checkout-flow .layout-region-checkout-secondary table tbody td.vie
 form.commerce-checkout-flow .layout-region-checkout-secondary table tbody td.views-field-total-price__number {
   text-align: right;
 }
+form.commerce-checkout-flow .layout-region-checkout-secondary .checkout-order-summary table {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+form.commerce-checkout-flow .layout-region-checkout-secondary .checkout-order-summary table tr td {
+  padding: 0.75rem;
+}
+form.commerce-checkout-flow .layout-region-checkout-secondary .checkout-order-summary table tr td:last-child {
+  text-align: right;
+}
+form.commerce-checkout-flow .layout-region-checkout-secondary .field.add-credit__price .field__label {
+  display: none;
+}
 form.commerce-checkout-flow .cart-form__total-price {
   padding: 0;
 }

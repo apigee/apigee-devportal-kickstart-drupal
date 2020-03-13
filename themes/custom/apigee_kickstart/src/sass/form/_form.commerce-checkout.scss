@@ -93,6 +93,32 @@ form.commerce-checkout-flow {
         }
       }
     }
+
+    .checkout-order-summary {
+
+      table {
+        width: 100%;
+        margin-bottom: 1rem;
+
+        tr {
+
+          td {
+            padding: .75rem;
+
+            &:last-child {
+              text-align: right;
+            }
+          }
+        }
+      }
+    }
+
+    .field.add-credit__price {
+
+      .field__label {
+        display: none;
+      }
+    }
   }
 
   .cart-form__total-price {
@@ -134,6 +160,7 @@ form.commerce-checkout-flow {
     }
   }
 }
+
 
 // Step: Order Information
 // -----------------------------------------------------------------------------
