@@ -218,13 +218,20 @@ function _apigee_kickstart_user_extra_fields() {
     'display_name' => [
       'label' => t('Name'),
       'value_callback' => function (UserInterface $user) {
-        return $user->label();
+          $first_name_last_name = trim($user->get('first_name')->value) . ' ' . trim($user->get('last_name')->value);
+          // If both fields were empty this string still could be empty.
+          $first_name_last_name = trim($first_name_last_name);
+          if (!empty($first_name_last_name)) {
+            return $first_name_last_name;
+          } else {
+            return $user->label();
+          }
       },
     ],
     'username' => [
       'label' => t('Username'),
       'value_callback' => function (UserInterface $user) {
-        return $user->getDisplayName();
+        return $user->getAccountName();
       },
     ],
     'email' => [
