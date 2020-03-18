@@ -15,7 +15,7 @@
     "drupal/fontawesome": "^2.12",
     "drupal/paragraphs": "^1.6",
     "drupal/pathauto": "^1.6",
-    "drupal/radix": "^4.6"
+    "drupal/radix": "^4.8"
   },
   "conflict": {
     "drupal/pathauto": "<1.6"
