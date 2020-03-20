@@ -5,6 +5,7 @@
  */
 #}
 
+{{ attach_library('core/drupal.collapse') }}
 {% set open = open|default(false) %}
 {% set classes = [
   'details',
@@ -19,7 +20,7 @@
     {{ summary }}
     <i class="details__icon fas fa-chevron-down"></i>
   </summary>
-  <div class="details__content pt-4 pr-8">
+  <div class="details-wrapper details__content pt-4 pr-8">
     {{ content }}
   </div>
 </details>

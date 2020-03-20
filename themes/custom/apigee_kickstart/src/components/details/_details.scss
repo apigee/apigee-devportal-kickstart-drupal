@@ -12,6 +12,10 @@ details.details {
   cursor: pointer;
   position: relative;
 
+  a {
+    color: $body-color;
+  }
+
   &::marker {
     content: "";
   }
