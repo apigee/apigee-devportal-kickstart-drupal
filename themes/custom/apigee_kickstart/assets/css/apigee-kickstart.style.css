@@ -11966,6 +11966,9 @@ details.details {
   cursor: pointer;
   position: relative;
 }
+.details__summary a {
+  color: #3c3c3c;
+}
 .details__summary::marker {
   content: "";
 }
