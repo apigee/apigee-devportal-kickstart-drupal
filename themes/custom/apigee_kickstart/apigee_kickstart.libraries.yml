@@ -7,11 +7,7 @@ style:
   dependencies:
     - core/jquery
     - core/drupal
-    - apigee_kickstart/modernizr
-
-modernizr:
-  js:
-    assets/js/modernizr.js: {}
+    - core/modernizr
 
 font.roboto:
   version: VERSION
