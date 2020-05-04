@@ -1,0 +1,9 @@
+name: Apigee Kickstart Search
+description: "Adds a search page for searching content and APIs."
+type: module
+core: 8.x
+package: Apigee Kickstart (Experimental)
+dependencies:
+  - apigee_api_catalog:apigee_api_catalog
+  - drupal:views
+  - search_api:search_api_db

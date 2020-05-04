@@ -1,0 +1,247 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - field.storage.node.field_answer
+    - field.storage.node.field_content
+    - field.storage.paragraph.field_text
+    - search_api.server.default
+  module:
+    - apigee_api_catalog
+    - paragraphs
+    - node
+    - search_api
+id: default
+name: Default
+description: 'The default index for Apigee Kickstart indexes content and API docs.'
+read_only: false
+field_settings:
+  body:
+    label: Body
+    datasource_id: 'entity:node'
+    property_path: 'body:processed'
+    type: text
+    boost: !!float 5
+    dependencies:
+      config:
+        - field.storage.node.body
+  description:
+    label: Description
+    datasource_id: 'entity:apidoc'
+    property_path: 'description:processed'
+    type: text
+    boost: !!float 5
+    dependencies:
+      module:
+        - apigee_api_catalog
+  field_answer:
+    label: Answer
+    datasource_id: 'entity:node'
+    property_path: 'field_answer:processed'
+    type: text
+    boost: !!float 5
+    dependencies:
+      config:
+        - field.storage.node.field_answer
+  field_content:
+    label: 'Content » Paragraph » Text » Processed text'
+    datasource_id: 'entity:node'
+    property_path: 'field_content:entity:field_text:processed'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_content
+        - field.storage.paragraph.field_text
+      module:
+        - paragraphs
+  name:
+    label: Name
+    datasource_id: 'entity:apidoc'
+    property_path: name
+    type: text
+    boost: !!float 8
+    dependencies:
+      module:
+        - apigee_api_catalog
+  node_grants:
+    label: 'Node access information'
+    property_path: search_api_node_grants
+    type: string
+    indexed_locked: true
+    type_locked: true
+    hidden: true
+  status:
+    label: status
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    indexed_locked: true
+    type_locked: true
+    dependencies:
+      module:
+        - node
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    boost: !!float 8
+    dependencies:
+      module:
+        - node
+  uid:
+    label: uid
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    indexed_locked: true
+    type_locked: true
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:apidoc':
+    languages:
+      default: true
+      selected: {  }
+  'entity:node':
+    bundles:
+      default: true
+      selected: {  }
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  content_access:
+    weights:
+      preprocess_query: -30
+  entity_status: {  }
+  highlight:
+    highlight: always
+    highlight_partial: true
+    excerpt: true
+    excerpt_length: 256
+    exclude_fields: {  }
+    prefix: '<mark>'
+    suffix: '</mark>'
+    weights:
+      postprocess_query: 0
+  html_filter:
+    all_fields: true
+    fields:
+      - body
+      - description
+      - field_answer
+      - field_content
+      - name
+      - title
+    title: true
+    alt: true
+    tags:
+      b: 2
+      h1: 5
+      h2: 3
+      h3: 2
+      strong: 2
+    weights:
+      preprocess_index: -15
+      preprocess_query: -15
+  ignorecase:
+    all_fields: true
+    fields:
+      - body
+      - description
+      - field_answer
+      - field_content
+      - name
+      - title
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+  language_with_fallback: {  }
+  rendered_item: {  }
+  stopwords:
+    all_fields: true
+    fields:
+      - body
+      - description
+      - field_answer
+      - field_content
+      - name
+      - title
+    stopwords:
+      - a
+      - an
+      - and
+      - are
+      - as
+      - at
+      - be
+      - but
+      - by
+      - for
+      - if
+      - in
+      - into
+      - is
+      - it
+      - 'no'
+      - not
+      - of
+      - 'on'
+      - or
+      - s
+      - such
+      - t
+      - that
+      - the
+      - their
+      - then
+      - there
+      - these
+      - they
+      - this
+      - to
+      - was
+      - will
+      - with
+    weights:
+      preprocess_index: -5
+      preprocess_query: -2
+  tokenizer:
+    all_fields: true
+    fields:
+      - body
+      - description
+      - field_answer
+      - field_content
+      - name
+      - title
+    spaces: ''
+    overlap_cjk: 1
+    minimum_word_size: '3'
+    weights:
+      preprocess_index: -6
+      preprocess_query: -6
+  transliteration:
+    all_fields: true
+    fields:
+      - body
+      - description
+      - field_answer
+      - field_content
+      - name
+      - title
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: default

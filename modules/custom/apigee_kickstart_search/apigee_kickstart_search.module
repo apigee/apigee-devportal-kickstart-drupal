@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * Copyright 2020 Google Inc.
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * version 2 as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ * MA 02110-1301, USA.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function apigee_kickstart_search_form_search_block_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Set the form action to the search page.
+  $form['#action'] = '/search';
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function apigee_kickstart_search_preprocess_views_view__apigee_kickstart_search(&$variables) {
+  // Hide the exposed form on the search page.
+  // Default to using the search form in the site header.
+  $variables['exposed']["#access"] = FALSE;
+}
+
+

@@ -1,0 +1,14 @@
+{
+    "name": "drupal/apigee_kickstart_search",
+    "license": "GPL-2.0",
+    "type": "drupal-module",
+    "description": "Adds a search page for searching content and APIs.",
+    "require": {
+        "drupal/search_api": "^1.16"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
