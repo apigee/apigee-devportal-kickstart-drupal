@@ -10,6 +10,7 @@ style:
     - apigee_kickstart/modernizr
 
 modernizr:
+  header: true
   js:
     assets/js/modernizr.js: {}
 
