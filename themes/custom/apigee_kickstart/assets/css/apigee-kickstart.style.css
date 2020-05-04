@@ -12392,8 +12392,8 @@ fieldset > .fieldset-wrapper p:last-child {
 @media (min-width: 768px) {
   .hero__media img {
     height: 400px;
-    -o-object-fit: fill;
-       object-fit: fill;
+    -o-object-fit: cover;
+       object-fit: cover;
     width: 100%;
   }
 }
