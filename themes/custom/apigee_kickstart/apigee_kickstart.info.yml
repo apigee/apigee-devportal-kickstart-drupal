@@ -26,6 +26,7 @@ libraries:
   - apigee_kickstart/style
 
 libraries-override:
+  core/modernizr: false
   radix/bootstrap: false
   apigee_edge/apigee_edge.components: false
   apigee_edge/apigee_edge.app_view: false
