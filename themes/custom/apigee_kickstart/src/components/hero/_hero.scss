@@ -27,7 +27,7 @@
   img {
     @include media-breakpoint-up(md) {
       height: 400px;
-      object-fit: fill;
+      object-fit: cover;
       width: 100%;
     }
   }
