@@ -333,3 +333,16 @@ function apigee_devportal_kickstart_update_8002(&$sandbox) {
     watchdog_exception('apigee_kickstart', $exception);
   }
 }
+
+/**
+ * Enable display settings for apps.
+ */
+function apigee_devportal_kickstart_update_8006(&$sandbox) {
+  $config_factory = \Drupal::configFactory();
+  foreach (\Drupal::service('apigee_kickstart.enhancer')->getAppEntityTypes() as $entity_type_id => $app_entity_type) {
+    $config_factory->getEditable("apigee_edge.display_settings.{$entity_type_id}")
+      ->set('display_type', 'view_mode')
+      ->set('view_mode', 'collapsible_card')
+      ->save();
+  }
+}
