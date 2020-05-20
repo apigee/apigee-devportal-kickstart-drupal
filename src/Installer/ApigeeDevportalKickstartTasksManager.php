@@ -62,9 +62,9 @@ class ApigeeDevportalKickstartTasksManager implements ApigeeDevportalKickstartTa
 
       $context['message'] = t('Imported supported currencies.');
     }
-     catch (ServiceNotFoundException $exception) {
-       watchdog_exception('apigee_kickstart', $exception);
-     }
+    catch (ServiceNotFoundException $exception) {
+      watchdog_exception('apigee_kickstart', $exception);
+    }
   }
 
   /**

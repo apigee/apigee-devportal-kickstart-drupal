@@ -48,6 +48,10 @@ function apigee_devportal_kickstart_install_tasks(&$install_state) {
       'display_name' => t('Install theme'),
       'display' => FALSE,
     ],
+    ApigeeMonetizationConfigurationForm::class => [
+      'display_name' => t('Configure monetization'),
+      'type' => 'form',
+    ],
   ];
 
   // Add monetization tasks if the configured organization is monetizable.
@@ -55,10 +59,6 @@ function apigee_devportal_kickstart_install_tasks(&$install_state) {
     && Drupal::hasService('address.subdivision_repository')
     && Drupal::hasService('apigee_devportal_kickstart.monetization') && Drupal::service('apigee_devportal_kickstart.monetization')->isMonetizable()) {
     $tasks = array_merge([
-      ApigeeMonetizationConfigurationForm::class => [
-        'display_name' => t('Configure monetization'),
-        'type' => 'form',
-      ],
       'apigee_devportal_setup_monetization' => [
         'display_name' => t('Setup monetization'),
         'type' => 'batch',
@@ -106,14 +106,13 @@ function apigee_devportal_kickstart_install_tasks_alter(&$tasks, $install_state)
  *   The install state.
  */
 function apigee_devportal_monetization_preflight(array &$install_state) {
+  if (!\Drupal::moduleHandler()->moduleExists('address')) {
+    return;
+  }
+
   // The monetization configuration form needs an address field.
   // Enable the address module.
-  try {
-    \Drupal::service('module_installer')->install(['address']);
-  }
-  catch (\Exception $exception) {
-    watchdog_exception('apigee_kickstart', $exception);
-  }
+  \Drupal::service('apigee_devportal_kickstart.monetization')->ensureInstalled('address');
 }
 
 /**
