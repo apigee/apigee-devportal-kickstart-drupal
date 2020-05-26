@@ -24,21 +24,8 @@ use Drupal\apigee_edge_teams\Entity\ListBuilder\TeamAppListByTeam;
 
 /**
  * Renders the Apps list as a list of entity views instead of a table.
+ *
+ * @deprecated in apigee_devportal_kickstart:8.x-1.15 and is removed from apigee_devportal_kickstart:2.x.
  */
 class TeamAppListBuilder extends TeamAppListByTeam {
-
-  /**
-   * {@inheritdoc}
-   */
-  public function render() {
-    // Render a list of apps.
-    $build = $this->entityTypeManager->getViewBuilder($this->entityTypeId)->viewMultiple($this->load(), 'collapsible_card');
-
-    // Add cache contexts.
-    $build['#cache']['contexts'] = $this->entityType->getListCacheContexts();
-    $build['#cache']['tags'] = $this->entityType->getListCacheTags();
-
-    return $build;
-  }
-
 }
