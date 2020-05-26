@@ -282,7 +282,7 @@ function _apigee_kickstart_enhancement_check_app_warnings(AppInterface $app, Ent
   foreach ($app->getCredentials() as $credential) {
     if ($credential->getStatus() === AppCredential::STATUS_REVOKED) {
       $args = [
-        '@app' => $entity_type->getLowercaseLabel(),
+        '@app' => mb_strtolower($entity_type->getSingularLabel()),
       ];
       if (count($app->getCredentials()) > 1) {
         $warnings['revokedCred'] = t('One of the credentials associated with this @app is in revoked status.', $args);
@@ -296,17 +296,17 @@ function _apigee_kickstart_enhancement_check_app_warnings(AppInterface $app, Ent
     // Check for expired credentials.
     if (($expired_date = $credential->getExpiresAt()) && Drupal::time()->getRequestTime() - $expired_date->getTimestamp() > 0) {
       $warnings['expiredCred'] = t('At least one of the credentials associated with this @app is expired.', [
-        '@app' => $entity_type->getLowercaseLabel(),
+        '@app' => mb_strtolower($entity_type->getSingularLabel()),
       ]);
     }
 
     foreach ($credential->getApiProducts() as $cred_product) {
       if ($cred_product->getStatus() == CredentialProduct::STATUS_REVOKED || $cred_product->getStatus() == CredentialProduct::STATUS_PENDING) {
         $args = [
-          '@app' => $entity_type->getLowercaseLabel(),
-          '@api_product' => Drupal::entityTypeManager()
+          '@app' => mb_strtolower($entity_type->getSingularLabel()),
+          '@api_product' => mb_strtolower(Drupal::entityTypeManager()
             ->getDefinition('api_product')
-            ->getLowercaseLabel(),
+            ->getSingularLabel()),
           '@status' => $cred_product->getStatus() == CredentialProduct::STATUS_REVOKED ? t('revoked') : t('pending'),
         ];
         if (count($app->getCredentials()) === 1) {

@@ -1,7 +1,7 @@
 name: Apigee Developer Portal Kickstart
 type: profile
 description: 'A fast demo and starting point for Apigee Developer Portals.'
-core: 8.x
+core_version_requirement: ^8 || ^9
 
 # Optional: Declare your installation profile as a distribution
 # This will make the installer auto-select this installation profile.
