@@ -1,7 +1,7 @@
 name: Apigee Kickstart Migrate
 description: "Provides a migration path from Drupal 7 Devportal to Drupal 8 Kickstart."
 type: module
-core: 8.x
+core_version_requirement: ^8 || ^9
 package: Apigee Kickstart
 dependencies:
   - drupal:migrate

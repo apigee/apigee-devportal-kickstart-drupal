@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\Core\File\Exception\FileException;
+use Drupal\Core\File\FileSystemInterface;
 /**
  * @file
  * Copyright 2019 Google Inc.
@@ -229,7 +231,7 @@ function apigee_devportal_kickstart_install() {
   $src_path = drupal_get_path('profile', 'apigee_devportal_kickstart') . '/resources/files';
 
   // Get public files directory.
-  $dest_path = file_default_scheme() . '://';
+  $dest_path = \Drupal::config('system.file')->get('default_scheme') . '://';
 
   // Files to copy.
   // Not all files are copied. So we list them here individually.
@@ -257,13 +259,20 @@ function apigee_devportal_kickstart_install() {
   foreach ($filesets as $destination => $files) {
     foreach ($files as $file) {
       if (file_exists($src_path . '/' . $file)) {
+        $file_system = \Drupal::service('file_system');
+
         // If the file exists in public://, it should be skipped, as these are
         // tied to media entities which hard-code the path/file.
         $directory = $dest_path . $destination;
         if (!empty($destination)) {
-          file_prepare_directory($directory, FILE_CREATE_DIRECTORY);
+          $file_system->prepareDirectory($directory, FileSystemInterface::CREATE_DIRECTORY);
         }
-        file_unmanaged_copy($src_path . '/' . $file, $directory . $file);
+        try {
+          \Drupal::service('file_system')->copy($src_path . '/' . $file, $directory . $file);
+        }
+        catch (FileException $e) {
+          // Do nothing.
+        }
       }
     }
   }
