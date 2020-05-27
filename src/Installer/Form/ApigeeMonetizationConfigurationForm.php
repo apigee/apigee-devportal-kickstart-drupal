@@ -90,6 +90,13 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
   protected $isMonetizable;
 
   /**
+   * An array of missing dependencies.
+   *
+   * @var array
+   */
+  protected $missingDependencies;
+
+  /**
    * ApigeeM10nConfigurationForm constructor.
    *
    * @param \Drupal\apigee_edge\SDKConnectorInterface $sdk_connector
@@ -99,7 +106,7 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
    * @param \CommerceGuys\Addressing\Subdivision\SubdivisionRepositoryInterface $subdivision_repository
    *   The subdivision repository.
    */
-  public function __construct(SDKConnectorInterface $sdk_connector, LanguageManagerInterface $language_manager, SubdivisionRepositoryInterface $subdivision_repository) {
+  public function __construct(SDKConnectorInterface $sdk_connector, LanguageManagerInterface $language_manager, SubdivisionRepositoryInterface $subdivision_repository = NULL) {
     $this->sdkConnector = $sdk_connector;
     $this->languageManager = $language_manager;
     $this->subdivisionRepository = $subdivision_repository;
@@ -124,10 +131,14 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
         $supported_currency_controller = new SupportedCurrencyController($organization_id, $client);
         $this->supportedCurrencies = $supported_currency_controller->getEntities();
       }
-    } catch (\Exception $exception) {
+    }
+    catch (\Exception $exception) {
       watchdog_exception('apigee_kickstart', $exception);
       $this->messenger()->addError($exception->getMessage());
     }
+
+    // Check for missing dependencies.
+    $this->missingDependencies = \Drupal::service('apigee_devportal_kickstart.monetization')->getMissingDependencies();
   }
 
   /**
@@ -136,8 +147,7 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
   public static function create(ContainerInterface $container) {
     return new static(
       $container->get('apigee_edge.sdk_connector'),
-      $container->get('language_manager'),
-      $container->get('address.subdivision_repository')
+      $container->get('language_manager')
     );
   }
 
@@ -152,6 +162,12 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
+    // We do this check here instead of the constructor so that it can be
+    // initialized on every form rebuild.
+    if (!$this->subdivisionRepository && \Drupal::hasService('address.subdivision_repository')) {
+      $this->subdivisionRepository = \Drupal::service('address.subdivision_repository');
+    }
+
     $error_messages = [];
     $form['#title'] = $this->t('Configure monetization');
 
@@ -166,12 +182,34 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
 
     // Check if monetization is not enabled.
     if (!$this->isMonetizable) {
-      $error_messages[MessengerInterface::TYPE_WARNING][] = $this->t('Monetization is not enabled for your organization');
+      $error_messages[MessengerInterface::TYPE_WARNING][] = $this->t('Monetization is not enabled for your organization.');
     }
-
-    // Check if the organization profile could not be loaded.
-    if (!$this->organization) {
+    elseif (!$this->organization) {
+      // Check if the organization profile could not be loaded.
       $error_messages[MessengerInterface::TYPE_ERROR][] = $this->t('The organization profile could not be loaded. You can continue to the next step and manually setup monetization later.');
+    }
+    else {
+      // Check for dependencies.
+      if (!empty($this->missingDependencies)) {
+        $error_messages[MessengerInterface::TYPE_ERROR][] = $this->t('The following modules are required to enable monetization: <strong>@missing</strong>.', [
+          '@missing' => implode(', ', $this->missingDependencies),
+        ]);
+
+        $form['help'] = [
+          '#type' => 'inline_template',
+          '#template' => '
+            <ol>
+              <li>{{ "Run the following command to install the missing modules:"|t }} <code>composer require {% for dependency in dependencies %}drupal/{{dependency}} {% endfor %}</code></li>
+              <li>{{ "Then reload this page to continue setting up monetization."|t }}</li>
+            </ol>
+            <p>{{ "If you do not wish to enable monetization now, click continue."|t }}</p>
+          ',
+          '#context' => [
+            'dependencies' => $this->missingDependencies,
+          ],
+        ];
+      }
+
     }
 
     // Show error messages and continue.
@@ -179,6 +217,22 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
       $form['message'] = [
         '#theme' => 'status_messages',
         '#message_list' => $error_messages,
+        '#weight' => -1000,
+      ];
+
+      $form['skip_validation'] = [
+        '#type' => 'value',
+        '#value' => TRUE,
+      ];
+
+      // Add a submit button that skips validation.
+      $form['actions']['submit'] = [
+        '#type' => 'submit',
+        '#value' => $this->t('Continue'),
+        '#submit' => [[$this, 'skipStepSubmit']],
+        '#button_type' => 'primary',
+        '#validate' => [],
+        '#limit_validation_errors' => [],
       ];
 
       return $form;
@@ -403,9 +457,13 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
    * {@inheritdoc}
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
+    if ($form_state->getValue('skip_validation')) {
+      return;
+    }
+
     parent::validateForm($form, $form_state);
 
-    // Validate the state for given country..
+    // Validate the state for given country.
     if (($state = $this->getAddressPropertyValueFromFormState($form_state, FieldHelper::getPropertyName(AddressField::ADMINISTRATIVE_AREA)))
       && ($country_code = $this->getAddressPropertyValueFromFormState($form_state, 'country_code'))
       && !$this->validateStateCode($state, $country_code)
@@ -447,13 +505,13 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
    *
    * @param \Drupal\Core\Form\FormStateInterface $form_state
    *   The form state.
-   * @param String $property_name
+   * @param string $property_name
    *   The property name.
    *
    * @return mixed
    *   The value of the given property.
    */
-  protected function getAddressPropertyValueFromFormState(FormStateInterface $form_state, String $property_name): String {
+  protected function getAddressPropertyValueFromFormState(FormStateInterface $form_state, string $property_name): string {
     if (($store = $form_state->getValue('store'))
       && ($address = $store['address'])
       && isset($address[$property_name])
@@ -468,9 +526,9 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
   /**
    * Validates a state for the given country.
    *
-   * @param $state
+   * @param string $state
    *   The state code or name. eg. CA or California.
-   * @param $country_code
+   * @param string $country_code
    *   The country code. eg. US.
    *
    * @return bool

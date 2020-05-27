@@ -49,20 +49,40 @@ class ApigeeDevportalKickstartMonetization {
   }
 
   /**
-   * Check if all dependencies are met.
+   * Returns an array of missing dependencies.
    *
-   * @return bool
-   *   TRUE if all dependencies are met. FALSE otherwise.
+   * @return array
+   *   An array of missing dependencies.
    */
-  protected static function meetsDependencies(): bool {
+  public static function getMissingDependencies(): array {
+    /** @var \Drupal\Core\Extension\ExtensionList $extension_list */
     $extension_list = \Drupal::service('extension.list.module');
-    foreach (static::dependencies() as $dependency) {
-      if (!$extension_list->exists($dependency)) {
+    $extension_list->reset();
+    return array_filter(static::dependencies(), function ($dependency) use ($extension_list) {
+      // If the module exists, ensure it is installed.
+      // This allows users to fix missing dependencies on demand during installation.
+      if ($extension_list->exists($dependency)) {
+        static::ensureInstalled($dependency);
         return FALSE;
       }
-    }
 
-    return TRUE;
+      return TRUE;
+    });
+  }
+
+  /**
+   * Helper to ensure a module is installed.
+   *
+   * @param string $module
+   *   The module name.
+   */
+  public static function ensureInstalled(string $module): void {
+    try {
+      \Drupal::service('module_installer')->install([$module]);
+    }
+    catch (\Exception $exception) {
+      watchdog_exception('apigee_kickstart', $exception);
+    }
   }
 
   /**
@@ -75,7 +95,6 @@ class ApigeeDevportalKickstartMonetization {
     return [
       'address',
       'apigee_m10n',
-      'apigee_m10n_add_credit',
       'commerce',
     ];
   }
