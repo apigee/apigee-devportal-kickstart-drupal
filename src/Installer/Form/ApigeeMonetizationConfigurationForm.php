@@ -180,12 +180,8 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
       '#limit_validation_errors' => [],
     ];
 
-    // Check if monetization is not enabled.
-    if (!$this->isMonetizable) {
-      $error_messages[MessengerInterface::TYPE_WARNING][] = $this->t('Monetization is not enabled for your organization.');
-    }
-    elseif (!$this->organization) {
-      // Check if the organization profile could not be loaded.
+    // Check if the organization profile could not be loaded.
+    if (!$this->organization) {
       $error_messages[MessengerInterface::TYPE_ERROR][] = $this->t('The organization profile could not be loaded. You can continue to the next step and manually setup monetization later.');
     }
     else {

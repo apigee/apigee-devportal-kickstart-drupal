@@ -50,22 +50,22 @@ function apigee_devportal_kickstart_install_tasks(&$install_state) {
       'display_name' => t('Install theme'),
       'display' => FALSE,
     ],
-    ApigeeMonetizationConfigurationForm::class => [
-      'display_name' => t('Configure monetization'),
-      'type' => 'form',
-    ],
   ];
 
   // Add monetization tasks if the configured organization is monetizable.
-  if (Drupal::moduleHandler()->moduleExists('apigee_edge')
-    && Drupal::hasService('address.subdivision_repository')
-    && Drupal::hasService('apigee_devportal_kickstart.monetization') && Drupal::service('apigee_devportal_kickstart.monetization')->isMonetizable()) {
-    $tasks = array_merge([
-      'apigee_devportal_setup_monetization' => [
+  if (Drupal::hasService('apigee_devportal_kickstart.monetization') && Drupal::service('apigee_devportal_kickstart.monetization')->isMonetizable()) {
+    $tasks[ApigeeMonetizationConfigurationForm::class] = [
+      'display_name' => t('Configure monetization'),
+      'type' => 'form',
+    ];
+
+    // Setup monetization if all dependencies are met.
+    if (empty(Drupal::service('apigee_devportal_kickstart.monetization')->getMissingDependencies())) {
+      $tasks['apigee_devportal_setup_monetization'] = [
         'display_name' => t('Setup monetization'),
         'type' => 'batch',
-      ],
-    ], $tasks);
+      ];
+    }
   }
 
   $tasks['apigee_devportal_kickstart_finish'] = [
