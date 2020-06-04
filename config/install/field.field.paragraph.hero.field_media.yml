@@ -10,7 +10,7 @@ field_name: field_media
 entity_type: paragraph
 bundle: hero
 label: Media
-description: ''
+description: 'Recommended dimensions: 2560 × 800 px.'
 required: false
 translatable: false
 default_value: {  }
