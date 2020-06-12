@@ -43,8 +43,8 @@ class ApigeeEdgeConfigurationForm extends AuthenticationForm {
       '#theme' => 'status_messages',
       '#message_list' => [
         MessengerInterface::TYPE_WARNING => [
-          $this->t('Note: Your connection settings are going to be saved in Drupal\'s configuration system. If you wish to do this later or <a href=":url" target="_blank">use a different key provider</a>, you may skip this step.', [
-            ':url' => 'https://www.drupal.org/docs/8/modules/apigee-edge/configure-the-connection-to-apigee-edge',
+          $this->t('Edge connection settings are stored in Drupal’s configuration system, which is not designed to store sensitive information. When installing Kickstart for uses other than local development, we highly recommend changing the Apigee Edge connection key provider to a more secure storage location. <a href=":url" target="_blank">Learn more</a>.', [
+            ':url' => 'https://www.drupal.org/docs/8/modules/apigee-developer-portal-kickstart/apigee-kickstart-faqs#s-during-installation-a-warning-is-displayed-that-the-apigee-edge-connection-key-provider-is-not-considered-secure-what-should-i-do',
           ]),
         ],
       ],
@@ -62,8 +62,6 @@ class ApigeeEdgeConfigurationForm extends AuthenticationForm {
 
     // Add a custom after_build callback.
     $form['#after_build'][] = '::formAfterBuild';
-
-    $form['#attached']['library'][] = 'apigee_devportal_kickstart/apigee_edge_form';
 
     return $form;
   }
