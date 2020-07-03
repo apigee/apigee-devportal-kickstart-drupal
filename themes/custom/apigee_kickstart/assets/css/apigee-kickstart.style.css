@@ -12190,6 +12190,13 @@ li.dropbutton-toggle {
   transform: rotate(-180deg);
 }
 
+td .dropbutton-single .dropbutton-widget {
+  position: static;
+}
+td .dropbutton-single .dropbutton-action a {
+  border-radius: 4px;
+}
+
 .field__label {
   letter-spacing: 0.25px;
   font-weight: 500;
