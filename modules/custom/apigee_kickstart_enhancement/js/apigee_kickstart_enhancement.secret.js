@@ -33,7 +33,7 @@
           let hClass = 'secret--hidden';
           let appElWrapper = '.app-details-wrapper';
           let $wrapper = $this.closest(appElWrapper);
-          let loader = drupalSettings.path.baseUrl + 'core/misc/throbber-active.gif';
+          let loader = '<img src="' + drupalSettings.path.baseUrl + 'core/misc/throbber-active.gif" border="0" />';
 
           // Hide the value.
           $this.addClass(hClass);
@@ -41,15 +41,16 @@
           // Toggle secret.
           $(this).find('.secret__toggle').on('click', function (event) {
             let index = $(this).closest(appElWrapper).find('.secret__toggle').index(this);
+            let wrapperIndex = $wrapper.closest('fieldset').parent().find('fieldset').index($(this).closest('fieldset'));
             event.preventDefault();
             $this.toggleClass(hClass);
             if ($this.hasClass(hClass)) {
               $el.html('');
             }
             else {
-              $el.html('<img src="' + loader + '" border="0" />');
-              getSecretValueAjax($wrapper.data('app'), function(data) {
-                $el.html(data[index]);
+              $el.html(loader);
+              callEndpoint($wrapper.data('team'), $wrapper.data('app'), function(data) {
+                $el.html(data[wrapperIndex][index]);
               });
             }
           });
@@ -58,8 +59,9 @@
           let $copy = $(this).find('.secret__copy');
           $copy.find('button').on('click', function (event) {
             let index = $(this).closest(appElWrapper).find('.secret__copy button').index(this);
-            getSecretValueAjax($wrapper.data('app'), function(data) {
-              copyToClipboard(data[index]);
+            let wrapperIndex = $wrapper.closest('fieldset').parent().find('fieldset').index($(this).closest('fieldset'));
+            callEndpoint($wrapper.data('team'), $wrapper.data('app'), function(data) {
+              copyToClipboard(data[wrapperIndex][index]);
               $copy.find('.badge').fadeIn().delay(1000).fadeOut();
             });
           })
@@ -97,8 +99,12 @@
   /**
    * Get credentials based on the app name.
    */
-  function getSecretValueAjax(app, callback) {
-    $.get( drupalSettings.path.baseUrl + 'admin/config/apigee-edge/app/' + app + '/credentials', function( data ) {
+  function callEndpoint(teamApp,  app, callback) {
+    var endpoint = drupalSettings.path.baseUrl + 'api-keys/developer/' + drupalSettings.currentUser + '/' + app;
+    if (teamApp !== undefined) {
+      endpoint = drupalSettings.path.baseUrl + 'api-keys/team/' + teamApp + '/' + app;
+    }
+    $.get(endpoint, function(data) {
       callback(data);
     });
   };
