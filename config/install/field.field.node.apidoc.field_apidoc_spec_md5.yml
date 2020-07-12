@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_apidoc_spec_md5
+    - node.type.apidoc
+_core:
+  default_config_hash: ww4IKJCgXdyr1mC9JUm3M-4TRmWcz5x61w2CKwjKIsg
+id: node.apidoc.field_apidoc_spec_md5
+field_name: field_apidoc_spec_md5
+entity_type: node
+bundle: apidoc
+label: 'OpenAPI specification file MD5'
+description: 'OpenAPI specification file MD5.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

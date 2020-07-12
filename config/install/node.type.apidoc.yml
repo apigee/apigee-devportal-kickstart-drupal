@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - apigee_api_catalog
+_core:
+  default_config_hash: y041CpI6p5s2jgxT01L7kWnrBKnbF4rrvfh3l32WQEE
+name: 'API Doc'
+type: apidoc
+description: 'Use <em>API Docs</em> to document APIs'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

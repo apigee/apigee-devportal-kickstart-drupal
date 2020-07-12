@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_categories
+    - node.type.apidoc
+    - taxonomy.vocabulary.api_category
+id: node.apidoc.field_categories
+field_name: field_categories
+entity_type: node
+bundle: apidoc
+label: Categories
+description: 'The API Docs categories.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      api_category: api_category
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

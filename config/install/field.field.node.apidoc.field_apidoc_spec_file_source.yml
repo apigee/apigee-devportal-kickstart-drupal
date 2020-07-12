@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_apidoc_spec_file_source
+    - node.type.apidoc
+  module:
+    - options
+_core:
+  default_config_hash: KuMaxKSyUJXzWLeFxpiHYuR-suazG9ZeIrLypDu3gco
+id: node.apidoc.field_apidoc_spec_file_source
+field_name: field_apidoc_spec_file_source
+entity_type: node
+bundle: apidoc
+label: 'Specification source type'
+description: 'Indicate if the OpenAPI spec will be provided as a file for upload or a URL.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string
