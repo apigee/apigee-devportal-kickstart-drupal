@@ -9,13 +9,6 @@ dependencies:
   - drupal:block_content
 
 default_content:
-  apidoc:
-    - 3ac4cc37-b791-47ec-be54-8f4ec11af250
-    - 427ddec7-ab43-4cfb-978d-5f0ac8c652ab
-    - 5035fa45-33d8-449e-b0bb-a19958739341
-    - b46d932c-d9bc-4833-b94a-7d751beae0e9
-    - b6174544-26d4-4477-b64f-a72fbc641feb
-    - f6203776-2a93-466e-8d46-2ad078d7e216
   block_content:
     - 003ef719-eca7-4ad1-83a3-dc9b403a49b3
     - 1efa0b42-0ce4-4c67-bd3d-bdb26ed63934
