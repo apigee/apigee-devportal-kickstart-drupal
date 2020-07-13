@@ -88,21 +88,3 @@ function apigee_kickstart_preprocess_app_credential(&$variables) {
   // Rename title to products.
   $variables['secondary_wrapper']['title']['#title'] = t('Products');
 }
-
-/**
- * Implements template_preprocess_apigee_entity__apidoc().
- */
-function apigee_kickstart_preprocess_apigee_entity__apidoc(&$variables) {
-  // Add the view_mode to the template.
-  $variables['view_mode'] = $variables['elements']['#view_mode'];
-
-  // Add the entity to the template.
-  /** @var \Drupal\Core\Entity\EntityInterface $entity */
-  $variables['entity'] = $entity = $variables['elements']["#apidoc"];
-
-  // Add a link to the entity.
-  if ($variables['view_mode'] !== 'full') {
-    $variables['content']['field_link'] = $entity->toLink(t('View Documentation'))
-      ->toRenderable();
-  }
-}
