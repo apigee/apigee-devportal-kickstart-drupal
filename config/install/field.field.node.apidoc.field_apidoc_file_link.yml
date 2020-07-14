@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_apidoc_file_link
+    - node.type.apidoc
+  module:
+    - file_link
+_core:
+  default_config_hash: kj_FsoIn8qIfJ2yjTXBDDnEHQK5KLWsZ0-9DDQFbMs4
+id: node.apidoc.field_apidoc_file_link
+field_name: field_apidoc_file_link
+entity_type: node
+bundle: apidoc
+label: 'URL to OpenAPI specification file'
+description: 'The URL to an OpenAPI file spec.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+  file_extensions: 'yml yaml json'
+  no_extension: false
+field_type: file_link

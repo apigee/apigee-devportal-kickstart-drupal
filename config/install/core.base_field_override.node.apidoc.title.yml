@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.apidoc
+_core:
+  default_config_hash: X4QreQHRaZOC8Wd4db4NNHDrdaXEkpsufojJ6gYm6Gs
+id: node.apidoc.title
+field_name: title
+entity_type: node
+bundle: apidoc
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

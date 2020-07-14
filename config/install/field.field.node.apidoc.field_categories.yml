@@ -2,13 +2,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.apidoc.field_categories
+    - field.storage.node.field_categories
+    - node.type.apidoc
     - taxonomy.vocabulary.api_category
-  module:
-    - apigee_api_catalog
-id: apidoc.apidoc.field_categories
+id: node.apidoc.field_categories
 field_name: field_categories
-entity_type: apidoc
+entity_type: node
 bundle: apidoc
 label: Categories
 description: 'The API Docs categories.'

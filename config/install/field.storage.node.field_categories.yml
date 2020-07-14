@@ -2,11 +2,11 @@ langcode: en
 status: true
 dependencies:
   module:
-    - apigee_api_catalog
+    - node
     - taxonomy
-id: apidoc.field_categories
+id: node.field_categories
 field_name: field_categories
-entity_type: apidoc
+entity_type: node
 type: entity_reference
 settings:
   target_type: taxonomy_term

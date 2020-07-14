@@ -1,5 +1,6 @@
 <?php
 
+use Drupal\Component\Serialization\Yaml;
 use Drupal\Core\File\Exception\FileException;
 use Drupal\Core\File\FileSystemInterface;
 /**
@@ -317,6 +318,22 @@ function apigee_devportal_kickstart_requirements($phase) {
 }
 
 /**
+ * Implements hook_update_dependencies().
+ */
+function apigee_devportal_kickstart_update_dependencies() {
+  $dependencies = [];
+
+  if (\Drupal::moduleHandler()->moduleExists('apigee_api_catalog')) {
+    // Make sure update 8007 is executed after apigee_api_catalog 8804.
+    $dependencies['apigee_devportal_kickstart'][8007] = [
+      'apigee_api_catalog' => 8804,
+    ];
+  }
+
+  return $dependencies;
+}
+
+/**
  * Replace 'Forum' menu link with one that can be edited.
  */
 function apigee_devportal_kickstart_update_8001(&$sandbox) {
@@ -353,4 +370,35 @@ function apigee_devportal_kickstart_update_8006(&$sandbox) {
       ->set('view_mode', 'collapsible_card')
       ->save();
   }
+}
+
+/**
+ * Update to apigee_api_catalog 2.x.
+ */
+function apigee_devportal_kickstart_update_8007() {
+  $moduleHandler = \Drupal::moduleHandler();
+  if (!$moduleHandler->moduleExists('apigee_api_catalog')) {
+    return;
+  }
+
+  $configPath = drupal_get_path('profile', 'apigee_devportal_kickstart') . '/config/install';
+
+  $configToImport = 'core.entity_view_mode.node.card';
+  $raw = file_get_contents("$configPath/$configToImport.yml");
+  $data = Yaml::decode($raw);
+  \Drupal::configFactory()
+    ->getEditable($configToImport)
+    ->setData($data)
+    ->save(TRUE);
+
+  if ($moduleHandler->moduleExists('views')) {
+    $configToImport = 'views.view.apigee_api_catalog';
+    $raw = file_get_contents("$configPath/$configToImport.yml");
+    $data = Yaml::decode($raw);
+    \Drupal::configFactory()
+      ->getEditable($configToImport)
+      ->setData($data)
+      ->save(TRUE);
+  }
+
 }

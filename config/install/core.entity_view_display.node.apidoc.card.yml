@@ -1,0 +1,48 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.apidoc.body
+    - field.field.node.apidoc.field_apidoc_fetched_timestamp
+    - field.field.node.apidoc.field_apidoc_file_link
+    - field.field.node.apidoc.field_apidoc_spec
+    - field.field.node.apidoc.field_apidoc_spec_file_source
+    - field.field.node.apidoc.field_apidoc_spec_md5
+    - field.field.node.apidoc.field_categories
+    - field.field.node.apidoc.field_image
+    - node.type.apidoc
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: MUuYDWGsepNg_zptjBBTDXWwNr2z8y6kmsSHyu4C-J4
+id: node.apidoc.card
+targetEntityType: node
+bundle: apidoc
+mode: card
+content:
+  body:
+    type: text_default
+    weight: 1
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_image:
+    type: entity_reference_entity_view
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      view_mode: card_small
+      link: false
+    third_party_settings: {  }
+hidden:
+  field_apidoc_fetched_timestamp: true
+  field_apidoc_file_link: true
+  field_apidoc_spec: true
+  field_apidoc_spec_file_source: true
+  field_apidoc_spec_md5: true
+  field_categories: true
+  links: true

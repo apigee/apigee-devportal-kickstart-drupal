@@ -1,0 +1,241 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/api\/17?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/apidoc"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/apidoc\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/apidoc\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/apidoc\/field_apidoc_spec": [
+            {
+                "href": "http:\/\/default\/sites\/default\/files\/apidoc_specs\/httpbin-simple-oas3.yaml"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/apidoc\/field_categories": [
+            {
+                "href": "http:\/\/default\/apis\/payment-transaction?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/apidoc\/field_image": [
+            {
+                "href": "http:\/\/default\/media\/5\/edit?_format=hal_json",
+                "lang": "en"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 17
+        }
+    ],
+    "uuid": [
+        {
+            "value": "a1f3163b-fbfa-44aa-bf78-fbd20ff05744"
+        }
+    ],
+    "vid": [
+        {
+            "value": 46
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "apidoc"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2020-07-12T19:15:29+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/apidoc\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "b14af8bd-43b4-48d5-9ed9-0f16a5866af8"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/apidoc\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "b14af8bd-43b4-48d5-9ed9-0f16a5866af8"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/apidoc\/field_apidoc_spec": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/sites\/default\/files\/apidoc_specs\/httpbin-simple-oas3.yaml"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "faeb2bfd-53ce-4ee7-9a00-97f9ee4a5419"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/apidoc\/field_categories": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/apis\/payment-transaction?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/taxonomy_term\/api_category"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "a09a32c1-fa1f-403b-888c-e02616998419"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/apidoc\/field_image": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/5\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "7517d587-e652-4a9c-86c3-09ee39db5232"
+                    }
+                ],
+                "lang": "en"
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "Payment",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2020-07-12T19:14:17+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2020-07-12T19:15:29+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/api\/17",
+            "pid": 27,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "<p>Provides tap to pay, digital wallet and other payment solutions across omni-channels.<\/p>\r\n",
+            "format": "basic_html",
+            "processed": "<p>Provides tap to pay, digital wallet and other payment solutions across omni-channels.<\/p>",
+            "summary": "",
+            "lang": "en"
+        }
+    ],
+    "field_apidoc_fetched_timestamp": [
+        {
+            "value": "2020-04-18T06:38:11+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "field_apidoc_spec_file_source": [
+        {
+            "value": "file"
+        }
+    ],
+    "field_apidoc_spec_md5": [
+        {
+            "value": "d5875d153e1c3a6ce90413e57e0cab94"
+        }
+    ]
+}

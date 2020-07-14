@@ -20,11 +20,11 @@
 
   {% include '@apigee-kickstart/card/card.twig' with {
     classes: ['api-card'],
-    url: content.field_link['#url'],
-    title: title,
+    url: content.field_apidoc_file_link['#url'],
+    title: entity.label,
     image: content.field_image,
-    body: content|without('name', 'field_image', 'field_link', 'spec'),
-    footer: content.field_link['#title'],
+    body: content|without('title', 'field_image', 'field_apidoc_file_link', 'field_apidoc_spec'),
+    footer: content.field_apidoc_file_link['#title'],
     hover_shadow: true
   } %}
 {% endblock %}

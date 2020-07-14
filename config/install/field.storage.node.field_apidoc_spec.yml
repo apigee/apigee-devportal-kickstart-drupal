@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - apigee_api_catalog
+  module:
+    - file
+    - node
+_core:
+  default_config_hash: Kzbm5pV8WERhykIAaBeWr8HooVSXfFMg1WaAAhwNIWI
+id: node.field_apidoc_spec
+field_name: field_apidoc_spec
+entity_type: node
+type: file
+settings:
+  display_field: false
+  display_default: false
+  uri_scheme: public
+  target_type: file
+module: file
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

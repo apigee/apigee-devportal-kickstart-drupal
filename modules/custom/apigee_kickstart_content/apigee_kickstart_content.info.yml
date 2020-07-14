@@ -9,13 +9,6 @@ dependencies:
   - drupal:block_content
 
 default_content:
-  apidoc:
-    - 3ac4cc37-b791-47ec-be54-8f4ec11af250
-    - 427ddec7-ab43-4cfb-978d-5f0ac8c652ab
-    - 5035fa45-33d8-449e-b0bb-a19958739341
-    - b46d932c-d9bc-4833-b94a-7d751beae0e9
-    - b6174544-26d4-4477-b64f-a72fbc641feb
-    - f6203776-2a93-466e-8d46-2ad078d7e216
   block_content:
     - 003ef719-eca7-4ad1-83a3-dc9b403a49b3
     - 1efa0b42-0ce4-4c67-bd3d-bdb26ed63934
@@ -75,6 +68,12 @@ default_content:
     - c92c7326-0042-43f0-b37c-e3409141fb8a
     - e8a69fee-63d5-42fa-9daa-9fd027133276
     - ff6b399b-96d5-4366-8341-def6a7d25876
+    - a1f3163b-fbfa-44aa-bf78-fbd20ff05744
+    - b6923412-a1c4-46cc-9b93-cf4b494cc2cd
+    - c3f5bde5-c21b-42e5-ad2e-2501169c60c4
+    - 41e9956a-c127-4884-8a27-4ff70cf02dcb
+    - cb3564b6-5bdc-4c75-b7f0-07b5f5b50ee4
+    - b2c0cd78-5d9a-46ef-948e-6a73c601d442
   paragraph:
     - 020a8340-8fec-44ff-9a2f-fee4fc33856f
     - 133a8cb0-6813-4a2c-9f8a-a4c7a9109268
