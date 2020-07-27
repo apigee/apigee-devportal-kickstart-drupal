@@ -114,7 +114,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/arshad/Sites/chapterthree/ks/web/profiles/contrib/apigee_devportal_kickstart/themes/custom/apigee_kickstart/src/js/apigee-kickstart.commerce.stripe.js */"./src/js/apigee-kickstart.commerce.stripe.js");
+module.exports = __webpack_require__(/*! /Users/zakiya/Sites/apigee/web/profiles/contrib/apigee_devportal_kickstart/themes/custom/apigee_kickstart/src/js/apigee-kickstart.commerce.stripe.js */"./src/js/apigee-kickstart.commerce.stripe.js");
 
 
 /***/ })
