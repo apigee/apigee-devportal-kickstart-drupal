@@ -42,3 +42,8 @@ monetization.add-credit:
   css:
     theme:
       assets/css/apigee-kickstart.monetization.add-credit.css: {}
+
+smartdocs:
+  css:
+    theme:
+      assets/css/apigee-kickstart.smartdocs.css: {}
