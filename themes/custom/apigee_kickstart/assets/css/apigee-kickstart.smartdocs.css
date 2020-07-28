@@ -351,18 +351,6 @@
   color: var(--ak-header-color-bg);
 }
 
-.mat-list-item-disabled {
-  background-color: #eee;
-}
-
-.mat-progress-bar-background {
-  fill: #cfd8dc;
-}
-
-.mat-progress-bar-buffer {
-  background-color: #cfd8dc;
-}
-
 .mat-progress-bar-fill::after {
   background-color: var(--ak-accent-color);
 }
@@ -525,34 +513,10 @@
   color: var(--ak-header-color-bg);
 }
 
-.mat-tab-group.mat-primary .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled) {
-  background-color: rgba(207, 216, 220, 0.3);
-}
-.mat-tab-group.mat-primary .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled) {
-  background-color: rgba(207, 216, 220, 0.3);
-}
-.mat-tab-group.mat-primary .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled) {
-  background-color: rgba(207, 216, 220, 0.3);
-}
-.mat-tab-group.mat-primary .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled) {
-  background-color: rgba(207, 216, 220, 0.3);
-}
 .mat-tab-group.mat-primary .mat-ink-bar {
   background-color: var(--ak-accent-color);
 }
 
-.mat-tab-nav-bar.mat-primary .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled) {
-  background-color: rgba(207, 216, 220, 0.3);
-}
-.mat-tab-nav-bar.mat-primary .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled) {
-  background-color: rgba(207, 216, 220, 0.3);
-}
-.mat-tab-nav-bar.mat-primary .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled) {
-  background-color: rgba(207, 216, 220, 0.3);
-}
-.mat-tab-nav-bar.mat-primary .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled) {
-  background-color: rgba(207, 216, 220, 0.3);
-}
 .mat-tab-nav-bar.mat-primary .mat-ink-bar {
   background-color: var(--ak-accent-color);
 }
@@ -621,18 +585,6 @@
   background-color: var(--ak-header-color-bg);
 }
 
-.mat-tab-group.mat-background-primary .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled) {
-  background-color: rgba(207, 216, 220, 0.3);
-}
-.mat-tab-group.mat-background-primary .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled) {
-  background-color: rgba(207, 216, 220, 0.3);
-}
-.mat-tab-group.mat-background-primary .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled) {
-  background-color: rgba(207, 216, 220, 0.3);
-}
-.mat-tab-group.mat-background-primary .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled) {
-  background-color: rgba(207, 216, 220, 0.3);
-}
 .mat-tab-group.mat-background-primary .mat-tab-header {
   background-color: var(--ak-accent-color);
 }
@@ -640,18 +592,6 @@
   background-color: var(--ak-accent-color);
 }
 
-.mat-tab-nav-bar.mat-background-primary .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled) {
-  background-color: rgba(207, 216, 220, 0.3);
-}
-.mat-tab-nav-bar.mat-background-primary .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled) {
-  background-color: rgba(207, 216, 220, 0.3);
-}
-.mat-tab-nav-bar.mat-background-primary .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled) {
-  background-color: rgba(207, 216, 220, 0.3);
-}
-.mat-tab-nav-bar.mat-background-primary .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled) {
-  background-color: rgba(207, 216, 220, 0.3);
-}
 .mat-tab-nav-bar.mat-background-primary .mat-tab-header {
   background-color: var(--ak-accent-color);
 }
@@ -745,265 +685,4 @@
 
 .mat-toolbar.mat-warn {
   background: var(--ak-header-color-bg);
-}
-
-.CodeMirror div.CodeMirror-secondarycursor {
-  border-left: 1px solid silver;
-}
-
-.cm-fat-cursor .CodeMirror-cursor {
-  background: #7e7;
-}
-
-.cm-fat-cursor-mark {
-  background-color: rgba(20, 255, 20, 0.5);
-}
-
-.cm-animate-fat-cursor {
-  background-color: #7e7;
-}
-
-.CodeMirror-ruler {
-  border-left: 1px solid #ccc;
-}
-
-.cm-s-default .cm-header {
-  color: #00f;
-}
-.cm-s-default .cm-quote {
-  color: #090;
-}
-.cm-s-default .cm-atom {
-  color: #219;
-}
-.cm-s-default .cm-def {
-  color: #00f;
-}
-.cm-s-default .cm-variable-2 {
-  color: #05a;
-}
-.cm-s-default .cm-type {
-  color: #085;
-}
-.cm-s-default .cm-variable-3 {
-  color: #085;
-}
-.cm-s-default .cm-string-2 {
-  color: #f50;
-}
-.cm-s-default .cm-meta {
-  color: #555;
-}
-.cm-s-default .cm-qualifier {
-  color: #555;
-}
-.cm-s-default .cm-bracket {
-  color: #997;
-}
-.cm-s-default .cm-hr {
-  color: #999;
-}
-.cm-s-default .cm-link {
-  color: #00c;
-}
-.cm-s-default .cm-error {
-  color: red;
-}
-.cm-s-default .cm-keyword {
-  color: #1e88e5;
-}
-.cm-s-default .cm-number {
-  color: #d32f2f;
-}
-.cm-s-default .cm-comment {
-  color: #d81b60;
-}
-.cm-s-default .cm-string {
-  color: #e53935;
-}
-.cm-s-default .cm-builtin {
-  color: #1e88e5;
-}
-.cm-s-default .cm-tag {
-  color: #1e88e5;
-}
-.cm-s-default .cm-attribute {
-  color: #e53935;
-}
-
-.cm-negative {
-  color: #d44;
-}
-
-.cm-positive {
-  color: #292;
-}
-
-.cm-invalidchar {
-  color: red;
-}
-
-div.CodeMirror span.CodeMirror-matchingbracket {
-  color: #0b0;
-}
-div.CodeMirror span.CodeMirror-nonmatchingbracket {
-  color: #a22;
-}
-
-.CodeMirror-matchingtag {
-  background: rgba(255, 150, 0, 0.3);
-}
-
-.CodeMirror-activeline-background {
-  background: #e8f2ff;
-}
-
-.cm-searching {
-  background-color: rgba(255, 255, 0, 0.4);
-}
-
-li.CodeMirror-hint-active {
-  background: #08f;
-}
-
-.CodeMirror-foldmarker {
-  color: #00f;
-  text-shadow: #b9f 1px 1px 2px, #b9f -1px -1px 2px, #b9f 1px -1px 2px, #b9f -1px 1px 2px;
-}
-
-api-explorer .color-secondary {
-  color: #757575;
-}
-api-explorer .json-request-body-hint {
-  color: #757575;
-}
-api-explorer .color-error {
-  color: var(--ak-header-color-bg);
-}
-api-explorer .json-request-body-message.message-level-error {
-  color: var(--ak-header-color-bg);
-}
-api-explorer .json-request-body-message.message-level-warning {
-  color: #00f;
-}
-api-explorer .json-request-body-message.message-level-notice {
-  color: #757575;
-}
-api-explorer .CodeMirror {
-  border: 1px solid #ebebeb;
-}
-api-explorer .CodeMirror pre.CodeMirror-placeholder {
-  color: #999;
-}
-api-explorer .format-border {
-  border: 1px solid #ebebeb;
-}
-api-explorer .CodeMirror-foldgutter {
-  background: #eaeaea;
-}
-api-explorer .reqBodyHint {
-  color: var(--ak-accent-color);
-}
-api-explorer input {
-  border: 1px solid #ebebeb;
-}
-api-explorer input:focus {
-  border-bottom: 2px solid var(--ak-accent-color);
-}
-api-explorer select {
-  border: 1px solid #ebebeb;
-}
-api-explorer select:focus {
-  border-bottom: 2px solid var(--ak-accent-color);
-}
-api-explorer input[required] {
-  border-left: 4px solid var(--ak-header-color-bg);
-}
-api-explorer select[required] {
-  border-left: 4px solid var(--ak-header-color-bg);
-}
-api-explorer .link-button {
-  color: var(--ak-accent-color);
-}
-api-explorer:link {
-  color: var(--ak-accent-color);
-}
-api-explorer .CodeMirror-empty {
-  outline: #c22 solid 1px;
-}
-api-explorer .status-bar.success {
-  background-color: #4caf50;
-}
-api-explorer .status-bar:not(.success) {
-  background-color: var(--ak-header-color-bg);
-}
-
-embedded-explorer .color-secondary {
-  color: #757575;
-}
-embedded-explorer .json-request-body-hint {
-  color: #757575;
-}
-embedded-explorer .color-error {
-  color: var(--ak-header-color-bg);
-}
-embedded-explorer .json-request-body-message.message-level-error {
-  color: var(--ak-header-color-bg);
-}
-embedded-explorer .json-request-body-message.message-level-warning {
-  color: #00f;
-}
-embedded-explorer .json-request-body-message.message-level-notice {
-  color: #757575;
-}
-embedded-explorer .CodeMirror {
-  border: 1px solid #ebebeb;
-}
-embedded-explorer .CodeMirror pre.CodeMirror-placeholder {
-  color: #999;
-}
-embedded-explorer .format-border {
-  border: 1px solid #ebebeb;
-}
-embedded-explorer .CodeMirror-foldgutter {
-  background: #eaeaea;
-}
-embedded-explorer .reqBodyHint {
-  color: var(--ak-accent-color);
-}
-embedded-explorer input {
-  border: 1px solid #ebebeb;
-}
-embedded-explorer input:focus {
-  border-bottom: 2px solid var(--ak-accent-color);
-}
-embedded-explorer select {
-  border: 1px solid #ebebeb;
-}
-embedded-explorer select:focus {
-  border-bottom: 2px solid var(--ak-accent-color);
-}
-embedded-explorer input[required] {
-  border-left: 4px solid var(--ak-header-color-bg);
-}
-embedded-explorer select[required] {
-  border-left: 4px solid var(--ak-header-color-bg);
-}
-embedded-explorer .link-button {
-  color: var(--ak-accent-color);
-}
-embedded-explorer:link {
-  color: var(--ak-accent-color);
-}
-embedded-explorer:visited {
-  color: var(--ak-accent-color);
-}
-embedded-explorer .CodeMirror-empty {
-  outline: #c22 solid 1px;
-}
-embedded-explorer .status-bar.success {
-  background-color: #4caf50;
-}
-embedded-explorer .status-bar:not(.success) {
-  background-color: var(--ak-header-color-bg);
 }

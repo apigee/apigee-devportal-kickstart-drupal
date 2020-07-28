@@ -1,3 +1,6 @@
+// Overrides https://www.gstatic.com/smartdocs/1.1.0/styles.css
+// -----------------------------------------------------------------------------
+
 .mat-badge-content {
   background: var(--ak-accent-color);
 }
@@ -366,15 +369,6 @@
     }
   }
 }
-.mat-list-item-disabled {
-  background-color: #eee;
-}
-.mat-progress-bar-background {
-  fill: #cfd8dc;
-}
-.mat-progress-bar-buffer {
-  background-color: #cfd8dc;
-}
 .mat-progress-bar-fill {
   &::after {
     background-color: var(--ak-accent-color);
@@ -581,51 +575,11 @@
   }
 }
 .mat-tab-group.mat-primary {
-  .mat-tab-label.cdk-keyboard-focused {
-    &:not(.mat-tab-disabled) {
-      background-color: rgba(207,216,220,.3);
-    }
-  }
-  .mat-tab-label.cdk-program-focused {
-    &:not(.mat-tab-disabled) {
-      background-color: rgba(207,216,220,.3);
-    }
-  }
-  .mat-tab-link.cdk-keyboard-focused {
-    &:not(.mat-tab-disabled) {
-      background-color: rgba(207,216,220,.3);
-    }
-  }
-  .mat-tab-link.cdk-program-focused {
-    &:not(.mat-tab-disabled) {
-      background-color: rgba(207,216,220,.3);
-    }
-  }
   .mat-ink-bar {
     background-color: var(--ak-accent-color);
   }
 }
 .mat-tab-nav-bar.mat-primary {
-  .mat-tab-label.cdk-keyboard-focused {
-    &:not(.mat-tab-disabled) {
-      background-color: rgba(207,216,220,.3);
-    }
-  }
-  .mat-tab-label.cdk-program-focused {
-    &:not(.mat-tab-disabled) {
-      background-color: rgba(207,216,220,.3);
-    }
-  }
-  .mat-tab-link.cdk-keyboard-focused {
-    &:not(.mat-tab-disabled) {
-      background-color: rgba(207,216,220,.3);
-    }
-  }
-  .mat-tab-link.cdk-program-focused {
-    &:not(.mat-tab-disabled) {
-      background-color: rgba(207,216,220,.3);
-    }
-  }
   .mat-ink-bar {
     background-color: var(--ak-accent-color);
   }
@@ -731,26 +685,6 @@
   }
 }
 .mat-tab-group.mat-background-primary {
-  .mat-tab-label.cdk-keyboard-focused {
-    &:not(.mat-tab-disabled) {
-      background-color: rgba(207,216,220,.3);
-    }
-  }
-  .mat-tab-label.cdk-program-focused {
-    &:not(.mat-tab-disabled) {
-      background-color: rgba(207,216,220,.3);
-    }
-  }
-  .mat-tab-link.cdk-keyboard-focused {
-    &:not(.mat-tab-disabled) {
-      background-color: rgba(207,216,220,.3);
-    }
-  }
-  .mat-tab-link.cdk-program-focused {
-    &:not(.mat-tab-disabled) {
-      background-color: rgba(207,216,220,.3);
-    }
-  }
   .mat-tab-header {
     background-color: var(--ak-accent-color);
   }
@@ -759,26 +693,6 @@
   }
 }
 .mat-tab-nav-bar.mat-background-primary {
-  .mat-tab-label.cdk-keyboard-focused {
-    &:not(.mat-tab-disabled) {
-      background-color: rgba(207,216,220,.3);
-    }
-  }
-  .mat-tab-label.cdk-program-focused {
-    &:not(.mat-tab-disabled) {
-      background-color: rgba(207,216,220,.3);
-    }
-  }
-  .mat-tab-link.cdk-keyboard-focused {
-    &:not(.mat-tab-disabled) {
-      background-color: rgba(207,216,220,.3);
-    }
-  }
-  .mat-tab-link.cdk-program-focused {
-    &:not(.mat-tab-disabled) {
-      background-color: rgba(207,216,220,.3);
-    }
-  }
   .mat-tab-header {
     background-color: var(--ak-accent-color);
   }
