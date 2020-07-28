@@ -1,3 +1,1041 @@
+.mat-badge-content {
+  background: #607d8b;
+}
+
+.mat-checkbox:not(.mat-checkbox-disabled).mat-primary .mat-checkbox-ripple .mat-ripple-element {
+  background-color: #607d8b;
+}
+.mat-checkbox:not(.mat-checkbox-disabled).mat-accent .mat-checkbox-ripple .mat-ripple-element {
+  background-color: #ff4081;
+}
+.mat-checkbox:not(.mat-checkbox-disabled).mat-warn .mat-checkbox-ripple .mat-ripple-element {
+  background-color: #f44336;
+}
+
+.mat-form-field .mat-select.mat-select-invalid .mat-select-arrow {
+  color: #f44336;
+}
+
+.mat-simple-snackbar-action {
+  color: #ff4081;
+}
+
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: #607d8b;
+}
+.mat-primary .mat-pseudo-checkbox-checked {
+  background: #607d8b;
+}
+.mat-primary .mat-pseudo-checkbox-indeterminate {
+  background: #607d8b;
+}
+.mat-primary .mat-slider-thumb {
+  background-color: #607d8b;
+}
+.mat-primary .mat-slider-thumb-label {
+  background-color: #607d8b;
+}
+.mat-primary .mat-slider-track-fill {
+  background-color: #607d8b;
+}
+
+.mat-accent .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: #ff4081;
+}
+.mat-accent .mat-pseudo-checkbox-checked {
+  background: #ff4081;
+}
+.mat-accent .mat-pseudo-checkbox-indeterminate {
+  background: #ff4081;
+}
+.mat-accent .mat-input-element {
+  caret-color: #ff4081;
+}
+.mat-accent .mat-slider-thumb {
+  background-color: #ff4081;
+}
+.mat-accent .mat-slider-thumb-label {
+  background-color: #ff4081;
+}
+.mat-accent .mat-slider-track-fill {
+  background-color: #ff4081;
+}
+
+.mat-warn .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: #f44336;
+}
+.mat-warn .mat-pseudo-checkbox-checked {
+  background: #f44336;
+}
+.mat-warn .mat-pseudo-checkbox-indeterminate {
+  background: #f44336;
+}
+.mat-warn .mat-input-element {
+  caret-color: #f44336;
+}
+.mat-warn .mat-slider-thumb {
+  background-color: #f44336;
+}
+.mat-warn .mat-slider-thumb-label {
+  background-color: #f44336;
+}
+.mat-warn .mat-slider-track-fill {
+  background-color: #f44336;
+}
+
+.mat-pseudo-checkbox::after {
+  color: #fafafa;
+}
+
+.mat-pseudo-checkbox-checked {
+  background: #ff4081;
+}
+
+.mat-pseudo-checkbox-indeterminate {
+  background: #ff4081;
+}
+
+.mat-pseudo-checkbox-checked.mat-pseudo-checkbox-disabled {
+  background: #b0b0b0;
+}
+
+.mat-app-background {
+  background-color: #fafafa;
+}
+
+.mat-badge-accent .mat-badge-content {
+  background: #ff4081;
+}
+
+.mat-badge-warn .mat-badge-content {
+  background: #f44336;
+}
+
+.mat-badge-disabled .mat-badge-content {
+  background: #b9b9b9;
+}
+
+.mat-button.mat-primary {
+  color: #607d8b;
+}
+.mat-button.mat-primary .mat-button-focus-overlay {
+  background-color: #607d8b;
+}
+
+.mat-icon-button.mat-primary {
+  color: #607d8b;
+}
+.mat-icon-button.mat-primary .mat-button-focus-overlay {
+  background-color: #607d8b;
+}
+
+.mat-stroked-button.mat-primary {
+  color: #607d8b;
+}
+.mat-stroked-button.mat-primary .mat-button-focus-overlay {
+  background-color: #607d8b;
+}
+
+.mat-button.mat-accent {
+  color: #ff4081;
+}
+.mat-button.mat-accent .mat-button-focus-overlay {
+  background-color: #ff4081;
+}
+
+.mat-icon-button.mat-accent {
+  color: #ff4081;
+}
+.mat-icon-button.mat-accent .mat-button-focus-overlay {
+  background-color: #ff4081;
+}
+
+.mat-stroked-button.mat-accent {
+  color: #ff4081;
+}
+.mat-stroked-button.mat-accent .mat-button-focus-overlay {
+  background-color: #ff4081;
+}
+
+.mat-button.mat-warn {
+  color: #f44336;
+}
+.mat-button.mat-warn .mat-button-focus-overlay {
+  background-color: #f44336;
+}
+
+.mat-icon-button.mat-warn {
+  color: #f44336;
+}
+.mat-icon-button.mat-warn .mat-button-focus-overlay {
+  background-color: #f44336;
+}
+
+.mat-stroked-button.mat-warn {
+  color: #f44336;
+}
+.mat-stroked-button.mat-warn .mat-button-focus-overlay {
+  background-color: #f44336;
+}
+
+.mat-fab.mat-accent {
+  background-color: #ff4081;
+}
+
+.mat-fab.mat-primary {
+  background-color: #607d8b;
+}
+
+.mat-fab.mat-warn {
+  background-color: #f44336;
+}
+
+.mat-flat-button.mat-accent {
+  background-color: #ff4081;
+}
+
+.mat-flat-button.mat-primary {
+  background-color: #607d8b;
+}
+
+.mat-flat-button.mat-warn {
+  background-color: #f44336;
+}
+
+.mat-mini-fab.mat-accent {
+  background-color: #ff4081;
+}
+
+.mat-mini-fab.mat-primary {
+  background-color: #607d8b;
+}
+
+.mat-mini-fab.mat-warn {
+  background-color: #f44336;
+}
+
+.mat-raised-button.mat-accent {
+  background-color: #ff4081;
+}
+
+.mat-raised-button.mat-primary {
+  background-color: #607d8b;
+}
+
+.mat-raised-button.mat-warn {
+  background-color: #f44336;
+}
+
+.mat-checkbox-checkmark {
+  fill: #fafafa;
+}
+
+.mat-checkbox-checkmark-path {
+  stroke: #fafafa !important;
+}
+
+.mat-checkbox-mixedmark {
+  background-color: #fafafa;
+}
+
+.mat-checkbox-checked.mat-primary .mat-checkbox-background {
+  background-color: #607d8b;
+}
+
+.mat-checkbox-indeterminate.mat-primary .mat-checkbox-background {
+  background-color: #607d8b;
+}
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+  background-color: #ff4081;
+}
+
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: #ff4081;
+}
+
+.mat-checkbox-checked.mat-warn .mat-checkbox-background {
+  background-color: #f44336;
+}
+
+.mat-checkbox-indeterminate.mat-warn .mat-checkbox-background {
+  background-color: #f44336;
+}
+
+.mat-checkbox-disabled.mat-checkbox-checked:not(.mat-checkbox-indeterminate) .mat-checkbox-background {
+  background-color: #b0b0b0;
+}
+
+.mat-chip.mat-standard-chip.mat-chip-selected.mat-warn {
+  background-color: #f44336;
+}
+
+.mat-chip.mat-standard-chip.mat-chip-selected.mat-accent {
+  background-color: #ff4081;
+}
+
+.mat-datepicker-content.mat-accent .mat-calendar-body-selected {
+  background-color: #ff4081;
+}
+.mat-datepicker-content.mat-accent .mat-calendar-body-disabled > .mat-calendar-body-selected {
+  background-color: rgba(255, 64, 129, 0.4);
+}
+
+.mat-datepicker-content.mat-warn .mat-calendar-body-selected {
+  background-color: #f44336;
+}
+.mat-datepicker-content.mat-warn .mat-calendar-body-disabled > .mat-calendar-body-selected {
+  background-color: rgba(244, 67, 54, 0.4);
+}
+
+.mat-datepicker-toggle-active {
+  color: #607d8b;
+}
+
+.mat-datepicker-toggle-active.mat-accent {
+  color: #ff4081;
+}
+
+.mat-datepicker-toggle-active.mat-warn {
+  color: #f44336;
+}
+
+.mat-form-field.mat-focused .mat-form-field-label {
+  color: #607d8b;
+}
+.mat-form-field.mat-focused .mat-form-field-label.mat-accent {
+  color: #ff4081;
+}
+.mat-form-field.mat-focused .mat-form-field-label.mat-warn {
+  color: #f44336;
+}
+.mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: #607d8b;
+}
+.mat-form-field.mat-focused .mat-form-field-ripple.mat-accent {
+  background-color: #ff4081;
+}
+.mat-form-field.mat-focused .mat-form-field-ripple.mat-warn {
+  background-color: #f44336;
+}
+
+.mat-focused .mat-form-field-required-marker {
+  color: #ff4081;
+}
+
+.mat-form-field.mat-form-field-invalid .mat-form-field-label {
+  color: #f44336;
+}
+.mat-form-field.mat-form-field-invalid .mat-form-field-label .mat-form-field-required-marker {
+  color: #f44336;
+}
+.mat-form-field.mat-form-field-invalid .mat-form-field-label.mat-accent {
+  color: #f44336;
+}
+.mat-form-field.mat-form-field-invalid .mat-form-field-ripple {
+  background-color: #f44336;
+}
+.mat-form-field.mat-form-field-invalid .mat-form-field-ripple.mat-accent {
+  background-color: #f44336;
+}
+
+.mat-error {
+  color: #f44336;
+}
+
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: #607d8b;
+}
+
+.mat-form-field-appearance-outline.mat-focused.mat-accent .mat-form-field-outline-thick {
+  color: #ff4081;
+}
+
+.mat-form-field-appearance-outline.mat-focused.mat-warn .mat-form-field-outline-thick {
+  color: #f44336;
+}
+
+.mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick {
+  color: #f44336;
+}
+
+.mat-icon.mat-primary {
+  color: #607d8b;
+}
+
+.mat-icon.mat-accent {
+  color: #ff4081;
+}
+
+.mat-icon.mat-warn {
+  color: #f44336;
+}
+
+.mat-input-element {
+  caret-color: #607d8b;
+}
+
+.mat-form-field-invalid .mat-input-element {
+  caret-color: #f44336;
+}
+
+.mat-form-field-type-mat-native-select.mat-form-field-invalid .mat-form-field-infix::after {
+  color: #f44336;
+}
+
+.mat-list-item-disabled {
+  background-color: #eee;
+}
+
+.mat-progress-bar-background {
+  fill: #cfd8dc;
+}
+
+.mat-progress-bar-buffer {
+  background-color: #cfd8dc;
+}
+
+.mat-progress-bar-fill::after {
+  background-color: #607d8b;
+}
+
+.mat-progress-bar.mat-accent .mat-progress-bar-background {
+  fill: #ff80ab;
+}
+.mat-progress-bar.mat-accent .mat-progress-bar-buffer {
+  background-color: #ff80ab;
+}
+.mat-progress-bar.mat-accent .mat-progress-bar-fill::after {
+  background-color: #ff4081;
+}
+
+.mat-progress-bar.mat-warn .mat-progress-bar-background {
+  fill: #ffcdd2;
+}
+.mat-progress-bar.mat-warn .mat-progress-bar-buffer {
+  background-color: #ffcdd2;
+}
+.mat-progress-bar.mat-warn .mat-progress-bar-fill::after {
+  background-color: #f44336;
+}
+
+.mat-progress-spinner circle {
+  stroke: #607d8b;
+}
+
+.mat-spinner circle {
+  stroke: #607d8b;
+}
+
+.mat-progress-spinner.mat-accent circle {
+  stroke: #ff4081;
+}
+
+.mat-spinner.mat-accent circle {
+  stroke: #ff4081;
+}
+
+.mat-progress-spinner.mat-warn circle {
+  stroke: #f44336;
+}
+
+.mat-spinner.mat-warn circle {
+  stroke: #f44336;
+}
+
+.mat-radio-button.mat-primary.mat-radio-checked .mat-radio-outer-circle {
+  border-color: #607d8b;
+}
+.mat-radio-button.mat-primary.mat-radio-checked .mat-radio-persistent-ripple {
+  background-color: #607d8b;
+}
+
+.mat-radio-button.mat-primary .mat-radio-inner-circle {
+  background-color: #607d8b;
+}
+.mat-radio-button.mat-primary .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple) {
+  background-color: #607d8b;
+}
+.mat-radio-button.mat-primary:active .mat-radio-persistent-ripple {
+  background-color: #607d8b;
+}
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  border-color: #ff4081;
+}
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple {
+  background-color: #ff4081;
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle {
+  background-color: #ff4081;
+}
+.mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple) {
+  background-color: #ff4081;
+}
+.mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+  background-color: #ff4081;
+}
+
+.mat-radio-button.mat-warn.mat-radio-checked .mat-radio-outer-circle {
+  border-color: #f44336;
+}
+.mat-radio-button.mat-warn.mat-radio-checked .mat-radio-persistent-ripple {
+  background-color: #f44336;
+}
+
+.mat-radio-button.mat-warn .mat-radio-inner-circle {
+  background-color: #f44336;
+}
+.mat-radio-button.mat-warn .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple) {
+  background-color: #f44336;
+}
+.mat-radio-button.mat-warn:active .mat-radio-persistent-ripple {
+  background-color: #f44336;
+}
+
+.mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+  color: #607d8b;
+}
+
+.mat-form-field.mat-focused.mat-accent .mat-select-arrow {
+  color: #ff4081;
+}
+
+.mat-form-field.mat-focused.mat-warn .mat-select-arrow {
+  color: #f44336;
+}
+
+.mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+  background-color: #ff4081;
+}
+.mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+  background-color: rgba(255, 64, 129, 0.54);
+}
+.mat-slide-toggle.mat-checked .mat-ripple-element {
+  background-color: #ff4081;
+}
+
+.mat-slide-toggle.mat-primary.mat-checked .mat-slide-toggle-thumb {
+  background-color: #607d8b;
+}
+.mat-slide-toggle.mat-primary.mat-checked .mat-slide-toggle-bar {
+  background-color: rgba(96, 125, 139, 0.54);
+}
+.mat-slide-toggle.mat-primary.mat-checked .mat-ripple-element {
+  background-color: #607d8b;
+}
+
+.mat-slide-toggle.mat-warn.mat-checked .mat-slide-toggle-thumb {
+  background-color: #f44336;
+}
+.mat-slide-toggle.mat-warn.mat-checked .mat-slide-toggle-bar {
+  background-color: rgba(244, 67, 54, 0.54);
+}
+.mat-slide-toggle.mat-warn.mat-checked .mat-ripple-element {
+  background-color: #f44336;
+}
+
+.mat-slider-focus-ring {
+  background-color: rgba(255, 64, 129, 0.2);
+}
+
+.mat-step-header .mat-step-icon-selected {
+  background-color: #607d8b;
+}
+.mat-step-header .mat-step-icon-state-done {
+  background-color: #607d8b;
+}
+.mat-step-header .mat-step-icon-state-edit {
+  background-color: #607d8b;
+}
+.mat-step-header .mat-step-icon-state-error {
+  background-color: transparent;
+  color: #f44336;
+}
+.mat-step-header .mat-step-label.mat-step-label-error {
+  color: #f44336;
+}
+
+.mat-tab-group.mat-primary .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(207, 216, 220, 0.3);
+}
+.mat-tab-group.mat-primary .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(207, 216, 220, 0.3);
+}
+.mat-tab-group.mat-primary .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(207, 216, 220, 0.3);
+}
+.mat-tab-group.mat-primary .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(207, 216, 220, 0.3);
+}
+.mat-tab-group.mat-primary .mat-ink-bar {
+  background-color: #607d8b;
+}
+
+.mat-tab-nav-bar.mat-primary .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(207, 216, 220, 0.3);
+}
+.mat-tab-nav-bar.mat-primary .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(207, 216, 220, 0.3);
+}
+.mat-tab-nav-bar.mat-primary .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(207, 216, 220, 0.3);
+}
+.mat-tab-nav-bar.mat-primary .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(207, 216, 220, 0.3);
+}
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background-color: #607d8b;
+}
+
+.mat-tab-group.mat-accent .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 128, 171, 0.3);
+}
+.mat-tab-group.mat-accent .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 128, 171, 0.3);
+}
+.mat-tab-group.mat-accent .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 128, 171, 0.3);
+}
+.mat-tab-group.mat-accent .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 128, 171, 0.3);
+}
+.mat-tab-group.mat-accent .mat-ink-bar {
+  background-color: #ff4081;
+}
+
+.mat-tab-nav-bar.mat-accent .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 128, 171, 0.3);
+}
+.mat-tab-nav-bar.mat-accent .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 128, 171, 0.3);
+}
+.mat-tab-nav-bar.mat-accent .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 128, 171, 0.3);
+}
+.mat-tab-nav-bar.mat-accent .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 128, 171, 0.3);
+}
+.mat-tab-nav-bar.mat-accent .mat-ink-bar {
+  background-color: #ff4081;
+}
+
+.mat-tab-group.mat-warn .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 205, 210, 0.3);
+}
+.mat-tab-group.mat-warn .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 205, 210, 0.3);
+}
+.mat-tab-group.mat-warn .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 205, 210, 0.3);
+}
+.mat-tab-group.mat-warn .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 205, 210, 0.3);
+}
+.mat-tab-group.mat-warn .mat-ink-bar {
+  background-color: #f44336;
+}
+
+.mat-tab-nav-bar.mat-warn .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 205, 210, 0.3);
+}
+.mat-tab-nav-bar.mat-warn .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 205, 210, 0.3);
+}
+.mat-tab-nav-bar.mat-warn .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 205, 210, 0.3);
+}
+.mat-tab-nav-bar.mat-warn .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 205, 210, 0.3);
+}
+.mat-tab-nav-bar.mat-warn .mat-ink-bar {
+  background-color: #f44336;
+}
+
+.mat-tab-group.mat-background-primary .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(207, 216, 220, 0.3);
+}
+.mat-tab-group.mat-background-primary .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(207, 216, 220, 0.3);
+}
+.mat-tab-group.mat-background-primary .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(207, 216, 220, 0.3);
+}
+.mat-tab-group.mat-background-primary .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(207, 216, 220, 0.3);
+}
+.mat-tab-group.mat-background-primary .mat-tab-header {
+  background-color: #607d8b;
+}
+.mat-tab-group.mat-background-primary .mat-tab-links {
+  background-color: #607d8b;
+}
+
+.mat-tab-nav-bar.mat-background-primary .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(207, 216, 220, 0.3);
+}
+.mat-tab-nav-bar.mat-background-primary .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(207, 216, 220, 0.3);
+}
+.mat-tab-nav-bar.mat-background-primary .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(207, 216, 220, 0.3);
+}
+.mat-tab-nav-bar.mat-background-primary .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(207, 216, 220, 0.3);
+}
+.mat-tab-nav-bar.mat-background-primary .mat-tab-header {
+  background-color: #607d8b;
+}
+.mat-tab-nav-bar.mat-background-primary .mat-tab-links {
+  background-color: #607d8b;
+}
+
+.mat-tab-group.mat-background-accent .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 128, 171, 0.3);
+}
+.mat-tab-group.mat-background-accent .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 128, 171, 0.3);
+}
+.mat-tab-group.mat-background-accent .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 128, 171, 0.3);
+}
+.mat-tab-group.mat-background-accent .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 128, 171, 0.3);
+}
+.mat-tab-group.mat-background-accent .mat-tab-header {
+  background-color: #ff4081;
+}
+.mat-tab-group.mat-background-accent .mat-tab-links {
+  background-color: #ff4081;
+}
+
+.mat-tab-nav-bar.mat-background-accent .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 128, 171, 0.3);
+}
+.mat-tab-nav-bar.mat-background-accent .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 128, 171, 0.3);
+}
+.mat-tab-nav-bar.mat-background-accent .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 128, 171, 0.3);
+}
+.mat-tab-nav-bar.mat-background-accent .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 128, 171, 0.3);
+}
+.mat-tab-nav-bar.mat-background-accent .mat-tab-header {
+  background-color: #ff4081;
+}
+.mat-tab-nav-bar.mat-background-accent .mat-tab-links {
+  background-color: #ff4081;
+}
+
+.mat-tab-group.mat-background-warn .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 205, 210, 0.3);
+}
+.mat-tab-group.mat-background-warn .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 205, 210, 0.3);
+}
+.mat-tab-group.mat-background-warn .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 205, 210, 0.3);
+}
+.mat-tab-group.mat-background-warn .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 205, 210, 0.3);
+}
+.mat-tab-group.mat-background-warn .mat-tab-header {
+  background-color: #f44336;
+}
+.mat-tab-group.mat-background-warn .mat-tab-links {
+  background-color: #f44336;
+}
+
+.mat-tab-nav-bar.mat-background-warn .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 205, 210, 0.3);
+}
+.mat-tab-nav-bar.mat-background-warn .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 205, 210, 0.3);
+}
+.mat-tab-nav-bar.mat-background-warn .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 205, 210, 0.3);
+}
+.mat-tab-nav-bar.mat-background-warn .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 205, 210, 0.3);
+}
+.mat-tab-nav-bar.mat-background-warn .mat-tab-header {
+  background-color: #f44336;
+}
+.mat-tab-nav-bar.mat-background-warn .mat-tab-links {
+  background-color: #f44336;
+}
+
 .mat-toolbar.mat-primary {
-  background: var(--ak-accent-color);
+  background: #607d8b;
+}
+
+.mat-toolbar.mat-accent {
+  background: #ff4081;
+}
+
+.mat-toolbar.mat-warn {
+  background: #f44336;
+}
+
+.CodeMirror div.CodeMirror-secondarycursor {
+  border-left: 1px solid silver;
+}
+
+.cm-fat-cursor .CodeMirror-cursor {
+  background: #7e7;
+}
+
+.cm-fat-cursor-mark {
+  background-color: rgba(20, 255, 20, 0.5);
+}
+
+.cm-animate-fat-cursor {
+  background-color: #7e7;
+}
+
+.CodeMirror-ruler {
+  border-left: 1px solid #ccc;
+}
+
+.cm-s-default .cm-header {
+  color: #00f;
+}
+.cm-s-default .cm-quote {
+  color: #090;
+}
+.cm-s-default .cm-atom {
+  color: #219;
+}
+.cm-s-default .cm-def {
+  color: #00f;
+}
+.cm-s-default .cm-variable-2 {
+  color: #05a;
+}
+.cm-s-default .cm-type {
+  color: #085;
+}
+.cm-s-default .cm-variable-3 {
+  color: #085;
+}
+.cm-s-default .cm-string-2 {
+  color: #f50;
+}
+.cm-s-default .cm-meta {
+  color: #555;
+}
+.cm-s-default .cm-qualifier {
+  color: #555;
+}
+.cm-s-default .cm-bracket {
+  color: #997;
+}
+.cm-s-default .cm-hr {
+  color: #999;
+}
+.cm-s-default .cm-link {
+  color: #00c;
+}
+.cm-s-default .cm-error {
+  color: red;
+}
+.cm-s-default .cm-keyword {
+  color: #1e88e5;
+}
+.cm-s-default .cm-number {
+  color: #d32f2f;
+}
+.cm-s-default .cm-comment {
+  color: #d81b60;
+}
+.cm-s-default .cm-string {
+  color: #e53935;
+}
+.cm-s-default .cm-builtin {
+  color: #1e88e5;
+}
+.cm-s-default .cm-tag {
+  color: #1e88e5;
+}
+.cm-s-default .cm-attribute {
+  color: #e53935;
+}
+
+.cm-negative {
+  color: #d44;
+}
+
+.cm-positive {
+  color: #292;
+}
+
+.cm-invalidchar {
+  color: red;
+}
+
+div.CodeMirror span.CodeMirror-matchingbracket {
+  color: #0b0;
+}
+div.CodeMirror span.CodeMirror-nonmatchingbracket {
+  color: #a22;
+}
+
+.CodeMirror-matchingtag {
+  background: rgba(255, 150, 0, 0.3);
+}
+
+.CodeMirror-activeline-background {
+  background: #e8f2ff;
+}
+
+.cm-searching {
+  background-color: rgba(255, 255, 0, 0.4);
+}
+
+li.CodeMirror-hint-active {
+  background: #08f;
+}
+
+.CodeMirror-foldmarker {
+  color: #00f;
+  text-shadow: #b9f 1px 1px 2px, #b9f -1px -1px 2px, #b9f 1px -1px 2px, #b9f -1px 1px 2px;
+}
+
+api-explorer .color-secondary {
+  color: #757575;
+}
+api-explorer .json-request-body-hint {
+  color: #757575;
+}
+api-explorer .color-error {
+  color: #f44336;
+}
+api-explorer .json-request-body-message.message-level-error {
+  color: #f44336;
+}
+api-explorer .json-request-body-message.message-level-warning {
+  color: #00f;
+}
+api-explorer .json-request-body-message.message-level-notice {
+  color: #757575;
+}
+api-explorer .CodeMirror {
+  border: 1px solid #ebebeb;
+}
+api-explorer .CodeMirror pre.CodeMirror-placeholder {
+  color: #999;
+}
+api-explorer .format-border {
+  border: 1px solid #ebebeb;
+}
+api-explorer .CodeMirror-foldgutter {
+  background: #eaeaea;
+}
+api-explorer .reqBodyHint {
+  color: #607d8b;
+}
+api-explorer input {
+  border: 1px solid #ebebeb;
+}
+api-explorer input:focus {
+  border-bottom: 2px solid #607d8b;
+}
+api-explorer select {
+  border: 1px solid #ebebeb;
+}
+api-explorer select:focus {
+  border-bottom: 2px solid #607d8b;
+}
+api-explorer input[required] {
+  border-left: 4px solid #f44336;
+}
+api-explorer select[required] {
+  border-left: 4px solid #f44336;
+}
+api-explorer .link-button {
+  color: #607d8b;
+}
+api-explorer:link {
+  color: #607d8b;
+}
+api-explorer .CodeMirror-empty {
+  outline: #c22 solid 1px;
+}
+api-explorer .status-bar.success {
+  background-color: #4caf50;
+}
+api-explorer .status-bar:not(.success) {
+  background-color: #f44336;
+}
+
+embedded-explorer .color-secondary {
+  color: #757575;
+}
+embedded-explorer .json-request-body-hint {
+  color: #757575;
+}
+embedded-explorer .color-error {
+  color: #f44336;
+}
+embedded-explorer .json-request-body-message.message-level-error {
+  color: #f44336;
+}
+embedded-explorer .json-request-body-message.message-level-warning {
+  color: #00f;
+}
+embedded-explorer .json-request-body-message.message-level-notice {
+  color: #757575;
+}
+embedded-explorer .CodeMirror {
+  border: 1px solid #ebebeb;
+}
+embedded-explorer .CodeMirror pre.CodeMirror-placeholder {
+  color: #999;
+}
+embedded-explorer .format-border {
+  border: 1px solid #ebebeb;
+}
+embedded-explorer .CodeMirror-foldgutter {
+  background: #eaeaea;
+}
+embedded-explorer .reqBodyHint {
+  color: #607d8b;
+}
+embedded-explorer input {
+  border: 1px solid #ebebeb;
+}
+embedded-explorer input:focus {
+  border-bottom: 2px solid #607d8b;
+}
+embedded-explorer select {
+  border: 1px solid #ebebeb;
+}
+embedded-explorer select:focus {
+  border-bottom: 2px solid #607d8b;
+}
+embedded-explorer input[required] {
+  border-left: 4px solid #f44336;
+}
+embedded-explorer select[required] {
+  border-left: 4px solid #f44336;
+}
+embedded-explorer .link-button {
+  color: #607d8b;
+}
+embedded-explorer:link {
+  color: #607d8b;
+}
+embedded-explorer:visited {
+  color: #607d8b;
+}
+embedded-explorer .CodeMirror-empty {
+  outline: #c22 solid 1px;
+}
+embedded-explorer .status-bar.success {
+  background-color: #4caf50;
+}
+embedded-explorer .status-bar:not(.success) {
+  background-color: #f44336;
 }
