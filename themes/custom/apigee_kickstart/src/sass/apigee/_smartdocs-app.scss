@@ -267,7 +267,7 @@
   }
   .mat-calendar-body-disabled {
     >.mat-calendar-body-selected {
-      background-color: rgba(244,67,54,.4);
+      background-color: rgba(var(--ak-header-color-bg),.4);
     }
   }
 }
@@ -376,10 +376,10 @@
 }
 .mat-progress-bar.mat-accent {
   .mat-progress-bar-background {
-    fill: #ff80ab;
+    fill: var(--ak-accent-color-dark);
   }
   .mat-progress-bar-buffer {
-    background-color: #ff80ab;
+    background-color: var(--ak-accent-color-dark);
   }
   .mat-progress-bar-fill {
     &::after {
@@ -389,10 +389,10 @@
 }
 .mat-progress-bar.mat-warn {
   .mat-progress-bar-background {
-    fill: #ffcdd2;
+    fill: var(--ak-accent-color-dark);
   }
   .mat-progress-bar-buffer {
-    background-color: #ffcdd2;
+    background-color: var(--ak-accent-color-dark);
   }
   .mat-progress-bar-fill {
     &::after {
@@ -587,22 +587,22 @@
 .mat-tab-group.mat-accent {
   .mat-tab-label.cdk-keyboard-focused {
     &:not(.mat-tab-disabled) {
-      background-color: rgba(255,128,171,.3);
+      background-color: rgba(var(--ak-accent-color-dark),.3);
     }
   }
   .mat-tab-label.cdk-program-focused {
     &:not(.mat-tab-disabled) {
-      background-color: rgba(255,128,171,.3);
+      background-color: rgba(var(--ak-accent-color-dark),.3);
     }
   }
   .mat-tab-link.cdk-keyboard-focused {
     &:not(.mat-tab-disabled) {
-      background-color: rgba(255,128,171,.3);
+      background-color: rgba(var(--ak-accent-color-dark),.3);
     }
   }
   .mat-tab-link.cdk-program-focused {
     &:not(.mat-tab-disabled) {
-      background-color: rgba(255,128,171,.3);
+      background-color: rgba(var(--ak-accent-color-dark),.3);
     }
   }
   .mat-ink-bar {
@@ -612,22 +612,22 @@
 .mat-tab-nav-bar.mat-accent {
   .mat-tab-label.cdk-keyboard-focused {
     &:not(.mat-tab-disabled) {
-      background-color: rgba(255,128,171,.3);
+      background-color: rgba(var(--ak-accent-color-dark),.3);
     }
   }
   .mat-tab-label.cdk-program-focused {
     &:not(.mat-tab-disabled) {
-      background-color: rgba(255,128,171,.3);
+      background-color: rgba(var(--ak-accent-color-dark),.3);
     }
   }
   .mat-tab-link.cdk-keyboard-focused {
     &:not(.mat-tab-disabled) {
-      background-color: rgba(255,128,171,.3);
+      background-color: rgba(var(--ak-accent-color-dark),.3);
     }
   }
   .mat-tab-link.cdk-program-focused {
     &:not(.mat-tab-disabled) {
-      background-color: rgba(255,128,171,.3);
+      background-color: rgba(var(--ak-accent-color-dark),.3);
     }
   }
   .mat-ink-bar {
@@ -703,22 +703,22 @@
 .mat-tab-group.mat-background-accent {
   .mat-tab-label.cdk-keyboard-focused {
     &:not(.mat-tab-disabled) {
-      background-color: rgba(255,128,171,.3);
+      background-color: rgba(var(--ak-accent-color-dark),.3);
     }
   }
   .mat-tab-label.cdk-program-focused {
     &:not(.mat-tab-disabled) {
-      background-color: rgba(255,128,171,.3);
+      background-color: rgba(var(--ak-accent-color-dark),.3);
     }
   }
   .mat-tab-link.cdk-keyboard-focused {
     &:not(.mat-tab-disabled) {
-      background-color: rgba(255,128,171,.3);
+      background-color: rgba(var(--ak-accent-color-dark),.3);
     }
   }
   .mat-tab-link.cdk-program-focused {
     &:not(.mat-tab-disabled) {
-      background-color: rgba(255,128,171,.3);
+      background-color: rgba(var(--ak-accent-color-dark),.3);
     }
   }
   .mat-tab-header {
@@ -731,22 +731,22 @@
 .mat-tab-nav-bar.mat-background-accent {
   .mat-tab-label.cdk-keyboard-focused {
     &:not(.mat-tab-disabled) {
-      background-color: rgba(255,128,171,.3);
+      background-color: rgba(var(--ak-accent-color-dark),.3);
     }
   }
   .mat-tab-label.cdk-program-focused {
     &:not(.mat-tab-disabled) {
-      background-color: rgba(255,128,171,.3);
+      background-color: rgba(var(--ak-accent-color-dark),.3);
     }
   }
   .mat-tab-link.cdk-keyboard-focused {
     &:not(.mat-tab-disabled) {
-      background-color: rgba(255,128,171,.3);
+      background-color: rgba(var(--ak-accent-color-dark),.3);
     }
   }
   .mat-tab-link.cdk-program-focused {
     &:not(.mat-tab-disabled) {
-      background-color: rgba(255,128,171,.3);
+      background-color: rgba(var(--ak-accent-color-dark),.3);
     }
   }
   .mat-tab-header {
