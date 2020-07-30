@@ -207,7 +207,7 @@
   background-color: var(--ak-header-color-bg);
 }
 .mat-raised-button.mat-accent {
-  background-color: var(--ak-accent-color-dark);
+  background-color: var(--ak-accent-color);
 }
 .mat-raised-button.mat-primary {
   background-color: var(--ak-accent-color);
@@ -820,4 +820,11 @@
 }
 .mat-toolbar.mat-warn {
   background: var(--ak-header-color-bg);
+}
+
+.route-path-template[style] {
+  color: var(--ak-accent-color);
+}
+section .route-path-template[_ngcontent-c15] {
+  color: var(--ak-accent-color);
 }
