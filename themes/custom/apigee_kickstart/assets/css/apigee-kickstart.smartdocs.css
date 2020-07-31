@@ -1,0 +1,696 @@
+.mat-badge-content {
+  background: var(--ak-accent-color);
+}
+
+.mat-checkbox:not(.mat-checkbox-disabled).mat-primary .mat-checkbox-ripple .mat-ripple-element {
+  background-color: var(--ak-accent-color);
+}
+.mat-checkbox:not(.mat-checkbox-disabled).mat-accent .mat-checkbox-ripple .mat-ripple-element {
+  background-color: var(--ak-accent-color-dark);
+}
+.mat-checkbox:not(.mat-checkbox-disabled).mat-warn .mat-checkbox-ripple .mat-ripple-element {
+  background-color: var(--ak-header-color-bg);
+}
+
+.mat-form-field .mat-select.mat-select-invalid .mat-select-arrow {
+  color: var(--ak-header-color-bg);
+}
+
+.mat-simple-snackbar-action {
+  color: var(--ak-accent-color-dark);
+}
+
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: var(--ak-accent-color);
+}
+.mat-primary .mat-pseudo-checkbox-checked {
+  background: var(--ak-accent-color);
+}
+.mat-primary .mat-pseudo-checkbox-indeterminate {
+  background: var(--ak-accent-color);
+}
+.mat-primary .mat-slider-thumb {
+  background-color: var(--ak-accent-color);
+}
+.mat-primary .mat-slider-thumb-label {
+  background-color: var(--ak-accent-color);
+}
+.mat-primary .mat-slider-track-fill {
+  background-color: var(--ak-accent-color);
+}
+
+.mat-accent .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: var(--ak-accent-color-dark);
+}
+.mat-accent .mat-pseudo-checkbox-checked {
+  background: var(--ak-accent-color-dark);
+}
+.mat-accent .mat-pseudo-checkbox-indeterminate {
+  background: var(--ak-accent-color-dark);
+}
+.mat-accent .mat-input-element {
+  caret-color: var(--ak-accent-color-dark);
+}
+.mat-accent .mat-slider-thumb {
+  background-color: var(--ak-accent-color-dark);
+}
+.mat-accent .mat-slider-thumb-label {
+  background-color: var(--ak-accent-color-dark);
+}
+.mat-accent .mat-slider-track-fill {
+  background-color: var(--ak-accent-color-dark);
+}
+
+.mat-warn .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: var(--ak-header-color-bg);
+}
+.mat-warn .mat-pseudo-checkbox-checked {
+  background: var(--ak-header-color-bg);
+}
+.mat-warn .mat-pseudo-checkbox-indeterminate {
+  background: var(--ak-header-color-bg);
+}
+.mat-warn .mat-input-element {
+  caret-color: var(--ak-header-color-bg);
+}
+.mat-warn .mat-slider-thumb {
+  background-color: var(--ak-header-color-bg);
+}
+.mat-warn .mat-slider-thumb-label {
+  background-color: var(--ak-header-color-bg);
+}
+.mat-warn .mat-slider-track-fill {
+  background-color: var(--ak-header-color-bg);
+}
+
+.mat-pseudo-checkbox-checked {
+  background: var(--ak-accent-color-dark);
+}
+
+.mat-pseudo-checkbox-indeterminate {
+  background: var(--ak-accent-color-dark);
+}
+
+.mat-badge-accent .mat-badge-content {
+  background: var(--ak-accent-color-dark);
+}
+
+.mat-badge-warn .mat-badge-content {
+  background: var(--ak-header-color-bg);
+}
+
+.mat-button.mat-primary {
+  color: var(--ak-accent-color);
+}
+.mat-button.mat-primary .mat-button-focus-overlay {
+  background-color: var(--ak-accent-color);
+}
+
+.mat-icon-button.mat-primary {
+  color: var(--ak-accent-color);
+}
+.mat-icon-button.mat-primary .mat-button-focus-overlay {
+  background-color: var(--ak-accent-color);
+}
+
+.mat-stroked-button.mat-primary {
+  color: var(--ak-accent-color);
+}
+.mat-stroked-button.mat-primary .mat-button-focus-overlay {
+  background-color: var(--ak-accent-color);
+}
+
+.mat-button.mat-accent {
+  color: var(--ak-accent-color-dark);
+}
+.mat-button.mat-accent .mat-button-focus-overlay {
+  background-color: var(--ak-accent-color-dark);
+}
+
+.mat-icon-button.mat-accent {
+  color: var(--ak-accent-color-dark);
+}
+.mat-icon-button.mat-accent .mat-button-focus-overlay {
+  background-color: var(--ak-accent-color-dark);
+}
+
+.mat-stroked-button.mat-accent {
+  color: var(--ak-accent-color-dark);
+}
+.mat-stroked-button.mat-accent .mat-button-focus-overlay {
+  background-color: var(--ak-accent-color-dark);
+}
+
+.mat-button.mat-warn {
+  color: var(--ak-header-color-bg);
+}
+.mat-button.mat-warn .mat-button-focus-overlay {
+  background-color: var(--ak-header-color-bg);
+}
+
+.mat-icon-button.mat-warn {
+  color: var(--ak-header-color-bg);
+}
+.mat-icon-button.mat-warn .mat-button-focus-overlay {
+  background-color: var(--ak-header-color-bg);
+}
+
+.mat-stroked-button.mat-warn {
+  color: var(--ak-header-color-bg);
+}
+.mat-stroked-button.mat-warn .mat-button-focus-overlay {
+  background-color: var(--ak-header-color-bg);
+}
+
+.mat-fab.mat-accent {
+  background-color: var(--ak-accent-color-dark);
+}
+
+.mat-fab.mat-primary {
+  background-color: var(--ak-accent-color);
+}
+
+.mat-fab.mat-warn {
+  background-color: var(--ak-header-color-bg);
+}
+
+.mat-flat-button.mat-accent {
+  background-color: var(--ak-accent-color-dark);
+}
+
+.mat-flat-button.mat-primary {
+  background-color: var(--ak-accent-color);
+}
+
+.mat-flat-button.mat-warn {
+  background-color: var(--ak-header-color-bg);
+}
+
+.mat-mini-fab.mat-accent {
+  background-color: var(--ak-accent-color-dark);
+}
+
+.mat-mini-fab.mat-primary {
+  background-color: var(--ak-accent-color);
+}
+
+.mat-mini-fab.mat-warn {
+  background-color: var(--ak-header-color-bg);
+}
+
+.mat-raised-button.mat-accent {
+  background-color: var(--ak-accent-color);
+}
+
+.mat-raised-button.mat-primary {
+  background-color: var(--ak-accent-color);
+}
+
+.mat-raised-button.mat-warn {
+  background-color: var(--ak-header-color-bg);
+}
+
+.mat-checkbox-checked.mat-primary .mat-checkbox-background {
+  background-color: var(--ak-accent-color);
+}
+
+.mat-checkbox-indeterminate.mat-primary .mat-checkbox-background {
+  background-color: var(--ak-accent-color);
+}
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+  background-color: var(--ak-accent-color-dark);
+}
+
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: var(--ak-accent-color-dark);
+}
+
+.mat-checkbox-checked.mat-warn .mat-checkbox-background {
+  background-color: var(--ak-header-color-bg);
+}
+
+.mat-checkbox-indeterminate.mat-warn .mat-checkbox-background {
+  background-color: var(--ak-header-color-bg);
+}
+
+.mat-chip.mat-standard-chip.mat-chip-selected.mat-warn {
+  background-color: var(--ak-header-color-bg);
+}
+
+.mat-chip.mat-standard-chip.mat-chip-selected.mat-accent {
+  background-color: var(--ak-accent-color-dark);
+}
+
+.mat-datepicker-content.mat-accent .mat-calendar-body-selected {
+  background-color: var(--ak-accent-color-dark);
+}
+.mat-datepicker-content.mat-accent .mat-calendar-body-disabled > .mat-calendar-body-selected {
+  background-color: rgba(var(--ak-accent-color-dark), 0.4);
+}
+
+.mat-datepicker-content.mat-warn .mat-calendar-body-selected {
+  background-color: var(--ak-header-color-bg);
+}
+.mat-datepicker-content.mat-warn .mat-calendar-body-disabled > .mat-calendar-body-selected {
+  background-color: rgba(var(--ak-header-color-bg), 0.4);
+}
+
+.mat-datepicker-toggle-active {
+  color: var(--ak-accent-color);
+}
+
+.mat-datepicker-toggle-active.mat-accent {
+  color: var(--ak-accent-color-dark);
+}
+
+.mat-datepicker-toggle-active.mat-warn {
+  color: var(--ak-header-color-bg);
+}
+
+.mat-form-field.mat-focused .mat-form-field-label {
+  color: var(--ak-accent-color);
+}
+.mat-form-field.mat-focused .mat-form-field-label.mat-accent {
+  color: var(--ak-accent-color-dark);
+}
+.mat-form-field.mat-focused .mat-form-field-label.mat-warn {
+  color: var(--ak-header-color-bg);
+}
+.mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: var(--ak-accent-color);
+}
+.mat-form-field.mat-focused .mat-form-field-ripple.mat-accent {
+  background-color: var(--ak-accent-color-dark);
+}
+.mat-form-field.mat-focused .mat-form-field-ripple.mat-warn {
+  background-color: var(--ak-header-color-bg);
+}
+
+.mat-focused .mat-form-field-required-marker {
+  color: var(--ak-accent-color-dark);
+}
+
+.mat-form-field.mat-form-field-invalid .mat-form-field-label {
+  color: var(--ak-header-color-bg);
+}
+.mat-form-field.mat-form-field-invalid .mat-form-field-label .mat-form-field-required-marker {
+  color: var(--ak-header-color-bg);
+}
+.mat-form-field.mat-form-field-invalid .mat-form-field-label.mat-accent {
+  color: var(--ak-header-color-bg);
+}
+.mat-form-field.mat-form-field-invalid .mat-form-field-ripple {
+  background-color: var(--ak-header-color-bg);
+}
+.mat-form-field.mat-form-field-invalid .mat-form-field-ripple.mat-accent {
+  background-color: var(--ak-header-color-bg);
+}
+
+.mat-error {
+  color: var(--ak-header-color-bg);
+}
+
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: var(--ak-accent-color);
+}
+
+.mat-form-field-appearance-outline.mat-focused.mat-accent .mat-form-field-outline-thick {
+  color: var(--ak-accent-color-dark);
+}
+
+.mat-form-field-appearance-outline.mat-focused.mat-warn .mat-form-field-outline-thick {
+  color: var(--ak-header-color-bg);
+}
+
+.mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick {
+  color: var(--ak-header-color-bg);
+}
+
+.mat-icon.mat-primary {
+  color: var(--ak-accent-color);
+}
+
+.mat-icon.mat-accent {
+  color: var(--ak-accent-color-dark);
+}
+
+.mat-icon.mat-warn {
+  color: var(--ak-header-color-bg);
+}
+
+.mat-input-element {
+  caret-color: var(--ak-accent-color);
+}
+
+.mat-form-field-invalid .mat-input-element {
+  caret-color: var(--ak-header-color-bg);
+}
+
+.mat-form-field-type-mat-native-select.mat-form-field-invalid .mat-form-field-infix::after {
+  color: var(--ak-header-color-bg);
+}
+
+.mat-progress-bar-fill::after {
+  background-color: var(--ak-accent-color);
+}
+
+.mat-progress-bar.mat-accent .mat-progress-bar-background {
+  fill: var(--ak-accent-color-dark);
+}
+.mat-progress-bar.mat-accent .mat-progress-bar-buffer {
+  background-color: var(--ak-accent-color-dark);
+}
+.mat-progress-bar.mat-accent .mat-progress-bar-fill::after {
+  background-color: var(--ak-accent-color-dark);
+}
+
+.mat-progress-bar.mat-warn .mat-progress-bar-background {
+  fill: var(--ak-accent-color-dark);
+}
+.mat-progress-bar.mat-warn .mat-progress-bar-buffer {
+  background-color: var(--ak-accent-color-dark);
+}
+.mat-progress-bar.mat-warn .mat-progress-bar-fill::after {
+  background-color: var(--ak-header-color-bg);
+}
+
+.mat-progress-spinner circle {
+  stroke: var(--ak-accent-color);
+}
+
+.mat-spinner circle {
+  stroke: var(--ak-accent-color);
+}
+
+.mat-progress-spinner.mat-accent circle {
+  stroke: var(--ak-accent-color-dark);
+}
+
+.mat-spinner.mat-accent circle {
+  stroke: var(--ak-accent-color-dark);
+}
+
+.mat-progress-spinner.mat-warn circle {
+  stroke: var(--ak-header-color-bg);
+}
+
+.mat-spinner.mat-warn circle {
+  stroke: var(--ak-header-color-bg);
+}
+
+.mat-radio-button.mat-primary.mat-radio-checked .mat-radio-outer-circle {
+  border-color: var(--ak-accent-color);
+}
+.mat-radio-button.mat-primary.mat-radio-checked .mat-radio-persistent-ripple {
+  background-color: var(--ak-accent-color);
+}
+
+.mat-radio-button.mat-primary .mat-radio-inner-circle {
+  background-color: var(--ak-accent-color);
+}
+.mat-radio-button.mat-primary .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple) {
+  background-color: var(--ak-accent-color);
+}
+.mat-radio-button.mat-primary:active .mat-radio-persistent-ripple {
+  background-color: var(--ak-accent-color);
+}
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  border-color: var(--ak-accent-color-dark);
+}
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple {
+  background-color: var(--ak-accent-color-dark);
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle {
+  background-color: var(--ak-accent-color-dark);
+}
+.mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple) {
+  background-color: var(--ak-accent-color-dark);
+}
+.mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+  background-color: var(--ak-accent-color-dark);
+}
+
+.mat-radio-button.mat-warn.mat-radio-checked .mat-radio-outer-circle {
+  border-color: var(--ak-header-color-bg);
+}
+.mat-radio-button.mat-warn.mat-radio-checked .mat-radio-persistent-ripple {
+  background-color: var(--ak-header-color-bg);
+}
+
+.mat-radio-button.mat-warn .mat-radio-inner-circle {
+  background-color: var(--ak-header-color-bg);
+}
+.mat-radio-button.mat-warn .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple) {
+  background-color: var(--ak-header-color-bg);
+}
+.mat-radio-button.mat-warn:active .mat-radio-persistent-ripple {
+  background-color: var(--ak-header-color-bg);
+}
+
+.mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+  color: var(--ak-accent-color);
+}
+
+.mat-form-field.mat-focused.mat-accent .mat-select-arrow {
+  color: var(--ak-accent-color-dark);
+}
+
+.mat-form-field.mat-focused.mat-warn .mat-select-arrow {
+  color: var(--ak-header-color-bg);
+}
+
+.mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+  background-color: var(--ak-accent-color-dark);
+}
+.mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+  background-color: rgba(var(--ak-accent-color-dark), 0.54);
+}
+.mat-slide-toggle.mat-checked .mat-ripple-element {
+  background-color: var(--ak-accent-color-dark);
+}
+
+.mat-slide-toggle.mat-primary.mat-checked .mat-slide-toggle-thumb {
+  background-color: var(--ak-accent-color);
+}
+.mat-slide-toggle.mat-primary.mat-checked .mat-slide-toggle-bar {
+  background-color: rgba(var(--ak-accent-color), 0.54);
+}
+.mat-slide-toggle.mat-primary.mat-checked .mat-ripple-element {
+  background-color: var(--ak-accent-color);
+}
+
+.mat-slide-toggle.mat-warn.mat-checked .mat-slide-toggle-thumb {
+  background-color: var(--ak-header-color-bg);
+}
+.mat-slide-toggle.mat-warn.mat-checked .mat-slide-toggle-bar {
+  background-color: rgba(var(--ak-header-color-bg), 0.54);
+}
+.mat-slide-toggle.mat-warn.mat-checked .mat-ripple-element {
+  background-color: var(--ak-header-color-bg);
+}
+
+.mat-slider-focus-ring {
+  background-color: rgba(var(--ak-accent-color-dark), 0.2);
+}
+
+.mat-step-header .mat-step-icon-selected {
+  background-color: var(--ak-accent-color);
+}
+.mat-step-header .mat-step-icon-state-done {
+  background-color: var(--ak-accent-color);
+}
+.mat-step-header .mat-step-icon-state-edit {
+  background-color: var(--ak-accent-color);
+}
+.mat-step-header .mat-step-icon-state-error {
+  background-color: transparent;
+  color: var(--ak-header-color-bg);
+}
+.mat-step-header .mat-step-label.mat-step-label-error {
+  color: var(--ak-header-color-bg);
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar {
+  background-color: var(--ak-accent-color);
+}
+
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background-color: var(--ak-accent-color);
+}
+
+.mat-tab-group.mat-accent .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(var(--ak-accent-color-dark), 0.3);
+}
+.mat-tab-group.mat-accent .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(var(--ak-accent-color-dark), 0.3);
+}
+.mat-tab-group.mat-accent .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(var(--ak-accent-color-dark), 0.3);
+}
+.mat-tab-group.mat-accent .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(var(--ak-accent-color-dark), 0.3);
+}
+.mat-tab-group.mat-accent .mat-ink-bar {
+  background-color: var(--ak-accent-color-dark);
+}
+
+.mat-tab-nav-bar.mat-accent .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(var(--ak-accent-color-dark), 0.3);
+}
+.mat-tab-nav-bar.mat-accent .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(var(--ak-accent-color-dark), 0.3);
+}
+.mat-tab-nav-bar.mat-accent .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(var(--ak-accent-color-dark), 0.3);
+}
+.mat-tab-nav-bar.mat-accent .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(var(--ak-accent-color-dark), 0.3);
+}
+.mat-tab-nav-bar.mat-accent .mat-ink-bar {
+  background-color: var(--ak-accent-color-dark);
+}
+
+.mat-tab-group.mat-warn .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 205, 210, 0.3);
+}
+.mat-tab-group.mat-warn .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 205, 210, 0.3);
+}
+.mat-tab-group.mat-warn .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 205, 210, 0.3);
+}
+.mat-tab-group.mat-warn .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 205, 210, 0.3);
+}
+.mat-tab-group.mat-warn .mat-ink-bar {
+  background-color: var(--ak-header-color-bg);
+}
+
+.mat-tab-nav-bar.mat-warn .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 205, 210, 0.3);
+}
+.mat-tab-nav-bar.mat-warn .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 205, 210, 0.3);
+}
+.mat-tab-nav-bar.mat-warn .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 205, 210, 0.3);
+}
+.mat-tab-nav-bar.mat-warn .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 205, 210, 0.3);
+}
+.mat-tab-nav-bar.mat-warn .mat-ink-bar {
+  background-color: var(--ak-header-color-bg);
+}
+
+.mat-tab-group.mat-background-primary .mat-tab-header {
+  background-color: var(--ak-accent-color);
+}
+.mat-tab-group.mat-background-primary .mat-tab-links {
+  background-color: var(--ak-accent-color);
+}
+
+.mat-tab-nav-bar.mat-background-primary .mat-tab-header {
+  background-color: var(--ak-accent-color);
+}
+.mat-tab-nav-bar.mat-background-primary .mat-tab-links {
+  background-color: var(--ak-accent-color);
+}
+
+.mat-tab-group.mat-background-accent .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(var(--ak-accent-color-dark), 0.3);
+}
+.mat-tab-group.mat-background-accent .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(var(--ak-accent-color-dark), 0.3);
+}
+.mat-tab-group.mat-background-accent .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(var(--ak-accent-color-dark), 0.3);
+}
+.mat-tab-group.mat-background-accent .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(var(--ak-accent-color-dark), 0.3);
+}
+.mat-tab-group.mat-background-accent .mat-tab-header {
+  background-color: var(--ak-accent-color-dark);
+}
+.mat-tab-group.mat-background-accent .mat-tab-links {
+  background-color: var(--ak-accent-color-dark);
+}
+
+.mat-tab-nav-bar.mat-background-accent .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(var(--ak-accent-color-dark), 0.3);
+}
+.mat-tab-nav-bar.mat-background-accent .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(var(--ak-accent-color-dark), 0.3);
+}
+.mat-tab-nav-bar.mat-background-accent .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(var(--ak-accent-color-dark), 0.3);
+}
+.mat-tab-nav-bar.mat-background-accent .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(var(--ak-accent-color-dark), 0.3);
+}
+.mat-tab-nav-bar.mat-background-accent .mat-tab-header {
+  background-color: var(--ak-accent-color-dark);
+}
+.mat-tab-nav-bar.mat-background-accent .mat-tab-links {
+  background-color: var(--ak-accent-color-dark);
+}
+
+.mat-tab-group.mat-background-warn .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 205, 210, 0.3);
+}
+.mat-tab-group.mat-background-warn .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 205, 210, 0.3);
+}
+.mat-tab-group.mat-background-warn .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 205, 210, 0.3);
+}
+.mat-tab-group.mat-background-warn .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 205, 210, 0.3);
+}
+.mat-tab-group.mat-background-warn .mat-tab-header {
+  background-color: var(--ak-header-color-bg);
+}
+.mat-tab-group.mat-background-warn .mat-tab-links {
+  background-color: var(--ak-header-color-bg);
+}
+
+.mat-tab-nav-bar.mat-background-warn .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 205, 210, 0.3);
+}
+.mat-tab-nav-bar.mat-background-warn .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 205, 210, 0.3);
+}
+.mat-tab-nav-bar.mat-background-warn .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 205, 210, 0.3);
+}
+.mat-tab-nav-bar.mat-background-warn .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled) {
+  background-color: rgba(255, 205, 210, 0.3);
+}
+.mat-tab-nav-bar.mat-background-warn .mat-tab-header {
+  background-color: var(--ak-header-color-bg);
+}
+.mat-tab-nav-bar.mat-background-warn .mat-tab-links {
+  background-color: var(--ak-header-color-bg);
+}
+
+.mat-toolbar.mat-primary {
+  background: var(--ak-accent-color);
+}
+
+.mat-toolbar.mat-accent {
+  background: var(--ak-accent-color-dark);
+}
+
+.mat-toolbar.mat-warn {
+  background: var(--ak-header-color-bg);
+}
+
+.route-path-template[style] {
+  color: var(--ak-accent-color);
+}
+
+section .route-path-template[_ngcontent-c15] {
+  color: var(--ak-accent-color);
+}

@@ -19653,6 +19653,17 @@ Object(css_vars_ponyfill__WEBPACK_IMPORTED_MODULE_4__["default"])();
 
 /***/ }),
 
+/***/ "./src/sass/apigee-kickstart.smartdocs.scss":
+/*!**************************************************!*\
+  !*** ./src/sass/apigee-kickstart.smartdocs.scss ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./src/sass/apigee-kickstart.style.scss":
 /*!**********************************************!*\
   !*** ./src/sass/apigee-kickstart.style.scss ***!
@@ -19665,16 +19676,17 @@ Object(css_vars_ponyfill__WEBPACK_IMPORTED_MODULE_4__["default"])();
 /***/ }),
 
 /***/ 0:
-/*!***********************************************************************************************************************************************************************************************!*\
-  !*** multi ./src/js/apigee-kickstart.script.js ./src/sass/apigee-kickstart.style.scss ./src/sass/apigee-kickstart.monetization.scss ./src/sass/apigee-kickstart.monetization.add-credit.scss ***!
-  \***********************************************************************************************************************************************************************************************/
+/*!******************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./src/js/apigee-kickstart.script.js ./src/sass/apigee-kickstart.style.scss ./src/sass/apigee-kickstart.smartdocs.scss ./src/sass/apigee-kickstart.monetization.scss ./src/sass/apigee-kickstart.monetization.add-credit.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/arshad/Sites/chapterthree/ks/web/profiles/contrib/apigee_devportal_kickstart/themes/custom/apigee_kickstart/src/js/apigee-kickstart.script.js */"./src/js/apigee-kickstart.script.js");
-__webpack_require__(/*! /Users/arshad/Sites/chapterthree/ks/web/profiles/contrib/apigee_devportal_kickstart/themes/custom/apigee_kickstart/src/sass/apigee-kickstart.style.scss */"./src/sass/apigee-kickstart.style.scss");
-__webpack_require__(/*! /Users/arshad/Sites/chapterthree/ks/web/profiles/contrib/apigee_devportal_kickstart/themes/custom/apigee_kickstart/src/sass/apigee-kickstart.monetization.scss */"./src/sass/apigee-kickstart.monetization.scss");
-module.exports = __webpack_require__(/*! /Users/arshad/Sites/chapterthree/ks/web/profiles/contrib/apigee_devportal_kickstart/themes/custom/apigee_kickstart/src/sass/apigee-kickstart.monetization.add-credit.scss */"./src/sass/apigee-kickstart.monetization.add-credit.scss");
+__webpack_require__(/*! /Users/zakiya/Sites/apigee/web/profiles/contrib/apigee_devportal_kickstart/themes/custom/apigee_kickstart/src/js/apigee-kickstart.script.js */"./src/js/apigee-kickstart.script.js");
+__webpack_require__(/*! /Users/zakiya/Sites/apigee/web/profiles/contrib/apigee_devportal_kickstart/themes/custom/apigee_kickstart/src/sass/apigee-kickstart.style.scss */"./src/sass/apigee-kickstart.style.scss");
+__webpack_require__(/*! /Users/zakiya/Sites/apigee/web/profiles/contrib/apigee_devportal_kickstart/themes/custom/apigee_kickstart/src/sass/apigee-kickstart.smartdocs.scss */"./src/sass/apigee-kickstart.smartdocs.scss");
+__webpack_require__(/*! /Users/zakiya/Sites/apigee/web/profiles/contrib/apigee_devportal_kickstart/themes/custom/apigee_kickstart/src/sass/apigee-kickstart.monetization.scss */"./src/sass/apigee-kickstart.monetization.scss");
+module.exports = __webpack_require__(/*! /Users/zakiya/Sites/apigee/web/profiles/contrib/apigee_devportal_kickstart/themes/custom/apigee_kickstart/src/sass/apigee-kickstart.monetization.add-credit.scss */"./src/sass/apigee-kickstart.monetization.add-credit.scss");
 
 
 /***/ })
