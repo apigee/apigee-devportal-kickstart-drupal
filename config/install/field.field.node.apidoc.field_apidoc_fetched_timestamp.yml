@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_apidoc_fetched_timestamp
+    - node.type.apidoc
+_core:
+  default_config_hash: jvnDZGIUNC8lX8rNII5DWrJrlI6jcEsaL69m52NK8XI
+id: node.apidoc.field_apidoc_fetched_timestamp
+field_name: field_apidoc_fetched_timestamp
+entity_type: node
+bundle: apidoc
+label: 'Spec fetched from URL timestamp'
+description: 'When the OpenAPI spec file was last fetched from URL as a Unix timestamp.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1587191891
+default_value_callback: ''
+settings: {  }
+field_type: timestamp

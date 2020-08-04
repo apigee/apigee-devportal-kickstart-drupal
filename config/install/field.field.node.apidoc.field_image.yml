@@ -2,18 +2,17 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.apidoc.field_image
+    - field.storage.node.field_image
     - media.type.image
-  module:
-    - apigee_api_catalog
-id: apidoc.apidoc.field_image
+    - node.type.apidoc
+id: node.apidoc.field_image
 field_name: field_image
-entity_type: apidoc
+entity_type: node
 bundle: apidoc
 label: Image
 description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
