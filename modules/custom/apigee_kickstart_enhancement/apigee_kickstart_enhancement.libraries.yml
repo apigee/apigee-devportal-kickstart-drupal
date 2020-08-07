@@ -7,4 +7,5 @@ secret:
     js/apigee_kickstart_enhancement.secret.js: {}
   dependencies:
     - core/jquery
+    - core/drupalSettings
     - core/drupal
