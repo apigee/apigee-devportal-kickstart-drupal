@@ -31,7 +31,7 @@
           let $this = $(this);
           let $el = $this.find('.secret__value');
           let hClass = 'secret--hidden';
-          let appElWrapper = '.app-details-wrapper';
+          let appElWrapper = '.app-credential';
           let $wrapper = $this.closest(appElWrapper);
           let loader = '<img src="' + drupalSettings.path.baseUrl + 'core/misc/throbber-active.gif" border="0" />';
 
@@ -41,7 +41,7 @@
           // Toggle secret.
           $(this).find('.secret__toggle').on('click', function (event) {
             let index = $(this).closest(appElWrapper).find('.secret__toggle').index(this);
-            let wrapperIndex = $wrapper.closest('fieldset').parent().find('fieldset').index($(this).closest('fieldset'));
+            let wrapperIndex = $wrapper.data('app-container-index');
             event.preventDefault();
             $this.toggleClass(hClass);
             if ($this.hasClass(hClass)) {
@@ -101,7 +101,7 @@
    */
   function callEndpoint(teamApp,  app, callback) {
     var endpoint = drupalSettings.path.baseUrl + 'user/' + drupalSettings.currentUser + '/apps/' + app + '/api-keys';
-    if (teamApp !== undefined) {
+    if (teamApp !== undefined && teamApp !== 0 && teamApp !== '') {
       endpoint = drupalSettings.path.baseUrl + 'teams/' + teamApp + '/apps/' + app + '/api-keys';
     }
     $.get(endpoint, function(data) {
