@@ -13525,6 +13525,15 @@ form.team-member-form .form-checkboxes small {
 .views-exposed-form details {
   margin: 0 !important;
 }
+.views-exposed-form ul {
+  padding: 0;
+}
+.views-exposed-form li {
+  list-style: none;
+}
+.views-exposed-form li + li {
+  margin-top: 0.5rem;
+}
 .views-exposed-form fieldset {
   border: 0 !important;
 }
