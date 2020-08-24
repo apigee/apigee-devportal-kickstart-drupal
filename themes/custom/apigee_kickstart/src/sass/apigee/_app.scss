@@ -64,6 +64,19 @@
 
   &__credentials {
 
+    + .apigee-entity--app__credentials {
+      margin-top: 1rem;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+
+      .btn {
+        margin-left: auto;
+      }
+    }
+
     fieldset {
       padding-bottom: .5rem;
 
@@ -91,6 +104,7 @@
           &.wrapper--secondary {
             padding-left: 1.2rem;
             padding-right: 1.2rem;
+            margin-top: 2rem;
 
             label {
               padding: .8rem 0;
@@ -112,6 +126,22 @@
                 flex: 1;
               }
             }
+          }
+        }
+      }
+    }
+
+    .app-credential {
+      position: relative;
+
+      .dropbutton-wrapper {
+        width: auto;
+        top: .5rem;
+
+        &.dropbutton-single {
+
+          a {
+            border-radius: 4px;
           }
         }
       }

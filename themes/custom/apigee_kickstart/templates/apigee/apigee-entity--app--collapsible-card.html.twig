@@ -59,18 +59,25 @@
                     {{ "Details" }}
                   </h4>
                   <div class="card-body">
-                    {{ content|without('status', 'credentials', 'warnings') }}
+                    {{ content|without('status', 'credentials', 'warnings', 'add_keys') }}
                   </div>
                 </div>
 
                 <div class="card apigee-entity--app__credentials">
                   <h4 class="card-header bg-white">
                     {{ "Credentials"|t }}
+                    {{ content.add_keys }}
                   </h4>
                   <div class="card-body pb-0">
-                    {{ content.credentials }}
+                    {{ content.credentials.approved }}
                   </div>
                 </div>
+
+                {% if content.credentials.revoked %}
+                  <div class="apigee-entity--app__credentials">
+                    {{ content.credentials.revoked }}
+                  </div>
+                {% endif %}
               </div>
             </div>
           {% endif %}
