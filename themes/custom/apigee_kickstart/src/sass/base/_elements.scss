@@ -149,3 +149,11 @@ table.table-bordered {
     }
   }
 }
+
+.ui-widget.ui-dialog {
+  z-index: 9999;
+
+  .ui-dialog-buttonset.form-actions {
+    display: flex;
+  }
+}

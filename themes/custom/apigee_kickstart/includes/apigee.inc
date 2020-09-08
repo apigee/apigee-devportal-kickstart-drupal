@@ -71,6 +71,26 @@ function apigee_kickstart_preprocess_apigee_entity__app(array &$variables) {
       }
     }
   }
+
+
+  if (!empty($variables['content']['add_keys'])) {
+    /** @var \Drupal\Core\Url $url */
+    $url = $variables['content']['add_keys']['#url'];
+    $attributes = $url->getOption('attributes');
+
+    // Add button classes to add_keys link.
+    $attributes['class'] = array_merge($attributes['class'], ['btn', 'btn-primary', 'btn-sm']);
+
+    // Increase the height for the dialog.
+    $attributes['data-dialog-options'] = json_encode([
+      'width' => 500,
+      'height' => 450,
+      'draggable' => FALSE,
+      'autoResize' => FALSE,
+    ]);
+
+    $url->setOption('attributes', $attributes);
+  }
 }
 
 /**
