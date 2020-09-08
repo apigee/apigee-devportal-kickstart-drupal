@@ -9,7 +9,7 @@
     "drupal/adminimal_admin_toolbar": "^1.9",
     "drupal/apigee_api_catalog": "^2.2",
     "drupal/apigee_edge": "^1.15",
-    "drupal/better_exposed_filters": "^3.0@alpha",
+    "drupal/better_exposed_filters": "^5.0",
     "drupal/default_content": "^1.0@alpha",
     "drupal/email_registration": "^1.0@RC",
     "drupal/fontawesome": "^2.12",
@@ -25,8 +25,8 @@
   },
   "extra": {
     "patches": {
-      "drupal/better_exposed_filters": {
-        "Fix issue with #summary_details introduced in Drupal 8.6.x": "https://www.drupal.org/files/issues/2018-10-05/bef-summary-attributes-3001967-4.patch"
+      "drupal/core": {
+        "Fix issue with #summary_details introduced in Drupal 8.6.x": "https://www.drupal.org/files/issues/2018-12-17/core-undefined-index-summary_attributes-2998194-9.patch"
       }
     }
   }

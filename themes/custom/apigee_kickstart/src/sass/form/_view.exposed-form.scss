@@ -12,6 +12,18 @@
     margin: 0 !important;
   }
 
+  ul {
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  li + li {
+    margin-top: 0.5rem;
+  }
+
   fieldset {
     border: 0 !important;
 
