@@ -25,7 +25,10 @@ use Drupal\apigee_edge_teams\Entity\ListBuilder\TeamAppListByTeam;
 /**
  * Renders the Apps list as a list of entity views instead of a table.
  *
- * @deprecated in apigee_devportal_kickstart:8.x-1.15 and is removed from apigee_devportal_kickstart:2.x.
+ * @deprecated in apigee_devportal_kickstart:8.x-1.15 and is removed from
+ * apigee_devportal_kickstart:2.x. Use `\Drupal\apigee_edge_teams\Entity\ListBuilder\TeamAppListByTeam`.
+ *
+ * @see https://github.com/apigee/apigee-devportal-kickstart-drupal/issues/362
  */
 class TeamAppListBuilder extends TeamAppListByTeam {
 }

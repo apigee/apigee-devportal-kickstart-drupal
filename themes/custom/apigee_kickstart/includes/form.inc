@@ -120,7 +120,11 @@ function apigee_kickstart_form_team_app_add_for_team_form_alter(array &$form, Fo
  * Implements hook_form_alter().
  */
 function apigee_kickstart_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
-  if (in_array($form_id, ['apigee_edge_teams_edit_team_member_form', 'apigee_edge_teams_add_team_member_form', 'apigee_edge_teams_remove_team_member_form'])) {
+  if (in_array($form_id, [
+    'apigee_edge_teams_edit_team_member_form',
+    'apigee_edge_teams_add_team_member_form',
+    'apigee_edge_teams_remove_team_member_form',
+  ])) {
     $form['#attributes']['class'][] = 'team-member-form';
     $form['actions']['cancel']['#attributes']['class'][] = 'btn';
     $form['actions']['cancel']['#attributes']['class'][] = 'btn-outline-primary';

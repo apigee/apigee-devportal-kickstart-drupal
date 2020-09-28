@@ -22,7 +22,10 @@ function apigee_kickstart_preprocess_node(&$variables) {
   // print within the corresponding page template.
   $sidebar_types = ['article', 'forum', 'page'];
   if (in_array($node->bundle(), $sidebar_types)) {
-    apigee_kickstart_add_regions_to_node(['sidebar_first', 'sidebar_second'], $variables);
+    apigee_kickstart_add_regions_to_node([
+      'sidebar_first',
+      'sidebar_second',
+    ], $variables);
   }
 
   if ($node->bundle() == 'apidoc') {
