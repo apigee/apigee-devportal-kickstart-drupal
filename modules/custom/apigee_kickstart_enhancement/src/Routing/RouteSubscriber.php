@@ -20,9 +20,9 @@
 
 namespace Drupal\apigee_kickstart_enhancement\Routing;
 
+use Drupal\apigee_edge\Entity\ListBuilder\DeveloperAppListBuilderForDeveloper;
+use Drupal\apigee_edge_teams\Entity\ListBuilder\TeamAppListByTeam;
 use Drupal\apigee_kickstart_enhancement\ApigeeKickStartEnhancerInterface;
-use Drupal\apigee_kickstart_enhancement\Entity\ListBuilder\DeveloperAppListBuilder;
-use Drupal\apigee_kickstart_enhancement\Entity\ListBuilder\TeamAppListBuilder;
 use Drupal\Core\Routing\RouteSubscriberBase;
 use Symfony\Component\Routing\RouteCollection;
 
@@ -57,10 +57,10 @@ class RouteSubscriber extends RouteSubscriberBase {
     foreach (\Drupal::service('apigee_kickstart.enhancer')->getAppEntityTypes() as $entity_type_id => $app_entity_type) {
       if ($route = $collection->get("entity.$entity_type_id.collection_by_" . str_replace('_app', '', $entity_type_id))) {
         if ($entity_type_id == 'team_app') {
-          $route->setDefault('_controller', TeamAppListBuilder::class . '::render');
+          $route->setDefault('_controller', TeamAppListByTeam::class . '::render');
         }
         else {
-          $route->setDefault('_controller', DeveloperAppListBuilder::class . '::render');
+          $route->setDefault('_controller', DeveloperAppListBuilderForDeveloper::class . '::render');
         }
       }
     }
