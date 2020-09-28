@@ -17,6 +17,14 @@
     "drupal/pathauto": "^1.6",
     "drupal/radix": "^4.8"
   },
+  "require-dev": {
+    "drupal/core-dev": "^8.7 || ^9",
+    "drush/drush": "^9.0 || ^10.0",
+    "mglaman/drupal-check": "^1.1",
+    "phpmd/phpmd": "2.8.2",
+    "phpmetrics/phpmetrics": "^2.5",
+    "phpstan/phpstan": "0.12.42"
+  },
   "conflict": {
     "drupal/pathauto": "<1.6"
   },
