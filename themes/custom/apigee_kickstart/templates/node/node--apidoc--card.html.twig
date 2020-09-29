@@ -22,8 +22,8 @@
     classes: ['api-card'],
     url: content.field_apidoc_file_link['#url'],
     title: entity.label,
-    image: content.field_image,
-    body: content|without('title', 'field_image', 'field_apidoc_file_link', 'field_apidoc_spec'),
+    image: content.field_image_apidoc,
+    body: content|without('title', 'field_image_apidoc', 'field_apidoc_file_link', 'field_apidoc_spec'),
     footer: content.field_apidoc_file_link['#title'],
     hover_shadow: true
   } %}
