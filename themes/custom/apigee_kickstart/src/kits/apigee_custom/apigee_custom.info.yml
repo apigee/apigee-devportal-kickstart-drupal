@@ -1,7 +1,7 @@
 name: RADIX_SUBTHEME_NAME
 description: A sub-theme of Apigee Kickstart.
 screenshot: screenshot.png
-core: 8.x
+core_version_requirement: ^8 || ^9
 type: theme
 base theme: apigee_kickstart
 hidden: true

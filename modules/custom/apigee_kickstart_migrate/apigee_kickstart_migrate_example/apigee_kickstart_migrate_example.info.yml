@@ -1,7 +1,7 @@
 name: Apigee Kickstart Migrate Example
 description: "Examples of how to extend Drupal 7 Devportal migrations."
 type: module
-core: 8.x
+core_version_requirement: ^8 || ^9
 package: Examples
 dependencies:
   - drupal:migrate

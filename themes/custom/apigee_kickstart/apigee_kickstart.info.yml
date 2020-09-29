@@ -1,6 +1,6 @@
 name: 'Apigee Kickstart'
 description: 'A custom Drupal 8 theme for the Apigee Developer Portal Distribution, based on <a href="https://drupal.org/project/radix">Radix</a>.'
-core: 8.x
+core_version_requirement: ^8 || ^9
 version: VERSION
 type: theme
 base theme: radix
