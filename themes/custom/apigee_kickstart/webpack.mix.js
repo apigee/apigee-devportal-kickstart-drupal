@@ -53,5 +53,4 @@ mix
   .js('src/js/apigee-kickstart.script.js', 'js')
   .js('src/js/apigee-kickstart.commerce.authnet.js', 'js')
   .js('src/js/apigee-kickstart.commerce.stripe.js', 'js')
-  .js('src/js/modernizr.js', 'js')
-;
+  .js('src/js/modernizr.js', 'js');

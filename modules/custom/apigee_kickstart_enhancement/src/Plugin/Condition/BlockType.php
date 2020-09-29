@@ -90,10 +90,10 @@ class BlockType extends ConditionPluginBase implements ContainerFactoryPluginInt
    */
   public function defaultConfiguration() {
     return [
-        'uuid' => NULL,
-        'bundles' => [],
-        'is_adjacent' => NULL,
-      ] + parent::defaultConfiguration();
+      'uuid' => NULL,
+      'bundles' => [],
+      'is_adjacent' => NULL,
+    ] + parent::defaultConfiguration();
   }
 
   /**
@@ -168,7 +168,7 @@ class BlockType extends ConditionPluginBase implements ContainerFactoryPluginInt
       ])) {
         // Find all other visible blocks.
         unset($blocks[$current_block->id()]);
-        $blocks = array_filter($blocks, function(BlockInterface $block) {
+        $blocks = array_filter($blocks, function (BlockInterface $block) {
           return $block->access('view');
         });
 
