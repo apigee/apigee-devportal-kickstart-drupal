@@ -7,8 +7,8 @@
     "cweagans/composer-patches": "^1.6.5",
     "drupal/admin_toolbar": "^2.0",
     "drupal/adminimal_admin_toolbar": "^1.9",
-    "drupal/apigee_api_catalog": "^2.2",
-    "drupal/apigee_edge": "^1.15",
+    "drupal/apigee_api_catalog": "^2.4",
+    "drupal/apigee_edge": "^1.16",
     "drupal/better_exposed_filters": "^5.0",
     "drupal/default_content": "^1.0@alpha",
     "drupal/email_registration": "^1.0@RC",
@@ -26,7 +26,8 @@
     "phpstan/phpstan": "0.12.42"
   },
   "conflict": {
-    "drupal/pathauto": "<1.6"
+    "drupal/pathauto": "<1.6",
+    "drupal/apigee_m10n": "<1.7"
   },
   "config": {
     "sort-packages": true
