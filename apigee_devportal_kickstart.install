@@ -447,11 +447,13 @@ function apigee_devportal_kickstart_update_8008() {
     ],
   ];
   foreach ($fields as $field_name => $field_config) {
-    $api_field_config = $definitions[$field_name]->getConfig('apidoc');
+    if (isset($definitions[$field_name])) {
+      $api_field_config = $definitions[$field_name]->getConfig('apidoc');
 
-    // Update the label.
-    if ($api_field_config->getLabel() === $field_config['old_label']) {
-      $definitions[$field_name]->getConfig('apidoc')->setLabel($field_config['label'])->save();
+      // Update the label.
+      if ($api_field_config->getLabel() === $field_config['old_label']) {
+        $definitions[$field_name]->getConfig('apidoc')->setLabel($field_config['label'])->save();
+      }
     }
 
     // Enable the field on the form display.
@@ -550,7 +552,7 @@ function apigee_devportal_kickstart_update_8009() {
     ];
     $display->setOption('exposed_form', $exposed_form);
   }
-  
+
   $display->setOption('filters', $filters);
   $view->save();
 }
