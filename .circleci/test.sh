@@ -16,6 +16,6 @@ apache2-foreground&
 
 robo override:phpunit-config $1
 robo do:extra $2
-composer show
+export SYMFONY_DEPRECATIONS_HELPER=disabled
 
 sudo -E -u www-data vendor/bin/phpunit -c core --group $1 --testsuite unit,kernel --debug --verbose --log-junit /tmp/artifacts/phpunit/phpunit.xml
