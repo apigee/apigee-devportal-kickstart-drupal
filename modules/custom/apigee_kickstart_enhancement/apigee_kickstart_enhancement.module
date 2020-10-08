@@ -34,23 +34,13 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Element;
 use Drupal\user\UserInterface;
 
-/*
- * Load all theme functions.
- */
-require_once __DIR__ . '/apigee_kickstart_enhancement.theme.inc';
-
 /**
  * Implements hook_theme().
  */
 function apigee_kickstart_enhancement_theme($existing, $type, $theme, $path) {
   return [
-    'secret' => [
-      'render element' => 'elements',
-      'file' => 'apigee_kickstart_enhancement.theme.inc',
-    ],
     'pseudo_field' => [
       'variables' => ['field' => NULL],
-      'file' => 'apigee_kickstart_enhancement.theme.inc',
     ],
   ];
 }
