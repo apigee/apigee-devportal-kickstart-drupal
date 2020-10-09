@@ -15,7 +15,8 @@
     "drupal/fontawesome": "^2.12",
     "drupal/paragraphs": "^1.6",
     "drupal/pathauto": "^1.6",
-    "drupal/radix": "^4.8"
+    "drupal/radix": "^4.8",
+    "drupal/smtp": "^1.0"
   },
   "require-dev": {
     "drupal/core-dev": "^8.7 || ^9",
