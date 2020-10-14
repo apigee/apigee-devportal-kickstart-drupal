@@ -103,7 +103,7 @@ function apigee_kickstart_preprocess_app_credential(&$variables) {
   // Render the consumerKey and the consumerSecret as secret fields.
   foreach (['consumerKey', 'consumerSecret'] as $field_name) {
     $variables['primary_wrapper'][$field_name]['value'] = [
-      '#type' => 'secret',
+      '#type' => 'apigee_secret',
       '#value' => $variables['primary_wrapper'][$field_name]['value']['#value'],
     ];
   }
