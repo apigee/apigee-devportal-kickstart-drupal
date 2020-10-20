@@ -1,0 +1,25 @@
+diff --git a/src/Importer.php b/src/Importer.php
+index 600ed5cc816eab24664cea72115c05e4d5f2d91d..b9b340d8034a0f0265857f67aa2fd72c0b98bf04 100644
+--- a/src/Importer.php
++++ b/src/Importer.php
+@@ -164,6 +164,9 @@ class Importer implements ImporterInterface {
+           // Here we need to resolve our dependencies:
+           foreach ($decoded['_embedded'] as $embedded) {
+             foreach ($embedded as $item) {
++              if (empty($item['uuid'])) {
++                continue;
++              }
+               $uuid = $item['uuid'][0]['value'];
+               $edge = $this->getVertex($uuid);
+               $this->graph[$vertex->id]['edges'][$edge->id] = TRUE;
+@@ -186,6 +189,10 @@ class Importer implements ImporterInterface {
+           if ($entity instanceof EntityOwnerInterface && empty($entity->getOwnerId())) {
+             $entity->setOwner($root_user);
+           }
++          // Ensure that the entity does not exist.
++          if ($this->entityTypeManager->getStorage($entity_type_id)->loadByProperties(['uuid' => $entity->uuid()])) {
++            continue;
++          }
+           $entity->save();
+           $created[$entity->uuid()] = $entity;
+         }
