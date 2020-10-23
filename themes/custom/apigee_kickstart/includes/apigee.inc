@@ -107,7 +107,7 @@ function apigee_kickstart_preprocess_app_credential(&$variables) {
     }
 
     $variables['primary_wrapper'][$field_name]['value'] = [
-      '#type' => 'secret',
+      '#type' => 'apigee_secret',
       '#value' => $variables['primary_wrapper'][$field_name]['value']['#value'],
     ];
   }
