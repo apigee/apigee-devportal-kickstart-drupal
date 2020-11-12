@@ -1,8 +1,5 @@
 <?php
 
-use Drupal\Component\Serialization\Yaml;
-use Drupal\Core\File\Exception\FileException;
-use Drupal\Core\File\FileSystemInterface;
 /**
  * @file
  * Copyright 2019 Google Inc.
@@ -21,10 +18,14 @@ use Drupal\Core\File\FileSystemInterface;
  * Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
+use Apigee\Edge\Api\Management\Controller\OrganizationController;
 use Drupal\apigee_devportal_kickstart\Installer\ApigeeDevportalKickstartTasksManager;
 use Drupal\apigee_devportal_kickstart\Installer\Form\ApigeeEdgeConfigurationForm;
 use Drupal\apigee_devportal_kickstart\Installer\Form\ApigeeMonetizationConfigurationForm;
 use Drupal\apigee_devportal_kickstart\Installer\Form\DemoInstallForm;
+use Drupal\Component\Serialization\Yaml;
+use Drupal\Core\File\Exception\FileException;
+use Drupal\Core\File\FileSystemInterface;
 use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\menu_link_content\Entity\MenuLinkContent;
 use Drupal\views\Views;
@@ -43,19 +44,13 @@ function apigee_devportal_kickstart_install_tasks(&$install_state) {
   $theme = \Drupal::service('theme.initialization')->initTheme('seven');
   \Drupal::theme()->setActiveTheme($theme);
 
+  // This needs to run before m10n tasks.
   $tasks = [
-    DemoInstallForm::class => [
-      'display_name' => t('Install demo content'),
-      'type' => 'form',
-    ],
-    'apigee_devportal_kickstart_theme_setup' => [
-      'display_name' => t('Install theme'),
-      'display' => FALSE,
-    ],
+    'apigee_devportal_monetization_preflight' => [],
   ];
 
   // Add monetization tasks if the configured organization is monetizable.
-  if (Drupal::hasService('apigee_devportal_kickstart.monetization') && Drupal::service('apigee_devportal_kickstart.monetization')->isMonetizable()) {
+  if (Drupal::state()->get('is_monetizable')) {
     $tasks[ApigeeMonetizationConfigurationForm::class] = [
       'display_name' => t('Configure monetization'),
       'type' => 'form',
@@ -70,6 +65,15 @@ function apigee_devportal_kickstart_install_tasks(&$install_state) {
     }
   }
 
+  // This runs after m10n tasks in case m10n needs to set default content.
+  $tasks[DemoInstallForm::class] = [
+    'display_name' => t('Install demo content'),
+    'type' => 'form',
+  ];
+  $tasks['apigee_devportal_kickstart_theme_setup'] = [
+    'display_name' => t('Install theme'),
+    'display' => FALSE,
+  ];
   $tasks['apigee_devportal_kickstart_finish'] = [
     'display' => FALSE,
   ];
@@ -95,7 +99,6 @@ function apigee_devportal_kickstart_install_tasks_alter(&$tasks, $install_state)
       'display_name' => t('Configure Apigee Edge'),
       'type' => 'form',
     ],
-    'apigee_devportal_monetization_preflight' => [],
   ];
 
   // The task should run before install_configure_form which creates the user.
@@ -110,6 +113,11 @@ function apigee_devportal_kickstart_install_tasks_alter(&$tasks, $install_state)
  *   The install state.
  */
 function apigee_devportal_monetization_preflight(array &$install_state) {
+  // Check if monetization is enabled and persist the value in state.
+  if (Drupal::hasService('apigee_devportal_kickstart.monetization')) {
+    Drupal::state()->set('is_monetizable', Drupal::service('apigee_devportal_kickstart.monetization')->isMonetizable());
+  }
+
   if (!\Drupal::moduleHandler()->moduleExists('address')) {
     return;
   }
