@@ -564,3 +564,21 @@ function apigee_devportal_kickstart_update_8009() {
   $display->setOption('filters', $filters);
   $view->save();
 }
+
+/**
+ * Enable warnings field in developer_app collapsible_card view display.
+ */
+function apigee_devportal_kickstart_update_8010() {
+  /** @var \Drupal\Core\Entity\EntityDisplayRepository $entity_display_repository */
+  $entity_display_repository = \Drupal::service('entity_display.repository');
+  $entity_view_display = $entity_display_repository->getViewDisplay('developer_app', 'developer_app', 'collapsible_card');
+
+  if ($entity_view_display->getComponent('warnings')) {
+    return;
+  }
+
+  $entity_view_display->setComponent('warnings', [
+    'region' => 'content',
+    'weight' => -100,
+  ])->save();
+}
