@@ -24,6 +24,17 @@
  */
 
 /**
+ * Implements hook_module_preinstall().
+ */
+function apigee_kickstart_content_module_preinstall($module) {
+  if ($module === 'apigee_kickstart_content' && !\Drupal::isConfigSyncing()) {
+    // Run before importing config so blocks are created with the correct
+    // dependencies. See: https://www.drupal.org/node/3118908.
+    \Drupal::service('default_content.importer')->importContent('apigee_kickstart_content');
+  }
+}
+
+/**
  * Implements hook_install().
  */
 function apigee_kickstart_content_install() {
