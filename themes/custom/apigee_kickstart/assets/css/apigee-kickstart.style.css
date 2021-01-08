@@ -13259,6 +13259,9 @@ form.search-form .search-advanced {
 .path-user form {
   max-width: 540px;
 }
+.path-user form.apigee-edge-app-analytics {
+  max-width: unset;
+}
 .path-user form .form-item-name {
   margin-bottom: 0.25rem;
 }
