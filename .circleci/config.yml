@@ -200,6 +200,9 @@ d9_check: &d9_check
 
     - checkout
 
+    # Need to add an extra dependency https://www.drupal.org/node/3176567
+    - run: composer require phpspec/prophecy-phpunit:^2
+
     - run:
         working_directory: /var/www/html
         command: |
