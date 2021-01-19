@@ -23,7 +23,8 @@
     "mglaman/drupal-check": "^1.1",
     "phpmd/phpmd": "2.8.2",
     "phpmetrics/phpmetrics": "^2.5",
-    "phpstan/phpstan": "0.12.42"
+    "phpstan/phpstan": "0.12.42",
+    "phpspec/prophecy-phpunit": "^2"
   },
   "conflict": {
     "drupal/pathauto": "<1.6",
