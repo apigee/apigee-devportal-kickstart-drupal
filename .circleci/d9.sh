@@ -1,11 +1,11 @@
 #!/bin/bash -ex
 
+composer require phpspec/prophecy-phpunit:^2
+
 if [ ! -f dependencies_updated ]
 then
   ./update-dependencies.sh $1
 fi
-
-composer require phpspec/prophecy-phpunit:^2
 
 vendor/bin/drupal-check --no-progress --memory-limit=1000M --format=junit $1 > /var/www/html/artifacts/d9/d9check.xml
 
