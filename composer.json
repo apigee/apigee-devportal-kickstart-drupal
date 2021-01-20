@@ -3,6 +3,16 @@
   "description": "A fast demo and starting point for Apigee Developer Portals.",
   "type": "drupal-profile",
   "license": "GPL-2.0-or-later",
+  "repositories": [
+    {
+        "type": "composer",
+        "url": "https://packages.drupal.org/8"
+    },
+    {
+        "type": "composer",
+        "url": "https://asset-packagist.org"
+    }
+  ],
   "require": {
     "cweagans/composer-patches": "^1.6.5",
     "drupal/admin_toolbar": "^2.0",
@@ -23,8 +33,7 @@
     "mglaman/drupal-check": "^1.1",
     "phpmd/phpmd": "2.8.2",
     "phpmetrics/phpmetrics": "^2.5",
-    "phpstan/phpstan": "0.12.42",
-    "phpspec/prophecy-phpunit": "^2"
+    "phpstan/phpstan": "0.12.42"
   },
   "conflict": {
     "drupal/pathauto": "<1.6",
