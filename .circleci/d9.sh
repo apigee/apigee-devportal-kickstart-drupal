@@ -1,7 +1,5 @@
 #!/bin/bash -ex
 
-composer require phpspec/prophecy-phpunit:^2
-
 if [ ! -f dependencies_updated ]
 then
   ./update-dependencies.sh $1
