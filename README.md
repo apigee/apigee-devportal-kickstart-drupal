@@ -18,7 +18,7 @@ Full documentation is up on the [Drupal.org Apigee Developer Portal Kickstart pr
 ## Issues, questions and feedback
 
 We encourage anyone with feedback, questions or issues to put in an issue into
-our [Github issue queue](https://github.com/apigee/apigee-devportal-kickstart-drupal/issues).
+our [GitHub issue queue](https://github.com/apigee/apigee-devportal-kickstart-drupal/issues).
 
 ## Known issues
 
@@ -28,8 +28,8 @@ There are no known issues at this time.
 
 We'd love to accept your patches and contributions to this project. Make sure to read [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 Development is happening in our [GitHub repository](https://github.com/apigee/apigee-devportal-kickstart-drupal). The drupal.org issue
-queue is disabled, we use the [Github issue queue](https://github.com/apigee/apigee-devportal-kickstart-drupal/issues) instead.
+queue is disabled, we use the [GitHub issue queue](https://github.com/apigee/apigee-devportal-kickstart-drupal/issues) instead.
 
 ## Support
 
-This project, which integrates Drupal 8 with Apigee Edge, is supported by Google.
+This project, which integrates Drupal 9 and Drupal 8 with Apigee, is supported by Google.
