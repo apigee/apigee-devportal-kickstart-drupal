@@ -13003,7 +13003,7 @@ ul.social-links li a {
 .apigee-entity--app .tab-pane .api-product-list-row,
 .apigee-entity--app .tab-pane .item-property {
     flex-direction: row;
-    align-items: center;
+    align-items: baseline;
   }
 }
 .apigee-entity--app .tab-pane .field label,
