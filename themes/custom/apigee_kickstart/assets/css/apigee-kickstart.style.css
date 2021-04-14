@@ -12200,6 +12200,10 @@ li.dropbutton-toggle {
 td .dropbutton-single .dropbutton-widget {
   position: static;
 }
+.purchased-product-action .dropbutton-single {
+  display: inline-block;
+}
+
 td .dropbutton-single .dropbutton-action a {
   border-radius: 4px;
 }
@@ -13258,9 +13262,6 @@ form.search-form .search-advanced {
 
 .path-user form {
   max-width: 540px;
-}
-.path-user form.apigee-edge-app-analytics {
-  max-width: unset;
 }
 .path-user form .form-item-name {
   margin-bottom: 0.25rem;
