@@ -323,7 +323,7 @@ function apigee_devportal_kickstart_requirements($phase) {
     }
   }
 
-  // Check if the private file stream wrapper is ready to use.
+  // Check if the private file stream wrapper is ready to use for OAuth connection.
   if (!\Drupal::hasService('stream_wrapper.private')) {
     $requirements['apigee_devportal_kickstart_private_filesystem'] = [
       'title' => t('Apigee Devportal Kickstart'),
