@@ -323,6 +323,17 @@ function apigee_devportal_kickstart_requirements($phase) {
     }
   }
 
+  // Check if the private file stream wrapper is ready to use for OAuth connection.
+  if (!\Drupal::hasService('stream_wrapper.private')) {
+    $requirements['apigee_devportal_kickstart_private_filesystem'] = [
+      'title' => t('Apigee Devportal Kickstart'),
+      'description' => t('The private file system must be configured prior to configuring the connection to Apigee and specifying authentication details. See <a href=":url">Configure the private file system path</a> for details.', [
+        ':url' => 'https://www.drupal.org/docs/8/core/modules/file/overview#private-file-system',
+      ]),
+      'severity' => REQUIREMENT_WARNING,
+    ];
+  }
+
   return $requirements;
 }
 
