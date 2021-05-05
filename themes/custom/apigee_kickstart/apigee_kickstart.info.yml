@@ -45,7 +45,6 @@ libraries-extend:
 ckeditor_stylesheets:
   - assets/css/apigee-kickstart.style.css
 
-component-libraries:
-  apigee-kickstart:
-    paths:
-      - ./src/components
+components:
+  namespaces:
+    apigee-kickstart: ./src/components
