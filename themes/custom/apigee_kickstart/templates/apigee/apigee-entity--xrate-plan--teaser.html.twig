@@ -144,16 +144,18 @@
   {{ attach_library('apigee_kickstart/monetization') }}
 
   {% set body %}
-    <h2 class="card-title mt-1">
-      <a href="{{ url }}">{{ label }}</a>
-    </h2>
+    {% if content.apiProduct|render %}
+    {% set apiproductName = content.apiProduct|render|striptags %}
+    
+      <h2 class="card-title mt-1">
+        <a href="{{ url }}">{{ apiproductName }}</a>
+      </h2>
+    {% endif %}
 
     {{ content|without('apiProduct') }}
 
-    {% if content.apiProduct|render %}
-      <hr class="my-4">
-      {{ content.apiProduct }}
-    {% endif %}
+    <hr class="my-4">
+    {{ label }}
 
     {% include '@apigee-kickstart/button/button-link.twig' with {
       'type': 'primary',
