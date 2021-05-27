@@ -1,0 +1,178 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a Apigee Rate Plan entity rendered
+ * in Teaser view mode.
+ *
+ * This template uses Apigee Edge's default entity template, which can be found
+ * at apigee_edge/templates/apigee-entity.html.twig.
+ *
+ * Additional variables:
+ * - advance: Flag that specifies whether or not the recurring fee is charged
+ *   in advance. For example, if set to true and the period is 1 month, the
+ *   recurring fee is charged on the invoice generated when the prior billing
+ *   month ends. Defaults to false.
+ * - currency: The rate plan currency.
+ * - customPaymentTerm: Flag that specifies whether or not there is a custom
+ *   payment term.
+ * - description: Description of the rate plan.
+ * - displayName: User-friendly display name for the rate plan.
+ * - earlyTerminationFee: One-time fee that is charged if the developer ends the
+ *   plan before the renewal term.
+ * - frequencyDuration: Together with frequencyDurationType, indicates the
+ *   period of time between recurring fee charges. For example, to specify that
+ *   the period of time between fee charges is 30 days, set frequencyDuration to
+ *   30 and frequencyDurationTime to DAY.
+ * - frequencyDurationType: Period of time between recurring fee charges. Valid
+ *   values include: DAY, WEEK, MONTH, QUARTER, or YEAR.
+ * - id: ID of the rate plan.
+ * - isPrivate: Flag that specifies whether the rate plan is public or private.
+ *   Defaults to false (public).
+ * - keepOriginalStartDate: Flag that specifies whether to maintain the start
+ *   date of the parent rate plan. Defaults to false. Note This setting applies
+ *   to future rate plans only.
+ * - monetizationPackage: Name of the API package for the rate plan.
+ * - purchase: Purchase a plan (link/form).
+ * - name: Name of the rate plan.
+ * - organization: Organization details.
+ * - parentRatePlan: The rate plan from which this rate plan was derived.
+ * - prorate: Flag that specifies whether the recurring fee is prorated. This
+ *   flag pertains to the developer starting or ending the plan part of the way
+ *   through a month. If set to true, the intial fee is prorated based on the
+ *   number of days until the end of the period or the number of days used in
+ *   the period. Defaults to false.
+ * - published: Flag that specifies whether the rate plan should be published,
+ *   making it available to developers.
+ * - ratePlanDetails: An array of rate plan details objects.
+ *     - aggregateFreemiumCounters: Flag that specifies whether or not aggregate
+ *       counters are enabled to determine if usage of an API product is in the
+ *       free range. Aggregate counters must be enabled to set up a freemium
+ *       plan for a product.
+ *     - aggregateStandardCounters: Flag that specifies whether or not aggregate
+ *       counters are used to determine the band of usage (such as a volume band
+ *       for a rate card plan).
+ *     - currency: The rate plan currency.
+ *     - duration: Period of time for the aggregation basis, together with
+ *       durationType. For example, set duration to 30 and durationType to DAY
+ *       to specify an aggregation basis of 30 days.
+ *     - durationType: Period of time for the aggregation basis, together with
+ *       durationType. Valid values include: DAY, WEEK, MONTH, QUARTER, or YEAR.
+ *     - freemiumDuration: Period of time for the freemium period for an
+ *       individual API product together with freemiumDurationType. For example,
+ *       to specify that the freemium period is 30 days, set freemiumDuration to
+ *       30 and freemiumDurationType to DAY.
+ *     - freemiumDurationType: Period of time for the freemium period for an
+ *       individual API product together with freemiumDuration. Valid values
+ *       include: DAY, WEEK, MONTH, QUARTER, or YEAR.
+ *     - freemiumUnit: Freemium quantity for an API product. The value can be
+ *       the number of transactions or the number of units pertaining to a
+ *       custom attribute recorded in the transaction recording policy.
+ *     - meteringType: Charging model for a rate card plan. Valid values
+ *       include: UNIT (flat rate), VOLUME (volume-banded),
+ *       STAIR_STEP (bundled), or DEV_SPECIFIC (adjustable notification revenue
+ *       model only).
+ *     - paymentDueDays: Payment due date for a postpaid developer. For example,
+ *       set the value to 30 to indicate that payment is due in 30 days.
+ *     - ratePlanRates: Rate plan rate details, such as the type of rate plan
+ *       (REVSHARE or RATECARD), the rate for a rate card plan, the revenue
+ *       share for a revenue share plan, and the range (starting unit and ending
+ *       unit for which the rate plan rate applies).
+ *         - endUnit: End unit.
+ *         - id: ID of the rate plan rate. Only valid and required when you are
+ *           updating a draft rate plan rate.
+ *         - rate: Rate for the rate card plan. Specify for RATECARD plans only.
+ *         - revshare: Revenue share. Specify for REVSHARE plans only.
+ *         - startUnit: Start unit.
+ *         - type: Type of the rate plan. Valid values include: REVSHARE or
+ *           RATECARD.
+ *     - ratingParameter: Basis for the rate plan. The rate plan is based on
+ *       transactions or on a custom attribute. Valid values include: VOLUME
+ *       (based on volume of transactions) or MINT_CUSTOM_ATTRIBUTE_{num}. If
+ *       you set it to MINT_CUSTOM_ATTRIBUTE_{num}, then the rate plan is based
+ *       on a custom attribute, where {num} is an integer for example,
+ *       MINT_CUSTOM_ATTRIBUTE_1. This value is defined in the transaction
+ *       recording policy for the API product and is valid for rate card plans
+ *       only. The custom attribute name cannot be defined as VOLUME.
+ *     - ratingParameterUnit: Unit that applies to the ratingParameter.
+ *     - revenueType: Basis of the revenue share in a revenue share plan. Valid
+ *       values include: GROSS (based on percentage of the gross price of a
+ *       transaction) and NET (based on a percentage of the net price of a
+ *       transaction).
+ *     - type: Revenue model for the plan. Valid values include: REVSHARE,
+ *       RATECARD, REVSHARE_RATECARD, USAGE_TARGET (adjustable notifications).
+ * - recurringFee: Fee that is charged to the developer on an ongoing basis
+ *   until the developer ends the plan.
+ * - recurringStartUnit: Valid only if recurringType is set to CALENDAR. Day of
+ *   the month to charge the recurring fee. For example, if the recurring fee is
+ *   charged monthly and recurringStartUnit is set to 1, the recurring fee is
+ *   charged on the first day of each month.
+ * - recurringType: Schedule for the recurring fee. Valid values include:
+ *   CALENDAR or CUSTOM.
+ * - setUpFee: One-time fee that is charged to each developer on the start date
+ *   of the plan (that is, the date the developer purchases the plan).
+ * - startDate: Date and time when the rate plan starts in UTC. Use the
+ *   following format: <code>YYYY-MM-DD HH:mm:ss</code>. If you do not specify a
+ *   timestamp (not recommended), 00:00:00 (midnight) is used by default.
+ * - type: Type of rate plan. Valid values include: STANDARD (all developers),
+ *   DEVELOPER_CATEGORY (developers within a category), or DEVELOPER (specific
+ *   developer).
+ * - contractDuration: Length of the contract for the plan together with
+ *   contractDurationType. For example, to specify a contract duration of 6
+ *   months, set contractDuration to 6 and contractDurationType to MONTH.
+ * - contractDurationType: Length of the contract for the plan together with
+ *   contractDuration. Valid values include: DAY, WEEK, MONTH, QUARTER, or YEAR.
+ * - endDate: Date and time that the plan ends in UTC. Use the following format:
+ *   <code>YYYY-MM-DD HH:mm:ss</code>. If you do not specify a timestamp (not
+ *   recommended), 00:00:00 (midnight) is used by default. Developers are not
+ *   able to view the rate plan after this date. If you do not want the rate
+ *   plan to end on a specific date, specify a null value.
+ * - freemiumDuration: Period of time for the freemium period together with
+ *   freemiumDurationType. For example, to specify that the freemium period is
+ *   30 days, set freemiumDuration to 30 and freemiumDurationType to DAY.
+ * - freemiumDurationType: Period of time for the freemium period together with
+ *   freemiumDuration. Valid values include: DAY, WEEK, MONTH, QUARTER, or YEAR.
+ * - freemiumUnit: Freemium quantity. The value can be the number of
+ *   transactions or the number of units pertaining to a custom attribute
+ *   recorded in the transaction recording policy.
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% extends 'apigee-entity.html.twig' %}
+{% block content %}
+  {{ attach_library('apigee_kickstart/monetization') }}
+
+  {% set body %}
+    {% if content.apiProduct|render %}
+    {% set apiproductName = content.apiProduct|render|striptags %}
+    
+      <h2 class="card-title mt-1">
+        <a href="{{ url }}">{{ apiproductName }}</a>
+      </h2>
+    {% endif %}
+
+    {{ content|without('apiProduct') }}
+
+    <hr class="my-4">
+    {{ label }}
+
+    {% include '@apigee-kickstart/button/button-link.twig' with {
+      'type': 'primary',
+      'text': 'Pricing Details'|t,
+      'url': url,
+      'block': true,
+      'classes': [
+        'mt-5',
+      ],
+    } only %}
+
+  {% endset %}
+
+  {% include '@apigee-kickstart/card/card.twig' with {
+    body: body,
+    attributes: attributes,
+    print_attributes: true
+  } only %}
+
+{% endblock %}

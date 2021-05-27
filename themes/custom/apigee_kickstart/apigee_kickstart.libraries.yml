@@ -37,6 +37,7 @@ monetization:
   css:
     theme:
       assets/css/apigee-kickstart.monetization.css: {}
+      assets/css/apigee-kickstart.apigeex.css: {}
 
 monetization.add-credit:
   css:
