@@ -492,88 +492,90 @@ function apigee_devportal_kickstart_update_8008() {
  */
 function apigee_devportal_kickstart_update_8009() {
   $view = Views::getView('apigee_api_catalog');
-  $display = $view->getDisplay();
-  $filters = $display->getOption('filters');
+  if(is_object($view)){
+    $display = $view->getDisplay();
+    $filters = $display->getOption('filters');
 
-  // Remove the broken filter.
-  if (!empty($filters['field_categories_target_id'])) {
-    unset($filters['field_categories_target_id']);
-  }
+    // Remove the broken filter.
+    if (!empty($filters['field_categories_target_id'])) {
+      unset($filters['field_categories_target_id']);
+    }
 
-  // Add new "field_categories_apidoc" field as filter.
-  if (empty($filters['field_categories_apidoc_target_id'])) {
-    $filters['field_categories_apidoc_target_id'] = [
-      'id' => 'field_categories_apidoc_target_id',
-      'table' => 'node__field_categories_apidoc',
-      'field' => 'field_categories_apidoc_target_id',
-      'relationship' => 'none',
-      'group_type' => 'group',
-      'admin_label' => '',
-      'operator' => 'or',
-      'value' => [],
-      'group' => 1,
-      'exposed' => TRUE,
-      'expose' => [
-        'operator_id' => 'field_categories_apidoc_target_id_op',
-        'label' => 'Categories',
-        'description' => '',
-        'use_operator' => FALSE,
-        'operator' => 'field_categories_apidoc_target_id_op',
-        'operator_limit_selection' => FALSE,
-        'operator_list' => [],
-        'identifier' => 'field_categories_target_id',
-        'required' => FALSE,
-        'remember' => FALSE,
-        'multiple' => TRUE,
-        'remember_roles' => [
-          'authenticated' => 'authenticated',
-          'anonymous' => '0',
-          'administrator' => '0',
+    // Add new "field_categories_apidoc" field as filter.
+    if (empty($filters['field_categories_apidoc_target_id'])) {
+      $filters['field_categories_apidoc_target_id'] = [
+        'id' => 'field_categories_apidoc_target_id',
+        'table' => 'node__field_categories_apidoc',
+        'field' => 'field_categories_apidoc_target_id',
+        'relationship' => 'none',
+        'group_type' => 'group',
+        'admin_label' => '',
+        'operator' => 'or',
+        'value' => [],
+        'group' => 1,
+        'exposed' => TRUE,
+        'expose' => [
+          'operator_id' => 'field_categories_apidoc_target_id_op',
+          'label' => 'Categories',
+          'description' => '',
+          'use_operator' => FALSE,
+          'operator' => 'field_categories_apidoc_target_id_op',
+          'operator_limit_selection' => FALSE,
+          'operator_list' => [],
+          'identifier' => 'field_categories_target_id',
+          'required' => FALSE,
+          'remember' => FALSE,
+          'multiple' => TRUE,
+          'remember_roles' => [
+            'authenticated' => 'authenticated',
+            'anonymous' => '0',
+            'administrator' => '0',
+          ],
+          'reduce' => FALSE
         ],
-        'reduce' => FALSE
-      ],
-      'is_grouped' => FALSE,
-      'group_info' => [
-        'label' => '',
-        'description' => '',
-        'identifier' => '',
-        'optional' => TRUE,
-        'widget' => 'select',
-        'multiple' => FALSE,
-        'remember' => FALSE,
-        'default_group' => 'All',
-        'default_group_multiple' => [],
-        'group_items' => [],
-      ],
-      'reduce_duplicates' => FALSE,
-      'type' => 'select',
-      'limit' => TRUE,
-      'vid' => 'api_category',
-      'hierarchy' => TRUE,
-      'error_message' => TRUE,
-      'plugin_id' => 'taxonomy_index_tid'
-    ];
-
-    // Update the exposed form.
-    $exposed_form = $display->getOption('exposed_form');
-    $exposed_form['options']['bef']['filter']['field_categories_apidoc_target_id'] = [
-      'plugin_id' => 'bef',
-      'advanced' => [
-        'rewrite' => [
-          'filter_rewrite_values' => '',
+        'is_grouped' => FALSE,
+        'group_info' => [
+          'label' => '',
+          'description' => '',
+          'identifier' => '',
+          'optional' => TRUE,
+          'widget' => 'select',
+          'multiple' => FALSE,
+          'remember' => FALSE,
+          'default_group' => 'All',
+          'default_group_multiple' => [],
+          'group_items' => [],
         ],
-        'collapsible' => FALSE,
-        'is_secondary' => FALSE,
-      ],
-      'select_all_none' => FALSE,
-      'select_all_none_nested' => FALSE,
-      'display_inline' => 0
-    ];
-    $display->setOption('exposed_form', $exposed_form);
-  }
+        'reduce_duplicates' => FALSE,
+        'type' => 'select',
+        'limit' => TRUE,
+        'vid' => 'api_category',
+        'hierarchy' => TRUE,
+        'error_message' => TRUE,
+        'plugin_id' => 'taxonomy_index_tid'
+      ];
 
-  $display->setOption('filters', $filters);
-  $view->save();
+      // Update the exposed form.
+      $exposed_form = $display->getOption('exposed_form');
+      $exposed_form['options']['bef']['filter']['field_categories_apidoc_target_id'] = [
+        'plugin_id' => 'bef',
+        'advanced' => [
+          'rewrite' => [
+            'filter_rewrite_values' => '',
+          ],
+          'collapsible' => FALSE,
+          'is_secondary' => FALSE,
+        ],
+        'select_all_none' => FALSE,
+        'select_all_none_nested' => FALSE,
+        'display_inline' => 0
+      ];
+      $display->setOption('exposed_form', $exposed_form);
+    }
+
+    $display->setOption('filters', $filters);
+    $view->save();
+  }
 }
 
 /**
