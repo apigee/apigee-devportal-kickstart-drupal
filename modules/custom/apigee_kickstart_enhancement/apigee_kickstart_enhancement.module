@@ -210,5 +210,21 @@ function _apigee_kickstart_user_extra_fields() {
         return $user->getTimeZone();
       },
     ],
+    'billingtype' => [
+      'label' => t('Billing Type'),
+      'value_callback' => function (UserInterface $user) {
+        if (\Drupal::hasService('apigee_m10n.monetization')) {
+          $sdk = \Drupal::service('apigee_m10n.monetization');
+          try {
+            $billing_type = $sdk->getBillingtype($user);
+            $developer_billing_type = (NULL == $billing_type) ? 'Not specified' : $billing_type;
+          }
+          catch (\Exception $e) {
+            $developer_billing_type = NULL;
+          }
+          return $developer_billing_type;
+        }
+      },
+    ],
   ];
 }
