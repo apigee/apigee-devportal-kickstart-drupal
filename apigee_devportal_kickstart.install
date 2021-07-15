@@ -473,16 +473,16 @@ function apigee_devportal_kickstart_update_8008() {
       if ($api_field_config->getLabel() === $field_config['old_label']) {
         $definitions[$field_name]->getConfig('apidoc')->setLabel($field_config['label'])->save();
       }
-    }
 
-    // Enable the field on the form display.
-    if (!$entity_form_display->getComponent($field_name)) {
-      $entity_form_display->setComponent($field_name, $field_config['form_display'])->save();
-    }
+      // Enable the field on the form display.
+      if (!$entity_form_display->getComponent($field_name)) {
+        $entity_form_display->setComponent($field_name, $field_config['form_display'])->save();
+      }
 
-    // Update the field on the view display.
-    if (!$entity_view_display->getComponent($field_name) && !empty($field_config['view_display'])) {
-      $entity_view_display->setComponent($field_name, $field_config['view_display'])->save();
+      // Update the field on the view display.
+      if (!$entity_view_display->getComponent($field_name) && !empty($field_config['view_display'])) {
+        $entity_view_display->setComponent($field_name, $field_config['view_display'])->save();
+      }
     }
   }
 }
