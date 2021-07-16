@@ -97,6 +97,13 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
   protected $missingDependencies;
 
   /**
+   * TRUE if organization is monetizable ApigeeX.
+   *
+   * @var bool
+   */
+  protected $isOrgApigeeX;
+
+  /**
    * ApigeeM10nConfigurationForm constructor.
    *
    * @param \Drupal\apigee_edge\SDKConnectorInterface $sdk_connector
@@ -121,8 +128,16 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
       // cache these values?
       $organization_controller = new OrganizationController($client);
       $organization = $organization_controller->load($organization_id);
+      if ($organization && ('CLOUD' === $organization->getRuntimeType() || 'HYBRID' === $organization->getRuntimeType())) {
+        if ($this->isMonetizable = $organization->getAddonsConfig()->getMonetizationConfig()->getEnabled() === TRUE) {
+          // Set the organization.
+          $this->organization = $organization;
+
+          $this->isOrgApigeeX = TRUE;
+        }
+      }
       /** @var \Apigee\Edge\Api\Management\Entity\OrganizationInterface $organization */
-      if ($this->isMonetizable = $organization->getPropertyValue('features.isMonetizationEnabled') === 'true') {
+      elseif ($this->isMonetizable = $organization->getPropertyValue('features.isMonetizationEnabled') === 'true') {
         // Set the organization.
         $organization_profile_controller = new OrganizationProfileController($organization_id, $client);
         $this->organization = $organization_profile_controller->load($organization_id);
@@ -245,16 +260,20 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
       '#description' => $this->t('Enable monetization for your Apigee Edge organization.'),
     ];
 
-    $form['modules']['apigee_m10n_add_credit'] = [
-      '#title' => $this->t('Enable Add Credit module'),
-      '#type' => 'checkbox',
-      '#description' => $this->t('Allow users to add credit to their prepaid balances.'),
-      '#states' => [
-        'visible' => [
-          'input[name="modules[apigee_m10n]"]' => ['checked' => TRUE],
+    // Don't show add credit checkbox as for now ApigeeX does not support prepaid functionality.
+    // TODO: remove this restriction when ApigeeX supports prepaid functionality.
+    if (!$this->isOrgApigeeX) {
+      $form['modules']['apigee_m10n_add_credit'] = [
+        '#title' => $this->t('Enable Add Credit module'),
+        '#type' => 'checkbox',
+        '#description' => $this->t('Allow users to add credit to their prepaid balances.'),
+        '#states' => [
+          'visible' => [
+            'input[name="modules[apigee_m10n]"]' => ['checked' => TRUE],
+          ],
         ],
-      ],
-    ];
+      ];
+    }
 
     $form['store'] = [
       '#type' => 'details',
@@ -296,10 +315,14 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
       ],
     ];
 
-    $form['store']['default_currency'] = [
-      '#type' => 'value',
-      '#value' => $this->organization->getCurrencyCode(),
-    ];
+    // Hide for now as ApigeeX does not support add credit.
+    // TODO: remove this restriction when ApigeeX supports prepaid functionality.
+    if (!$this->isOrgApigeeX) {
+      $form['store']['default_currency'] = [
+        '#type' => 'value',
+        '#value' => $this->organization->getCurrencyCode(),
+      ];
+    }
 
     $form['store']['type'] = [
       '#type' => 'value',
@@ -351,8 +374,8 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
       ];
     }
 
-    // Add default address from organization.
-    if ($addresses = $this->organization->getAddresses()) {
+    // Check if ApigeeX and add default address from organization for org other than ApigeeX.
+    if (!$this->isOrgApigeeX && $addresses = $this->organization->getAddresses()) {
       /** @var \Apigee\Edge\Api\Monetization\Structure\Address $address */
       $address = reset($addresses);
 
