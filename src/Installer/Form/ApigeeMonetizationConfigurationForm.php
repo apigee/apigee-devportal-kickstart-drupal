@@ -23,6 +23,7 @@ namespace Drupal\apigee_devportal_kickstart\Installer\Form;
 use Apigee\Edge\Api\Management\Controller\OrganizationController;
 use Apigee\Edge\Api\Monetization\Controller\OrganizationProfileController;
 use Apigee\Edge\Api\Monetization\Controller\SupportedCurrencyController;
+use Apigee\Edge\Api\ApigeeX\Controller\SupportedCurrencyController as ApigeeXSupportedCurrencyController;
 use CommerceGuys\Addressing\AddressFormat\AddressField;
 use CommerceGuys\Addressing\Subdivision\SubdivisionRepositoryInterface;
 use CommerceGuys\Intl\Currency\CurrencyRepository;
@@ -132,6 +133,10 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
         if ($this->isMonetizable = $organization->getAddonsConfig()->getMonetizationConfig()->getEnabled() === TRUE) {
           // Set the organization.
           $this->organization = $organization;
+
+          // Set supported currencies.
+          $supported_currency_controller = new ApigeeXSupportedCurrencyController($organization_id, $client);
+          $this->supportedCurrencies = $supported_currency_controller->getEntities();
 
           $this->isOrgApigeeX = TRUE;
         }
@@ -260,20 +265,16 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
       '#description' => $this->t('Enable monetization for your Apigee Edge organization.'),
     ];
 
-    // Don't show add credit checkbox as for now ApigeeX does not support prepaid functionality.
-    // TODO: remove this restriction when ApigeeX supports prepaid functionality.
-    if (!$this->isOrgApigeeX) {
-      $form['modules']['apigee_m10n_add_credit'] = [
-        '#title' => $this->t('Enable Add Credit module'),
-        '#type' => 'checkbox',
-        '#description' => $this->t('Allow users to add credit to their prepaid balances.'),
-        '#states' => [
-          'visible' => [
-            'input[name="modules[apigee_m10n]"]' => ['checked' => TRUE],
-          ],
+    $form['modules']['apigee_m10n_add_credit'] = [
+      '#title' => $this->t('Enable Add Credit module'),
+      '#type' => 'checkbox',
+      '#description' => $this->t('Allow users to add credit to their prepaid balances.'),
+      '#states' => [
+        'visible' => [
+          'input[name="modules[apigee_m10n]"]' => ['checked' => TRUE],
         ],
-      ];
-    }
+      ],
+    ];
 
     $form['store'] = [
       '#type' => 'details',
@@ -315,14 +316,10 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
       ],
     ];
 
-    // Hide for now as ApigeeX does not support add credit.
-    // TODO: remove this restriction when ApigeeX supports prepaid functionality.
-    if (!$this->isOrgApigeeX) {
-      $form['store']['default_currency'] = [
-        '#type' => 'value',
-        '#value' => $this->organization->getCurrencyCode(),
-      ];
-    }
+    $form['store']['default_currency'] = [
+      '#type' => 'value',
+      '#value' => $this->isOrgApigeeX ? 'USD' : $this->organization->getCurrencyCode(),
+    ];
 
     $form['store']['type'] = [
       '#type' => 'value',
@@ -374,7 +371,7 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
       ];
     }
 
-    // Check if ApigeeX and add default address from organization for org other than ApigeeX.
+    // Check if not ApigeeX and add default address from organization.
     if (!$this->isOrgApigeeX && $addresses = $this->organization->getAddresses()) {
       /** @var \Apigee\Edge\Api\Monetization\Structure\Address $address */
       $address = reset($addresses);
