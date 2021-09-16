@@ -27,7 +27,10 @@
             'setupFees',
             'recurringFees',
             'consumptionFee',
+            'consumptionPricingRates',
             'consumptionPricingType',
+            'revenueShareType',
+            'revenueShareRates',
             'feeFrequency',
             'paymentFundingModel',
             'purchase'
@@ -49,11 +52,55 @@
           {{ content.paymentFundingModel }}
         </div>
 
-        <div class="rate-plan__card rate-plan__card--fees bg-lighter p-4 my-5 rounded-lg">
-          <h2>{{ 'Consumption Fees'|t }}</h2>
-          {{ content.consumptionFee }}
-          {{ content.consumptionPricingType }}
-        </div>
+        {% if content.consumptionPricingRates|render|striptags|trim is not empty %}
+          <div class="rate-plan__card rate-plan__card--fees bg-lighter p-4 my-5 rounded-lg">
+            <h2>{{ 'Consumption Fees'|t }}</h2>
+            {{ content.consumptionPricingType }}
+
+            {% if content.consumptionPricingRates[0]['#singleConsumptionText'] %}
+              {{ content.consumptionPricingRates }}
+            {% else %}
+              <div class="rate-plan-detail__table px-4 py-2 mt-4 bg-white">
+                <table class="table table-borderless mb-0">
+                  <thead>
+                    <tr>
+                      <th scope="col">{{ 'Volume Bands'|t }}</th>
+                      <th scope="col">{{ 'Cost per API call'|t }}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {{ content.consumptionPricingRates }}
+                  </tbody>
+                </table>
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% if content.revenueShareRates|render|striptags|trim is not empty %}
+          <div class="rate-plan__card rate-plan__card--fees bg-lighter p-4 my-5 rounded-lg">
+            <h2>{{ 'Revenue Sharing'|t }}</h2>
+            {{ content.revenueShareType }}
+
+          {% if content.revenueShareRates[0]['#singleShareText'] %}
+              {{ content.revenueShareRates }}
+            {% else %}
+              <div class="rate-plan-detail__table px-4 py-2 mt-4 bg-white">
+                <table class="table table-borderless mb-0">
+                  <thead>
+                    <tr>
+                      <th scope="col">{{ 'Volume Bands'|t }}</th>
+                      <th scope="col">{{ 'Developer Share Percentage'|t }}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {{ content.revenueShareRates }}
+                  </tbody>
+                </table>
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
 
         {% if content.purchase %}
           <div class="rate-plan__card rate-plan__card--purchase bg-lighter p-4 mt-4 rounded-lg" id="purchase">
