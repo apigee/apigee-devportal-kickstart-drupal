@@ -100,7 +100,6 @@ class ApigeeDevportalKickstartMonetization {
   protected static function dependencies(): array {
     return [
       'address',
-      'apigee_m10n',
       'commerce',
     ];
   }
