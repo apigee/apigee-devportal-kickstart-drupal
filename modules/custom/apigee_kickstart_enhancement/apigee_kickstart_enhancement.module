@@ -114,6 +114,9 @@ function apigee_kickstart_enhancement_user_view(array &$build, EntityInterface $
             'value' => $value,
           ],
         ];
+        if ($field_name == 'billingtype') {
+          $build[$field_name]['#cache']['max-age'] = 0;
+        }
       }
     }
   }
