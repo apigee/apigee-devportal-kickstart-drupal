@@ -37,6 +37,11 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  billingtype:
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   user_picture:
     type: image
     weight: 0
