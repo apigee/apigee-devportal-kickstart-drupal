@@ -54,9 +54,6 @@
       },
       "drupal/radix": {
         "Fix issue to support upgrade of components to 2.x": "https://www.drupal.org/files/issues/2021-01-20/components-API-3193046-09.patch"
-      },
-      "apigee/apigee-client-php": {
-        "ApigeeX supported currency": "https://patch-diff.githubusercontent.com/raw/divya-intelli/apigee-client-php/pull/4.diff"
       }
     }
   }
