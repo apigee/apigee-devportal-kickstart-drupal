@@ -39,7 +39,7 @@ class ApigeeDevportalKickstartMonetization {
       $organization_controller = new OrganizationController($sdk_connector->getClient());
       $organization = $organization_controller->load($sdk_connector->getOrganization());
       // Check if org is Hybrid or ApigeeX.
-      if ($organization && ('CLOUD' === $organization->getRuntimeType() || 'HYBRID' === $organization->getRuntimeType()) && $organization->getAddonsConfig()) {
+      if ($organization && ('CLOUD' === $organization->getRuntimeType() || 'HYBRID' === $organization->getRuntimeType()) && $organization->getAddonsConfig() && $organization->getAddonsConfig()->getMonetizationConfig()) {
         return (TRUE === $organization->getAddonsConfig()->getMonetizationConfig()->getEnabled());
       }
       else {
@@ -100,7 +100,6 @@ class ApigeeDevportalKickstartMonetization {
   protected static function dependencies(): array {
     return [
       'address',
-      'apigee_m10n',
       'commerce',
     ];
   }
