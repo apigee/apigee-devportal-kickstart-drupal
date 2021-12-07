@@ -595,3 +595,15 @@ function apigee_devportal_kickstart_update_8010() {
     'weight' => -100,
   ])->save();
 }
+
+/**
+ * Use AJAX to render the API listing view.
+ */
+function apigee_devportal_kickstart_update_8011() {
+  $view = Views::getView('apigee_api_catalog');
+  if(is_object($view)){
+    $display = $view->getDisplay();
+    $display->setOption('use_ajax', TRUE);
+    $view->save();
+  }
+}
