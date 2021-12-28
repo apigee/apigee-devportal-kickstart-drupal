@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.node.apidoc.body
+    - field.field.node.apidoc.field_api_product
     - field.field.node.apidoc.field_apidoc_fetched_timestamp
     - field.field.node.apidoc.field_apidoc_file_link
     - field.field.node.apidoc.field_apidoc_spec
@@ -35,6 +36,7 @@ content:
     third_party_settings: {  }
 hidden:
   body: true
+  field_api_product: true
   field_apidoc_fetched_timestamp: true
   field_apidoc_file_link: true
   field_apidoc_spec_file_source: true
