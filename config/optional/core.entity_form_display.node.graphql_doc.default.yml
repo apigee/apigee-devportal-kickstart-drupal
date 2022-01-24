@@ -113,5 +113,4 @@ content:
       match_limit: 10
     region: content
     third_party_settings: {  }
-hidden:
-  field_api_product: true
+hidden: { }
