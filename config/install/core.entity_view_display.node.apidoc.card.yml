@@ -4,6 +4,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.card
     - field.field.node.apidoc.body
+    - field.field.node.apidoc.field_api_product
     - field.field.node.apidoc.field_apidoc_fetched_timestamp
     - field.field.node.apidoc.field_apidoc_file_link
     - field.field.node.apidoc.field_apidoc_spec
@@ -39,6 +40,7 @@ content:
       link: false
     third_party_settings: {  }
 hidden:
+  field_api_product: true
   field_apidoc_fetched_timestamp: true
   field_apidoc_file_link: true
   field_apidoc_spec: true
