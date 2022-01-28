@@ -32,7 +32,6 @@
             'revenueShareType',
             'revenueShareRates',
             'feeFrequency',
-            'paymentFundingModel',
             'purchase'
             ) }}
         </div>
@@ -42,6 +41,7 @@
     <div class="row">
       <div class="col-lg-6">
 
+      {% if content.setupFees|render|striptags|trim is not empty or content.recurringFees|render|striptags|trim is not empty %}
         <div class="rate-plan__card rate-plan__card--fees bg-lighter p-4 my-5 rounded-lg">
           <h2>{{ 'Fees'|t }}</h2>
           {{ content.setupFees }}
@@ -49,8 +49,8 @@
           {% if content.recurringFees|render|striptags|trim is not empty %}
             {{ content.feeFrequency }}
           {% endif %}
-          {{ content.paymentFundingModel }}
         </div>
+      {% endif %}
 
         {% if content.consumptionPricingRates|render|striptags|trim is not empty %}
           <div class="rate-plan__card rate-plan__card--fees bg-lighter p-4 my-5 rounded-lg">
