@@ -25,7 +25,7 @@
     "drupal/fontawesome": "^2.12",
     "drupal/paragraphs": "^1.6",
     "drupal/pathauto": "^1.6",
-    "drupal/radix": "^4.8",
+    "drupal/radix": "^4.11",
     "drupal/components": "^2.1"
   },
   "require-dev": {
@@ -51,9 +51,6 @@
       },
       "drupal/default_content": {
         "Do not import existing entities": "https://www.drupal.org/files/issues/2020-11-06/default_content-existing-entities-2698425-1-x.patch"
-      },
-      "drupal/radix": {
-        "Fix issue to support upgrade of components to 2.x": "https://www.drupal.org/files/issues/2021-01-20/components-API-3193046-09.patch"
       }
     }
   }
