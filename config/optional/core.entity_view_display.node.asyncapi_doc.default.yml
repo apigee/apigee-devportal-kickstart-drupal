@@ -2,20 +2,21 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.graphql_doc.body
-    - field.field.node.graphql_doc.field_graphql_spec
-    - field.field.node.graphql_doc.field_graphql_spec_file_link
-    - field.field.node.graphql_doc.field_graphql_spec_source_type
-    - field.field.node.graphql_doc.field_categories
-    - field.field.node.graphql_doc.field_image
-    - node.type.graphql_doc
+    - field.field.node.asyncapi_doc.body
+    - field.field.node.asyncapi_doc.field_asyncapi_spec
+    - field.field.node.asyncapi_doc.field_asyncapi_spec_file_link
+    - field.field.node.asyncapi_doc.field_asyncapi_spec_source_type
+    - field.field.node.asyncapi_doc.field_api_product
+    - field.field.node.asyncapi_doc.field_categories
+    - field.field.node.asyncapi_doc.field_image
+    - node.type.asyncapi_doc
   module:
     - file_link
     - text
     - user
-id: node.graphql_doc.default
+id: node.asyncapi_doc.default
 targetEntityType: node
-bundle: graphql_doc
+bundle: asyncapi_doc
 mode: default
 content:
   body:
@@ -25,7 +26,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-  field_graphql_spec_file_link:
+  field_asyncapi_spec_file_link:
     weight: 3
     label: hidden
     settings:
@@ -36,7 +37,7 @@ content:
       target: ''
       format_size: true
     third_party_settings: {  }
-    type: apigee_graphql_doc_graphiql
+    type: apigee_asyncapi_doc_async
     region: content
   links:
     weight: 0
@@ -44,8 +45,8 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
-  body: true
-  field_graphql_spec: true
-  field_graphql_spec_source_type: true
+  field_api_product: true
+  field_asyncapi_spec: true
+  field_asyncapi_spec_source_type: true
   field_categories: true
   field_image: true

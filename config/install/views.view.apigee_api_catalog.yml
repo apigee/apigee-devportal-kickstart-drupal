@@ -1,3 +1,4 @@
+uuid: 52c1b7e6-a61b-4471-bc94-122b95ae0d11
 langcode: en
 status: true
 dependencies:
@@ -14,7 +15,7 @@ dependencies:
     - text
     - user
 _core:
-  default_config_hash: rSgz_Y61T-5AikE-xEFhVYGAWfXjXRVzPDM3jB6qcXQ
+  default_config_hash: kmsBtuUKceBcP7uCiZc1gkyaKejkSK1ZXnH8ksIHSsY
 id: apigee_api_catalog
 label: 'API Catalog'
 module: views
@@ -207,7 +208,7 @@ display:
                 advanced:
                   sort_options: false
                   rewrite:
-                    filter_rewrite_values: 'API Doc|REST API'
+                    filter_rewrite_values: "OpenAPI Doc|Rest\r\nGraphQL Doc|GraphQL\r\nAsyncAPI Doc|AsyncAPI"
                   collapsible: false
                   is_secondary: false
                 select_all_none: false
@@ -474,7 +475,6 @@ display:
           replica: false
           query_tags: {  }
       defaults:
-        exposed_form: false
         filters: false
         filter_groups: false
       relationships: {  }

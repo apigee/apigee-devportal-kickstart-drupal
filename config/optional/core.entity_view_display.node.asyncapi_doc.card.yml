@@ -3,20 +3,20 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.card
-    - field.field.node.graphql_doc.body
-    - field.field.node.graphql_doc.field_api_product
-    - field.field.node.graphql_doc.field_graphql_spec
-    - field.field.node.graphql_doc.field_graphql_spec_file_link
-    - field.field.node.graphql_doc.field_graphql_spec_source_type
-    - field.field.node.graphql_doc.field_categories
-    - field.field.node.graphql_doc.field_image
+    - field.field.node.asyncapi_doc.body
+    - field.field.node.asyncapi_doc.field_asyncapi_spec
+    - field.field.node.asyncapi_doc.field_asyncapi_spec_file_link
+    - field.field.node.asyncapi_doc.field_asyncapi_spec_source_type
+    - field.field.node.asyncapi_doc.field_api_product
+    - field.field.node.asyncapi_doc.field_categories
+    - field.field.node.asyncapi_doc.field_image
     - node.type.apidoc
   module:
     - text
     - user
-id: node.graphql_doc.card
+id: node.asyncapi_doc.card
 targetEntityType: node
-bundle: graphql_doc
+bundle: asyncapi_doc
 mode: card
 content:
   body:
@@ -37,8 +37,8 @@ content:
     third_party_settings: {  }
 hidden:
   field_api_product: true
-  field_graphql_spec: true
-  field_graphql_spec_source_type: true
-  field_graphql_spec_file_link: true
+  field_asyncapi_spec: true
+  field_asyncapi_spec_file_link: true
+  field_asyncapi_spec_source_type: true
   field_categories: true
   links: true

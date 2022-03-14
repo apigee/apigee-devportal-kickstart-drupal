@@ -28,7 +28,7 @@ function apigee_kickstart_preprocess_node(&$variables) {
     ], $variables);
   }
 
-  $apigee_api_content_types = ['apidoc', 'graphql_doc'];
+  $apigee_api_content_types = ['apidoc', 'graphql_doc', 'asyncapi_doc'];
 
   if (in_array($node->bundle(), $apigee_api_content_types)) {
 
@@ -40,11 +40,15 @@ function apigee_kickstart_preprocess_node(&$variables) {
     $variables['attributes']['class'][] = 'apidoc--view-mode-' . $variables['view_mode'];
     switch ($node->bundle()) {
       case 'graphql_doc':
-        $variables['api_style'] = 'GraphQL Doc';
+        $variables['api_style'] = 'GraphQL';
+        break;
+
+      case 'asyncapi_doc':
+        $variables['api_style'] = 'AsyncAPI';
         break;
 
       default:
-        $variables['api_style'] = 'REST API';
+        $variables['api_style'] = 'Rest';
         break;
     }
 
