@@ -144,7 +144,7 @@ class Customizer extends DefaultPluginManager implements CustomizerInterface {
     $theme = $theme ?? $this->activeTheme->getName();
 
     $definitions = $this->getDefinitions();
-    return isset($definitions[$theme]) ? $definitions[$theme] : [];
+    return $definitions[$theme] ?? [];
   }
 
   /**
