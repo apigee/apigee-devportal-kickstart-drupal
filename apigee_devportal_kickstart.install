@@ -238,7 +238,7 @@ function apigee_devportal_kickstart_finish() {
 function apigee_devportal_kickstart_install() {
 
   // Get profile path.
-  $src_path = drupal_get_path('profile', 'apigee_devportal_kickstart') . '/resources/files';
+  $src_path = \Drupal::service('extension.list.profile')->getPath('apigee_devportal_kickstart') . '/resources/files';
 
   // Get public files directory.
   $dest_path = \Drupal::config('system.file')->get('default_scheme') . '://';
@@ -401,7 +401,7 @@ function apigee_devportal_kickstart_update_8007() {
     return;
   }
 
-  $configPath = drupal_get_path('profile', 'apigee_devportal_kickstart') . '/config/install';
+  $configPath = \Drupal::service('extension.list.profile')->getPath('apigee_devportal_kickstart') . '/config/install';
 
   $configToImport = 'core.entity_view_mode.node.card';
   $raw = file_get_contents("$configPath/$configToImport.yml");
