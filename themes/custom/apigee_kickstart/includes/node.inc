@@ -48,7 +48,7 @@ function apigee_kickstart_preprocess_node(&$variables) {
         break;
 
       default:
-        $variables['api_style'] = 'Rest';
+        $variables['api_style'] = 'REST';
         break;
     }
 
