@@ -4545,7 +4545,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /*!
  * css-vars-ponyfill
- * v2.4.6
+ * v2.4.7
  * https://jhildenbiddle.github.io/css-vars-ponyfill/
  * (c) 2018-2021 John Hildenbiddle <http://hildenbiddle.com>
  * MIT license
@@ -5036,7 +5036,7 @@ function parseCss(css) {
         }
         match(/^([;\s]*)+/);
         var comment_regexp = /\/\*[^*]*\*+([^/*][^*]*\*+)*\//g;
-        var prop = match(/^(\*?[-#/*\\\w]+(\[[0-9a-z_-]+\])?)\s*/);
+        var prop = match(/^(\*?[-#/*\\\w.]+(\[[0-9a-z_-]+\])?)\s*/);
         if (!prop) {
             return;
         }
