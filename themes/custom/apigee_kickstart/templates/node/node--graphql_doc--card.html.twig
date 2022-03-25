@@ -1,0 +1,30 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display an Apigee GraphQL Doc.
+ *
+ * Available variables:
+ * - entity: The Apigee GraphQL Doc entity.
+ * - content: All items. Use {{ content }} to print them all,
+ * - attributes: HTML attributes for the containing element.
+ *
+ * @ingroup themeable
+ */
+#}
+{% extends 'apigee-entity.html.twig' %}
+{% block content %}
+  {% set title %}
+    <h2 class="card-title">{{ entity.label }}</h2>
+  {% endset %}
+  {% set image = content.field_image ?? content.field_image_apidoc %}
+
+  {% include '@apigee-kickstart/card/card.twig' with {
+    classes: ['api-card'],
+    url: content.field_apidoc_file_link['#url'],
+    title: title,
+    image: image,
+    body: content|without('title', 'field_image', 'field_apidoc_file_link'),
+    footer: content.field_apidoc_file_link['#title'],
+    hover_shadow: true
+  } %}
+{% endblock %}

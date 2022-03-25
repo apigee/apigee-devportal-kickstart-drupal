@@ -607,3 +607,48 @@ function apigee_devportal_kickstart_update_8011() {
     $view->save();
   }
 }
+
+/**
+ * Expose API Type and other changes to enhance the API listing view.
+ */
+function apigee_devportal_kickstart_update_9001() {
+  $view = Views::getView('apigee_api_catalog');
+  if(is_object($view)){
+    $display = $view->getDisplay();
+
+    $filters = $view->display_handler->getOption('filters');
+    if ($filters['type']) {
+      $filters['type']['admin_label'] = 'API Style';
+      $filters['type']['exposed'] = TRUE;
+
+      $filters['type']['expose']['identifier'] = 'type';
+      $filters['type']['expose']['label'] = 'API Style';
+      $filters['type']['expose']['multiple'] = TRUE;
+      $filters['type']['expose']['reduce'] = TRUE;
+      $filters['type']['expose']['operator_limit_selection'] = FALSE;
+    }
+
+    $filters['type_1']['table'] = 'node_field_data';
+    $filters['type_1']['field'] = 'type';
+    $filters['type_1']['entity_type'] = 'node';
+    $filters['type_1']['entity_field'] = 'type';
+    $filters['type_1']['plugin_id'] = 'bundle';
+    $filters['type_1']['operator'] = 'in';
+    $filters['type_1']['value']['apidoc'] = 'apidoc';
+    if (\Drupal::moduleHandler()->moduleExists('apigee_graphql_doc')) {
+      $filters['type_1']['value']['graphql_doc'] = 'graphql_doc';
+    }
+    if (\Drupal::moduleHandler()->moduleExists('apigee_asyncapi_doc')) {
+      $filters['type_1']['value']['asyncapi_doc'] = 'asyncapi_doc';
+    }
+
+    $view->display_handler->overrideOption('filters', $filters);
+
+    $exposed_form = $view->display_handler->getOption('exposed_form');
+    $exposed_form['options']['bef']['filter']['type']['plugin_id'] = 'bef';
+    $exposed_form['options']['bef']['filter']['type']['advanced']['rewrite']['filter_rewrite_values'] = "OpenAPI Doc|Rest\r\nGraphQL Doc|GraphQL\r\nAsyncAPI Doc|AsyncAPI";
+    $view->display_handler->overrideOption('exposed_form', $exposed_form);
+
+    $view->save();
+  }
+}
