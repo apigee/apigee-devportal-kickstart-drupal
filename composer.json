@@ -17,7 +17,7 @@
     "cweagans/composer-patches": "^1.6.5",
     "drupal/admin_toolbar": "^3.0",
     "drupal/adminimal_admin_toolbar": "^1.9",
-    "drupal/apigee_api_catalog": "^2.4",
+    "drupal/apigee_api_catalog": "^3",
     "drupal/apigee_edge": "^1.18 || ^2.0.0",
     "drupal/better_exposed_filters": "^5.0",
     "drupal/default_content": "^1.0@alpha",
