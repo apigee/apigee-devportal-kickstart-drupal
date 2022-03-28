@@ -1,0 +1,51 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.graphql_doc.body
+    - field.field.node.graphql_doc.field_graphql_spec
+    - field.field.node.graphql_doc.field_graphql_spec_file_link
+    - field.field.node.graphql_doc.field_graphql_spec_source_type
+    - field.field.node.graphql_doc.field_categories
+    - field.field.node.graphql_doc.field_image
+    - node.type.graphql_doc
+  module:
+    - file_link
+    - text
+    - user
+id: node.graphql_doc.default
+targetEntityType: node
+bundle: graphql_doc
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_graphql_spec_file_link:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: true
+      url_plain: false
+      rel: ''
+      target: ''
+      format_size: true
+    third_party_settings: {  }
+    type: apigee_graphql_doc_graphiql
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  body: true
+  field_graphql_spec: true
+  field_graphql_spec_source_type: true
+  field_categories: true
+  field_image: true

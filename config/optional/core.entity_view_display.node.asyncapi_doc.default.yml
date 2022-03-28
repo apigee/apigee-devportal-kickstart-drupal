@@ -1,0 +1,52 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.asyncapi_doc.body
+    - field.field.node.asyncapi_doc.field_asyncapi_spec
+    - field.field.node.asyncapi_doc.field_asyncapi_spec_file_link
+    - field.field.node.asyncapi_doc.field_asyncapi_spec_source_type
+    - field.field.node.asyncapi_doc.field_api_product
+    - field.field.node.asyncapi_doc.field_categories
+    - field.field.node.asyncapi_doc.field_image
+    - node.type.asyncapi_doc
+  module:
+    - file_link
+    - text
+    - user
+id: node.asyncapi_doc.default
+targetEntityType: node
+bundle: asyncapi_doc
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_asyncapi_spec_file_link:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: true
+      url_plain: false
+      rel: ''
+      target: ''
+      format_size: true
+    third_party_settings: {  }
+    type: apigee_asyncapi_doc_async
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_api_product: true
+  field_asyncapi_spec: true
+  field_asyncapi_spec_source_type: true
+  field_categories: true
+  field_image: true

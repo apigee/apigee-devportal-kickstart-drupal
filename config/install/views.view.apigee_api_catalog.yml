@@ -1,3 +1,4 @@
+uuid: 52c1b7e6-a61b-4471-bc94-122b95ae0d11
 langcode: en
 status: true
 dependencies:
@@ -14,7 +15,7 @@ dependencies:
     - text
     - user
 _core:
-  default_config_hash: I9EVB3utFc9Twjy-aO-19c4uHtmwf4N9qtOR1F4-jSc
+  default_config_hash: kmsBtuUKceBcP7uCiZc1gkyaKejkSK1ZXnH8ksIHSsY
 id: apigee_api_catalog
 label: 'API Catalog'
 module: views
@@ -24,115 +25,21 @@ base_table: node_field_data
 base_field: nid
 display:
   default:
-    display_plugin: default
     id: default
     display_title: Master
+    display_plugin: default
     position: 0
     display_options:
-      access:
-        type: perm
-        options:
-          perm: 'access content'
-      cache:
-        type: tag
-        options: {  }
-      query:
-        type: views_query
-        options:
-          disable_sql_rewrite: false
-          distinct: false
-          replica: false
-          query_comment: ''
-          query_tags: {  }
-      exposed_form:
-        type: bef
-        options:
-          submit_button: Search
-          reset_button: true
-          reset_button_label: 'Clear all filters'
-          exposed_sorts_label: 'Sort by'
-          expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
-          text_input_required: 'Select any filter and click on Apply to see results'
-          text_input_required_format: basic_html
-          bef:
-            general:
-              autosubmit: true
-              autosubmit_exclude_textfield: false
-              autosubmit_textfield_delay: 500
-              autosubmit_hide: true
-              input_required: false
-              allow_secondary: false
-              secondary_label: 'Advanced options'
-              secondary_open: false
-            filter:
-              field_categories_target_id:
-                plugin_id: bef
-                advanced:
-                  rewrite:
-                    filter_rewrite_values: ''
-                  collapsible: false
-                  is_secondary: false
-                select_all_none: false
-                select_all_none_nested: false
-                display_inline: 0
-            field_categories_target_id:
-              bef_format: bef
-              more_options:
-                bef_select_all_none: false
-                bef_select_all_none_nested: false
-                bef_collapsible: false
-                is_secondary: false
-                rewrite:
-                  filter_rewrite_values: ''
-          input_required: false
-      pager:
-        type: full
-        options:
-          items_per_page: 12
-          offset: 0
-          id: 0
-          total_pages: null
-          tags:
-            previous: '‹ Previous'
-            next: 'Next ›'
-            first: '« First'
-            last: 'Last »'
-          expose:
-            items_per_page: false
-            items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
-            offset: false
-            offset_label: Offset
-          quantity: 9
-      style:
-        type: grid
-        options:
-          grouping: {  }
-          columns: 12
-          automatic_width: true
-          alignment: horizontal
-          col_class_default: false
-          col_class_custom: 'col-12 col-sm-6 col-lg-4 mb-4'
-          row_class_default: false
-          row_class_custom: row
-      row:
-        type: 'entity:node'
-        options:
-          relationship: none
-          view_mode: card
+      title: 'API Catalog'
       fields:
         title:
           id: title
           table: node_field_data
           field: title
-          plugin_id: field
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -195,6 +102,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -250,7 +158,120 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          plugin_id: field
+      pager:
+        type: full
+        options:
+          offset: 0
+          items_per_page: 12
+          total_pages: null
+          id: 0
+          tags:
+            next: 'Next ›'
+            previous: '‹ Previous'
+            first: '« First'
+            last: 'Last »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 9
+      exposed_form:
+        type: bef
+        options:
+          submit_button: Search
+          reset_button: true
+          reset_button_label: 'Clear all filters'
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+          input_required: false
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: basic_html
+          bef:
+            general:
+              autosubmit: true
+              autosubmit_exclude_textfield: false
+              autosubmit_textfield_delay: 500
+              autosubmit_hide: true
+              input_required: false
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              secondary_open: false
+            filter:
+              type:
+                plugin_id: bef
+                advanced:
+                  sort_options: false
+                  rewrite:
+                    filter_rewrite_values: "OpenAPI Doc|REST\r\nGraphQL Doc|GraphQL\r\nAsyncAPI Doc|AsyncAPI"
+                  collapsible: false
+                  is_secondary: false
+                select_all_none: false
+                select_all_none_nested: false
+                display_inline: false
+              field_categories_target_id:
+                plugin_id: bef
+                advanced:
+                  sort_options: false
+                  rewrite:
+                    filter_rewrite_values: ''
+                  collapsible: false
+                  is_secondary: false
+                select_all_none: false
+                select_all_none_nested: false
+                display_inline: false
+            field_categories_target_id:
+              bef_format: bef
+              more_options:
+                bef_select_all_none: false
+                bef_select_all_none_nested: false
+                bef_collapsible: false
+                is_secondary: false
+                rewrite:
+                  filter_rewrite_values: ''
+      access:
+        type: perm
+        options:
+          perm: 'access content'
+      cache:
+        type: tag
+        options: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: 'No API documentation is currently available.'
+            format: basic_html
+          tokenize: false
+      sorts:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: title
+          exposed: false
+      arguments: {  }
       filters:
         status:
           id: status
@@ -259,6 +280,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
           operator: '='
           value: '1'
           group: 1
@@ -289,36 +313,38 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          entity_type: node
-          entity_field: status
-          plugin_id: boolean
         type:
           id: type
           table: node_field_data
           field: type
           relationship: none
           group_type: group
-          admin_label: ''
+          admin_label: 'API Style'
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
           operator: in
           value:
             apidoc: apidoc
           group: 1
-          exposed: false
+          exposed: true
           expose:
-            operator_id: ''
-            label: ''
+            operator_id: type_op
+            label: 'API Style'
             description: ''
             use_operator: false
-            operator: ''
+            operator: type_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: ''
+            identifier: type
             required: false
             remember: false
-            multiple: false
+            multiple: true
             remember_roles:
               authenticated: authenticated
-            reduce: false
+              anonymous: '0'
+              administrator: '0'
+            reduce: true
           is_grouped: false
           group_info:
             label: ''
@@ -331,9 +357,6 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          entity_type: node
-          entity_field: type
-          plugin_id: bundle
         field_categories_target_id:
           id: field_categories_target_id
           table: node__field_categories
@@ -341,6 +364,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: taxonomy_index_tid
           operator: or
           value: {  }
           group: 1
@@ -375,48 +399,89 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-          type: select
-          limit: true
           vid: api_category
+          type: select
           hierarchy: true
+          limit: true
           error_message: true
-          plugin_id: taxonomy_index_tid
-      sorts:
-        title:
-          id: title
+        type_1:
+          id: type_1
           table: node_field_data
-          field: title
-          order: ASC
-          entity_type: node
-          entity_field: title
-          plugin_id: standard
+          field: type
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          operator: in
+          value:
+            apidoc: apidoc
+          group: 1
           exposed: false
           expose:
+            operator_id: ''
             label: ''
-      title: 'API Catalog'
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      style:
+        type: grid
+        options:
+          grouping: {  }
+          columns: 12
+          automatic_width: true
+          alignment: horizontal
+          row_class_custom: row
+          row_class_default: false
+          col_class_custom: 'col-12 col-sm-6 col-lg-4 mb-4'
+          col_class_default: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: card
+      query:
+        type: views_query
+        options:
+          query_comment: ''
+          disable_sql_rewrite: false
+          distinct: false
+          replica: false
+          query_tags: {  }
+      defaults:
+        filters: false
+        filter_groups: false
+      relationships: {  }
+      use_ajax: true
       header: {  }
       footer: {  }
-      empty:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: true
-          tokenize: false
-          content:
-            value: 'No API documentation is currently available.'
-            format: basic_html
-          plugin_id: text
-      relationships: {  }
-      arguments: {  }
       display_extenders: {  }
-      use_ajax: true
     cache_metadata:
       max-age: -1
       contexts:
@@ -430,9 +495,9 @@ display:
       tags:
         - 'config:field.storage.node.body'
   page_1:
-    display_plugin: page
     id: page_1
     display_title: Page
+    display_plugin: page
     position: 1
     display_options:
       display_extenders: {  }
@@ -441,11 +506,11 @@ display:
         type: normal
         title: APIs
         description: 'API Catalog'
-        expanded: false
-        parent: ''
         weight: 0
-        context: '0'
+        expanded: false
         menu_name: main
+        parent: ''
+        context: '0'
     cache_metadata:
       max-age: -1
       contexts:

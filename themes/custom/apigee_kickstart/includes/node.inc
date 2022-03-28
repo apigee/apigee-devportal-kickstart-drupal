@@ -28,7 +28,9 @@ function apigee_kickstart_preprocess_node(&$variables) {
     ], $variables);
   }
 
-  if ($node->bundle() == 'apidoc') {
+  $apigee_api_content_types = ['apidoc', 'graphql_doc', 'asyncapi_doc'];
+
+  if (in_array($node->bundle(), $apigee_api_content_types)) {
 
     // Add the entity to the template.
     $variables['elements']["#apidoc"] = $node;
@@ -36,6 +38,19 @@ function apigee_kickstart_preprocess_node(&$variables) {
 
     $variables['attributes']['class'][] = 'apidoc';
     $variables['attributes']['class'][] = 'apidoc--view-mode-' . $variables['view_mode'];
+    switch ($node->bundle()) {
+      case 'graphql_doc':
+        $variables['api_style'] = 'GraphQL';
+        break;
+
+      case 'asyncapi_doc':
+        $variables['api_style'] = 'AsyncAPI';
+        break;
+
+      default:
+        $variables['api_style'] = 'REST';
+        break;
+    }
 
     // Add a link to the entity.
     if ($variables['view_mode'] !== 'full') {
