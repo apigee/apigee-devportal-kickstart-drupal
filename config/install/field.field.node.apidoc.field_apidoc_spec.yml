@@ -20,7 +20,7 @@ default_value: {  }
 default_value_callback: ''
 settings:
   file_directory: apidoc_specs
-  file_extensions: 'yml yaml json'
+  file_extensions: 'yaml json'
   max_filesize: ''
   description_field: false
   handler: 'default:file'
