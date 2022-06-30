@@ -5,7 +5,7 @@ dependencies:
     - field.field.node.freeform_doc.body
     - field.field.node.freeform_doc.field_api_product
     - field.field.node.freeform_doc.field_categories
-    - field.field.node.freeform_doc.field_freeform_spec
+    - field.field.node.freeform_doc.field_freeform_spec_doc
     - field.field.node.freeform_doc.field_freeformspec
     - field.field.node.freeform_doc.field_image
     - node.type.freeform_doc
@@ -18,7 +18,7 @@ targetEntityType: node
 bundle: freeform_doc
 mode: default
 content:
-  field_freeform_spec:
+  field_freeform_spec_doc:
     type: file_default
     label: hidden
     settings:

@@ -5,7 +5,7 @@ dependencies:
     - core.entity_view_mode.node.card
     - field.field.node.freeform_doc.body
     - field.field.node.freeform_doc.field_api_product
-    - field.field.node.freeform_doc.field_freeform_spec
+    - field.field.node.freeform_doc.field_freeform_spec_doc
     - field.field.node.freeform_doc.field_freeformspec
     - field.field.node.freeform_doc.field_categories
     - field.field.node.freeform_doc.field_image
@@ -36,7 +36,7 @@ content:
     third_party_settings: {  }
 hidden:
   field_api_product: true
-  field_freeform_spec: true
+  field_freeform_spec_doc: true
   field_freeformspec: true
   field_categories: true
   links: true

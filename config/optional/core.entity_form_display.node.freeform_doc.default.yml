@@ -4,7 +4,7 @@ dependencies:
   config:
     - field.field.node.freeform_doc.body
     - field.field.node.freeform_doc.field_api_product
-    - field.field.node.freeform_doc.field_freeform_spec
+    - field.field.node.freeform_doc.field_freeform_spec_doc
     - field.field.node.freeform_doc.field_freeformspec
     - field.field.node.freeform_doc.field_categories
     - field.field.node.freeform_doc.field_image
@@ -53,7 +53,7 @@ content:
     third_party_settings: {  }
     type: media_library_widget
     region: content
-  field_freeform_spec:
+  field_freeform_spec_doc:
     type: file_generic
     weight: 5
     region: content
