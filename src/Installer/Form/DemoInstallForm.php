@@ -93,6 +93,7 @@ class DemoInstallForm extends FormBase {
       '#type' => 'submit',
       '#value' => $this->t('Save and continue'),
       '#button_type' => 'primary',
+      '#attributes' => ["onclick" => "this.form.submit(); this.disabled=true; return false;"],
     ];
 
     return $form;
