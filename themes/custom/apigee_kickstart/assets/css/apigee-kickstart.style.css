@@ -1909,10 +1909,6 @@ pre code {
   color: #787878;
   opacity: 1;
 }
-.form-control:-ms-input-placeholder {
-  color: #787878;
-  opacity: 1;
-}
 .form-control::placeholder {
   color: #787878;
   opacity: 1;
@@ -2329,7 +2325,6 @@ textarea.form-control {
   vertical-align: middle;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   background-color: transparent;
   border: 1px solid transparent;
@@ -2930,6 +2925,16 @@ input[type=button].btn-block {
     transition: none;
   }
 }
+.collapsing.width {
+  width: 0;
+  height: auto;
+  transition: width 0.35s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .collapsing.width {
+    transition: none;
+  }
+}
 
 .dropup,
 .dropright,
@@ -3455,7 +3460,8 @@ input[type=button].btn-block {
   min-height: 1.75rem;
   padding-left: 1.5rem;
   -webkit-print-color-adjust: exact;
-          color-adjust: exact;
+     color-adjust: exact;
+          print-color-adjust: exact;
 }
 
 .custom-control-inline {
@@ -3509,7 +3515,7 @@ input[type=button].btn-block {
   pointer-events: none;
   content: "";
   background-color: #fff;
-  border: #a3a3a3 solid 1px;
+  border: 1px solid #a3a3a3;
 }
 .custom-control-label::after {
   position: absolute;
@@ -3884,11 +3890,13 @@ input[type=button].btn-block {
 }
 .nav-tabs .nav-link {
   margin-bottom: -1px;
+  background-color: transparent;
   border: 1px solid transparent;
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
 }
 .nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
+  isolation: isolate;
   border-color: #f0f0f0 #f0f0f0 #ddd;
 }
 .nav-tabs .nav-link.disabled {
@@ -3909,6 +3917,8 @@ input[type=button].btn-block {
 }
 
 .nav-pills .nav-link {
+  background: none;
+  border: 0;
   border-radius: 2px;
 }
 .nav-pills .nav-link.active,
@@ -5575,8 +5585,8 @@ a.close.disabled {
   text-transform: none;
   letter-spacing: normal;
   word-break: normal;
-  word-spacing: normal;
   white-space: normal;
+  word-spacing: normal;
   line-break: auto;
   font-size: 0.875rem;
   word-wrap: break-word;
@@ -5677,8 +5687,8 @@ a.close.disabled {
   text-transform: none;
   letter-spacing: normal;
   word-break: normal;
-  word-spacing: normal;
   white-space: normal;
+  word-spacing: normal;
   line-break: auto;
   font-size: 0.875rem;
   word-wrap: break-word;
@@ -7093,14 +7103,12 @@ button.bg-lighter:focus {
 .user-select-auto {
   -webkit-user-select: auto !important;
      -moz-user-select: auto !important;
-      -ms-user-select: auto !important;
           user-select: auto !important;
 }
 
 .user-select-none {
   -webkit-user-select: none !important;
      -moz-user-select: none !important;
-      -ms-user-select: none !important;
           user-select: none !important;
 }
 
