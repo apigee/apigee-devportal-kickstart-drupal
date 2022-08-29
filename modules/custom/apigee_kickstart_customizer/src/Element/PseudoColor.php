@@ -35,11 +35,11 @@ use Drupal\Core\Render\Element\Color;
  *
  * Example usage:
  * @code
- * $form['color'] = array(
+ * $form['color'] = [
  *   '#type' => 'pseudo_color',
  *   '#title' => $this->t('Color'),
  *   '#default_value' => '#ffffff',
- * );
+ * ];
  * @endcode
  *
  * @FormElement("pseudo_color")
