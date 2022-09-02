@@ -6,6 +6,7 @@
  */
 
 use Drupal\media\Entity\Media;
+use Drupal\paragraphs\Entity\Paragraph;
 
 /**
  * Implements hook_preprocess_node().
@@ -95,10 +96,10 @@ function apigee_kickstart_preprocess_node(&$variables) {
         if (!empty($paragraph_featured_apis)) {
           foreach ($paragraph_featured_apis->get('field_cards') as $reference) {
 
-            $paragraph_cards = \Drupal\paragraphs\Entity\Paragraph::load($reference->target_id);
+            $paragraph_cards = Paragraph::load($reference->target_id);
             $field_image = $paragraph_cards->get('field_image')->first()->getValue();
             $field_title = $paragraph_cards->get('field_title')->first()->getValue();
-            $media = Drupal\media\Entity\Media::load($field_image['target_id']);
+            $media = Media::load($field_image['target_id']);
             $media_field = $media->get('field_media_image')->first()->getValue();
 
             // Adding card title as alternative text (Web accessibility standards)
