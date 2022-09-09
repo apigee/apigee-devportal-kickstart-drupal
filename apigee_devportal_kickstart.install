@@ -90,6 +90,12 @@ function apigee_devportal_kickstart_install_tasks_alter(&$tasks, $install_state)
   // Use `drush key-save apigee_edge_connection_default '{\"auth_type\":\"basic\",\"organization\":\"ORGANIZATION\",\"username\":\"USERNAME\",\"password\":\"PASSWORD"}' --key-type=apigee_auth -y`
   // to create a key after drush si.
   if (!$install_state['interactive']) {
+    // Get the state class.
+    $state = \Drupal::state();
+    // Set the flag for drush si.
+    if ($state->get('is_non_interactive') !== FALSE) {
+      $state->set('is_non_interactive', TRUE);
+    }
     return;
   }
 
