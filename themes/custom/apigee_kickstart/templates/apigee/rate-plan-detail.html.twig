@@ -107,8 +107,9 @@
           <tr>
             <td>
               {%- set endUnitStr = rate.endUnit ?  'up to'|t  : '' -%}
+              {%- set endUnit = rate.endUnit ?  rate.endUnit : '' -%}
               {%- trans -%}
-                Greater than {{ rate.startUnit }} {{ endUnitStr }} {{ rate.endUnit }}
+                Greater than {{ rate.startUnit }} {{ endUnitStr }} {{ endUnit }}
               {%- endtrans -%}
             </td>
             <td>{{ rate.rate }}</td>
@@ -131,10 +132,11 @@
         <tbody>
           {%- for rate in revshare_rates -%}
             {%- set endUnitStr = rate.endUnit ?  'up to'|t  : '' -%}
+            {%- set endUnit = rate.endUnit ?  rate.endUnit : '' -%}
             <tr>
               <td>
                 {%- trans -%}
-                  Greater than {{ rate.startUnit }} {{ endUnitStr }} {{ rate.endUnit }}
+                  Greater than {{ rate.startUnit }} {{ endUnitStr }} {{ endUnit }}
                 {%- endtrans -%}
               </td>
               <td>{{ rate.revshare }}</td>
