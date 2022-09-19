@@ -6,7 +6,6 @@ dependencies:
     - field.field.node.freeform_doc.field_api_product
     - field.field.node.freeform_doc.field_categories
     - field.field.node.freeform_doc.field_freeform_spec_doc
-    - field.field.node.freeform_doc.field_freeformspec
     - field.field.node.freeform_doc.field_image
     - node.type.freeform_doc
   module:
@@ -18,6 +17,13 @@ targetEntityType: node
 bundle: freeform_doc
 mode: default
 content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
   field_freeform_spec_doc:
     type: file_default
     label: hidden
@@ -26,20 +32,12 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
-  field_freeformspec:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
-    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 0
     region: content
 hidden:
-  body: true
   field_api_product: true
   field_categories: true
   field_image: true

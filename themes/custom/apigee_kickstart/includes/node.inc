@@ -48,7 +48,7 @@ function apigee_kickstart_preprocess_node(&$variables) {
         break;
 
       case 'freeform_doc':
-        $variables['api_style'] = 'Freeform';
+        $variables['api_style'] = 'Free-form';
         break;
 
       default:
