@@ -28,7 +28,12 @@ function apigee_kickstart_preprocess_node(&$variables) {
     ], $variables);
   }
 
-  $apigee_api_content_types = ['apidoc', 'graphql_doc', 'asyncapi_doc', 'freeform_doc'];
+  $apigee_api_content_types = [
+    'apidoc',
+    'graphql_doc',
+    'asyncapi_doc',
+    'freeform_doc'
+  ];
 
   if (in_array($node->bundle(), $apigee_api_content_types)) {
 
