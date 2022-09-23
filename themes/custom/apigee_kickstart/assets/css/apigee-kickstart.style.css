@@ -2628,6 +2628,11 @@ fieldset:disabled a.btn {
   box-shadow: 0 0 0 0.2rem rgba(221, 221, 221, 0.5);
 }
 
+.description.text-muted a, 
+.card-group__buttons .btn-outline-primary {
+  background-color: #fff !important;
+}
+
 .btn-outline-primary {
   color: #2196f3;
   border-color: #2196f3;
@@ -10782,7 +10787,7 @@ a.text-lighter:hover, a.text-lighter:focus {
 }
 
 .text-muted {
-  color: #787878 !important;
+  color: #4F4F4F !important;
 }
 
 .text-black-50 {
