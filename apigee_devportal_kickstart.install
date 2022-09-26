@@ -652,3 +652,4 @@ function apigee_devportal_kickstart_update_9001() {
     $view->save();
   }
 }
+

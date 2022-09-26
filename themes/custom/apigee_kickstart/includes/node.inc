@@ -31,7 +31,12 @@ function apigee_kickstart_preprocess_node(&$variables) {
     ], $variables);
   }
 
-  $apigee_api_content_types = ['apidoc', 'graphql_doc', 'asyncapi_doc'];
+  $apigee_api_content_types = [
+    'apidoc',
+    'graphql_doc',
+    'asyncapi_doc',
+    'freeform_doc'
+  ];
 
   if (in_array($node->bundle(), $apigee_api_content_types)) {
 
@@ -48,6 +53,10 @@ function apigee_kickstart_preprocess_node(&$variables) {
 
       case 'asyncapi_doc':
         $variables['api_style'] = 'AsyncAPI';
+        break;
+
+      case 'freeform_doc':
+        $variables['api_style'] = 'Free-form';
         break;
 
       default:

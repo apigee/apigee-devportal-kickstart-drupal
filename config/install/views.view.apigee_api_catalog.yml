@@ -208,7 +208,7 @@ display:
                 advanced:
                   sort_options: false
                   rewrite:
-                    filter_rewrite_values: "OpenAPI Doc|REST\r\nGraphQL Doc|GraphQL\r\nAsyncAPI Doc|AsyncAPI"
+                    filter_rewrite_values: "OpenAPI Doc|REST\r\nGraphQL Doc|GraphQL\r\nAsyncAPI Doc|AsyncAPI\r\nFree-form Doc|Free-form"
                   collapsible: false
                   is_secondary: false
                 select_all_none: false
