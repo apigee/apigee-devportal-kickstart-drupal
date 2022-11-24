@@ -30,7 +30,7 @@ function apigee_kickstart_theme_suggestions_input_alter(array &$suggestions, arr
  */
 function apigee_kickstart_form_previous_balances_reports_download_form_alter(array &$form, FormStateInterface $form_state) {
   // Move the heading out of the form.
-  $form['#prefix'] = render($form['heading']);
+  $form['#prefix'] = \Drupal::service('renderer')->render($form['heading']);
 }
 
 /**

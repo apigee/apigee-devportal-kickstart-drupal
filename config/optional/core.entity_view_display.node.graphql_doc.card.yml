@@ -1,0 +1,44 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.graphql_doc.body
+    - field.field.node.graphql_doc.field_api_product
+    - field.field.node.graphql_doc.field_graphql_spec
+    - field.field.node.graphql_doc.field_graphql_spec_file_link
+    - field.field.node.graphql_doc.field_graphql_spec_source_type
+    - field.field.node.graphql_doc.field_categories
+    - field.field.node.graphql_doc.field_image
+    - node.type.apidoc
+  module:
+    - text
+    - user
+id: node.graphql_doc.card
+targetEntityType: node
+bundle: graphql_doc
+mode: card
+content:
+  body:
+    type: text_default
+    weight: 1
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_image:
+    type: entity_reference_entity_view
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      view_mode: card_small
+      link: false
+    third_party_settings: {  }
+hidden:
+  field_api_product: true
+  field_graphql_spec: true
+  field_graphql_spec_source_type: true
+  field_graphql_spec_file_link: true
+  field_categories: true
+  links: true

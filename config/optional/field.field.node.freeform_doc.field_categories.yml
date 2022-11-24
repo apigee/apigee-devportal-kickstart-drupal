@@ -1,18 +1,17 @@
 langcode: en
-status: true
 dependencies:
   config:
     - field.storage.node.field_categories
-    - node.type.apidoc
     - taxonomy.vocabulary.api_category
-id: node.apidoc.field_categories
+    - node.type.freeform_doc
+id: node.freeform_doc.field_categories
 field_name: field_categories
 entity_type: node
-bundle: apidoc
+bundle: freeform_doc
 label: Categories
-description: 'The OpenAPI Docs categories.'
+description: ''
 required: false
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -23,6 +22,6 @@ settings:
     sort:
       field: name
       direction: asc
-    auto_create: true
+    auto_create: false
     auto_create_bundle: ''
 field_type: entity_reference
