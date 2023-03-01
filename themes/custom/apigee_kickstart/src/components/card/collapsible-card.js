@@ -11,7 +11,7 @@
           let $toggle = $collapsibleCard.find('.collapsible-card__toggle');
           let $content = $collapsibleCard.find('.collapsible-card__content');
 
-          $toggle.on('click', function (event) {
+          $toggle.once().on('click', function (event) {
             event.preventDefault();
             $collapsibleCard.toggleClass('collapsible-card--active');
             $content.slideToggle(200);
