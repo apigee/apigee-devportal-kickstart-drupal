@@ -7,7 +7,7 @@
     {
         "type": "vcs",
         "url": "https://github.com/apigee/apigee-edge-drupal"
-    }
+    },
     {
         "type": "composer",
         "url": "https://packages.drupal.org/8"
