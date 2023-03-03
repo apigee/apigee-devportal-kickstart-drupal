@@ -5,6 +5,10 @@
   "license": "GPL-2.0-or-later",
   "repositories": [
     {
+        "type": "vcs",
+        "url": "https://github.com/apigee/apigee-edge-drupal"
+    }
+    {
         "type": "composer",
         "url": "https://packages.drupal.org/8"
     },
@@ -18,7 +22,7 @@
     "drupal/admin_toolbar": "^3.0",
     "drupal/adminimal_admin_toolbar": "^1.9",
     "drupal/apigee_api_catalog": "^3",
-    "drupal/apigee_edge": "^1.18 || ^2.0.0",
+    "drupal/apigee_edge": "dev-appgroup",
     "drupal/better_exposed_filters": "^5.0",
     "drupal/default_content": "^1.0@alpha",
     "drupal/email_registration": "^1.0@RC",
