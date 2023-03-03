@@ -5,14 +5,6 @@
   "license": "GPL-2.0-or-later",
   "repositories": [
     {
-        "type": "vcs",
-        "url": "https://github.com/apigee/apigee-edge-drupal"
-    },
-    {
-        "type": "vcs",
-        "url": "https://github.com/apigee/apigee-api-catalog-drupal"
-    },
-    {
         "type": "composer",
         "url": "https://packages.drupal.org/8"
     },
