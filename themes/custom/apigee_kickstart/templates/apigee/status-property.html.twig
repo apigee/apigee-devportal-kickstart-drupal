@@ -18,7 +18,27 @@
   pending: 'warning',
 } %}
 
-{% include '@radix/badge/badge.twig' with {
-  type: statuses[element.value|trim|lower]|default('info'),
-  content: element.value|capitalize,
-} %}
+{% set type = statuses[element.value|trim|lower]|default('info') %}
+{% set content = element.value|capitalize %}
+
+{% set classes = [
+  'badge',
+  type ? 'badge-' ~ type,
+]|merge(utility_classes ? utility_classes : []) %}
+
+{% set html_tag = html_tag ?? 'span' %}
+
+{% if url %}
+  {% set html_tag = 'a' %}
+  {% set url = url|render %}
+{% endif %}
+
+{% if content %}
+  <{{ html_tag }} {{ url ? 'href=' ~ url }} class="{{ classes|join(' ') }}">
+
+  {% block content %}
+    {{ content }}
+  {% endblock %}
+
+  </{{ html_tag }}>
+{% endif %}

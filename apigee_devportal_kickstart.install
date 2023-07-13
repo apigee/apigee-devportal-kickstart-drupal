@@ -39,9 +39,9 @@ use Drupal\views\Views;
  * Implements hook_install_tasks().
  */
 function apigee_devportal_kickstart_install_tasks(&$install_state) {
-  // Initialize the seven theme and set it as active.
+  // Initialize the claro theme and set it as active.
   // This ensures the installation theme is maintained across tasks.
-  $theme = \Drupal::service('theme.initialization')->initTheme('seven');
+  $theme = \Drupal::service('theme.initialization')->initTheme('claro');
   \Drupal::theme()->setActiveTheme($theme);
 
   // This needs to run before m10n tasks.

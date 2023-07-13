@@ -20,4 +20,3 @@ permissions:
   - 'use text format basic_html'
   - 'view media'
   - 'view own developer_app'
-  - 'view published apidoc entities'

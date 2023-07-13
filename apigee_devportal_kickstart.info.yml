@@ -1,7 +1,7 @@
 name: Apigee Developer Portal Kickstart
 type: profile
 description: 'A fast demo and starting point for Apigee Developer Portals.'
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^9 || ^10
 
 # Optional: Declare your installation profile as a distribution
 # This will make the installer auto-select this installation profile.
@@ -10,7 +10,7 @@ core_version_requirement: ^8 || ^9
 distribution:
  name: Apigee Developer Portal Kickstart
  install:
-   theme: seven
+   theme: claro
 
 # Required modules
 # Note that any dependencies of the modules listed here will be installed
@@ -20,8 +20,7 @@ install:
 - history
 - block
 - breakpoint
-- ckeditor
-- color
+- ckeditor5
 - config
 - comment
 - contextual
@@ -69,10 +68,11 @@ install:
 - forum
 - paragraphs
 - pathauto
+- ctools
 
 # List any themes that should be installed as part of the profile installation.
 # Note that this will not set any theme as the default theme.
 themes:
 - apigee_kickstart
-- bartik
-- seven
+- claro
+- olivero
