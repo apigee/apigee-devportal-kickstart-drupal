@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 77a93559-7c69-4549-ab40-1f580fe2a89d
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: nasa-43567-unsplash.jpg
+  uri:
+    -
+      value: 'public://nasa-43567-unsplash.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 688086
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1552794715

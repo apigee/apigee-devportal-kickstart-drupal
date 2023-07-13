@@ -1,0 +1,37 @@
+_meta:
+  version: '1.0'
+  entity_type: comment
+  uuid: 8dc43422-1def-4457-a331-196b1f41f028
+  bundle: comment
+  default_langcode: en
+  depends:
+    abc89fd3-4cda-46bb-aa3d-416f5639ef3c: node
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  entity_id:
+    -
+      entity: abc89fd3-4cda-46bb-aa3d-416f5639ef3c
+  subject:
+    -
+      value: 'Quisque et vulputate augue,…'
+  created:
+    -
+      value: 1554122417
+  thread:
+    -
+      value: 01/
+  entity_type:
+    -
+      value: node
+  field_name:
+    -
+      value: comment
+  comment_body:
+    -
+      value: "<p>In tristique varius dapibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque eget erat risus. Phasellus iaculis orci id erat porttitor, quis tristique turpis cursus.</p>\r\n"
+      format: basic_html

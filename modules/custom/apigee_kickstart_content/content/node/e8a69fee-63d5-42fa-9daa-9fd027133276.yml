@@ -1,0 +1,54 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: e8a69fee-63d5-42fa-9daa-9fd027133276
+  bundle: forum
+  default_langcode: en
+  depends:
+    21610fde-d521-4f1b-b56f-63cdee1aec2a: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Automate Service Ticket Creation'
+  created:
+    -
+      value: 1552761555
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /forum/automate-service-ticket-creation
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: "<p>In a gravida nisi, in interdum urna. Nunc nec eros sed magna tincidunt vestibulum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis facilisis tortor augue, eget facilisis arcu hendrerit at.</p>\r\n\r\n<p>Aliquam ultricies erat augue, sodales finibus dui rutrum et. Maecenas eget ipsum eu ante dictum auctor.</p>\r\n\r\n<p>Suspendisse sed orci nulla. Nullam id rhoncus lacus. Fusce velit enim, viverra ut tortor ultricies, tincidunt aliquet felis. Praesent porta eros et lacus blandit rutrum. Nulla sollicitudin ex elit, sit amet lobortis magna malesuada eget.</p>\r\n\r\n<p>Donec et dolor sed mi ornare imperdiet sit amet et justo. Duis blandit malesuada leo a pellentesque. Maecenas suscipit gravida leo, at convallis quam ullamcorper eu. Donec sollicitudin augue vitae luctus consequat. In tristique varius dapibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>\r\n\r\n<p>Quisque eget erat risus. Phasellus iaculis orci id erat porttitor, quis tristique turpis cursus. Nulla gravida fermentum erat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc eu mollis velit.</p>\r\n"
+      format: basic_html
+      summary: ''
+  comment_forum:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1688990042
+      last_comment_name: ''
+      last_comment_uid: 1
+      comment_count: 0
+  taxonomy_forums:
+    -
+      entity: 21610fde-d521-4f1b-b56f-63cdee1aec2a

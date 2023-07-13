@@ -1,0 +1,66 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: bae58a0b-4f55-484f-9ee5-f2ecbf7c715e
+  bundle: title_bar
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Title bar: Blog'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  field_title_bar:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 65d6bf7f-d664-446e-9dc7-0909a5161c63
+          bundle: title_bar
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1552679105
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          field_icon:
+            -
+              icon_name: newspaper
+              style: fas
+              settings:
+                masking:
+                  mask: ''
+                  style: fas
+                power_transforms:
+                  scale:
+                    type: ''
+                    value: ''
+                  position_y:
+                    type: ''
+                    value: ''
+                  position_x:
+                    type: ''
+                    value: ''
+          field_text:
+            -
+              value: "<p>Our blog posts about technical challenges faced at Acme and how we go about solving them.</p>\r\n"
+              format: basic_html
+          field_title:
+            -
+              value: Blog

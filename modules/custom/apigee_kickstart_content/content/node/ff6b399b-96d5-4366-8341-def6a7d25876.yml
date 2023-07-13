@@ -1,0 +1,40 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: ff6b399b-96d5-4366-8341-def6a7d25876
+  bundle: faq
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'What is the difference between the sandbox URL and a live URL?'
+  created:
+    -
+      value: 1552711481
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /faq/what-difference-between-sandbox-url-and-live-url
+      langcode: en
+      pathauto: 1
+  field_answer:
+    -
+      value: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pulvinar erat eget malesuada ultrices. Praesent nec porta tellus.</p>\r\n\r\n<p>Curabitur sollicitudin elementum maximus. Ut vel massa vitae turpis rhoncus congue. Donec aliquam justo a fermentum fermentum. Cras augue turpis, tempor quis sapien ut, eleifend suscipit nibh. Sed sapien felis, bibendum sed est sit amet, ullamcorper rhoncus nulla. Quisque eget accumsan diam.&nbsp;</p>\r\n"
+      format: basic_html

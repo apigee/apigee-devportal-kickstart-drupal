@@ -1,0 +1,54 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 08dd5a22-1712-41b2-8afb-3623b83d9a74
+  bundle: forum
+  default_langcode: en
+  depends:
+    5869a2b7-3d46-4cfe-b2c7-59044b86c06a: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Security Tokens Documentation'
+  created:
+    -
+      value: 1552761666
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /forum/security-tokens-documentation
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dictum nibh justo, a facilisis libero sodales vel. Vivamus ut nisi non nunc malesuada sagittis non condimentum tellus. Ut pharetra quis augue sed placerat. In ut mollis turpis. Aliquam sed luctus nibh, sed mattis urna. Integer mattis mi in massa hendrerit commodo. Sed et consequat nibh. Nam efficitur nunc non mi lacinia eleifend. Phasellus tempus ipsum vel elit iaculis lacinia.</p>\r\n\r\n<p>Ut ac efficitur orci. Phasellus commodo orci neque, a lobortis purus malesuada in. Nullam id eros vel enim suscipit tristique vestibulum sit amet orci. Duis sed iaculis elit, et tincidunt turpis. Sed venenatis mauris vitae molestie lobortis. Mauris aliquam, lacus dictum blandit tincidunt, elit mauris vestibulum risus, eu consequat nisi arcu sit amet dui. Vivamus malesuada volutpat sapien, id feugiat dolor finibus nec. Suspendisse vulputate erat eu elit ultricies, vel congue dui tempor. Sed hendrerit gravida eros a imperdiet. Donec eget euismod metus. Curabitur enim dui, posuere non euismod mattis, varius id justo.</p>\r\n"
+      format: basic_html
+      summary: ''
+  comment_forum:
+    -
+      status: 2
+      cid: 3
+      last_comment_timestamp: 1688990042
+      last_comment_name: ''
+      last_comment_uid: 1
+      comment_count: 1
+  taxonomy_forums:
+    -
+      entity: 5869a2b7-3d46-4cfe-b2c7-59044b86c06a

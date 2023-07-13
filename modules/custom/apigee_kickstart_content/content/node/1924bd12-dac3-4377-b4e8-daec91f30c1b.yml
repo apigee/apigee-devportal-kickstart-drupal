@@ -1,0 +1,41 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 1924bd12-dac3-4377-b4e8-daec91f30c1b
+  bundle: page
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Terms and Conditions'
+  created:
+    -
+      value: 1552709612
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /terms-and-conditions
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: "<p>Acme Developer's Account Terms &amp; Conditions&nbsp;</p>\r\n\r\n<p><br />\r\n1. Your Relationship with Acme Developers</p>\r\n\r\n<p>1.1 YViverra vitae congue eu consequat ac felis. Pulvinar pellentesque habitant morbi tristique senectus et netus et malesuada.Sollicitudin aliquam ultrices sagittis orci a scelerisque purus. At tellus at urna condimentum mattis. In mollis nunc sed id semper risus in. Morbi enim nunc faucibus a. Etiam erat velit scelerisque in dictum.</p>\r\n\r\n<p>1.2 Imperdiet dui accumsan sit amet nulla facilisi morbi tempus iaculis. Eu ultrices vitae auctor eu augue ut lectus arcu. Ornare lectus sit amet est placerat in egestas.</p>\r\n\r\n<p>1.3 Eu tincidunt tortor aliquam nulla facilisi. Non sodales neque sodales ut etiam sit amet. Ut tortor pretium viverra suspendisse potenti nullam. Tellus mauris a diam maecenas.</p>\r\n\r\n<p>1.4 Pretium viverra suspendisse potenti nullam ac tortor. Adipiscing elit ut aliquam purus sit amet luctus venenatis. Ante metus dictum at tempor commodo ullamcorper. Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>\r\n\r\n<p>2. Accepting the Terms</p>\r\n\r\n<p>2.1 YViverra vitae congue eu consequat ac felis. Pulvinar pellentesque habitant morbi tristique senectus et netus et malesuada.Sollicitudin aliquam ultrices sagittis orci a scelerisque purus. At tellus at urna condimentum mattis. In mollis nunc sed id semper risus in. Morbi enim nunc faucibus a. Etiam erat velit scelerisque in dictum.</p>\r\n\r\n<p>2.2 Imperdiet dui accumsan sit amet nulla facilisi morbi tempus iaculis. Eu ultrices vitae auctor eu augue ut lectus arcu. Ornare lectus sit amet est placerat in egestas.</p>\r\n\r\n<p>2.3 Eu tincidunt tortor aliquam nulla facilisi. Non sodales neque sodales ut etiam sit amet. Ut tortor pretium viverra suspendisse potenti nullam. Tellus mauris a diam maecenas.</p>\r\n\r\n<p>2.4 Pretium viverra suspendisse potenti nullam ac tortor. Adipiscing elit ut aliquam purus sit amet luctus venenatis. Ante metus dictum at tempor commodo ullamcorper. Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>\r\n\r\n<p>3. EXCLUSION OF WARRANTIES</p>\r\n\r\n<p>3.1 PRETIUM VIVERRA SUSPENDISSE POTENTI NULLAM AC TORTOR. ADIPISCING ELIT UT ALIQUAM PURUS SIT AMET LUCTUS VENENATIS. ANTE METUS DICTUM AT TEMPOR COMMODO ULLAMCORPER. MAURIS ULTRICES EROS IN CURSUS TURPIS MASSA TINCIDUNT DUI.</p>\r\n"
+      format: basic_html
+      summary: ''

@@ -1,0 +1,36 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 08ad78f2-dcad-403e-8ca6-4c2ae1555216
+  bundle: image
+  default_langcode: en
+  depends:
+    5825fc44-81dd-4ab2-a7a0-adc789cee7f8: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  name:
+    -
+      value: chuttersnap-255216-unsplash.png
+  created:
+    -
+      value: 1554903190
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0
+  field_media_image:
+    -
+      entity: 5825fc44-81dd-4ab2-a7a0-adc789cee7f8
+      alt: ''
+      title: ''
+      width: 2560
+      height: 800

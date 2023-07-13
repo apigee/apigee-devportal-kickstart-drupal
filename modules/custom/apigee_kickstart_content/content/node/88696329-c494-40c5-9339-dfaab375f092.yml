@@ -1,0 +1,58 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 88696329-c494-40c5-9339-dfaab375f092
+  bundle: article
+  default_langcode: en
+  depends:
+    f3c8694f-bda0-4dec-ae89-0db3e59e8e7a: media
+    c5e62e4a-18c3-4d91-83aa-db55e16c48a6: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Eum incassum neo refoveo saepius saluto sudo valde'
+  created:
+    -
+      value: 1552794469
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /article/eum-incassum-neo-refoveo-saepius-saluto-sudo-valde
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dictum nibh justo, a facilisis libero sodales vel. Vivamus ut nisi non nunc malesuada sagittis non condimentum tellus. Ut pharetra quis augue sed placerat. In ut mollis turpis. Aliquam sed luctus nibh, sed mattis urna. Integer mattis mi in massa hendrerit commodo. Sed et consequat nibh. Nam efficitur nunc non mi lacinia eleifend. Phasellus tempus ipsum vel elit iaculis lacinia.</p>\r\n\r\n<p>Ut ac efficitur orci. Phasellus commodo orci neque, a lobortis purus malesuada in. Nullam id eros vel enim suscipit tristique vestibulum sit amet orci. Duis sed iaculis elit, et tincidunt turpis. Sed venenatis mauris vitae molestie lobortis. Mauris aliquam, lacus dictum blandit tincidunt, elit mauris vestibulum risus, eu consequat nisi arcu sit amet dui. Vivamus malesuada volutpat sapien, id feugiat dolor finibus nec. Suspendisse vulputate erat eu elit ultricies, vel congue dui tempor. Sed hendrerit gravida eros a imperdiet. Donec eget euismod metus. Curabitur enim dui, posuere non euismod mattis, varius id justo.</p>\r\n"
+      format: basic_html
+      summary: 'Tellus cras adipiscing enim eu turpis egestas pretium aenean. Est ultricies integer quis auctor. Tortor aliquam nulla facilisi cras fermentum odio eu.'
+  comment:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1688990042
+      last_comment_name: ''
+      last_comment_uid: 1
+      comment_count: 0
+  field_image:
+    -
+      entity: f3c8694f-bda0-4dec-ae89-0db3e59e8e7a
+  field_tags:
+    -
+      entity: c5e62e4a-18c3-4d91-83aa-db55e16c48a6
