@@ -28,7 +28,7 @@ settings:
   view_mode: full
 visibility:
   node_type:
-    id: node_type
+    id: entity_bundle:node
     bundles:
       landing: landing
     negate: false
@@ -36,6 +36,6 @@ visibility:
       node: '@node.node_route_context:node'
   request_path:
     id: request_path
-    pages: /node/1
+    pages: /home
     negate: true
     context_mapping: {  }
