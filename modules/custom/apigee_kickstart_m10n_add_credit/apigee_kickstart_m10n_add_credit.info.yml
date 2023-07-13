@@ -1,9 +1,0 @@
-name: Apigee Kickstart Monetization (Deprecated)
-description: "(Deprecated, do not enable) Adds and configures a default product type for adding credit."
-type: module
-core: 8.x
-package: Apigee Kickstart
-hidden: true
-dependencies:
-  - apigee_m10n:apigee_m10n
-  - apigee_m10n_add_credit:apigee_m10n_add_credit
