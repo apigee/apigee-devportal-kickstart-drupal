@@ -1,0 +1,103 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: de9351da-3424-4401-ba46-64709a9f12d4
+  bundle: cta
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'CTA: Blog'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  field_cta:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: bf056947-7a1b-4f33-9e6f-501b36a38761
+          bundle: cta
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1552914870
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          field_background_style:
+            -
+              value: light
+          field_buttons:
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: 020a8340-8fec-44ff-9a2f-fee4fc33856f
+                  bundle: button_group
+                  default_langcode: en
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1552914870
+                  behavior_settings:
+                    -
+                      value: {  }
+                  revision_translation_affected:
+                    -
+                      value: true
+                  field_buttons:
+                    -
+                      entity:
+                        _meta:
+                          version: '1.0'
+                          entity_type: paragraph
+                          uuid: 3856ebb8-e361-456b-9997-d92cc39857aa
+                          bundle: button
+                          default_langcode: en
+                        default:
+                          status:
+                            -
+                              value: true
+                          created:
+                            -
+                              value: 1552914870
+                          behavior_settings:
+                            -
+                              value: {  }
+                          revision_translation_affected:
+                            -
+                              value: true
+                          field_button_style:
+                            -
+                              value: primary
+                          field_link:
+                            -
+                              uri: 'internal:#'
+                              title: SUBSCRIBE
+                              options: {  }
+          field_text:
+            -
+              value: "<p>Subscribe now, and don’t miss out on a single post.</p>\r\n"
+              format: basic_html
+          field_title:
+            -
+              value: 'Enjoying the Developer Portal Blog?'

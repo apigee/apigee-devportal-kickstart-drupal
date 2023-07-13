@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 75a9d1ad-6294-42a9-9516-dc5c6623bb9e
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: nasa-43569-unsplash.jpg
+  uri:
+    -
+      value: 'public://nasa-43569-unsplash.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 1341978
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1552794515

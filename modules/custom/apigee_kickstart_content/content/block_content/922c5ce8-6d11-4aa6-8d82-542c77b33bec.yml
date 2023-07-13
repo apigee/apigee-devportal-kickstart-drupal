@@ -1,0 +1,66 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: 922c5ce8-6d11-4aa6-8d82-542c77b33bec
+  bundle: title_bar
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Title bar: Forum'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  field_title_bar:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 47c17640-c496-4701-85e7-24ccac26692c
+          bundle: title_bar
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1552679236
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          field_icon:
+            -
+              icon_name: comment-alt
+              style: fas
+              settings:
+                masking:
+                  mask: ''
+                  style: fas
+                power_transforms:
+                  scale:
+                    type: ''
+                    value: ''
+                  position_y:
+                    type: ''
+                    value: ''
+                  position_x:
+                    type: ''
+                    value: ''
+          field_text:
+            -
+              value: "<p>Have questions or maybe answers? Looking to connect with others? Join in the conversation here!</p>\r\n"
+              format: basic_html
+          field_title:
+            -
+              value: Forum

@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 67087e35-c4e4-4f3b-8757-99a60bc95bb8
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: nasa-89116-unsplash.jpg
+  uri:
+    -
+      value: 'public://nasa-89116-unsplash.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 467433
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1552675707

@@ -1,0 +1,132 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: 003ef719-eca7-4ad1-83a3-dc9b403a49b3
+  bundle: cta
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'CTA: Article'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  field_cta:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 44d3e172-3034-407a-969f-a028363e3d79
+          bundle: cta
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1552915224
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          field_background_style:
+            -
+              value: light
+          field_buttons:
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: 1e5ed1e2-cc3c-4726-af53-f2be27dd16c4
+                  bundle: button_group
+                  default_langcode: en
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1552915224
+                  behavior_settings:
+                    -
+                      value: {  }
+                  revision_translation_affected:
+                    -
+                      value: true
+                  field_buttons:
+                    -
+                      entity:
+                        _meta:
+                          version: '1.0'
+                          entity_type: paragraph
+                          uuid: a88f5f35-7e4b-4d81-9ce1-b8c5170f2abd
+                          bundle: button
+                          default_langcode: en
+                        default:
+                          status:
+                            -
+                              value: true
+                          created:
+                            -
+                              value: 1552915224
+                          behavior_settings:
+                            -
+                              value: {  }
+                          revision_translation_affected:
+                            -
+                              value: true
+                          field_button_style:
+                            -
+                              value: secondary
+                          field_link:
+                            -
+                              uri: 'internal:/blog'
+                              title: 'More Articles'
+                              options: {  }
+                    -
+                      entity:
+                        _meta:
+                          version: '1.0'
+                          entity_type: paragraph
+                          uuid: 403797c9-4f61-4525-bb73-c18e8313fc91
+                          bundle: button
+                          default_langcode: en
+                        default:
+                          status:
+                            -
+                              value: true
+                          created:
+                            -
+                              value: 1552915299
+                          behavior_settings:
+                            -
+                              value: {  }
+                          revision_translation_affected:
+                            -
+                              value: true
+                          field_button_style:
+                            -
+                              value: primary
+                          field_link:
+                            -
+                              uri: 'internal:#'
+                              title: Subscribe
+                              options: {  }
+          field_text:
+            -
+              value: "<p>Check out the rest of the blog, and subscribe for regular updates.</p>\r\n"
+              format: basic_html
+          field_title:
+            -
+              value: 'Enjoying this article?'

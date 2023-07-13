@@ -1,0 +1,36 @@
+_meta:
+  version: '1.0'
+  entity_type: paragraph
+  uuid: 338d65b4-8589-47bf-869e-63699ecdefea
+  bundle: card
+  default_langcode: en
+  depends:
+    e5ef1b62-468c-42be-a305-d0005c029619: media
+default:
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1552675690
+  behavior_settings:
+    -
+      value: {  }
+  revision_translation_affected:
+    -
+      value: true
+  field_image:
+    -
+      entity: e5ef1b62-468c-42be-a305-d0005c029619
+  field_link:
+    -
+      uri: 'internal:/api/17'
+      title: 'View Documentation'
+      options: {  }
+  field_text:
+    -
+      value: "<p>Provide tap to pay, digital wallet, and other payment solutions across omni-channels.</p>\r\n"
+      format: basic_html
+  field_title:
+    -
+      value: 'Payment APIs'

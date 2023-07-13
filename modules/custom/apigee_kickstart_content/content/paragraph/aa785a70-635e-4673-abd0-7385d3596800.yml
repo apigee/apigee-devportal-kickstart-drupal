@@ -1,0 +1,29 @@
+_meta:
+  version: '1.0'
+  entity_type: paragraph
+  uuid: aa785a70-635e-4673-abd0-7385d3596800
+  bundle: button
+  default_langcode: en
+  depends:
+    35dc3dd9-205d-4fea-954f-39297c71b50f: node
+default:
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1552669415
+  behavior_settings:
+    -
+      value: {  }
+  revision_translation_affected:
+    -
+      value: true
+  field_button_style:
+    -
+      value: primary
+  field_link:
+    -
+      target_uuid: 35dc3dd9-205d-4fea-954f-39297c71b50f
+      title: 'GET STARTED'
+      options: {  }

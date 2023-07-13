@@ -1,0 +1,40 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 65a93625-1bbb-4e24-b3bd-87c432ecec21
+  bundle: faq
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'I’m not getting the expected response. Who do I contact?'
+  created:
+    -
+      value: 1552711445
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /faq/im-not-getting-expected-response-who-do-i-contact
+      langcode: en
+      pathauto: 1
+  field_answer:
+    -
+      value: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pulvinar erat eget malesuada ultrices. Praesent nec porta tellus.</p>\r\n\r\n<p>Curabitur sollicitudin elementum maximus. Ut vel massa vitae turpis rhoncus congue. Donec aliquam justo a fermentum fermentum. Cras augue turpis, tempor quis sapien ut, eleifend suscipit nibh. Sed sapien felis, bibendum sed est sit amet, ullamcorper rhoncus nulla. Quisque eget accumsan diam.&nbsp;</p>\r\n"
+      format: basic_html

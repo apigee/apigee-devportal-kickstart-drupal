@@ -1,0 +1,36 @@
+_meta:
+  version: '1.0'
+  entity_type: paragraph
+  uuid: 553bc28b-b818-4e1f-971d-647bb659c880
+  bundle: card
+  default_langcode: en
+  depends:
+    f254c054-c4a1-46ff-80c2-6eff444ce5bd: media
+default:
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1552674075
+  behavior_settings:
+    -
+      value: {  }
+  revision_translation_affected:
+    -
+      value: true
+  field_image:
+    -
+      entity: f254c054-c4a1-46ff-80c2-6eff444ce5bd
+  field_link:
+    -
+      uri: 'internal:/api/19'
+      title: 'View Documentation'
+      options: {  }
+  field_text:
+    -
+      value: "<p>Provide customized, location-based data to service representatives in the field.</p>\r\n"
+      format: basic_html
+  field_title:
+    -
+      value: 'Location APIs'

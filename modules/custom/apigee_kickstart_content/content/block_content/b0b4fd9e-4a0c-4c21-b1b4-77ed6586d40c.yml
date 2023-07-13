@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: b0b4fd9e-4a0c-4c21-b1b4-77ed6586d40c
+  bundle: basic
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Social links'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  body:
+    -
+      value: "<ul class=\"social-links\">\r\n\t<li><a href=\"#\" target=\"_blank\"><i class=\"fab fa-youtube fa-3x\"></i> <span class=\"visually-hidden sr-only\">YouTube</span></a></li>\r\n\t<li><a href=\"#\" target=\"_blank\"><i class=\"fab fa-github fa-3x\"></i> <span class=\"visually-hidden sr-only\">Github</span></a></li>\r\n\t<li><a href=\"#\" target=\"_blank\"><i class=\"fab fa-facebook fa-3x\"></i> <span class=\"visually-hidden sr-only\">Facebook</span></a></li>\r\n\t<li><a href=\"#\" target=\"_blank\"><i class=\"fab fa-twitter-square fa-3x\"></i> <span class=\"visuallyhidden sr-only\">Twitter</span></a></li>\r\n\t<li><a href=\"#\" target=\"_blank\"><i class=\"fab fa-linkedin fa-3x\"></i> <span class=\"visuallyhidden sr-only\">LinkedIn</span></a></li>\r\n</ul>\r\n"
+      format: full_html
+      summary: ''

@@ -1,0 +1,34 @@
+_meta:
+  version: '1.0'
+  entity_type: paragraph
+  uuid: 73ec3b20-3b9a-43d1-bbcd-65362abe0fda
+  bundle: text_image
+  default_langcode: en
+  depends:
+    7517d587-e652-4a9c-86c3-09ee39db5232: media
+default:
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1552676305
+  behavior_settings:
+    -
+      value: {  }
+  revision_translation_affected:
+    -
+      value: true
+  field_background_style:
+    -
+      value: light
+  field_image:
+    -
+      entity: 7517d587-e652-4a9c-86c3-09ee39db5232
+  field_text:
+    -
+      value: "<p>Customers expect today's businesses to provide relevant and connected experiences across multiple channels.&nbsp;</p>\r\n\r\n<p>Partner with ACME to build a seamless customer experience with speed, scalability, and security.&nbsp;</p>\r\n\r\n<p>Experience the agility that comes from ready-to-use APIs built to power enterprise-class commerce.</p>\r\n\r\n<p>Leverage the power of our developer community to get your products to the starting line faster.</p>\r\n"
+      format: basic_html
+  field_title:
+    -
+      value: 'Added Value for Your Customers'

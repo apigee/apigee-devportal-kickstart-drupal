@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 5825fc44-81dd-4ab2-a7a0-adc789cee7f8
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: chuttersnap-255216-unsplash.png
+  uri:
+    -
+      value: 'public://chuttersnap-255216-unsplash.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 2261757
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1554903190

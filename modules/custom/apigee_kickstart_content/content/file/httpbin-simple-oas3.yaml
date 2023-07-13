@@ -1,0 +1,108 @@
+openapi: 3.0.3
+info:
+  version: 0.9.2
+  title: httpbin.org
+  description: A simple HTTP Request & Response Service.
+
+servers:
+  - url: http://httpbin.org
+  - url: https://httpbin.org
+
+paths:
+  /get:
+    get:
+      tags:
+        - HTTP Methods
+      summary: The request's query parameters.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+  /post:
+    post:
+      tags:
+        - HTTP Methods
+      summary: The request's POST parameters.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+  /delete:
+    delete:
+      tags:
+        - HTTP Methods
+      summary: The request's DELETE parameters.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+  /put:
+    put:
+      tags:
+        - HTTP Methods
+      summary: The request's PUT parameters.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+
+  /patch:
+    patch:
+      tags:
+        - HTTP Methods
+      summary: The request's PATCH parameters.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+  /ip:
+    get:
+      tags:
+        - HTTP Methods
+      summary: Returns the requester's IP Address.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+  /user-agent:
+    get:
+      tags:
+        - HTTP Methods
+      summary: Return the incoming requests's User-Agent header.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+  /uuid:
+    get:
+      tags:
+        - UUID
+      summary: Return a UUID4.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object

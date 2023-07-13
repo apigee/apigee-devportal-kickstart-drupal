@@ -1,0 +1,44 @@
+_meta:
+  version: '1.0'
+  entity_type: paragraph
+  uuid: 6962af12-68ad-4d30-a920-19b6a05e269a
+  bundle: title_bar
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1552679064
+  behavior_settings:
+    -
+      value: {  }
+  revision_translation_affected:
+    -
+      value: true
+  field_icon:
+    -
+      icon_name: file-alt
+      style: fas
+      settings:
+        masking:
+          mask: ''
+          style: fas
+        power_transforms:
+          scale:
+            type: ''
+            value: ''
+          position_y:
+            type: ''
+            value: ''
+          position_x:
+            type: ''
+            value: ''
+  field_text:
+    -
+      value: "<p>Explore our library of APIs and integrate them with your own ideas to unlock a world of possibilities.</p>\r\n"
+      format: basic_html
+  field_title:
+    -
+      value: APIs

@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 5611795c-f843-4734-a3c7-6ddcdf75ef92
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: donald-giannatti-671274-unsplash.jpg
+  uri:
+    -
+      value: 'public://donald-giannatti-671274-unsplash.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 260256
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1552675546

@@ -1,0 +1,87 @@
+_meta:
+  version: '1.0'
+  entity_type: paragraph
+  uuid: 5830ad51-7aea-4269-9b6f-e4a2705ec613
+  bundle: card_group
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1552674075
+  behavior_settings:
+    -
+      value: {  }
+  revision_translation_affected:
+    -
+      value: true
+  field_background_style:
+    -
+      value: light
+  field_buttons:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: c1e17d1a-4f2e-4376-8057-01c67cabf555
+          bundle: button_group
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1552675855
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          field_buttons:
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: a04cfedd-8aa9-44af-8f1f-cb21e0363799
+                  bundle: button
+                  default_langcode: en
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1552675855
+                  behavior_settings:
+                    -
+                      value: {  }
+                  revision_translation_affected:
+                    -
+                      value: true
+                  field_button_style:
+                    -
+                      value: secondary
+                  field_link:
+                    -
+                      uri: 'internal:/apis'
+                      title: 'VIEW ALL APIs'
+                      options: {  }
+  field_cards:
+    -
+      target_id: 182
+      target_revision_id: 182
+    -
+      target_id: 183
+      target_revision_id: 183
+    -
+      target_id: 184
+      target_revision_id: 184
+  field_title:
+    -
+      value: 'Featured APIs'
