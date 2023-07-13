@@ -1,0 +1,40 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 81a691d1-0f93-4374-bb28-c42fc6cc1692
+  bundle: faq
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'What is the difference between an API and an API Product?'
+  created:
+    -
+      value: 1552711498
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /faq/what-difference-between-api-and-api-product
+      langcode: en
+      pathauto: 1
+  field_answer:
+    -
+      value: "<p>API stands for Application Programming Interface, which is a software intermediary that allows two applications to talk to each other. An API product bundles resources (such as API proxies) in order to provide a specific level of access and functionality for client app developers. On the other hand an API product typically specifies a list of API proxies, along with access limits, API key approval method, and other configuration that should be in place for all of the bundled proxies.</p>\r\n"
+      format: basic_html

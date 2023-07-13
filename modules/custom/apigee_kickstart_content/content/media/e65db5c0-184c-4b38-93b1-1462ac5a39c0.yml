@@ -1,0 +1,39 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: e65db5c0-184c-4b38-93b1-1462ac5a39c0
+  bundle: image
+  default_langcode: en
+  depends:
+    bbb8163f-bbff-44b0-833c-134a3af276d0: file
+default:
+  revision_log_message:
+    -
+      value: 'https://unsplash.com/photos/t3HVjP4xNsg'
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  name:
+    -
+      value: 'SpaceX Launch'
+  created:
+    -
+      value: 1552669292
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0
+  field_media_image:
+    -
+      entity: bbb8163f-bbff-44b0-833c-134a3af276d0
+      alt: ''
+      title: ''
+      width: 1982
+      height: 1321

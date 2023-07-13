@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: paragraph
+  uuid: ecbc1c18-156a-4fe4-90e5-f4db4cce8bc4
+  bundle: button
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1552800169
+  behavior_settings:
+    -
+      value: {  }
+  revision_translation_affected:
+    -
+      value: true
+  field_button_style:
+    -
+      value: primary
+  field_link:
+    -
+      uri: 'internal:/user/register'
+      title: 'SIGN UP'
+      options: {  }

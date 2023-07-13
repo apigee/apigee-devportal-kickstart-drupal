@@ -1,0 +1,36 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: f3c8694f-bda0-4dec-ae89-0db3e59e8e7a
+  bundle: image
+  default_langcode: en
+  depends:
+    75a9d1ad-6294-42a9-9516-dc5c6623bb9e: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  name:
+    -
+      value: nasa-43569-unsplash.jpg
+  created:
+    -
+      value: 1552794515
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0
+  field_media_image:
+    -
+      entity: 75a9d1ad-6294-42a9-9516-dc5c6623bb9e
+      alt: ''
+      title: ''
+      width: 1982
+      height: 1319

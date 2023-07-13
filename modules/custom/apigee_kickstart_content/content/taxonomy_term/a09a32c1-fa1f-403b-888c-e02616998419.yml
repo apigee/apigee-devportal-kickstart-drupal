@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: a09a32c1-fa1f-403b-888c-e02616998419
+  bundle: api_category
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: 'Payment / Transaction'
+  weight:
+    -
+      value: 4
+  parent:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /apis/payment-transaction
+      langcode: en
+      pathauto: 0

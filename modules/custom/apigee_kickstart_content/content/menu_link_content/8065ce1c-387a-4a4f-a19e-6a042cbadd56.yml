@@ -1,0 +1,38 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: 8065ce1c-387a-4a4f-a19e-6a042cbadd56
+  bundle: menu_link_content
+  default_langcode: en
+  depends:
+    35dc3dd9-205d-4fea-954f-39297c71b50f: node
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: 'Get Started'
+  menu_name:
+    -
+      value: main
+  link:
+    -
+      target_uuid: 35dc3dd9-205d-4fea-954f-39297c71b50f
+      title: ''
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: false
+  weight:
+    -
+      value: 1
+  expanded:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true

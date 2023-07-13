@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: faeb2bfd-53ce-4ee7-9a00-97f9ee4a5419
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: httpbin-simple-oas3.yaml
+  uri:
+    -
+      value: 'public://apidoc_specs/httpbin-simple-oas3.yaml'
+  filemime:
+    -
+      value: application/octet-stream
+  filesize:
+    -
+      value: 2263
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1582760866

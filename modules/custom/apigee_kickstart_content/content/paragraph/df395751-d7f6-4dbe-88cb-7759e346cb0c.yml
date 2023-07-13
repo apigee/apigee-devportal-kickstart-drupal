@@ -1,0 +1,44 @@
+_meta:
+  version: '1.0'
+  entity_type: paragraph
+  uuid: df395751-d7f6-4dbe-88cb-7759e346cb0c
+  bundle: title_bar
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1552761207
+  behavior_settings:
+    -
+      value: {  }
+  revision_translation_affected:
+    -
+      value: true
+  field_icon:
+    -
+      icon_name: envelope
+      style: fas
+      settings:
+        masking:
+          mask: ''
+          style: fas
+        power_transforms:
+          scale:
+            type: ''
+            value: ''
+          position_y:
+            type: ''
+            value: ''
+          position_x:
+            type: ''
+            value: ''
+  field_text:
+    -
+      value: "<p>Expect a reply within 48 hours.</p>\r\n"
+      format: basic_html
+  field_title:
+    -
+      value: 'Contact Us'

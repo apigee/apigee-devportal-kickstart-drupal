@@ -1,0 +1,62 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: f2a03392-4abc-4f25-9f35-e28e63bb1a88
+  bundle: title_bar
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Title bar: Pricing & Plans'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  field_title_bar:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 9098c59c-de97-4160-8f0c-eed7ed57f716
+          bundle: title_bar
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1559569503
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          field_icon:
+            -
+              icon_name: coins
+              style: fas
+              settings:
+                masking:
+                  mask: ''
+                  style: fas
+                power_transforms:
+                  scale:
+                    type: ''
+                    value: ''
+                  position_y:
+                    type: ''
+                    value: ''
+                  position_x:
+                    type: ''
+                    value: ''
+          field_title:
+            -
+              value: 'Pricing & Plans'

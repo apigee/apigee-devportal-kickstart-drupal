@@ -1,0 +1,49 @@
+_meta:
+  version: '1.0'
+  entity_type: paragraph
+  uuid: e1e76a11-29fe-48b1-a729-f33e8de6ce17
+  bundle: button_group
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1554131691
+  behavior_settings:
+    -
+      value: {  }
+  revision_translation_affected:
+    -
+      value: true
+  field_buttons:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 1c7999b0-8818-47d9-9c40-7879106e8ac3
+          bundle: button
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1554131691
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          field_button_style:
+            -
+              value: primary
+          field_link:
+            -
+              uri: 'internal:/user/register'
+              title: 'SIGN UP'
+              options: {  }

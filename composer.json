@@ -18,6 +18,7 @@
     "drupal/admin_toolbar": "^3.0",
     "drupal/adminimal_admin_toolbar": "^1.9",
     "drupal/apigee_api_catalog": "^3",
+
     "drupal/apigee_edge": "^2.0.0 || ^3.0.0",
     "drupal/better_exposed_filters": "^5.0 || ^6.0",
     "drupal/default_content": "^2.0@alpha",

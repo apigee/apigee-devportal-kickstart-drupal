@@ -1,0 +1,68 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: c3f5bde5-c21b-42e5-ad2e-2501169c60c4
+  bundle: apidoc
+  default_langcode: en
+  depends:
+    faeb2bfd-53ce-4ee7-9a00-97f9ee4a5419: file
+    53652a5b-1721-414f-b30b-ee13a8ea06a6: taxonomy_term
+    a63cae7c-c969-487a-a6f5-6a66a045c447: taxonomy_term
+    e5ef1b62-468c-42be-a305-d0005c029619: media
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: Geolink
+  created:
+    -
+      value: 1594581428
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /api/40
+      langcode: en
+      pathauto: 0
+  body:
+    -
+      value: "<p>Provides geographic linked data.</p>\r\n"
+      format: basic_html
+      summary: ''
+  field_apidoc_fetched_timestamp:
+    -
+      value: 1587191891
+  field_apidoc_spec:
+    -
+      entity: faeb2bfd-53ce-4ee7-9a00-97f9ee4a5419
+      display: false
+      description: ''
+  field_apidoc_spec_file_source:
+    -
+      value: file
+  field_apidoc_spec_md5:
+    -
+      value: a50c5a3df9b7a429c45722d337ee974b
+  field_categories:
+    -
+      entity: 53652a5b-1721-414f-b30b-ee13a8ea06a6
+    -
+      entity: a63cae7c-c969-487a-a6f5-6a66a045c447
+  field_image:
+    -
+      entity: e5ef1b62-468c-42be-a305-d0005c029619

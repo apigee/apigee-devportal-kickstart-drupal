@@ -1,0 +1,125 @@
+_meta:
+  version: '1.0'
+  entity_type: paragraph
+  uuid: ffcb3485-4182-416c-bb0c-0f3875a203e2
+  bundle: callout_group
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1552676084
+  behavior_settings:
+    -
+      value: {  }
+  revision_translation_affected:
+    -
+      value: true
+  field_callouts:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: bfc557df-811a-4c61-88ee-f9eba6f86c07
+          bundle: callout
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1552676084
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          field_icon:
+            -
+              icon_name: book
+              style: fas
+              settings:
+                masking:
+                  mask: ''
+                  style: fas
+                power_transforms:
+                  scale:
+                    type: ''
+                    value: ''
+                  position_y:
+                    type: ''
+                    value: ''
+                  position_x:
+                    type: ''
+                    value: ''
+          field_link:
+            -
+              uri: 'internal:/apis'
+              title: 'Get Documentation'
+              options: {  }
+          field_text:
+            -
+              value: "<p>View common use cases, learn about Acme and get started with our APIs.</p>\r\n"
+              format: basic_html
+          field_title:
+            -
+              value: Learn
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 747b5e4d-7809-44f5-8de5-eb3b2a854ce2
+          bundle: callout
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1552676158
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          field_icon:
+            -
+              icon_name: laptop-code
+              style: fas
+              settings:
+                masking:
+                  mask: ''
+                  style: fas
+                power_transforms:
+                  scale:
+                    type: ''
+                    value: ''
+                  position_y:
+                    type: ''
+                    value: ''
+                  position_x:
+                    type: ''
+                    value: ''
+          field_link:
+            -
+              uri: 'internal:/user/register'
+              title: 'Get Your Key'
+              options: {  }
+          field_text:
+            -
+              value: "<p>Use our APIs to build and test your own apps in a sandbox or live customer environment.</p>\r\n"
+              format: basic_html
+          field_title:
+            -
+              value: Build
+    -
+      target_id: 188
+      target_revision_id: 188

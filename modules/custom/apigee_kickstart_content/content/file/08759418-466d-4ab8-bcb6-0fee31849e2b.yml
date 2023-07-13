@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 08759418-466d-4ab8-bcb6-0fee31849e2b
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: aditya-vyas-1392552-unsplash.jpg
+  uri:
+    -
+      value: 'public://aditya-vyas-1392552-unsplash.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 1569700
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1552676384

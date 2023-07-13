@@ -1,0 +1,36 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: a763fbf5-2547-401e-88ab-5924b2c4f5cb
+  bundle: image
+  default_langcode: en
+  depends:
+    b4b50a71-cba2-4892-8558-be221d29b6b0: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  name:
+    -
+      value: terence-burke-1417892-unsplash.jpg
+  created:
+    -
+      value: 1552793224
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0
+  field_media_image:
+    -
+      entity: b4b50a71-cba2-4892-8558-be221d29b6b0
+      alt: ''
+      title: ''
+      width: 1982
+      height: 3020
