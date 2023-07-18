@@ -142,7 +142,7 @@ default:
                       entity: f254c054-c4a1-46ff-80c2-6eff444ce5bd
                   field_link:
                     -
-                      uri: 'internal:/api/19'
+                      uri: 'internal:/api/40'
                       title: 'View Documentation'
                       options: {  }
                   field_text:
@@ -175,7 +175,7 @@ default:
                       entity: e5ef1b62-468c-42be-a305-d0005c029619
                   field_link:
                     -
-                      uri: 'internal:/api/17'
+                      uri: 'internal:/api/44'
                       title: 'View Documentation'
                       options: {  }
                   field_text:
@@ -208,7 +208,7 @@ default:
                       entity: 79f038c1-8e9e-46fb-ac60-8ab17854492a
                   field_link:
                     -
-                      uri: 'internal:/api/18'
+                      uri: 'internal:/api/43'
                       title: 'View Documentation'
                       options: {  }
                   field_text:
