@@ -655,7 +655,7 @@ function apigee_devportal_kickstart_update_9001() {
 
 /**
  * Changing of admin theme from seven to claro.
- * Unistall of seven, bartik, hal, color.
+ * Uninstall of seven, bartik, hal, color.
  * Installing ckeditor5, claro, olivero.
  */
 function apigee_devportal_kickstart_update_9002() {
