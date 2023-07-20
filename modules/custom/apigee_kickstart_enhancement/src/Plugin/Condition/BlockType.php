@@ -100,12 +100,14 @@ class BlockType extends ConditionPluginBase implements ContainerFactoryPluginInt
    * {@inheritdoc}
    */
   public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
+    $formObject = $form_state->getFormObject();
     /** @var \Drupal\block\BlockInterface $block */
-    if (!($block = $form_state->getFormObject()->getEntity())) {
-      // Do nothing if we do not have a block.
+    if (!($formObject instanceof \Drupal\Core\Entity\EntityFormInterface)) {
+      // Do nothing if we do not have a block or not an entity.
       return [];
     }
 
+    $block = $formObject->getEntity();
     $options = [];
     $block_types = $this->entityTypeManager->getStorage('block_content_type')
       ->loadMultiple();
