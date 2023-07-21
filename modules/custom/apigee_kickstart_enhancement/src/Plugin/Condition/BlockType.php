@@ -23,6 +23,7 @@ namespace Drupal\apigee_kickstart_enhancement\Plugin\Condition;
 use Drupal\block\BlockInterface;
 use Drupal\block_content\BlockContentUuidLookup;
 use Drupal\Core\Condition\ConditionPluginBase;
+use Drupal\Core\Entity\EntityFormInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
@@ -100,12 +101,14 @@ class BlockType extends ConditionPluginBase implements ContainerFactoryPluginInt
    * {@inheritdoc}
    */
   public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
-    /** @var \Drupal\block\BlockInterface $block */
-    if (!($block = $form_state->getFormObject()->getEntity())) {
-      // Do nothing if we do not have a block.
+    $formObject = $form_state->getFormObject();
+    if (!($formObject instanceof EntityFormInterface)) {
+      // Do nothing if we do not have a block or not an entity.
       return [];
     }
 
+    /** @var \Drupal\block\BlockInterface $block */
+    $block = $formObject->getEntity();
     $options = [];
     $block_types = $this->entityTypeManager->getStorage('block_content_type')
       ->loadMultiple();
