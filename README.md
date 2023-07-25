@@ -15,6 +15,10 @@ Information on how to customize the look and feel of the site can be found in th
 
 Full documentation is up on the [Drupal.org Apigee Developer Portal Kickstart profile documentation page](https://www.drupal.org/docs/8/modules/apigee-developer-portal-kickstart).
 
+## Upgrade from Drupal 9 to Drupal 10
+
+Refer the [documentation](https://www.drupal.org/docs/contributed-modules/apigee-developer-portal-kickstart/upgrade-from-drupal-9-to-drupal-10) for upgrading from Drupal 9 to Drupal 10.
+
 ## Issues, questions and feedback
 
 We encourage anyone with feedback, questions or issues to put in an issue into
