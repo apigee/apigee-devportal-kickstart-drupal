@@ -9,7 +9,7 @@ type: 'canonical_entities:node'
 pattern: '[node:content-type:machine-name]/[node:title]'
 selection_criteria:
   161f7501-3436-4229-8956-d7f46a334444:
-    id: node_type
+    id: entity_bundle:node
     bundles:
       article: article
       faq: faq

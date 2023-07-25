@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: bbb8163f-bbff-44b0-833c-134a3af276d0
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: spacex-1130896-unsplash.jpg
+  uri:
+    -
+      value: 'public://spacex-1130896-unsplash.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 689860
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1552669329

@@ -1,0 +1,51 @@
+_meta:
+  version: '1.0'
+  entity_type: paragraph
+  uuid: 73f553f5-22c9-4528-b85e-e4c1509a0f3d
+  bundle: callout
+  default_langcode: en
+  depends:
+    35dc3dd9-205d-4fea-954f-39297c71b50f: node
+default:
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1552676198
+  behavior_settings:
+    -
+      value: {  }
+  revision_translation_affected:
+    -
+      value: true
+  field_icon:
+    -
+      icon_name: rocket
+      style: fas
+      settings:
+        masking:
+          mask: ''
+          style: fas
+        power_transforms:
+          scale:
+            type: ''
+            value: ''
+          position_y:
+            type: ''
+            value: ''
+          position_x:
+            type: ''
+            value: ''
+  field_link:
+    -
+      target_uuid: 35dc3dd9-205d-4fea-954f-39297c71b50f
+      title: 'Get Started'
+      options: {  }
+  field_text:
+    -
+      value: "<p>Work with Acme and our partner network to bring your application to market.</p>\r\n"
+      format: basic_html
+  field_title:
+    -
+      value: Launch

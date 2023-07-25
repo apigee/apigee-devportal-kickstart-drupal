@@ -1,0 +1,36 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 39927b68-d6ea-40de-b499-fb46ef663ffb
+  bundle: image
+  default_langcode: en
+  depends:
+    77a93559-7c69-4549-ab40-1f580fe2a89d: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  name:
+    -
+      value: nasa-43567-unsplash.jpg
+  created:
+    -
+      value: 1552794715
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 0
+  field_media_image:
+    -
+      entity: 77a93559-7c69-4549-ab40-1f580fe2a89d
+      alt: ''
+      title: ''
+      width: 1982
+      height: 1319

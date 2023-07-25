@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: b4b50a71-cba2-4892-8558-be221d29b6b0
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: terence-burke-1417892-unsplash.jpg
+  uri:
+    -
+      value: 'public://terence-burke-1417892-unsplash.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 1192497
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1552793224

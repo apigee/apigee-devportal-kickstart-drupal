@@ -1,0 +1,81 @@
+_meta:
+  version: '1.0'
+  entity_type: paragraph
+  uuid: a84a1787-a271-4991-b8b0-d6a0065f0ede
+  bundle: cta
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1552800169
+  behavior_settings:
+    -
+      value: {  }
+  revision_translation_affected:
+    -
+      value: true
+  field_background_style:
+    -
+      value: light
+  field_buttons:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: 44faa73c-d977-4f45-b9cb-b2105d862205
+          bundle: button_group
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1552800169
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          field_buttons:
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: ecbc1c18-156a-4fe4-90e5-f4db4cce8bc4
+                  bundle: button
+                  default_langcode: en
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1552800169
+                  behavior_settings:
+                    -
+                      value: {  }
+                  revision_translation_affected:
+                    -
+                      value: true
+                  field_button_style:
+                    -
+                      value: primary
+                  field_link:
+                    -
+                      uri: 'internal:/user/register'
+                      title: 'SIGN UP'
+                      options: {  }
+  field_text:
+    -
+      value: "<p>Get started building right away.</p>\r\n"
+      format: basic_html
+  field_title:
+    -
+      value: 'Create a free developer account'

@@ -1,0 +1,84 @@
+_meta:
+  version: '1.0'
+  entity_type: paragraph
+  uuid: 7e2cbb90-7928-41dd-9240-09afaa1a14cf
+  bundle: hero
+  default_langcode: en
+  depends:
+    35dc3dd9-205d-4fea-954f-39297c71b50f: node
+    08ad78f2-dcad-403e-8ca6-4c2ae1555216: media
+default:
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1552669415
+  behavior_settings:
+    -
+      value: {  }
+  revision_translation_affected:
+    -
+      value: true
+  field_buttons:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: b1e0a232-04b4-44fe-b211-3de506cfea1a
+          bundle: button_group
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1552669415
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          field_buttons:
+            -
+              entity:
+                _meta:
+                  version: '1.0'
+                  entity_type: paragraph
+                  uuid: aa785a70-635e-4673-abd0-7385d3596800
+                  bundle: button
+                  default_langcode: en
+                default:
+                  status:
+                    -
+                      value: true
+                  created:
+                    -
+                      value: 1552669415
+                  behavior_settings:
+                    -
+                      value: {  }
+                  revision_translation_affected:
+                    -
+                      value: true
+                  field_button_style:
+                    -
+                      value: primary
+                  field_link:
+                    -
+                      target_uuid: 35dc3dd9-205d-4fea-954f-39297c71b50f
+                      title: 'GET STARTED'
+                      options: {  }
+  field_media:
+    -
+      entity: 08ad78f2-dcad-403e-8ca6-4c2ae1555216
+  field_text:
+    -
+      value: "<p>Use our diverse APIs to create innovative apps for transforming your business.</p>\r\n"
+      format: basic_html
+  field_title:
+    -
+      value: 'ACME Developer Portal'

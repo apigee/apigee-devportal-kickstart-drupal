@@ -1,0 +1,37 @@
+_meta:
+  version: '1.0'
+  entity_type: comment
+  uuid: 0e75f664-a915-487a-a9f8-439d7a148b19
+  bundle: comment_forum
+  default_langcode: en
+  depends:
+    08dd5a22-1712-41b2-8afb-3623b83d9a74: node
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  entity_id:
+    -
+      entity: 08dd5a22-1712-41b2-8afb-3623b83d9a74
+  subject:
+    -
+      value: 'In tristique varius dapibus…'
+  created:
+    -
+      value: 1554318655
+  thread:
+    -
+      value: 01/
+  entity_type:
+    -
+      value: node
+  field_name:
+    -
+      value: comment_forum
+  comment_body:
+    -
+      value: "<p>In tristique varius dapibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque eget erat risus. Phasellus iaculis orci id erat porttitor, quis tristique turpis cursus.</p>\r\n"
+      format: basic_html

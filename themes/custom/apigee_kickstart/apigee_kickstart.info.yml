@@ -1,6 +1,6 @@
 name: 'Apigee Kickstart'
 description: 'A custom Drupal 8 theme for the Apigee Developer Portal Distribution, based on <a href="https://drupal.org/project/radix">Radix</a>.'
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^9 || ^10
 version: VERSION
 type: theme
 base theme: radix
@@ -42,7 +42,7 @@ libraries-extend:
   apigee_m10n/prepaid_balance:
     - apigee_kickstart/monetization.add-credit
 
-ckeditor_stylesheets:
+ckeditor5_stylesheets:
   - assets/css/apigee-kickstart.style.css
 
 components:

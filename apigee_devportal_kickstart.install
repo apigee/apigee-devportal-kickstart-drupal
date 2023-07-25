@@ -39,9 +39,9 @@ use Drupal\views\Views;
  * Implements hook_install_tasks().
  */
 function apigee_devportal_kickstart_install_tasks(&$install_state) {
-  // Initialize the seven theme and set it as active.
+  // Initialize the claro theme and set it as active.
   // This ensures the installation theme is maintained across tasks.
-  $theme = \Drupal::service('theme.initialization')->initTheme('seven');
+  $theme = \Drupal::service('theme.initialization')->initTheme('claro');
   \Drupal::theme()->setActiveTheme($theme);
 
   // This needs to run before m10n tasks.
@@ -653,3 +653,54 @@ function apigee_devportal_kickstart_update_9001() {
   }
 }
 
+/**
+ * Changing of admin theme from seven to claro.
+ * Uninstall of seven, bartik, hal, color.
+ * Installing ckeditor5, claro, olivero.
+ */
+function apigee_devportal_kickstart_update_9002() {
+  // Install admin theme and frontend theme.
+  \Drupal::service('theme_installer')->install(['claro']);
+  \Drupal::service('theme_installer')->install(['olivero']);
+  // Set the admin theme as claro.Theme seven is deprecated and removed from Drupal 10.
+  $config = \Drupal::service('config.factory')->getEditable('system.theme');
+  $config->set('admin', 'claro')->save();
+  // Uninstall deprecated theme and module.
+  \Drupal::service('theme_installer')->uninstall(['seven', 'bartik']);
+  \Drupal::service('module_installer')->uninstall(['hal', 'color']);
+  // Install ckeditor5 as it is recommened module.
+  \Drupal::service('module_installer')->install(['ckeditor5']);
+
+  // id with node_type is deprecated in Drupal 9 and removed in Drupal 10.
+  $configToImport = [
+    'pathauto.pattern.landing',
+    'pathauto.pattern.content',
+  ];
+  foreach($configToImport as $configName) {
+    $config = \Drupal::configFactory()->getEditable($configName);     
+    $visibility_array = $config->get('selection_criteria');
+    foreach($visibility_array as $key=>$val) {
+      if ($val['id'] === 'node_type') {
+        $visibility_array[$key]['id'] = 'entity_bundle:node';
+      }
+    }
+  $config->set('selection_criteria', $visibility_array)
+    ->save();
+  }
+
+  // id with node_type is deprecated in Drupal 9 and removed in Drupal 10.
+  $configToImport = [
+    'block.block.apigee_kickstart_cta_article',
+    'block.block.apigee_kickstart_cta_developer_account',
+  ];
+  foreach($configToImport as $configName) {
+    $config = \Drupal::configFactory()->getEditable($configName);     
+    $visibility_array = $config->get('visibility');
+    $visibility_array['node_type']['id'] = 'entity_bundle:node'; 
+    $config->set('visibility', $visibility_array)
+      ->save();
+  }
+
+  // Clear all caches.
+  drupal_flush_all_caches();
+}

@@ -118,7 +118,7 @@ class DemoInstallForm extends FormBase {
 
       // Set the front page to node 1.
       $this->configFactory->getEditable('system.site')
-        ->set('page.front', '/node/1')
+        ->set('page.front', '/node/41')
         ->save();
     }
   }

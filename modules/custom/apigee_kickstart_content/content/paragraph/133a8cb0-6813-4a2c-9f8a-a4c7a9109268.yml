@@ -1,0 +1,36 @@
+_meta:
+  version: '1.0'
+  entity_type: paragraph
+  uuid: 133a8cb0-6813-4a2c-9f8a-a4c7a9109268
+  bundle: card
+  default_langcode: en
+  depends:
+    79f038c1-8e9e-46fb-ac60-8ab17854492a: media
+default:
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1552675758
+  behavior_settings:
+    -
+      value: {  }
+  revision_translation_affected:
+    -
+      value: true
+  field_image:
+    -
+      entity: 79f038c1-8e9e-46fb-ac60-8ab17854492a
+  field_link:
+    -
+      uri: 'internal:/api/18'
+      title: 'View Documentation'
+      options: {  }
+  field_text:
+    -
+      value: "<p>Identify your customers and personalize service offerings.</p>\r\n"
+      format: basic_html
+  field_title:
+    -
+      value: 'Identity APIs'

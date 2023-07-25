@@ -1,0 +1,66 @@
+_meta:
+  version: '1.0'
+  entity_type: block_content
+  uuid: ed93a36e-95ee-4bfe-b8db-1d5ae5ae99cb
+  bundle: title_bar
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  info:
+    -
+      value: 'Title bar: FAQs'
+  reusable:
+    -
+      value: true
+  revision_translation_affected:
+    -
+      value: true
+  field_title_bar:
+    -
+      entity:
+        _meta:
+          version: '1.0'
+          entity_type: paragraph
+          uuid: e5f4469f-0ac1-4771-8f0c-7ba19d41db87
+          bundle: title_bar
+          default_langcode: en
+        default:
+          status:
+            -
+              value: true
+          created:
+            -
+              value: 1552681836
+          behavior_settings:
+            -
+              value: {  }
+          revision_translation_affected:
+            -
+              value: true
+          field_icon:
+            -
+              icon_name: question-circle
+              style: fas
+              settings:
+                masking:
+                  mask: ''
+                  style: fas
+                power_transforms:
+                  scale:
+                    type: ''
+                    value: ''
+                  position_y:
+                    type: ''
+                    value: ''
+                  position_x:
+                    type: ''
+                    value: ''
+          field_text:
+            -
+              value: "<p>Get the answers to frequently asked questions.</p>\r\n"
+              format: basic_html
+          field_title:
+            -
+              value: FAQs

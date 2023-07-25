@@ -1,0 +1,68 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: cb3564b6-5bdc-4c75-b7f0-07b5f5b50ee4
+  bundle: apidoc
+  default_langcode: en
+  depends:
+    faeb2bfd-53ce-4ee7-9a00-97f9ee4a5419: file
+    a63cae7c-c969-487a-a6f5-6a66a045c447: taxonomy_term
+    a09a32c1-fa1f-403b-888c-e02616998419: taxonomy_term
+    f254c054-c4a1-46ff-80c2-6eff444ce5bd: media
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: Communication
+  created:
+    -
+      value: 1594581503
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /api/34
+      langcode: en
+      pathauto: 0
+  body:
+    -
+      value: "<p>Enables voice and messaging services for internal and external client lists.</p>\r\n"
+      format: basic_html
+      summary: ''
+  field_apidoc_fetched_timestamp:
+    -
+      value: 1587191891
+  field_apidoc_spec:
+    -
+      entity: faeb2bfd-53ce-4ee7-9a00-97f9ee4a5419
+      display: false
+      description: ''
+  field_apidoc_spec_file_source:
+    -
+      value: file
+  field_apidoc_spec_md5:
+    -
+      value: a50c5a3df9b7a429c45722d337ee974b
+  field_categories:
+    -
+      entity: a63cae7c-c969-487a-a6f5-6a66a045c447
+    -
+      entity: a09a32c1-fa1f-403b-888c-e02616998419
+  field_image:
+    -
+      entity: f254c054-c4a1-46ff-80c2-6eff444ce5bd

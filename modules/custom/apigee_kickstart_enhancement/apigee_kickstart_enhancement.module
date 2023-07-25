@@ -128,7 +128,8 @@ function apigee_kickstart_enhancement_user_view(array &$build, EntityInterface $
 function apigee_kickstart_enhancement_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   // Alter the billing details form.
   if (strpos($form_id, '_billing_details_form')) {
-    $form['#attributes']['class'] = 'form-editable';
+    // Radix require class attribute as array.
+    $form['#attributes']['class'][] = 'form-editable';
     // Add a form heading.
     $form['heading'] = [
       '#type' => 'html_tag',

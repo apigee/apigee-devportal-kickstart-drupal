@@ -1,0 +1,26 @@
+_meta:
+  version: '1.0'
+  entity_type: paragraph
+  uuid: e17133e2-31c0-4c7b-8e59-6c3f75524c03
+  bundle: blockquote
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1552676027
+  behavior_settings:
+    -
+      value: {  }
+  revision_translation_affected:
+    -
+      value: true
+  field_blockquote_source:
+    -
+      value: 'James Kepler, Chief Technology Officer, Acme'
+  field_text:
+    -
+      value: "<p>Let’s innovate together! Launch products, shape data, and connect customers using our broad suite of APIs. Join our community and get started today on your path to the next level of business success.</p>\r\n"
+      format: basic_html

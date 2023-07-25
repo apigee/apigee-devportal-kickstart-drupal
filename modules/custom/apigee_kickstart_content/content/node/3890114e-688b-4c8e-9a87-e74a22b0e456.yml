@@ -1,0 +1,58 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 3890114e-688b-4c8e-9a87-e74a22b0e456
+  bundle: article
+  default_langcode: en
+  depends:
+    7517d587-e652-4a9c-86c3-09ee39db5232: media
+    c5e62e4a-18c3-4d91-83aa-db55e16c48a6: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Pretium viverra suspendisse potenti'
+  created:
+    -
+      value: 1552792430
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /article/pretium-viverra-suspendisse-potenti
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pulvinar erat eget malesuada ultrices. Praesent nec porta tellus. Curabitur sollicitudin elementum maximus. Ut vel massa vitae turpis rhoncus congue. Donec aliquam justo a fermentum fermentum. Cras augue turpis, tempor quis sapien ut, eleifend suscipit nibh. Sed sapien felis, bibendum sed est sit amet, ullamcorper rhoncus nulla. Quisque eget accumsan diam. Cras vel consequat arcu. Quisque nec diam placerat, molestie urna finibus, aliquam ipsum. Phasellus vitae pulvinar urna. Fusce eu velit imperdiet massa finibus gravida vel at tellus. Suspendisse ipsum urna, pulvinar eu nunc blandit, consectetur iaculis turpis. Quisque ac volutpat odio, quis efficitur lectus. Curabitur vel sagittis ligula.</p>\r\n\r\n<p>Nam hendrerit orci id neque vehicula, vitae vulputate enim sagittis. Suspendisse potenti. Pellentesque vestibulum sollicitudin nulla ac convallis. Phasellus eu ante tempus quam consequat placerat. Phasellus quis ligula ut augue maximus lobortis id et felis. Phasellus eu dapibus dui. Suspendisse molestie finibus cursus. Suspendisse potenti. Vivamus sollicitudin cursus tristique. Vestibulum eget leo a magna efficitur mattis. Mauris convallis ut quam ac fermentum. Nunc pulvinar venenatis nisi, sit amet varius neque suscipit id. Fusce ullamcorper, mi sed eleifend eleifend, velit mauris ullamcorper ipsum, a commodo felis libero ut elit.</p>\r\n"
+      format: basic_html
+      summary: 'Tellus cras adipiscing enim eu turpis egestas pretium aenean. Est ultricies integer quis auctor. Tortor aliquam nulla facilisi cras fermentum odio eu.'
+  comment:
+    -
+      status: 2
+      cid: 0
+      last_comment_timestamp: 1688990042
+      last_comment_name: ''
+      last_comment_uid: 1
+      comment_count: 0
+  field_image:
+    -
+      entity: 7517d587-e652-4a9c-86c3-09ee39db5232
+  field_tags:
+    -
+      entity: c5e62e4a-18c3-4d91-83aa-db55e16c48a6

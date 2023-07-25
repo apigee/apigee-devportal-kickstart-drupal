@@ -27,7 +27,7 @@ settings:
   view_mode: full
 visibility:
   node_type:
-    id: node_type
+    id: entity_bundle:node
     bundles:
       article: article
     negate: false

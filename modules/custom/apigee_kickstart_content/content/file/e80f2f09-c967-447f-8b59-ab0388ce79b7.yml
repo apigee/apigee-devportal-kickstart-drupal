@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: e80f2f09-c967-447f-8b59-ab0388ce79b7
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: spacex-81773-unsplash.jpg
+  uri:
+    -
+      value: 'public://spacex-81773-unsplash.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 453480
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1552675803
