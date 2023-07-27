@@ -6,8 +6,11 @@ _meta:
   default_langcode: en
   depends:
     f254c054-c4a1-46ff-80c2-6eff444ce5bd: media
+    c3f5bde5-c21b-42e5-ad2e-2501169c60c4: node
     e5ef1b62-468c-42be-a305-d0005c029619: media
+    a1f3163b-fbfa-44aa-bf78-fbd20ff05744: node
     79f038c1-8e9e-46fb-ac60-8ab17854492a: media
+    b6923412-a1c4-46cc-9b93-cf4b494cc2cd: node
     35dc3dd9-205d-4fea-954f-39297c71b50f: node
     7517d587-e652-4a9c-86c3-09ee39db5232: media
     08ad78f2-dcad-403e-8ca6-4c2ae1555216: media
@@ -29,7 +32,7 @@ default:
       value: 1552669388
   promote:
     -
-      value: false
+      value: true
   sticky:
     -
       value: false
@@ -142,7 +145,7 @@ default:
                       entity: f254c054-c4a1-46ff-80c2-6eff444ce5bd
                   field_link:
                     -
-                      uri: 'internal:/api/40'
+                      target_uuid: c3f5bde5-c21b-42e5-ad2e-2501169c60c4
                       title: 'View Documentation'
                       options: {  }
                   field_text:
@@ -175,7 +178,7 @@ default:
                       entity: e5ef1b62-468c-42be-a305-d0005c029619
                   field_link:
                     -
-                      uri: 'internal:/api/44'
+                      target_uuid: a1f3163b-fbfa-44aa-bf78-fbd20ff05744
                       title: 'View Documentation'
                       options: {  }
                   field_text:
@@ -208,7 +211,7 @@ default:
                       entity: 79f038c1-8e9e-46fb-ac60-8ab17854492a
                   field_link:
                     -
-                      uri: 'internal:/api/43'
+                      target_uuid: b6923412-a1c4-46cc-9b93-cf4b494cc2cd
                       title: 'View Documentation'
                       options: {  }
                   field_text:
