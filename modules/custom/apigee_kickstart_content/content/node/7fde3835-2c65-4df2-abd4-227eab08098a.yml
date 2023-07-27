@@ -25,7 +25,7 @@ default:
       value: 1552792649
   promote:
     -
-      value: true
+      value: false
   sticky:
     -
       value: false

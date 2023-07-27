@@ -26,7 +26,7 @@ default:
       value: 1594581257
   promote:
     -
-      value: true
+      value: false
   sticky:
     -
       value: false
@@ -35,7 +35,6 @@ default:
       value: true
   path:
     -
-      alias: /api/44
       langcode: en
       pathauto: 0
   body:

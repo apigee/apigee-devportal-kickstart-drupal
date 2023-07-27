@@ -19,6 +19,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: '/article/*\r\n/blog/*'
+    pages: '<front>'
     negate: true
     context_mapping: {  }

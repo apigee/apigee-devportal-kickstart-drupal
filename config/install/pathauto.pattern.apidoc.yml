@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: apidoc
+label: ApiDoc
+type: 'canonical_entities:node'
+pattern: '/api/[node:nid]'
+selection_criteria:
+  5de03b94-61e7-49b2-9112-cbfabd42ee75:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 5de03b94-61e7-49b2-9112-cbfabd42ee75
+    context_mapping:
+      node: node
+    bundles:
+      apidoc: apidoc
+selection_logic: and
+weight: -5
+relationships: {  }

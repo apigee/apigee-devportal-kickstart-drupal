@@ -61,6 +61,13 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    weight: 8
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
@@ -92,5 +99,3 @@ content:
       placeholder: ''
     region: content
     third_party_settings: {  }
-hidden:
-  promote: true
