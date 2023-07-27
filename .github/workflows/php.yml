@@ -104,7 +104,7 @@ jobs:
         cd drupal
         vendor/bin/phpunit -c core --verbose --color --testsuite kernel profiles/contrib/apigee_devportal_kickstart
 
-    - uses: nanasess/setup-chromedriver@v1
+    - uses: nanasess/setup-chromedriver@v2
 
     - run: |
         export DISPLAY=:99
