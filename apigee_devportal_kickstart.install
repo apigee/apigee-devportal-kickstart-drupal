@@ -704,3 +704,32 @@ function apigee_devportal_kickstart_update_9002() {
   // Clear all caches.
   drupal_flush_all_caches();
 }
+
+/**
+ * Updating install and optional configs for callback url.
+ */
+function apigee_devportal_kickstart_update_9003() {
+  // Update new config.
+  $install_to_sync = [
+    'core.entity_view_display.developer_app.developer_app.collapsible_card',
+    'core.entity_view_display.developer_app.developer_app.default',
+  ];
+  $optional_to_sync = [
+    'core.entity_view_display.team_app.team_app.collapsible_card',
+    'core.entity_view_display.team_app.team_app.default',
+  ];
+  /** @var \Drupal\Core\Config\StorageInterface $config_storage */
+  $config_storage = \Drupal::service('config.storage');
+  $profile_path = \Drupal::service('extension.list.profile')->getPath('apigee_devportal_kickstart');
+  $source = new FileStorage("$profile_path/config/install");
+  foreach ($install_to_sync as $config) {
+    $new_team_settings = $source->read($config);
+    $config_storage->write($config, $new_team_settings);
+  }
+
+  $optional = new FileStorage("$profile_path/config/optional");
+  foreach ($optional_to_sync as $oconfig) {
+    $new_team_settings = $optional->read($oconfig);
+    $config_storage->write($oconfig, $new_team_settings);
+  }
+}
