@@ -25,6 +25,7 @@ use Drupal\apigee_devportal_kickstart\Installer\Form\ApigeeMonetizationConfigura
 use Drupal\apigee_devportal_kickstart\Installer\Form\DemoInstallForm;
 use Drupal\Component\Serialization\Yaml;
 use Drupal\Core\File\Exception\FileException;
+use Drupal\Core\Config\FileStorage;
 use Drupal\Core\File\FileSystemInterface;
 use Drupal\Core\Messenger\MessengerInterface;
 use Drupal\menu_link_content\Entity\MenuLinkContent;
@@ -724,12 +725,16 @@ function apigee_devportal_kickstart_update_9003() {
   $source = new FileStorage("$profile_path/config/install");
   foreach ($install_to_sync as $config) {
     $new_team_settings = $source->read($config);
-    $config_storage->write($config, $new_team_settings);
+    $old_team_settings = $config_storage->read($config);
+    $old_team_settings['content']['callbackUrl'] = $new_team_settings['content']['callbackUrl'];
+    $config_storage->write($config, $old_team_settings);
   }
 
   $optional = new FileStorage("$profile_path/config/optional");
   foreach ($optional_to_sync as $oconfig) {
     $new_team_settings = $optional->read($oconfig);
-    $config_storage->write($oconfig, $new_team_settings);
+    $old_team_settings = $config_storage->read($oconfig);
+    $old_team_settings['content']['callbackUrl'] = $new_team_settings['content']['callbackUrl'];
+    $config_storage->write($oconfig, $old_team_settings);
   }
 }
