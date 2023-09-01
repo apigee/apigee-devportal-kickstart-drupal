@@ -31,15 +31,22 @@ jobs:
         php-version:
           - "8.0"
           - "8.1"
+          - "8.2"
         drupal-core:
           # Should update the following as the minimum supported version from Drupal.org
           - "9.4.x"
           - "9.5.x"
-        include:
-          - php-version: "8.1"
-            drupal-core: "10.0.x"
-          - php-version: "8.1"
-            drupal-core: "10.1.x"
+          - "10.0.x"
+          - "10.1.x"
+        exclude:
+            - php-version: "8.2"
+              drupal-core: "9.4.x"
+            - php-version: "8.2"
+              drupal-core: "9.5.x"
+            - php-version: "8.0"
+              drupal-core: "10.0.x"
+            - php-version: "8.0"
+              drupal-core: "10.1.x"
 
     steps:
 
