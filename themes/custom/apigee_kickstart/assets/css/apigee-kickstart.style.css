@@ -7155,13 +7155,6 @@ button.bg-lighter:focus {
   z-index: 1030;
 }
 
-@supports (position: sticky) {
-  .sticky-top {
-    position: sticky;
-    top: 0;
-  }
-}
-
 .sr-only {
   position: absolute;
   width: 1px;
@@ -13135,4 +13128,9 @@ div.forum__add {
 
 .navbar .form-inline .form-actions {
   display: none !important;
+}
+
+.navbar-text{
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
