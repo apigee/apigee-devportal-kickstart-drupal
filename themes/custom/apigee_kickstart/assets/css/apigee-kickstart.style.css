@@ -7155,6 +7155,14 @@ button.bg-lighter:focus {
   z-index: 1030;
 }
 
+@supports (position: sticky) {
+  .sticky-top {
+    position: sticky;
+    top: 0;
+    z-index: 500;
+  }
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
