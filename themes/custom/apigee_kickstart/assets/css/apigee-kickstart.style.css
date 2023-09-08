@@ -13136,3 +13136,12 @@ div.forum__add {
 .navbar .form-inline .form-actions {
   display: none !important;
 }
+
+.sticky-top {
+  z-index: 500 !important;
+}
+
+.navbar-text{
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
