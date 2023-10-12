@@ -3460,7 +3460,6 @@ input[type=button].btn-block {
   min-height: 1.75rem;
   padding-left: 1.5rem;
   -webkit-print-color-adjust: exact;
-     color-adjust: exact;
           print-color-adjust: exact;
 }
 
