@@ -670,6 +670,9 @@ function apigee_devportal_kickstart_update_9002() {
   // Set the admin theme as claro.Theme seven is deprecated and removed from Drupal 10.
   $config = \Drupal::service('config.factory')->getEditable('system.theme');
   $config->set('admin', 'claro')->save();
+
+  $deprecated_themes = ['seven', 'bartik'];
+  $deprecated_modules = ['hal', 'color'];
   // Uninstall deprecated theme and module.
   foreach($deprecated_modules as $deprecated_module) {
     if($module_handler->moduleExists($deprecated_module)) {
