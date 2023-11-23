@@ -681,7 +681,7 @@ function apigee_devportal_kickstart_update_9002() {
   }
   foreach($deprecated_themes as $deprecated_theme) {
     if($theme_handler->themeExists($deprecated_theme)) {
-      $theme_installer->uninstall($deprecated_theme);  
+      $theme_installer->uninstall([$deprecated_theme]);  
     }
   }
   // Install ckeditor5 as it is recommened module.
