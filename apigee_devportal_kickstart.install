@@ -676,7 +676,7 @@ function apigee_devportal_kickstart_update_9002() {
   // Uninstall deprecated theme and module.
   foreach($deprecated_modules as $deprecated_module) {
     if($module_handler->moduleExists($deprecated_module)) {
-      $module_installer->uninstall($deprecated_module);
+      $module_installer->uninstall([$deprecated_module]);
     }
   }
   foreach($deprecated_themes as $deprecated_theme) {
