@@ -29,13 +29,13 @@
     <div class="d-flex align-items-center{% if button %} flex-wrap{% endif %}">
 
       {% if title %}
-        <h1 class="title-bar__title pr-4">
+        <h1 class="title-bar__title pe-4">
           {{- title -}}
         </h1>
       {% endif %}
 
       {% if content %}
-        <div class="title-bar__content d-none d-lg-block flex-grow-1 pl-4 border-left">
+        <div class="title-bar__content d-none d-lg-block flex-grow-1 ps-4 border-start">
           {{ content }}
         </div>
       {% endif %}
@@ -43,12 +43,12 @@
       {% if icon or button %}
 
         {% if button %}
-          <div class="title-bar__button mt-4 mt-lg-0 ml-lg-auto">
+          <div class="title-bar__button mt-4 mt-lg-0 ms-lg-auto">
             {{ button }}
           </div>
 
         {% elseif icon %}
-          <div class="title-bar__icon ml-auto d-flex flex-shrink-0 justify-content-center align-items-center bg-light">
+          <div class="title-bar__icon ms-auto d-flex flex-shrink-0 justify-content-center align-items-center bg-light">
             <i class="fas fa-{{ icon }}"></i>
           </div>
         {% endif %}

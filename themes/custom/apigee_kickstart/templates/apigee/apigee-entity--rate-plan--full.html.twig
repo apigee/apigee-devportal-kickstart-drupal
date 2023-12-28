@@ -190,7 +190,7 @@
     <div class="row">
       <div class="col-lg-6">
 
-        <div class="rate-plan__card rate-plan__card--fees bg-lighter p-4 my-5 rounded-lg">
+        <div class="rate-plan__card rate-plan__card--fees bg-light p-4 my-5 rounded-lg">
           <h2>{{ 'Fees'|t }}</h2>
           {{ content.setUpFee }}
           {{ content.recurringFee }}
@@ -198,13 +198,13 @@
         </div>
 
         {% if content.ratePlanDetails|render %}
-          <div class="rate-plan__card rate-plan__card--details bg-lighter p-4 my-5 rounded-lg">
+          <div class="rate-plan__card rate-plan__card--details bg-light p-4 my-5 rounded-lg">
             {{ content.ratePlanDetails }}
           </div>
         {% endif %}
 
         {% if content.purchase %}
-          <div class="rate-plan__card rate-plan__card--purchase bg-lighter p-4 mt-4 rounded-lg" id="purchase">
+          <div class="rate-plan__card rate-plan__card--purchase bg-light p-4 mt-4 rounded-lg" id="purchase">
             <h2>{{ 'Purchase'|t }} {{ label }}</h2>
             {{ content.purchase }}
           </div>

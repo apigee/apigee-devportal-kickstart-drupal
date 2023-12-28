@@ -8,7 +8,7 @@
   'paragraph',
   not paragraph.isPublished() ? 'paragraph--unpublished',
   paragraph.bundle|clean_class ~ '--' ~ view_mode|clean_class,
-  'py-7'
+  'py-5'
 ] %}
 
 {% set background_style = paragraph.field_background_style.0.value|default(null) %}
@@ -25,11 +25,12 @@
     {% block content %}
       <div class="container">
         {{ content.field_title }}
-        <div class="card-deck">
-          {{ content|without('field_title', 'field_buttons') }}
-        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {{ content|without('field_title', 'field_buttons') }}
+          </div>
         {{ content.field_buttons}}
       </div>
     {% endblock %}
   </div>
 {% endblock paragraph %}
+

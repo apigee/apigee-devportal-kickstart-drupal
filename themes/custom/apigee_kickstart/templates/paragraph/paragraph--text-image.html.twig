@@ -9,7 +9,7 @@
   {% block content %}
     <div class="container-fluid px-0">
       <div class="text-image__wrapper">
-        <div class="text-image__text py-6">
+        <div class="text-image__text py-5">
           {{ content|without('field_image') }}
         </div>
         {% if content.field_image|render %}

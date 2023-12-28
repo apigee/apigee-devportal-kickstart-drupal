@@ -22,7 +22,7 @@
 
     <div class="row">
       <div class="col-lg-6">
-        <div class="bg-lighter p-4 rounded-lg">
+        <div class="bg-light p-4 rounded-lg">
           {{ content|without(
             'setupFees',
             'recurringFees',
@@ -42,7 +42,7 @@
       <div class="col-lg-6">
 
       {% if content.setupFees|render|striptags|trim is not empty or content.recurringFees|render|striptags|trim is not empty %}
-        <div class="rate-plan__card rate-plan__card--fees bg-lighter p-4 my-5 rounded-lg">
+        <div class="rate-plan__card rate-plan__card--fees bg-light p-4 my-5 rounded-lg">
           <h2>{{ 'Fees'|t }}</h2>
           {{ content.setupFees }}
           {{ content.recurringFees }}
@@ -53,7 +53,7 @@
       {% endif %}
 
         {% if content.consumptionPricingRates|render|striptags|trim is not empty %}
-          <div class="rate-plan__card rate-plan__card--fees bg-lighter p-4 my-5 rounded-lg">
+          <div class="rate-plan__card rate-plan__card--fees bg-light p-4 my-5 rounded-lg">
             <h2>{{ 'Consumption Fees'|t }}</h2>
             {{ content.consumptionPricingType }}
 
@@ -78,7 +78,7 @@
         {% endif %}
 
         {% if content.revenueShareRates|render|striptags|trim is not empty %}
-          <div class="rate-plan__card rate-plan__card--fees bg-lighter p-4 my-5 rounded-lg">
+          <div class="rate-plan__card rate-plan__card--fees bg-light p-4 my-5 rounded-lg">
             <h2>{{ 'Revenue Sharing'|t }}</h2>
             {{ content.revenueShareType }}
 
@@ -103,7 +103,7 @@
         {% endif %}
 
         {% if content.purchase %}
-          <div class="rate-plan__card rate-plan__card--purchase bg-lighter p-4 mt-4 rounded-lg" id="purchase">
+          <div class="rate-plan__card rate-plan__card--purchase bg-light p-4 mt-4 rounded-lg" id="purchase">
             <h2>{{ 'Purchase'|t }} {{ label }}</h2>
             {{ content.purchase }}
           </div>

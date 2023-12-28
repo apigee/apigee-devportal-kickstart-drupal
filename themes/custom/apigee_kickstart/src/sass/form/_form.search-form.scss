@@ -6,7 +6,7 @@ form.search-form {
   font-size: 0.875rem;
 
   .search-help-link {
-    @include sr-only;
+    @include visually-hidden();
   }
 
   fieldset {
@@ -41,4 +41,8 @@ form.search-form {
   .search-advanced {
     margin: map-get($spacers, 5) 0;
   }
+}
+
+.navbar .form-inline .form-actions {
+  display: none !important;
 }

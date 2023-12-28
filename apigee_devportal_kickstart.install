@@ -659,33 +659,17 @@ function apigee_devportal_kickstart_update_9001() {
  * Installing ckeditor5, claro, olivero.
  */
 function apigee_devportal_kickstart_update_9002() {
-  $module_handler = \Drupal::service('module_handler');
-  $theme_handler = \Drupal::service('theme_handler');
-  $module_installer = \Drupal::service('module_installer');
-  $theme_installer = \Drupal::service('theme_installer');
-
   // Install admin theme and frontend theme.
-  $theme_installer->install(['claro']);
-  $theme_installer->install(['olivero']);
+  \Drupal::service('theme_installer')->install(['claro']);
+  \Drupal::service('theme_installer')->install(['olivero']);
   // Set the admin theme as claro.Theme seven is deprecated and removed from Drupal 10.
   $config = \Drupal::service('config.factory')->getEditable('system.theme');
   $config->set('admin', 'claro')->save();
-
-  $deprecated_themes = ['seven', 'bartik'];
-  $deprecated_modules = ['hal', 'color'];
   // Uninstall deprecated theme and module.
-  foreach($deprecated_modules as $deprecated_module) {
-    if($module_handler->moduleExists($deprecated_module)) {
-      $module_installer->uninstall([$deprecated_module]);
-    }
-  }
-  foreach($deprecated_themes as $deprecated_theme) {
-    if($theme_handler->themeExists($deprecated_theme)) {
-      $theme_installer->uninstall([$deprecated_theme]);  
-    }
-  }
+  \Drupal::service('theme_installer')->uninstall(['seven', 'bartik']);
+  \Drupal::service('module_installer')->uninstall(['hal', 'color']);
   // Install ckeditor5 as it is recommened module.
-  $module_installer->install(['ckeditor5']);
+  \Drupal::service('module_installer')->install(['ckeditor5']);
 
   // id with node_type is deprecated in Drupal 9 and removed in Drupal 10.
   $configToImport = [
