@@ -7,6 +7,7 @@ var __webpack_exports__ = {};
  * @file
  * Contains Apigee Kickstart customizations for commerce_stripe module.
  */
+
 (function ($, Drupal) {
   'use strict';
 
