@@ -31,6 +31,7 @@ input.btn {
 
 .btn-link {
   color: var(--ak-accent-color);
+  text-decoration: none;
 
   &:hover, &:focus {
     color: var(--ak-accent-color-dark);
@@ -54,4 +55,10 @@ input.btn {
   background-color: transparent;
   border-color: var(--ak-accent-color-dark);
   color: var(--ak-accent-color-dark);
+}
+
+a.bg-light:hover, a.bg-light:focus,
+button.bg-light:hover,
+button.bg-light:focus {
+  background-color: #d7d7d7 !important;
 }

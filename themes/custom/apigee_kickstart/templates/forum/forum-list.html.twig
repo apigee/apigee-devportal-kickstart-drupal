@@ -32,7 +32,7 @@
             <span class="visually-hidden">{{ forum.icon_title }}</span>
           </div>
           <div class="d-flex align-items-center">
-            <h4 class="forum__name mr-2 mb-0"><a href="{{ forum.link }}">{{ forum.label }}</a></h4>
+            <h4 class="forum__name me-2 mb-0"><a href="{{ forum.link }}">{{ forum.label }}</a></h4>
             {% if forum.new_topics == true %}
               <a href="{{ forum.new_url }}" class="badge badge-primary">{{ forum.new_text }}</a>
             {% endif %}
