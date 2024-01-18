@@ -663,9 +663,10 @@ $zindex-tooltip:                    1070;
 
 // Navs
 
-$nav-link-padding-y:                0rem;
-$nav-link-padding-x:                0rem;
+$nav-link-padding-y:                0.5rem;
+$nav-link-padding-x:                1rem;
 $nav-link-disabled-color:           $gray-600;
+$nav-link-hover-color:              none;
 
 $nav-tabs-border-color:             $gray-300;
 $nav-tabs-border-width:             $border-width;
