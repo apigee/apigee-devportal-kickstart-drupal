@@ -725,12 +725,14 @@ function apigee_devportal_kickstart_update_9002() {
  * Update automatic width to false.
  */
 function apigee_devportal_kickstart_update_9003() {
-
   $view = Views::getView('apigee_api_catalog');
-  $filters = $view->display_handler->getOption('style');
-  // Change the automatic width to false.
-  $filters['options']['automatic_width'] = false;
-  $view->display_handler->overrideOption('style', $filters);
-  $view->save();
+  if(is_object($view)){
+    $display = $view->getDisplay();
+    $style = $display->getOption('style');
+    // Change the automatic width to false.
+    $style['options']['automatic_width'] = false;
+    $view->display_handler->overrideOption('style', $style);
+    $view->save();
+  }
 
 }
