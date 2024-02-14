@@ -6,8 +6,7 @@
 
 input.btn {
   text-transform: uppercase;
-  padding-left: map-get($spacers, 4);
-  padding-right: map-get($spacers, 4);
+  line-height: 1;
 
   + .btn {
     margin-left: 0.813rem;
@@ -62,3 +61,9 @@ button.bg-light:hover,
 button.bg-light:focus {
   background-color: #d7d7d7 !important;
 }
+
+.button-action.btn-primary{
+    padding: 0.25rem 0.5rem;
+    line-height: 1.75;
+    border-radius: 2px;
+  }

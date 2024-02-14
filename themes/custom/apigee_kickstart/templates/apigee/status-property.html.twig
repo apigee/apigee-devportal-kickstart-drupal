@@ -26,6 +26,8 @@
   type ? 'bg-' ~ type,
 ]|merge(block_utility_classes ? block_utility_classes : []) %}
 
+{% set warning =  type == 'warning' ? "text-bg-warning text-dark" %}
+
 {% set html_tag = html_tag ?? 'span' %}
 
 {% if url %}
@@ -34,7 +36,7 @@
 {% endif %}
 
 {% if content %}
-  <{{ html_tag }} {{ url ? 'href=' ~ url }} class="{{ classes|join(' ') }}">
+  <{{ html_tag }} {{ url ? 'href=' ~ url }} class="{{ classes|join(' ') }} {{ warning }}">
 
   {% block content %}
     {{ content }}

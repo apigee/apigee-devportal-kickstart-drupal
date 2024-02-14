@@ -18021,6 +18021,10 @@ textarea.form-control-lg {
   border-radius: 4px;
 }
 
+a {
+  color: var(--ak-accent-color);
+}
+
 ol + p,
 ul + p,
 dl + p {
@@ -18248,8 +18252,7 @@ main {
 
 input.btn {
   text-transform: uppercase;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  line-height: 1;
 }
 input.btn + .btn {
   margin-left: 0.813rem;
@@ -18300,6 +18303,12 @@ a.bg-light:hover, a.bg-light:focus,
 button.bg-light:hover,
 button.bg-light:focus {
   background-color: #d7d7d7 !important;
+}
+
+.button-action.btn-primary {
+  padding: 0.25rem 0.5rem;
+  line-height: 1.75;
+  border-radius: 2px;
 }
 
 .card {
@@ -19606,6 +19615,10 @@ ul.social-links li a {
   height: 100%;
 }
 
+.text-end.badge {
+  color: unset;
+}
+
 .apidoc--view-mode-full .apidoc__spec .container {
   padding-left: 0;
   padding-right: 0;
@@ -20100,6 +20113,21 @@ form.team-member-form .form-checkboxes small, form.team-member-form .form-checkb
 }
 .article__title {
   font-size: 1.25rem;
+}
+.article__title a {
+  color: var(--ak-accent-color);
+}
+
+.article__tags.badge {
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  font-size: 0.625rem;
+  padding: 0;
+  background: none;
+}
+.article__tags.badge a {
+  color: #3c3c3c;
 }
 
 @media (max-width: 575.98px) {

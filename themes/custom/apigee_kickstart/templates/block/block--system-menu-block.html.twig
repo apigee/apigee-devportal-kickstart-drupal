@@ -5,7 +5,7 @@
  */
 #}
 
-{% set title_attributes = title_attributes.setAttribute('class', ['sr-only']) %}
+{% set title_attributes = title_attributes.setAttribute('class', ['sr-only', 'd-none']) %}
 
 {% include '@radix/block/block.twig' with {
   html_tag: 'div',
