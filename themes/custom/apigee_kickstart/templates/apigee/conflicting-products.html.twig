@@ -33,7 +33,7 @@
               <td>
                 {%- for situation_item in item.children -%}
                   <strong>{{ situation_item.data }}</strong>
-                  <ul class="pl-3">
+                  <ul class="ps-3">
                     {% for situation_children in situation_item.children %}
                       <li>{{ situation_children }}</li>
                     {%- endfor -%}

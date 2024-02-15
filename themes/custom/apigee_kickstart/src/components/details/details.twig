@@ -16,11 +16,11 @@
 ]|merge(classes|default([])) %}
 
 <details class="{{ classes|join(' ')|trim }}"{{ open ? ' open' : '' }}>
-  <summary class="details__summary pr-8">
+  <summary class="details__summary pe-8">
     {{ summary }}
     <i class="details__icon fas fa-chevron-down"></i>
   </summary>
-  <div class="details-wrapper details__content pt-4 pr-8">
+  <div class="details-wrapper details__content pt-4 pe-8">
     {{ content }}
   </div>
 </details>

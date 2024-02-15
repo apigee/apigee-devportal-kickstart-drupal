@@ -6,7 +6,7 @@ form.search-form {
   font-size: 0.875rem;
 
   .search-help-link {
-    @include sr-only;
+    @include visually-hidden();
   }
 
   fieldset {
