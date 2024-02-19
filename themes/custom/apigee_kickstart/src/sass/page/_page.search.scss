@@ -34,7 +34,7 @@
     }
 
     .page__content > h2 {
-      @include visually-hidden();
+      @include visually-hidden;
     }
   }
 
