@@ -7,7 +7,7 @@
   font-size: 0.875rem;
   flex-shrink: 0;
 
-  .nav-link {
+  .nav-link, .nav-link.show {
     color: var(--ak-header-color);
   }
 
@@ -68,3 +68,28 @@
     }
   }
 }
+
+.navbar {
+
+  .form-inline {
+
+    .form-actions {
+      display: none;
+    }
+  }
+}
+
+.toolbar-oriented .toolbar-bar {
+  z-index: 1200;
+}
+
+.toolbar-horizontal {
+
+  .toolbar-menu {
+
+    &.nav {
+      float: left;
+    }
+  }
+}
+

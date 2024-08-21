@@ -1,7 +1,8 @@
 // CSS Variables
 // -----------------------------------------------------------------------------
 
-:root {
+:root,
+[data-bs-theme="light"] {
   // Custom variable values only support SassScript inside `#{}`.
   @each $color, $value in $theme-elements {
     --#{$color}: #{$value};

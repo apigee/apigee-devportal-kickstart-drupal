@@ -37,7 +37,7 @@
   'card',
   hover_shadow ? 'has-hover-shadow' : ''
 ]|merge(classes|default([])) %}
-
+<div class="col h-100">
 {% if print_attributes and attributes %}
   {# See documentation above #}
   <div{{ attributes.addClass(classes) }}>
@@ -63,7 +63,7 @@
         {% endblock %}
       </div>
     {% endif %}
-      <span class="text-right badge">{{ api_style }}</span>
+      <span class="text-end badge">{{ api_style }}</span>
     {% if footer %}
       <div class="card-footer">
         {{ footer }}
@@ -73,4 +73,5 @@
   {% if url %}
     </a>
   {% endif %}
+</div>
 </div>

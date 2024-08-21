@@ -10,12 +10,12 @@
       <div class="d-flex align-items-center">
         {{ content.field_title }}
         {% if content.field_text|render %}
-          <div class="title-bar__content border-left d-none d-lg-block pl-4 flex-grow-1">
+          <div class="title-bar__content border-start d-none d-lg-block ps-4 flex-grow-1">
             {{ content|without('field_title', 'field_icon') }}
           </div>
         {% endif %}
 
-        <div class="title-bar__icon ml-auto d-flex flex-shrink-0 justify-content-center align-items-center bg-light">
+        <div class="title-bar__icon ms-auto d-flex flex-shrink-0 justify-content-center align-items-center">
           {{ content.field_icon }}
         </div>
       </div>

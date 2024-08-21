@@ -163,7 +163,7 @@
     padding: 1.25rem 0;
   }
   .table tbody tr:not(:last-child) {
-    border-bottom: 1px dotted theme-color('light');
+    border-bottom: 1px dotted $light;
   }
 }
 

@@ -22,6 +22,7 @@
       {% set link_attributes = create_attribute() %}
     {% endif %}
 
+    <div class="d-grid gap-2">
     {# If this is a link to the purchase page, show link as a button. #}
     {% if item.content['#url'].routeName == 'entity.rate_plan.purchase' %}
       <a{{link_attributes.addClass(classes)}} href="{{ item.content['#url'].toString }}">
@@ -35,6 +36,7 @@
     {% else %}
       {{ item.content }}
     {% endif %}
+    </div>
 
   {% endfor %}
 </div>

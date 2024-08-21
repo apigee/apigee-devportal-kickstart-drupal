@@ -454,7 +454,7 @@ display:
         options:
           grouping: {  }
           columns: 12
-          automatic_width: true
+          automatic_width: false
           alignment: horizontal
           row_class_custom: row
           row_class_default: false

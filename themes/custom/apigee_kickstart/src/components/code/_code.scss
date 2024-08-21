@@ -1,5 +1,5 @@
 pre {
-  background: theme-color('light');
+  background: $light;
   margin: map-get($spacers, 5) 0;
   padding: map-get($spacers, 3);
 }

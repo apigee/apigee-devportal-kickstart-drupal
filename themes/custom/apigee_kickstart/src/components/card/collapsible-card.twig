@@ -4,7 +4,7 @@
  * Template for a Collapsible Card component.
  *
  * Available config:
- * - utility_classes: An array of utility classes.
+ * - block_utility_classes: An array of utility classes.
  */
 #}
 {%
@@ -14,7 +14,7 @@
   set classes = [
     'collapsible-card',
     'collapsible-card--collapsed'
-  ]|merge(utility_classes ? utility_classes : [])
+  ]|merge(block_utility_classes ? block_utility_classes : [])
 %}
 <div{{ attributes.addClass(classes) }}>
 

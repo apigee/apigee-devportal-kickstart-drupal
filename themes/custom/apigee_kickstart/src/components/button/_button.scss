@@ -6,8 +6,7 @@
 
 input.btn {
   text-transform: uppercase;
-  padding-left: map-get($spacers, 4);
-  padding-right: map-get($spacers, 4);
+  line-height: 1;
 
   + .btn {
     margin-left: 0.813rem;
@@ -31,6 +30,7 @@ input.btn {
 
 .btn-link {
   color: var(--ak-accent-color);
+  text-decoration: none;
 
   &:hover, &:focus {
     color: var(--ak-accent-color-dark);
@@ -55,3 +55,15 @@ input.btn {
   border-color: var(--ak-accent-color-dark);
   color: var(--ak-accent-color-dark);
 }
+
+a.bg-light:hover, a.bg-light:focus,
+button.bg-light:hover,
+button.bg-light:focus {
+  background-color: #d7d7d7 !important;
+}
+
+.button-action.btn-primary{
+    padding: 0.25rem 0.5rem;
+    line-height: 1.75;
+    border-radius: 2px;
+  }

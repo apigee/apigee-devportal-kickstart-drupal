@@ -87,7 +87,7 @@
 
     {% block left %}
       {% if page.navbar_left %}
-        <div class="mr-auto">
+        <div class="me-auto">
           {{ page.navbar_left }}
         </div>
       {% endif %}
@@ -101,7 +101,7 @@
   {% endembed %}
 
   {% if page.breadcrumbs|render %}
-    <nav aria-label="breadcrumb" class="page__breadcrumbs">
+    <nav aria-label="breadcrumb" class="page__breadcrumbs" style="--bs-breadcrumb-divider: '>';">
       <div class="container">
         <ol class="breadcrumb">
           {{ page.breadcrumbs }}

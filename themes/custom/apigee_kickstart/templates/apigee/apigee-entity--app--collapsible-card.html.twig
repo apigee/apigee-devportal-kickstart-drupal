@@ -16,15 +16,15 @@
     {% set tab_suffix = entity.name|clean_class %}
 
     {% embed '@apigee-kickstart/card/collapsible-card.twig' with {
-        utility_classes: classes,
+        block_utility_classes: classes,
         title: entity.label
     } %}
 
         {% block header %}
           <div class="d-flex items-center">
             {% if content.warnings %}
-              <span class="badge badge-warning d-inline-flex align-items-center mr-2">
-                <i class="fa fa-exclamation-circle d-inline-block mr-1"></i> {{ "Warnings"|t }}
+              <span class="badge badge-warning text-bg-warning text-dark d-inline-flex align-items-center me-2">
+                <i class="fa fa-exclamation-circle d-inline-block mr-1 me-1"></i> {{ "Warnings"|t }}
               </span>
             {% endif %}
             {{ content.status }}
