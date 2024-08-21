@@ -17,7 +17,7 @@
     "cweagans/composer-patches": "^1.6.5",
     "drupal/admin_toolbar": "^3.0",
     "drupal/apigee_api_catalog": "^3",
-    "drupal/apigee_edge": "^3.0.0",
+    "drupal/apigee_edge": "^3.0.8",
     "drupal/better_exposed_filters": "^6.0",
     "drupal/default_content": "^2.0@alpha",
     "drupal/email_registration": "^1.2",
@@ -32,8 +32,8 @@
     "drupal/hal": "^2.0"
   },
   "require-dev": {
-    "drupal/core-dev": "^10.1",
-    "drush/drush": "^11.5",
+    "drupal/core-dev": "^10.2",
+    "drush/drush": "^12.4.3",
     "mglaman/drupal-check": "^1.3",
     "phpmd/phpmd": "^2.8.2",
     "phpmetrics/phpmetrics": "^2.5",

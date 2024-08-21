@@ -20114,9 +20114,6 @@ form.team-member-form .form-checkboxes small, form.team-member-form .form-checkb
 .article__title {
   font-size: 1.25rem;
 }
-.article__title a {
-  color: var(--ak-accent-color);
-}
 
 .article__tags.badge {
   text-transform: uppercase;

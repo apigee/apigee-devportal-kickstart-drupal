@@ -3023,7 +3023,6 @@ function withinMaxClamp(min, value, max) {
   Drupal.behaviors.collapsibleCard = {
     attach: function attach(context) {
       var $collapsibleCards = $('.collapsible-card', context);
-
       if ($collapsibleCards.length) {
         $collapsibleCards.each(function () {
           var $collapsibleCard = $(this);
@@ -3054,7 +3053,6 @@ function withinMaxClamp(min, value, max) {
   Drupal.behaviors.fieldsetComponent = {
     attach: function attach(context) {
       var $fieldsets = $('fieldset', context);
-
       if ($fieldsets.length) {
         $fieldsets.each(function () {
           var $fieldset = $(this);
@@ -3089,12 +3087,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_card_collapsible_card__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_card_collapsible_card__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var css_vars_ponyfill__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! css-vars-ponyfill */ "./node_modules/css-vars-ponyfill/dist/css-vars-ponyfill.esm.js");
 
- // Components.
+
+
+// Components.
 // TODO: Break this into libraries.
 
 
- // IE11 ponyfill.
 
+// IE11 ponyfill.
 
 (0,css_vars_ponyfill__WEBPACK_IMPORTED_MODULE_3__["default"])();
 
