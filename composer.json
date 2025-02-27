@@ -26,8 +26,6 @@
     "drupal/pathauto": "^1.13",
     "drupal/radix": "^6.0.1",
     "drupal/components": "^3.1.0",
-    "drupal/color": "^1.0",
-    "drupal/quickedit": "^1.0",
     "drupal/rdf": "^3.0@beta2",
     "drupal/hal": "^2.0.4"
   },
@@ -53,7 +51,7 @@
         "Do not import existing entities": "https://www.drupal.org/files/issues/2022-07-29/default_content-fix-uuid-duplicate-entry-2698425.patch"
       },
       "drupal/file_link": {
-        "Drupal 11 support added": "https://git.drupalcode.org/project/file_link/-/merge_requests/14.patch"
+        "Drupal 11 support added": "https://www.drupal.org/files/issues/2025-02-27/drupal11_support-3430560.patch"
       }
     }
   }
