@@ -16,7 +16,7 @@
   "require": {
     "cweagans/composer-patches": "^1.7.3",
     "drupal/admin_toolbar": "^3.5.3",
-    "drupal/apigee_api_catalog": "dev-d11-prep",
+    "drupal/apigee_api_catalog": "^3.0.9",
     "drupal/apigee_edge": "^3.0.8 || ^4.0.0",
     "drupal/better_exposed_filters": "^7.0.5",
     "drupal/default_content": "^2.0@alpha",
