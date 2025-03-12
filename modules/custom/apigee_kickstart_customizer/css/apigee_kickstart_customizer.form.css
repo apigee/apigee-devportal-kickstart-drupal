@@ -19,42 +19,42 @@
  * @file
  * Add style fixes for the customizer form in an off-canvas dialog.
  */
-#drupal-off-canvas .customizer-form .form-item + .form-item {
+#drupal-off-canvas-wrapper .customizer-form .form-item + .form-item {
   margin-top: 1rem;
 }
 
-#drupal-off-canvas .customizer-form #farbtastic-wrapper {
+#drupal-off-canvas-wrapper .customizer-form #farbtastic-wrapper {
   display: flex;
   padding: 1rem;
   align-items: center;
   justify-content: center;
 }
 
-#drupal-off-canvas .customizer-form .farbtastic-help {
+#drupal-off-canvas-wrapper .customizer-form .farbtastic-help {
   display: block;
   text-align: center;
   margin-bottom: 15px;
 }
 
 
-#drupal-off-canvas .customizer-form details {
+#drupal-off-canvas-wrapper .customizer-form details {
   background: #333 !important;
 }
 
-#drupal-off-canvas .customizer-form details > div {
+#drupal-off-canvas-wrapper .customizer-form details > div {
   padding: 0;
   display: block;
   background: #333 !important;
 }
 
-#drupal-off-canvas .customizer-form details > div > div,
-#drupal-off-canvas .customizer-form details > div label {
+#drupal-off-canvas-wrapper .customizer-form details > div > div,
+#drupal-off-canvas-wrapper .customizer-form details > div label {
   background: none !important;
 }
 
-#drupal-off-canvas .customizer-form details > summary,
-#drupal-off-canvas .customizer-form details summary:hover,
-#drupal-off-canvas .customizer-form details summary:focus{
+#drupal-off-canvas-wrapper .customizer-form details > summary,
+#drupal-off-canvas-wrapper .customizer-form details summary:hover,
+#drupal-off-canvas-wrapper .customizer-form details summary:focus{
   background-color: #333 !important;
   color: #eee !important;
 }
