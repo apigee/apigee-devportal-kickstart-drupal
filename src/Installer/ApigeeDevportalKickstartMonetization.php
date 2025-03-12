@@ -21,6 +21,7 @@
 namespace Drupal\apigee_devportal_kickstart\Installer;
 
 use Apigee\Edge\Api\Management\Controller\OrganizationController;
+use Drupal\Core\Utility\Error;
 
 /**
  * Defines a service to handle monetization tasks.
@@ -83,11 +84,12 @@ class ApigeeDevportalKickstartMonetization {
    *   The module name.
    */
   public static function ensureInstalled(string $module): void {
+    $logger = \Drupal::logger('apigee_kickstart');
     try {
       \Drupal::service('module_installer')->install([$module]);
     }
     catch (\Exception $exception) {
-      watchdog_exception('apigee_kickstart', $exception);
+      Error::logException($logger, $exception);
     }
   }
 

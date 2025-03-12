@@ -21,6 +21,7 @@
 namespace Drupal\apigee_devportal_kickstart\Installer;
 
 use Drupal\Core\Form\FormState;
+use Drupal\Core\Utility\Error;
 use Drupal\apigee_m10n_add_credit\AddCreditConfig;
 use Drupal\commerce_price\Price;
 use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
@@ -41,12 +42,13 @@ class ApigeeDevportalKickstartTasksManager implements ApigeeDevportalKickstartTa
    * {@inheritdoc}
    */
   public static function installModules(array $modules, array &$context) {
+    $logger = \Drupal::logger('apigee_kickstart');
     try {
       \Drupal::service('module_installer')->install($modules);
       $context['message'] = t('Installed monetization modules.');
     }
     catch (\Exception $exception) {
-      watchdog_exception('apigee_kickstart', $exception);
+      Error::logException($logger, $exception);
     }
   }
 
@@ -54,6 +56,7 @@ class ApigeeDevportalKickstartTasksManager implements ApigeeDevportalKickstartTa
    * {@inheritdoc}
    */
   public static function importCurrencies(array $currencies, array &$context) {
+    $logger = \Drupal::logger('apigee_kickstart');
     try {
       foreach ($currencies as $currency) {
         // Import the currency.
@@ -63,7 +66,7 @@ class ApigeeDevportalKickstartTasksManager implements ApigeeDevportalKickstartTa
       $context['message'] = t('Imported supported currencies.');
     }
     catch (ServiceNotFoundException $exception) {
-      watchdog_exception('apigee_kickstart', $exception);
+      Error::logException($logger, $exception);
     }
   }
 
@@ -71,6 +74,7 @@ class ApigeeDevportalKickstartTasksManager implements ApigeeDevportalKickstartTa
    * {@inheritdoc}
    */
   public static function createStore(array $values, array &$context) {
+    $logger = \Drupal::logger('apigee_kickstart');
     try {
       $store = \Drupal::entityTypeManager()->getStorage('commerce_store')
         ->create($values);
@@ -81,7 +85,7 @@ class ApigeeDevportalKickstartTasksManager implements ApigeeDevportalKickstartTa
       $context['message'] = t('Created a default store.');
     }
     catch (\Exception $exception) {
-      watchdog_exception('apigee_kickstart', $exception);
+      Error::logException($logger, $exception);
     }
   }
 
@@ -89,6 +93,7 @@ class ApigeeDevportalKickstartTasksManager implements ApigeeDevportalKickstartTa
    * {@inheritdoc}
    */
   public static function createPaymentGateway(array $values, array &$context) {
+    $logger = \Drupal::logger('apigee_kickstart');
     try {
       $gateway = \Drupal::entityTypeManager()
         ->getStorage('commerce_payment_gateway')
@@ -105,7 +110,7 @@ class ApigeeDevportalKickstartTasksManager implements ApigeeDevportalKickstartTa
     }
     catch (\Exception $exception) {
       \Drupal::messenger()->addError(t('Error creating a default payment gateway.'));
-      watchdog_exception('apigee_kickstart', $exception);
+      Error::logException($logger, $exception);
     }
   }
 
@@ -113,6 +118,7 @@ class ApigeeDevportalKickstartTasksManager implements ApigeeDevportalKickstartTa
    * {@inheritdoc}
    */
   public static function createProductType(array $values, array &$context) {
+    $logger = \Drupal::logger('apigee_kickstart');
     try {
       $requirement = \Drupal::service('plugin.manager.requirement')
         ->createInstance('add_credit_product_type');
@@ -125,7 +131,7 @@ class ApigeeDevportalKickstartTasksManager implements ApigeeDevportalKickstartTa
       $context['message'] = t('Created "Add Credit" product type.');
     }
     catch (\Exception $exception) {
-      watchdog_exception('apigee_kickstart', $exception);
+      Error::logException($logger, $exception);
     }
   }
 
@@ -133,6 +139,7 @@ class ApigeeDevportalKickstartTasksManager implements ApigeeDevportalKickstartTa
    * {@inheritdoc}
    */
   public static function createProducts(array $currencies, array &$context) {
+    $logger = \Drupal::logger('apigee_kickstart');
     if (isset($context['results']['store'])) {
       $add_credit_products = [];
 
@@ -175,7 +182,7 @@ class ApigeeDevportalKickstartTasksManager implements ApigeeDevportalKickstartTa
           ];
         }
         catch (\Exception $exception) {
-          watchdog_exception('apigee_kickstart', $exception);
+          Error::logException($logger, $exception);
         }
 
         $context['message'] = t('Created default products.');

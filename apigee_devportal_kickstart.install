@@ -27,6 +27,7 @@ use Drupal\Component\Serialization\Yaml;
 use Drupal\Core\File\Exception\FileException;
 use Drupal\Core\File\FileSystemInterface;
 use Drupal\Core\Messenger\MessengerInterface;
+use Drupal\Core\Utility\Error;
 use Drupal\menu_link_content\Entity\MenuLinkContent;
 use Drupal\views\Views;
 
@@ -370,12 +371,13 @@ function apigee_devportal_kickstart_update_8001(&$sandbox) {
  * Disable deprecated module "apigee_kickstart_m10n_add_credit".
  */
 function apigee_devportal_kickstart_update_8002(&$sandbox) {
+  $logger = \Drupal::logger('apigee_kickstart');
   try {
     \Drupal::service('module_installer')->uninstall(['apigee_kickstart_m10n_add_credit']);
     $context['message'] = t('Uninstalled "apigee_kickstart_m10n_add_credit" module.');
   }
   catch (\Exception $exception) {
-    watchdog_exception('apigee_kickstart', $exception);
+    Error::logException($logger, $exception);
   }
 }
 
