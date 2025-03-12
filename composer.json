@@ -20,7 +20,7 @@
     "drupal/apigee_edge": "^3.0.8 || ^4.0.0",
     "drupal/better_exposed_filters": "^7.0.5",
     "drupal/default_content": "^2.0@alpha",
-    "drupal/email_registration": "^2.0@rc7",
+    "drupal/email_registration": "^2.0@rc8",
     "drupal/fontawesome": "^3.0.0",
     "drupal/paragraphs": "^1.18",
     "drupal/pathauto": "^1.13",
