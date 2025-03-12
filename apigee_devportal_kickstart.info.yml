@@ -47,6 +47,7 @@ install:
 - rdf
 - views
 - views_ui
+- tour
 - automated_cron
 - media
 - media_library
