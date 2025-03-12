@@ -28,7 +28,6 @@ install:
 - menu_link_content
 - datetime
 - block_content
-- quickedit
 - editor
 - help
 - image
@@ -48,7 +47,6 @@ install:
 - rdf
 - views
 - views_ui
-- tour
 - automated_cron
 - media
 - media_library
