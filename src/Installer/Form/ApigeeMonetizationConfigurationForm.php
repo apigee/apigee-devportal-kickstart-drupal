@@ -31,6 +31,7 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Messenger\MessengerInterface;
+use Drupal\Core\Utility\Error;
 use Drupal\address\FieldHelper;
 use Drupal\address\LabelHelper;
 use Drupal\apigee_edge\SDKConnectorInterface;
@@ -119,6 +120,7 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
     $this->languageManager = $language_manager;
     $this->subdivisionRepository = $subdivision_repository;
     $this->currencyRepository = new CurrencyRepository();
+    $logger = \Drupal::logger('apigee_kickstart');
 
     try {
       $organization_id = $this->sdkConnector->getOrganization();
@@ -153,7 +155,7 @@ class ApigeeMonetizationConfigurationForm extends FormBase {
       }
     }
     catch (\Exception $exception) {
-      watchdog_exception('apigee_kickstart', $exception);
+      Error::logException($logger, $exception);
       $this->messenger()->addError($exception->getMessage());
     }
 
