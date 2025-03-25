@@ -21,7 +21,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     
     name: "PHP ${{ matrix.php-version }} | Drupal ${{ matrix.drupal-core }}"
     strategy:
@@ -34,8 +34,13 @@ jobs:
           - "8.3"
         drupal-core:
           # Should update the following as the minimum supported version from Drupal.org
-          - "10.2.x"
           - "10.3.x"
+          - "11.1.x"
+        exclude:
+           - php-version: "8.1"
+             drupal-core: "11.1.x"
+           - php-version: "8.2"
+             drupal-core: "11.1.x"
 
     steps:
 
@@ -45,7 +50,7 @@ jobs:
         coverage: "none"
         php-version: "${{ matrix.php-version }}"
         tools: composer:v2
-        extensions: dom, curl, libxml, mbstring, zip, pdo, mysql, pdo_mysql, bcmath, gd, exif, iconv, opcache, imagick
+        extensions: date, dom, filter, hash, json, curl, libxml, mbstring, zip, pdo, sqlite3, mysqli, mysql, pdo_mysql, bcmath, gd, exif, iconv, opcache, imagick, openssl
 
     - name: Checkout Drupal core
       run: |
@@ -93,12 +98,12 @@ jobs:
     - name: "PHPUnit unit"
       run: |
         cd drupal
-        vendor/bin/phpunit -c core --verbose --color --testsuite unit profiles/contrib/apigee_devportal_kickstart
+        vendor/bin/phpunit -c core --color --testsuite unit profiles/contrib/apigee_devportal_kickstart
 
     - name: "PHPUnit kernel"
       run: |
         cd drupal
-        vendor/bin/phpunit -c core --verbose --color --testsuite kernel profiles/contrib/apigee_devportal_kickstart
+        vendor/bin/phpunit -c core --color --testsuite kernel profiles/contrib/apigee_devportal_kickstart
 
     - uses: nanasess/setup-chromedriver@v2
 
@@ -110,9 +115,9 @@ jobs:
     - name: "PHPUnit functional javascript"
       run: |
         cd drupal
-        vendor/bin/phpunit -c core --verbose --color --testsuite functional-javascript profiles/contrib/apigee_devportal_kickstart
+        vendor/bin/phpunit -c core --color --testsuite functional-javascript profiles/contrib/apigee_devportal_kickstart
 
     - name: "PHPUnit functional"
       run: |
         cd drupal
-        vendor/bin/phpunit -c core --verbose --color --testsuite functional profiles/contrib/apigee_devportal_kickstart
+        vendor/bin/phpunit -c core --color --testsuite functional profiles/contrib/apigee_devportal_kickstart
