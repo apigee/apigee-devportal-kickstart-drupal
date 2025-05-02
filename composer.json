@@ -28,6 +28,7 @@
     "drupal/components": "^3.1.0",
     "drupal/rdf": "^3.0@beta",
     "drupal/hal": "^2.0.4",
+    "drupal/color": "2.x-dev@dev",
     "drupal/tour": "^2.0",
     "drupal/forum": "^1.0"
   },
