@@ -101,7 +101,7 @@ class ApigeeEdgeConfigurationForm extends AuthenticationForm {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     // Clear error messages.
-    $this->messenger()->deleteByType(MessengerInterface::TYPE_ERROR);
+    \Drupal::messenger()->deleteByType(MessengerInterface::TYPE_ERROR);
 
     parent::submitForm($form, $form_state);
   }
