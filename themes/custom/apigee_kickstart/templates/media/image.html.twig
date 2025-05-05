@@ -4,8 +4,9 @@
  * Template for an image field.
  */
 #}
-{% include '@radix/image/image.twig' with {
-  responsive: true,
-  src: attributes.src,
-  alt: attributes.alt,
-} %}
+{%
+  include 'radix:image' with {
+    image_attributes: attributes,
+    responsive: true,
+  }
+%}
