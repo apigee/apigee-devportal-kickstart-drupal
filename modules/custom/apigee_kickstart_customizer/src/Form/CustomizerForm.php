@@ -24,6 +24,7 @@ use Drupal\Core\Ajax\AjaxFormHelperTrait;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\RedirectCommand;
 use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Config\TypedConfigManagerInterface;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Routing\RedirectDestinationInterface;
@@ -68,9 +69,11 @@ class CustomizerForm extends ConfigFormBase {
    *   The redirect destination.
    * @param \Drupal\apigee_kickstart_customizer\CustomizerInterface $customizer
    *   The theme customizer.
+   * @param \Drupal\Core\Config\TypedConfigManagerInterface $typed_config_manager
+   *   The typed config manager.
    */
-  public function __construct(ConfigFactoryInterface $config_factory, RedirectDestinationInterface $destination, CustomizerInterface $customizer) {
-    parent::__construct($config_factory);
+  public function __construct(ConfigFactoryInterface $config_factory, RedirectDestinationInterface $destination, CustomizerInterface $customizer, TypedConfigManagerInterface $typed_config_manager) {
+    parent::__construct($config_factory, $typed_config_manager);
 
     $this->config_factory = $config_factory;
     $this->destination = $destination;
@@ -84,7 +87,8 @@ class CustomizerForm extends ConfigFormBase {
     return new static(
       $container->get('config.factory'),
       $container->get('redirect.destination'),
-      $container->get('apigee_kickstart_customizer')
+      $container->get('apigee_kickstart_customizer'),
+      $container->get('config.typed')
     );
   }
 
