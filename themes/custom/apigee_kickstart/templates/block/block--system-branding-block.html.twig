@@ -4,6 +4,27 @@
  * Template for the branding block.
  */
 #}
-{% include '@apigee-kickstart/block/block.twig' with {
-  html_tag: 'div'
+{% embed '@apigee-kickstart/block/block.twig' with {
+  html_tag: 'div',
+  block_utility_classes: [
+      'block--system-branding',
+    ],
 } %}
+  {% block content %}
+    {%
+      include '@apigee-kickstart/navbar/navbar-brand.twig' with {
+        text: site_name,
+        site_slogan,
+        image: site_logo,
+        width: '40px',
+        height: 'auto',
+        path: path('<front>'),
+        alt: elements.content.site_name['#markup'] ~ ' logo',
+        navbar_brand_utility_classes: [
+          'd-inline-flex',
+          'align-items-center',
+        ],
+      }
+    %}
+  {% endblock %}
+{% endembed %}
