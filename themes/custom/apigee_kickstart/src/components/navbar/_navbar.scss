@@ -9,6 +9,10 @@
 
   .nav-link, .nav-link.show {
     color: var(--ak-header-color);
+
+    &.active {
+      color: var(--ak-header-color);
+    }
   }
 
   .search-block-form {
