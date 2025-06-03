@@ -48,6 +48,10 @@
 .navbar-nav .nav-item {
   position: relative;
 
+  .nav-link.active.is-active {
+    color: var(--ak-header-color);
+  }
+
   .active .nav-link {
     color: var(--ak-header-color);
   }
