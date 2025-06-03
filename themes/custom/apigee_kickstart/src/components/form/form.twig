@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Template for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ *
+ * @ingroup themeable
+ */
+#}
+{% set form_attributes = attributes ?: create_attribute() %}
+
+{%
+  set form_classes = [
+    'form',
+    form_attributes.id ? 'form--' ~ form_attributes.id|clean_class,
+    is_inline ? 'd-flex form-inline',
+  ]
+  |merge(form_utility_classes ?: [])
+%}
+
+<form {{ form_attributes.addClass(form_classes) }}>
+  {{ title_prefix }}
+  {% block form_children %}
+    {{ children }}
+  {% endblock %}
+  {{ title_suffix }}
+</form>

@@ -20,7 +20,9 @@
       {% else %}
         {% set button_attributes = create_attribute() %}
       {% endif %}
-      <li><a{{ button_attributes.removeClass(['btn', 'btn-sm', 'btn-outline-dark']) }} href="{{ button['#url'].toString }}">{{- button['#title'] -}}</a></li>
+      {% if button['#title'] %}
+        <li><a{{ button_attributes.removeClass(['btn', 'btn-sm', 'btn-outline-dark']) }} href="{{ button['#url'].toString }}">{{- button['#title'] -}}</a></li>
+      {% endif %}
     {% endif %}
 
     {%- for item in links -%}

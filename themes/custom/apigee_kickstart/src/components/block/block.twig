@@ -1,0 +1,37 @@
+{#
+/**
+ * @file
+ * Template for a Block component.
+ *
+ * Available config:
+ * - html_tag: The HTML tag for the block.
+ * - block_utility_classes: An array of utility classes for block.
+ */
+#}
+{% set block_classes = [
+    'block',
+    bundle ? 'block--' ~ bundle|clean_class,
+    id ? 'block--' ~ id|replace({"_": "-"})|clean_class,
+  ]|merge(block_utility_classes ? block_utility_classes : []) %}
+  
+  {% if html_tag %}
+    <{{ html_tag }}{{ attributes|without('id').addClass(block_classes) }}>
+  {% endif %}
+  
+    {{ title_prefix }}
+    {% if label %}
+      {% block label %}
+        <h2{{ title_attributes }}>{{ label }}</h2>
+      {% endblock %}
+    {% endif %}
+    {{ title_suffix }}
+  
+    {% if content %}
+      {% block content %}
+        {{ content }}
+      {% endblock %}
+    {% endif %}
+  
+  {% if html_tag %}
+    </{{ html_tag }}>
+  {% endif %}
