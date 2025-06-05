@@ -7,6 +7,14 @@
   font-size: 0.875rem;
   flex-shrink: 0;
 
+  .nav-link.active.is-active {
+    color: var(--ak-header-color);
+  }
+
+  .active .nav-link {
+    color: var(--ak-header-color);
+  }
+
   .nav-link, .nav-link.show {
     color: var(--ak-header-color);
 
