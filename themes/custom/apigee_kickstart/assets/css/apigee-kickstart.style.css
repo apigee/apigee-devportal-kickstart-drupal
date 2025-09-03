@@ -18894,7 +18894,16 @@ fieldset > .fieldset-wrapper p:last-child {
   font-size: 0.875rem;
   flex-shrink: 0;
 }
+.navbar .nav-link.active.is-active {
+  color: var(--ak-header-color);
+}
+.navbar .active .nav-link {
+  color: var(--ak-header-color);
+}
 .navbar .nav-link, .navbar .nav-link.show {
+  color: var(--ak-header-color);
+}
+.navbar .nav-link.active, .navbar .nav-link.show.active {
   color: var(--ak-header-color);
 }
 @media (max-width: 767.98px) {
@@ -18933,6 +18942,9 @@ fieldset > .fieldset-wrapper p:last-child {
 
 .navbar-nav .nav-item {
   position: relative;
+}
+.navbar-nav .nav-item .nav-link.active.is-active {
+  color: var(--ak-header-color);
 }
 .navbar-nav .nav-item .active .nav-link {
   color: var(--ak-header-color);
