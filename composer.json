@@ -33,7 +33,7 @@
     "drupal/forum": "^1.0"
   },
   "require-dev": {
-    "drupal/core-dev": "^10.3 || ^11.1",
+    "drupal/core-dev": "^10.5 || ^11.2",
     "drush/drush": "^12.4.3 || ^13.3",
     "mglaman/drupal-check": "^1.5",
     "phpmd/phpmd": "^2.15.0",
