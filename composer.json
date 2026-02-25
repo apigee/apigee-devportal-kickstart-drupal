@@ -46,7 +46,6 @@
   "extra": {
     "patches": {
       "drupal/core": {
-        "Fix issue with #summary_details introduced in Drupal 8.6.x": "https://www.drupal.org/files/issues/2018-12-17/core-undefined-index-summary_attributes-2998194-9.patch",
         "Fix Validation issue for entity reference field on updating teams #470": "https://www.drupal.org/files/issues/2021-04-23/validate-reference-constraint-3210319-3.patch",
         "Fix Drupal 10.3 upgrade issue of missing status-message theme suggestions": "https://www.drupal.org/files/issues/2024-06-28/3456176-45-missing-status-messages-theme-suggestions.patch"
       },
