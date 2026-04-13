@@ -5,8 +5,32 @@
   "license": "GPL-2.0-or-later",
   "repositories": [
     {
+      "name": "forked-apigee_api_catalog",
+      "type": "vcs",
+      "url": "https://github.com/shailesh-google/apigee-api-catalog-drupal"
+    },
+    {
+        "name": "forked-apigee_edge",
+        "type": "vcs",
+        "url": "https://github.com/shailesh-google/apigee-edge-drupal"
+    },
+    {
+        "name": "forked-apigee-client-php",
+        "type": "vcs",
+        "url": "https://github.com/shailesh-google/apigee-client-php",
+        "canonical": false
+    },
+    {
+        "name": "forked-apigee-mock-client-php",
+        "type": "vcs",
+        "url": "https://github.com/shailesh-google/apigee-mock-client-php",
+        "canonical": false
+    },
+    {
         "type": "composer",
-        "url": "https://packages.drupal.org/8"
+        "url": "https://packages.drupal.org/8",
+        "canonical": false,
+        "exclude": ["drupal/apigee_api_catalog", "drupal/apigee_edge"]
     },
     {
         "type": "composer",
@@ -16,8 +40,8 @@
   "require": {
     "cweagans/composer-patches": "^1.7.3",
     "drupal/admin_toolbar": "^3.5.3",
-    "drupal/apigee_api_catalog": "^3.0.9",
-    "drupal/apigee_edge": "^3.0.11 || ^4.0.2",
+    "drupal/apigee_api_catalog": "dev-issue-292",
+    "drupal/apigee_edge": "dev-issue-1262 || dev-php-8.4-4.x",
     "drupal/better_exposed_filters": "^7.0.5",
     "drupal/default_content": "^2.0@alpha",
     "drupal/email_registration": "^2.0@rc",

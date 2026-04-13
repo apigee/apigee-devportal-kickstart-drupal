@@ -36,4 +36,4 @@ queue is disabled, we use the [GitHub issue queue](https://github.com/apigee/api
 
 ## Support
 
-This project, which integrates Drupal 9 and Drupal 8 with Apigee, is supported by Google.
+This project, which integrates Drupal 10 and Drupal 11 with Apigee, is supported by Google.
