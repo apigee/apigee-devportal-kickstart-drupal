@@ -301,6 +301,40 @@ function apigee_devportal_kickstart_install() {
 }
 
 /**
+ * Implements hook_module_implements_alter().
+ *
+ * Temporary workaround: The Forum module forcefully alters the 'node.body'
+ * field storage to 'text_long' during node type creation in Drupal 11.4+. This
+ * causes an installation crash because Kickstart relies on 'text_with_summary'.
+ *
+ * To prevent this, we disarm specific Forum module hooks strictly during the
+ * installation phase ($install_state).
+ *
+ * TODO: Remove this workaround when the upstream Drupal core / Forum issue is
+ * resolved and Kickstart updates its body field storage strategy or when
+ * dropping support for Drupal 10.6 and versions prior to 11.3.
+ *
+ * @see https://git.drupalcode.org/project/forum/-/work_items/3584937
+ * @see https://github.com/apigee/apigee-devportal-kickstart-drupal/issues/828
+ * @see https://www.drupal.org/project/drupal/issues/3447617
+ */
+function apigee_devportal_kickstart_module_implements_alter(&$implementations, $hook) {
+  $hooks_to_suppress = [
+    'node_type_insert',
+    'field_config_presave',
+    'field_config_insert'
+  ];
+
+  if (in_array($hook, $hooks_to_suppress) && isset($implementations['forum'])) {
+    global $install_state;
+    // Suppress Forum hooks only while the site installer is actively running.
+    if (!empty($install_state)) {
+      unset($implementations['forum']);
+    }
+  }
+}
+
+/**
  * Implements hook_requirements().
  */
 function apigee_devportal_kickstart_requirements($phase) {
