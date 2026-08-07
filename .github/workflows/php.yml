@@ -87,9 +87,6 @@ jobs:
         if [[ "${{ matrix.drupal-core }}" == 10.* ]]; then
           jq '.replace += {"drupal/forum": "*", "drupal/tour": "*"}' composer.json > tmp.json && mv tmp.json composer.json
         fi
-        
-        # We must prevent the contrib Forum module from trying to download the contrib History module.
-        jq '.replace += {"drupal/history": "*"}' composer.json > tmp.json && mv tmp.json composer.json
 
         composer update --with-all-dependencies
         composer require --dev phpspec/prophecy-phpunit:^2
