@@ -24,7 +24,7 @@
     "drupal/fontawesome": "^3.0.0",
     "drupal/paragraphs": "^1.18",
     "drupal/pathauto": "^1.13",
-    "drupal/radix": "^6.0.1",
+    "drupal/radix": "^6.0.8",
     "drupal/components": "^3.1.0",
     "drupal/rdf": "^3.0@beta",
     "drupal/hal": "^2.0.4",
