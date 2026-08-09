@@ -1,0 +1,141 @@
+services:
+  # =========================================================================
+  # App Service: Drupal 10 / Apigee Developer Portal Kickstart (PHP 8.2 Apache)
+  # =========================================================================
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    container_name: kickstart-devportal-app
+    restart: unless-stopped
+    ports:
+      - "8085:80"
+    environment:
+      # Database Connection Parameters (read by web/sites/default/settings.php)
+      - DB_DRIVER=mysql
+      - DB_HOST=mariadb
+      - DB_PORT=3306
+      - DB_NAME=drupaldb
+      - DB_USER=drupal
+      - DB_PASSWORD=drupal
+      # Cache Store Configuration (Redis)
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      # Testing Enforcement (Apigee Edge Mock Client & CI flag)
+      - CI=true
+      - APIGEE_EDGE_MOCK_CLIENT=true
+      - PHP_MEMORY_LIMIT=512M
+      # Set to 'true' to automatically run drush site:install & config:import on first boot
+      - DRUPAL_AUTO_INSTALL=true
+      - DRUPAL_CONFIG_IMPORT=false
+    volumes:
+      # Mount entire local profile codebase into the path repository destination
+      - .:/var/www/html-profile
+      - app_files:/var/www/html/web/sites/default/files
+      - app_private:/var/www/html/private
+    depends_on:
+      mariadb:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    networks:
+      - devportal-network
+
+  # =========================================================================
+  # Database Service: MariaDB 10.11 (Drupal 10 Data Layer)
+  # =========================================================================
+  mariadb:
+    image: mariadb:10.11
+    container_name: kickstart-devportal-db
+    restart: unless-stopped
+    environment:
+      - MARIADB_DATABASE=drupaldb
+      - MARIADB_USER=drupal
+      - MARIADB_PASSWORD=drupal
+      - MARIADB_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=drupaldb
+      - MYSQL_USER=drupal
+      - MYSQL_PASSWORD=drupal
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_CHARSET=utf8mb4
+      - MYSQL_COLLATION=utf8mb4_unicode_ci
+    command: >
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_unicode_ci
+      --max-allowed-packet=64M
+      --innodb-default-row-format=DYNAMIC
+      --innodb-large-prefix=1
+    ports:
+      - "33067:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysql -h localhost -u drupal -pdrupal --ssl=0 -e 'SELECT 1' drupaldb || mysqladmin ping -h localhost -u root -proot --ssl=0 --silent || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 30s
+    networks:
+      - devportal-network
+
+  # =========================================================================
+  # Cache Store Service: Redis 7
+  # =========================================================================
+  redis:
+    image: redis:7-alpine
+    container_name: kickstart-devportal-redis
+    restart: unless-stopped
+    ports:
+      - "63798:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    networks:
+      - devportal-network
+
+  # =========================================================================
+  # Optional Developer Helper: phpMyAdmin (Database Inspection & Query QA)
+  # =========================================================================
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: kickstart-devportal-phpmyadmin
+    restart: unless-stopped
+    environment:
+      - PMA_HOST=mariadb
+      - PMA_USER=drupal
+      - PMA_PASSWORD=drupal
+    ports:
+      - "8086:80"
+    depends_on:
+      mariadb:
+        condition: service_healthy
+    networks:
+      - devportal-network
+
+  # =========================================================================
+  # Optional Developer Helper: Mailpit (Email Verification & Go-Live Flow QA)
+  # =========================================================================
+  mailpit:
+    image: axllent/mailpit:latest
+    container_name: kickstart-devportal-mailpit
+    restart: unless-stopped
+    ports:
+      - "8027:8025"  # Web UI to view captured emails
+      - "1027:1025"  # SMTP Server Port
+    networks:
+      - devportal-network
+
+volumes:
+  mariadb_data:
+  redis_data:
+  app_files:
+  app_private:
+
+networks:
+  devportal-network:
+    driver: bridge

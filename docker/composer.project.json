@@ -1,0 +1,148 @@
+{
+  "name": "apigee/devportal-kickstart-project",
+  "description": "Composer project template for the Apigee Developer Portal Drupal distribution.",
+  "type": "project",
+  "license": "GPL-2.0-or-later",
+  "homepage": "https://www.drupal.org/project/apigee_devportal_kickstart",
+  "support": {
+    "docs": "https://www.drupal.org/docs/8/modules/apigee-developer-portal-kickstart"
+  },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "/var/www/html-profile",
+      "options": {
+        "symlink": true
+      }
+    },
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "furf/jquery-ui-touch-punch",
+        "version": "dev-master",
+        "type": "drupal-library",
+        "dist": {
+          "url": "https://github.com/furf/jquery-ui-touch-punch/archive/master.zip",
+          "type": "zip"
+        }
+      }
+    },
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ],
+  "require": {
+    "php": "~8.1.0 || ~8.2.0",
+    "apigee/apigee_devportal_kickstart": "*",
+    "bower-asset/swagger-ui": "^5.22",
+    "composer/installers": "2.3.0",
+    "drupal/adminimal_admin_toolbar": "2.0.0",
+    "drupal/apigee_m10n": "2.1.4",
+    "drupal/commerce": "3.0.1",
+    "drupal/core-composer-scaffold": "10.4.6",
+    "drupal/core-project-message": "10.4.6",
+    "drupal/core-recommended": "10.4.6",
+    "drupal/google_analytics": "^4.0",
+    "drupal/gtranslate": "^3.0",
+    "drupal/jsonapi_extras": "^3.25",
+    "drupal/password_policy": "^4.0",
+    "drupal/real_aes": "2.6.0",
+    "drupal/recaptcha": "3.4.0",
+    "drupal/smtp": "1.4.0",
+    "drupal/swagger_ui_formatter": "^4.2",
+    "drupal/symfony_mailer_lite": "2.0.2",
+    "drupal/terms_of_use": "^2.4",
+    "drupal/tfa": "1.10.0",
+    "drupal/user_csv_import": "^2.0",
+    "furf/jquery-ui-touch-punch": "dev-master",
+    "google/cloud-storage": "^1.47",
+    "league/flysystem": "^1.1",
+    "oomphinc/composer-installers-extender": "^2.0"
+  },
+  "require-dev": {
+    "apigee/apigee-mock-client-php": "1.1.2",
+    "drupal/core-dev": "10.4.6",
+    "drush/drush": "13.6.0"
+  },
+  "conflict": {
+    "drupal/drupal": "*"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "sort-packages": true,
+    "process-timeout": 0,
+    "allow-plugins": {
+      "composer/installers": true,
+      "cweagans/composer-patches": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "drupal/core-composer-scaffold": true,
+      "drupal/core-project-message": true,
+      "oomphinc/composer-installers-extender": true,
+      "php-http/discovery": true,
+      "phpstan/extension-installer": true,
+      "tbachert/spi": false
+    }
+  },
+  "extra": {
+    "drupal-scaffold": {
+      "locations": {
+        "web-root": "web/"
+      }
+    },
+    "installer-paths": {
+      "web/core": ["type:drupal-core"],
+      "web/libraries/{$name}": [
+        "type:drupal-library",
+        "type:bower-asset",
+        "type:npm-asset"
+      ],
+      "web/libraries/swagger-ui": ["bower-asset/swagger-ui"],
+      "web/modules/contrib/{$name}": ["type:drupal-module"],
+      "web/profiles/contrib/{$name}": ["type:drupal-profile"],
+      "web/themes/contrib/{$name}": ["type:drupal-theme"],
+      "drush/Commands/contrib/{$name}": ["type:drupal-drush"],
+      "web/modules/custom/{$name}": ["type:drupal-custom-module"],
+      "web/themes/custom/{$name}": ["type:drupal-custom-theme"]
+    },
+    "installer-types": ["bower-asset", "npm-asset"],
+    "drupal-core-project-message": {
+      "include-keys": ["homepage", "support"],
+      "post-create-project-cmd-message": [
+        "<bg=blue;fg=white>                                                                                 </>",
+        "<bg=blue;fg=white>  Congratulations, you’ve installed the Apigee Developer Portal Drupal codebase  </>",
+        "<bg=blue;fg=white>  from the apigee/devportal-kickstart-project template!                          </>",
+        "<bg=blue;fg=white>                                                                                 </>",
+        "",
+        "<bg=yellow;fg=black>Next steps</>:",
+        "  * Install the site: https://www.drupal.org/docs/8/modules/apigee-developer-portal-kickstart/get-started-with-kickstart",
+        "  * Read the guide: https://www.drupal.org/docs/8/modules/apigee-developer-portal-kickstart",
+        "  * Report issues : https://github.com/apigee/apigee-devportal-kickstart-drupal/issues"
+      ]
+    },
+    "enable-patching": true,
+    "patches": {
+      "drupal/core": {
+        "Support entities that are neither content nor config entities":"https://www.drupal.org/files/issues/2020-12-02/3042467-50.patch"
+      },
+      "drupal/jsonapi_extras":{
+        "JSON APIS EXTRAS BULK PATCH": "https://www.drupal.org/files/issues/2024-06-07/add-enable-disable-all-buttons--2896799--32.patch",
+        "Jsonapi_extra installation issue due to 3042467-50.patch": "https://github.com/apigee/apigee-devportal-kickstart-drupal/files/9189452/patch.569-1.txt"
+      }
+    },
+    "patchLevel": {
+      "drupal/core": "-p2"
+    }
+  },
+  "scripts": {
+    "quick-start": [
+      "composer install",
+      "php web/core/scripts/drupal quick-start apigee_devportal_kickstart"
+    ]
+  }
+}
