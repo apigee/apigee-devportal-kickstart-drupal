@@ -46,7 +46,7 @@
   "extra": {
     "patches": {
       "drupal/core": {
-        "Fix Validation issue for entity reference field on updating teams #470": "https://www.drupal.org/files/issues/2021-04-23/validate-reference-constraint-3210319-3.patch",
+        "Fix Validation issue for entity reference field on updating teams #470": "https://git.drupalcode.org/project/drupal/-/merge_requests/13450.patch",
         "Fix Drupal 10.3 upgrade issue of missing status-message theme suggestions": "https://www.drupal.org/files/issues/2024-06-28/3456176-45-missing-status-messages-theme-suggestions.patch"
       },
       "drupal/default_content": {
