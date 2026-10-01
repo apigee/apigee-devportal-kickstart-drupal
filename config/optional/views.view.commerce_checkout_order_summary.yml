@@ -313,7 +313,7 @@ display:
         order_items:
           id: order_items
           table: commerce_order__order_items
-          field: order_items
+          field: order_items_target_id
           relationship: none
           group_type: group
           admin_label: 'order_items: Order Item'
