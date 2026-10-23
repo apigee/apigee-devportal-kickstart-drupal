@@ -24,6 +24,9 @@ use Drupal\apigee_devportal_kickstart\Installer\Form\ApigeeEdgeConfigurationForm
 use Drupal\apigee_devportal_kickstart\Installer\Form\ApigeeMonetizationConfigurationForm;
 use Drupal\apigee_devportal_kickstart\Installer\Form\DemoInstallForm;
 use Drupal\Component\Serialization\Yaml;
+use Drupal\Core\Config\ExtensionInstallStorage;
+use Drupal\Core\Config\InstallStorage;
+use Drupal\Core\Config\StorageInterface;
 use Drupal\Core\File\Exception\FileException;
 use Drupal\Core\File\FileSystemInterface;
 use Drupal\Core\Messenger\MessengerInterface;
@@ -771,4 +774,115 @@ function apigee_devportal_kickstart_update_9003() {
     $view->save();
   }
 
+}
+
+/**
+ * Fix Commerce Views relationships and import missing Commerce/Add Credit configs.
+ */
+function apigee_devportal_kickstart_update_9004() {
+  $module_handler = \Drupal::moduleHandler();
+  $config_factory = \Drupal::configFactory();
+  $active_storage = \Drupal::service('config.storage');
+  $config_installer = \Drupal::service('config.installer');
+
+  // Update any existing Commerce views in active configuration that still use
+  // the legacy Drupal 8 order_items relationship or numeric argument plugin.
+  $commerce_views = [
+    'views.view.commerce_cart_block',
+    'views.view.commerce_cart_form',
+    'views.view.commerce_checkout_order_summary',
+  ];
+  foreach ($commerce_views as $view_config_name) {
+    if ($active_storage->exists($view_config_name)) {
+      $config = $config_factory->getEditable($view_config_name);
+      $changed = FALSE;
+
+      if ($config->get('core') !== NULL) {
+        $config->clear('core');
+        $changed = TRUE;
+      }
+
+      $relationship_key = 'display.default.display_options.relationships.order_items';
+      $relationship = $config->get($relationship_key);
+      if (is_array($relationship) && ($relationship['field'] ?? '') === 'order_items') {
+        $relationship['field'] = 'order_items_target_id';
+        $relationship['entity_type'] = 'commerce_order';
+        $relationship['entity_field'] = 'order_items';
+        $config->set($relationship_key, $relationship);
+        $changed = TRUE;
+      }
+
+      $argument_key = 'display.default.display_options.arguments.order_id';
+      $argument = $config->get($argument_key);
+      if (is_array($argument) && ($argument['plugin_id'] ?? '') === 'numeric') {
+        $argument['plugin_id'] = 'entity_target_id';
+        $argument['target_entity_type_id'] = 'commerce_order';
+        $config->set($argument_key, $argument);
+        $changed = TRUE;
+      }
+
+      if ($changed) {
+        $config->save(TRUE);
+      }
+    }
+  }
+
+  // If commerce_cart is enabled but its enforced add_to_cart form mode is
+  // missing, module installation was interrupted by the legacy View config
+  // error before remaining default and optional configs could be imported.
+  if ($module_handler->moduleExists('commerce_cart') && !$active_storage->exists('core.entity_form_mode.commerce_order_item.add_to_cart')) {
+    if (!$active_storage->exists('views.view.commerce_cart_block')) {
+      if (enum_exists('\Drupal\Core\Config\DefaultConfigMode')) {
+        $config_installer->installDefaultConfig('module', 'commerce_cart', \Drupal\Core\Config\DefaultConfigMode::InstallEntities);
+      }
+      else {
+        $config_installer->installDefaultConfig('module', 'commerce_cart');
+      }
+    }
+
+    if ($module_handler->moduleExists('commerce_checkout') && !$active_storage->exists('commerce_checkout.commerce_checkout_flow.default')) {
+      if (enum_exists('\Drupal\Core\Config\DefaultConfigMode')) {
+        $config_installer->installDefaultConfig('module', 'commerce_checkout', \Drupal\Core\Config\DefaultConfigMode::InstallEntities);
+      }
+      else {
+        $config_installer->installDefaultConfig('module', 'commerce_checkout');
+      }
+      $module_handler->loadInclude('commerce_checkout', 'install');
+      if (function_exists('commerce_checkout_install')) {
+        commerce_checkout_install();
+      }
+    }
+
+    if ($module_handler->moduleExists('apigee_m10n_add_credit')) {
+      $module_handler->loadInclude('apigee_m10n_add_credit', 'install');
+      if (function_exists('apigee_m10n_add_credit_install')) {
+        apigee_m10n_add_credit_install();
+      }
+    }
+
+    if ($module_handler->moduleExists('entity') && function_exists('entity_modules_installed')) {
+      $commerce_modules = array_filter(
+        ['commerce_payment', 'commerce_cart', 'commerce_checkout', 'apigee_m10n_add_credit'],
+        [$module_handler, 'moduleExists']
+      );
+      if (!empty($commerce_modules)) {
+        entity_modules_installed($commerce_modules);
+      }
+    }
+
+    // Install missing optional configuration scoped specifically to Commerce
+    // and Add Credit modules so unrelated optional configs are not recreated.
+    $optional_storage = new ExtensionInstallStorage(
+      $active_storage,
+      InstallStorage::CONFIG_OPTIONAL_DIRECTORY,
+      StorageInterface::DEFAULT_COLLECTION,
+      FALSE,
+      \Drupal::installProfile()
+    );
+    foreach (['commerce_product', 'commerce_order', 'commerce_cart', 'commerce_checkout', 'apigee_m10n_add_credit'] as $module) {
+      if ($module_handler->moduleExists($module)) {
+        $config_installer->installOptionalConfig($optional_storage, ['module' => $module]);
+      }
+    }
+  }
 }
