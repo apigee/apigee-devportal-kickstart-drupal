@@ -16,6 +16,7 @@ env:
   
 on:
   push:
+  # zizmor: ignore[dangerous-triggers] - Checks out trusted base branch ref; required for integration test secrets.
   pull_request_target:
 
 jobs:
@@ -81,7 +82,7 @@ jobs:
         composer config minimum-stability dev
         composer require wikimedia/composer-merge-plugin
         composer config --json extra.merge-plugin.require '["profiles/contrib/apigee_devportal_kickstart/composer.json"]'
-        composer config platform.php ${{ matrix.php-version }}
+        composer config --unset platform.php
         
         # Drupal 10 still has Forum and Tour in core.
         if [[ "${{ matrix.drupal-core }}" == 10.* ]]; then
