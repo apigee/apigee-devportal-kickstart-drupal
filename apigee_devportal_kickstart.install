@@ -772,3 +772,105 @@ function apigee_devportal_kickstart_update_9003() {
   }
 
 }
+
+/**
+ * Fix Commerce Views relationships and import missing Commerce/Add Credit configs.
+ */
+function apigee_devportal_kickstart_update_9004() {
+  $module_handler = \Drupal::moduleHandler();
+  $config_factory = \Drupal::configFactory();
+  $active_storage = \Drupal::service('config.storage');
+  $config_installer = \Drupal::service('config.installer');
+
+  // Update any existing Commerce views in active configuration that still use
+  // the legacy Drupal 8 order_items relationship or numeric argument plugin.
+  $commerce_views = [
+    'views.view.commerce_cart_block',
+    'views.view.commerce_cart_form',
+    'views.view.commerce_checkout_order_summary',
+  ];
+  foreach ($commerce_views as $view_config_name) {
+    if ($active_storage->exists($view_config_name)) {
+      $config = $config_factory->getEditable($view_config_name);
+      $changed = FALSE;
+
+      if ($config->get('core') !== NULL) {
+        $config->clear('core');
+        $changed = TRUE;
+      }
+
+      $relationship_key = 'display.default.display_options.relationships.order_items';
+      $relationship = $config->get($relationship_key);
+      if (is_array($relationship) && ($relationship['field'] ?? '') === 'order_items') {
+        $relationship['field'] = 'order_items_target_id';
+        $relationship['entity_type'] = 'commerce_order';
+        $relationship['entity_field'] = 'order_items';
+        $config->set($relationship_key, $relationship);
+        $changed = TRUE;
+      }
+
+      $argument_key = 'display.default.display_options.arguments.order_id';
+      $argument = $config->get($argument_key);
+      if (is_array($argument) && ($argument['plugin_id'] ?? '') === 'numeric') {
+        $argument['plugin_id'] = 'entity_target_id';
+        $argument['target_entity_type_id'] = 'commerce_order';
+        $config->set($argument_key, $argument);
+        $changed = TRUE;
+      }
+
+      if ($changed) {
+        $config->save(TRUE);
+      }
+    }
+  }
+
+  // If commerce_cart is enabled and its default views were skipped due to the
+  // interrupted module install, install its default configuration entities.
+  if ($module_handler->moduleExists('commerce_cart') && !$active_storage->exists('views.view.commerce_cart_block')) {
+    if (enum_exists('\Drupal\Core\Config\DefaultConfigMode')) {
+      $config_installer->installDefaultConfig('module', 'commerce_cart', \Drupal\Core\Config\DefaultConfigMode::InstallEntities);
+    }
+    else {
+      $config_installer->installDefaultConfig('module', 'commerce_cart');
+    }
+  }
+
+  // If commerce_checkout is enabled and its default checkout flow was skipped,
+  // install its default configuration entities and permissions.
+  if ($module_handler->moduleExists('commerce_checkout') && !$active_storage->exists('commerce_checkout.commerce_checkout_flow.default')) {
+    if (enum_exists('\Drupal\Core\Config\DefaultConfigMode')) {
+      $config_installer->installDefaultConfig('module', 'commerce_checkout', \Drupal\Core\Config\DefaultConfigMode::InstallEntities);
+    }
+    else {
+      $config_installer->installDefaultConfig('module', 'commerce_checkout');
+    }
+    $module_handler->loadInclude('commerce_checkout', 'install');
+    if (function_exists('commerce_checkout_install')) {
+      commerce_checkout_install();
+    }
+  }
+
+  // If apigee_m10n_add_credit is enabled, ensure its install hook has run.
+  if ($module_handler->moduleExists('apigee_m10n_add_credit')) {
+    $module_handler->loadInclude('apigee_m10n_add_credit', 'install');
+    if (function_exists('apigee_m10n_add_credit_install')) {
+      apigee_m10n_add_credit_install();
+    }
+  }
+
+  if ($module_handler->moduleExists('entity') && function_exists('entity_modules_installed')) {
+    $commerce_modules = array_filter(
+      ['commerce_payment', 'commerce_cart', 'commerce_checkout', 'apigee_m10n_add_credit'],
+      [$module_handler, 'moduleExists']
+    );
+    if (!empty($commerce_modules)) {
+      entity_modules_installed($commerce_modules);
+    }
+  }
+
+  // Install any missing optional configuration (such as
+  // core.entity_form_mode.commerce_order_item.add_to_cart).
+  if ($module_handler->moduleExists('commerce_cart') || $module_handler->moduleExists('commerce_product') || $module_handler->moduleExists('apigee_m10n_add_credit')) {
+    $config_installer->installOptionalConfig();
+  }
+}
