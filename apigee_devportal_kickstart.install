@@ -24,6 +24,9 @@ use Drupal\apigee_devportal_kickstart\Installer\Form\ApigeeEdgeConfigurationForm
 use Drupal\apigee_devportal_kickstart\Installer\Form\ApigeeMonetizationConfigurationForm;
 use Drupal\apigee_devportal_kickstart\Installer\Form\DemoInstallForm;
 use Drupal\Component\Serialization\Yaml;
+use Drupal\Core\Config\ExtensionInstallStorage;
+use Drupal\Core\Config\InstallStorage;
+use Drupal\Core\Config\StorageInterface;
 use Drupal\Core\File\Exception\FileException;
 use Drupal\Core\File\FileSystemInterface;
 use Drupal\Core\Messenger\MessengerInterface;
@@ -824,53 +827,62 @@ function apigee_devportal_kickstart_update_9004() {
     }
   }
 
-  // If commerce_cart is enabled and its default views were skipped due to the
-  // interrupted module install, install its default configuration entities.
-  if ($module_handler->moduleExists('commerce_cart') && !$active_storage->exists('views.view.commerce_cart_block')) {
-    if (enum_exists('\Drupal\Core\Config\DefaultConfigMode')) {
-      $config_installer->installDefaultConfig('module', 'commerce_cart', \Drupal\Core\Config\DefaultConfigMode::InstallEntities);
+  // If commerce_cart is enabled but its enforced add_to_cart form mode is
+  // missing, module installation was interrupted by the legacy View config
+  // error before remaining default and optional configs could be imported.
+  if ($module_handler->moduleExists('commerce_cart') && !$active_storage->exists('core.entity_form_mode.commerce_order_item.add_to_cart')) {
+    if (!$active_storage->exists('views.view.commerce_cart_block')) {
+      if (enum_exists('\Drupal\Core\Config\DefaultConfigMode')) {
+        $config_installer->installDefaultConfig('module', 'commerce_cart', \Drupal\Core\Config\DefaultConfigMode::InstallEntities);
+      }
+      else {
+        $config_installer->installDefaultConfig('module', 'commerce_cart');
+      }
     }
-    else {
-      $config_installer->installDefaultConfig('module', 'commerce_cart');
-    }
-  }
 
-  // If commerce_checkout is enabled and its default checkout flow was skipped,
-  // install its default configuration entities and permissions.
-  if ($module_handler->moduleExists('commerce_checkout') && !$active_storage->exists('commerce_checkout.commerce_checkout_flow.default')) {
-    if (enum_exists('\Drupal\Core\Config\DefaultConfigMode')) {
-      $config_installer->installDefaultConfig('module', 'commerce_checkout', \Drupal\Core\Config\DefaultConfigMode::InstallEntities);
+    if ($module_handler->moduleExists('commerce_checkout') && !$active_storage->exists('commerce_checkout.commerce_checkout_flow.default')) {
+      if (enum_exists('\Drupal\Core\Config\DefaultConfigMode')) {
+        $config_installer->installDefaultConfig('module', 'commerce_checkout', \Drupal\Core\Config\DefaultConfigMode::InstallEntities);
+      }
+      else {
+        $config_installer->installDefaultConfig('module', 'commerce_checkout');
+      }
+      $module_handler->loadInclude('commerce_checkout', 'install');
+      if (function_exists('commerce_checkout_install')) {
+        commerce_checkout_install();
+      }
     }
-    else {
-      $config_installer->installDefaultConfig('module', 'commerce_checkout');
-    }
-    $module_handler->loadInclude('commerce_checkout', 'install');
-    if (function_exists('commerce_checkout_install')) {
-      commerce_checkout_install();
-    }
-  }
 
-  // If apigee_m10n_add_credit is enabled, ensure its install hook has run.
-  if ($module_handler->moduleExists('apigee_m10n_add_credit')) {
-    $module_handler->loadInclude('apigee_m10n_add_credit', 'install');
-    if (function_exists('apigee_m10n_add_credit_install')) {
-      apigee_m10n_add_credit_install();
+    if ($module_handler->moduleExists('apigee_m10n_add_credit')) {
+      $module_handler->loadInclude('apigee_m10n_add_credit', 'install');
+      if (function_exists('apigee_m10n_add_credit_install')) {
+        apigee_m10n_add_credit_install();
+      }
     }
-  }
 
-  if ($module_handler->moduleExists('entity') && function_exists('entity_modules_installed')) {
-    $commerce_modules = array_filter(
-      ['commerce_payment', 'commerce_cart', 'commerce_checkout', 'apigee_m10n_add_credit'],
-      [$module_handler, 'moduleExists']
+    if ($module_handler->moduleExists('entity') && function_exists('entity_modules_installed')) {
+      $commerce_modules = array_filter(
+        ['commerce_payment', 'commerce_cart', 'commerce_checkout', 'apigee_m10n_add_credit'],
+        [$module_handler, 'moduleExists']
+      );
+      if (!empty($commerce_modules)) {
+        entity_modules_installed($commerce_modules);
+      }
+    }
+
+    // Install missing optional configuration scoped specifically to Commerce
+    // and Add Credit modules so unrelated optional configs are not recreated.
+    $optional_storage = new ExtensionInstallStorage(
+      $active_storage,
+      InstallStorage::CONFIG_OPTIONAL_DIRECTORY,
+      StorageInterface::DEFAULT_COLLECTION,
+      FALSE,
+      \Drupal::installProfile()
     );
-    if (!empty($commerce_modules)) {
-      entity_modules_installed($commerce_modules);
+    foreach (['commerce_product', 'commerce_order', 'commerce_cart', 'commerce_checkout', 'apigee_m10n_add_credit'] as $module) {
+      if ($module_handler->moduleExists($module)) {
+        $config_installer->installOptionalConfig($optional_storage, ['module' => $module]);
+      }
     }
-  }
-
-  // Install any missing optional configuration (such as
-  // core.entity_form_mode.commerce_order_item.add_to_cart).
-  if ($module_handler->moduleExists('commerce_cart') || $module_handler->moduleExists('commerce_product') || $module_handler->moduleExists('apigee_m10n_add_credit')) {
-    $config_installer->installOptionalConfig();
   }
 }
