@@ -40,7 +40,7 @@ jobs:
     steps:
 
     - name: "Install PHP"
-      uses: "shivammathur/setup-php@v2"
+      uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962 # v2
       with:
         coverage: "none"
         php-version: "${{ matrix.php-version }}"
@@ -54,7 +54,7 @@ jobs:
         mkdir -p drupal/sites/simpletest/browser_output
   
     - name: Checkout apigee_devportal_kickstart distribution
-      uses: actions/checkout@v4
+      uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       with:
         path: drupal/profiles/contrib/apigee_devportal_kickstart
 
@@ -107,7 +107,7 @@ jobs:
         cd drupal
         vendor/bin/phpunit -c core --color --testsuite kernel profiles/contrib/apigee_devportal_kickstart
 
-    - uses: nanasess/setup-chromedriver@v2
+    - uses: nanasess/setup-chromedriver@ef5c64a93512d266b23b80bae95e46a67f30e703 # v2
 
     - run: |
         export DISPLAY=:99
