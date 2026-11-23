@@ -77,7 +77,7 @@ jobs:
         
         # Drupal 10 still has Forum and Tour in core.
         if [[ "${{ matrix.drupal-core }}" == 10.* ]]; then
-          jq '.replace += {"drupal/forum": "*", "drupal/tour": "*"} | .conflict += {"consolidation/robo": "~5.2.0 <5.2.4"}' composer.json > tmp.json && mv tmp.json composer.json
+          jq '.replace += {"drupal/forum": "*", "drupal/tour": "*"}' composer.json > tmp.json && mv tmp.json composer.json
         fi
 
         composer update --with-all-dependencies
